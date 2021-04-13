@@ -39,7 +39,12 @@ The project config provides the following details:
    - `version`: the dimension record version association with the dimension_id to use. Optional. If no version is defined, then the latest version is used.
 
 ## 💾 Dataset
-input dataset types (3)🛑 can be registered outside of a project
+There are three dataset types:
+1. Benchmark
+2. Historic
+3. Sector Model
+
+Datasets can be registered outside of a project, however, to be used by a project, they must be submitted to the project and pass all project validations/meet all project expectations. 
 
 **Dataset Repo Organization:**
 ```
