@@ -1,0 +1,125 @@
+# ------------------------------------------------------
+# Project Dimensions
+# ------------------------------------------------------
+[[dimensions]]
+type = "geography"
+name = "County"
+file = "dimensions/counties.csv"
+description = """
+US counties
+"""
+
+[[dimensions]]
+type = "sector"
+name = "EFS Sector"
+file = "dimensions/sectors.csv"
+module = "dsgrid.dimension.standard"
+class = "Sector"
+description = """
+dsgrid Standard Scenarios 2021 Sectors; Transportation only
+"""
+
+[[dimensions]]
+type = "subsector"
+name = "Detailed Subsectors"
+file = "dimensions/subsectors.csv"
+module = "dsgrid.dimension.standard"
+class = "SubSector"
+description = """
+dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
+"""
+
+[[dimensions]]
+type = "end_use"
+name = "Detailed End Uses"
+file = "dimensions/enduses.csv"
+module = "dsgrid.dimension.standard"
+class = "EndUse"
+description = """
+dsgrid Standard Scenarios 2021 End Uses; Transportation only
+"""
+
+[[dimensions]]
+type = "weather"
+name = "2012 Weather Year"
+file = "dimensions/weather_years.csv"
+module = "dsgrid.dimension.standard"
+class = "Weather"
+description = """
+Weather year, 2012 only
+"""
+
+[[dimensions]]
+type = "model_year"
+name = "2012 Model Year"
+file = "dimensions/model_years.csv"
+module = "dsgrid.dimension.standard"
+class = "ModelYear"
+description = """
+Model year, 2012 only
+"""
+
+[[dimensions]]
+type = "scenario"
+name = "EFS Scenario"
+file = "dimensions/scenarios.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+description = """
+base scenario only
+"""
+
+[[dimensions]]
+type = "model"
+name = "EFS Models"
+file = "dimensions/models.csv"
+module = "dsgrid.dimension.standard"
+class = "Model"
+description = """
+dsgrid Standard Scenarios 2021 Models; TEMPO only
+"""
+
+[[dimensions]]
+type = "time"
+name = "Time-2012-PST-houlry-periodBeginning-noDST-noLeapDay-mean"
+start = "2012-01-01 01:00:00"
+end = "2012-12-31 23:59:59"
+frequency = "1 hour"
+includes_dst = false
+# leap_day_adjustment = ""
+period = "period_beginning"
+str_format = "%Y-%m-%d %H:%M:%S"
+timezone = "PST"
+value_representation = "mean"
+description = """
+Time dimension, 2012 hourly PST, hour-beginning, no DST, no Leap Day, mean value
+"""
+
+# ------------------------------------------------------
+# Supplemental Dimensions
+# ------------------------------------------------------
+[[dimensions]]
+type = "geography"
+name = "State"
+file = "dimensions/supplemental/states.csv"
+description = """
+US states
+"""
+
+[[dimensions]]
+type = "geography"
+name = "Census Division"
+class = "CensusDivision"
+file = "dimensions/supplemental/census_divisions.csv"
+description = """
+US census divisions
+"""
+
+[[dimensions]]
+type = "geography"
+name = "Census Region"
+class = "CensusRegion"
+file = "dimensions/supplemental/census_regions.csv"
+description = """
+US census regions
+"""

@@ -1,0 +1,70 @@
+# --------------------------------------
+# TEMPO Dataset Configuration File
+# --------------------------------------
+
+# TODO: TEMPO contributors to fill out this config file
+
+dataset_id = "tempo-standard-scenarios-2021"
+dataset_type = "sector_model"
+model_name = "TEMPO"
+path = "s3://"
+description = """"""
+
+[[dimensions]]
+type = "geography"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "sector"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "subsector"
+dimension_id = ""
+version = "1.0.0"
+
+[[dimensions]]
+type = "end_use"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "model"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "scenario"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "weather"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "model_year"
+dimension_id = "2012_model_year__cd4ea2cf-aa79-4260-b143-3b68b59d6667"
+version = "1.0.0"
+
+[[dimensions]]
+type = "time"
+dimension_id = ""
+version = ""
+
+# [metadata]
+# coverage_year = 2012
+# description = "commercial.dsg is the dsgrid v0.2.0 file output for the commercial sector. This dataset is being used to prototype comstock inputs"
+# geographic_resolution = "County"
+# geographic_scope = "CONUS"
+# notes = ""
+# origin_creator = "Elaine Hale, NREL"
+# origin_contributors = "Meghan Mooney"
+# origin_organization = "NREL"
+# origin_date = "06/17/2018"
+# origin_project = "Electrification Futures Study"
+# tags = []
+# data_class = low
