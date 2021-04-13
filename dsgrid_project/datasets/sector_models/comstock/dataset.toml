@@ -30,7 +30,7 @@ dimension_id = ""
 version = ""
 
 [[dimensions]]
-type = "model"
+type = "data_source"
 dimension_id = ""
 version = ""
 
@@ -56,14 +56,14 @@ version = ""
 
 # [metadata]
 # coverage_year = 2012
-# description = "commercial.dsg is the dsgrid v0.2.0 file output for the commercial sector. This dataset is being used to prototype comstock inputs"
-# geographic_resolution = "County"
-# geographic_scope = "CONUS"
+# description = ""
+# geographic_resolution = ""
+# geographic_scope = ""
 # notes = ""
-# origin_creator = "Elaine Hale, NREL"
-# origin_contributors = "Meghan Mooney"
+# origin_creator = ""
+# origin_contributors = [""] # list of other contributors first and last name
 # origin_organization = "NREL"
-# origin_date = "06/17/2018"
-# origin_project = "Electrification Futures Study"
-# tags = []
-# data_class = low
+# origin_date =  # e.g., "06/17/2018"
+# origin_project = ""
+# tags = [""]
+# data_class = "low"

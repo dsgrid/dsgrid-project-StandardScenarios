@@ -23,25 +23,26 @@ The project config is the the nucleus of any dsgrid project; it defines the inpu
 
 The project config provides the following details:
 - `project_id`: Unique Project ID that is Project-specific (e.g. "standard-scenarios-2021")
-- `project_name`: A project name to accompany the ID. Optional.
-- `project_description`: A detailed project description.
+- `name`: A project name to accompany the ID. Optional.
+- `description`: A detailed project description.
 - [`input_datasets`]: List of input datasets. Each list contains the following details:
   - `dataset_id`: a unique and project-specific dataset id
   - `dataset_type`: dataset type setting; Options(`sector_model`, `historical`, `benchmark`)
-  - `model_name`: model name (e.g., "ComStock")
-  - `model_sector` = model sector ID
+  - `data_source`: Data source or model name (e.g., "ComStock")
+  - `version`: Optional. Defautl
 - `[dimensions]`: List of project-define dimensions. Includes `Project Dimensions` and `Supplemental Dimensions`. Each list contains either:
-  1. `[Project Dimensions]`: list of base-level Project Dimensions. All input datasets must match the Project Dimensions exactly or provide a mapping from the dataset's dimension to Project Dimension. All 9 project dimensions must be defined here. No duplicate dimension types are allowed.
-  2. `[Supplemental Dimensions]`: list of additional Supplemental Dimensions to support for querying. Duplicate dimension types are allowed.
+  1. `[project_dimensions]`: list of base-level Project Dimensions. All input datasets must match the Project Dimensions exactly or provide a mapping from the dataset's dimension to Project Dimension. All 9 project dimensions must be defined here. No duplicate dimension types are allowed.
+  2. `[supplemental_dimensions]`: list of additional Supplemental Dimensions to support for querying. Duplicate dimension types are allowed.
+   
   Each dimension in the lists must have the following details:
-   - `type`: dimension type. Options(`sector`, `subsector`, `geography`, `enduse`, `time`, `model`, `model_year`, `weather_year`, `scenario`)
-   - `dimension_id`: the dimension-registry UID
+   - `type`: dimension type. Options(`sector`, `subsector`, `geography`, `end_use`, `time`, `data_source`, `model_year`, `weather_year`, `scenario`)
+   - `dimension_id`: the dimension-registry UUID
    - `version`: the dimension record version association with the dimension_id to use. Optional. If no version is defined, then the latest version is used.
 
 ## 💾 Dataset
 There are three dataset types:
 1. Benchmark
-2. Historic
+2. Historical
 3. Sector Model
 
 Datasets can be registered outside of a project, however, to be used by a project, they must be submitted to the project and pass all project validations/meet all project expectations. 
@@ -52,7 +53,7 @@ dsgrid_project/
 ├── datasets                                # datasets organized by type (level1)
 │   ├── benchmark
 │       └── ...
-│   ├── historic
+│   ├── historical
 │       └── ...
 │   └── sector_models
 │       ├── comstock                        # datasets organized further for each dataset source (level2)
@@ -69,13 +70,13 @@ dsgrid_project/
 A dataset config is required for each input dataset. The config must contain the following fields:
 - `dataset_id`: Unique dataset ID (project specific is prefered). For posterity's sake, the dataset_id cannot be the same as the model_name.
 - `dataset_type`: Data set type. Options=(`"benchmark"`, `"historical"`, `"sector_model"`)
-- `model_name`: Model or dataset source name, e.g., "ComStock"
+- `data_source`: Model or dataset source name, e.g., "ComStock"
 - `path`: Dsgrid dataset S3 reigistry path of the dataset
 - `description`: Detailed description of dataset 
 - `[[dimensions]]`: List of dataset dimensions. Must define all 9 dimensions. For each dimension list, the following fields are required: 
-  - `type` = Dimension type. Options=(`geography`, `sector`, `subsector`, `enduse`, `model_year`, `scenario`, `model`, `time`)
-  - `dimension_id`: Dimension registry UID, e.g. "county__58f264b4-b83d-4554-96d0-1349852ff03d"
-  - `version`: Dimension registry UID version
+  - `type` = Dimension type. Options=(`geography`, `sector`, `subsector`, `end_use`, `model_year`, `scenario`, `data_source`, `time`)
+  - `dimension_id`: Dimension registry UUID, e.g. "county__58f264b4-b83d-4554-96d0-1349852ff03d"
+  - `version`: Dimension registry UUID version
 - `metadata`: TBD. metadata information such as origin_date, creator, contacts, organization, tags, etc. *
 
 ## 🧬 Dimension
@@ -85,13 +86,14 @@ There are **9 dimension types** for dsgrid data:
 1. `geography`
 2. `sector`
 3. `subsector`
-4. `enduse`
+4. `end_use`
 5. `time`
-6. `model_year`
-7. `scenario`
-8. `model`
+6. `data_source`
+7. `model_year`
+8. `scenario`
+9. `weather_year`
 
-All 9 dimension types must be defined for all projects and datasets. To define a dimension for a project or dataset, it must registered to the dsgrid dimension registry and the registery UID must be provided in the project.toml or dataset.toml configuration file.
+All 9 dimension types must be defined for all projects and datasets. To define a dimension for a project or dataset, it must registered to the dsgrid dimension registry and the registery UUID must be provided in the project.toml or dataset.toml configuration file.
 
 **Dimension (instance)**
 Dimensions are instances of one of the 9 Dimension Types (e.g., Counties would be an instance of the Geography Dimension Type). At a minimum, dimensions specify their type, have an id, a name, and a set of dimension records. Everything but the dimension records is defined in the dimension config.
@@ -117,16 +119,16 @@ All dimensions must have a dimension record file (csv or json) that enumerates a
 #### Dimension Record Config (dimensions.toml)
 This is dimension configuration file used to register *new* dsgrid dimension records. If a dimension has already been registered previously (e.g., for another project), there is no need to define them in the dimension configuration here.
 
-Technically, one or many dimension configuration files can be created for projects and datasets, however, the dsgrid team recommends that project dimension configs be defined at the project-level in `dsgrid-project/dimensions.toml` while dataset-specific dimension configurations be defined at the dataset level, e.g. `./datasets/comstock/dimensions.toml`. Once a dimension has been registered, a unique UID is generated; this UID is then specified in the `project.toml`. The CLI `dsgrid register dimensions` command outputs a file called `dimension_with_assigned_id.toml` which also lists all of the dimension-UIDs registered.
+Technically, one or many dimension configuration files can be created for projects and datasets, however, the dsgrid team recommends that project dimension configs be defined at the project-level in `dsgrid-project/dimensions.toml` while dataset-specific dimension configurations be defined at the dataset level, e.g. `./datasets/comstock/dimensions.toml`. Once a dimension has been registered, a unique UUID is generated; this UUID is then specified in the `project.toml`. The CLI `dsgrid register dimensions` command outputs a file called `dimension_with_assigned_id.toml` which also lists all of the dimension-UUIDs registered.
 
 The dimension config defines the following for each dimension:
 
 *If dimension type != time:*
-- `type`: Non-Time Dimension Type. Options=(`geography`, `sector`, `subsector`, `enduse`, `model_year`, `scenario`, `model`)
-- `name`: Detailed (reusable/memorable) dimension record name to be used in the dimension registry
-- `file`: local file path in the project repository with the dimension records (csv or json). e.g., "dimensions/models.csv"
+- `type`: Non-Time Dimension Type. Options=(`geography`, `sector`, `subsector`, `end_use`, `model_year`, `scenario`, `data_source`)
+- `name`: Detailed (reusable/memorable) dimension record name to be used in the dimension registry as well as the prefix to the dimensin registry UUID.
+- `file`: local file path in the project repository with the dimension records (csv or json). e.g., "dimensions/scenarios.csv"
 - `module`: Python module with the dimension pydantic model. Optional. If none, the default is "dsgrid.dimension.standard". Users have the ability to supply their own module if the dimension record fields differ from what is supported by dsgrid.dimension.standard.
-- `class`: Dimension model class name. Optional; defualt class name uses the name of the dimension. ⚠️ @dtom: Redesign needed here for defualt name? ⚠️ 
+- `class`: Dimension model class name. Optional; default class name uses the name of the dimension. ⚠️ @dtom: Redesign needed here for default name? ⚠️ 
 - `description`: Description of dimension record, this gets stored in both dimension config file and dimension registry
 - `trivial`: Boolean flag for if the dimension is trivial (i.e., if it is a 1-element dimension)
 

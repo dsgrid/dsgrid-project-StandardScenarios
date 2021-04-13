@@ -64,14 +64,14 @@ version = ""
 [[dimensions.project_dimensions]]
 # required: model year maps to [scenario, weather, sector, model]
 type = "model_year"
-dimension_id = "2012_model_year__cd4ea2cf-aa79-4260-b143-3b68b59d6667"
-version = "1.0.0"
+dimension_id = ""
+version = ""
 
 [[dimensions.project_dimensions]]
 # required: scenario maps to [model, weather]
 type = "scenario"
-dimension_id = "efs_scenario__39dd5b01-15ca-4eca-af89-aaea3ec75761"
-version = "1.0.0"
+dimension_id = ""
+version = ""
 
 [[dimensions.project_dimensions]] # TODO
 # model maps to [model_year, sector, subsector, enduse, scenario]
@@ -92,15 +92,15 @@ version = ""
 # TODO: these all should REQUIRE mappings to project level dimension of the same type
 [[dimensions.supplemental_dimensions]]
 type = "geography"
-dimension_id = "state__5a8732f6-964f-4ab7-b330-3d8bf15c54e5"
-version = "1.0.0"
+dimension_id = ""
+version = ""
 
 [[dimensions.supplemental_dimensions]]
 type = "geography"
-dimension_id = "census_division__6a9ca77d-e0d4-4fef-8868-e14ae46e04a9"
-version = "1.0.0"
+dimension_id = ""
+version = ""
 
 [[dimensions.supplemental_dimensions]]
 type = "geography"
-dimension_id = "census_region__48f68d53-e3f9-4307-a19d-c7c133bad7fe"
-version = "1.0.0"
+dimension_id = ""
+version = ""

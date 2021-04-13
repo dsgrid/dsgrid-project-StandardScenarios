@@ -3,15 +3,15 @@
 # ------------------------------------------------------
 [[dimensions]]
 type = "geography"
-name = "County"
+name = "US-County-Census2010"
 file = "dimensions/counties.csv"
 description = """
-US counties
+US counties, Census 2010 vintage, no territories
 """
 
 [[dimensions]]
 type = "sector"
-name = "EFS Sector"
+name = "Standard-Scenarios-2021-Sectors--Trans-Only"
 file = "dimensions/sectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Sector"
@@ -21,7 +21,7 @@ dsgrid Standard Scenarios 2021 Sectors; Transportation only
 
 [[dimensions]]
 type = "subsector"
-name = "Detailed Subsectors"
+name = "Standard-Scenarios-2021-Detailed-Subsectors--Trans-Only"
 file = "dimensions/subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "SubSector"
@@ -31,7 +31,7 @@ dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
 
 [[dimensions]]
 type = "end_use"
-name = "Detailed End Uses"
+name = "Standard-Scenarios-2021-Detailed-End-Uses--Trans-Only"
 file = "dimensions/enduses.csv"
 module = "dsgrid.dimension.standard"
 class = "EndUse"
@@ -41,7 +41,7 @@ dsgrid Standard Scenarios 2021 End Uses; Transportation only
 
 [[dimensions]]
 type = "weather"
-name = "2012 Weather Year"
+name = "2012-Weather-Year"
 file = "dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
 class = "Weather"
@@ -51,7 +51,7 @@ Weather year, 2012 only
 
 [[dimensions]]
 type = "model_year"
-name = "2012 Model Year"
+name = "2012-Model-Year"
 file = "dimensions/model_years.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
@@ -61,7 +61,7 @@ Model year, 2012 only
 
 [[dimensions]]
 type = "scenario"
-name = "EFS Scenario"
+name = "BaseScenario"
 file = "dimensions/scenarios.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
@@ -70,8 +70,8 @@ base scenario only
 """
 
 [[dimensions]]
-type = "model"
-name = "EFS Models"
+type = "data_source"
+name = "Standard-Scenarios-2021-Models--TEMPO-Only"
 file = "dimensions/models.csv"
 module = "dsgrid.dimension.standard"
 class = "Model"
@@ -100,7 +100,7 @@ Time dimension, 2012 hourly PST, hour-beginning, no DST, no Leap Day, mean value
 # ------------------------------------------------------
 [[dimensions]]
 type = "geography"
-name = "State"
+name = "US-State"
 file = "dimensions/supplemental/states.csv"
 description = """
 US states
@@ -108,7 +108,7 @@ US states
 
 [[dimensions]]
 type = "geography"
-name = "Census Division"
+name = "Census-Division-v2010"
 class = "CensusDivision"
 file = "dimensions/supplemental/census_divisions.csv"
 description = """
@@ -117,9 +117,9 @@ US census divisions
 
 [[dimensions]]
 type = "geography"
-name = "Census Region"
+name = "Census-Region-v2010"
 class = "CensusRegion"
 file = "dimensions/supplemental/census_regions.csv"
 description = """
-US census regions
+US census regions, vintage 2010
 """
