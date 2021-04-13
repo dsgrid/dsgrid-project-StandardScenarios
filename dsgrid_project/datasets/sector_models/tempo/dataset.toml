@@ -68,3 +68,5 @@ version = ""
 # origin_project = ""
 # tags = [""]
 # data_class = "low"
+
+# @Brian, please add any other metadata fields (as comments above) that you think would be helpful to have by default.
