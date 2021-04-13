@@ -1,0 +1,103 @@
+# dataset configuration file
+
+# project_id = "dsgrid_test_v2.0.0" # I don't think this is needed, just the registry which is based on project_version
+# project_version = "test-v41.0.0"
+
+dataset_id = "ferc714"
+dataset_type = "historical"
+model_name = "FERC 714 Historical Load Profiles"  # TODO: this isn't really needed either?
+model_sector = 'ferc714'  # TODO this may not be needed
+path = "s3://nrel-dsgrid-scratch/dsgrid_v2.0.0/ferc714/"
+description = """
+Historical hourly load profiles (2006-2020), updated annually
+"""
+
+"""
+type: class of dim
+name: explanation of dim
+TODO: 
+   - where do we define what types of dimension mapping files to expect in the dataset's path?
+   - where do we define the project dimension associations? this has to exist outside in the submittal
+   - is it OK for the dataset to have the same class names as the project's? 
+
+   - if the project requires a disaggregation (e.g., industrial), this needs to be in the files as a project_dimension_mapping.parquet of some form OR it needs to live in some other folder that gets associated to the project in some way.
+"""
+
+[[dimensions]] # same as project ATM
+type = 'geography'
+name = "Planning Area"
+file = "dimensions/planning_areas.csv"
+
+[[dimensions]] # same as project ATM
+type = 'sector'
+name = "Sector" # single field, no sector
+file = "dimensions/sectors.csv"
+module = "dsgrid.dimension.standard"
+class = "Sector"
+
+[[dimensions]] # same as project ATM
+type = 'subsector'
+name = "Subsector" # single field, no subsector
+file = "dimensions/subsectors.csv"
+module = "dsgrid.dimension.standard"
+class = "SubSector"
+
+[[dimensions]]
+type = 'end_use'
+name = "End Use" # single field, no end use
+file = "dimensions/enduses.csv"
+module = "dsgrid.dimension.standard"
+class = "EndUse"
+
+[[dimensions]]
+# def: the underlying model or root source of the dataset relative to the project, e.g. 'ComStock' within 'EFS Models'
+type = 'model'
+name = "Historical" # single field
+file = "dimensions/models.csv"
+module = "dsgrid.dimension.standard"
+class = "Model"
+
+[[dimensions]]
+type = 'scenario'
+name = "Standard Scenario" # single field
+file = "dimensions/standard_scenarios.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+
+[[dimensions]]
+type = 'weather'
+name = "Historical Weather Year" # historical data doesn't have weather, but can map to historcal weather files
+file = "dimensions/weather_years.csv"
+module = "dsgrid.dimension.standard"
+class = "Weather"
+
+[[dimensions]]
+type = 'model_year'
+name = "Historical Model Year" # see time # 2006-2020
+file = "dimensions/model_years.csv"
+module = "dsgrid.dimension.standard"
+class = "ModelYear"
+
+[[dimensions]]
+# Q: what if diff region (e.g. state) has diff tz? If all converted to UTC, is st and et the min and max of the timestamps (which means it would span out over a year)?
+# Q: what about for data with several model years but with incomplete annual coverage, e.g. a dataset that starts from 03/2011-12/2012?
+type = 'time'
+name = "Time"
+start = "2006-01-01 00:00:00"
+end = "2020-01-01 09:00:00"
+frequency = "1 hour"
+includes_dst = false
+# leap_day_adjustment = ""
+period = "period_beginning" 
+str_format = "%Y-%m-%d %H:%M:%S"
+timezone = "UTC"
+value_representation = "mean"  
+
+# [metadata]
+# coverage_year = 2006-2020
+# description = "Historical hourly load by Planning Area from FERC Form 714"
+# geographic_scope = "US"
+# notes = ""
+# origin_creator = "xxx, NREL"
+# origin_date = "03/18/2018"
+# origin_project = "dsgrid v2"
