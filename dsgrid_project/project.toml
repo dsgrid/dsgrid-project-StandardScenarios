@@ -11,21 +11,21 @@ description = """dsgrid Standard Scenarios project FY21"""
 benchmark = [] # ignoring this for now
 historical = [] # ignoring this for now
 
-[[input_datasets.datasets]]
-dataset_id = "comstock-standard-scenarios-2021"
-version = "1.0.0"
-dataset_type = "sector_model"
-model_sector = "cld"
+# [[input_datasets.datasets]]
+# dataset_id = "comstock-standard-scenarios-2021"
+# version = "1.0.0"
+# dataset_type = "sector_model"
+# model_sector = "cld"
 
-[[input_datasets.datasets]]
-dataset_id = "resstock-standard-scenarios-2021"
-version = "1.0.0"
-dataset_type = "sector_model"
-model_sector = "rld"
+# [[input_datasets.datasets]]
+# dataset_id = "resstock-standard-scenarios-2021"
+# version = "1.0.0"
+# dataset_type = "sector_model"
+# model_sector = "rld"
 
 [[input_datasets.datasets]]
 dataset_id = "tempo-standard-scenarios-2021"
-version = "1.0.0"
+version = "1.0.0" 
 dataset_type = "sector_model"
 model_sector = "tld"
 
@@ -33,10 +33,10 @@ model_sector = "tld"
 # ------------------------------------------------------
 # Project Dimensions
 # ------------------------------------------------------
-[[dimensions.project_dimensions]]
+[[dimensions.project_dimensions]] # TODO
 type = "geography"
-dimension_id = "county__58f264b4-b83d-4554-96d0-1349852ff03d"
-version = "1.0.0"
+dimension_id = ""
+version = ""
 
 [[dimensions.project_dimensions]] # TODO
 type = "sector"
@@ -50,7 +50,7 @@ dimension_id = ""
 version = ""
 
 [[dimensions.project_dimensions]] # TODO
-# required: end use maps to [sector, subsector, model]
+# required: end use maps to [sector, subsector, data_source]
 type = "end_use"
 dimension_id = ""
 version = ""
@@ -62,20 +62,20 @@ dimension_id = ""
 version = ""
 
 [[dimensions.project_dimensions]]
-# required: model year maps to [scenario, weather, sector, model]
+# required: data_source year maps to [scenario, weather, sector, data_source]
 type = "model_year"
 dimension_id = ""
 version = ""
 
 [[dimensions.project_dimensions]]
-# required: scenario maps to [model, weather]
+# required: scenario maps to [data_source, weather]
 type = "scenario"
 dimension_id = ""
 version = ""
 
 [[dimensions.project_dimensions]] # TODO
-# model maps to [model_year, sector, subsector, enduse, scenario]
-type = "model"
+# data_source maps to [model_year, sector, subsector, enduse, scenario]
+type = "data_source"
 dimension_id = ""
 version = ""
 
