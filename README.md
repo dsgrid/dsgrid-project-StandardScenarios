@@ -41,7 +41,7 @@ The project config provides the following details:
 ## 💾 Dataset
 There are three dataset types:
 1. Benchmark
-2. Historic
+2. Historical
 3. Sector Model
 
 Datasets can be registered outside of a project, however, to be used by a project, they must be submitted to the project and pass all project validations/meet all project expectations. 
@@ -52,7 +52,7 @@ dsgrid_project/
 ├── datasets                                # datasets organized by type (level1)
 │   ├── benchmark
 │       └── ...
-│   ├── historic
+│   ├── historical
 │       └── ...
 │   └── sector_models
 │       ├── comstock                        # datasets organized further for each dataset source (level2)
