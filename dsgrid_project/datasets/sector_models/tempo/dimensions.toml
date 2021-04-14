@@ -1,1 +1,79 @@
-# please refer to the project's dimensions.toml for an example of how to set up this config
+
+
+[[dimensions]]
+type = "geography"
+name = "Region"
+file = "../../../dimensions/counties.csv" #FIXME: What is the vintage of TEMPO counties?
+description = """
+US counties.
+"""
+
+[[dimensions]]
+type = "time"
+name = "Year"
+start = 2018
+end = 2050
+frequence = "1 year"
+includes_dst = false
+period = "period_ending" #FIXME:What are the valid values here?
+str_format = "%Y"
+timezone = "UTC" #FIXME: Discuss.
+value_representation = "total" #FIXME: Discuss.
+description = """
+The year.
+"""
+
+[[dimensions]]
+type = "sector" #FIXME: Discuss.
+name = "Composition"
+file = "dimensions/composition.csv"
+description = """
+Household composition.
+"""
+
+[[dimensions]]
+type = "sector"
+name = "Income"
+file = "dimensions/income.csv"
+description = """
+Income range.
+"""
+
+[[dimensions]]
+type = "sector"
+name = "Urbanity"
+file = "dimensions/urbanity.csv"
+description = """
+Urban classifications, according to [Claritas definitions](https://healthpolicy.ucla.edu/chis/data/public-use-data-file/Documents/2003PUF_constructs_c.pdf#page=24).
+"""
+
+[[dimensions]]
+type = "time"
+name = "Hour_of_Week"
+start = 0
+end = 168
+frequence = "real number" #FIXME: TEMPO output does not have a frequency for hour of week.
+includes_dst = false
+period = "period_ending" #FIXME:What are the valid values here?
+str_format = "%H" # FIXME: TEMPO reports hours as real numbers.
+timezone = "UTC" #FIXME: n/a.
+value_representation = "total" #FIXME: Discuss.
+description = """
+Hour of week.
+"""
+
+[[dimensions]]
+type = "sector"
+name = "Class"
+file = "dimensions/class.csv"
+description = """
+Passenger vehicle class.
+"""
+
+[[dimensions]]
+type = "sector"
+name = "Tech"
+file = "dimensions/tech.csv"
+description = """
+Vehicle technology.
+"""

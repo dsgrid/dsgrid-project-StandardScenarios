@@ -1,0 +1,19 @@
+id,name,units,fuel_id
+Charge_kWh,"State of Charge",kWh,Electricity_Commercial
+Charge_kWh,"State of Charge",kWh,Electricity_DCFC
+Charge_kWh,"State of Charge",kWh,Electricity_Residential
+Charger_GGE,"Charger Energy Consumption",GGE,Electricity_Commercial
+Charger_GGE,"Charger Energy Consumption",GGE,Electricity_DCFC
+Charger_GGE,"Charger Energy Consumption",GGE,Electricity_Residential
+Charging_kW,"Charging Rate",kW,Electricity_Commercial
+Charging_kW,"Charging Rate",kW,Electricity_DCFC
+Charging_kW,"Charging Rate",kW,Electricity_Residential
+LDVMiles,"Trips Distance",mile,Electricity_Commercial
+LDVMiles,"Trips Distance",mile,Electricity_DCFC
+LDVMiles,"Trips Distance",mile,Electricity_Residential
+TripDuration,"Trips Duration",hour,Electricity_Commercial
+TripDuration,"Trips Duration",hour,Electricity_DCFC
+TripDuration,"Trips Duration",hour,Electricity_Residential
+Trip_GGE,"BEV Energy Consumption",GGE,Electricity_Commercial
+Trip_GGE,"BEV Energy Consumption",GGE,Electricity_DCFC
+Trip_GGE,"BEV Energy Consumption",GGE,Electricity_Residential
