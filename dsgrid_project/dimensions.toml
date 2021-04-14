@@ -58,7 +58,7 @@ file = "dimensions/model_years.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
 description = """
-Model year, 2012 only
+Model year, 2010-2050, every other year
 """
 
 [[dimensions]]
