@@ -24,7 +24,7 @@ The year.
 """
 
 [[dimensions]]
-type = "sector" #FIXME: Discuss.
+type = "intra-subsector" #FIXME: Discuss.
 name = "Composition"
 file = "dimensions/composition.csv"
 description = """
@@ -32,7 +32,7 @@ Household composition.
 """
 
 [[dimensions]]
-type = "sector"
+type = "intra-subsector"
 name = "Income"
 file = "dimensions/income.csv"
 description = """
@@ -40,7 +40,7 @@ Income range.
 """
 
 [[dimensions]]
-type = "sector"
+type = "intra-subsector"
 name = "Urbanity"
 file = "dimensions/urbanity.csv"
 description = """
@@ -63,7 +63,7 @@ Hour of week.
 """
 
 [[dimensions]]
-type = "sector"
+type = "intra-subsector"
 name = "Class"
 file = "dimensions/class.csv"
 description = """
@@ -71,7 +71,7 @@ Passenger vehicle class.
 """
 
 [[dimensions]]
-type = "sector"
+type = "intra-subsector"
 name = "Tech"
 file = "dimensions/tech.csv"
 description = """
