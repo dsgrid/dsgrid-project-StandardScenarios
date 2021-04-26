@@ -8,58 +8,58 @@
 dataset_id = "tempo-standard-scenarios-2021"
 dataset_type = "sector_model"
 model_name = "TEMPO"
-path = "s3://" # FIXME
+path = "s3://" # TODO: The registration process will provide this.
 description = """
 TEMPO county-level results for BEV charging.
 """
 
 [[dimensions]]
 type = "geography"
-dimension_id = "" # FIXME: How are UUIDs generated? Where is the registry?
-version = "" # FIXME: Are we using semantic versioning?
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
 type = "sector" # FIXME: TEMPO is just the transportation sector.
-dimension_id = ""
-version = ""
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
-type = "subsector" # FIXME: Would this be something like "LDV BEV"?
-dimension_id = ""
-version = "1.0.0"
+type = "subsector"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
 type = "end_use"
-dimension_id = ""
-version = ""
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
-type = "data_source" # FIXME: Would this just be "TEMPO"?
-dimension_id = ""
-version = ""
+type = "time"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
-type = "scenario" # FIXME: Discuss.
-dimension_id = ""
-version = ""
+type = "data_source"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
-type = "weather" # FIXME: Coordinate w/ Arthur on this.
-dimension_id = ""
-version = ""
+type = "model_year"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
-type = "model_year" # FIXME: Historically, we sum over this in TEMPO output.
-dimension_id = ""
-version = ""
+type = "scenario"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
-type = "time" # FIXME: TEMPO has two time dimensions: year and hour of week.
-dimension_id = ""
-version = ""
+type = "weather_year"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[metadata]]
-coverage_year = 2012 # FIXME: Discuss.
+coverage_year = "2018-2050"
 description = "TEMPO BEV results."
 geographic_resolution = "County"
 geographic_scope = "United States"

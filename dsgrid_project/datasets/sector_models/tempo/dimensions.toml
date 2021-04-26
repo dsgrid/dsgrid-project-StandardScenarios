@@ -2,78 +2,130 @@
 
 [[dimensions]]
 type = "geography"
-name = "Region"
+name = "County"
 file = "../../../dimensions/counties.csv" #FIXME: What is the vintage of TEMPO counties?
 description = """
 US counties.
 """
 
 [[dimensions]]
-type = "time"
-name = "Year"
-start = 2018
-end = 2050
-frequence = "1 year"
-includes_dst = false
-period = "period_ending" #FIXME:What are the valid values here?
-str_format = "%Y"
-timezone = "UTC" #FIXME: Discuss.
-value_representation = "total" #FIXME: Discuss.
+type = "sector"
+name = "TEMPO LDV BEV Charging"
+file = "dimensions/tempo.csv"
 description = """
-The year.
+TEMPO provides LDV BEV charging profiles.
+"""
+trivial = true
+
+[[dimensions]]
+type = "subsector"
+name = "TEMPO Bin"
+file = "dimensions/bin.csv"
+description = """
+TEMPO demographic/geographic/vehicle bins.
+
+This is a cross-join of the following supplemental dimensions:
+* Composition
+* Income
+* Urbanity
+* Class
+* Tech
 """
 
 [[dimensions]]
-type = "intra-subsector" #FIXME: Discuss.
+type = "subsector"
 name = "Composition"
-file = "dimensions/composition.csv"
+file = "dimensions/supplemental/composition.csv"
 description = """
 Household composition.
 """
 
 [[dimensions]]
-type = "intra-subsector"
+type = "subsector"
 name = "Income"
-file = "dimensions/income.csv"
+file = "dimensions/supplemental/income.csv"
 description = """
 Income range.
 """
 
 [[dimensions]]
-type = "intra-subsector"
+type = "subsector"
 name = "Urbanity"
-file = "dimensions/urbanity.csv"
+file = "dimensions/supplemental/urbanity.csv"
 description = """
 Urban classifications, according to [Claritas definitions](https://healthpolicy.ucla.edu/chis/data/public-use-data-file/Documents/2003PUF_constructs_c.pdf#page=24).
 """
 
 [[dimensions]]
-type = "time"
-name = "Hour_of_Week"
-start = 0
-end = 168
-frequence = "real number" #FIXME: TEMPO output does not have a frequency for hour of week.
-includes_dst = false
-period = "period_ending" #FIXME:What are the valid values here?
-str_format = "%H" # FIXME: TEMPO reports hours as real numbers.
-timezone = "UTC" #FIXME: n/a.
-value_representation = "total" #FIXME: Discuss.
-description = """
-Hour of week.
-"""
-
-[[dimensions]]
-type = "intra-subsector"
+type = "subsector"
 name = "Class"
-file = "dimensions/class.csv"
+file = "dimensions/supplemental/class.csv"
 description = """
 Passenger vehicle class.
 """
 
 [[dimensions]]
-type = "intra-subsector"
+type = "subsector"
 name = "Tech"
-file = "dimensions/tech.csv"
+file = "dimensions/supplemental/tech.csv"
 description = """
 Vehicle technology.
 """
+
+[[dimensions]]
+type = "end_use"
+name = "TEMPO LDV BEV Usage"
+file = "dimensions/end_use.csv"
+description = """
+Fuels used by TEMPO BEVs.
+"""
+
+[[dimensions]]
+type = "time"
+name = "Time of Week, by Month"
+start = "Jan Mon 00:00:00"
+end = "Dec Sun 23:59:59"
+frequence = "1 second"
+includes_dst = false
+period = "period_ending"
+str_format = "%a %w %X"
+timezone = "LOCAL"
+value_representation = "sum"
+description = """
+Month, day of week, and time of day.
+"""
+
+[[dimensions]]
+type = "data_source"
+name = "TEMPO Model"
+file = "dimensions/model.csv"
+description = """
+Weather year used by TEMPO.
+"""
+trivial = true
+
+[[dimensions]]
+type = "model_year"
+name = "TEMPO Model Year"
+file = "dimensions/year.csv"
+description = """
+TEMPO modeling years.
+"""
+
+[[dimensions]]
+type = "scenario"
+name = "TEMPO Scenario"
+file = "dimensions/scenario.csv"
+description = """
+TEMPO base scenario only.
+"""
+trivial = true
+
+[[dimensions]]
+type = "weather_year"
+name = "TEMPO Weather Year"
+file = "dimensions/weather.csv"
+description = """
+Weather year used by TEMPO.
+"""
+trivial = true
