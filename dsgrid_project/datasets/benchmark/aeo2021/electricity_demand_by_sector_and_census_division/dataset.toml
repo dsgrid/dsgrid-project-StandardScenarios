@@ -6,7 +6,7 @@ electricity demand and loss (Quads) from 2020-2050 by sector and census division
 """
 path = "s3://nrel-dsgrid-registry/data/aeo_2021_electricity_and_loss_by_sector_and_census_division/1.0.0"
 [[dimensions]]
-dimension_id = ""
+dimension_id = "us_census_divisions__6e2dcd43-5f14-45b1-b850-f289673d89c7"
 type = "geography"
 version = "1.0.0"
 

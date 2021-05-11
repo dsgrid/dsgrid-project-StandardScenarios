@@ -1,40 +1,25 @@
 # ------------------------------------------------------
 # Dataset Dimensions
 # ------------------------------------------------------
-[[dimensions]]
-class = "Geography"
-description = """US only"""
-file = "dimensions/us_only.csv"
-module = "dsgrid.dimension.standard"
-name = "US only"
-type = "geography"
+# [[dimensions]]
+# name = "United States Excluding Territories"
+# type = "geography"
+
+# [[dimensions]]
+# name = "Commercial"
+# type = "sector"
+
+# [[dimensions]]
+# name = "All Subsectors Combined"
+# type = "subsector"
 
 [[dimensions]]
-class = "Sector"
-description = """EIA AEO electricity demand and loss: commercial sector only
-"""
-file = "dimensions/sector_commercial_only.csv"
-module = "dsgrid.dimension.standard"
-name = "Commercial only"
-type = "sector"
-
-[[dimensions]]
-class = "SubSector"
-description = """EIA AEO electricity demand and loss: no sub-sector
-"""
-file = "dimensions/eia_aeo_electricity_demand_subsectors.csv"
-module = "dsgrid.dimension.standard"
-name = "EIA AEO electricity demand subsectors"
-type = "subsector"
-
-[[dimensions]]
-# required: end use maps to [sector, subsector, model]
 class = "EndUse"
-description = """EIA AEO electricity demand and loss: commercial end uses (valid for AEO 2021+)
+description = """EIA AEO electricity demand and loss: commercial end uses (valid for AEO 2021 and up)
 """
-file = "dimensions/eia_aeo_electricity_demand_commercial_enduses_valid_for_2021_plus.csv"
+file = "dimensions/eia_aeo_commercial_enduses_valid_for_post_2020.csv"
 module = "dsgrid.dimension.standard"
-name = "EIA AEO electricity demandend uses"
+name = "EIA AEO Commercial End Uses-Valid Post-2020"
 type = "end_use"
 
 [[dimensions]]
@@ -44,7 +29,7 @@ EIA AEO weather years: 2020 - 2050
 """
 file = "dimensions/weather_years_2020_to_2050.csv"
 module = "dsgrid.dimension.standard"
-name = "EIA AEO Weather Years"
+name = "EIA AEO Weather Years 2020-2050"
 type = "weather_year"
 
 [[dimensions]]
@@ -54,27 +39,21 @@ EIA AEO model years: 2020 - 2050
 """
 file = "dimensions/model_years_2020_to_2050.csv"
 module = "dsgrid.dimension.standard"
-name = "EIA AEO Model Years"
+name = "EIA AEO Model Years 2020-2050"
 type = "model_year"
 
-[[dimensions]]
-class = "Scenario"
-description = """
-Baseline scenario
-"""
-file = "dimensions/scenarios.csv"
-module = "dsgrid.dimension.standard"
-name = "Baseline Scenario"
-type = "scenario"
+# [[dimensions]]
+# name = "EIA AEO Reference"
+# type = "scenario"
 
 [[dimensions]]
 class = "DataSource"
 description = """
 EIA AEO 2021 electricity demand projection
 """
-file = "dimensions/eia_aeo_2021_data_sources.csv"
+file = "dimensions/data_source_eia_aeo_2021.csv"
 module = "dsgrid.dimension.standard"
-name = "EIA AEO electricity demand projection"
+name = "EIA AEO 2021"
 type = "data_source"
 
 [[dimensions]]
@@ -89,38 +68,6 @@ name = "Time-2020-2050-annual"
 period = "period_beginning"
 start = "2020"
 str_format = "%Y"
-timezone = "UTC" # what should it be for year
+timezone = "UTC" #none
 type = "time"
 value_representation = "total"
-
-# ------------------------------------------------------
-# Supplemental Dimensions
-# ------------------------------------------------------
-# need to create
-# [[dimensions]]
-# class = "State"
-# description = """
-# US States
-# """
-# file = "dimensions/supplemental/states.csv"
-# module = "dsgrid.dimension.standard"
-# name = "US States"
-# type = "geography"
-
-# [[dimensions]]
-# class = "CensusDivision"
-# description = """
-# US Census Divisions
-# """
-# file = "dimensions/supplemental/census_divisions.csv"
-# name = "US Census Divisions"
-# type = "geography"
-
-# [[dimensions]]
-# class = "CensusRegion"
-# description = """
-# US Census Regions
-# """
-# file = "dimensions/supplemental/census_regions.csv"
-# name = "US Census Regions"
-# type = "geography"
