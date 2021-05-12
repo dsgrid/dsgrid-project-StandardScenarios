@@ -3,7 +3,7 @@
 [[dimensions]]
 type = "geography"
 name = "County"
-file = "../../../dimensions/counties.csv" #FIXME: What is the vintage of TEMPO counties?
+file = "dimensions/counties.csv" #FIXME: What is the vintage of TEMPO counties?
 description = """
 US counties.
 """
