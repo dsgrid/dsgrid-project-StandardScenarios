@@ -100,7 +100,7 @@ type = "data_source"
 name = "TEMPO Model"
 file = "dimensions/model.csv"
 description = """
-Weather year used by TEMPO.
+TEMPO projections.
 """
 trivial = true
 
