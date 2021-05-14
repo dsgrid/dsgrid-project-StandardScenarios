@@ -54,7 +54,7 @@ type = "weather"
 [[dimensions]]
 class = "ModelYear"
 description = """
-Model year, 2012 only
+Model year, 2010-2050, every other year
 """
 file = "dimensions/model_years.csv"
 module = "dsgrid.dimension.standard"
@@ -125,3 +125,4 @@ US Census Regions
 file = "dimensions/supplemental/census_regions.csv"
 name = "US-Census-Region"
 type = "geography"
+
