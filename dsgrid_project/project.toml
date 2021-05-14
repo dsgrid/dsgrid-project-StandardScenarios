@@ -1,8 +1,8 @@
 # TODO: This configuration is under active development. Currently it is set up for TEMPO data only but it will later be expanded to include all project configuration details.
 
-project_id = "dsgrid-standard-scenarios-2021"
-name = "dsgrid Standard Scenarios 2021"
 description = """dsgrid Standard Scenarios project FY21"""
+name = "dsgrid Standard Scenarios 2021"
+project_id = "dsgrid-standard-scenarios-2021"
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
@@ -25,63 +25,63 @@ historical = [] # ignoring this for now
 
 [[input_datasets.datasets]]
 dataset_id = "tempo-standard-scenarios-2021"
-version = "1.0.0" 
 dataset_type = "sector_model"
 model_sector = "tld"
+version = "1.0.0"
 
 [dimensions]
 # ------------------------------------------------------
-# Project Dimensions
+# Base Dimensions
 # ------------------------------------------------------
-[[dimensions.project_dimensions]] # TODO
+[[dimensions.base_dimensions]] # TODO
+dimension_id = ""
 type = "geography"
-dimension_id = ""
 version = ""
 
-[[dimensions.project_dimensions]] # TODO
+[[dimensions.base_dimensions]] # TODO
+dimension_id = ""
 type = "sector"
-dimension_id = ""
 version = ""
 
-[[dimensions.project_dimensions]] # TODO
+[[dimensions.base_dimensions]] # TODO
 # required: subsector maps to sector
+dimension_id = ""
 type = "subsector"
-dimension_id = ""
 version = ""
 
-[[dimensions.project_dimensions]] # TODO
+[[dimensions.base_dimensions]] # TODO
 # required: end use maps to [sector, subsector, data_source]
+dimension_id = ""
 type = "end_use"
-dimension_id = ""
 version = ""
 
-[[dimensions.project_dimensions]] # TODO
+[[dimensions.base_dimensions]] # TODO
 # required: weather maps to [modelyear, scenario]
+dimension_id = ""
 type = "weather"
-dimension_id = ""
 version = ""
 
-[[dimensions.project_dimensions]]
+[[dimensions.base_dimensions]]
 # required: data_source year maps to [scenario, weather, sector, data_source]
+dimension_id = ""
 type = "model_year"
-dimension_id = ""
 version = ""
 
-[[dimensions.project_dimensions]]
+[[dimensions.base_dimensions]]
 # required: scenario maps to [data_source, weather]
+dimension_id = ""
 type = "scenario"
-dimension_id = ""
 version = ""
 
-[[dimensions.project_dimensions]] # TODO
+[[dimensions.base_dimensions]] # TODO
 # data_source maps to [model_year, sector, subsector, enduse, scenario]
-type = "data_source"
 dimension_id = ""
+type = "data_source"
 version = ""
 
-[[dimensions.project_dimensions]] # TODO
-type = "time"
+[[dimensions.base_dimensions]] # TODO
 dimension_id = ""
+type = "time"
 version = ""
 
 # ------------------------------------------------------
@@ -91,16 +91,16 @@ version = ""
 # TODO: Do we really need to supply the supp dims here if they are all dsgrid standard?
 # TODO: these all should REQUIRE mappings to project level dimension of the same type
 [[dimensions.supplemental_dimensions]]
-type = "geography"
 dimension_id = ""
+type = "geography"
 version = ""
 
 [[dimensions.supplemental_dimensions]]
-type = "geography"
 dimension_id = ""
+type = "geography"
 version = ""
 
 [[dimensions.supplemental_dimensions]]
-type = "geography"
 dimension_id = ""
+type = "geography"
 version = ""

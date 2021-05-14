@@ -30,8 +30,8 @@ The project config provides the following details:
   - `dataset_type`: dataset type setting; Options(`sector_model`, `historical`, `benchmark`)
   - `data_source`: Data source or model name (e.g., "ComStock")
   - `version`: Optional. Defautl
-- `[dimensions]`: List of project-define dimensions. Includes `Project Dimensions` and `Supplemental Dimensions`. Each list contains either:
-  1. `[project_dimensions]`: list of base-level Project Dimensions. All input datasets must match the Project Dimensions exactly or provide a mapping from the dataset's dimension to Project Dimension. All 9 project dimensions must be defined here. No duplicate dimension types are allowed.
+- `[dimensions]`: List of project-define dimensions. Includes `Base Dimensions` and `Supplemental Dimensions`. Each list contains either:
+  1. `[base_dimensions]`: list of base-level Base Dimensions. All input datasets must match the Base Dimensions exactly or provide a mapping from the dataset's dimension to Project Dimension. All 9 Base Dimensions must be defined here. No duplicate dimension types are allowed.
   2. `[supplemental_dimensions]`: list of additional Supplemental Dimensions to support for querying. Duplicate dimension types are allowed.
    
   Each dimension in the lists must have the following details:
@@ -148,9 +148,9 @@ The dimension config defines the following for each dimension:
 
 ### Dimension Mappings 
 Dimension mappings help map dimensions across/within dimension stores and dimension types. dsgrid supports three different types of mappings:
-1. **Dataset-to-Project**:  Dimension mappings to translate input Dataset Dimensions to the Project Dimensions. This mapping type is for only dimensions WITHIN the same dimension type (e.g., from county to state). These are required when submitting a dataset to a project if the dataset's dimensions are different than the project's.
-2. **Project-to-Supplemental**: Dimension mappings to translate Project Dimensions to Supplemental Dimensions. This mapping type is for only dimensions WITHIN the same dimension type (e.g., from county to state). This allows us to support transformation queries for supplemental dimensions at the project level. Usually, this includes query support for aggregations or disaggregations. If disaggregation, then scaling factor may be required (TBD).
-1. **Project-to-Project**: Dimension mappings to categorize how different Project Dimensions map to other Project Dimensions. For example, not all end uses map to all sectors.
+1. **Dataset-to-Project**:  Dimension mappings to translate input Dataset Dimensions to the Base Dimensions. This mapping type is for only dimensions WITHIN the same dimension type (e.g., from county to state). These are required when submitting a dataset to a project if the dataset's dimensions are different than the project's.
+2. **Project-to-Supplemental**: Dimension mappings to translate Base Dimensions to Supplemental Dimensions. This mapping type is for only dimensions WITHIN the same dimension type (e.g., from county to state). This allows us to support transformation queries for supplemental dimensions at the project level. Usually, this includes query support for aggregations or disaggregations. If disaggregation, then scaling factor may be required (TBD).
+1. **Project-to-Project**: Dimension mappings to categorize how different Base Dimensions map to other Base Dimensions. For example, not all end uses map to all sectors.
 
 🚧🚧🚧 *NOTE: Dimension mappings are under active development. As of 4/13/21, we still need to build support for dimension mappings in the dsgrid-registry. More on this soon!* 🚧🚧🚧 
 

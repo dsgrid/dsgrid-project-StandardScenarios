@@ -1,23 +1,23 @@
 # ------------------------------------------------------
-# Project Dimensions
+# Base Dimensions
 # ------------------------------------------------------
 [[dimensions]]
-type = "geography"
-name = "US-County-Census2010"
-file = "dimensions/counties.csv"
 description = """
 US counties, Census 2010 vintage, no territories
 """
+file = "dimensions/counties.csv"
+name = "US-County-Census2010"
+type = "geography"
 
 [[dimensions]]
-type = "sector"
-name = "Standard-Scenarios-2021-Sectors--Trans-Only"
-file = "dimensions/sectors.csv"
-module = "dsgrid.dimension.standard"
 class = "Sector"
 description = """
 dsgrid Standard Scenarios 2021 Sectors; Transportation only
 """
+file = "dimensions/sectors.csv"
+module = "dsgrid.dimension.standard"
+name = "Standard-Scenarios-2021-Sectors--Trans-Only"
+type = "sector"
 
 # TODO
 # [[dimensions]]
@@ -42,86 +42,86 @@ dsgrid Standard Scenarios 2021 Sectors; Transportation only
 # """
 
 [[dimensions]]
-type = "weather"
-name = "2012-Weather-Year"
-file = "dimensions/weather_years.csv"
-module = "dsgrid.dimension.standard"
 class = "Weather"
 description = """
 Weather year, 2012 only
 """
+file = "dimensions/weather_years.csv"
+module = "dsgrid.dimension.standard"
+name = "2012-Weather-Year"
+type = "weather"
 
 [[dimensions]]
-type = "model_year"
-name = "Model-Years-2010-to-2050-with-2yr-intervals"
-file = "dimensions/model_years.csv"
-module = "dsgrid.dimension.standard"
 class = "ModelYear"
 description = """
 Model year, 2012 only
 """
+file = "dimensions/model_years.csv"
+module = "dsgrid.dimension.standard"
+name = "Model-Years-2010-to-2050-with-2yr-intervals"
+type = "model_year"
 
 [[dimensions]]
-type = "scenario"
-name = "Baseline-Scenario"
-file = "dimensions/scenarios.csv"
-module = "dsgrid.dimension.standard"
 class = "Scenario"
 description = """
 base scenario only
 """
+file = "dimensions/scenarios.csv"
+module = "dsgrid.dimension.standard"
+name = "Baseline-Scenario"
+type = "scenario"
 
 [[dimensions]]
-type = "data_source"
-name = "Standard-Scenarios-2021-DataSourcs--TEMPO-Only"
-file = "dimensions/sources.csv"
-module = "dsgrid.dimension.standard"
 class = "DataSource"
 description = """
 dsgrid Standard Scenarios 2021 Data Sources; TEMPO only
 """
+file = "dimensions/sources.csv"
+module = "dsgrid.dimension.standard"
+name = "Standard-Scenarios-2021-DataSourcs--TEMPO-Only"
+type = "data_source"
 
 [[dimensions]]
-type = "time"
-name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-mean"
-start = "2012-01-01 01:00:00"
 end = "2012-12-31 23:59:59"
 frequency = "1 hour"
 includes_dst = false
+name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-mean"
+start = "2012-01-01 01:00:00"
+type = "time"
 # leap_day_adjustment = ""
+description = """
+Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, mean value
+"""
 period = "period_beginning"
 str_format = "%Y-%m-%d %H:%M:%S"
 timezone = "UTC"
 value_representation = "mean"
-description = """
-Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, mean value
-"""
 
 # ------------------------------------------------------
 # Supplemental Dimensions
 # ------------------------------------------------------
 [[dimensions]]
-type = "geography"
-name = "US-State"
-file = "dimensions/supplemental/states.csv"
 description = """
 US States
 """
+file = "dimensions/supplemental/states.csv"
+name = "US-State"
+type = "geography"
 
 [[dimensions]]
-type = "geography"
-name = "US-Census-Division"
 class = "CensusDivision"
-file = "dimensions/supplemental/census_divisions.csv"
 description = """
 US Census Divisions
 """
+file = "dimensions/supplemental/census_divisions.csv"
+name = "US-Census-Division"
+type = "geography"
 
 [[dimensions]]
-type = "geography"
-name = "US-Census-Region"
 class = "CensusRegion"
-file = "dimensions/supplemental/census_regions.csv"
 description = """
 US Census Regions
 """
+file = "dimensions/supplemental/census_regions.csv"
+name = "US-Census-Region"
+type = "geography"
