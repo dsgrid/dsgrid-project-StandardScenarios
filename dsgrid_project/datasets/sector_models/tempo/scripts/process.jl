@@ -38,10 +38,11 @@ function quantize(df :: AbstractDataFrame; dt = 1. :: Float64, tmax = 168. :: Fl
 end
 
 
-z_raw = CSV.read("../tmp/household-ev-greedycharging.csv");
+z_raw = CSV.read("../tmp/household-ev-greedycharging.csv", types = Dict(:Region => String));
+rename!(z_raw, Dict(:Region => :geography, :Year => :model_year))
 z_raw |> names
 
-z_key = [:Composition, :Income, :Urbanity, :Class, :Tech]
+z_key = [:geography, :model_year, :Composition, :Income, :Urbanity, :Class, :Tech]
 
 z_unique = z_raw[:, z_key] |> unique;
 z_unique |> nrow
@@ -50,6 +51,8 @@ z_unique.data_id = 1:nrow(z_unique)
 
 z_lookup = @select(
   z_unique,
+  :geography,
+  :model_year,
   subsector = string.(
     :Composition,
     "+",
@@ -61,15 +64,13 @@ z_lookup = @select(
     "+",
     :Tech,
   ),
-  :data_id
+  :data_id,
 );
-z_lookup[!, :geography] .= "00000";
 
 
 z_data = @linq join(z_raw, z_unique, on=z_key, kind=:inner) |>
   where(:Charger_GGE .!= 0) |>
   select(
-    model_year = :Year,
     id = :data_id,
     :HouseholdID,
     :Vehicle_ID,
@@ -79,14 +80,14 @@ z_data = @linq join(z_raw, z_unique, on=z_key, kind=:inner) |>
     :Weight,
     :Fuel,
   ) |>
-  groupby([:model_year, :id, :HouseholdID, :Vehicle_ID]) |>
+  groupby([:id, :HouseholdID, :Vehicle_ID]) |>
   combine(t -> quantize(t)) |>
   by(
-    [:model_year, :id, :timestamp],
+    [:id, :timestamp],
     L1   = sum(:L1  ),
     L2   = sum(:L2  ),
     DCFC = sum(:DCFC),
-  )
+  );
 
 
 CSV.write("../tmp/household-ev-greedy.lookup.csv", z_lookup)
