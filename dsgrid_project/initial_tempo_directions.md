@@ -1,7 +1,7 @@
 # Dsgrid Contributors - Initial Directions for TEMPO
 
 Setup:
-- install dsgrid --> clone the dsgrid repository. Switch the branch to develop. Follow the directions in the README to `pip install -e .
+- install dsgrid --> clone the dsgrid repository. Switch the branch to develop. Follow the directions in the README to `pip install -e '.[dev]'`
 - check that you can access the `nrel-aws-dsgrid` cloud account; check that you can view contents in `s3://nrel-dsgrid-registry` bucket.
 - You will need to make sure you have the `nrel-aws-dsgrid` profile name in your aws configure file. Directions to set this up are here: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
 - get familiar with the dsgrid cli
