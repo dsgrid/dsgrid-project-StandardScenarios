@@ -87,20 +87,17 @@ version = ""
 # ------------------------------------------------------
 # Supplemental Dimensions
 # ------------------------------------------------------
-# TODO: Can we have supplemental time dimensions in project config?
-# TODO: Do we really need to supply the supp dims here if they are all dsgrid standard?
-# TODO: these all should REQUIRE mappings to project level dimension of the same type
 [[dimensions.supplemental_dimensions]]
-dimension_id = ""
+dimension_id = "us_states__2bae0844-b0d3-4bf0-9d15-d9d969dee774"
 type = "geography"
-version = ""
+version = "1.0.0"
 
 [[dimensions.supplemental_dimensions]]
-dimension_id = ""
+dimension_id = "us_census_regions__899a4862-883d-4f8f-820e-3921db84ea8e"
 type = "geography"
-version = ""
+version = "1.0.0"
 
 [[dimensions.supplemental_dimensions]]
-dimension_id = ""
+dimension_id = "us_census_divisions__6e2dcd43-5f14-45b1-b850-f289673d89c7"
 type = "geography"
-version = ""
+version = "1.0.0"

@@ -2,14 +2,6 @@
 # Base Dimensions
 # ------------------------------------------------------
 [[dimensions]]
-description = """
-US counties, Census 2010 vintage, no territories
-"""
-file = "dimensions/counties.csv"
-name = "US-County-Census2010"
-type = "geography"
-
-[[dimensions]]
 class = "Sector"
 description = """
 dsgrid Standard Scenarios 2021 Sectors; Transportation only
@@ -74,7 +66,7 @@ type = "scenario"
 [[dimensions]]
 class = "DataSource"
 description = """
-dsgrid Standard Scenarios 2021 Data Sources; TEMPO only
+dsgrid Standard Scenarios 2021 Data Sources; TEMPO Only
 """
 file = "dimensions/sources.csv"
 module = "dsgrid.dimension.standard"
@@ -96,33 +88,4 @@ period = "period_beginning"
 str_format = "%Y-%m-%d %H:%M:%S"
 timezone = "UTC"
 value_representation = "mean"
-
-# ------------------------------------------------------
-# Supplemental Dimensions
-# ------------------------------------------------------
-[[dimensions]]
-description = """
-US States
-"""
-file = "dimensions/supplemental/states.csv"
-name = "US-State"
-type = "geography"
-
-[[dimensions]]
-class = "CensusDivision"
-description = """
-US Census Divisions
-"""
-file = "dimensions/supplemental/census_divisions.csv"
-name = "US-Census-Division"
-type = "geography"
-
-[[dimensions]]
-class = "CensusRegion"
-description = """
-US Census Regions
-"""
-file = "dimensions/supplemental/census_regions.csv"
-name = "US-Census-Region"
-type = "geography"
 
