@@ -3,6 +3,7 @@
 Setup:
 - install dsgrid
 - check that you can access the `nrel-aws-dsgrid` cloud account; check that you can view contents in `s3://nrel-dsgrid-registry` bucket.
+- You will need to make sure you have the `nrel-aws-dsgrid` profile name in your aws configure file. Directions to set this up are here: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
 - get familiar with the dsgrid cli
 	- `dsgrid registry --help`
 	- `dsgrid registry —offline` : allows you to work in offline mode (i.e., doesn’t constantly sync data, allows you to “work offline” from the AWS dsgrid registry)
