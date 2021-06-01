@@ -5,11 +5,12 @@ import pandas as pd
 import os
 
 from dsgrid.utils.files import dump_data
+from dsgrid.common import LOCAL_REGISTRY
 
 project_path = "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project"
 os.chdir(project_path)
 project_config_file = project_path + "/project.toml"
-local_registry = "/Users/mmooney/.dsgrid-registry"
+local_registry = LOCAL_REGISTRY
 
 
 def make_maps_for_state_county_divisions_and_regions():

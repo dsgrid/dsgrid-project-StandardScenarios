@@ -1,321 +1,321 @@
 id,name,state
-1001,Autauga,AL
-1003,Baldwin,AL
-1005,Barbour,AL
-1007,Bibb,AL
-1009,Blount,AL
-1011,Bullock,AL
-1013,Butler,AL
-1015,Calhoun,AL
-1017,Chambers,AL
-1019,Cherokee,AL
-1021,Chilton,AL
-1023,Choctaw,AL
-1025,Clarke,AL
-1027,Clay,AL
-1029,Cleburne,AL
-1031,Coffee,AL
-1033,Colbert,AL
-1035,Conecuh,AL
-1037,Coosa,AL
-1039,Covington,AL
-1041,Crenshaw,AL
-1043,Cullman,AL
-1045,Dale,AL
-1047,Dallas,AL
-1049,DeKalb,AL
-1051,Elmore,AL
-1053,Escambia,AL
-1055,Etowah,AL
-1057,Fayette,AL
-1059,Franklin,AL
-1061,Geneva,AL
-1063,Greene,AL
-1065,Hale,AL
-1067,Henry,AL
-1069,Houston,AL
-1071,Jackson,AL
-1073,Jefferson,AL
-1075,Lamar,AL
-1077,Lauderdale,AL
-1079,Lawrence,AL
-1081,Lee,AL
-1083,Limestone,AL
-1085,Lowndes,AL
-1087,Macon,AL
-1089,Madison,AL
-1091,Marengo,AL
-1093,Marion,AL
-1095,Marshall,AL
-1097,Mobile,AL
-1099,Monroe,AL
-1101,Montgomery,AL
-1103,Morgan,AL
-1105,Perry,AL
-1107,Pickens,AL
-1109,Pike,AL
-1111,Randolph,AL
-1113,Russell,AL
-1115,St. Clair,AL
-1117,Shelby,AL
-1119,Sumter,AL
-1121,Talladega,AL
-1123,Tallapoosa,AL
-1125,Tuscaloosa,AL
-1127,Walker,AL
-1129,Washington,AL
-1131,Wilcox,AL
-1133,Winston,AL
-2013,Aleutians East,AK
-2016,Aleutians West,AK
-2020,Anchorage,AK
-2050,Bethel,AK
-2060,Bristol Bay,AK
-2063,Chugach,AK
-2066,Copper River,AK
-2068,Denali,AK
-2070,Dillingham,AK
-2090,Fairbanks North Star,AK
-2100,Haines,AK
-2105,Hoonah-Angoon,AK
-2110,Juneau,AK
-2122,Kenai Peninsula,AK
-2130,Ketchikan Gateway,AK
-2150,Kodiak Island,AK
-2158,Kusilvak,AK
-2164,Lake and Peninsula,AK
-2170,Matanuska-Susitna,AK
-2180,Nome,AK
-2185,North Slope,AK
-2188,Northwest Arctic,AK
-2195,Petersburg,AK
-2198,Prince of Wales-Hyder,AK
-2220,Sitka,AK
-2230,Skagway,AK
-2240,Southeast Fairbanks,AK
-2275,Wrangell,AK
-2282,Yakutat,AK
-2290,Yukon-Koyukuk,AK
-4001,Apache,AZ
-4003,Cochise,AZ
-4005,Coconino,AZ
-4007,Gila,AZ
-4009,Graham,AZ
-4011,Greenlee,AZ
-4012,La Paz,AZ
-4013,Maricopa,AZ
-4015,Mohave,AZ
-4017,Navajo,AZ
-4019,Pima,AZ
-4021,Pinal,AZ
-4023,Santa Cruz,AZ
-4025,Yavapai,AZ
-4027,Yuma,AZ
-5001,Arkansas,AR
-5003,Ashley,AR
-5005,Baxter,AR
-5007,Benton,AR
-5009,Boone,AR
-5011,Bradley,AR
-5013,Calhoun,AR
-5015,Carroll,AR
-5017,Chicot,AR
-5019,Clark,AR
-5021,Clay,AR
-5023,Cleburne,AR
-5025,Cleveland,AR
-5027,Columbia,AR
-5029,Conway,AR
-5031,Craighead,AR
-5033,Crawford,AR
-5035,Crittenden,AR
-5037,Cross,AR
-5039,Dallas,AR
-5041,Desha,AR
-5043,Drew,AR
-5045,Faulkner,AR
-5047,Franklin,AR
-5049,Fulton,AR
-5051,Garland,AR
-5053,Grant,AR
-5055,Greene,AR
-5057,Hempstead,AR
-5059,Hot Spring,AR
-5061,Howard,AR
-5063,Independence,AR
-5065,Izard,AR
-5067,Jackson,AR
-5069,Jefferson,AR
-5071,Johnson,AR
-5073,Lafayette,AR
-5075,Lawrence,AR
-5077,Lee,AR
-5079,Lincoln,AR
-5081,Little River,AR
-5083,Logan,AR
-5085,Lonoke,AR
-5087,Madison,AR
-5089,Marion,AR
-5091,Miller,AR
-5093,Mississippi,AR
-5095,Monroe,AR
-5097,Montgomery,AR
-5099,Nevada,AR
-5101,Newton,AR
-5103,Ouachita,AR
-5105,Perry,AR
-5107,Phillips,AR
-5109,Pike,AR
-5111,Poinsett,AR
-5113,Polk,AR
-5115,Pope,AR
-5117,Prairie,AR
-5119,Pulaski,AR
-5121,Randolph,AR
-5123,St. Francis,AR
-5125,Saline,AR
-5127,Scott,AR
-5129,Searcy,AR
-5131,Sebastian,AR
-5133,Sevier,AR
-5135,Sharp,AR
-5137,Stone,AR
-5139,Union,AR
-5141,Van Buren,AR
-5143,Washington,AR
-5145,White,AR
-5147,Woodruff,AR
-5149,Yell,AR
-6001,Alameda,CA
-6003,Alpine,CA
-6005,Amador,CA
-6007,Butte,CA
-6009,Calaveras,CA
-6011,Colusa,CA
-6013,Contra Costa,CA
-6015,Del Norte,CA
-6017,El Dorado,CA
-6019,Fresno,CA
-6021,Glenn,CA
-6023,Humboldt,CA
-6025,Imperial,CA
-6027,Inyo,CA
-6029,Kern,CA
-6031,Kings,CA
-6033,Lake,CA
-6035,Lassen,CA
-6037,Los Angeles,CA
-6039,Madera,CA
-6041,Marin,CA
-6043,Mariposa,CA
-6045,Mendocino,CA
-6047,Merced,CA
-6049,Modoc,CA
-6051,Mono,CA
-6053,Monterey,CA
-6055,Napa,CA
-6057,Nevada,CA
-6059,Orange,CA
-6061,Placer,CA
-6063,Plumas,CA
-6065,Riverside,CA
-6067,Sacramento,CA
-6069,San Benito,CA
-6071,San Bernardino,CA
-6073,San Diego,CA
-6075,San Francisco,CA
-6077,San Joaquin,CA
-6079,San Luis Obispo,CA
-6081,San Mateo,CA
-6083,Santa Barbara,CA
-6085,Santa Clara,CA
-6087,Santa Cruz,CA
-6089,Shasta,CA
-6091,Sierra,CA
-6093,Siskiyou,CA
-6095,Solano,CA
-6097,Sonoma,CA
-6099,Stanislaus,CA
-6101,Sutter,CA
-6103,Tehama,CA
-6105,Trinity,CA
-6107,Tulare,CA
-6109,Tuolumne,CA
-6111,Ventura,CA
-6113,Yolo,CA
-6115,Yuba,CA
-8001,Adams,CO
-8003,Alamosa,CO
-8005,Arapahoe,CO
-8007,Archuleta,CO
-8009,Baca,CO
-8011,Bent,CO
-8013,Boulder,CO
-8014,Broomfield,CO
-8015,Chaffee,CO
-8017,Cheyenne,CO
-8019,Clear Creek,CO
-8021,Conejos,CO
-8023,Costilla,CO
-8025,Crowley,CO
-8027,Custer,CO
-8029,Delta,CO
-8031,Denver,CO
-8033,Dolores,CO
-8035,Douglas,CO
-8037,Eagle,CO
-8039,Elbert,CO
-8041,El Paso,CO
-8043,Fremont,CO
-8045,Garfield,CO
-8047,Gilpin,CO
-8049,Grand,CO
-8051,Gunnison,CO
-8053,Hinsdale,CO
-8055,Huerfano,CO
-8057,Jackson,CO
-8059,Jefferson,CO
-8061,Kiowa,CO
-8063,Kit Carson,CO
-8065,Lake,CO
-8067,La Plata,CO
-8069,Larimer,CO
-8071,Las Animas,CO
-8073,Lincoln,CO
-8075,Logan,CO
-8077,Mesa,CO
-8079,Mineral,CO
-8081,Moffat,CO
-8083,Montezuma,CO
-8085,Montrose,CO
-8087,Morgan,CO
-8089,Otero,CO
-8091,Ouray,CO
-8093,Park,CO
-8095,Phillips,CO
-8097,Pitkin,CO
-8099,Prowers,CO
-8101,Pueblo,CO
-8103,Rio Blanco,CO
-8105,Rio Grande,CO
-8107,Routt,CO
-8109,Saguache,CO
-8111,San Juan,CO
-8113,San Miguel,CO
-8115,Sedgwick,CO
-8117,Summit,CO
-8119,Teller,CO
-8121,Washington,CO
-8123,Weld,CO
-8125,Yuma,CO
-9001,Fairfield,CT
-9003,Hartford,CT
-9005,Litchfield,CT
-9007,Middlesex,CT
-9009,New Haven,CT
-9011,New London,CT
-9013,Tolland,CT
-9015,Windham,CT
+01001,Autauga,AL
+01003,Baldwin,AL
+01005,Barbour,AL
+01007,Bibb,AL
+01009,Blount,AL
+01011,Bullock,AL
+01013,Butler,AL
+01015,Calhoun,AL
+01017,Chambers,AL
+01019,Cherokee,AL
+01021,Chilton,AL
+01023,Choctaw,AL
+01025,Clarke,AL
+01027,Clay,AL
+01029,Cleburne,AL
+01031,Coffee,AL
+01033,Colbert,AL
+01035,Conecuh,AL
+01037,Coosa,AL
+01039,Covington,AL
+01041,Crenshaw,AL
+01043,Cullman,AL
+01045,Dale,AL
+01047,Dallas,AL
+01049,DeKalb,AL
+01051,Elmore,AL
+01053,Escambia,AL
+01055,Etowah,AL
+01057,Fayette,AL
+01059,Franklin,AL
+01061,Geneva,AL
+01063,Greene,AL
+01065,Hale,AL
+01067,Henry,AL
+01069,Houston,AL
+01071,Jackson,AL
+01073,Jefferson,AL
+01075,Lamar,AL
+01077,Lauderdale,AL
+01079,Lawrence,AL
+01081,Lee,AL
+01083,Limestone,AL
+01085,Lowndes,AL
+01087,Macon,AL
+01089,Madison,AL
+01091,Marengo,AL
+01093,Marion,AL
+01095,Marshall,AL
+01097,Mobile,AL
+01099,Monroe,AL
+01101,Montgomery,AL
+01103,Morgan,AL
+01105,Perry,AL
+01107,Pickens,AL
+01109,Pike,AL
+01111,Randolph,AL
+01113,Russell,AL
+01115,St. Clair,AL
+01117,Shelby,AL
+01119,Sumter,AL
+01121,Talladega,AL
+01123,Tallapoosa,AL
+01125,Tuscaloosa,AL
+01127,Walker,AL
+01129,Washington,AL
+01131,Wilcox,AL
+01133,Winston,AL
+02013,Aleutians East,AK
+02016,Aleutians West,AK
+02020,Anchorage,AK
+02050,Bethel,AK
+02060,Bristol Bay,AK
+02063,Chugach,AK
+02066,Copper River,AK
+02068,Denali,AK
+02070,Dillingham,AK
+02090,Fairbanks North Star,AK
+02100,Haines,AK
+02105,Hoonah-Angoon,AK
+02110,Juneau,AK
+02122,Kenai Peninsula,AK
+02130,Ketchikan Gateway,AK
+02150,Kodiak Island,AK
+02158,Kusilvak,AK
+02164,Lake and Peninsula,AK
+02170,Matanuska-Susitna,AK
+02180,Nome,AK
+02185,North Slope,AK
+02188,Northwest Arctic,AK
+02195,Petersburg,AK
+02198,Prince of Wales-Hyder,AK
+02220,Sitka,AK
+02230,Skagway,AK
+02240,Southeast Fairbanks,AK
+02275,Wrangell,AK
+02282,Yakutat,AK
+02290,Yukon-Koyukuk,AK
+04001,Apache,AZ
+04003,Cochise,AZ
+04005,Coconino,AZ
+04007,Gila,AZ
+04009,Graham,AZ
+04011,Greenlee,AZ
+04012,La Paz,AZ
+04013,Maricopa,AZ
+04015,Mohave,AZ
+04017,Navajo,AZ
+04019,Pima,AZ
+04021,Pinal,AZ
+04023,Santa Cruz,AZ
+04025,Yavapai,AZ
+04027,Yuma,AZ
+05001,Arkansas,AR
+05003,Ashley,AR
+05005,Baxter,AR
+05007,Benton,AR
+05009,Boone,AR
+05011,Bradley,AR
+05013,Calhoun,AR
+05015,Carroll,AR
+05017,Chicot,AR
+05019,Clark,AR
+05021,Clay,AR
+05023,Cleburne,AR
+05025,Cleveland,AR
+05027,Columbia,AR
+05029,Conway,AR
+05031,Craighead,AR
+05033,Crawford,AR
+05035,Crittenden,AR
+05037,Cross,AR
+05039,Dallas,AR
+05041,Desha,AR
+05043,Drew,AR
+05045,Faulkner,AR
+05047,Franklin,AR
+05049,Fulton,AR
+05051,Garland,AR
+05053,Grant,AR
+05055,Greene,AR
+05057,Hempstead,AR
+05059,Hot Spring,AR
+05061,Howard,AR
+05063,Independence,AR
+05065,Izard,AR
+05067,Jackson,AR
+05069,Jefferson,AR
+05071,Johnson,AR
+05073,Lafayette,AR
+05075,Lawrence,AR
+05077,Lee,AR
+05079,Lincoln,AR
+05081,Little River,AR
+05083,Logan,AR
+05085,Lonoke,AR
+05087,Madison,AR
+05089,Marion,AR
+05091,Miller,AR
+05093,Mississippi,AR
+05095,Monroe,AR
+05097,Montgomery,AR
+05099,Nevada,AR
+05101,Newton,AR
+05103,Ouachita,AR
+05105,Perry,AR
+05107,Phillips,AR
+05109,Pike,AR
+05111,Poinsett,AR
+05113,Polk,AR
+05115,Pope,AR
+05117,Prairie,AR
+05119,Pulaski,AR
+05121,Randolph,AR
+05123,St. Francis,AR
+05125,Saline,AR
+05127,Scott,AR
+05129,Searcy,AR
+05131,Sebastian,AR
+05133,Sevier,AR
+05135,Sharp,AR
+05137,Stone,AR
+05139,Union,AR
+05141,Van Buren,AR
+05143,Washington,AR
+05145,White,AR
+05147,Woodruff,AR
+05149,Yell,AR
+06001,Alameda,CA
+06003,Alpine,CA
+06005,Amador,CA
+06007,Butte,CA
+06009,Calaveras,CA
+06011,Colusa,CA
+06013,Contra Costa,CA
+06015,Del Norte,CA
+06017,El Dorado,CA
+06019,Fresno,CA
+06021,Glenn,CA
+06023,Humboldt,CA
+06025,Imperial,CA
+06027,Inyo,CA
+06029,Kern,CA
+06031,Kings,CA
+06033,Lake,CA
+06035,Lassen,CA
+06037,Los Angeles,CA
+06039,Madera,CA
+06041,Marin,CA
+06043,Mariposa,CA
+06045,Mendocino,CA
+06047,Merced,CA
+06049,Modoc,CA
+06051,Mono,CA
+06053,Monterey,CA
+06055,Napa,CA
+06057,Nevada,CA
+06059,Orange,CA
+06061,Placer,CA
+06063,Plumas,CA
+06065,Riverside,CA
+06067,Sacramento,CA
+06069,San Benito,CA
+06071,San Bernardino,CA
+06073,San Diego,CA
+06075,San Francisco,CA
+06077,San Joaquin,CA
+06079,San Luis Obispo,CA
+06081,San Mateo,CA
+06083,Santa Barbara,CA
+06085,Santa Clara,CA
+06087,Santa Cruz,CA
+06089,Shasta,CA
+06091,Sierra,CA
+06093,Siskiyou,CA
+06095,Solano,CA
+06097,Sonoma,CA
+06099,Stanislaus,CA
+06101,Sutter,CA
+06103,Tehama,CA
+06105,Trinity,CA
+06107,Tulare,CA
+06109,Tuolumne,CA
+06111,Ventura,CA
+06113,Yolo,CA
+06115,Yuba,CA
+08001,Adams,CO
+08003,Alamosa,CO
+08005,Arapahoe,CO
+08007,Archuleta,CO
+08009,Baca,CO
+08011,Bent,CO
+08013,Boulder,CO
+08014,Broomfield,CO
+08015,Chaffee,CO
+08017,Cheyenne,CO
+08019,Clear Creek,CO
+08021,Conejos,CO
+08023,Costilla,CO
+08025,Crowley,CO
+08027,Custer,CO
+08029,Delta,CO
+08031,Denver,CO
+08033,Dolores,CO
+08035,Douglas,CO
+08037,Eagle,CO
+08039,Elbert,CO
+08041,El Paso,CO
+08043,Fremont,CO
+08045,Garfield,CO
+08047,Gilpin,CO
+08049,Grand,CO
+08051,Gunnison,CO
+08053,Hinsdale,CO
+08055,Huerfano,CO
+08057,Jackson,CO
+08059,Jefferson,CO
+08061,Kiowa,CO
+08063,Kit Carson,CO
+08065,Lake,CO
+08067,La Plata,CO
+08069,Larimer,CO
+08071,Las Animas,CO
+08073,Lincoln,CO
+08075,Logan,CO
+08077,Mesa,CO
+08079,Mineral,CO
+08081,Moffat,CO
+08083,Montezuma,CO
+08085,Montrose,CO
+08087,Morgan,CO
+08089,Otero,CO
+08091,Ouray,CO
+08093,Park,CO
+08095,Phillips,CO
+08097,Pitkin,CO
+08099,Prowers,CO
+08101,Pueblo,CO
+08103,Rio Blanco,CO
+08105,Rio Grande,CO
+08107,Routt,CO
+08109,Saguache,CO
+08111,San Juan,CO
+08113,San Miguel,CO
+08115,Sedgwick,CO
+08117,Summit,CO
+08119,Teller,CO
+08121,Washington,CO
+08123,Weld,CO
+08125,Yuma,CO
+09001,Fairfield,CT
+09003,Hartford,CT
+09005,Litchfield,CT
+09007,Middlesex,CT
+09009,New Haven,CT
+09011,New London,CT
+09013,Tolland,CT
+09015,Windham,CT
 10001,Kent,DE
 10003,New Castle,DE
 10005,Sussex,DE
