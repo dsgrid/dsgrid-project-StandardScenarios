@@ -7,9 +7,7 @@ import os
 from dsgrid.utils.files import dump_data
 from dsgrid.common import LOCAL_REGISTRY
 
-project_path = "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project"
-os.chdir(project_path)
-project_config_file = project_path + "/project.toml"
+project_config_file = "/project.toml"
 local_registry = LOCAL_REGISTRY
 
 
