@@ -25,7 +25,7 @@ type = "sector"
 # name = "Standard-Scenarios-2021-Detailed-Subsectors--Trans-Only"
 # file = "dimensions/subsectors.csv"
 # module = "dsgrid.dimension.standard"
-# class = "SubSector"
+# class = "Subsector"
 # description = """
 # dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
 # """
@@ -64,11 +64,11 @@ type = "model_year"
 [[dimensions]]
 class = "Scenario"
 description = """
-base scenario only
+reference scenario only
 """
 file = "dimensions/scenarios.csv"
 module = "dsgrid.dimension.standard"
-name = "Baseline Scenario"
+name = "Reference Scenario"
 type = "scenario"
 
 [[dimensions]]
