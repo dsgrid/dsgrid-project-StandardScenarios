@@ -3,10 +3,10 @@
 # ------------------------------------------------------
 [[dimensions]]
 description = """
-US counties, Census 2010 vintage, no territories
+US counties, Census 2020 vintage, no territories
 """
 file = "dimensions/counties.csv"
-name = "US-County-Census2010"
+name = "US County - Census 2020"
 type = "geography"
 
 [[dimensions]]
@@ -16,21 +16,21 @@ dsgrid Standard Scenarios 2021 Sectors; Transportation only
 """
 file = "dimensions/sectors.csv"
 module = "dsgrid.dimension.standard"
-name = "Standard-Scenarios-2021-Sectors--Trans-Only"
+name = "Standard Scenarios 2021 Sectors - Trans-Only"
 type = "sector"
 
-# TODO
+# TODO -- add the tempo dimensions for subsector for now
 # [[dimensions]]
 # type = "subsector"
 # name = "Standard-Scenarios-2021-Detailed-Subsectors--Trans-Only"
 # file = "dimensions/subsectors.csv"
 # module = "dsgrid.dimension.standard"
-# class = "SubSector"
+# class = "Subsector"
 # description = """
 # dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
 # """
 
-# TODO
+# TODO -- add the tempo dimensions for enduses for now
 # [[dimensions]]
 # type = "end_use"
 # name = "Standard-Scenarios-2021-Detailed-End-Uses--Trans-Only"
@@ -48,7 +48,7 @@ Weather year, 2012 only
 """
 file = "dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
-name = "2012-Weather-Year"
+name = "2012 Weather Year"
 type = "weather"
 
 [[dimensions]]
@@ -58,27 +58,27 @@ Model year, 2010-2050, every other year
 """
 file = "dimensions/model_years.csv"
 module = "dsgrid.dimension.standard"
-name = "Model-Years-2010-to-2050-with-2yr-intervals"
+name = "Model Years 2010 to 2050 with 2 year intervals"
 type = "model_year"
 
 [[dimensions]]
 class = "Scenario"
 description = """
-base scenario only
+reference scenario only
 """
 file = "dimensions/scenarios.csv"
 module = "dsgrid.dimension.standard"
-name = "Baseline-Scenario"
+name = "Reference Scenario"
 type = "scenario"
 
 [[dimensions]]
 class = "DataSource"
 description = """
-dsgrid Standard Scenarios 2021 Data Sources; TEMPO only
+dsgrid Standard Scenarios 2021 Data Sources; TEMPO Only
 """
 file = "dimensions/sources.csv"
 module = "dsgrid.dimension.standard"
-name = "Standard-Scenarios-2021-DataSourcs--TEMPO-Only"
+name = "Standard Scenarios 2021 DataSourcs - TEMPO-Only"
 type = "data_source"
 
 [[dimensions]]
@@ -97,32 +97,31 @@ str_format = "%Y-%m-%d %H:%M:%S"
 timezone = "UTC"
 value_representation = "mean"
 
-# ------------------------------------------------------
-# Supplemental Dimensions
-# ------------------------------------------------------
-[[dimensions]]
-description = """
-US States
-"""
-file = "dimensions/supplemental/states.csv"
-name = "US-State"
-type = "geography"
+# # ------------------------------------------------------
+# # Supplemental Dimensions
+# # ------------------------------------------------------
+# [[dimensions]]
+# description = """
+# US States
+# """
+# file = "dimensions/supplemental/states.csv"
+# name = "US-State"
+# type = "geography"
 
-[[dimensions]]
-class = "CensusDivision"
-description = """
-US Census Divisions
-"""
-file = "dimensions/supplemental/census_divisions.csv"
-name = "US-Census-Division"
-type = "geography"
+# [[dimensions]]
+# class = "CensusDivision"
+# description = """
+# US Census Divisions
+# """
+# file = "dimensions/supplemental/census_divisions.csv"
+# name = "US-Census-Division"
+# type = "geography"
 
-[[dimensions]]
-class = "CensusRegion"
-description = """
-US Census Regions
-"""
-file = "dimensions/supplemental/census_regions.csv"
-name = "US-Census-Region"
-type = "geography"
-
+# [[dimensions]]
+# class = "CensusRegion"
+# description = """
+# US Census Regions
+# """
+# file = "dimensions/supplemental/census_regions.csv"
+# name = "US-Census-Region"
+# type = "geography"
