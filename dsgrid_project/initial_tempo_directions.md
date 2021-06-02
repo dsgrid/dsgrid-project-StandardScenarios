@@ -1,13 +1,78 @@
-# Dsgrid Contributors - Initial Directions for TEMPO
+# Dsgrid Contributors - Initial Directions for TEMPO & ResStock
 
-Setup:
-- install dsgrid --> clone the dsgrid repository. Switch the branch to develop. Follow the directions in the README to `pip install -e '.[dev]'`
-- check that you can access the `nrel-aws-dsgrid` cloud account; check that you can view contents in `s3://nrel-dsgrid-registry` bucket.
-- You will need to make sure you have the `nrel-aws-dsgrid` profile name in your aws configure file. Directions to set this up are here: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
-- get familiar with the dsgrid cli
-	- `dsgrid registry --help`
-	- `dsgrid registry —offline` : allows you to work in offline mode (i.e., doesn’t constantly sync data, allows you to “work offline” from the AWS dsgrid registry)
-	- `dsgrid registry —dry-run`: allows you test your registry commands without making any official changes to the remote AWS registry
+## Step 0: Setup
+1. If you do not have a python environment set up with python 3.8 or later, you may want to go ahead and set this up. 
+2. Clone this Standard Scenarios dsgrid project repository.
+3. Install dsgrid
+    - Clone the [dsgrid repository](https://github.com/dsgrid/dsgrid).
+    - Switch the branch to develop: `git switch -c develop`
+    - Install the development version of dsgrid (follow directions in the dsgrid README: `pip install -e '.[dev]'`
+    - Note: dsgrid requires python=3.8 or later. If you do not already have a python environment with python>=3.8, then you will to get this set up. We recommend using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+4. Set up cloud access
+    - You should already have access to the `nrel-aws-dsgrid` sandbox account. If you have not completed your account set up, you will want to do this. 
+    - Log in and set up your password on the `nrel-aws-dsgrid` sandbox account (look for directions from Ricardo Oliveira in your email)
+    - Make sure to set up MFA on this account (again, see email with instructions)
+    - Download aws-cli if you do not already have it installed in your active conda environment: `pip install aws-cli`
+    - Configure named profile for `nrel-aws-dsgrid`. See [these directions](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for how to configure your named profile for the aws-cli. 
+    - Check that you can view contents in `s3://nrel-dsgrid-registry` bucket.
+
+### Get familiar with the dsgrid cli
+If you have dsgrid installed, you can spend a bit of time to get familiar with the dsgrid cli.
+
+```dsgrid --help```
+
+```
+Usage: dsgrid [OPTIONS] COMMAND [ARGS]...
+
+  dsgrid commands
+
+Options:
+  -l, --log-file PATH  Log to this file.
+  -n, --no-prompts     Do not prompt.  [default: False]
+  --verbose            Enable verbose log output.  [default: False]
+  --help               Show this message and exit.
+
+Commands:
+  download  Download a dataset.
+  query     Run a query on a dataset.
+  registry  Manage a registry.
+ ```
+
+_NOTE: Both query and download are essentially inoperable right now._
+
+- `dsgrid registry --help`
+```
+Usage: dsgrid registry [OPTIONS] COMMAND [ARGS]...
+
+  Manage a registry.
+
+Options:
+  --path TEXT         path to dsgrid registry. Override with the environment
+                      variable DSGRID_REGISTRY_PATH  [default:
+                      /Users/mmooney/.dsgrid-registry]
+
+  --remote-path TEXT  path to dsgrid remote registry  [default: s3://nrel-
+                      dsgrid-registry]
+
+  -o, --offline       run in registry commands in offline mode. WARNING: any
+                      commands you perform in offline mode run the risk of
+                      being out-of-sync with the latest dsgrid registry, and
+                      any write commands will not be officially synced with
+                      the remote registry
+
+  -d, --dry-run       run registry commands in dry-run mode without writing to
+                      the local or remote registry
+
+  --help              Show this message and exit.
+
+Commands:
+  datasets            Dataset subcommands
+  dimension-mappings  Dimension mapping subcommands
+  dimensions          Dimension subcommands
+  list                List the contents of a registry.
+  projects            Project subcommands
+  sync                Sync the official dsgrid registry to the local system.
+```
 
 
 ## Step 1: Register dimensions
