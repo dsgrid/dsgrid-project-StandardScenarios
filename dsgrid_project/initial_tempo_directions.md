@@ -91,12 +91,12 @@ Create dimension csv files (in the project repository) and fill out the dimensio
 
 Test it in dry run mode first:
 ```
-dsgrid registry --dry-run dimension-mappings register {path-to-dimension.toml} -l "{log message}"
+dsgrid registry --dry-run dimensions register {path-to-dimension.toml} -l "{log message}"
 ```
 
 If it worked, go ahead and register to AWS:
 ```
-dsgrid registry --dry-run dimension-mappings register {path-to-dimension.toml} -l "{log message}"
+dsgrid registry --dry-run dimensions register {path-to-dimension.toml} -l "{log message}"
 ```
 
 ## Step 2: Update dataset.toml with the dimension uuids and versions
