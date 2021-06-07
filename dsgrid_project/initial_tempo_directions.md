@@ -15,7 +15,7 @@
     - Download aws-cli if you do not already have it installed in your active conda environment: `pip install awscli`
     - Configure named profile for `nrel-aws-dsgrid`. See [these directions](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for how to configure your named profile for the aws-cli. Or alternatively, follow these directions:
         ```
-        vi  vi ~/.aws/credentials
+        vi ~/.aws/credentials
         ```
         Then add the following text (replacing XXXX with your creditentials):
         ```
