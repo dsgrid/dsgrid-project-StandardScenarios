@@ -13,7 +13,18 @@
     - Log in and set up your password on the `nrel-aws-dsgrid` sandbox account (look for directions from Ricardo Oliveira in your email)
     - Make sure to set up MFA on this account (again, see email with instructions)
     - Download aws-cli if you do not already have it installed in your active conda environment: `pip install awscli`
-    - Configure named profile for `nrel-aws-dsgrid`. See [these directions](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for how to configure your named profile for the aws-cli. 
+    - Configure named profile for `nrel-aws-dsgrid`. See [these directions](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for how to configure your named profile for the aws-cli. Or alternatively, follow these directions:
+        ```
+        vi  vi ~/.aws/credentials
+        ```
+        Then add the following text (replacing XXXX with your creditentials):
+        ```
+        [nrel-aws-dsgrid]
+        aws_access_key_id = XXXX
+        aws_secret_access_key = XXXX
+        ````
+        Get your credentials from your AWS profile: https://console.aws.amazon.com/iam/home?#/security_credentials
+        
     - Check that you can view contents in `s3://nrel-dsgrid-registry` bucket.
 
 ### Get familiar with the dsgrid cli
