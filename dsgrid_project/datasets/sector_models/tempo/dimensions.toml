@@ -1,23 +1,26 @@
 
 
 [[dimensions]]
+class = "County"
 type = "geography"
-name = "County"
+name = "ACS County 2018"
 file = "dimensions/counties.csv" #FIXME: What is the vintage of TEMPO counties?
 description = """
-US counties.
+American Community Survey US counties, 2018.
 """
 
 [[dimensions]]
+class = "Sector"
 type = "sector"
 name = "TEMPO LDV BEV Charging"
 file = "dimensions/tempo.csv"
 description = """
 TEMPO provides LDV BEV charging profiles.
 """
-trivial = true
+#trivial = true
 
 [[dimensions]]
+class = "Subsector"
 type = "subsector"
 name = "TEMPO Bin"
 file = "dimensions/bin.csv"
@@ -32,47 +35,48 @@ This is a cross-join of the following supplemental dimensions:
 * Tech
 """
 
-[[dimensions]]
-type = "subsector"
-name = "Composition"
-file = "dimensions/supplemental/composition.csv"
-description = """
-Household composition.
-"""
+# [[dimensions]]
+# type = "subsector"
+# name = "Composition"
+# file = "dimensions/supplemental/composition.csv"
+# description = """
+# Household composition.
+# """
+# 
+# [[dimensions]]
+# type = "subsector"
+# name = "Income"
+# file = "dimensions/supplemental/income.csv"
+# description = """
+# Income range.
+# """
+# 
+# [[dimensions]]
+# type = "subsector"
+# name = "Urbanity"
+# file = "dimensions/supplemental/urbanity.csv"
+# description = """
+# Urban classifications, according to [Claritas definitions](https://healthpolicy.ucla.edu/chis/data/public-use-data-file/Documents/2003PUF_constructs_c.pdf#page=24).
+# """
+# 
+# [[dimensions]]
+# type = "subsector"
+# name = "Class"
+# file = "dimensions/supplemental/class.csv"
+# description = """
+# Passenger vehicle class.
+# """
+# 
+# [[dimensions]]
+# type = "subsector"
+# name = "Tech"
+# file = "dimensions/supplemental/tech.csv"
+# description = """
+# Vehicle technology.
+# """
 
 [[dimensions]]
-type = "subsector"
-name = "Income"
-file = "dimensions/supplemental/income.csv"
-description = """
-Income range.
-"""
-
-[[dimensions]]
-type = "subsector"
-name = "Urbanity"
-file = "dimensions/supplemental/urbanity.csv"
-description = """
-Urban classifications, according to [Claritas definitions](https://healthpolicy.ucla.edu/chis/data/public-use-data-file/Documents/2003PUF_constructs_c.pdf#page=24).
-"""
-
-[[dimensions]]
-type = "subsector"
-name = "Class"
-file = "dimensions/supplemental/class.csv"
-description = """
-Passenger vehicle class.
-"""
-
-[[dimensions]]
-type = "subsector"
-name = "Tech"
-file = "dimensions/supplemental/tech.csv"
-description = """
-Vehicle technology.
-"""
-
-[[dimensions]]
+class = "EndUse"
 type = "end_use"
 name = "TEMPO LDV BEV Usage"
 file = "dimensions/end_use.csv"
@@ -81,30 +85,33 @@ Fuels used by TEMPO BEVs.
 """
 
 [[dimensions]]
+class = "Time"
 type = "time"
-name = "Time of Week, by Month"
+name = "Time of Week by Month"
 start = "Jan Mon 00:00:00"
-end = "Dec Sun 23:59:59"
-frequence = "1 second"
+end   = "Dec Sun 23:59:59"
+frequency = "1 hour"
 includes_dst = false
 period = "period_ending"
-str_format = "%a %w %X"
+str_format = "%b %a %X"
 timezone = "LOCAL"
-value_representation = "sum"
+value_representation = "total"
 description = """
 Month, day of week, and time of day.
 """
 
 [[dimensions]]
+class = "DataSource"
 type = "data_source"
 name = "TEMPO Model"
 file = "dimensions/model.csv"
 description = """
 TEMPO projections.
 """
-trivial = true
+#trivial = true
 
 [[dimensions]]
+class = "ModelYear"
 type = "model_year"
 name = "TEMPO Model Year"
 file = "dimensions/year.csv"
@@ -113,19 +120,21 @@ TEMPO modeling years.
 """
 
 [[dimensions]]
+class = "Scenario"
 type = "scenario"
 name = "TEMPO Scenario"
 file = "dimensions/scenario.csv"
 description = """
 TEMPO base scenario only.
 """
-trivial = true
+#trivial = true
 
 [[dimensions]]
+class = "WeatherYear"
 type = "weather_year"
 name = "TEMPO Weather Year"
 file = "dimensions/weather.csv"
 description = """
 Weather year used by TEMPO.
 """
-trivial = true
+#trivial = true
