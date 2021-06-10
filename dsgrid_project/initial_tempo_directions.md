@@ -6,6 +6,7 @@
 3. Install dsgrid
     - Clone the [dsgrid repository](https://github.com/dsgrid/dsgrid).
     - Switch the branch to develop: `git switch -c develop`
+    - Pull in latest commits from develop: `git pull origin develop`
     - Install the development version of dsgrid (follow directions in the dsgrid README: `pip install -e '.[dev]'`
     - Note: dsgrid requires python=3.8 or later. If you do not already have a python environment with python>=3.8, then you will to get this set up. We recommend using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
 4. Set up cloud access
