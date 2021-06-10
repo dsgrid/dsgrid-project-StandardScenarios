@@ -4,7 +4,7 @@
 class = "County"
 type = "geography"
 name = "ACS County 2018"
-file = "dimensions/counties.csv" #FIXME: What is the vintage of TEMPO counties?
+file = "dimensions/counties.csv"
 description = """
 American Community Survey US counties, 2018.
 """
