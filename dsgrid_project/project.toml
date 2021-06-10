@@ -39,7 +39,7 @@ type = "geography"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "standard_scenarios_2021_sectors_-_com-res-tra-"
+dimension_id = "standard_scenarios_2021_sectors_-_com-res-tra-0d-6d93e5e007e3"
 type = "sector"
 version = "1.0.0"
 
