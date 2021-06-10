@@ -33,7 +33,7 @@ version = "1.0.0"
 # ------------------------------------------------------
 # Base Dimensions
 # ------------------------------------------------------
-[[dimensions.base_dimensions]] # TODO
+[[dimensions.base_dimensions]]
 dimension_id = "us_county_-_census_2020__77d98fae-006b-4d0a-8a1d-b897fd213ed5"
 type = "geography"
 version = "1.0.0"
@@ -68,12 +68,12 @@ dimension_id = "reference_scenario__4b6defca-9212-4388-bc39-9cf4462b4527"
 type = "scenario"
 version = "1.0.0"
 
-[[dimensions.base_dimensions]] # TODO
-dimension_id = "standard_scenarios_2021_datasourcs_-_tempo-only__7def04f1-6e90-4159-8303-8faa06b811fb"
+[[dimensions.base_dimensions]]
+dimension_id = "standard_scenarios_2021_datasources_-_tempo-only__2f19c49f-7e2c-480f-abd2-cc3caef2f5dc"
 type = "data_source"
 version = "1.0.0"
 
-[[dimensions.base_dimensions]] # TODO
+[[dimensions.base_dimensions]]
 dimension_id = "time-2012-utc-houlry-periodbeginning-nodst-noleapdayadjustment-mean__72c76c0f-0d5a-4c03-8cf2-d806c4130cd9"
 type = "time"
 version = "1.0.0"

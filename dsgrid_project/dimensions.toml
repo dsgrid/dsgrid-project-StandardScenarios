@@ -1,129 +1,129 @@
-# ------------------------------------------------------
-# Base Dimensions
-# ------------------------------------------------------
-[[dimensions]]
-description = """
-US counties, Census 2020 vintage, no territories
-"""
-file = "dimensions/counties.csv"
-name = "US County - Census 2020"
-type = "geography"
-class = "County"
-
-[[dimensions]]
-class = "Sector"
-description = """
-dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Transportation  Only
-"""
-file = "dimensions/sectors.csv"
-module = "dsgrid.dimension.standard"
-name = "Standard Scenarios 2021 Sectors - Com-Res-Tra-Only"
-type = "sector"
-
-# TODO -- add the tempo dimensions for subsector for now
+# # ------------------------------------------------------
+# # Base Dimensions
+# # ------------------------------------------------------
 # [[dimensions]]
-# type = "subsector"
-# name = "Standard-Scenarios-2021-Detailed-Subsectors--Trans-Only"
-# file = "dimensions/subsectors.csv"
-# module = "dsgrid.dimension.standard"
-# class = "Subsector"
 # description = """
-# dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
+# US counties, Census 2020 vintage, no territories
 # """
+# file = "dimensions/counties.csv"
+# name = "US County - Census 2020"
+# type = "geography"
+# class = "County"
 
-# TODO -- add the tempo dimensions for enduses for now
 # [[dimensions]]
-# type = "end_use"
-# name = "Standard-Scenarios-2021-Detailed-End-Uses--Trans-Only"
-# file = "dimensions/enduses.csv"
-# module = "dsgrid.dimension.standard"
-# class = "EndUse"
+# class = "Sector"
 # description = """
-# dsgrid Standard Scenarios 2021 End Uses; Transportation only
+# dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Transportation  Only
 # """
+# file = "dimensions/sectors.csv"
+# module = "dsgrid.dimension.standard"
+# name = "Standard Scenarios 2021 Sectors - Com-Res-Tra-Only"
+# type = "sector"
 
-[[dimensions]]
-class = "WeatherYear"
-description = """
-Weather year, 2012 only
-"""
-file = "dimensions/weather_years.csv"
-module = "dsgrid.dimension.standard"
-name = "2012 Weather Year"
-type = "weather_year"
+# # TODO -- add the tempo dimensions for subsector for now
+# # [[dimensions]]
+# # type = "subsector"
+# # name = "Standard-Scenarios-2021-Detailed-Subsectors--Trans-Only"
+# # file = "dimensions/subsectors.csv"
+# # module = "dsgrid.dimension.standard"
+# # class = "Subsector"
+# # description = """
+# # dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
+# # """
 
-[[dimensions]]
-class = "ModelYear"
-description = """
-Model year, 2010-2050, every other year
-"""
-file = "dimensions/model_years.csv"
-module = "dsgrid.dimension.standard"
-name = "Model Years 2010 to 2050 with 2 year intervals"
-type = "model_year"
+# # TODO -- add the tempo dimensions for enduses for now
+# # [[dimensions]]
+# # type = "end_use"
+# # name = "Standard-Scenarios-2021-Detailed-End-Uses--Trans-Only"
+# # file = "dimensions/enduses.csv"
+# # module = "dsgrid.dimension.standard"
+# # class = "EndUse"
+# # description = """
+# # dsgrid Standard Scenarios 2021 End Uses; Transportation only
+# # """
 
-[[dimensions]]
-class = "Scenario"
-description = """
-reference scenario only
-"""
-file = "dimensions/scenarios.csv"
-module = "dsgrid.dimension.standard"
-name = "Reference Scenario"
-type = "scenario"
+# [[dimensions]]
+# class = "WeatherYear"
+# description = """
+# Weather year, 2012 only
+# """
+# file = "dimensions/weather_years.csv"
+# module = "dsgrid.dimension.standard"
+# name = "2012 Weather Year"
+# type = "weather_year"
+
+# [[dimensions]]
+# class = "ModelYear"
+# description = """
+# Model year, 2010-2050, every other year
+# """
+# file = "dimensions/model_years.csv"
+# module = "dsgrid.dimension.standard"
+# name = "Model Years 2010 to 2050 with 2 year intervals"
+# type = "model_year"
+
+# [[dimensions]]
+# class = "Scenario"
+# description = """
+# reference scenario only
+# """
+# file = "dimensions/scenarios.csv"
+# module = "dsgrid.dimension.standard"
+# name = "Reference Scenario"
+# type = "scenario"
 
 [[dimensions]]
 class = "DataSource"
 description = """
-dsgrid Standard Scenarios 2021 Data Sources; TEMPO Only
+dsgrid Standard Scenarios 2021 Data Sources; ComStock, TEMPO, ResStock Only
 """
 file = "dimensions/sources.csv"
 module = "dsgrid.dimension.standard"
-name = "Standard Scenarios 2021 DataSourcs - TEMPO-Only"
+name = "Standard Scenarios 2021 DataSources - ComStock-ResStock-TEMPO-Only"
 type = "data_source"
 
-[[dimensions]]
-class = "Time"
-end = "2012-12-31 23:59:59"
-frequency = "1 hour"
-includes_dst = false
-name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-mean"
-start = "2012-01-01 01:00:00"
-type = "time"
-# leap_day_adjustment = ""
-description = """
-Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, mean value
-"""
-period = "period_beginning"
-str_format = "%Y-%m-%d %H:%M:%S"
-timezone = "UTC"
-value_representation = "mean"
-
-# # ------------------------------------------------------
-# # Supplemental Dimensions
-# # ------------------------------------------------------
 # [[dimensions]]
+# class = "Time"
+# end = "2012-12-31 23:59:59"
+# frequency = "1 hour"
+# includes_dst = false
+# name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-mean"
+# start = "2012-01-01 01:00:00"
+# type = "time"
+# # leap_day_adjustment = ""
 # description = """
-# US States
+# Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, mean value
 # """
-# file = "dimensions/supplemental/states.csv"
-# name = "US-State"
-# type = "geography"
+# period = "period_beginning"
+# str_format = "%Y-%m-%d %H:%M:%S"
+# timezone = "UTC"
+# value_representation = "mean"
 
-# [[dimensions]]
-# class = "CensusDivision"
-# description = """
-# US Census Divisions
-# """
-# file = "dimensions/supplemental/census_divisions.csv"
-# name = "US-Census-Division"
-# type = "geography"
+# # # ------------------------------------------------------
+# # # Supplemental Dimensions
+# # # ------------------------------------------------------
+# # [[dimensions]]
+# # description = """
+# # US States
+# # """
+# # file = "dimensions/supplemental/states.csv"
+# # name = "US-State"
+# # type = "geography"
 
-# [[dimensions]]
-# class = "CensusRegion"
-# description = """
-# US Census Regions
-# """
-# file = "dimensions/supplemental/census_regions.csv"
-# name = "US-Census-Region"
-# type = "geography"
+# # [[dimensions]]
+# # class = "CensusDivision"
+# # description = """
+# # US Census Divisions
+# # """
+# # file = "dimensions/supplemental/census_divisions.csv"
+# # name = "US-Census-Division"
+# # type = "geography"
+
+# # [[dimensions]]
+# # class = "CensusRegion"
+# # description = """
+# # US Census Regions
+# # """
+# # file = "dimensions/supplemental/census_regions.csv"
+# # name = "US-Census-Region"
+# # type = "geography"
