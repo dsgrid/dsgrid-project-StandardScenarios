@@ -7,7 +7,7 @@
     - Clone the [dsgrid repository](https://github.com/dsgrid/dsgrid).
     - Create a `dsgrid` clean environment: `conda create -n dsgrid python=3.8 pip`
     - Activate new `dsgrid` environment: `conda activate dsgrid`
-    - Switch the branch to develop: `git switch -c develop`
+    - Switch the branch to develop: `git checkout -b develop`
     - Pull in latest commits from develop: `git pull origin develop`
     - Install the development version of dsgrid (follow directions in the dsgrid README: `pip install -e '.[dev]'`
     - Note: dsgrid requires python=3.8 or later. If you do not already have a python environment with python>=3.8, then you will to get this set up. We recommend using [Anaconda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
