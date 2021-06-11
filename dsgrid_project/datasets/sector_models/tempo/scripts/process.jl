@@ -42,7 +42,7 @@ z_raw = CSV.read("../tmp/household-ev-greedycharging.csv", types = Dict(:Region 
 rename!(z_raw, Dict(:Region => :geography, :Year => :model_year))
 z_raw |> names
 
-z_key = [:geography, :model_year, :Composition, :Income, :Urbanity, :Class, :Tech]
+z_key = [:geography, :model_year, :Season, :Composition, :Income, :Urbanity, :Class, :Tech]
 
 z_unique = z_raw[:, z_key] |> unique;
 z_unique |> nrow
@@ -53,6 +53,7 @@ z_lookup = @select(
   z_unique,
   :geography,
   :model_year,
+  :Season,
   subsector = string.(
     :Composition,
     "+",
