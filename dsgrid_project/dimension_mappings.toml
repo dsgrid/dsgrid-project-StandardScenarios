@@ -1,36 +1,35 @@
 [[mappings]]
 description = "Maps Comstock US Counties 2020 to CensusRegion"
 file = "dimension_mappings/base_to_supplemental/lookup_county_to_censusregion.csv"
-
 [mappings.from_dimension]
-dimension_id =  "XXX" # TODO
+dimension_id = ""
 type = "geography"
 version = "1.0.0"
 [mappings.to_dimension]
-dimension_id = "XXX" # TODO
+dimension_id = ""
 type = "geography"
 version = "1.0.0"
+
 [[mappings]]
 description = "Maps Comstock US Counties 2020 to CensusDivision"
 file = "dimension_mappings/base_to_supplemental/lookup_county_to_censusdivision.csv"
-
 [mappings.from_dimension]
-dimension_id =  "XXX" # TODO
+dimension_id = ""
 type = "geography"
 version = "1.0.0"
 [mappings.to_dimension]
-dimension_id =  "XXX" # TODO
+dimension_id = ""
 type = "geography"
 version = "1.0.0"
+
 [[mappings]]
 description = "Maps Comstock US Counties 2020 to State"
 file = "dimension_mappings/base_to_supplemental/lookup_county_to_state.csv"
-
 [mappings.from_dimension]
-dimension_id =  "XXX" # TODO
+dimension_id = ""
 type = "geography"
 version = "1.0.0"
 [mappings.to_dimension]
-dimension_id =  "XXX" # TODO
+dimension_id = ""
 type = "geography"
 version = "1.0.0"

@@ -34,7 +34,7 @@ version = "1.0.0"
 # Base Dimensions
 # ------------------------------------------------------
 [[dimensions.base_dimensions]]
-dimension_id = "us_county_-_census_2020__77d98fae-006b-4d0a-8a1d-b897fd213ed5"
+dimension_id = "us_counties_2020__73ce4579-bdcc-4496-93d8-8bdb2b49a648"
 type = "geography"
 version = "1.0.0"
 

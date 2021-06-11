@@ -1,12 +1,14 @@
 """Make project dimension mappings for project to supplement"""
 
-import itertools
 import pandas as pd
 import os
+from pathlib import Path
 
 from dsgrid.utils.files import dump_data
 from dsgrid.common import LOCAL_REGISTRY
 
+project_path = str(Path(__file__).parents[1])
+os.chdir(project_path)
 project_config_file = "/project.toml"
 local_registry = LOCAL_REGISTRY
 
