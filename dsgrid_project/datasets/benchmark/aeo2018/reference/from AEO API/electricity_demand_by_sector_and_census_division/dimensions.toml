@@ -1,0 +1,48 @@
+# ------------------------------------------------------
+# Dataset Dimensions
+# ------------------------------------------------------
+# [[dimensions]]
+# name = "US Census Division"
+# type = "geography"
+
+[[dimensions]]
+class = "Sector"
+description = """EIA AEO electricity demand and loss: 4 sectors
+"""
+file = "dimensions/sectors_res_com_ind_trans.csv"
+module = "dsgrid.dimension.standard"
+name = "Res Com Ind Trans Sectors"
+type = "sector"
+
+# [[dimensions]]
+# name = "All Subsectors Combined"
+# type = "subsector"
+
+[[dimensions]]
+class = "EndUse"
+description = """EIA AEO electricity demand and loss: no end use
+"""
+file = "dimensions/enduse_all_end_uses_combined.csv"
+module = "dsgrid.dimension.standard"
+name = "All End Uses Combined"
+type = "end_use"
+
+# [[dimensions]]
+# name = "EIA AEO Weather Years 2016-2050"
+# type = "weather_year"
+
+# [[dimensions]]
+# name = "EIA AEO Model Years 2016-2050"
+# type = "model_year"
+
+# [[dimensions]]
+# name = "EIA AEO Reference"
+# type = "scenario"
+
+# [[dimensions]]
+# name = "EIA AEO 2018"
+# type = "data_source"
+
+# [[dimensions]]
+# name = "time-2016-2050-annual"
+# type = "time"

@@ -1,0 +1,88 @@
+# ------------------------------------------------------
+# Dataset Dimensions
+# ------------------------------------------------------
+# [[dimensions]]
+# class = "Geography"
+# name = "US Census Divisions"
+
+# [[dimensions]]
+# class = "Sector"
+# description = """commercial sector only"""
+# file = "dimensions/sector_commercial.csv"
+# module = "dsgrid.dimension.standard"
+# name = "Commercial"
+# type = "sector"
+
+[[dimensions]]
+class = "SubSector"
+description = """EIA AEO construction types"""
+file = "dimensions/subsector_construction_types.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO construction types"
+type = "subsector"
+
+[[dimensions]]
+class = "EndUse"
+description = """EIA AEO floor area sqft
+"""
+file = "dimensions/enduse_floor_area.csv"
+module = "dsgrid.dimension.standard"
+name = "End use floor area"
+type = "end_use"
+
+# [[dimensions]]
+# class = "WeatherYear"
+# description = """
+# EIA AEO weather years: 2013 - 2050
+# """
+# file = "dimensions/weather_years_2013_to_2050.csv"
+# module = "dsgrid.dimension.standard"
+# name = "AEO Weather Years 2013-2050"
+# type = "weather_year"
+
+# [[dimensions]]
+# class = "ModelYear"
+# description = """
+# EIA AEO model years: 2013 - 2050
+# """
+# file = "dimensions/model_years_2013_to_2050.csv"
+# module = "dsgrid.dimension.standard"
+# name = "AEO Model Years 2013-2050"
+# type = "model_year"
+
+# [[dimensions]]
+# class = "Scenario"
+# description = """
+# EIA AEO reference scenario
+# """
+# file = "dimensions/scenario_eia_aeo_reference.csv"
+# module = "dsgrid.dimension.standard"
+# name = "AEO Reference"
+# type = "scenario"
+
+# [[dimensions]]
+# class = "DataSource"
+# description = """
+# EIA AEO 2018 electricity demand projection
+# """
+# file = "dimensions/data_source_eia_aeo_2018.csv"
+# module = "dsgrid.dimension.standard"
+# name = "AEO 2018"
+# type = "data_source"
+
+# [[dimensions]]
+# class = "Time"
+# description = """
+# Time dimension, 2013 - 2050, annual
+# """
+# end = "2050"
+# frequency = "1 year"
+# includes_dst = false
+# name = "time-2013-2050-annual"
+# period = "period_beginning"
+# start = "2013"
+# str_format = "%Y"
+# timezone = "UTC" #none
+# type = "time"
+# value_representation = "total"
+

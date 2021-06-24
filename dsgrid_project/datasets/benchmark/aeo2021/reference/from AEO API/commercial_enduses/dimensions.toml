@@ -1,0 +1,73 @@
+# ------------------------------------------------------
+# Dataset Dimensions
+# ------------------------------------------------------
+# [[dimensions]]
+# name = "United States Excluding Territories"
+# type = "geography"
+
+# [[dimensions]]
+# name = "Commercial"
+# type = "sector"
+
+# [[dimensions]]
+# name = "All Subsectors Combined"
+# type = "subsector"
+
+[[dimensions]]
+class = "EndUse"
+description = """EIA AEO electricity demand and loss: commercial end uses (valid for AEO 2021 and up)
+"""
+file = "dimensions/eia_aeo_commercial_enduses_valid_for_post_2020.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO Commercial End Uses-Valid Post-2020"
+type = "end_use"
+
+[[dimensions]]
+class = "WeatherYear"
+description = """
+EIA AEO weather years: 2020 - 2050
+"""
+file = "dimensions/weather_years_2020_to_2050.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO Weather Years 2020-2050"
+type = "weather_year"
+
+[[dimensions]]
+class = "ModelYear"
+description = """
+EIA AEO model years: 2020 - 2050
+"""
+file = "dimensions/model_years_2020_to_2050.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO Model Years 2020-2050"
+type = "model_year"
+
+# [[dimensions]]
+# name = "EIA AEO Reference"
+# type = "scenario"
+
+[[dimensions]]
+class = "DataSource"
+description = """
+EIA AEO 2021 electricity demand projection
+"""
+file = "dimensions/data_source_eia_aeo_2021.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO 2021"
+type = "data_source"
+
+[[dimensions]]
+class = "Time"
+description = """
+Time dimension, 2020 - 2050, annual
+"""
+end = "2050"
+frequency = "1 year"
+includes_dst = false
+name = "Time-2020-2050-annual"
+period = "period_beginning"
+start = "2020"
+str_format = "%Y"
+timezone = "UTC" #none
+type = "time"
+value_representation = "total"

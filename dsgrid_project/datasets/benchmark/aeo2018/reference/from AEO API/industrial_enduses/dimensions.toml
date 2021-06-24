@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# Dataset Dimensions
+# ------------------------------------------------------
+# [[dimensions]]
+# name = "United States"
+# type = "geography"
+
+[[dimensions]]
+class = "Sector"
+description = """EIA AEO electricity demand and loss: industrial sector only
+"""
+file = "dimensions/sector_industrial.csv"
+module = "dsgrid.dimension.standard"
+name = "Industrial"
+type = "sector"
+
+# [[dimensions]]
+# name = "All Subsectors Combined"
+# type = "subsector"
+
+[[dimensions]]
+# required: end use maps to [sector, subsector, model]
+class = "EndUse"
+description = """EIA AEO electricity demand and loss: industrial end uses
+"""
+file = "dimensions/eia_aeo_industrial_enduses.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO Industrial End Uses"
+type = "end_use"
+
+# [[dimensions]]
+# name = "EIA AEO Weather Years 2016-2050"
+# type = "weather_year"
+
+# [[dimensions]]
+# name = "EIA AEO Model Years 2016-2050"
+# type = "model_year"
+
+# [[dimensions]]
+# name = "EIA AEO Reference"
+# type = "scenario"
+
+# [[dimensions]]
+# name = "EIA AEO 2018"
+# type = "data_source"
+
+# [[dimensions]]
+# name = "time-2016-2050-annual"
+# type = "time"
+# value_representation = "total"

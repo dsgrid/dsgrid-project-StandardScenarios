@@ -1,0 +1,68 @@
+# ------------------------------------------------------
+# Dataset Dimensions
+# ------------------------------------------------------
+# [[dimensions]]
+# name = "United States Excluding Territories"
+# type = "geography"
+
+# [[dimensions]]
+# name = "Commercial"
+# type = "sector"
+
+# [[dimensions]]
+# name = "All Subsectors Combined"
+# type = "subsector"
+
+# [[dimensions]]
+# name = "EIA AEO Commercial End Uses-Valid 2018-2020"
+# type = "end_use"
+
+[[dimensions]]
+class = "WeatherYear"
+description = """
+EIA AEO weather years: 2017 - 2050
+"""
+file = "dimensions/weather_years_2017_to_2050.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO Weather Years 2017-2050"
+type = "weather_year"
+
+[[dimensions]]
+class = "ModelYear"
+description = """
+EIA AEO model years: 2017 - 2050
+"""
+file = "dimensions/model_years_2017_to_2050.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO Model Years 2017-2050"
+type = "model_year"
+
+# [[dimensions]]
+# name = "EIA AEO Reference"
+# type = "scenario"
+
+[[dimensions]]
+class = "DataSource"
+description = """
+EIA AEO 2019 electricity demand projection
+"""
+file = "dimensions/data_source_eia_aeo_2019.csv"
+module = "dsgrid.dimension.standard"
+name = "EIA AEO 2019"
+type = "data_source"
+
+[[dimensions]]
+class = "Time"
+description = """
+Time dimension, 2017 - 2050, annual
+"""
+end = "2050"
+frequency = "1 year"
+includes_dst = false
+name = "Time-2017-2050-annual"
+period = "period_beginning"
+start = "2017"
+str_format = "%Y"
+timezone = "UTC" #none
+type = "time"
+value_representation = "total"

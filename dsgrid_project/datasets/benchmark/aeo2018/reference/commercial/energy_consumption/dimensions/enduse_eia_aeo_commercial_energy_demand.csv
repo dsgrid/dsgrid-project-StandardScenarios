@@ -1,0 +1,12 @@
+﻿id,name
+heating,Heating
+cooling,Cooling
+water_heating,Water heating
+ventilation,Ventilation
+cooking,Cooking
+lighting,Lighting
+refrigeration,Refrigeration
+office_equip_pcs,Office equipment - PCs
+office_equip_nonpcs,Office equipment - non-PCs
+other,Other
+unspecified,Unspecified
