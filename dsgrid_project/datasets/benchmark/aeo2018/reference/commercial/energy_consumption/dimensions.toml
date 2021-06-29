@@ -14,7 +14,7 @@
 # type = "sector"
 
 [[dimensions]]
-class = "SubSector"
+class = "Subsector"
 description = """EIA AEO commerical energy demand fuel types"""
 file = "dimensions/subsector_eia_aeo_comm_energy_demand_fuel_types.csv"
 module = "dsgrid.dimension.standard"

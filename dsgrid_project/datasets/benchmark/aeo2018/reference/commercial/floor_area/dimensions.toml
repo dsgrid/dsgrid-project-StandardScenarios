@@ -14,7 +14,7 @@
 # type = "sector"
 
 [[dimensions]]
-class = "SubSector"
+class = "Subsector"
 description = """EIA AEO construction types"""
 file = "dimensions/subsector_construction_types.csv"
 module = "dsgrid.dimension.standard"

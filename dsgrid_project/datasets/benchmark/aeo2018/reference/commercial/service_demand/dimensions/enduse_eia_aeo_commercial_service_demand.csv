@@ -1,8 +1,8 @@
-﻿id,name
-heating,Heating
-cooling,Cooling
-water_heating,Water heating
-ventilation,Ventilation
-cooking,Cooking
-lighting,Lighting
-refrigeration,Refrigeration
+﻿id,name,units
+heating,Heating,trillion btu
+cooling,Cooling,trillion btu
+water_heating,Water heating,trillion btu
+ventilation,Ventilation,giga-cfm-years
+cooking,Cooking,trillion btu
+lighting,Lighting,giga-lumen-years
+refrigeration,Refrigeration,trillion btu
