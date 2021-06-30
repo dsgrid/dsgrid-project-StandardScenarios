@@ -3,7 +3,7 @@
 
 # Import necessary libraries
 
-# In[1]:
+# In[20]:
 
 
 import numpy as np
@@ -16,7 +16,7 @@ import shutil
 
 # User input and directory creation
 
-# In[3]:
+# In[21]:
 
 
 def initialize_timeseries():
@@ -99,14 +99,22 @@ def cleardir():
     cleardir.dimension_path = '/Users/nsandova/NREL_Practice/Translation/dimensions'
     cleardir.sources_path = '/Users/nsandova/NREL_Practice/Translation/sources'
     cleardir.utils_path = '/Users/nsandova/NREL_Practice/Translation/utils'
-    isdir = os.path.isdir(cleardir.dimension_path)
-    if isdir == True:
+    cleardir.dimension_mappings_path = '/Users/nsandova/NREL_Practice/Translation/dimension_mappings'
+    isdir1 = os.path.isdir(cleardir.dimension_path)
+    if isdir1 == True:
         shutil.rmtree(cleardir.dimension_path)
         os.mkdir(cleardir.dimension_path)
+    else:
+        os.mkdir(cleardir.dimension_path)
+    isdir2 = os.path.isdir(cleardir.dimension_mappings_path)
+    print(isdir2)
+    if isdir2 == True:
+        shutil.rmtree(cleardir.dimension_mappings_path)
+        os.mkdir(cleardir.dimension_mappings_path)
         os.chdir(cleardir.sources_path)
         return
     else:
-        os.mkdir(cleardir.dimension_path)
+        os.mkdir(cleardir.dimension_mappings_path)
         os.chdir(cleardir.sources_path)
         return
     
@@ -116,7 +124,7 @@ initialize_county()
 cleardir()
 
 Translate inputted file into appropriate dataframes
-# In[4]:
+# In[24]:
 
 
 # Read parquet file
@@ -177,12 +185,13 @@ enduse_final_df = pd.DataFrame(enduse_final)
 county_df = pd.read_csv(initialize_county.file)
 
 # Pull relevant columns
+id = county_df.loc[:,"long_name"]
 fips = county_df.loc[:,"fips"]
 county = county_df.loc[:,'county_name']
 state = county_df.loc[:,'state_abbr']
 
 # Combine columns into final county dataframe
-county_csv = {'id':fips,'name':county,'state': state}
+county_csv = {'id':id,'name':county,'state': state, 'fips':fips}
 county_final_df = pd.DataFrame(county_csv)
 
 # Create final sources dataframe
@@ -193,10 +202,22 @@ sources_df.drop([1], axis=0, inplace = True)
 sectors_df = pd.DataFrame(initialize_model.sector, columns = ['id','name'])
 sectors_df.drop([1], axis=0, inplace = True)
 
+## Create mapping dataframes
+
+# County 
+# Create name column
+fips_short = []
+for i in fips:
+    fips_partition = i.partition('G')[-1]
+    fips_short.append(fips_partition)
+print(fips_short)
+county_mapping = {'from_id':id, 'to_id':fips_short}
+county_mapping_df = pd.DataFrame(county_mapping)
+
 
 # Create .csv files in output directory
 
-# In[5]:
+# In[25]:
 
 
 # Change to ouput directory
@@ -212,15 +233,15 @@ sources_df.to_csv('sources.csv', index = False)
 sectors_df.to_csv('sectors.csv', index = False)
 
 # Create county.csv file
-county_final_df.to_csv('county.csv', index = False)
+county_final_df.to_csv('counties.csv', index = False)
 
 
 # Create .toml file
 
-# In[7]:
+# In[26]:
 
 
-# Change to Translation directory
+# Change to sources directory
 os.chdir(cleardir.sources_path)
 
 # Import .toml file
@@ -242,6 +263,18 @@ os.chdir(cleardir.path)
 with open ('dimensions.toml','w') as f:
    data = toml.dump(dimensions_toml,f)
  
+
+
+# Create dimension mapping .csv files
+
+# In[27]:
+
+
+# Change to dimension_mappings directory
+os.chdir(cleardir.dimension_mappings_path)
+
+# Create resstock_county_to_dsgrid_county.csv
+county_mapping_df.to_csv('resstock_county_to_dsgrid_county.csv', index = False)
 
 
 # In[ ]:
