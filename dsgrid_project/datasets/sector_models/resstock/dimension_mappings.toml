@@ -1,0 +1,13 @@
+[[mappings]]
+description = "Maps Resstock US Counties 2020 to dsgrid project counties"
+file = "dimension_mappings/resstock_county_to_dsgrid_county.csv"
+[mappings.from_dimension]
+dimension_id = ""
+type = "geography"
+version = "1.0.0"
+[mappings.to_dimension]
+dimension_id = ""
+type = "geography"
+version = "1.0.0"
+
+
