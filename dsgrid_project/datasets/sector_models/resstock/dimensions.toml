@@ -1,5 +1,5 @@
 [[dimensions]]
-description = "US counties, Census 2020 vintage, no territories\n"
+description = "US counties, Census May 1st 2015 vintage, no territories\n"
 file = "dimensions/counties.csv"
 name = "US County - Census 2020"
 type = "geography"
