@@ -275,10 +275,3 @@ os.chdir(cleardir.dimension_mappings_path)
 
 # Create resstock_county_to_dsgrid_county.csv
 county_mapping_df.to_csv('resstock_county_to_dsgrid_county.csv', index = False)
-
-
-# In[ ]:
-
-
-
-

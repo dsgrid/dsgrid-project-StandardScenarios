@@ -56,4 +56,3 @@ period = "period_beginning"
 str_format = "%Y-%m-%d %H:%M:%S"
 timezone = "UTC"
 value_representation = "mean"
-
