@@ -1,24 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Import necessary libraries
-
-# In[20]:
-
-
+## Import necessary libraries
 import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 import sys
 import os
 import shutil
+import toml
 
 
-# User input and directory creation
-
-# In[21]:
-
-
+## User input and directory creation
 def initialize_timeseries():
     print('Input the timeseries results file')
     initialize_timeseries.file = input()
@@ -73,8 +66,6 @@ def initialize_model():
     else: 
         print("Invalid input. Let's try again.")            
         initialize_model()
-    
-    
 
 def initialize_county():
     print('Input the county lookup table file')
@@ -93,13 +84,14 @@ def initialize_county():
             print('You have entered '+ initialize_county.file+', is that correct? [y/n]')
             file_input2()
     file_input2()
-       
+ 
+ # For local path directions   
 def cleardir():
-    cleardir.path = '/Users/nsandova/NREL_Practice/Translation'
-    cleardir.dimension_path = '/Users/nsandova/NREL_Practice/Translation/dimensions'
-    cleardir.sources_path = '/Users/nsandova/NREL_Practice/Translation/sources'
-    cleardir.utils_path = '/Users/nsandova/NREL_Practice/Translation/utils'
-    cleardir.dimension_mappings_path = '/Users/nsandova/NREL_Practice/Translation/dimension_mappings'
+    cleardir.path = 'dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock'
+    cleardir.dimension_path = 'dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/dimensions'
+    cleardir.sources_path = 'dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources'
+    cleardir.utils_path = 'dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/utils'
+    cleardir.dimension_mappings_path = 'dsgrid-project-StandardScenarios/dsgrid_project/dimension_mappings'
     isdir1 = os.path.isdir(cleardir.dimension_path)
     if isdir1 == True:
         shutil.rmtree(cleardir.dimension_path)
@@ -116,16 +108,17 @@ def cleardir():
     else:
         os.mkdir(cleardir.dimension_mappings_path)
         os.chdir(cleardir.sources_path)
-        return
-    
+        return 
+
+# Need to build out S3 directions 
+
+# Run functions
 initialize_model()
 initialize_timeseries()
 initialize_county()
 cleardir()
 
-Translate inputted file into appropriate dataframes
-# In[24]:
-
+##Translate inputted file into appropriate dataframes
 
 # Read parquet file
 timeseries = pq.read_table(initialize_timeseries.file)
@@ -137,19 +130,19 @@ timeseries_df = timeseries.to_pandas()
 column = list(timeseries_df.columns)
 enduse = [s for s in column if s.startswith('electricity') or s.startswith('fuel_oil') or s.startswith('natural_gas') or s.startswith('propane')or s.startswith('wood_heating')]
 
-# Create name column
+# Create name column for enduse dataframe
 enduse_short = []
 for i in enduse:
     enduse_partition = i.rpartition('_')[0]
     enduse_short.append(enduse_partition)
     
-# Create index column
+# Create index column for enduse dataframe
 num = len(enduse)
 id = []
 for i in range(0,num):
     id.append(i)
 
-#Create fuel type column
+# Create fuel type column for enduse dataframe
 fuel_type_scrape = []
 for i in enduse:  
     fuel_type_partition = i.partition('_')[0]
@@ -170,7 +163,7 @@ for entry in fuel_type_2:
     fuel = entry.replace('wood','wood heating')
     fuel_type_final.append(fuel)
 
-# Create units column
+# Create units column for enduse data frame
 units = []
 for i in enduse:  
     unit_partition = i.rpartition('_')[-1]
@@ -181,10 +174,10 @@ enduse_final = {'id':id,'name':enduse_short,'fuel type': fuel_type_final, 'units
 enduse_final_df = pd.DataFrame(enduse_final)
 
 
-# Create county dataframe
+## Create county dataframe
 county_df = pd.read_csv(initialize_county.file)
 
-# Pull relevant columns
+# Pull relevant columns for county dataframe
 id = county_df.loc[:,"long_name"]
 fips = county_df.loc[:,"fips"]
 county = county_df.loc[:,'county_name']
@@ -194,17 +187,15 @@ state = county_df.loc[:,'state_abbr']
 county_csv = {'id':id,'name':county,'state': state, 'fips':fips}
 county_final_df = pd.DataFrame(county_csv)
 
-# Create final sources dataframe
+## Create final sources dataframe
 sources_df = pd.DataFrame(initialize_model.source, columns = ['id','name'])
 sources_df.drop([1], axis=0, inplace = True)
 
-# Create final sectors dataframe
+## Create final sectors dataframe
 sectors_df = pd.DataFrame(initialize_model.sector, columns = ['id','name'])
 sectors_df.drop([1], axis=0, inplace = True)
 
 ## Create mapping dataframes
-
-# County 
 # Create name column
 fips_short = []
 for i in fips:
@@ -215,11 +206,7 @@ county_mapping = {'from_id':id, 'to_id':fips_short}
 county_mapping_df = pd.DataFrame(county_mapping)
 
 
-# Create .csv files in output directory
-
-# In[25]:
-
-
+## Create .csv files in output directory
 # Change to ouput directory
 os.chdir(cleardir.dimension_path)
 
@@ -236,16 +223,9 @@ sectors_df.to_csv('sectors.csv', index = False)
 county_final_df.to_csv('counties.csv', index = False)
 
 
-# Create .toml file
-
-# In[26]:
-
-
+## Create .toml file
 # Change to sources directory
 os.chdir(cleardir.sources_path)
-
-# Import .toml file
-import toml
 
 # Transform .toml file into a dictionary
 dimensions_toml = toml.load("template.toml")
@@ -262,14 +242,8 @@ os.chdir(cleardir.path)
 # Create .toml file
 with open ('dimensions.toml','w') as f:
    data = toml.dump(dimensions_toml,f)
- 
 
-
-# Create dimension mapping .csv files
-
-# In[27]:
-
-
+## Create dimension mapping .csv files
 # Change to dimension_mappings directory
 os.chdir(cleardir.dimension_mappings_path)
 
