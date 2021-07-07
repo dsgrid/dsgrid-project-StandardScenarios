@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[4]:
 
 
 #!/usr/bin/env python
@@ -292,10 +292,11 @@ weather_years_df.to_csv('weather_years.csv', index = False)
 
 # Change to supplemental directory
 shutil.copytree(cleardir.sources_supplemental_path, cleardir.supplemental_dimension_path)
-#os.chdir(cleardir.sources_supplemental_path)
-#files = ['census_divisions.csv', 'census_regions.csv', 'states.csv']
-#for f in files:
-    #shutil.copy(f, 'cleardir.sources_supplemental_path')
+
+#Deletes the census region/divison supplemental dimensions .csv files 
+os.chdir(cleardir.supplemental_dimension_path)
+os.remove("census_divisions.csv")
+os.remove("census_regions.csv")
 
 ## Create .toml file
 # Change to sources directory
