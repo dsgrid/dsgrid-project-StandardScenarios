@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[2]:
+
+
+#!/usr/bin/env python
+# coding: utf-8
+
 # In[18]:
 
 
@@ -99,6 +105,7 @@ def cleardir():
     cleardir.sources_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources'
     cleardir.utils_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/utils'
     cleardir.dimension_mappings_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/dimension_mappings'
+    cleardir.sources_supplemental_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources/supplemental_dimensions'
     
     isdir1 = os.path.isdir(cleardir.dimension_path)
     if isdir1 == True:
@@ -117,11 +124,9 @@ def cleardir():
     isdir3 = os.path.isdir(cleardir.supplemental_dimension_path)
     if isdir3 == True:
         shutil.rmtree(cleardir.supplemental_dimension_path)
-        os.mkdir(cleardir.supplemental_dimension_path)
         os.chdir(cleardir.sources_path)
         return
     else:
-        os.mkdir(cleardir.supplemental_dimension_path)
         os.chdir(cleardir.sources_path)
         return
 
@@ -286,10 +291,11 @@ subsectors_df.to_csv('subsectors.csv', index = False)
 weather_years_df.to_csv('weather_years.csv', index = False)
 
 # Change to supplemental directory
-os.chdir(cleardir.supplemental_dimension_path)
-
-# Create subsectors.csv
-weather_years_df.to_csv('weather_years.csv', index = False)
+shutil.copytree(cleardir.sources_supplemental_path, cleardir.supplemental_dimension_path)
+#os.chdir(cleardir.sources_supplemental_path)
+#files = ['census_divisions.csv', 'census_regions.csv', 'states.csv']
+#for f in files:
+    #shutil.copy(f, 'cleardir.sources_supplemental_path')
 
 ## Create .toml file
 # Change to sources directory
