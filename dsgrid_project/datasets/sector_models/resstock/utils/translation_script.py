@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
-
-
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[18]:
+# In[5]:
 
 
 #!/usr/bin/env python
@@ -324,10 +318,4 @@ os.chdir(cleardir.dimension_mappings_path)
 
 # Create resstock_county_to_dsgrid_county.csv
 county_mapping_df.to_csv('resstock_county_to_dsgrid_county.csv', index = False)
-
-
-# In[ ]:
-
-
-
 
