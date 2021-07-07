@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[18]:
+
+
+#!/usr/bin/env python
+# coding: utf-8
+
 ## Import necessary libraries
 import numpy as np
 import pandas as pd
@@ -87,28 +93,37 @@ def initialize_county():
  
  # For local path directions   
 def cleardir():
-    cleardir.path = 'dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock'
-    cleardir.dimension_path = 'dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/dimensions'
-    cleardir.sources_path = 'dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources'
-    cleardir.utils_path = 'dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/utils'
-    cleardir.dimension_mappings_path = 'dsgrid-project-StandardScenarios/dsgrid_project/dimension_mappings'
+    cleardir.path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock'
+    cleardir.dimension_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/dimensions'
+    cleardir.supplemental_dimension_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/dimensions/supplemental'
+    cleardir.sources_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources'
+    cleardir.utils_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/utils'
+    cleardir.dimension_mappings_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/dimension_mappings'
+    
     isdir1 = os.path.isdir(cleardir.dimension_path)
     if isdir1 == True:
         shutil.rmtree(cleardir.dimension_path)
         os.mkdir(cleardir.dimension_path)
     else:
         os.mkdir(cleardir.dimension_path)
+    
     isdir2 = os.path.isdir(cleardir.dimension_mappings_path)
-    print(isdir2)
     if isdir2 == True:
         shutil.rmtree(cleardir.dimension_mappings_path)
         os.mkdir(cleardir.dimension_mappings_path)
+    else:
+        os.mkdir(cleardir.dimension_mappings_path)
+    
+    isdir3 = os.path.isdir(cleardir.supplemental_dimension_path)
+    if isdir3 == True:
+        shutil.rmtree(cleardir.supplemental_dimension_path)
+        os.mkdir(cleardir.supplemental_dimension_path)
         os.chdir(cleardir.sources_path)
         return
     else:
-        os.mkdir(cleardir.dimension_mappings_path)
+        os.mkdir(cleardir.supplemental_dimension_path)
         os.chdir(cleardir.sources_path)
-        return 
+        return
 
 # Need to build out S3 directions 
 
@@ -119,6 +134,8 @@ initialize_county()
 cleardir()
 
 ##Translate inputted file into appropriate dataframes
+# Change to sources directory
+os.chdir(cleardir.sources_path)
 
 # Read parquet file
 timeseries = pq.read_table(initialize_timeseries.file)
@@ -195,13 +212,47 @@ sources_df.drop([1], axis=0, inplace = True)
 sectors_df = pd.DataFrame(initialize_model.sector, columns = ['id','name'])
 sectors_df.drop([1], axis=0, inplace = True)
 
+## Create model year dataframe
+model_year = list(range(2010, 2052, 2))
+model_year_csv = {'id':model_year,'name':model_year}
+model_year_df = pd.DataFrame(model_year_csv)
+
+## Create scenario dataframe
+scenarios_id = ["reference"]
+scenarios_name = ["Reference"]
+scenarios_csv = {'id':scenarios_id,'name':scenarios_name}
+scenarios_df = pd.DataFrame(scenarios_csv)
+
+## Create subsectors dataframe
+subsectors_df = pd.read_csv("Geometry_Building_Type_ACS.tsv", sep='\t')
+subsectors_column = list(subsectors_df.columns)
+del subsectors_column[10:13]
+del subsectors_column[0]
+
+subsectors_scrape = []
+for i in subsectors_column:  
+    subsectors_partition = i.partition('=')[-1]
+    subsectors_scrape.append(subsectors_partition)
+
+subsectors_num = len(subsectors_scrape)
+subsectors_id = []
+for i in range(0,subsectors_num):
+    subsectors_id.append(i)
+
+subsectors_csv = {'id':subsectors_id,'name':subsectors_scrape}
+subsectors_df = pd.DataFrame(subsectors_csv)
+
+## Create scenario dataframe
+weather_id = ["2012"]
+weather_name = ["2012"]
+weather_years_csv = {'id':weather_id,'name':weather_name}
+weather_years_df = pd.DataFrame(weather_years_csv)
+
 ## Create mapping dataframes
-# Create name column
 fips_short = []
 for i in fips:
     fips_partition = i.partition('G')[-1]
     fips_short.append(fips_partition)
-print(fips_short)
 county_mapping = {'from_id':id, 'to_id':fips_short}
 county_mapping_df = pd.DataFrame(county_mapping)
 
@@ -222,6 +273,23 @@ sectors_df.to_csv('sectors.csv', index = False)
 # Create county.csv file
 county_final_df.to_csv('counties.csv', index = False)
 
+# Create model_year.csv file
+model_year_df.to_csv('model_year.csv', index = False)
+
+# Create scenarios.csv
+scenarios_df.to_csv('scenarios.csv', index = False)
+
+# Create subsectors.csv
+subsectors_df.to_csv('subsectors.csv', index = False)
+
+# Create subsectors.csv
+weather_years_df.to_csv('weather_years.csv', index = False)
+
+# Change to supplemental directory
+os.chdir(cleardir.supplemental_dimension_path)
+
+# Create subsectors.csv
+weather_years_df.to_csv('weather_years.csv', index = False)
 
 ## Create .toml file
 # Change to sources directory
@@ -249,3 +317,10 @@ os.chdir(cleardir.dimension_mappings_path)
 
 # Create resstock_county_to_dsgrid_county.csv
 county_mapping_df.to_csv('resstock_county_to_dsgrid_county.csv', index = False)
+
+
+# In[ ]:
+
+
+
+
