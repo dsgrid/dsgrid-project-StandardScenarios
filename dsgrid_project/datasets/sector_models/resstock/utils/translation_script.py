@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[5]:
+# In[ ]:
 
 
 #!/usr/bin/env python
@@ -223,10 +223,10 @@ scenarios_csv = {'id':scenarios_id,'name':scenarios_name}
 scenarios_df = pd.DataFrame(scenarios_csv)
 
 ## Create subsectors dataframe
-subsectors_df = pd.read_csv("Geometry_Building_Type_ACS.tsv", sep='\t')
+subsectors_df = pd.read_csv("Geometry_Building_Type_RECS.tsv", sep='\t')
 subsectors_column = list(subsectors_df.columns)
-del subsectors_column[10:13]
 del subsectors_column[0]
+del subsectors_column[5:8]
 
 subsectors_scrape = []
 for i in subsectors_column:  
@@ -318,4 +318,10 @@ os.chdir(cleardir.dimension_mappings_path)
 
 # Create resstock_county_to_dsgrid_county.csv
 county_mapping_df.to_csv('resstock_county_to_dsgrid_county.csv', index = False)
+
+
+# In[ ]:
+
+
+
 
