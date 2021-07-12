@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[2]:
 
 
 #!/usr/bin/env python
@@ -144,13 +144,9 @@ timeseries_df = timeseries.to_pandas()
 
 ## Create enduse dataframe
 column = list(timeseries_df.columns)
-enduse = [s for s in column if s.startswith('electricity') or s.startswith('fuel_oil') or s.startswith('natural_gas') or s.startswith('propane')or s.startswith('wood_heating')]
 
-# Create name column for enduse dataframe
-enduse_short = []
-for i in enduse:
-    enduse_partition = i.rpartition('_')[0]
-    enduse_short.append(enduse_partition)
+# Create index column for enduse dataframe
+enduse = [s for s in column if s.startswith('electricity') or s.startswith('fuel_oil') or s.startswith('natural_gas') or s.startswith('propane')or s.startswith('wood_heating')]
     
 # Create index column for enduse dataframe
 num = len(enduse)
@@ -186,7 +182,7 @@ for i in enduse:
     units.append(unit_partition)
 
 # Combine id, name, fuel type, and units into final enduse dataframe
-enduse_final = {'id':id,'name':enduse_short,'fuel type': fuel_type_final, 'units': units}
+enduse_final = {'id':enduse,'name':enduse_short,'fuel type': fuel_type_final, 'units': units}
 enduse_final_df = pd.DataFrame(enduse_final)
 
 
