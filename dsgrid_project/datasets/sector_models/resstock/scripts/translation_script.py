@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 #!/usr/bin/env python
@@ -15,7 +15,6 @@ import sys
 import os
 import shutil
 import toml
-
 
 ## User input and directory creation
 def initialize_timeseries():
@@ -97,7 +96,7 @@ def cleardir():
     cleardir.dimension_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/dimensions'
     cleardir.supplemental_dimension_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/dimensions/supplemental'
     cleardir.sources_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources'
-    cleardir.utils_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/scripts'
+    cleardir.scripts_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/scripts'
     cleardir.dimension_mappings_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/dimension_mappings'
     cleardir.sources_supplemental_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources/supplemental_dimensions'
     
@@ -315,10 +314,4 @@ os.chdir(cleardir.dimension_mappings_path)
 
 # Create resstock_county_to_dsgrid_county.csv
 county_mapping_df.to_csv('resstock_county_to_dsgrid_county.csv', index = False)
-
-
-# In[ ]:
-
-
-
 
