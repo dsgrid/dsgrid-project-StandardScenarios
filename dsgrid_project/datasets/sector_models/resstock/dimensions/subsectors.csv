@@ -1,6 +1,6 @@
 id,name
-0,Mobile Home
-1,Multi-Family with 2 - 4 Units
-2,Multi-Family with 5+ Units
-3,Single-Family Attached
-4,Single-Family Detached
+Mobile Home,Mobile Home
+Multi-Family with 2 - 4 Units,Multi-Family with 2 - 4 Units
+Multi-Family with 5+ Units,Multi-Family with 5+ Units
+Single-Family Attached,Single-Family Attached
+Single-Family Detached,Single-Family Detached

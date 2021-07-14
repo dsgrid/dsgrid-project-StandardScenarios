@@ -148,11 +148,12 @@ column = list(timeseries_df.columns)
 # Create index column for enduse dataframe
 enduse = [s for s in column if s.startswith('electricity') or s.startswith('fuel_oil') or s.startswith('natural_gas') or s.startswith('propane')or s.startswith('wood_heating')]
     
-# Create index column for enduse dataframe
-num = len(enduse)
-id = []
-for i in range(0,num):
-    id.append(i)
+
+# Create name column for enduse dataframe
+enduse_short = []
+for i in enduse:
+    enduse_partition = i.rpartition('_')[0]
+    enduse_short.append(enduse_partition)   
 
 # Create fuel type column for enduse dataframe
 fuel_type_scrape = []
@@ -234,7 +235,7 @@ subsectors_id = []
 for i in range(0,subsectors_num):
     subsectors_id.append(i)
 
-subsectors_csv = {'id':subsectors_id,'name':subsectors_scrape}
+subsectors_csv = {'id':subsectors_scrape,'name':subsectors_scrape}
 subsectors_df = pd.DataFrame(subsectors_csv)
 
 ## Create scenario dataframe
