@@ -1,4 +1,34 @@
 id,name,fuel_id,units
-BEV_L1,"BEV residential electricity usage",kWh,electricity
-BEV_L2,"BEV commercial electricity usage",kWh,electricity
-BEV_DCFC,"BEV DCFC electricity usage",kWh,electricity
+BEV_L1,"BEV residential electricity usage",electricity,kWh
+BEV_L2,"BEV commercial electricity usage",electricity,kWh
+BEV_DCFC,"BEV DCFC electricity usage",electricity,kWh
+fans,"Building non-HVAC fans",electricity,kWh
+clothes_dryers_elec,"Electric clothes driers",electricity,kWh
+cooking_ranges_elec,"Electric cooking ranges and ovens",electricity,kWh
+other_major_appliances_elec,"Other major appliances",electricity,kWh
+hvac_cooling,"HVAC cooling systems",electricity,kWh
+dishwashers,"Electric dishwashers",electricity,kWh
+exterior_lighting,"Exterior or other outdoor lighting",electricity,kWh
+refrigerators,"Standalone refrigerator units",electricity,kWh
+hvac_heating_elec,"HVAC electric heating systems",electricity,kWh
+freezers,"Standalone freezer units",electricity,kWh
+interior_lighting_elec,"Lighting in conditioned or semi-conditioned spaces",electricity,kWh
+pool_heaters_elec,"Electric pool and hot tub heaters",electricity,kWh
+pool_pumps,"Pool and hot tub pumps",electricity,kWh
+plug_loads,"Other building electricity use from small appliances and other plug loads",electricity,kWh
+pv_generation,"Generation from on-site photovoltaic systems",electricity,kWh
+water_heaters_elec,"Electric water heaters",electricity,kWh
+other_pumps,"Other pumps",electricity,kWh
+hvac_heating_fueloil,"HVAC fuel oil heating",fuel oil,mbtu
+water_heaters_fueloil,"Fuel oil water heaters",fuel oil,mbtu,
+clothes_dryers_ng,"Natural gas clothes dryers",natural gas,therm
+other_major_appliances_ng,"Other natural gas appliances",natural gas,therm
+hvac_heating_ng,"HVAC natural gas heating systems",natural gas,therm
+cooking_ranges_ng,"Natural gas cooking ranges and ovens",natural gas,therm
+pool_heaters_ng,"Natural gas pool and hot tub heaters",natural gas,therm
+water_heaters_ng,"Natural gas water heaters",natural gas,therm
+clothes_dryers_propane,"Propane clothes dryers",propane,mbtu
+cooking_ranges_propane,"Propane cooking ranges and ovens",propane,mbtu
+hvac_heating_propane,"HVAC propane heating systems",propane,mbtu
+water_heaters_propane,"Propane water heaters",propane,mbtu
+hvac_heating_wood,"HVAC wood heating systems",wood heating,mbtu
