@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
-#!/usr/bin/env python
-# coding: utf-8
-
 ## Import necessary libraries
 import numpy as np
 import pandas as pd
@@ -15,7 +9,6 @@ import sys
 import os
 import shutil
 import toml
-
 
 ## User input and directory creation
 def initialize_timeseries():
@@ -43,8 +36,8 @@ def initialize_model():
     file_answer = input()
     if file_answer == 'y':
         if initialize_model.model == 'ResStock' or initialize_model.model =='resstock' or initialize_model.model =='Resstock':
-            initialize_model.source = [['rld', 'ResStock'], ['null', 'null']]
-            initialize_model.sector = [['rld', 'Residential'], ['null', 'null']]
+            initialize_model.source = [['res', 'ResStock'], ['null', 'null']]
+            initialize_model.sector = [['res', 'Residential'], ['null', 'null']]
             initialize_model.model_output = 'ResStock'
             initialize_model.sector_output = 'Residential'
             print('Great!')
@@ -97,7 +90,7 @@ def cleardir():
     cleardir.dimension_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/dimensions'
     cleardir.supplemental_dimension_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/dimensions/supplemental'
     cleardir.sources_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources'
-    cleardir.utils_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/utils'
+    cleardir.scripts_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/scripts'
     cleardir.dimension_mappings_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/dimension_mappings'
     cleardir.sources_supplemental_path = '/Users/nsandova/dsgrid-project-StandardScenarios/dsgrid_project/datasets/sector_models/resstock/sources/supplemental_dimensions'
     
@@ -148,11 +141,12 @@ column = list(timeseries_df.columns)
 # Create index column for enduse dataframe
 enduse = [s for s in column if s.startswith('electricity') or s.startswith('fuel_oil') or s.startswith('natural_gas') or s.startswith('propane')or s.startswith('wood_heating')]
     
-# Create index column for enduse dataframe
-num = len(enduse)
-id = []
-for i in range(0,num):
-    id.append(i)
+
+# Create name column for enduse dataframe
+enduse_short = []
+for i in enduse:
+    enduse_partition = i.rpartition('_')[0]
+    enduse_short.append(enduse_partition)   
 
 # Create fuel type column for enduse dataframe
 fuel_type_scrape = []
@@ -234,7 +228,7 @@ subsectors_id = []
 for i in range(0,subsectors_num):
     subsectors_id.append(i)
 
-subsectors_csv = {'id':subsectors_id,'name':subsectors_scrape}
+subsectors_csv = {'id':subsectors_scrape,'name':subsectors_scrape}
 subsectors_df = pd.DataFrame(subsectors_csv)
 
 ## Create scenario dataframe
@@ -314,10 +308,4 @@ os.chdir(cleardir.dimension_mappings_path)
 
 # Create resstock_county_to_dsgrid_county.csv
 county_mapping_df.to_csv('resstock_county_to_dsgrid_county.csv', index = False)
-
-
-# In[ ]:
-
-
-
 
