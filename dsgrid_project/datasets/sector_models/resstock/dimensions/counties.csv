@@ -1,4 +1,4 @@
-id,name,state,fips
+id,name,state,geoid_id
 "AL, Autauga County",Autauga County,AL,G01001
 "AL, Baldwin County",Baldwin County,AL,G01003
 "AL, Barbour County",Barbour County,AL,G01005
