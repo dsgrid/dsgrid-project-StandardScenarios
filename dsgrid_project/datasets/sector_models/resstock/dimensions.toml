@@ -1,44 +1,20 @@
 [[dimensions]]
-description = "US counties, Census May 1st 2015 vintage, no territories\n"
+description = "US counties, Census May 1st 2015 vintage, no territories"
 file = "dimensions/counties.csv"
-name = "US County - Census 2020"
+name = "US County - Census May 1st 2015 vintage"
 type = "geography"
 
 [[dimensions]]
 class = "Sector"
-description = "dsgrid Standard Scenarios 2021 Sectors;Residential only"
+description = "dsgrid Standard Scenarios 2021 Sectors;Residential Only"
 file = "dimensions/sectors.csv"
 module = "dsgrid.dimension.standard"
 name = "Standard Scenarios 2021 Sectors-Residential-Only"
 type = "sector"
 
 [[dimensions]]
-class = "Weather"
-description = "Weather year, 2012 only\n"
-file = "dimensions/weather_years.csv"
-module = "dsgrid.dimension.standard"
-name = "2012 Weather Year"
-type = "weather"
-
-[[dimensions]]
-class = "ModelYear"
-description = "Model year, 2010-2050, every other year\n"
-file = "dimensions/model_years.csv"
-module = "dsgrid.dimension.standard"
-name = "Model Years 2010 to 2050 with 2 year intervals"
-type = "model_year"
-
-[[dimensions]]
-class = "Scenario"
-description = "reference scenario only\n"
-file = "dimensions/scenarios.csv"
-module = "dsgrid.dimension.standard"
-name = "Reference Scenario"
-type = "scenario"
-
-[[dimensions]]
 class = "DataSource"
-description = "dsgrid Standard Scenarios 2021 Data Sources;ResStock Only\n"
+description = "dsgrid Standard Scenarios 2021 Data Sources;ResStock Only"
 file = "dimensions/sources.csv"
 module = "dsgrid.dimension.standard"
 name = "Standard Scenarios 2021 DataSourcs -ResStock-Only"
@@ -48,11 +24,12 @@ type = "data_source"
 end = "2012-12-31 23:59:59"
 frequency = "1 hour"
 includes_dst = false
-name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-mean"
+name = "Time-2012-localStandardTime-hourly-periodBeginning-noDST-noLeapDayAdjustment-mean"
 start = "2012-01-01 01:00:00"
 type = "time"
-description = "Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, mean value\n"
+description = "Time dimension, 2012 hourly local standard time, hour-beginning, no DST, no Leap Day Adjustment, mean value"
 period = "period_beginning"
 str_format = "%Y-%m-%d %H:%M:%S"
-timezone = "UTC"
+timezone = "Local standard time"
 value_representation = "mean"
+
