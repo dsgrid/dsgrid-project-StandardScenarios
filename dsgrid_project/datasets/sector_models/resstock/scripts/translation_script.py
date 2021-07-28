@@ -263,7 +263,7 @@ sectors_df.to_csv('sectors.csv', index = False)
 county_final_df.to_csv('counties.csv', index = False)
 
 # Create model_year.csv file
-model_year_df.to_csv('model_years.csv', index = False)
+#model_year_df.to_csv('model_years.csv', index = False)
 
 # Create subsectors.csv
 subsectors_df.to_csv('subsectors.csv', index = False)
