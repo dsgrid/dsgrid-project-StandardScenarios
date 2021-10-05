@@ -1,0 +1,15 @@
+from_id,to_id
+full_service_restaurant,aeo_com_food_service
+hospital,aeo_com_health_care
+large_hotel,aeo_com_lodging
+large_office,aeo_com_office_large
+medium_office,aeo_com_office_large
+outpatient,aeo_com_health_care
+primary_school,aeo_com_education
+quick_service_restaurant,aeo_com_food_service
+retail,aeo_com_merc_service
+secondary_school,aeo_com_education
+small_hotel,aeo_com_lodging
+small_office,aeo_com_office_small
+strip_mall,aeo_com_merc_service
+warehouse,aeo_com_warehouse

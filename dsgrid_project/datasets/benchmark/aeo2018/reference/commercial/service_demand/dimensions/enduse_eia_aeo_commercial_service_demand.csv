@@ -1,4 +1,4 @@
-﻿id,name,units
+id,name,units
 heating,Heating,trillion btu
 cooling,Cooling,trillion btu
 water_heating,Water heating,trillion btu

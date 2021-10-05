@@ -1,0 +1,95 @@
+# ------------------------------------------------------
+# AEO 2021 Reference Case Residential Unit Count and Sqft Growth Factors Dimensions
+# ------------------------------------------------------
+
+[[dimensions]]
+type = "sector"
+name = "Benchmark-residential-sector"
+file = "dimensions/sector_residential.csv"
+module = "dsgrid.dimension.standard"
+class = "Sector"
+description = """
+Benchmark Residential Sector
+"""
+
+[[dimensions]]
+type = "metric"
+name = "AEO2021-residential-stock-metrics"
+file = "dimensions/aeo2021_residential_stock_metrics.csv"
+module = "dsgrid.dimension.standard"
+class = "Stock"
+description = """
+AEO 2021 residential stock metrics (bldg unit count and sqft)
+"""
+
+[[dimensions]]
+type = "scenario"
+name = "AEO-Reference-Scenario"
+file = "dimensions/aeo_reference_scenario.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+description = """
+AEO Reference Scenario
+"""
+
+[[dimensions]]
+type = "data_source"
+name = "AEO-2021-Reference-Case-Data-Source"
+file = "dimensions/aeo2021_ref_data_source.csv"
+module = "dsgrid.dimension.standard"
+class = "Model"
+description = """
+AEO 2021 Reference Case Data Source
+"""
+
+
+### Trivial Dimensions Below ###
+
+[[dimensions]]
+type = "geography"
+name = ""
+file = ""
+module = "dsgrid.dimension.standard"
+class = "CensusDivision"
+description = """
+None or trivial
+"""
+
+[[dimensions]]
+type = "subsector"
+name = ""
+file = ""
+module = "dsgrid.dimension.standard"
+class = "SubSector"
+description = """
+None or trivial
+"""
+
+[[dimensions]]
+type = "weather"
+name = ""
+file = ""
+module = "dsgrid.dimension.standard"
+class = "Weather"
+description = """
+None or trivial
+"""
+
+[[dimensions]]
+type = "model_year"
+name = ""
+file = ""
+module = "dsgrid.dimension.standard"
+class = "ModelYear"
+description = """
+None or trivial
+"""
+
+[[dimensions]]
+class = "Time"
+description = """None or trivial"""
+module = "dsgrid.dimension.standard"
+name = ""
+measurement_type = ""
+type = "time"
+time_type = ""

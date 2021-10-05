@@ -1,0 +1,14 @@
+id,name,fuel_id,unit
+agf_elec_major_appnc,Annual Growth Factor in Electricity - Major Appliance,electricity,annual_growth_factor
+agf_elec_refrigeration,Annual Growth Factor in Electricity - Refrigeration,electricity,annual_growth_factor
+agf_elec_other,Annual Growth Factor in Electricity - Other,electricity,annual_growth_factor
+agf_elec_heat_cool,Annual Growth Factor in Electricity - Space Heating And Cooling,electricity,annual_growth_factor
+agf_elec_plug_loads,Annual Growth Factor in Electricity - Plug Loads,electricity,annual_growth_factor
+agf_elec_light,Annual Growth Factor in Electricity - Lighting,electricity,annual_growth_factor
+agf_ng_major_appnc,Annual Growth Factor in Natural Gas - Major Appliance,natural_gas,annual_growth_factor
+agf_ng_heat_cool,Annual Growth Factor in Natural Gas - Space Heating And Cooling,natural_gas,annual_growth_factor
+agf_ng_light,Annual Growth Factor in Natural Gas - Light,natural_gas,annual_growth_factor
+agf_oil_major_appnc,Annual Growth Factor in Fuel Oil - Major Appliance,fuel_oil,annual_growth_factor
+agf_oil_heat_cool,Annual Growth Factor in Fuel Oil - Space Heating And Cooling,fuel_oil,annual_growth_factor
+agf_ppn_major_appnc,Annual Growth Factor in Propane - Major Appliance,propane,annual_growth_factor
+agf_ppn_heat_cool,Annual Growth Factor in Propane - Space Heating And Cooling,propane,annual_growth_factor

@@ -1,0 +1,3 @@
+id,name,unit
+agf_bldg_units,"Annual growth factor for number of building units, assumed the same as number of households",annual_growth_factor
+agf_floor_area,Annual growth factor for total floor area,annual_growth_factor

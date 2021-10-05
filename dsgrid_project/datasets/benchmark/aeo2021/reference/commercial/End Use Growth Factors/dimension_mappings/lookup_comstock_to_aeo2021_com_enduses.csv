@@ -1,0 +1,15 @@
+from_id,to_id
+exterior_lighting,agf_elec_light
+interior_lighting,agf_elec_light
+interior_equipment,agf_elec_off_eq_pc
+hot_water,agf_elec_water_heat
+heat_recovery,agf_elec_other
+heat_rejection,agf_elec_other
+fans,agf_elec_ventilation
+pumps,agf_elec_other
+cooling,agf_elec_cool
+heating,agf_elec_heat
+refrigeration,agf_elec_refrigeration
+gas_heating_kbtu,agf_ng_heat
+gas_interior_equipment_kbtu,agf_ng_off_eq_nonpc
+gas_water_systems_kbtu,agf_ng_water_heat
