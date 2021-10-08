@@ -22,6 +22,7 @@ version = "0.1.0"
 type = "sector" # FIXME: TEMPO is just the transportation sector.
 dimension_id = "" # TODO: The registration process will provide this.
 version = "0.1.0"
+trivial = true
 
 [[dimensions]]
 type = "subsector"
@@ -42,6 +43,7 @@ version = "0.1.0"
 type = "data_source"
 dimension_id = "" # TODO: The registration process will provide this.
 version = "0.1.0"
+trivial = true
 
 [[dimensions]]
 type = "model_year"
@@ -57,6 +59,7 @@ version = "0.1.0"
 type = "weather_year"
 dimension_id = "" # TODO: The registration process will provide this.
 version = "0.1.0"
+trivial = true
 
 [[metadata]]
 coverage_year = "2018-2050"
