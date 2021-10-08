@@ -84,21 +84,23 @@ description = """
 Fuels used by TEMPO BEVs.
 """
 
+#[[dimensions]]
+#class = "MetricType"
+# dsgrid assumes trivial when not specified in dataset/here
+
 [[dimensions]]
 class = "Time"
 type = "time"
 name = "Time of Week by Month"
-start = "Jan Mon 00:00:00"
-end   = "Dec Sun 23:59:59"
-frequency = "1 hour"
-includes_dst = false
-period = "period_ending"
-str_format = "%b %a %X"
-timezone = "LOCAL"
-value_representation = "total"
+ranges = [{start = 1, end = 12}]
+time_interval_type = "period_ending"
+time_type = "representative_period"
+measurement_type = "total"
+format = "one_week_per_month_by_hour"
 description = """
 Month, day of week, and time of day.
 """
+
 
 [[dimensions]]
 class = "DataSource"
@@ -108,7 +110,7 @@ file = "dimensions/model.csv"
 description = """
 TEMPO projections.
 """
-#trivial = true
+
 
 [[dimensions]]
 class = "ModelYear"
@@ -119,6 +121,8 @@ description = """
 TEMPO modeling years.
 """
 
+
+# check how many scenarios we're submitting
 [[dimensions]]
 class = "Scenario"
 type = "scenario"
@@ -127,8 +131,9 @@ file = "dimensions/scenario.csv"
 description = """
 TEMPO base scenario only.
 """
-#trivial = true
 
+
+# trivial
 [[dimensions]]
 class = "WeatherYear"
 type = "weather_year"
@@ -137,4 +142,4 @@ file = "dimensions/weather.csv"
 description = """
 Weather year used by TEMPO.
 """
-#trivial = true
+
