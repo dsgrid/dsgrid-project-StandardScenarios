@@ -1,9 +1,9 @@
 data_source = "AEO2021 Reference Case"
-dataset_id = "aeo2021_ref_com_stock_growth_factors"
+dataset_id = "aeo2021_ref_com_energy_end_use_growth_factors"
 data_schema_type = "standard"
 dataset_type = "sector_model" # <--- benchmark?
-path = "s3://nrel-dsgrid-registry/data/benchmark/aeo2021/aeo2021_ref_com_stock_growth_factors/1.0.0" # <---
-description = "AEO 2021 Reference Case Commercial Stock (sqft only) Annual Growth Factors, for ComStock"
+path = "s3://nrel-dsgrid-registry/data/benchmark/aeo2021/aeo2021_ref_com_energy_end_use_growth_factors/1.0.0" # <---
+description = "AEO 2021 Reference Case Commercial Energy End Use Annual Growth Factors, for ComStock"
 origin_creator = "Lixi Liu"
 origin_organization = "NREL"
 origin_contributors = [ "Lixi Liu", "Meghan Mooney", "Elaine Hale",]

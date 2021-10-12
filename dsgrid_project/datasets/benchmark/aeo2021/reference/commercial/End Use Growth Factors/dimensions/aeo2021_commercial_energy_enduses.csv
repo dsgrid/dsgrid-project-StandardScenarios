@@ -1,20 +1,20 @@
 id,name,fuel_id,unit
-agf_elec_heat,Annual Growth Factor in Electricity - Heating,electricity,annual_growth_factor
-agf_elec_cool,Annual Growth Factor in Electricity - Cooling,electricity,annual_growth_factor
-agf_elec_water_heat,Annual Growth Factor in Electricity - Water Heating,electricity,annual_growth_factor
+agf_elec_heating,Annual Growth Factor in Electricity - Heating,electricity,annual_growth_factor
+agf_elec_cooling,Annual Growth Factor in Electricity - Cooling,electricity,annual_growth_factor
+agf_elec_water_heating,Annual Growth Factor in Electricity - Water Heating,electricity,annual_growth_factor
 agf_elec_ventilation,Annual Growth Factor in Electricity - Ventilation,electricity,annual_growth_factor
 agf_elec_cooking,Annual Growth Factor in Electricity - Cooking,electricity,annual_growth_factor
-agf_elec_light,Annual Growth Factor in Electricity - Lighting,electricity,annual_growth_factor
+agf_elec_lighting,Annual Growth Factor in Electricity - Lighting,electricity,annual_growth_factor
 agf_elec_refrigeration,Annual Growth Factor in Electricity - Refrigeration,electricity,annual_growth_factor
-agf_elec_off_eq_pc,Annual Growth Factor in Electricity - Office Equip - PCs,electricity,annual_growth_factor
-agf_elec_off_eq_nonpc,Annual Growth Factor in Electricity - Office Equip - NonPCs,electricity,annual_growth_factor
+agf_elec_office_equip_pcs,Annual Growth Factor in Electricity - Office Equip - PCs,electricity,annual_growth_factor
+agf_elec_office_equip_nonpcs,Annual Growth Factor in Electricity - Office Equip - NonPCs,electricity,annual_growth_factor
 agf_elec_other,Annual Growth Factor in Electricity - Other,electricity,annual_growth_factor
-agf_ng_heat,Annual Growth Factor in Natural Gas - Heating,natural_gas,annual_growth_factor
-agf_ng_cool,Annual Growth Factor in Natural Gas - Cooling,natural_gas,annual_growth_factor
-agf_ng_water_heat,Annual Growth Factor in Natural Gas - Water Heating,natural_gas,annual_growth_factor
+agf_ng_heating,Annual Growth Factor in Natural Gas - Heating,natural_gas,annual_growth_factor
+agf_ng_cooling,Annual Growth Factor in Natural Gas - Cooling,natural_gas,annual_growth_factor
+agf_ng_water_heating,Annual Growth Factor in Natural Gas - Water Heating,natural_gas,annual_growth_factor
 agf_ng_cooking,Annual Growth Factor in Natural Gas - Cooking,natural_gas,annual_growth_factor
 agf_ng_other,Annual Growth Factor in Natural Gas - Other,natural_gas,annual_growth_factor
-agf_other_heat,Annual Growth Factor in Other Fuel - Heating,other_fuel,annual_growth_factor
-agf_other_cool,Annual Growth Factor in Other Fuel - Cooling,other_fuel,annual_growth_factor
-agf_other_water_heat,Annual Growth Factor in Other Fuel - Water Heating,other_fuel,annual_growth_factor
+agf_other_heating,Annual Growth Factor in Other Fuel - Heating,other_fuel,annual_growth_factor
+agf_other_cooling,Annual Growth Factor in Other Fuel - Cooling,other_fuel,annual_growth_factor
+agf_other_water_heating,Annual Growth Factor in Other Fuel - Water Heating,other_fuel,annual_growth_factor
 agf_other_other,Annual Growth Factor in Other Fuel - Other,other_fuel,annual_growth_factor

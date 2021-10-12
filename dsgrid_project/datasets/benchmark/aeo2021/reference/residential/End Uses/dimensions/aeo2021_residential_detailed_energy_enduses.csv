@@ -1,0 +1,52 @@
+id,name,fuel_id,unit
+elec_monitors,Total Electricity - Monitors,electricity,million_btu
+elec_rechargeable,Total Electricity - Rechargeable,electricity,million_btu
+elec_ceiling_fan,Total Electricity - Ceiling Fan,electricity,million_btu
+elec_cooking,Total Electricity - Cooking,electricity,million_btu
+elec_space_cooling,Total Electricity - Space Cooling,electricity,million_btu
+elec_coffee_maker,Total Electricity - Coffee Maker,electricity,million_btu
+elec_clothes_washer,Total Electricity - Clothes Washer,electricity,million_btu
+elec_dehumidifier,Total Electricity - Dehumidifier,electricity,million_btu
+elec_desktop_pc,Total Electricity - Desktop PC,electricity,million_btu
+elec_dryer,Total Electricity - Dryer,electricity,million_btu
+elec_dvd,Total Electricity - DVD,electricity,million_btu
+elec_dishwasher,Total Electricity - Dishwasher,electricity,million_btu
+elec_electric_other,Total Electricity - Electric Other,electricity,million_btu
+elec_furnace_fans,Total Electricity - Furnace Fans,electricity,million_btu
+elec_freezer,Total Electricity - Freezer,electricity,million_btu
+elec_space_heating,Total Electricity - Space Heating,electricity,million_btu
+elec_home_theater,Total Electricity - Home Theater,electricity,million_btu
+elec_hot_water,Total Electricity - Hot Water,electricity,million_btu
+elec_laptop,Total Electricity - Laptop,electricity,million_btu
+elec_lighting,Total Electricity - Lighting,electricity,million_btu
+elec_microwave,Total Electricity - Microwave,electricity,million_btu
+elec_network_equipment,Total Electricity - Network Equipment,electricity,million_btu
+elec_pool_heater,Total Electricity - Pool Heater,electricity,million_btu
+elec_refrigerator,Total Electricity - Refrigerator,electricity,million_btu
+elec_security_system,Total Electricity - Security Systems,electricity,million_btu
+elec_sec_heating,Total Electricity - Secondary Heating,electricity,million_btu
+elec_spa,Total Electricity - Spa,electricity,million_btu
+elec_set_top_box,Total Electricity - Set Top Box (TV),electricity,million_btu
+elec_tv,Total Electricity - TV,electricity,million_btu
+elec_video_game_co,Total Electricity - Video Games,electricity,million_btu
+elec_wcl,Total Electricity - Wine Coolers,electricity,million_btu
+ng_cooking,Total Natural Gas - Cooking,natural_gas,million_btu
+ng_space_cooling,Total Natural Gas - Space Cooling,natural_gas,million_btu
+ng_dryer,Total Natural Gas - Dryer,natural_gas,million_btu
+ng_space_heating,Total Natural Gas - Space Heating,natural_gas,million_btu
+ng_hot_water,Total Natural Gas - Hot Water,natural_gas,million_btu
+ng_other_appliance,Total Natural Gas - Other Appliance,natural_gas,million_btu
+ng_sec_heating,Total Natural Gas - Secondary Heating,natural_gas,million_btu
+fuel_oil_space_heating,Total Distillate Fuel Oil - Space Heating,distillate_fuel_oil,million_btu
+fuel_oil_hot_water,Total Distillate Fuel Oil - Hot Water,distillate_fuel_oil,million_btu
+fuel_oil_other_appliance,Total Distillate Fuel Oil - Other Appliance,distillate_fuel_oil,million_btu
+fuel_oil_sec_heating,Total Distillate Fuel Oil - Secondary Heating,distillate_fuel_oil,million_btu
+lpg_cooking,Total Liquefied Propane Gas - Cooking,liquefied_propane_gas,million_btu
+lpg_space_heating,Total Liquefied Propane Gas - Space Heating,liquefied_propane_gas,million_btu
+lpg_hot_water,Total Liquefied Propane Gas - Hot Water,liquefied_propane_gas,million_btu
+lpg_other_appliance,Total Liquefied Propane Gas - Other Appliance,liquefied_propane_gas,million_btu
+lpg_sec_heating,Total Liquefied Propane Gas - Secondary Heating,liquefied_propane_gas,million_btu
+other_space_cooling,Total Other Fuel - Space Cooling,other_fuel,million_btu
+other_space_heating,Total Other Fuel - Space Heating,other_fuel,million_btu
+other_hot_water,Total Other Fuel - Hot Water,other_fuel,million_btu
+other_sec_heating,Total Other Fuel - Secondary Heating,other_fuel,million_btu

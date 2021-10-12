@@ -1,2 +1,2 @@
-agf_elec_major_appnc,agf_elec_refrigeration,agf_elec_other,agf_elec_heat_cool,agf_elec_plug_loads,agf_elec_light,agf_ng_major_appnc,agf_ng_heat_cool,agf_ng_light,agf_oil_major_appnc,agf_oil_heat_cool,agf_ppn_major_appnc,agf_ppn_heat_cool
-0.007127521,0.002321204,0.004093838,0.009137511,0.018943152,-0.02981705,0.005449756,-0.001196452,0,-0.023267821,-0.019251015,-0.016503067,-0.012047042
+agf_elec_major_appnc,agf_elec_refrigeration,agf_elec_other,agf_elec_heat_cool,agf_elec_plug_loads,agf_elec_light,agf_ng_major_appnc,agf_ng_heat_cool,agf_ng_light,agf_fuel_oil_major_appnc,agf_fuel_oil_heat_cool,agf_lpg_major_appnc,agf_lpg_heat_cool,sector
+0.007127521,0.002321204,0.004093838,0.009137511,0.018943152,-0.02981705,0.005449756,-0.001196452,0,-0.023267821,-0.019251015,-0.016503067,-0.012047042,residential

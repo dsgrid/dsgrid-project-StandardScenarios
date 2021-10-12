@@ -19,7 +19,7 @@ file = "dimensions/aeo2021_residential_condensed_energy_enduses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
 description = """
-AEO 2021 residential energy end uses, condensed to map to ResStock (N=13 from 6 end uses, 4 fuel types)
+AEO 2021 residential energy end uses, condensed to map to ResStock (N=18 from 6 end uses, 5 fuel types)
 """
 
 [[dimensions]]
@@ -43,52 +43,53 @@ AEO 2021 Reference Case Data Source
 """
 
 ### trvial dimensions below ###
-[[dimensions]]
-type = "geography"
-name = ""
-file = ""
-module = "dsgrid.dimension.standard"
-class = "CensusDivision"
-description = """
-None or trivial
-"""
 
-[[dimensions]]
-type = "subsector"
-name = ""
-file = ""
-module = "dsgrid.dimension.standard"
-class = "SubSector"
-description = """
-None or trivial
-"""
+# [[dimensions]]
+# type = "geography"
+# name = ""
+# file = ""
+# module = "dsgrid.dimension.standard"
+# class = "CensusDivision"
+# description = """
+# None or trivial
+# """
 
-[[dimensions]]
-type = "weather"
-name = ""
-file = ""
-module = "dsgrid.dimension.standard"
-class = "Weather"
-description = """
-None or trivial
-"""
+# [[dimensions]]
+# type = "subsector"
+# name = ""
+# file = ""
+# module = "dsgrid.dimension.standard"
+# class = "SubSector"
+# description = """
+# None or trivial
+# """
 
-[[dimensions]]
-type = "model_year"
-name = ""
-file = ""
-module = "dsgrid.dimension.standard"
-class = "ModelYear"
-description = """
-None or trivial
-"""
+# [[dimensions]]
+# type = "weather"
+# name = ""
+# file = ""
+# module = "dsgrid.dimension.standard"
+# class = "Weather"
+# description = """
+# None or trivial
+# """
 
-[[dimensions]]
-class = "Time"
-description = """None or trivial"""
-module = "dsgrid.dimension.standard"
-name = ""
-measurement_type = ""
-include_leap_day = true
-type = "time"
-time_type = ""
+# [[dimensions]]
+# type = "model_year"
+# name = ""
+# file = ""
+# module = "dsgrid.dimension.standard"
+# class = "ModelYear"
+# description = """
+# None or trivial
+# """
+
+# [[dimensions]]
+# class = "Time"
+# description = """None or trivial"""
+# module = "dsgrid.dimension.standard"
+# name = ""
+# measurement_type = ""
+# include_leap_day = true
+# type = "time"
+# time_type = ""

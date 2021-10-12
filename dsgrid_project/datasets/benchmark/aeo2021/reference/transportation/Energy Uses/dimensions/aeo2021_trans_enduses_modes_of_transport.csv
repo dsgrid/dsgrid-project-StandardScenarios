@@ -1,0 +1,46 @@
+id,name,fuel_id,unit
+gasoline_light_duty_veh,"Motor Gasoline, Exlcluding E85 - Light-Duty Vehicles",gasoline_none85,trillion_btu
+e85_light_duty_veh,E85 - Light-Duty Vehicles,e85,trillion_btu
+diesel_light_duty_veh,Distillate Fuel Oil/Diesel - Light-Duty Vehicles,distillate_fuel_oil_diesel,trillion_btu
+clng_light_duty_veh,Compressed/Liquefied Natural Gas - Light-Duty Vehicles,cmp_lqf_natural_gas,trillion_btu
+propane_light_duty_veh,Propane - Light-Duty Vehicles,propane,trillion_btu
+elec_light_duty_veh,Electricity - Light-Duty Vehicles,electricity,trillion_btu
+hydrogen_light_duty_veh,Hydrogen - Light-Duty Vehicles,hydrogen,trillion_btu
+gasoline_com_light_truck,"Motor Gasoline, Exlcluding E85 - Commercial Light Trucks",gasoline_none85,trillion_btu
+e85_com_light_truck,E85 - Commercial Light Trucks,e85,trillion_btu
+diesel_com_light_truck,Distillate Fuel Oil/Diesel - Commercial Light Trucks,distillate_fuel_oil_diesel,trillion_btu
+clng_com_light_truck,Compressed/Liquefied Natural Gas - Commercial Light Trucks,cmp_lqf_natural_gas,trillion_btu
+propane_com_light_truck,Propane - Commercial Light Trucks,propane,trillion_btu
+elec_com_light_truck,Electricity - Commercial Light Trucks,electricity,trillion_btu
+gasoline_bus_trans,"Motor Gasoline, Exlcluding E85 - Bus Transportation",gasoline_none85,trillion_btu
+e85_bus_trans,E85 - Bus Transportation,e85,trillion_btu
+diesel_bus_trans,Distillate Fuel Oil/Diesel - Bus Transportation,distillate_fuel_oil_diesel,trillion_btu
+clng_bus_trans,Compressed/Liquefied Natural Gas - Bus Transportation,cmp_lqf_natural_gas,trillion_btu
+propane_bus_trans,Propane - Bus Transportation,propane,trillion_btu
+elec_bus_trans,Electricity - Bus Transportation,electricity,trillion_btu
+hydrogen_bus_trans,Hydrogen - Bus Transportation,hydrogen,trillion_btu
+gasoline_freight_truck,"Motor Gasoline, Exlcluding E85 - Freight Trucks",gasoline_none85,trillion_btu
+e85_freight_truck,E85 - Freight Trucks,e85,trillion_btu
+diesel_freight_truck,Distillate Fuel Oil/Diesel - Freight Trucks,distillate_fuel_oil_diesel,trillion_btu
+clng_freight_truck,Compressed/Liquefied Natural Gas - Freight Trucks,cmp_lqf_natural_gas,trillion_btu
+propane_freight_truck,Propane - Freight Trucks,propane,trillion_btu
+elec_freight_truck,Electricity - Freight Trucks,electricity,trillion_btu
+hydrogen_freight_truck,Hydrogen - Freight Trucks,hydrogen,trillion_btu
+diesel_rail_pass,"Distillate Fuel Oil/Diesel - Rail, Passenger",distillate_fuel_oil_diesel,trillion_btu
+elec_rail_pass,"Electricity - Rail, Passenger",electricity,trillion_btu
+diesel_rail_frieght,"Distillate Fuel Oil/Diesel - Rail, Freight",distillate_fuel_oil_diesel,trillion_btu
+clng_rail_frieght,"Compressed/Liquefied Natural Gas - Rail, Freight",cmp_lqf_natural_gas,trillion_btu
+diesel_ship_domestic,"Distillate Fuel Oil/Diesel - Shipping, Domestic",distillate_fuel_oil_diesel,trillion_btu
+residual_oil_ship_domestic,"Residual Oil - Shipping, Domestic",residual_oil,trillion_btu
+clng_ship_domestic,"Compressed/Liquefied Natural Gas - Shipping, Domestic",cmp_lqf_natural_gas,trillion_btu
+diesel_ship_intl,"Distillate Fuel Oil/Diesel - Shipping, International",distillate_fuel_oil_diesel,trillion_btu
+residual_oil_ship_intl,"Residual Oil - Shipping, International",residual_oil,trillion_btu
+clng_ship_intl,"Compressed/Liquefied Natural Gas - Shipping, International",cmp_lqf_natural_gas,trillion_btu
+gasoline_rec_boat,Gasoline - Recreational Boats,gasoline,trillion_btu
+diesel_rec_boat,Distillate Fuel Oil/Diesel - Recreational Boats,distillate_fuel_oil_diesel,trillion_btu
+jet_fuel_gasoline_air,Jet Fuel and Aviation Gasoline - Air Travel,jet_fuel_gasoline,trillion_btu
+jet_fuel_gasoline_military_use,Jet Fuel and Aviation Gasoline - Military Use Transportation,jet_fuel_gasoline,trillion_btu
+residual_oil_military_use,Residual Oil - Military Use Transportation,residual_oil,trillion_btu
+diesel_military_use,Distillate Fuel Oil/Diesel - Military Use Transportation,distillate_fuel_oil_diesel,trillion_btu
+lubricant,Lubricants,lubricant,trillion_btu
+pipeline_fuel,Pipeline Fuel,pipeline_fuel,trillion_btu

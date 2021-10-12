@@ -1,0 +1,28 @@
+id,name,fuel_id,unit
+asphalt_and_road_oil,Total Fuel Use - Asphalt and Road Oil,asphalt_and_road_oil,trillion_btu
+biomass_pulping_liquor,Total Fuel Use - Biomass-Pulping Liquor,biomass_pulping_liquor,trillion_btu
+biomass_wood,Total Fuel Use - Biomass-Wood,biomass_wood,trillion_btu
+coal,Total Fuel Use - Coal,coal,trillion_btu
+coking_coal,Total Fuel Use - Coking Coal,coking_coal,trillion_btu
+distillate,Total Fuel Use - Distillate,distillate,trillion_btu
+distillate_oil,Total Fuel Use - Distillate Oil,distillate_oil,trillion_btu
+electricity,Total Fuel Use - Electricity,electricity,trillion_btu
+hydropower,Total Fuel Use - Hydropower,hydropower,trillion_btu
+liquid_petroleum_gases,Total Fuel Use - Liquid Petroleum Gases,liquid_petroleum_gases,trillion_btu
+lpgs_for_feedstocks,Total Fuel Use - LPGs for Feedstocks,lpgs_for_feedstocks,trillion_btu
+lpgs_for_heat_and_power,Total Fuel Use - LPGs for Heat And Power,lpgs_for_heat_and_power,trillion_btu
+motor_gasoline,Total Fuel Use - Motor Gasoline,motor_gasoline,trillion_btu
+municipal_solid_waste,Total Fuel Use - Municipal Solid Waste,municipal_solid_waste,trillion_btu
+natural_gas,Total Fuel Use - Natural Gas,natural_gas,trillion_btu
+natural_gas_feedstock,Total Fuel Use - Natural Gas Feedstock,natural_gas_feedstock,trillion_btu
+natural_gas_firm,Total Fuel Use - Natural Gas Firm,natural_gas_firm,trillion_btu
+natural_gas_inter,Total Fuel Use - Natural Gas Inter.,natural_gas_inter,trillion_btu
+net_coal_coke_imports,Total Fuel Use - Net Coal Coke Imports,net_coal_coke_imports,trillion_btu
+other_petroleum,Total Fuel Use - Other Petroleum,other_petroleum,trillion_btu
+petrochemical_feedstocks,Total Fuel Use - Petrochemical Feedstocks,petrochemical_feedstocks,trillion_btu
+petroleum_coke,Total Fuel Use - Petroleum Coke,petroleum_coke,trillion_btu
+purch_elec,Total Fuel Use - Purch Elec,purch_elec,trillion_btu
+residual_fuel_low_sulfur,"Total Fuel Use - Residual Fuel, Low Sulfur","residual_fuel,_low_sulfur",trillion_btu
+residual_oil,Total Fuel Use - Residual Oil,residual_oil,trillion_btu
+steam_coal,Total Fuel Use - Steam Coal,steam_coal,trillion_btu
+still_gas,Total Fuel Use - Still Gas,still_gas,trillion_btu

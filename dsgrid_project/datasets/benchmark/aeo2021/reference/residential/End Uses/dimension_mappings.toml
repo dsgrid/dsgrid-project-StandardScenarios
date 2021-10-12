@@ -1,0 +1,11 @@
+[[mappings]]
+description = "Maps AEO 2021 residential detailed end uses to condensed end uses"
+file = "dimension_mappings/lookup_aeo2021_res_detailed_enduses_to_combined_enduses.csv"
+[mappings.from_dimension]
+dimension_id = "aeo2021_res_enduse_xxx" # <---
+type = "metric"
+version = "1.0.0"
+[mappings.to_dimension]
+dimension_id = "aeo2021_res_enduse_xxx" # <---
+type = "metric"
+version = "1.0.0"

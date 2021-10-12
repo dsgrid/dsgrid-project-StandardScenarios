@@ -43,7 +43,7 @@ AEO 2021 industrial energy end uses, total by fuel type (N=27)
 
 [[dimensions]]
 type = "weather"
-name = "AEO2021-Weather-Years-2014-to-2050"
+name = "Weather-Years-2014-to-2050"
 file = "dimensions/weather_years_2014_to_2050.csv"
 module = "dsgrid.dimension.standard"
 class = "Weather"
@@ -53,7 +53,7 @@ Weather years, 2014-2050
 
 [[dimensions]]
 type = "model_year"
-name = "2012-Model-Year"
+name = "Model-Years-2014-to-2050"
 file = "dimensions/model_years_2014_to_2050.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"

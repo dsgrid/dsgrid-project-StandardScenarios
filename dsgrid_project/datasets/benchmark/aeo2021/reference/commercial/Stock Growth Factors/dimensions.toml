@@ -64,31 +64,31 @@ AEO 2021 Reference Case Data Source
 
 ### Trivial Dimensions Below ###
 
-[[dimensions]]
-type = "weather"
-name = ""
-file = ""
-module = "dsgrid.dimension.standard"
-class = "Weather"
-description = """
-None or trivial
-"""
+# [[dimensions]]
+# type = "weather"
+# name = ""
+# file = ""
+# module = "dsgrid.dimension.standard"
+# class = "Weather"
+# description = """
+# None or trivial
+# """
 
-[[dimensions]]
-type = "model_year"
-name = ""
-file = ""
-module = "dsgrid.dimension.standard"
-class = "ModelYear"
-description = """
-None or trivial
-"""
+# [[dimensions]]
+# type = "model_year"
+# name = ""
+# file = ""
+# module = "dsgrid.dimension.standard"
+# class = "ModelYear"
+# description = """
+# None or trivial
+# """
 
-[[dimensions]]
-class = "Time"
-description = """None or trivial"""
-module = "dsgrid.dimension.standard"
-name = ""
-measurement_type = ""
-type = "time"
-time_type = ""
+# [[dimensions]]
+# class = "Time"
+# description = """None or trivial"""
+# module = "dsgrid.dimension.standard"
+# name = ""
+# measurement_type = ""
+# type = "time"
+# time_type = ""
