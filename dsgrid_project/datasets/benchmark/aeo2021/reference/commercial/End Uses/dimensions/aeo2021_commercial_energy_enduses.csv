@@ -17,8 +17,10 @@ ng_cooking,Total Natural Gas - Cooking,natural_gas,trillion_btu
 ng_lighting,Total Natural Gas - Lighting,natural_gas,trillion_btu
 ng_other,Total Natural Gas - Other,natural_gas,trillion_btu
 ng_unspecified,Total Natural Gas - Unspecified,natural_gas,trillion_btu
-other_heating,Total Other Fuel - Heating,other_fuel,trillion_btu
-other_cooling,Total Other Fuel - Cooling,other_fuel,trillion_btu
-other_water_heating,Total Other Fuel - Water Heating,other_fuel,trillion_btu
-other_other,Total Other Fuel - Other,other_fuel,trillion_btu
+fuel_oil_heating,Total Fuel Oil - Heating,fuel_oil,trillion_btu
+fuel_oil_cooling,Total Fuel Oil - Cooling,fuel_oil,trillion_btu
+fuel_oil_water_heating,Total Fuel Oil - Water Heating,fuel_oil,trillion_btu
+fuel_oil_other,Total Fuel Oil - Other,fuel_oil,trillion_btu
+fuel_oil_unspecified,Total Fuel Oil - Unspecified,fuel_oil,trillion_btu
+lpg_unspecified,Total Liquefied Propane Gas - Unspecified,lpg,trillion_btu
 other_unspecified,Total Other Fuel - Unspecified,other_fuel,trillion_btu

@@ -1,4 +1,4 @@
-geography,subsector,agf_floor_area,sector
+geography,subsector,floor_area,sector
 east_north_central,aeo_com_assembly,0.004582915,commercial
 east_north_central,aeo_com_education,0.008805722,commercial
 east_north_central,aeo_com_food_sales,0.006048548,commercial

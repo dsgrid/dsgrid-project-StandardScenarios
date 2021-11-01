@@ -1,2 +1,2 @@
 id,name,unit
-agf_floor_area,Annual Growth Factor for Total Floor Area,annual_growth_factor
+floor_area,Annual Growth Factor for Total Floor Area,unitless
