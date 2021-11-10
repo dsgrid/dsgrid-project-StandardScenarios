@@ -1,0 +1,22 @@
+id,name,fuel_id,unit
+district_cooling_cooling,District Cooling - Cooling,district_cooling,kWh
+district_heating_heating,District Heating - Heating,district_heating,kWh
+district_heating_water_systems,District Heating - Water Systems,district_heating,kWh
+electricity_cooling,Electricity - Cooling,electricity,kWh
+electricity_exterior_lighting,Electricity - Exterior Lighting,electricity,kWh
+electricity_fans,Electricity - Fans,electricity,kWh
+electricity_heat_recovery,Electricity - Heat Recovery,electricity,kWh
+electricity_heat_rejection,Electricity - Heat Rejection,electricity,kWh
+electricity_heating,Electricity - Heating,electricity,kWh
+electricity_interior_equipment,Electricity - Interior Equipment,electricity,kWh
+electricity_interior_lighting,Electricity - Interior Lighting,electricity,kWh
+electricity_pumps,Electricity - Pumps,electricity,kWh
+electricity_refrigeration,Electricity - Refrigeration,electricity,kWh
+electricity_water_systems,Electricity - Water Systems,electricity,kWh
+natural_gas_heating,Natural Gas - Heating,natural_gas,kWh
+natural_gas_interior_equipment,Natural Gas - Interior Equipment,natural_gas,kWh
+natural_gas_water_systems,Natural Gas - Water Systems,natural_gas,kWh
+fuel_oil_heating,Fuel Oil - Heating,fuel_oil,kWh
+fuel_oil_water_systems,Fuel Oil - Water Systems,fuel_oil,kWh
+propane_heating,Propane - Heating,propane,kWh
+propane_water_systems,Propane - Water Systems,propane,kWh
