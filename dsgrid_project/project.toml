@@ -34,12 +34,12 @@ version = "1.0.0"
 # Base Dimensions
 # ------------------------------------------------------
 [[dimensions.base_dimensions]]
-dimension_id = "us_counties_2020__73ce4579-bdcc-4496-93d8-8bdb2b49a648"
+dimension_id = "us_counties_2020__2dc5cf6d-600b-493d-81f6-20490565218d"
 type = "geography"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "standard_scenarios_2021_sectors_-_com-res-tra-0d-6d93e5e007e3"
+dimension_id = "standard_scenarios_2021_sectors_-_com-res-tra-only__e1a83d86-2c7c-4cc8-88a3-27681c0b54a5"
 type = "sector"
 version = "1.0.0"
 
@@ -59,22 +59,22 @@ type = "weather_year"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "model_years_2010_to_2050_with_2_year_intervals__17fa2f67-ef7f-49c8-8388-f2b102367f76"
+dimension_id = "model_years_2010_to_2050_with_2_year_intervals__b26a5cd8-816c-44de-8648-a0a8b082b9a0"
 type = "model_year"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "reference_scenario__4b6defca-9212-4388-bc39-9cf4462b4527"
+dimension_id = "reference_scenario__5894cef9-4838-4a25-b610-52557964ee1f"
 type = "scenario"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "standard_scenarios_2021_datasources_-_tempo-only__2f19c49f-7e2c-480f-abd2-cc3caef2f5dc"
+dimension_id = "standard_scenarios_2021_datasources_-_comstock-resstock-tempo-only__bb99920b-1d45-4500-844e-ccf19a0be83b"
 type = "data_source"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "time-2012-utc-houlry-periodbeginning-nodst-noleapdayadjustment-mean__72c76c0f-0d5a-4c03-8cf2-d806c4130cd9"
+dimension_id = "time-2012-utc-houlry-periodbeginning-nodst-noleapdayadjustment-mean__60cb33cb-0951-4ca1-8987-17ffe0903318"
 type = "time"
 version = "1.0.0"
 
