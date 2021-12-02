@@ -54,7 +54,7 @@ type = "end_use"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "2012_weather_year__0019ebb9-507b-41c9-b5a4-383b97304a69"
+dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
 type = "weather_year"
 version = "1.0.0"
 
