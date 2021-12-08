@@ -1,0 +1,4 @@
+id,name,units,fuel_id
+BEV_L1,"BEV residential electricity usage",kWh,electricity
+BEV_L2,"BEV commercial electricity usage",kWh,electricity
+BEV_DCFC,"BEV DCFC electricity usage",kWh,electricity

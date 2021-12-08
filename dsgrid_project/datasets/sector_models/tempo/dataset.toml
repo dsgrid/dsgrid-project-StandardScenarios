@@ -3,70 +3,75 @@
 # --------------------------------------
 
 # TODO: TEMPO contributors to fill out this config file
+# TODO: Direct questions to brian.bush@nrel.gov
 
 dataset_id = "tempo-standard-scenarios-2021"
 dataset_type = "sector_model"
 model_name = "TEMPO"
-path = "s3://"
-description = """"""
+path = "s3://" # TODO: The registration process will provide this.
+description = """
+TEMPO county-level results for BEV charging.
+"""
 
 [[dimensions]]
 type = "geography"
-dimension_id = ""
-version = ""
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
-type = "sector"
-dimension_id = ""
-version = ""
+type = "sector" # FIXME: TEMPO is just the transportation sector.
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
+trivial = true
 
 [[dimensions]]
 type = "subsector"
-dimension_id = ""
-version = "1.0.0"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
 type = "end_use"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "data_source"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "scenario"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "weather"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "model_year"
-dimension_id = ""
-version = ""
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
 [[dimensions]]
 type = "time"
-dimension_id = ""
-version = ""
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
 
-# [metadata]
-# coverage_year = 2012
-# description = ""
-# geographic_resolution = ""
-# geographic_scope = ""
-# notes = ""
-# origin_creator = ""
-# origin_contributors = [""] # list of other contributors first and last name
-# origin_organization = "NREL"
-# origin_date =  # e.g., "06/17/2018"
-# origin_project = ""
-# tags = [""]
-# data_class = "low"
+[[dimensions]]
+type = "data_source"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
+trivial = true
 
-# @Brian, please add any other metadata fields (as comments above) that you think would be helpful to have by default.
+[[dimensions]]
+type = "model_year"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
+
+[[dimensions]]
+type = "scenario"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
+
+[[dimensions]]
+type = "weather_year"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "0.1.0"
+trivial = true
+
+[[metadata]]
+coverage_year = "2018-2050"
+description = "TEMPO BEV results."
+geographic_resolution = "County"
+geographic_scope = "United States"
+notes = "provisional sample data"
+origin_creator = "Brian Bush"
+origin_contributors = ["Brian Bush", "Arthur Yip"]
+origin_organization = "NREL"
+origin_date =  "2021-04-26"
+origin_project = "TEMPO"
+tags = ["TEMPO"]
+data_class = "low"
+source = "https://github.nrel.gov/mmurator/TMM/blob/0d89b8f61c624770643a35de1998efe6def5e59c/TEMPO.jl/src/BEV/BEV.jl"
