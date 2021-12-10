@@ -20,27 +20,25 @@ module = "dsgrid.dimension.standard"
 name = "Standard Scenarios 2021 Sectors - Com-Res-Tra-Only"
 type = "sector"
 
-# TODO -- add the tempo dimensions for subsector for now
-# [[dimensions]]
-# type = "subsector"
-# name = "Standard-Scenarios-2021-Detailed-Subsectors--Trans-Only"
-# file = "dimensions/subsectors.csv"
-# module = "dsgrid.dimension.standard"
-# class = "Subsector"
-# description = """
-# dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
-# """
+[[dimensions]]
+type = "subsector"
+name = "Standard-Scenarios-2021-Detailed-Subsectors"
+file = "dimensions/subsectors.csv"
+module = "dsgrid.dimension.standard"
+class = "Subsector"
+description = """
+dsgrid Standard Scenarios 2021 Subsectors
+"""
 
-# TODO -- add the tempo dimensions for enduses for now
 # [[dimensions]]
 # type = "end_use"
-# name = "Standard-Scenarios-2021-Detailed-End-Uses--Trans-Only"
-# file = "dimensions/enduses.csv"
-# module = "dsgrid.dimension.standard"
-# class = "EndUse"
-# description = """
-# dsgrid Standard Scenarios 2021 End Uses; Transportation only
-# """
+name = "Standard-Scenarios-2021-Detailed-End-Uses"
+file = "dimensions/enduses.csv"
+module = "dsgrid.dimension.standard"
+class = "EndUse"
+description = """
+dsgrid Standard Scenarios 2021 End Uses
+"""
 
 [[dimensions]]
 class = "ModelYear"

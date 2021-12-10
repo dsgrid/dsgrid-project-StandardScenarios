@@ -1,4 +1,64 @@
 id,name,fuel_id,units
+district_cooling_cooling,District Cooling - Cooling,district_cooling,kWh
+district_heating_heating,District Heating - Heating,district_heating,kWh
+district_heating_water_systems,District Heating - Water Systems,district_heating,kWh
+electricity_cooling,Electricity - Cooling,electricity,kWh
+electricity_exterior_lighting,Electricity - Exterior Lighting,electricity,kWh
+electricity_fans,Electricity - Fans,electricity,kWh
+electricity_heat_recovery,Electricity - Heat Recovery,electricity,kWh
+electricity_heat_rejection,Electricity - Heat Rejection,electricity,kWh
+electricity_heating,Electricity - Heating,electricity,kWh
+electricity_interior_equipment,Electricity - Interior Equipment,electricity,kWh
+electricity_interior_lighting,Electricity - Interior Lighting,electricity,kWh
+electricity_pumps,Electricity - Pumps,electricity,kWh
+electricity_refrigeration,Electricity - Refrigeration,electricity,kWh
+electricity_water_systems,Electricity - Water Systems,electricity,kWh
+natural_gas_interior_equipment,Natural Gas - Interior Equipment,natural_gas,kWh
+fuel_oil_heating,Fuel Oil - Heating,fuel_oil,kWh
+fuel_oil_water_systems,Fuel Oil - Water Systems,fuel_oil,kWh
+electricity_bath_fan,electricity_bath_fan,electricity,kwh
+electricity_ceiling_fan,electricity_ceiling_fan,electricity,kwh
+electricity_clothes_dryer,electricity_clothes_dryer,electricity,kwh
+electricity_clothes_washer,electricity_clothes_washer,electricity,kwh
+electricity_cooking_range,electricity_cooking_range,electricity,kwh
+electricity_dishwasher,electricity_dishwasher,electricity,kwh
+electricity_exterior_holiday_lighting,electricity_exterior_holiday_lighting,electricity,kwh
+electricity_extra_refrigerator,electricity_extra_refrigerator,electricity,kwh
+electricity_fans_cooling,electricity_fans_cooling,electricity,kwh
+electricity_fans_heating,electricity_fans_heating,electricity,kwh
+electricity_freezer,electricity_freezer,electricity,kwh
+electricity_garage_lighting,electricity_garage_lighting,electricity,kwh
+electricity_heating_supplemental,electricity_heating_supplemental,electricity,kwh
+electricity_hot_tub_heater,electricity_hot_tub_heater,electricity,kwh
+electricity_hot_tub_pump,electricity_hot_tub_pump,electricity,kwh
+electricity_house_fan,electricity_house_fan,electricity,kwh
+electricity_plug_loads,electricity_plug_loads,electricity,kwh
+electricity_pool_heater,electricity_pool_heater,electricity,kwh
+electricity_pool_pump,electricity_pool_pump,electricity,kwh
+electricity_pumps_cooling,electricity_pumps_cooling,electricity,kwh
+electricity_pumps_heating,electricity_pumps_heating,electricity,kwh
+electricity_pv,electricity_pv,electricity,kwh
+electricity_range_fan,electricity_range_fan,electricity,kwh
+electricity_recirc_pump,electricity_recirc_pump,electricity,kwh
+electricity_refrigerator,electricity_refrigerator,electricity,kwh
+electricity_vehicle,electricity_vehicle,electricity,kwh
+electricity_well_pump,electricity_well_pump,electricity,kwh
+fuel_oil_heating,fuel_oil_heating,fuel oil,mbtu
+fuel_oil_water_systems,fuel_oil_water_systems,fuel oil,mbtu
+natural_gas_clothes_dryer,natural_gas_clothes_dryer,natural gas,therm
+natural_gas_cooking_range,natural_gas_cooking_range,natural gas,therm
+natural_gas_fireplace,natural_gas_fireplace,natural gas,therm
+natural_gas_grill,natural_gas_grill,natural gas,therm
+natural_gas_heating,natural_gas_heating,natural gas,therm
+natural_gas_hot_tub_heater,natural_gas_hot_tub_heater,natural gas,therm
+natural_gas_lighting,natural_gas_lighting,natural gas,therm
+natural_gas_pool_heater,natural_gas_pool_heater,natural gas,therm
+natural_gas_water_systems,natural_gas_water_systems,natural gas,therm
+propane_clothes_dryer,propane_clothes_dryer,propane,mbtu
+propane_cooking_range,propane_cooking_range,propane,mbtu
+propane_heating,propane_heating,propane,mbtu
+propane_water_systems,propane_water_systems,propane,mbtu
+wood_heating,wood_heating,wood heating,mbtu
 BEV_L1,"BEV residential electricity usage",kWh,electricity
 BEV_L2,"BEV commercial electricity usage",kWh,electricity
 BEV_DCFC,"BEV DCFC electricity usage",kWh,electricity
