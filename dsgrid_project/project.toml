@@ -1,8 +1,8 @@
 # TODO: This configuration is under active development. Currently it is set up for TEMPO, ComStock, ResStock data only but it will later be expanded to include all project configuration details.
 
-description = """dsgrid Standard Scenarios project FY21"""
-name = "dsgrid Standard Scenarios 2021"
-project_id = "dsgrid_standard_scenarios_2021"
+description = """Dataset created for the FY21 dsgrid Load Profile Tool for Grid Modeling project"""
+name = "dsgrid CONUS 2022"
+project_id = "dsgrid_conus_2022"
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
@@ -63,8 +63,9 @@ dimension_id = "model_years_2010_to_2050_with_2_year_intervals__b26a5cd8-816c-44
 type = "model_year"
 version = "1.0.0"
 
+# TODO: Replace with new dimension_id because old dimension name was not accurate
 [[dimensions.base_dimensions]]
-dimension_id = "reference_scenario__5894cef9-4838-4a25-b610-52557964ee1f"
+dimension_id = ""
 type = "scenario"
 version = "1.0.0"
 

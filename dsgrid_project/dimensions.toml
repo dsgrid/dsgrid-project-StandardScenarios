@@ -55,11 +55,12 @@ type = "model_year"
 [[dimensions]]
 class = "Scenario"
 description = """
-reference scenario only
+Scenarios for the dsgrid CONUS 2022 project, which include a Reference scenario
+and two light-duty vehicle electrification scenarios
 """
 file = "dimensions/scenarios.csv"
 module = "dsgrid.dimension.standard"
-name = "Reference Scenario"
+name = "dsgrid CONUS 2022 scenarios"
 type = "scenario"
 
 [[dimensions]]
