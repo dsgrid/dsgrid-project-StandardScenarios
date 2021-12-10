@@ -16,49 +16,49 @@ electricity_water_systems,Electricity - Water Systems,electricity,kWh
 natural_gas_interior_equipment,Natural Gas - Interior Equipment,natural_gas,kWh
 fuel_oil_heating,Fuel Oil - Heating,fuel_oil,kWh
 fuel_oil_water_systems,Fuel Oil - Water Systems,fuel_oil,kWh
-electricity_bath_fan,electricity_bath_fan,electricity,kwh
-electricity_ceiling_fan,electricity_ceiling_fan,electricity,kwh
-electricity_clothes_dryer,electricity_clothes_dryer,electricity,kwh
-electricity_clothes_washer,electricity_clothes_washer,electricity,kwh
-electricity_cooking_range,electricity_cooking_range,electricity,kwh
-electricity_dishwasher,electricity_dishwasher,electricity,kwh
-electricity_exterior_holiday_lighting,electricity_exterior_holiday_lighting,electricity,kwh
-electricity_extra_refrigerator,electricity_extra_refrigerator,electricity,kwh
-electricity_fans_cooling,electricity_fans_cooling,electricity,kwh
-electricity_fans_heating,electricity_fans_heating,electricity,kwh
-electricity_freezer,electricity_freezer,electricity,kwh
-electricity_garage_lighting,electricity_garage_lighting,electricity,kwh
-electricity_heating_supplemental,electricity_heating_supplemental,electricity,kwh
-electricity_hot_tub_heater,electricity_hot_tub_heater,electricity,kwh
-electricity_hot_tub_pump,electricity_hot_tub_pump,electricity,kwh
-electricity_house_fan,electricity_house_fan,electricity,kwh
-electricity_plug_loads,electricity_plug_loads,electricity,kwh
-electricity_pool_heater,electricity_pool_heater,electricity,kwh
-electricity_pool_pump,electricity_pool_pump,electricity,kwh
-electricity_pumps_cooling,electricity_pumps_cooling,electricity,kwh
-electricity_pumps_heating,electricity_pumps_heating,electricity,kwh
-electricity_pv,electricity_pv,electricity,kwh
-electricity_range_fan,electricity_range_fan,electricity,kwh
-electricity_recirc_pump,electricity_recirc_pump,electricity,kwh
-electricity_refrigerator,electricity_refrigerator,electricity,kwh
-electricity_vehicle,electricity_vehicle,electricity,kwh
-electricity_well_pump,electricity_well_pump,electricity,kwh
-fuel_oil_heating,fuel_oil_heating,fuel oil,mbtu
-fuel_oil_water_systems,fuel_oil_water_systems,fuel oil,mbtu
-natural_gas_clothes_dryer,natural_gas_clothes_dryer,natural gas,therm
-natural_gas_cooking_range,natural_gas_cooking_range,natural gas,therm
-natural_gas_fireplace,natural_gas_fireplace,natural gas,therm
-natural_gas_grill,natural_gas_grill,natural gas,therm
-natural_gas_heating,natural_gas_heating,natural gas,therm
-natural_gas_hot_tub_heater,natural_gas_hot_tub_heater,natural gas,therm
-natural_gas_lighting,natural_gas_lighting,natural gas,therm
-natural_gas_pool_heater,natural_gas_pool_heater,natural gas,therm
-natural_gas_water_systems,natural_gas_water_systems,natural gas,therm
-propane_clothes_dryer,propane_clothes_dryer,propane,mbtu
-propane_cooking_range,propane_cooking_range,propane,mbtu
-propane_heating,propane_heating,propane,mbtu
-propane_water_systems,propane_water_systems,propane,mbtu
-wood_heating,wood_heating,wood heating,mbtu
-BEV_L1,"BEV residential electricity usage",kWh,electricity
-BEV_L2,"BEV commercial electricity usage",kWh,electricity
-BEV_DCFC,"BEV DCFC electricity usage",kWh,electricity
+electricity_bath_fan,Electricity - Bath Fan,electricity,kWh
+electricity_ceiling_fan,Electricity - Ceiling Fan,electricity,kWh
+electricity_clothes_dryer,Electricity - Clothes Dryer,electricity,kWh
+electricity_clothes_washer,Electricity - Clothes Washer,electricity,kWh
+electricity_cooking_range,Electricity - Cooking Range,electricity,kWh
+electricity_dishwasher,Electricity - Dishwasher,electricity,kWh
+electricity_exterior_holiday_lighting,Electricity - Exterior Holiday Lighting,electricity,kWh
+electricity_extra_refrigerator,Electricity - Extra Refrigerator,electricity,kWh
+electricity_fans_cooling,Electricity - Fans Cooling,electricity,kWh
+electricity_fans_heating,Electricity - Fans Heating,electricity,kWh
+electricity_freezer,Electricity - Freezer,electricity,kWh
+electricity_garage_lighting,Electricity - Garage Lighting,electricity,kWh
+electricity_heating_supplemental,Electricity - Heating Supplemental,electricity,kWh
+electricity_hot_tub_heater,Electricity - Hot Tub Heater,electricity,kWh
+electricity_hot_tub_pump,Electricity - Hot Tub Pump,electricity,kWh
+electricity_house_fan,Electricity - House Fan,electricity,kWh
+electricity_plug_loads,Electricity - Plug Loads,electricity,kWh
+electricity_pool_heater,Electricity - Pool Heater,electricity,kWh
+electricity_pool_pump,Electricity - Pool Pump,electricity,kWh
+electricity_pumps_cooling,Electricity - Pumps Cooling,electricity,kWh
+electricity_pumps_heating,Electricity - Pumps Heating,electricity,kWh
+electricity_pv,Electricity - PV,electricity,kWh
+electricity_range_fan,Electricity - Range Fan,electricity,kWh
+electricity_recirc_pump,Electricity - Recircuation Pump,electricity,kWh
+electricity_refrigerator,Electricity - Refrigerator,electricity,kWh
+electricity_vehicle,Electricity - Vehicle,electricity,kWh
+electricity_well_pump,Electricity - Well Pump,electricity,kWh
+fuel_oil_heating,Fuel Oil - Heating,fuel oil,MBtu
+fuel_oil_water_systems,Fuel Oil - Water Systems,fuel oil,MBtu
+natural_gas_clothes_dryer,Natural Gas - Clothes Dryer,natural gas,therm
+natural_gas_cooking_range,Natural Gas - Cooking Range,natural gas,therm
+natural_gas_fireplace,Natural Gas - Fireplace,natural gas,therm
+natural_gas_grill,Natural Gas - Grill,natural gas,therm
+natural_gas_heating,Natural Gas - Heating,natural gas,therm
+natural_gas_hot_tub_heater,Natural Gas - Hot Tub Heater,natural gas,therm
+natural_gas_lighting,Natural Gas - Lighting,natural gas,therm
+natural_gas_pool_heater,Natural Gas - Pool Heater,natural gas,therm
+natural_gas_water_systems,Natural Gas - Water Systems,natural gas,therm
+propane_clothes_dryer,Propane - Clothes Dryer,propane,MBtu
+propane_cooking_range,Propane - Cooking Range,propane,MBtu
+propane_heating,Propane - Heating,propane,MBtu
+propane_water_systems,Propane - Water Systems,propane,MBtu
+wood_heating,Wood - Heating,wood heating,MBtu
+BEV_L1,Electricity - L1,electricity,kWh
+BEV_L2,Electricity - L2,electricity,kWh
+BEV_DCFC,Electricty - DCFC,electricity,kWh
