@@ -22,22 +22,22 @@ type = "sector"
 
 [[dimensions]]
 type = "subsector"
-name = "Standard-Scenarios-2021-Detailed-Subsectors"
+name = "CONUS-2022-Detailed-Subsectors"
 file = "dimensions/subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
 description = """
-dsgrid Standard Scenarios 2021 Subsectors
+dsgrid CONUS 2022 Subsectors
 """
 
 # [[dimensions]]
 # type = "end_use"
-name = "Standard-Scenarios-2021-Detailed-End-Uses"
+name = "CONUS-2022-Detailed-End-Uses"
 file = "dimensions/enduses.csv"
 module = "dsgrid.dimension.standard"
 class = "EndUse"
 description = """
-dsgrid Standard Scenarios 2021 End Uses
+dsgrid CONUS 2022 End Uses
 """
 
 [[dimensions]]
