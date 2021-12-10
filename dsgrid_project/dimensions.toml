@@ -36,15 +36,15 @@ module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
 description = "dsgrid CONUS 2022 End Uses"
 
-# [[dimensions]]
-# class = "ModelYear"
-# description = """
-# Model year, 2010-2050, every other year
-# """
-# file = "dimensions/model_years.csv"
-# module = "dsgrid.dimension.standard"
-# name = "Model Years 2010 to 2050 with 2 year intervals"
-# type = "model_year"
+[[dimensions]]
+class = "ModelYear"
+description = """
+Model year, 2010-2050, every other year
+"""
+file = "dimensions/model_years.csv"
+module = "dsgrid.dimension.standard"
+name = "Model Years 2010 to 2050 with 2 year intervals"
+type = "model_year"
 
 [[dimensions]]
 class = "Scenario"
