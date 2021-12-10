@@ -59,6 +59,6 @@ propane_cooking_range,Propane - Cooking Range,propane,MBtu
 propane_heating,Propane - Heating,propane,MBtu
 propane_water_systems,Propane - Water Systems,propane,MBtu
 wood_heating,Wood - Heating,wood heating,MBtu
-BEV_L1,Electricity - L1,electricity,kWh
-BEV_L2,Electricity - L2,electricity,kWh
-BEV_DCFC,Electricty - DCFC,electricity,kWh
+electricity_ev_l1,Electricity - EV L1,electricity,kWh
+electricity_ev_l2,Electricity - EV L2,electricity,kWh
+electricity_ev_dcfc,Electricty - EV DCFC,electricity,kWh

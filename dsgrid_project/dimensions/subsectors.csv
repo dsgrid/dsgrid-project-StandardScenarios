@@ -22,3 +22,7 @@ bev_compact,BEV - Compact
 bev_midsize,BEV - Midsize
 bev_suv,BEV - SUV
 bev_pickup,BEV - Pickup
+phev_compact,PHEV - Compact
+phev_midsize,PHEV - Midsize
+phev_suv,PHEV - SUV
+phev_pickup,PHEV - Pickup
