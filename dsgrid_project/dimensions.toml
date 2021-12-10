@@ -31,11 +31,11 @@ dsgrid CONUS 2022 Subsectors
 """
 
 # [[dimensions]]
-# type = "end_use"
+# type = "metric"
 name = "CONUS-2022-Detailed-End-Uses"
 file = "dimensions/enduses.csv"
 module = "dsgrid.dimension.standard"
-class = "EndUse"
+class = "Metric"
 description = """
 dsgrid CONUS 2022 End Uses
 """
