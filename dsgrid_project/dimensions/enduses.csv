@@ -1,4 +1,4 @@
-id,name,fuel_id,units
+id,name,fuel_id,unit
 district_cooling_cooling,District Cooling - Cooling,district_cooling,kWh
 district_heating_heating,District Heating - Heating,district_heating,kWh
 district_heating_water_systems,District Heating - Water Systems,district_heating,kWh
@@ -13,9 +13,9 @@ electricity_interior_lighting,Electricity - Interior Lighting,electricity,kWh
 electricity_pumps,Electricity - Pumps,electricity,kWh
 electricity_refrigeration,Electricity - Refrigeration,electricity,kWh
 electricity_water_systems,Electricity - Water Systems,electricity,kWh
-natural_gas_interior_equipment,Natural Gas - Interior Equipment,natural_gas,kWh
-fuel_oil_heating,Fuel Oil - Heating,fuel_oil,kWh
-fuel_oil_water_systems,Fuel Oil - Water Systems,fuel_oil,kWh
+natural_gas_interior_equipment,Natural Gas - Interior Equipment,natural_gas,therm
+fuel_oil_heating,Fuel Oil - Heating,fuel_oil,MBtu
+fuel_oil_water_systems,Fuel Oil - Water Systems,fuel_oil,MBtu
 electricity_bath_fan,Electricity - Bath Fan,electricity,kWh
 electricity_ceiling_fan,Electricity - Ceiling Fan,electricity,kWh
 electricity_clothes_dryer,Electricity - Clothes Dryer,electricity,kWh
@@ -43,8 +43,6 @@ electricity_recirc_pump,Electricity - Recircuation Pump,electricity,kWh
 electricity_refrigerator,Electricity - Refrigerator,electricity,kWh
 electricity_vehicle,Electricity - Vehicle,electricity,kWh
 electricity_well_pump,Electricity - Well Pump,electricity,kWh
-fuel_oil_heating,Fuel Oil - Heating,fuel oil,MBtu
-fuel_oil_water_systems,Fuel Oil - Water Systems,fuel oil,MBtu
 natural_gas_clothes_dryer,Natural Gas - Clothes Dryer,natural gas,therm
 natural_gas_cooking_range,Natural Gas - Cooking Range,natural gas,therm
 natural_gas_fireplace,Natural Gas - Fireplace,natural gas,therm

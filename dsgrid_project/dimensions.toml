@@ -1,6 +1,6 @@
-# # ------------------------------------------------------
-# # Base Dimensions
-# # ------------------------------------------------------
+# ------------------------------------------------------
+# Base Dimensions
+# ------------------------------------------------------
 [[dimensions]]
 description = """
 US counties, Census 2020 vintage, no territories
@@ -26,29 +26,25 @@ name = "CONUS-2022-Detailed-Subsectors"
 file = "dimensions/subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
-description = """
-dsgrid CONUS 2022 Subsectors
-"""
+description = "dsgrid CONUS 2022 Subsectors"
 
-# [[dimensions]]
-# type = "metric"
+[[dimensions]]
+type = "metric"
 name = "CONUS-2022-Detailed-End-Uses"
 file = "dimensions/enduses.csv"
 module = "dsgrid.dimension.standard"
-class = "Metric"
-description = """
-dsgrid CONUS 2022 End Uses
-"""
+class = "EnergyEndUse"
+description = "dsgrid CONUS 2022 End Uses"
 
-[[dimensions]]
-class = "ModelYear"
-description = """
-Model year, 2010-2050, every other year
-"""
-file = "dimensions/model_years.csv"
-module = "dsgrid.dimension.standard"
-name = "Model Years 2010 to 2050 with 2 year intervals"
-type = "model_year"
+# [[dimensions]]
+# class = "ModelYear"
+# description = """
+# Model year, 2010-2050, every other year
+# """
+# file = "dimensions/model_years.csv"
+# module = "dsgrid.dimension.standard"
+# name = "Model Years 2010 to 2050 with 2 year intervals"
+# type = "model_year"
 
 [[dimensions]]
 class = "Scenario"
