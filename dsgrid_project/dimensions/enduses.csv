@@ -37,11 +37,9 @@ electricity_pool_heater,Electricity - Pool Heater,electricity,kWh
 electricity_pool_pump,Electricity - Pool Pump,electricity,kWh
 electricity_pumps_cooling,Electricity - Pumps Cooling,electricity,kWh
 electricity_pumps_heating,Electricity - Pumps Heating,electricity,kWh
-electricity_pv,Electricity - PV,electricity,kWh
 electricity_range_fan,Electricity - Range Fan,electricity,kWh
 electricity_recirc_pump,Electricity - Recircuation Pump,electricity,kWh
 electricity_refrigerator,Electricity - Refrigerator,electricity,kWh
-electricity_vehicle,Electricity - Vehicle,electricity,kWh
 electricity_well_pump,Electricity - Well Pump,electricity,kWh
 natural_gas_clothes_dryer,Natural Gas - Clothes Dryer,natural gas,therm
 natural_gas_cooking_range,Natural Gas - Cooking Range,natural gas,therm
