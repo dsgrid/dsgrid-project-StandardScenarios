@@ -45,11 +45,9 @@ resstock,electricity_pool_heater
 resstock,electricity_pool_pump
 resstock,electricity_pumps_cooling
 resstock,electricity_pumps_heating
-resstock,electricity_pv
 resstock,electricity_range_fan
 resstock,electricity_recirc_pump
 resstock,electricity_refrigerator
-resstock,electricity_vehicle
 resstock,electricity_water_systems
 resstock,electricity_well_pump
 resstock,fuel_oil_heating
