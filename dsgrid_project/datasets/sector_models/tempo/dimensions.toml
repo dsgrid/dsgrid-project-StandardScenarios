@@ -1,1 +1,145 @@
-# please refer to the project's dimensions.toml for an example of how to set up this config
+
+
+[[dimensions]]
+class = "County"
+type = "geography"
+name = "ACS County 2018"
+file = "dimensions/counties.csv"
+description = """
+American Community Survey US counties, 2018.
+"""
+
+[[dimensions]]
+class = "Sector"
+type = "sector"
+name = "TEMPO LDV BEV Charging"
+file = "dimensions/tempo.csv"
+description = """
+TEMPO provides LDV BEV charging profiles.
+"""
+#trivial = true
+
+[[dimensions]]
+class = "Subsector"
+type = "subsector"
+name = "TEMPO Bin"
+file = "dimensions/bin.csv"
+description = """
+TEMPO demographic/geographic/vehicle bins.
+
+This is a cross-join of the following supplemental dimensions:
+* Composition
+* Income
+* Urbanity
+* Class
+* Tech
+"""
+
+# [[dimensions]]
+# type = "subsector"
+# name = "Composition"
+# file = "dimensions/supplemental/composition.csv"
+# description = """
+# Household composition.
+# """
+# 
+# [[dimensions]]
+# type = "subsector"
+# name = "Income"
+# file = "dimensions/supplemental/income.csv"
+# description = """
+# Income range.
+# """
+# 
+# [[dimensions]]
+# type = "subsector"
+# name = "Urbanity"
+# file = "dimensions/supplemental/urbanity.csv"
+# description = """
+# Urban classifications, according to [Claritas definitions](https://healthpolicy.ucla.edu/chis/data/public-use-data-file/Documents/2003PUF_constructs_c.pdf#page=24).
+# """
+# 
+# [[dimensions]]
+# type = "subsector"
+# name = "Class"
+# file = "dimensions/supplemental/class.csv"
+# description = """
+# Passenger vehicle class.
+# """
+# 
+# [[dimensions]]
+# type = "subsector"
+# name = "Tech"
+# file = "dimensions/supplemental/tech.csv"
+# description = """
+# Vehicle technology.
+# """
+
+[[dimensions]]
+class = "EndUse"
+type = "end_use"
+name = "TEMPO LDV BEV Usage"
+file = "dimensions/end_use.csv"
+description = """
+Fuels used by TEMPO BEVs.
+"""
+
+#[[dimensions]]
+#class = "MetricType"
+# dsgrid assumes trivial when not specified in dataset/here
+
+[[dimensions]]
+class = "Time"
+type = "time"
+name = "Time of Week by Month"
+ranges = [{start = 1, end = 12}]
+time_interval_type = "period_ending"
+time_type = "representative_period"
+measurement_type = "total"
+format = "one_week_per_month_by_hour"
+description = """
+Month, day of week, and time of day.
+"""
+
+
+[[dimensions]]
+class = "DataSource"
+type = "data_source"
+name = "TEMPO Model"
+file = "dimensions/model.csv"
+description = """
+TEMPO projections.
+"""
+
+
+[[dimensions]]
+class = "ModelYear"
+type = "model_year"
+name = "TEMPO Model Year"
+file = "dimensions/year.csv"
+description = """
+TEMPO modeling years.
+"""
+
+
+# check how many scenarios we're submitting
+[[dimensions]]
+class = "Scenario"
+type = "scenario"
+name = "TEMPO Scenario"
+file = "dimensions/scenario.csv"
+description = """
+TEMPO base scenario only.
+"""
+
+
+# trivial
+[[dimensions]]
+class = "WeatherYear"
+type = "weather_year"
+name = "TEMPO Weather Year"
+file = "dimensions/weather.csv"
+description = """
+Weather year used by TEMPO.
+"""
+
