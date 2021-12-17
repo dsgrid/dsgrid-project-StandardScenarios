@@ -3,11 +3,11 @@
 # ------------------------------------------------------
 [[dimensions]]
 type = "geography"
-name = "US-county-FIP"
-file = "dimensions/comstock_geography_orig_fip_tentative.csv"
+name = "standard_scenarios-comstock_US_county_FIP"
+file = "dimensions/standard_scenarios_comstock_geography.csv"
 module = "dsgrid.dimension.standard"
 description = """
-US county in original FIP code
+Standard Scenarios - ComStock US county in original FIP code (N=3,060), ComStock not in 48 counties.
 """
 
 [[dimensions]] # FIXME trivial?
@@ -22,42 +22,44 @@ Commercial sector
 
 [[dimensions]]
 type = "subsector"
-name = "comstock-building-types"
-file = "dimensions/comstock_subsectors.csv"
+name = "standard_scenarios-comstock_building_types"
+file = "dimensions/standard_scenarios_comstock_subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "SubSector"
 description = """
-Comstock building types
+Standard Scenarios - Comstock building types
 """
 
 [[dimensions]]
 type = "metric"
-name = "comstock-energy-enduses"
-file = "dimensions/comstock_end_uses.csv"
+name = "standard_scenarios-comstock_energy_enduses"
+file = "dimensions/standard_scenarios_comstock_end_uses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
 description = """
-Comstock end uses, available from ComStock timeseries results, not annual result summary.
+Standard Scenarios - Comstock end uses
 """
 
 [[dimensions]] # FIXME
 type = "scenario"
-name = "AEO-Reference-Scenario"
+name = "Standard-Scenarios"
 file = "dimensions/xxx.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
 description = """
-AEO Reference Scenario
+Standard Scenarios
 """
 
 [[dimensions]] # FIXME # SHOW WE PUT SHA HERE? or in the dataset.toml
 type = "data_source"
 name = "Data-Source-comstock-2021"
-file = "dimensions/xxx.csv"
+file = "dimensions/standard_scenarios_comstock_data_source.csv"
 module = "dsgrid.dimension.standard"
 class = "Model"
 description = """
-ComStock, SHA: xxx
+Comstock SHA: 00a3f79bab74d7fb8b71e7897486eb54b51277fc |
+buildstock SHA: 9e00b5649c96ad18bc6336ba9b24c81156f8fd2d
+Simulated on 09/29/2021
 """
 
 [[dimensions]]
