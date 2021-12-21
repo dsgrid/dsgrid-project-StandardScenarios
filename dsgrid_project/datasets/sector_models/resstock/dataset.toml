@@ -1,1 +1,91 @@
+# --------------------------------------
 # ResStock Dataset Configuration File
+# --------------------------------------
+
+dataset_id = "conus-2022-resstock"
+dataset_type = "sector_model"
+data_source = "ResStock"
+
+path = "/Users/dthom/.dsgrid-data/efs_comstock" # FIXME
+description = """
+Simulated on 09/15/2021 using: 
+ResStock SHA:  and
+buildstock SHA:
+
+Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
+"""
+
+
+origin_creator = "Lixi Liu"
+origin_organization = "NREL"
+origin_contributors = ["Anthony Fortanini", "Lixi Liu"]
+origin_project = "End Use Load Profiles"
+origin_date = "2021-09-15"
+origin_version = "0.1.0"
+source = "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012_dsgrid/"
+data_classification = "low"
+tags = [ "residential", "conus-2022", "dsgrid_v0.2.0", "standard_scenarios"]
+data_schema_type = "standard"
+trivial_dimensions = [ "weather_year", "model_year", "scenario", "data_source"]
+
+[data_schema]
+load_data_column_dimension = "metric"
+
+[[dimensions]]
+type = "geography"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "sector"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "subsector"
+dimension_id = ""
+version = "1.0.0"
+
+[[dimensions]]
+type = "end_use"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "data_source"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "scenario"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "weather"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "model_year"
+dimension_id = ""
+version = ""
+
+[[dimensions]]
+type = "time"
+dimension_id = ""
+version = ""
+
+# [metadata]
+# coverage_year = 2012
+# description = ""
+# geographic_resolution = ""
+# geographic_scope = ""
+# notes = ""
+# origin_creator = ""
+# origin_contributors = [""] # list of other contributors first and last name
+# origin_organization = "NREL"
+# origin_date =  # e.g., "06/17/2018"
+# origin_project = ""
+# tags = [""]
+# data_class = "low"

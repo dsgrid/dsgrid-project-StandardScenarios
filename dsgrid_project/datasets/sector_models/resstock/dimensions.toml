@@ -1,0 +1,98 @@
+# ------------------------------------------------------
+# ResStock AMY2012 MY2018 CONUS 2022
+# ------------------------------------------------------
+[[dimensions]]
+type = "geography"
+name = "conus_2022-resstock_US_county_FIP"
+file = "dimensions/conus_2022-resstock_geography.csv"
+module = "dsgrid.dimension.standard"
+description = """
+CONUS 2022 - ResStock US county in original FIP code (N=3,107), ResStock not in 1 county (G4803010: TX, Loving County).
+"""
+
+[[dimensions]]
+type = "sector"
+name = "residential-sector"
+file = "dimensions/sector_residential.csv"
+module = "dsgrid.dimension.standard"
+class = "Sector"
+description = """
+Residential sector
+"""
+
+[[dimensions]]
+type = "subsector"
+name = "conus_2022-resstock_building_types"
+file = "dimensions/conus_2022-resstock_subsectors.csv"
+module = "dsgrid.dimension.standard"
+class = "SubSector"
+description = """
+CONUS 2022 - ResStock building types (N=5)
+"""
+
+[[dimensions]]
+type = "metric"
+name = "conus_2022-resstock_energy_enduses_kwh"
+file = "dimensions/conus_2022-resstock_end_uses.csv"
+module = "dsgrid.dimension.standard"
+class = "EnergyEndUse"
+description = """
+CONUS 2022 - ResStock end uses (N=48, 5 fuel types)
+"""
+
+[[dimensions]]
+type = "scenario"
+name = "Conus-2022"
+file = "dimensions/scenario_conus_2022.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+description = """
+Scenario: CONUS 2022
+"""
+
+[[dimensions]]
+type = "data_source"
+name = "Data-Source-ResStock"
+file = "dimensions/data_source_resstock.csv"
+module = "dsgrid.dimension.standard"
+class = "Model"
+description = """
+Data source: ResStock
+"""
+
+[[dimensions]]
+type = "weather"
+name = "AMY-2012"
+file = "dimensions/weather_year_2012.csv"
+module = "dsgrid.dimension.standard"
+class = "Weather"
+description = """
+Weather year: AMY 2012
+"""
+
+[[dimensions]]
+type = "model_year"
+name = "Model-Year-2018"
+file = "dimensions/model_year_2018.csv"
+module = "dsgrid.dimension.standard"
+class = "ModelYear"
+description = """
+Model year: 2018
+"""
+
+[[dimensions]]
+name = "Time-2012-UTC-8787-hourly-periodEnding-total-Hour6Start"
+type = "time"
+module = "dsgrid.dimension.standard"
+class = "Time"
+description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 6, 8787 timestamps, total value"
+time_type = "datetime"
+measurement_type = "total"
+str_format = "%Y-%m-%d %H:%M:%S"
+frequency = "P0DT1H0M0.000000S"
+leap_day_adjustment = "none"
+time_interval_type = "period_ending"
+timezone = "UTC"
+ranges = [{start = "2012-01-01 06:00:00", end = "2013-01-01 08:00:00"}]
+
+
