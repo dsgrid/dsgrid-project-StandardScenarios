@@ -1,7 +1,6 @@
 # --------------------------------------
 # ComStock Dataset Configuration File
 # --------------------------------------
-# TODO: ComStock contributors to fill out this config file
 
 dataset_id = "conus-2022-comstock"
 dataset_type = "sector_model"
@@ -23,7 +22,7 @@ origin_contributors = ["Marlena Praprost", "Lixi Liu", "Andrew Parker"]
 origin_project = "End Use Load Profiles"
 origin_date = "2021-09-29"
 origin_version = "0.1.0"
-source = "https://nrel.sharepoint.com/:u:/r/sites/dsgrid-load/Shared%20Documents/File%20Archive/fy17%20-%20OSP%20-%20Electrification%20Load%20Modeling/data/dsgrid_v0.2.0/data/commercial.dsg?csf=1&web=1&e=dU8Ogx" # FIXME
+source = "s3://eulp/simulation_output/regional_runs/comstock/com_dsgrid_full_2/com_dsgrid_full_2/"
 data_classification = "low"
 tags = [ "commercial", "conus-2022", "dsgrid_v0.2.0", "standard_scenarios"]
 data_schema_type = "standard"
@@ -77,16 +76,4 @@ type = "time"
 dimension_id = ""
 version = ""
 
-# [metadata]
-# coverage_year = 2012
-# description = ""
-# geographic_resolution = ""
-# geographic_scope = ""
-# notes = ""
-# origin_creator = ""
-# origin_contributors = [""] # list of other contributors first and last name
-# origin_organization = "NREL"
-# origin_date =  # e.g., "06/17/2018"
-# origin_project = ""
-# tags = [""]
 # data_class = "low"

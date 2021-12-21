@@ -1,5 +1,5 @@
 # ------------------------------------------------------
-# ComStock WY2012 MY2018 Conus 2022
+# ComStock AMY2012 MY2018 Conus 2022
 # ------------------------------------------------------
 [[dimensions]]
 type = "geography"
@@ -27,7 +27,7 @@ file = "dimensions/conus_2022-comstock_subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "SubSector"
 description = """
-CONUS 2022 - Comstock building types
+CONUS 2022 - ComStock building types (N=14)
 """
 
 [[dimensions]]
@@ -37,7 +37,7 @@ file = "dimensions/conus_2022-comstock_end_uses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
 description = """
-CONUS 2022 - Comstock end uses
+CONUS 2022 - ComStock end uses (N=21, 4 fuel types)
 """
 
 [[dimensions]]
@@ -57,7 +57,7 @@ file = "dimensions/data_source_comstock.csv"
 module = "dsgrid.dimension.standard"
 class = "Model"
 description = """
-Data source: comstock
+Data source: ComStock
 """
 
 [[dimensions]]
@@ -81,18 +81,18 @@ Model year: 2018
 """
 
 [[dimensions]]
-name = "Time-2012-UTC-hourly-periodEnding-DST-deopDec31-total-Hour5Start"
+name = "Time-2012-UTC-8760-hourly-periodEnding-dropDec31-total-Hour5Start"
 type = "time"
 module = "dsgrid.dimension.standard"
 class = "Time"
-description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 5, with DST, 8760, drop Dec 31, total value"
+description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 5, 8760 timestamps, drop Dec 31, total value"
 time_type = "datetime"
 measurement_type = "total"
 str_format = "%Y-%m-%d %H:%M:%S"
 frequency = "P0DT1H0M0.000000S"
-leap_day_adjustment = "dropDec31"
+leap_day_adjustment = "drop_dec31"
 time_interval_type = "period_ending"
 timezone = "UTC"
-ranges = [{start = "2012-01-01 05:00:00", end = "2012-12-31 04:00:00"}]
+ranges = [{start = "2012-01-01 05:00:00", end = "2012-12-31 09:00:00"}] # FIXME
 
 
