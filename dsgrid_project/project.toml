@@ -3,6 +3,7 @@
 description = """Dataset created for the FY21 dsgrid Load Profile Tool for Grid Modeling project"""
 name = "dsgrid CONUS 2022"
 project_id = "dsgrid_conus_2022"
+dimension_associations = ["dimension_associations/lookup_data_source_to_metric.csv", "dimension_associations/lookup_data_source_to_sector.csv", "dimension_associations/lookup_data_source_to_subsector.csv", "dimension_associations/lookup_scenario_to_data_source.csv", "dimension_associations/lookup_scenario_to_metric.csv","dimension_associations/lookup_scenario_to_sector.csv", "dimension_associations/lookup_scenario_to_subsector.csv", "dimension_associations/lookup_sector_to_metric.csv", "dimension_associations/lookup_sector_to_subsector.csv", "dimension_associations/lookup_subsector_to_metric.csv"]
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
@@ -12,19 +13,19 @@ project_id = "dsgrid_conus_2022"
 # historical = [] # ignoring this for now
 
 [[datasets]]
-dataset_id = "tempo-standard-scenarios-2021"
+dataset_id = "tempo-conus-2022"
 dataset_type = "sector_model"
 model_sector = "tempo"
 version = "1.0.0"
 
 [[datasets]]
-dataset_id = "resstock-standard-scenarios-2021"
+dataset_id = "resstock-conus-2022"
 dataset_type = "sector_model"
 model_sector = "resstock"
 version = "1.0.0"
 
 [[datasets]]
-dataset_id = "comstock-standard-scenarios-2021"
+dataset_id = "comstock-conus-2022"
 dataset_type = "sector_model"
 model_sector = "comstock"
 version = "1.0.0"
@@ -99,15 +100,6 @@ version = "1.0.0"
 # ------------------------------------------------------
 # Dimension Mappings
 # ------------------------------------------------------
-[[dimension_mappings.base_to_base]] # TODO
-from_dimension_type = "sector"
-mapping_id = ""
-required_for_validation = true
-to_dimension_type = "subsector"
-version = "1.0.0"
-
-# TODO: may need sector, subsector, end use mappings
-
 [[dimension_mappings.base_to_supplemental]]
 from_dimension_type = "geography"
 mapping_id = "us_counties_-_census_2010__us_census_regions__aa5b14a9-53c0-42a4-aa7d-eb7c9a279324"
