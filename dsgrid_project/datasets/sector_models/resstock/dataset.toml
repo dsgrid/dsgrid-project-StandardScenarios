@@ -9,12 +9,11 @@ data_source = "ResStock"
 path = "/Users/dthom/.dsgrid-data/efs_comstock" # FIXME
 description = """
 Simulated on 09/15/2021 using: 
-ResStock SHA:  and
-buildstock SHA:
+ResStock SHA:  N/A and
+buildstock SHA: N/A
 
 Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
 """
-
 
 origin_creator = "Lixi Liu"
 origin_organization = "NREL"
@@ -75,17 +74,3 @@ version = ""
 type = "time"
 dimension_id = ""
 version = ""
-
-# [metadata]
-# coverage_year = 2012
-# description = ""
-# geographic_resolution = ""
-# geographic_scope = ""
-# notes = ""
-# origin_creator = ""
-# origin_contributors = [""] # list of other contributors first and last name
-# origin_organization = "NREL"
-# origin_date =  # e.g., "06/17/2018"
-# origin_project = ""
-# tags = [""]
-# data_class = "low"

@@ -4,8 +4,9 @@
 [[dimensions]]
 type = "geography"
 name = "conus_2022-resstock_US_county_FIP"
-file = "dimensions/conus_2022-resstock_geography.csv"
+file = "dimensions/conus_2022-resstock_geography_county_fips.csv"
 module = "dsgrid.dimension.standard"
+class = "County"
 description = """
 CONUS 2022 - ResStock US county in original FIP code (N=3,107), ResStock not in 1 county (G4803010: TX, Loving County).
 """
@@ -17,15 +18,15 @@ file = "dimensions/sector_residential.csv"
 module = "dsgrid.dimension.standard"
 class = "Sector"
 description = """
-Residential sector
+Residential sector only
 """
 
-[[dimensions]]
+[[dimensions]] # error
 type = "subsector"
 name = "conus_2022-resstock_building_types"
 file = "dimensions/conus_2022-resstock_subsectors.csv"
 module = "dsgrid.dimension.standard"
-class = "SubSector"
+class = "Subsector"
 description = """
 CONUS 2022 - ResStock building types (N=5)
 """
@@ -47,28 +48,28 @@ file = "dimensions/scenario_conus_2022.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
 description = """
-Scenario: CONUS 2022
+Scenario: CONUS (Continental U.S.) 2022
 """
 
 [[dimensions]]
 type = "data_source"
-name = "Data-Source-ResStock"
+name = "ResStock-Data-Source"
 file = "dimensions/data_source_resstock.csv"
 module = "dsgrid.dimension.standard"
-class = "Model"
+class = "DataSource"
 description = """
-Data source: ResStock
+ResStock only data source
 """
 
-[[dimensions]]
-type = "weather"
-name = "AMY-2012"
-file = "dimensions/weather_year_2012.csv"
-module = "dsgrid.dimension.standard"
-class = "Weather"
-description = """
-Weather year: AMY 2012
-"""
+# [[dimensions]] # already exists
+# type = "weather"
+# name = "AMY-2012"
+# file = "dimensions/weather_year_2012.csv"
+# module = "dsgrid.dimension.standard"
+# class = "Weather"
+# description = """
+# Weather year: AMY 2012
+# """
 
 [[dimensions]]
 type = "model_year"
@@ -77,7 +78,7 @@ file = "dimensions/model_year_2018.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
 description = """
-Model year: 2018
+Model year, 2018 only
 """
 
 [[dimensions]]
