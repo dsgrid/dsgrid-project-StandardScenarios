@@ -1,6 +1,6 @@
-# # ------------------------------------------------------
-# # Base Dimensions
-# # ------------------------------------------------------
+# ------------------------------------------------------
+# Base Dimensions
+# ------------------------------------------------------
 [[dimensions]]
 description = """
 US counties, Census 2020 vintage, no territories
@@ -20,27 +20,21 @@ module = "dsgrid.dimension.standard"
 name = "Standard Scenarios 2021 Sectors - Com-Res-Tra-Only"
 type = "sector"
 
-# TODO -- add the tempo dimensions for subsector for now
-# [[dimensions]]
-# type = "subsector"
-# name = "Standard-Scenarios-2021-Detailed-Subsectors--Trans-Only"
-# file = "dimensions/subsectors.csv"
-# module = "dsgrid.dimension.standard"
-# class = "Subsector"
-# description = """
-# dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
-# """
+[[dimensions]]
+type = "subsector"
+name = "CONUS-2022-Detailed-Subsectors"
+file = "dimensions/subsectors.csv"
+module = "dsgrid.dimension.standard"
+class = "Subsector"
+description = "dsgrid CONUS 2022 Subsectors"
 
-# TODO -- add the tempo dimensions for enduses for now
-# [[dimensions]]
-# type = "end_use"
-# name = "Standard-Scenarios-2021-Detailed-End-Uses--Trans-Only"
-# file = "dimensions/enduses.csv"
-# module = "dsgrid.dimension.standard"
-# class = "EndUse"
-# description = """
-# dsgrid Standard Scenarios 2021 End Uses; Transportation only
-# """
+[[dimensions]]
+type = "metric"
+name = "CONUS-2022-Detailed-End-Uses"
+file = "dimensions/enduses.csv"
+module = "dsgrid.dimension.standard"
+class = "EnergyEndUse"
+description = "dsgrid CONUS 2022 End Uses"
 
 [[dimensions]]
 class = "ModelYear"
@@ -55,11 +49,12 @@ type = "model_year"
 [[dimensions]]
 class = "Scenario"
 description = """
-reference scenario only
+Scenarios for the dsgrid CONUS 2022 project, which include a Reference scenario
+and two light-duty vehicle electrification scenarios
 """
 file = "dimensions/scenarios.csv"
 module = "dsgrid.dimension.standard"
-name = "Reference Scenario"
+name = "dsgrid CONUS 2022 scenarios"
 type = "scenario"
 
 [[dimensions]]
@@ -75,15 +70,15 @@ type = "data_source"
 [[dimensions]]
 class = "Time"
 frequency = "P0DT1H0M0.000000S"
-name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-mean"
+name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-total"
 ranges = [{start = "2012-01-01 00:00:00", end = "2013-12-31 23:00:00"}]
 type = "time"
 time_type = "datetime"
 leap_day_adjustment = "none"
 description = """
-Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, mean value
+Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, total value
 """
 time_interval_type = "period_beginning"
 str_format = "%Y-%m-%d %H:%M:%S"
 timezone = "UTC"
-measurement_type = "mean"
+measurement_type = "total"

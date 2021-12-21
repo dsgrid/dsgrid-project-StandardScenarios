@@ -1,30 +1,31 @@
 # TODO: This configuration is under active development. Currently it is set up for TEMPO, ComStock, ResStock data only but it will later be expanded to include all project configuration details.
 
-description = """dsgrid Standard Scenarios project FY21"""
-name = "dsgrid Standard Scenarios 2021"
-project_id = "dsgrid_standard_scenarios_2021"
+description = """Dataset created for the FY21 dsgrid Load Profile Tool for Grid Modeling project"""
+name = "dsgrid CONUS 2022"
+project_id = "dsgrid_conus_2022"
+dimension_associations = ["dimension_associations/lookup_data_source_to_metric.csv", "dimension_associations/lookup_data_source_to_sector.csv", "dimension_associations/lookup_data_source_to_subsector.csv", "dimension_associations/lookup_scenario_to_data_source.csv", "dimension_associations/lookup_scenario_to_metric.csv","dimension_associations/lookup_scenario_to_sector.csv", "dimension_associations/lookup_scenario_to_subsector.csv", "dimension_associations/lookup_sector_to_metric.csv", "dimension_associations/lookup_sector_to_subsector.csv", "dimension_associations/lookup_subsector_to_metric.csv"]
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
 # ------------------------------------------------------
-[input_datasets]
-benchmark = [] # ignoring this for now
-historical = [] # ignoring this for now
+# [datasets]
+# benchmark = [] # ignoring this for now
+# historical = [] # ignoring this for now
 
-[[input_datasets.datasets]]
-dataset_id = "tempo-standard-scenarios-2021"
+[[datasets]]
+dataset_id = "tempo-conus-2022"
 dataset_type = "sector_model"
 model_sector = "tempo"
 version = "1.0.0"
 
-[[input_datasets.datasets]]
-dataset_id = "resstock-standard-scenarios-2021"
+[[datasets]]
+dataset_id = "resstock-conus-2022"
 dataset_type = "sector_model"
 model_sector = "resstock"
 version = "1.0.0"
 
-[[input_datasets.datasets]]
-dataset_id = "comstock-standard-scenarios-2021"
+[[datasets]]
+dataset_id = "comstock-conus-2022"
 dataset_type = "sector_model"
 model_sector = "comstock"
 version = "1.0.0"
@@ -43,14 +44,14 @@ dimension_id = "standard_scenarios_2021_sectors_-_com-res-tra-only__e1a83d86-2c7
 type = "sector"
 version = "1.0.0"
 
-[[dimensions.base_dimensions]] # TODO
-dimension_id = ""
+[[dimensions.base_dimensions]]
+dimension_id = "conus-2022-detailed-subsectors__d285bf0f-2aa0-4c4a-a7cb-81fc03239516"
 type = "subsector"
 version = "1.0.0"
 
-[[dimensions.base_dimensions]] # TODO
-dimension_id = ""
-type = "end_use"
+[[dimensions.base_dimensions]]
+dimension_id = "conus-2022-detailed-end-uses__49496f0b-eaa8-4f53-a325-d28c555178e1"
+type = "metric"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
@@ -64,7 +65,7 @@ type = "model_year"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "reference_scenario__5894cef9-4838-4a25-b610-52557964ee1f"
+dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
 type = "scenario"
 version = "1.0.0"
 
@@ -74,7 +75,7 @@ type = "data_source"
 version = "1.0.0"
 
 [[dimensions.base_dimensions]]
-dimension_id = "time-2012-utc-houlry-periodbeginning-nodst-noleapdayadjustment-mean__60cb33cb-0951-4ca1-8987-17ffe0903318"
+dimension_id = "time-2012-utc-houlry-periodbeginning-nodst-noleapdayadjustment-total__28b148e2-1dd4-461b-abe8-484addd3d553"
 type = "time"
 version = "1.0.0"
 
@@ -82,32 +83,23 @@ version = "1.0.0"
 # Supplemental Dimensions
 # ------------------------------------------------------
 [[dimensions.supplemental_dimensions]]
-dimension_id = "us_states__2bae0844-b0d3-4bf0-9d15-d9d969dee774"
+dimension_id = "us_states__caef7924-b019-4081-a08f-5da8f451ed23"
 type = "geography"
 version = "1.0.0"
 
 [[dimensions.supplemental_dimensions]]
-dimension_id = "us_census_regions__899a4862-883d-4f8f-820e-3921db84ea8e"
+dimension_id = "us_census_regions__81589d89-7575-4ac2-8ee3-4a3f24e1595f"
 type = "geography"
 version = "1.0.0"
 
 [[dimensions.supplemental_dimensions]]
-dimension_id = "us_census_divisions__6e2dcd43-5f14-45b1-b850-f289673d89c7"
+dimension_id = "us_census_divisions__c98c6bb0-5c5a-4d36-971e-5082cb453cea"
 type = "geography"
 version = "1.0.0"
 
 # ------------------------------------------------------
 # Dimension Mappings
 # ------------------------------------------------------
-[[dimension_mappings.base_to_base]] # TODO
-from_dimension_type = "sector"
-mapping_id = ""
-required_for_validation = true
-to_dimension_type = "subsector"
-version = "1.0.0"
-
-# TODO: may need sector, subsector, end use mappings
-
 [[dimension_mappings.base_to_supplemental]]
 from_dimension_type = "geography"
 mapping_id = "us_counties_-_census_2010__us_census_regions__aa5b14a9-53c0-42a4-aa7d-eb7c9a279324"
