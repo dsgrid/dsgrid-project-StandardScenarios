@@ -70,15 +70,15 @@ type = "data_source"
 [[dimensions]]
 class = "Time"
 frequency = "P0DT1H0M0.000000S"
-name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-mean"
+name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-total"
 ranges = [{start = "2012-01-01 00:00:00", end = "2013-12-31 23:00:00"}]
 type = "time"
 time_type = "datetime"
 leap_day_adjustment = "none"
 description = """
-Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, mean value
+Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, total value
 """
 time_interval_type = "period_beginning"
 str_format = "%Y-%m-%d %H:%M:%S"
 timezone = "UTC"
-measurement_type = "mean"
+measurement_type = "total"
