@@ -2,16 +2,15 @@
 # ResStock Dataset Configuration File
 # --------------------------------------
 
-dataset_id = "conus-2022-resstock"
+dataset_id = "conus_2022_resstock"
 dataset_type = "sector_model"
 data_source = "ResStock"
 
-path = "/Users/dthom/.dsgrid-data/efs_comstock" # FIXME
+path = "/Users/lliu2/Downloads/end_use_processed_res" # FIXME
 description = """
 Simulated on 09/15/2021 using: 
-ResStock SHA:  N/A and
-buildstock SHA: N/A
-
+ResStock version: https://github.com/NREL/resstock/releases/tag/eulp_final and
+buildstock version: https://github.com/NREL/buildstockbatch/releases/tag/eulp_res_final |
 Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
 """
 
@@ -32,45 +31,45 @@ load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "sector"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "subsector"
-dimension_id = ""
+dimension_id = "conus_2022-resstock_us_county_fip__bc1e70c9-7e75-48df-a052-90d25e0127de"
 version = "1.0.0"
 
 [[dimensions]]
-type = "end_use"
-dimension_id = ""
-version = ""
+type = "sector"
+dimension_id = "residential-sector__550e2326-84d5-4935-b6de-22c4b0577c58"
+version = "1.0.0"
+
+[[dimensions]]
+type = "subsector"
+dimension_id = "conus_2022-resstock_building_types__83dab422-bcd1-432e-949c-359d49392198"
+version = "1.0.0"
+
+[[dimensions]]
+type = "metric"
+dimension_id = "conus_2022-resstock_energy_enduses_kwh__e84ff30a-3db3-4369-8108-6b619d12761b"
+version = "1.0.0"
 
 [[dimensions]]
 type = "data_source"
-dimension_id = ""
-version = ""
+dimension_id = "resstock-data-source__704d4737-5b87-4201-bffd-10deae4b99c7"
+version = "1.0.0"
 
 [[dimensions]]
 type = "scenario"
-dimension_id = ""
-version = ""
+dimension_id = "conus-2022__23ec8c55-c133-49b7-a617-fe4d23fc652a"
+version = "1.0.0"
 
 [[dimensions]]
-type = "weather"
-dimension_id = ""
-version = ""
+type = "weather_year"
+dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
+version = "1.0.0"
 
 [[dimensions]]
 type = "model_year"
-dimension_id = ""
-version = ""
+dimension_id = "model-year-2018__39ea0a5b-b80f-41ac-ba22-1dfc90a5994b"
+version = "1.0.0"
 
 [[dimensions]]
 type = "time"
-dimension_id = ""
-version = ""
+dimension_id = "time-2012-utc-8787-hourly-periodending-total-hour6start__156f0b71-2535-4ae6-8397-f6721138f8c6"
+version = "1.0.0"

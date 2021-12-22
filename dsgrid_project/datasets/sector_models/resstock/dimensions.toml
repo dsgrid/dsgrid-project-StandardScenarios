@@ -21,7 +21,7 @@ description = """
 Residential sector only
 """
 
-[[dimensions]] # error
+[[dimensions]]
 type = "subsector"
 name = "conus_2022-resstock_building_types"
 file = "dimensions/conus_2022-resstock_subsectors.csv"
