@@ -7,7 +7,7 @@ dimension_id = "conus_2022-resstock_us_county_fip__bc1e70c9-7e75-48df-a052-90d25
 version = "1.0.0"
 [mappings.to_dimension]
 type = "geography"
-dimension_id = "" # TODO - add once we remove AK and HI from project counties
+dimension_id = "us_counties_2020_l48__3f48928c-e700-4e1d-b7fb-c35a52d076a0"
 version = "1.0.0"
 
 [[mappings]]
