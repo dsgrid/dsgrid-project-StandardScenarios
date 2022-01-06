@@ -1,13 +1,35 @@
 # --------------------------------------
 # ComStock Dataset Configuration File
 # --------------------------------------
-# TODO: ComStock contributors to fill out this config file
 
-dataset_id = "comstock-standard-scenarios-2021"
+dataset_id = "conus-2022-comstock"
 dataset_type = "sector_model"
-model_name = "ComStock"
-path = "s3://"
-description = """"""
+data_source = "ComStock"
+
+path = "/Users/lliu2/Downloads/end_use_processed_com" # FIXME
+description = """
+Simulated on 09/29/2021 using: 
+Comstock SHA: 00a3f79bab74d7fb8b71e7897486eb54b51277fc and
+buildstock SHA: 9e00b5649c96ad18bc6336ba9b24c81156f8fd2d
+
+Post-processed using AWS ightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
+"""
+
+
+origin_creator = "Lixi Liu"
+origin_organization = "NREL"
+origin_contributors = ["Marlena Praprost", "Lixi Liu", "Andrew Parker"]
+origin_project = "End Use Load Profiles"
+origin_date = "2021-09-29"
+origin_version = "0.1.0"
+source = "s3://eulp/simulation_output/regional_runs/comstock/com_dsgrid_full_2/com_dsgrid_full_2/"
+data_classification = "low"
+tags = [ "commercial", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
+data_schema_type = "standard"
+trivial_dimensions = [ "weather_year", "model_year", "scenario", "data_source"]
+
+[data_schema]
+load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
@@ -31,39 +53,25 @@ version = ""
 
 [[dimensions]]
 type = "data_source"
-dimension_id = ""
+dimension_id = "comstock_data_source__2ecde85e-5896-43b5-95ce-725bdd2f40a0"
 version = ""
 
 [[dimensions]]
 type = "scenario"
-dimension_id = ""
+dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
 version = ""
 
 [[dimensions]]
 type = "weather"
-dimension_id = ""
+dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
 version = ""
 
 [[dimensions]]
 type = "model_year"
-dimension_id = ""
+dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
 version = ""
 
 [[dimensions]]
 type = "time"
 dimension_id = ""
 version = ""
-
-# [metadata]
-# coverage_year = 2012
-# description = ""
-# geographic_resolution = ""
-# geographic_scope = ""
-# notes = ""
-# origin_creator = ""
-# origin_contributors = [""] # list of other contributors first and last name
-# origin_organization = "NREL"
-# origin_date =  # e.g., "06/17/2018"
-# origin_project = ""
-# tags = [""]
-# data_class = "low"
