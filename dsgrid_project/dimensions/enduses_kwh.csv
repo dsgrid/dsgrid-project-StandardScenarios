@@ -1,0 +1,60 @@
+id,name,fuel_id,unit
+district_cooling_cooling,District Cooling - Cooling,district_cooling,kWh
+district_heating_heating,District Heating - Heating,district_heating,kWh
+district_heating_water_systems,District Heating - Water Systems,district_heating,kWh
+electricity_cooling,Electricity - Cooling,electricity,kWh
+electricity_exterior_lighting,Electricity - Exterior Lighting,electricity,kWh
+electricity_fans,Electricity - Fans,electricity,kWh
+electricity_heat_recovery,Electricity - Heat Recovery,electricity,kWh
+electricity_heat_rejection,Electricity - Heat Rejection,electricity,kWh
+electricity_heating,Electricity - Heating,electricity,kWh
+electricity_interior_equipment,Electricity - Interior Equipment,electricity,kWh
+electricity_interior_lighting,Electricity - Interior Lighting,electricity,kWh
+electricity_pumps,Electricity - Pumps,electricity,kWh
+electricity_refrigeration,Electricity - Refrigeration,electricity,kWh
+electricity_water_systems,Electricity - Water Systems,electricity,kWh
+natural_gas_interior_equipment,Natural Gas - Interior Equipment,natural_gas,kWh
+fuel_oil_heating,Fuel Oil - Heating,fuel_oil,kWh
+fuel_oil_water_systems,Fuel Oil - Water Systems,fuel_oil,kWh
+electricity_bath_fan,Electricity - Bath Fan,electricity,kWh
+electricity_ceiling_fan,Electricity - Ceiling Fan,electricity,kWh
+electricity_clothes_dryer,Electricity - Clothes Dryer,electricity,kWh
+electricity_clothes_washer,Electricity - Clothes Washer,electricity,kWh
+electricity_cooking_range,Electricity - Cooking Range,electricity,kWh
+electricity_dishwasher,Electricity - Dishwasher,electricity,kWh
+electricity_exterior_holiday_lighting,Electricity - Exterior Holiday Lighting,electricity,kWh
+electricity_extra_refrigerator,Electricity - Extra Refrigerator,electricity,kWh
+electricity_fans_cooling,Electricity - Fans Cooling,electricity,kWh
+electricity_fans_heating,Electricity - Fans Heating,electricity,kWh
+electricity_freezer,Electricity - Freezer,electricity,kWh
+electricity_garage_lighting,Electricity - Garage Lighting,electricity,kWh
+electricity_heating_supplemental,Electricity - Heating Supplemental,electricity,kWh
+electricity_hot_tub_heater,Electricity - Hot Tub Heater,electricity,kWh
+electricity_hot_tub_pump,Electricity - Hot Tub Pump,electricity,kWh
+electricity_house_fan,Electricity - House Fan,electricity,kWh
+electricity_plug_loads,Electricity - Plug Loads,electricity,kWh
+electricity_pool_heater,Electricity - Pool Heater,electricity,kWh
+electricity_pool_pump,Electricity - Pool Pump,electricity,kWh
+electricity_pumps_cooling,Electricity - Pumps Cooling,electricity,kWh
+electricity_pumps_heating,Electricity - Pumps Heating,electricity,kWh
+electricity_range_fan,Electricity - Range Fan,electricity,kWh
+electricity_recirc_pump,Electricity - Recircuation Pump,electricity,kWh
+electricity_refrigerator,Electricity - Refrigerator,electricity,kWh
+electricity_well_pump,Electricity - Well Pump,electricity,kWh
+natural_gas_clothes_dryer,Natural Gas - Clothes Dryer,natural gas,kWh
+natural_gas_cooking_range,Natural Gas - Cooking Range,natural gas,kWh
+natural_gas_fireplace,Natural Gas - Fireplace,natural gas,kWh
+natural_gas_grill,Natural Gas - Grill,natural gas,kWh
+natural_gas_heating,Natural Gas - Heating,natural gas,kWh
+natural_gas_hot_tub_heater,Natural Gas - Hot Tub Heater,natural gas,kWh
+natural_gas_lighting,Natural Gas - Lighting,natural gas,kWh
+natural_gas_pool_heater,Natural Gas - Pool Heater,natural gas,kWh
+natural_gas_water_systems,Natural Gas - Water Systems,natural gas,kWh
+propane_clothes_dryer,Propane - Clothes Dryer,propane,kWh
+propane_cooking_range,Propane - Cooking Range,propane,kWh
+propane_heating,Propane - Heating,propane,kWh
+propane_water_systems,Propane - Water Systems,propane,kWh
+wood_heating,Wood - Heating,wood heating,kWh
+electricity_ev_l1,Electricity - EV L1,electricity,kWh
+electricity_ev_l2,Electricity - EV L2,electricity,kWh
+electricity_ev_dcfc,Electricty - EV DCFC,electricity,kWh

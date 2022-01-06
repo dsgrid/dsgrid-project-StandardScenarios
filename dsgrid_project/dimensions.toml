@@ -28,13 +28,22 @@ module = "dsgrid.dimension.standard"
 class = "Subsector"
 description = "dsgrid CONUS 2022 Subsectors"
 
-[[dimensions]]
+# [[dimensions]] # TODO: this is what we ultimately want to be using for the project
+# type = "metric"
+# name = "CONUS-2022-Detailed-End-Uses"
+# file = "dimensions/enduses.csv"
+# module = "dsgrid.dimension.standard"
+# class = "EnergyEndUse"
+# description = "dsgrid CONUS 2022 End Uses"
+
+[[dimensions]] # TODO: this is for the dummy data deliverable
 type = "metric"
-name = "CONUS-2022-Detailed-End-Uses"
-file = "dimensions/enduses.csv"
+name = "CONUS-2022-Detailed-End-Uses-kWh"
+file = "dimensions/enduses_kwh.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
-description = "dsgrid CONUS 2022 End Uses"
+description = "dsgrid CONUS 2022 End Uses w/ all units in kWh"
+
 
 [[dimensions]]
 class = "ModelYear"
