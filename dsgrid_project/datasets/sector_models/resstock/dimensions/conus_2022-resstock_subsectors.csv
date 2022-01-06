@@ -1,6 +1,6 @@
 id,name
-Multi-Family with 2 - 4 Units,Multi-Family with 2 - 4 Units (Includes stacked duplexes and triplexes)
-Single-Family Attached,Single-Family Attached (Includes townhomes and row houses)
-Mobile Home,Mobile Home
-Single-Family Detached,Single-Family Detached
-Multi-Family with 5+ Units,Multi-Family with 5+ Units
+multifamily_2_to_4_units,Multi-Family with 2 - 4 Units (Includes stacked duplexes and triplexes)
+single_family_attached,Single-Family Attached (Includes townhomes and row houses)
+mobile_home,Mobile Home
+single_family_detached,Single-Family Detached
+multifamily_5_plus_units,Multi-Family with 5+ Units

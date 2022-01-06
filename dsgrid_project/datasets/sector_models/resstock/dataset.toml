@@ -2,7 +2,7 @@
 # ResStock Dataset Configuration File
 # --------------------------------------
 
-dataset_id = "conus_2022_resstock"
+dataset_id = "conus_2022_reference_resstock"
 dataset_type = "sector_model"
 data_source = "ResStock"
 
@@ -16,13 +16,13 @@ Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/S
 
 origin_creator = "Lixi Liu"
 origin_organization = "NREL"
-origin_contributors = ["Anthony Fortanini", "Lixi Liu"]
+origin_contributors = ["Anthony Fortanini", "Lixi Liu", "Noah Sandoval"]
 origin_project = "End Use Load Profiles"
 origin_date = "2021-09-15"
 origin_version = "0.1.0"
 source = "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012_dsgrid/"
 data_classification = "low"
-tags = [ "residential", "conus-2022", "dsgrid_v0.2.0", "standard_scenarios"]
+tags = [ "residential", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
 data_schema_type = "standard"
 trivial_dimensions = [ "weather_year", "model_year", "scenario", "data_source"]
 
@@ -36,12 +36,12 @@ version = "1.0.0"
 
 [[dimensions]]
 type = "sector"
-dimension_id = "residential-sector__550e2326-84d5-4935-b6de-22c4b0577c58"
+dimension_id = "residential-sector__d58ca399-bb2c-49b7-aebf-dae270b9fa67"
 version = "1.0.0"
 
 [[dimensions]]
 type = "subsector"
-dimension_id = "conus_2022-resstock_building_types__83dab422-bcd1-432e-949c-359d49392198"
+dimension_id = "conus_2022-resstock_building_types__767a84dc-30a6-4b31-88e5-1e52fa3d4f41"
 version = "1.0.0"
 
 [[dimensions]]
@@ -56,7 +56,7 @@ version = "1.0.0"
 
 [[dimensions]]
 type = "scenario"
-dimension_id = "conus-2022__23ec8c55-c133-49b7-a617-fe4d23fc652a"
+dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
 version = "1.0.0"
 
 [[dimensions]]
@@ -66,10 +66,10 @@ version = "1.0.0"
 
 [[dimensions]]
 type = "model_year"
-dimension_id = "model-year-2018__39ea0a5b-b80f-41ac-ba22-1dfc90a5994b"
+dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
 version = "1.0.0"
 
 [[dimensions]]
 type = "time"
-dimension_id = "time-2012-utc-8787-hourly-periodending-total-hour6start__156f0b71-2535-4ae6-8397-f6721138f8c6"
+dimension_id = "time-2012-utc-8787-hourly-periodending-total-hour6start-localrangestz__fee9ac08-fcd0-4282-a044-45f335afde24"
 version = "1.0.0"
