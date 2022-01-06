@@ -3,10 +3,10 @@
 # ------------------------------------------------------
 [[dimensions]]
 description = """
-US counties, Census 2020 vintage, no territories
+US counties for L48, Census 2020 vintage, no territories
 """
 file = "dimensions/counties.csv"
-name = "US Counties 2020"
+name = "US Counties 2020 L48"
 type = "geography"
 class = "County"
 

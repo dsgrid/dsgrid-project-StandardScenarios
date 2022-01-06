@@ -35,7 +35,7 @@ version = "1.0.0"
 # Base Dimensions
 # ------------------------------------------------------
 [[dimensions.base_dimensions]]
-dimension_id = "us_counties_2020__2dc5cf6d-600b-493d-81f6-20490565218d"
+dimension_id = "us_counties_2020_l48__3f48928c-e700-4e1d-b7fb-c35a52d076a0"
 type = "geography"
 version = "1.0.0"
 
@@ -102,18 +102,18 @@ version = "1.0.0"
 # ------------------------------------------------------
 [[dimension_mappings.base_to_supplemental]]
 from_dimension_type = "geography"
-mapping_id = "us_counties_-_census_2010__us_census_regions__aa5b14a9-53c0-42a4-aa7d-eb7c9a279324"
+mapping_id = "us_counties_2020_l48__us_census_regions__f1627a71-0d01-4801-a9df-a2a2296480b5"
 to_dimension_type = "geography"
 version = "1.0.0"
 
 [[dimension_mappings.base_to_supplemental]]
 from_dimension_type = "geography"
-mapping_id = "us_counties_-_census_2010__us_census_divisions__1126102b-6c0b-4779-99a8-e9e25af21e71"
+mapping_id = "us_counties_2020_l48__us_census_divisions__2391abb7-1b68-42d4-b0b8-aef81cb5ae9e"
 to_dimension_type = "geography"
 version = "1.0.0"
 
 [[dimension_mappings.base_to_supplemental]]
 from_dimension_type = "geography"
-mapping_id = "us_counties_-_census_2010__us_states__4740e88a-413f-4bf1-a993-25a6b0a4cba3"
+mapping_id = "us_counties_2020_l48__us_states__1fdd6b1a-e61a-46cc-8670-5e6156256457"
 to_dimension_type = "geography"
 version = "1.0.0"

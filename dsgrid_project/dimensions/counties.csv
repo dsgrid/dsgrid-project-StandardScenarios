@@ -66,36 +66,6 @@ id,name,state
 01129,Washington,AL
 01131,Wilcox,AL
 01133,Winston,AL
-02013,Aleutians East,AK
-02016,Aleutians West,AK
-02020,Anchorage,AK
-02050,Bethel,AK
-02060,Bristol Bay,AK
-02063,Chugach,AK
-02066,Copper River,AK
-02068,Denali,AK
-02070,Dillingham,AK
-02090,Fairbanks North Star,AK
-02100,Haines,AK
-02105,Hoonah-Angoon,AK
-02110,Juneau,AK
-02122,Kenai Peninsula,AK
-02130,Ketchikan Gateway,AK
-02150,Kodiak Island,AK
-02158,Kusilvak,AK
-02164,Lake and Peninsula,AK
-02170,Matanuska-Susitna,AK
-02180,Nome,AK
-02185,North Slope,AK
-02188,Northwest Arctic,AK
-02195,Petersburg,AK
-02198,Prince of Wales-Hyder,AK
-02220,Sitka,AK
-02230,Skagway,AK
-02240,Southeast Fairbanks,AK
-02275,Wrangell,AK
-02282,Yakutat,AK
-02290,Yukon-Koyukuk,AK
 04001,Apache,AZ
 04003,Cochise,AZ
 04005,Coconino,AZ
@@ -546,11 +516,6 @@ id,name,state
 13317,Wilkes,GA
 13319,Wilkinson,GA
 13321,Worth,GA
-15001,Hawaii,HI
-15003,Honolulu,HI
-15005,Kalawao,HI
-15007,Kauai,HI
-15009,Maui,HI
 16001,Ada,ID
 16003,Adams,ID
 16005,Bannock,ID
