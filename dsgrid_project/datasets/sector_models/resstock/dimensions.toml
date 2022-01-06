@@ -1,15 +1,15 @@
 # ------------------------------------------------------
 # ResStock AMY2012 MY2018 CONUS 2022
 # ------------------------------------------------------
-# [[dimensions]] # already exists
-# type = "geography"
-# name = "conus_2022-resstock_US_county_FIP"
-# file = "dimensions/conus_2022-resstock_geography_county_fips.csv"
-# module = "dsgrid.dimension.standard"
-# class = "County"
-# description = """
-# CONUS 2022 - ResStock US county in original FIP code (N=3,107), ResStock not in 1 county (G4803010: TX, Loving County).
-# """
+[[dimensions]]
+type = "geography"
+name = "conus_2022-resstock_US_county_FIP"
+file = "dimensions/conus_2022-resstock_geography_county_fips.csv"
+module = "dsgrid.dimension.standard"
+class = "County"
+description = """
+CONUS 2022 - ResStock US county in original FIP code (N=3,107), ResStock not in 1 county (G4803010: TX, Loving County).
+"""
 
 [[dimensions]]
 type = "sector"
@@ -51,7 +51,7 @@ description = """
 Scenario: CONUS (Continental U.S.) 2022 Reference
 """
 
-[[dimensions]] # already exists
+[[dimensions]]
 type = "data_source"
 name = "ResStock-Data-Source"
 file = "dimensions/data_source_resstock.csv"
@@ -60,16 +60,6 @@ class = "DataSource"
 description = """
 ResStock only data source
 """
-
-# [[dimensions]] # already exists
-# type = "weather"
-# name = "AMY-2012"
-# file = "dimensions/weather_year_2012.csv"
-# module = "dsgrid.dimension.standard"
-# class = "Weather"
-# description = """
-# Weather year: AMY 2012
-# """
 
 [[dimensions]]
 type = "model_year"
