@@ -2,11 +2,11 @@
 # ComStock Dataset Configuration File
 # --------------------------------------
 
-dataset_id = "conus-2022-comstock"
+dataset_id = "conus_2022_reference_comstock"
 dataset_type = "sector_model"
 data_source = "ComStock"
 
-path = "/Users/lliu2/Downloads/end_use_processed_com" # FIXME
+path = "/Users/lliu2/Downloads/end_use_time_wrapped_com" # FIXME
 description = """
 Simulated on 09/29/2021 using: 
 Comstock SHA: 00a3f79bab74d7fb8b71e7897486eb54b51277fc and
@@ -14,7 +14,6 @@ buildstock SHA: 9e00b5649c96ad18bc6336ba9b24c81156f8fd2d
 
 Post-processed using AWS ightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
 """
-
 
 origin_creator = "Lixi Liu"
 origin_organization = "NREL"
@@ -26,52 +25,52 @@ source = "s3://eulp/simulation_output/regional_runs/comstock/com_dsgrid_full_2/c
 data_classification = "low"
 tags = [ "commercial", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
 data_schema_type = "standard"
-trivial_dimensions = [ "weather_year", "model_year", "scenario", "data_source"]
+trivial_dimensions = ["sector", "weather_year", "model_year", "scenario", "data_source"]
 
 [data_schema]
 load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "sector"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "subsector"
-dimension_id = ""
+dimension_id = "conus_2022-comstock_us_county_fip__f201e8a5-92ab-434e-bb7c-7bb2be992f74"
 version = "1.0.0"
 
 [[dimensions]]
-type = "end_use"
-dimension_id = ""
-version = ""
+type = "sector"
+dimension_id = "commercial-sector__e9ccef84-0aed-4b7f-b682-e2604f16b511"
+version = "1.0.0"
+
+[[dimensions]]
+type = "subsector"
+dimension_id = "conus_2022-comstock_building_types__9d67aca5-fdbf-4ac8-8086-f1da6547d807"
+version = "1.0.0"
+
+[[dimensions]]
+type = "metric"
+dimension_id = "conus_2022-comstock_energy_enduses_kwh__f420cf50-6ac1-42c4-8cd4-c73299c25814"
+version = "1.0.0"
 
 [[dimensions]]
 type = "data_source"
 dimension_id = "comstock_data_source__2ecde85e-5896-43b5-95ce-725bdd2f40a0"
-version = ""
+version = "1.0.0"
 
 [[dimensions]]
 type = "scenario"
 dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
-version = ""
+version = "1.0.0"
 
 [[dimensions]]
-type = "weather"
+type = "weather_year"
 dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
-version = ""
+version = "1.0.0"
 
 [[dimensions]]
 type = "model_year"
 dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
-version = ""
+version = "1.0.0"
 
 [[dimensions]]
 type = "time"
-dimension_id = ""
-version = ""
+dimension_id = "time-2012-utc-8760-hourly-periodending-total-hour1start__8ec3f1bd-0a83-4336-b49b-9cb5a38c0166"
+version = "1.0.0"

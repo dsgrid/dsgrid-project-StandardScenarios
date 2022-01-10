@@ -71,12 +71,29 @@
 # Model year, 2018 only
 # """
 
-[[dimensions]]
-name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour6Start-localRangesTZ"
+# [[dimensions]] # for real dataset
+# name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour6Start-localRangesTZ"
+# type = "time"
+# module = "dsgrid.dimension.standard"
+# class = "Time"
+# description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 6, 8784 timestamps, total value, local ranges_timezone"
+# time_type = "datetime"
+# measurement_type = "total"
+# str_format = "%Y-%m-%d %H:%M:%S"
+# frequency = "P0DT1H0M0.000000S"
+# leap_day_adjustment = "none"
+# time_interval_type = "period_ending"
+# timezone = "UTC"
+# ranges = [{start = "2012-01-01 01:00:00", end = "2013-01-01 00:00:00"}]
+# ranges_timezone = "LOCAL"
+
+
+[[dimensions]] # for time-wrapped dataset
+name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour0Start"
 type = "time"
 module = "dsgrid.dimension.standard"
 class = "Time"
-description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 6, 8784 timestamps, total value, local ranges_timezone"
+description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 0, 8784 timestamps, total value"
 time_type = "datetime"
 measurement_type = "total"
 str_format = "%Y-%m-%d %H:%M:%S"
@@ -84,7 +101,4 @@ frequency = "P0DT1H0M0.000000S"
 leap_day_adjustment = "none"
 time_interval_type = "period_ending"
 timezone = "UTC"
-ranges = [{start = "2012-01-01 01:00:00", end = "2013-01-01 00:00:00"}]
-ranges_timezone = "LOCAL"
-
-
+ranges = [{start = "2012-01-01 00:00:00", end = "2012-12-31 23:00:00"}]

@@ -6,7 +6,7 @@ dataset_id = "conus_2022_reference_resstock"
 dataset_type = "sector_model"
 data_source = "ResStock"
 
-path = "/Users/lliu2/Downloads/end_use_processed_res" # FIXME
+path = "/Users/lliu2/Downloads/end_use_time_wrapped_res"
 description = """
 Simulated on 09/15/2021 using: 
 ResStock version: https://github.com/NREL/resstock/releases/tag/eulp_final and
@@ -24,7 +24,7 @@ source = "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012
 data_classification = "low"
 tags = [ "residential", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
 data_schema_type = "standard"
-trivial_dimensions = [ "weather_year", "model_year", "scenario", "data_source"]
+trivial_dimensions = ["sector", "weather_year", "model_year", "scenario", "data_source"]
 
 [data_schema]
 load_data_column_dimension = "metric"
@@ -71,5 +71,5 @@ version = "1.0.0"
 
 [[dimensions]]
 type = "time"
-dimension_id = "time-2012-utc-8784-hourly-periodending-total-hour6start-localrangestz__b607b514-badc-4ede-8615-e3ad8a1e2612"
+dimension_id = "time-2012-utc-8784-hourly-periodending-total-hour0start__8ae089c3-733c-4db8-92a0-01f01db49cbd"
 version = "1.0.0"
