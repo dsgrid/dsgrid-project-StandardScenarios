@@ -69,7 +69,7 @@ type = "model_year"
 dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
 version = "1.0.0"
 
-[[dimensions]]
+[[dimensions]] # time-wrapped data
 type = "time"
 dimension_id = "time-2012-utc-8784-hourly-periodending-total-hour0start__8ae089c3-733c-4db8-92a0-01f01db49cbd"
 version = "1.0.0"

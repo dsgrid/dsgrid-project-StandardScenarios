@@ -6,7 +6,7 @@ dataset_id = "conus_2022_reference_comstock"
 dataset_type = "sector_model"
 data_source = "ComStock"
 
-path = "/Users/lliu2/Downloads/end_use_time_wrapped_com" # FIXME
+path = "/Users/lliu2/Downloads/end_use_time_wrapped_com_downcasted"
 description = """
 Simulated on 09/29/2021 using: 
 Comstock SHA: 00a3f79bab74d7fb8b71e7897486eb54b51277fc and
@@ -32,7 +32,7 @@ load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
-dimension_id = "conus_2022-comstock_us_county_fip__f201e8a5-92ab-434e-bb7c-7bb2be992f74"
+dimension_id = "conus_2022-comstock_us_county_fip__1665d121-bd0f-4278-8420-c1a4e61fe774"
 version = "1.0.0"
 
 [[dimensions]]
@@ -70,7 +70,9 @@ type = "model_year"
 dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
 version = "1.0.0"
 
-[[dimensions]]
+[[dimensions]] # time-wrapped data
 type = "time"
-dimension_id = "time-2012-utc-8760-hourly-periodending-total-hour1start__8ec3f1bd-0a83-4336-b49b-9cb5a38c0166"
+dimension_id = "time-2012-utc-8784-hourly-periodending-total-hour0start__8ae089c3-733c-4db8-92a0-01f01db49cbd"
 version = "1.0.0"
+
+

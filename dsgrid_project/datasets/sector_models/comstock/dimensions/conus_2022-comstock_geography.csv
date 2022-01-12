@@ -66,29 +66,29 @@ G0101270,Walker County,AL
 G0101290,Washington County,AL
 G0101310,Wilcox County,AL
 G0101330,Winston County,AL
-G0200130,#N/A,#N/A
-G0200160,#N/A,#N/A
-G0200200,#N/A,#N/A
-G0200500,#N/A,#N/A
-G0200600,#N/A,#N/A
-G0200680,#N/A,#N/A
-G0200700,#N/A,#N/A
-G0200900,#N/A,#N/A
-G0201000,#N/A,#N/A
-G0201100,#N/A,#N/A
-G0201220,#N/A,#N/A
-G0201300,#N/A,#N/A
-G0201500,#N/A,#N/A
-G0201640,#N/A,#N/A
-G0201700,#N/A,#N/A
-G0201800,#N/A,#N/A
-G0201850,#N/A,#N/A
-G0201880,#N/A,#N/A
-G0202200,#N/A,#N/A
-G0202400,#N/A,#N/A
-G0202610,#N/A,#N/A
-G0202700,#N/A,#N/A
-G0202900,#N/A,#N/A
+G0200130,Aleutians East County,AK
+G0200160,Aleutians West County,AK
+G0200200,Anchorage County,AK
+G0200500,Bethel County,AK
+G0200600,Bristol Bay County,AK
+G0200680,Denali County,AK
+G0200700,Dillingham County,AK
+G0200900,Fairbanks North Star County,AK
+G0201000,Haines County,AK
+G0201100,Juneau County,AK
+G0201220,Kenai Peninsula County,AK
+G0201300,Ketchikan Gateway County,AK
+G0201500,Kodiak Island County,AK
+G0201640,Lake And Peninsula County,AK
+G0201700,Matanuska-Susitna County,AK
+G0201800,Nome County,AK
+G0201850,North Slope County,AK
+G0201880,Northwest Arctic County,AK
+G0202200,Sitka County,AK
+G0202400,Southeast Fairbanks County,AK
+G0202610,Valdez-Cordova County,AK
+G0202700,Wade Hampton County,AK
+G0202900,Yukon-Koyukuk County,AK
 G0400010,Apache County,AZ
 G0400030,Cochise County,AZ
 G0400050,Coconino County,AZ
@@ -2372,7 +2372,7 @@ G4601050,Perkins County,SD
 G4601070,Potter County,SD
 G4601090,Roberts County,SD
 G4601110,Sanborn County,SD
-G4601130,#N/A,#N/A
+G4601130,Shannon County,SD
 G4601150,Spink County,SD
 G4601170,Stanley County,SD
 G4601210,Todd County,SD
@@ -2859,7 +2859,7 @@ G5101950,Wise County,VA
 G5101970,Wythe County,VA
 G5101990,York County,VA
 G5105100,Alexandria city,VA
-G5105150,#N/A,#N/A
+G5105150,Bedford city,VA
 G5105200,Bristol city,VA
 G5105300,Buena Vista city,VA
 G5105400,Charlottesville city,VA
