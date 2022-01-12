@@ -8,11 +8,10 @@ data_source = "ComStock"
 
 path = "/Users/lliu2/Downloads/end_use_time_wrapped_com_downcasted"
 description = """
-Simulated on 09/29/2021 using: 
+Time-shifted and filled for Dec31, simulated on 09/29/2021 using: 
 Comstock SHA: 00a3f79bab74d7fb8b71e7897486eb54b51277fc and
-buildstock SHA: 9e00b5649c96ad18bc6336ba9b24c81156f8fd2d
-
-Post-processed using AWS ightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
+buildstock SHA: 9e00b5649c96ad18bc6336ba9b24c81156f8fd2d 
+(Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid)
 """
 
 origin_creator = "Lixi Liu"
@@ -23,7 +22,7 @@ origin_date = "2021-09-29"
 origin_version = "0.1.0"
 source = "s3://eulp/simulation_output/regional_runs/comstock/com_dsgrid_full_2/com_dsgrid_full_2/"
 data_classification = "low"
-tags = [ "commercial", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
+tags = ["commercial", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
 data_schema_type = "standard"
 trivial_dimensions = ["sector", "weather_year", "model_year", "scenario", "data_source"]
 

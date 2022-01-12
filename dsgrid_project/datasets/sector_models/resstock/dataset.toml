@@ -6,12 +6,12 @@ dataset_id = "conus_2022_reference_resstock"
 dataset_type = "sector_model"
 data_source = "ResStock"
 
-path = "/Users/lliu2/Downloads/end_use_time_wrapped_res"
+path = "/Users/lliu2/Downloads/end_use_time_wrapped_res_downcasted"
 description = """
-Simulated on 09/15/2021 using: 
+Time-wrapped, simulated on 09/15/2021 using: 
 ResStock version: https://github.com/NREL/resstock/releases/tag/eulp_final and
-buildstock version: https://github.com/NREL/buildstockbatch/releases/tag/eulp_res_final |
-Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
+buildstock version: https://github.com/NREL/buildstockbatch/releases/tag/eulp_res_final 
+(Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid)
 """
 
 origin_creator = "Lixi Liu"
@@ -22,7 +22,7 @@ origin_date = "2021-09-15"
 origin_version = "0.1.0"
 source = "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012_dsgrid/"
 data_classification = "low"
-tags = [ "residential", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
+tags = ["residential", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
 data_schema_type = "standard"
 trivial_dimensions = ["sector", "weather_year", "model_year", "scenario", "data_source"]
 
