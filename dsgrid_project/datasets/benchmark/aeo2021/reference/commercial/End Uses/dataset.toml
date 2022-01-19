@@ -1,8 +1,8 @@
 data_source = "AEO2021 Reference Case"
 dataset_id = "aeo2021_ref_com_energy_end_uses"
-data_schema_type = "standard"
-dataset_type = "sector_model" # <--- benchmark?
-path = "s3://nrel-dsgrid-registry/data/benchmark/aeo2021/aeo2021_ref_com_energy_end_uses/1.0.0" # <---
+data_schema_type = "one_table"
+dataset_type = "benchmark" # <--- ?
+path = "/Users/lliu2/Documents/GitHub/dsgrid-project-StandardScenarios/dsgrid_project/datasets/benchmark/aeo2021/reference/commercial/End Uses/data/" # <---
 description = "AEO 2021 Reference Case Commercial Energy End Uses Projection: 2013-2050"
 origin_creator = "Lixi Liu"
 origin_organization = "NREL"
@@ -13,52 +13,52 @@ origin_version = "0.1.0"
 source = "Data derived from AEO 2021 detailed sector files sent from EIA"
 data_classification = "low"
 tags = [ "commercial", "benchmark", "projection", "aeo", "2021", "dsgrid_v0.2.0",]
+trivial_dimensions = [ "sector", "scenario", "data_source", "weather_year", "model_year"]
 
 [data_schema]
-load_data_column_dimension = "metric"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "us_census_divisions__c98c6bb0-5c5a-4d36-971e-5082cb453cea"
 type = "geography"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "commercial-sector__e9ccef84-0aed-4b7f-b682-e2604f16b511"
 type = "sector"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "aeo2021-commercial-building-types-include-unspecified__8a56a8e4-a515-412f-88c2-ea8f53db3b35"
 type = "subsector"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "aeo2021-commercial-energy-enduses__9ed1b01b-350a-4978-a040-16c775e0c580"
 type = "metric"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "weather_years-trivial-2013_to_2050__35bcd374-aac9-44a0-869c-114df498b990"
 type = "weather_year"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "model_years-trivial-2013_to_2050__799dd50c-78b3-4373-935c-b4ce52a5db74"
 type = "model_year"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "reference_scenario__5d35997c-d3d6-4f43-afb8-175b365e3345" # <--- ?
 type = "scenario"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "data-source-aeo-2021__9a1bb500-0734-4703-bfe0-02c6a8e7579e"
 type = "data_source"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "" # <---
+dimension_id = "annual_time-2013_to_2050__9f358984-6b4b-4ec8-9dce-279b327dedc8"
 type = "time"
 version = "1.0.0"
 

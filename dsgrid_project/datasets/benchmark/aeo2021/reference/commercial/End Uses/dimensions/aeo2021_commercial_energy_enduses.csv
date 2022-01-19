@@ -23,4 +23,4 @@ fuel_oil_water_heating,Total Fuel Oil - Water Heating,fuel_oil,trillion_btu
 fuel_oil_other,Total Fuel Oil - Other,fuel_oil,trillion_btu
 fuel_oil_unspecified,Total Fuel Oil - Unspecified,fuel_oil,trillion_btu
 lpg_unspecified,Total Liquefied Propane Gas - Unspecified,lpg,trillion_btu
-other_unspecified,Total Other Fuel - Unspecified,other_fuel,trillion_btu
+other_unspecified,Total Other Fuel - Unspecified,other,trillion_btu

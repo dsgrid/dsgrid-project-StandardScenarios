@@ -1,20 +1,20 @@
 id,name,fuel_id,unit
-elec_heating,Annual Growth Factor in Electricity - Heating,electricity,unitless
-elec_cooling,Annual Growth Factor in Electricity - Cooling,electricity,unitless
-elec_water_heating,Annual Growth Factor in Electricity - Water Heating,electricity,unitless
-elec_ventilation,Annual Growth Factor in Electricity - Ventilation,electricity,unitless
-elec_cooking,Annual Growth Factor in Electricity - Cooking,electricity,unitless
-elec_lighting,Annual Growth Factor in Electricity - Lighting,electricity,unitless
-elec_refrigeration,Annual Growth Factor in Electricity - Refrigeration,electricity,unitless
-elec_office_equip_pcs,Annual Growth Factor in Electricity - Office Equip - PCs,electricity,unitless
-elec_office_equip_nonpcs,Annual Growth Factor in Electricity - Office Equip - NonPCs,electricity,unitless
-elec_other,Annual Growth Factor in Electricity - Other,electricity,unitless
-ng_heating,Annual Growth Factor in Natural Gas - Heating,natural_gas,unitless
-ng_cooling,Annual Growth Factor in Natural Gas - Cooling,natural_gas,unitless
-ng_water_heating,Annual Growth Factor in Natural Gas - Water Heating,natural_gas,unitless
-ng_cooking,Annual Growth Factor in Natural Gas - Cooking,natural_gas,unitless
-ng_other,Annual Growth Factor in Natural Gas - Other,natural_gas,unitless
-fuel_oil_heating,Annual Growth Factor in Other Fuel - Heating,other_fuel,unitless
-fuel_oil_cooling,Annual Growth Factor in Other Fuel - Cooling,other_fuel,unitless
-fuel_oil_water_heating,Annual Growth Factor in Other Fuel - Water Heating,other_fuel,unitless
-fuel_oil_other,Annual Growth Factor in Other Fuel - Other,other_fuel,unitless
+elec_heating,"Electricity - Heating, Annual Growth Factor",electricity,
+elec_cooling,"Electricity - Cooling, Annual Growth Factor",electricity,
+elec_water_heating,"Electricity - Water Heating, Annual Growth Factor",electricity,
+elec_ventilation,"Electricity - Ventilation, Annual Growth Factor",electricity,
+elec_cooking,"Electricity - Cooking, Annual Growth Factor",electricity,
+elec_lighting,"Electricity - Lighting, Annual Growth Factor",electricity,
+elec_refrigeration,"Electricity - Refrigeration, Annual Growth Factor",electricity,
+elec_office_equip_pcs,"Electricity - Office Equip - PCs, Annual Growth Factor",electricity,
+elec_office_equip_nonpcs,"Electricity - Office Equip - NonPCs, Annual Growth Factor",electricity,
+elec_other,"Electricity - Other, Annual Growth Factor",electricity,
+ng_heating,"Natural Gas - Heating, Annual Growth Factor",natural_gas,
+ng_cooling,"Natural Gas - Cooling, Annual Growth Factor",natural_gas,
+ng_water_heating,"Natural Gas - Water Heating, Annual Growth Factor",natural_gas,
+ng_cooking,"Natural Gas - Cooking, Annual Growth Factor",natural_gas,
+ng_other,"Natural Gas - Other, Annual Growth Factor",natural_gas,
+fuel_oil_heating,"Other Fuel - Heating, Annual Growth Factor",other_fuel,
+fuel_oil_cooling,"Other Fuel - Cooling, Annual Growth Factor",other_fuel,
+fuel_oil_water_heating,"Other Fuel - Water Heating, Annual Growth Factor",other_fuel,
+fuel_oil_other,"Other Fuel - Other, Annual Growth Factor",other_fuel,

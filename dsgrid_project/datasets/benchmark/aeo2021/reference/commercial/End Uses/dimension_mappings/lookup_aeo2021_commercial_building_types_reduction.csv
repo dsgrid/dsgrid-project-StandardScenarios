@@ -1,0 +1,13 @@
+from_id,to_id
+assembly,assembly
+education,education
+food_sales,food_sales
+food_service,food_service
+health_care,health_care
+lodging,lodging
+office_large,office
+office_small,office
+merc_service,merc_service
+warehouse,warehouse
+other,other
+unspecified,unspecified

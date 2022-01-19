@@ -1,34 +1,34 @@
 # ------------------------------------------------------
 # AEO 2021 Reference Case Commercial Energy End Use Dimensions
 # ------------------------------------------------------
-[[dimensions]]
-type = "geography"
-name = "US-Census-Divisions"
-file = "dimensions/us_census_divisions.csv"
-module = "dsgrid.dimension.standard"
-class = "CensusDivision"
-description = """
-US Census Divisions (N=9)
-"""
+# [[dimensions]] # already exists
+# type = "geography"
+# name = "US-Census-Divisions"
+# file = "dimensions/us_census_divisions.csv"
+# module = "dsgrid.dimension.standard"
+# class = "CensusDivision"
+# description = """
+# US Census Divisions (N=9)
+# """
 
-[[dimensions]]
-type = "sector"
-name = "Benchmark-commercial-sector"
-file = "dimensions/sector_commercial.csv"
-module = "dsgrid.dimension.standard"
-class = "Sector"
-description = """
-Benchmark Commercial Sector
-"""
+# [[dimensions]] # already exists
+# type = "sector"
+# name = "Benchmark-commercial-sector"
+# file = "dimensions/sector_commercial.csv"
+# module = "dsgrid.dimension.standard"
+# class = "Sector"
+# description = """
+# Benchmark Commercial Sector
+# """
 
 [[dimensions]]
 type = "subsector"
-name = "AEO2021-commercial-building-types"
-file = "dimensions/aeo2021_commercial_building_types.csv"
+name = "AEO2021-commercial-building-types-include-unspecified"
+file = "dimensions/aeo2021_commercial_building_types_include_unspecified.csv"
 module = "dsgrid.dimension.standard"
-class = "SubSector"
+class = "Subsector"
 description = """
-AEO 2021 commercial building types (N=12)
+AEO 2021 commercial building types (N=13), include Unspecified
 """
 
 [[dimensions]]
@@ -41,54 +41,59 @@ description = """
 AEO 2021 commercial energy end uses (N=22, from 11 end uses, 3 fuel types)
 """
 
-[[dimensions]]
-type = "scenario"
-name = "AEO-Reference-Scenario"
-file = "dimensions/aeo_reference_scenario.csv"
-module = "dsgrid.dimension.standard"
-class = "Scenario"
-description = """
-AEO Reference Scenario
-"""
+# [[dimensions]] # see if we need to register new
+# type = "scenario"
+# name = "AEO-Reference-Scenario"
+# file = "dimensions/aeo_reference_scenario.csv"
+# module = "dsgrid.dimension.standard"
+# class = "Scenario"
+# description = """
+# AEO Reference Scenario
+# """
+
+# [[dimensions]] # already registered
+# type = "data_source"
+# name = "AEO-2021-Data-Source"
+# file = "dimensions/aeo2021_data_source.csv"
+# module = "dsgrid.dimension.standard"
+# class = "DataSource"
+# description = """
+# AEO 2021 Data Source
+# """
 
 [[dimensions]]
-type = "data_source"
-name = "AEO-2021-Reference-Case-Data-Source"
-file = "dimensions/aeo2021_ref_data_source.csv"
+type = "weather_year"
+name = "Weather_Years-trivial-2013_to_2050"
+file = "dimensions/weather_years_trivial_2013_to_2050.csv"
 module = "dsgrid.dimension.standard"
-class = "Model"
+class = "WeatherYear"
 description = """
-AEO 2021 Reference Case Data Source
-"""
-
-[[dimensions]]
-type = "weather"
-name = "Weather-Years-2013-to-2050"
-file = "dimensions/weather_years_2013_to_2050.csv"
-module = "dsgrid.dimension.standard"
-class = "Weather"
-description = """
-Weather years, 2013-2050
+Weather years, 2013-2050, trivial, single record
 """
 
 [[dimensions]]
 type = "model_year"
-name = "Model-Years-2013-to-2050"
-file = "dimensions/model_years_2013_to_2050.csv"
+name = "Model_Years-trivial-2013_to_2050"
+file = "dimensions/model_years_trivial_2013_to_2050.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
 description = """
-Model years, 2013-2050
+Model years, 2013-2050, trivial, single record
 """
 
 [[dimensions]]
-class = "AnnualTime"
-description = """Annual time, 2013-2050"""
-module = "dsgrid.dimension.standard"
-name = "Annual-Time-2013-to-2050"
-measurement_type = "total"
-include_leap_day = true
+class = "Time"
+description = """
+Annual time 2013-2050
+"""
+frequency = "P365D"
+name = "annual_time-2013_to_2050"
+time_interval_type = "instantaneous"
+ranges = [{start = "2013", end = "2050"}]
+str_format = "%Y"
+timezone = "none"
 type = "time"
-time_type = "annual"
+time_type = "datetime"
+measurement_type = "total"
 
 

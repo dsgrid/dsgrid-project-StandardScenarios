@@ -1,94 +1,92 @@
 # ------------------------------------------------------
 # AEO 2021 Reference Case Commercial Energy End Use Growth Factors Dimensions
 # ------------------------------------------------------
-[[dimensions]]
-type = "geography"
-name = "US-Census-Divisions"
-file = "dimensions/us_census_divisions.csv"
-module = "dsgrid.dimension.standard"
-class = "CensusDivision"
-description = """
-US Census Divisions (N=9)
-"""
+# [[dimensions]] # already exists
+# type = "geography"
+# name = "US-Census-Divisions"
+# file = "dimensions/us_census_divisions.csv"
+# module = "dsgrid.dimension.standard"
+# class = "CensusDivision"
+# description = """
+# US Census Divisions (N=9)
+# """
 
-[[dimensions]]
-type = "sector"
-name = "Benchmark-commercial-sector"
-file = "dimensions/sector_commercial.csv"
-module = "dsgrid.dimension.standard"
-class = "Sector"
-description = """
-Benchmark Commercial Sector
-"""
+# [[dimensions]] # already exists
+# type = "sector"
+# name = "Benchmark-commercial-sector"
+# file = "dimensions/sector_commercial.csv"
+# module = "dsgrid.dimension.standard"
+# class = "Sector"
+# description = """
+# Benchmark Commercial Sector
+# """
 
 [[dimensions]]
 type = "subsector"
 name = "AEO2021-commercial-building-types"
 file = "dimensions/aeo2021_commercial_building_types.csv"
 module = "dsgrid.dimension.standard"
-class = "SubSector"
+class = "Subsector"
 description = """
-AEO 2021 commercial building types
+AEO 2021 commercial building types (N=11)
 """
 
 [[dimensions]]
 type = "metric"
-name = "AEO2021-commercial-energy-enduses"
+name = "AEO2021-commercial-energy-enduses-unitless"
 file = "dimensions/aeo2021_commercial_energy_enduses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
 description = """
-AEO 2021 commercial energy end uses (N=19, from 10 end uses, 3 fuel types)
+AEO 2021 commercial energy end uses (unitless) for growth rates (N=19, from 10 end uses, 3 fuel types)
 """
 
-[[dimensions]]
-type = "scenario"
-name = "AEO-Reference-Scenario"
-file = "dimensions/aeo_reference_scenario.csv"
-module = "dsgrid.dimension.standard"
-class = "Scenario"
-description = """
-AEO Reference Scenario
-"""
+# [[dimensions]] # see if needed
+# type = "scenario"
+# name = "AEO-Reference-Scenario"
+# file = "dimensions/aeo_reference_scenario.csv"
+# module = "dsgrid.dimension.standard"
+# class = "Scenario"
+# description = """
+# EIA AEO Reference Scenario
+# """
 
 [[dimensions]]
 type = "data_source"
-name = "AEO-2021-Reference-Case-Data-Source"
-file = "dimensions/aeo2021_ref_data_source.csv"
+name = "Data-Source-AEO-2021"
+file = "dimensions/aeo2021_data_source.csv"
 module = "dsgrid.dimension.standard"
-class = "Model"
+class = "DataSource"
 description = """
-AEO 2021 Reference Case Data Source
+EIA Annual Energy Outlook (AEO) 2021
 """
 
-
-### Trivial Dimensions Below ###
-
-# [[dimensions]]
-# type = "weather"
-# name = ""
-# file = ""
+# [[dimensions]] # already exists
+# type = "weather_year"
+# name = "Weather_Years-trivial-2013_to_2050"
+# file = "dimensions/weather_years_trivial_2013_to_2050.csv"
 # module = "dsgrid.dimension.standard"
-# class = "Weather"
+# class = "WeatherYear"
 # description = """
-# None or trivial
+# Weather years, 2013-2050, trivial, single record
 # """
 
-# [[dimensions]]
+# [[dimensions]] # already exists
 # type = "model_year"
-# name = ""
-# file = ""
+# name = "Model_Years-trivial-2013_to_2050"
+# file = "dimensions/model_years_trivial_2013_to_2050.csv"
 # module = "dsgrid.dimension.standard"
 # class = "ModelYear"
 # description = """
-# None or trivial
+# Model years, 2013-2050, trivial, single record
 # """
 
-# [[dimensions]]
-# class = "Time"
-# description = """None or trivial"""
-# module = "dsgrid.dimension.standard"
-# name = ""
-# measurement_type = ""
-# type = "time"
-# time_type = ""
+[[dimensions]]
+type = "time"
+class = "AnnualTime"
+time_type = "annual"
+description = """Annual time trival"""
+module = "dsgrid.dimension.standard"
+name = "Annual-Time-Trivial"
+measurement_type = "total"
+include_leap_day = "true"
