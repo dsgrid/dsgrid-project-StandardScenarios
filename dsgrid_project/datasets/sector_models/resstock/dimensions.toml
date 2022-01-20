@@ -8,7 +8,7 @@ file = "dimensions/conus_2022-resstock_geography_county_fips.csv"
 module = "dsgrid.dimension.standard"
 class = "County"
 description = """
-CONUS 2022 - ResStock US county in original FIP code (N=3,107), ResStock not in 1 county (G4803010: TX, Loving County).
+CONUS 2022 - ResStock US county in original FIP code (N=3,108)
 """
 
 [[dimensions]]
