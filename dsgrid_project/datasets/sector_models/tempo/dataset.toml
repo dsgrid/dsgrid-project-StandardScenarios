@@ -7,15 +7,15 @@ dataset_type = "sector_model"
 model_name = "TEMPO"
 path = "/projects/dsgrid/tempo/data"
 description = """
-CONUS 2022 TEMPO county-level results for BEV charging.""" # TODO: @ayip - don't we have more than BEV here?
+CONUS 2022 TEMPO county-level results for PEV charging.""" 
 
 origin_creator = "Arthur Yip"
 origin_organization = "NREL"
-origin_contributors = ["Arthur Yip", "Brian Bush"] # TODO: @ayip add others
-origin_project = "" # TODO @ayip
-origin_date = "" # TODO @ayip
-origin_version = "" # TODO @ayip
-source = "https://github.nrel.gov/mmurator/TMM/blob/0d89b8f61c624770643a35de1998efe6def5e59c/TEMPO.jl/src/BEV/BEV.jl" # TODO @ayip
+origin_contributors = ["Arthur Yip", "Brian Bush", "Christopher Hoehne", "Paige Jadun", "Catherine Ledna", "Matteo Muratori"]
+origin_project = "dsgrid CONUS 2022"
+origin_date = "Dec 21 2021"
+origin_version = "dsgrid" 
+source = "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c7031c046cfe27907"
 data_classification = "low"
 tags = [ "transportation", "conus-2022", "reference", "tempo"]
 data_schema_type = "standard" 
