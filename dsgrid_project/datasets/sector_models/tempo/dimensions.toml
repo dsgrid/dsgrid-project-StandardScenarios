@@ -73,11 +73,3 @@ description = """
 TEMPO modeling years for CONUS 2022 project, 2018-2050"""
 
 
-# TODO: uncomment this when ready to submit the final dataset
-# [[dimensions]]
-# class = "Scenario"
-# type = "scenario"
-# name = "TEMPO Scenario"
-# file = "dimensions/scenario.csv"
-# description = """
-# TEMPO CONUS 2022 scenarios."""
