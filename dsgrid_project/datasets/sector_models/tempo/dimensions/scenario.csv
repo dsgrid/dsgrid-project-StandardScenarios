@@ -1,2 +1,4 @@
 id,name
-tempo_base,"TEMPO base scenario"
+reference,EIA Reference
+efs_high,EFS High LDV Electrification
+biden_execorder,Biden Executive Order 50% LDV sales EV by 2035
