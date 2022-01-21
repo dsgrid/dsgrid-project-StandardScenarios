@@ -3,10 +3,10 @@
 [[dimensions]]
 class = "County"
 type = "geography"
-name = "ACS County 2018"  #TODO: is this L48 only? 
+name = "ACS County 2018" 
 file = "dimensions/counties.csv"
 description = """
-American Community Survey US counties, 2018.""" #TODO: is this L48 only? 
+American Community Survey US counties, 2018.""" 
 
 [[dimensions]]
 class = "Sector"
@@ -28,18 +28,18 @@ This is a cross-join of the following supplemental dimensions:
 * Composition
 * Income
 * Urbanity
-* Class
-* Tech"""
+* Vehicle Size Class
+* Tech (PHEV25/PHEV50/BEV100/BEV300) """
 
 
-# change this to metric
+
 [[dimensions]]
 class = "EnergyEndUse"
 type = "metric"
-name = "TEMPO LDV BEV Usage" #TODO: Name??
+name = "TEMPO LDV PEV Usage"
 file = "dimensions/end_use.csv"
 description = """
-Fuels used by TEMPO BEVs.""" # TODO: check these descriptions
+Type of charging (L1 and L2, DCFC) used by TEMPO PEVs."""
 
 
 [[dimensions]]
@@ -52,7 +52,7 @@ time_type = "representative_period"
 measurement_type = "total"
 format = "one_week_per_month_by_hour"
 description = """
-TEMPO Time - Month, day of week, and time of day.""" # TODO: is there a better description for this?
+TEMPO Time - Month (representing seasons), day of week, and hour of day."""
 
 
 [[dimensions]]
