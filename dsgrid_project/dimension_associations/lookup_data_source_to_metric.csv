@@ -67,5 +67,4 @@ resstock,propane_heating
 resstock,propane_water_systems
 resstock,wood_heating
 tempo,electricity_ev_dcfc
-tempo,electricity_ev_l1
-tempo,electricity_ev_l2
+tempo,electricity_ev_l1l2
