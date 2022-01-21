@@ -4,13 +4,13 @@
 [[dimensions]]
 type = "geography"
 name = "conus_2022-comstock_US_county_FIP"
-file = "dimensions/conus_2022-comstock_geography.csv"
+file = "dimensions/conus_2022-comstock_geography_county_fips.csv"
 module = "dsgrid.dimension.standard"
 class = "County"
 description = """
-CONUS 2022 - ComStock US county in (older version) original FIP code (N=3,085), 
+CONUS 2022 - ComStock US county in (older version) original FIP code (N=3,133), 
 includes 23 AK counties, 1 county renamed in 2015 (SD, Shannon County -> SD, Oglala Lakota County), 
-1 city (VA, Bedford City) that is now incorporated into a county (VA Bedford County).
+1 city (VA, Bedford City) that is now part of a county (VA Bedford County).
 """
 
 [[dimensions]]

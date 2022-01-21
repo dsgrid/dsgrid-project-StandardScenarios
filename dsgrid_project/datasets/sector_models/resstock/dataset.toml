@@ -6,7 +6,7 @@ dataset_id = "conus_2022_reference_resstock"
 dataset_type = "sector_model"
 data_source = "ResStock"
 
-path = "/Users/lliu2/Downloads/end_use_time_wrapped_res_downcasted"
+path = "/Users/lliu2/Downloads/end_use_time_wrapped_res"
 description = """
 Time-wrapped, simulated on 09/15/2021 using: 
 ResStock version: https://github.com/NREL/resstock/releases/tag/eulp_final and
@@ -31,7 +31,7 @@ load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
-dimension_id = "conus_2022-resstock_us_county_fip__bc1e70c9-7e75-48df-a052-90d25e0127de"
+dimension_id = "conus_2022-resstock_us_county_fip__06491cea-f139-43d5-9761-d89520689a51"
 version = "1.0.0"
 
 [[dimensions]]

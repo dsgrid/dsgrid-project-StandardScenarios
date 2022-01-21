@@ -531,6 +531,7 @@ G1302990,Ware County,GA
 G1303010,Warren County,GA
 G1303030,Washington County,GA
 G1303050,Wayne County,GA
+G1303070,Webster County,GA
 G1303090,Wheeler County,GA
 G1303110,White County,GA
 G1303130,Whitfield County,GA
@@ -550,6 +551,7 @@ G1600170,Bonner County,ID
 G1600190,Bonneville County,ID
 G1600210,Boundary County,ID
 G1600230,Butte County,ID
+G1600250,Camas County,ID
 G1600270,Canyon County,ID
 G1600290,Caribou County,ID
 G1600310,Cassia County,ID
@@ -616,6 +618,7 @@ G1700630,Grundy County,IL
 G1700650,Hamilton County,IL
 G1700670,Hancock County,IL
 G1700690,Hardin County,IL
+G1700710,Henderson County,IL
 G1700730,Henry County,IL
 G1700750,Iroquois County,IL
 G1700770,Jackson County,IL
@@ -655,6 +658,7 @@ G1701430,Peoria County,IL
 G1701450,Perry County,IL
 G1701470,Piatt County,IL
 G1701490,Pike County,IL
+G1701510,Pope County,IL
 G1701530,Pulaski County,IL
 G1701550,Putnam County,IL
 G1701570,Randolph County,IL
@@ -907,11 +911,13 @@ G2000630,Gove County,KS
 G2000650,Graham County,KS
 G2000670,Grant County,KS
 G2000690,Gray County,KS
+G2000710,Greeley County,KS
 G2000730,Greenwood County,KS
 G2000750,Hamilton County,KS
 G2000770,Harper County,KS
 G2000790,Harvey County,KS
 G2000810,Haskell County,KS
+G2000830,Hodgeman County,KS
 G2000850,Jackson County,KS
 G2000870,Jefferson County,KS
 G2000890,Jewell County,KS
@@ -959,6 +965,7 @@ G2001710,Scott County,KS
 G2001730,Sedgwick County,KS
 G2001750,Seward County,KS
 G2001770,Shawnee County,KS
+G2001790,Sheridan County,KS
 G2001810,Sherman County,KS
 G2001830,Smith County,KS
 G2001850,Stafford County,KS
@@ -1026,6 +1033,7 @@ G2100970,Harrison County,KY
 G2100990,Hart County,KY
 G2101010,Henderson County,KY
 G2101030,Henry County,KY
+G2101050,Hickman County,KY
 G2101070,Hopkins County,KY
 G2101090,Jackson County,KY
 G2101110,Jefferson County,KY
@@ -1408,9 +1416,11 @@ G2800470,Harrison County,MS
 G2800490,Hinds County,MS
 G2800510,Holmes County,MS
 G2800530,Humphreys County,MS
+G2800550,Issaquena County,MS
 G2800570,Itawamba County,MS
 G2800590,Jackson County,MS
 G2800610,Jasper County,MS
+G2800630,Jefferson County,MS
 G2800650,Jefferson Davis County,MS
 G2800670,Jones County,MS
 G2800690,Kemper County,MS
@@ -1592,6 +1602,7 @@ G3000250,Fallon County,MT
 G3000270,Fergus County,MT
 G3000290,Flathead County,MT
 G3000310,Gallatin County,MT
+G3000330,Garfield County,MT
 G3000350,Glacier County,MT
 G3000370,Golden Valley County,MT
 G3000390,Granite County,MT
@@ -1609,6 +1620,7 @@ G3000610,Mineral County,MT
 G3000630,Missoula County,MT
 G3000650,Musselshell County,MT
 G3000670,Park County,MT
+G3000690,Petroleum County,MT
 G3000710,Phillips County,MT
 G3000730,Pondera County,MT
 G3000750,Powder River County,MT
@@ -1632,6 +1644,7 @@ G3001090,Wibaux County,MT
 G3001110,Yellowstone County,MT
 G3100010,Adams County,NE
 G3100030,Antelope County,NE
+G3100050,Arthur County,NE
 G3100070,Banner County,NE
 G3100090,Blaine County,NE
 G3100110,Boone County,NE
@@ -1664,13 +1677,17 @@ G3100630,Frontier County,NE
 G3100650,Furnas County,NE
 G3100670,Gage County,NE
 G3100690,Garden County,NE
+G3100710,Garfield County,NE
 G3100730,Gosper County,NE
+G3100750,Grant County,NE
 G3100770,Greeley County,NE
 G3100790,Hall County,NE
 G3100810,Hamilton County,NE
 G3100830,Harlan County,NE
+G3100850,Hayes County,NE
 G3100870,Hitchcock County,NE
 G3100890,Holt County,NE
+G3100910,Hooker County,NE
 G3100930,Howard County,NE
 G3100950,Jefferson County,NE
 G3100970,Johnson County,NE
@@ -1681,6 +1698,9 @@ G3101050,Kimball County,NE
 G3101070,Knox County,NE
 G3101090,Lancaster County,NE
 G3101110,Lincoln County,NE
+G3101130,Logan County,NE
+G3101150,Loup County,NE
+G3101170,McPherson County,NE
 G3101190,Madison County,NE
 G3101210,Merrick County,NE
 G3101230,Morrill County,NE
@@ -1704,8 +1724,10 @@ G3101570,Scotts Bluff County,NE
 G3101590,Seward County,NE
 G3101610,Sheridan County,NE
 G3101630,Sherman County,NE
+G3101650,Sioux County,NE
 G3101670,Stanton County,NE
 G3101690,Thayer County,NE
+G3101710,Thomas County,NE
 G3101730,Thurston County,NE
 G3101750,Valley County,NE
 G3101770,Washington County,NE
@@ -1772,6 +1794,7 @@ G3500130,Dona Ana County,NM
 G3500150,Eddy County,NM
 G3500170,Grant County,NM
 G3500190,Guadalupe County,NM
+G3500210,Harding County,NM
 G3500230,Hidalgo County,NM
 G3500250,Lea County,NM
 G3500270,Lincoln County,NM
@@ -1955,8 +1978,10 @@ G3701930,Wilkes County,NC
 G3701950,Wilson County,NC
 G3701970,Yadkin County,NC
 G3701990,Yancey County,NC
+G3800010,Adams County,ND
 G3800030,Barnes County,ND
 G3800050,Benson County,ND
+G3800070,Billings County,ND
 G3800090,Bottineau County,ND
 G3800110,Bowman County,ND
 G3800130,Burke County,ND
@@ -1976,6 +2001,7 @@ G3800390,Griggs County,ND
 G3800410,Hettinger County,ND
 G3800430,Kidder County,ND
 G3800450,LaMoure County,ND
+G3800470,Logan County,ND
 G3800490,McHenry County,ND
 G3800510,McIntosh County,ND
 G3800530,McKenzie County,ND
@@ -1983,6 +2009,8 @@ G3800550,McLean County,ND
 G3800570,Mercer County,ND
 G3800590,Morton County,ND
 G3800610,Mountrail County,ND
+G3800630,Nelson County,ND
+G3800650,Oliver County,ND
 G3800670,Pembina County,ND
 G3800690,Pierce County,ND
 G3800710,Ramsey County,ND
@@ -1991,7 +2019,9 @@ G3800750,Renville County,ND
 G3800770,Richland County,ND
 G3800790,Rolette County,ND
 G3800810,Sargent County,ND
+G3800830,Sheridan County,ND
 G3800850,Sioux County,ND
+G3800870,Slope County,ND
 G3800890,Stark County,ND
 G3800910,Steele County,ND
 G3800930,Stutsman County,ND
@@ -2200,6 +2230,7 @@ G4100610,Union County,OR
 G4100630,Wallowa County,OR
 G4100650,Wasco County,OR
 G4100670,Washington County,OR
+G4100690,Wheeler County,OR
 G4100710,Yamhill County,OR
 G4200010,Adams County,PA
 G4200030,Allegheny County,PA
@@ -2326,6 +2357,7 @@ G4600090,Bon Homme County,SD
 G4600110,Brookings County,SD
 G4600130,Brown County,SD
 G4600150,Brule County,SD
+G4600170,Buffalo County,SD
 G4600190,Butte County,SD
 G4600210,Campbell County,SD
 G4600230,Charles Mix County,SD
@@ -2351,6 +2383,7 @@ G4600610,Hanson County,SD
 G4600630,Harding County,SD
 G4600650,Hughes County,SD
 G4600670,Hutchinson County,SD
+G4600690,Hyde County,SD
 G4600710,Jackson County,SD
 G4600730,Jerauld County,SD
 G4600750,Jones County,SD
@@ -2367,6 +2400,7 @@ G4600950,Mellette County,SD
 G4600970,Miner County,SD
 G4600990,Minnehaha County,SD
 G4601010,Moody County,SD
+G4601020,Oglala Lakota County,SD
 G4601030,Pennington County,SD
 G4601050,Perkins County,SD
 G4601070,Potter County,SD
@@ -2375,12 +2409,14 @@ G4601110,Sanborn County,SD
 G4601130,Shannon County,SD
 G4601150,Spink County,SD
 G4601170,Stanley County,SD
+G4601190,Sully County,SD
 G4601210,Todd County,SD
 G4601230,Tripp County,SD
 G4601250,Turner County,SD
 G4601270,Union County,SD
 G4601290,Walworth County,SD
 G4601350,Yankton County,SD
+G4601370,Ziebach County,SD
 G4700010,Anderson County,TN
 G4700030,Bedford County,TN
 G4700050,Benton County,TN
@@ -2492,6 +2528,7 @@ G4800250,Bee County,TX
 G4800270,Bell County,TX
 G4800290,Bexar County,TX
 G4800310,Blanco County,TX
+G4800330,Borden County,TX
 G4800350,Bosque County,TX
 G4800370,Bowie County,TX
 G4800390,Brazoria County,TX
@@ -2537,6 +2574,7 @@ G4801170,Deaf Smith County,TX
 G4801190,Delta County,TX
 G4801210,Denton County,TX
 G4801230,DeWitt County,TX
+G4801250,Dickens County,TX
 G4801270,Dimmit County,TX
 G4801290,Donley County,TX
 G4801310,Duval County,TX
@@ -2591,6 +2629,7 @@ G4802270,Howard County,TX
 G4802290,Hudspeth County,TX
 G4802310,Hunt County,TX
 G4802330,Hutchinson County,TX
+G4802350,Irion County,TX
 G4802370,Jack County,TX
 G4802390,Jackson County,TX
 G4802410,Jasper County,TX
@@ -2604,8 +2643,11 @@ G4802550,Karnes County,TX
 G4802570,Kaufman County,TX
 G4802590,Kendall County,TX
 G4802610,Kenedy County,TX
+G4802630,Kent County,TX
 G4802650,Kerr County,TX
 G4802670,Kimble County,TX
+G4802690,King County,TX
+G4802710,Kinney County,TX
 G4802730,Kleberg County,TX
 G4802750,Knox County,TX
 G4802770,Lamar County,TX
@@ -2620,6 +2662,7 @@ G4802930,Limestone County,TX
 G4802950,Lipscomb County,TX
 G4802970,Live Oak County,TX
 G4802990,Llano County,TX
+G4803010,Loving County,TX
 G4803030,Lubbock County,TX
 G4803050,Lynn County,TX
 G4803070,McCulloch County,TX
@@ -2641,6 +2684,7 @@ G4803370,Montague County,TX
 G4803390,Montgomery County,TX
 G4803410,Moore County,TX
 G4803430,Morris County,TX
+G4803450,Motley County,TX
 G4803470,Nacogdoches County,TX
 G4803490,Navarro County,TX
 G4803510,Newton County,TX
@@ -2664,6 +2708,7 @@ G4803850,Real County,TX
 G4803870,Red River County,TX
 G4803890,Reeves County,TX
 G4803910,Refugio County,TX
+G4803930,Roberts County,TX
 G4803950,Robertson County,TX
 G4803970,Rockwall County,TX
 G4803990,Runnels County,TX
@@ -2808,6 +2853,7 @@ G5100830,Halifax County,VA
 G5100850,Hanover County,VA
 G5100870,Henrico County,VA
 G5100890,Henry County,VA
+G5100910,Highland County,VA
 G5100930,Isle of Wight County,VA
 G5100950,James City County,VA
 G5100970,King and Queen County,VA
@@ -2867,6 +2913,7 @@ G5105500,Chesapeake city,VA
 G5105700,Colonial Heights city,VA
 G5105800,Covington city,VA
 G5105900,Danville city,VA
+G5105950,Emporia city,VA
 G5106000,Fairfax city,VA
 G5106100,Falls Church city,VA
 G5106200,Franklin city,VA
@@ -3029,6 +3076,7 @@ G5500710,Manitowoc County,WI
 G5500730,Marathon County,WI
 G5500750,Marinette County,WI
 G5500770,Marquette County,WI
+G5500780,Menominee County,WI
 G5500790,Milwaukee County,WI
 G5500810,Monroe County,WI
 G5500830,Oconto County,WI
