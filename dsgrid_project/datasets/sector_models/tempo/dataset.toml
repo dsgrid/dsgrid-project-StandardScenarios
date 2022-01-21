@@ -2,76 +2,74 @@
 # TEMPO Dataset Configuration File
 # --------------------------------------
 
-# TODO: TEMPO contributors to fill out this config file
-# TODO: Direct questions to brian.bush@nrel.gov
-
 dataset_id = "tempo-standard-scenarios-2021"
 dataset_type = "sector_model"
 model_name = "TEMPO"
-path = "s3://" # TODO: The registration process will provide this.
+path = "/projects/dsgrid/tempo/data"
 description = """
-TEMPO county-level results for BEV charging.
-"""
+CONUS 2022 TEMPO county-level results for PEV charging.""" 
+
+origin_creator = "Arthur Yip"
+origin_organization = "NREL"
+origin_contributors = ["Arthur Yip", "Brian Bush", "Christopher Hoehne", "Paige Jadun", "Catherine Ledna", "Matteo Muratori"]
+origin_project = "dsgrid CONUS 2022"
+origin_date = "Dec 21 2021"
+origin_version = "dsgrid" 
+source = "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c7031c046cfe27907"
+data_classification = "low"
+tags = [ "transportation", "conus-2022", "reference", "tempo"]
+data_schema_type = "standard" 
+trivial_dimensions = [ "sector", "weather_year", "scenario", "data_source"] # TODO: for non-dummy version, we will remove scenario from trivial dimensions
 
 [[dimensions]]
 type = "geography"
 dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
-
-[[dimensions]]
-type = "sector" # FIXME: TEMPO is just the transportation sector.
-dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
-trivial = true
+version = "1.0.0"
 
 [[dimensions]]
 type = "subsector"
 dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
+version = "1.0.0"
 
 [[dimensions]]
-type = "end_use"
+type = "metric"
 dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
+version = "1.0.0"
 
 [[dimensions]]
 type = "time"
 dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
+version = "1.0.0"
+
+[[dimensions]] # TODO: needs a dataset-to-project mapping
+type = "model_year"
+dimension_id = "" # TODO: The registration process will provide this.
+version = "1.0.0"
 
 [[dimensions]]
 type = "data_source"
 dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
-trivial = true
+version = "1.0.0"
 
 [[dimensions]]
-type = "model_year"
-dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
-
-[[dimensions]]
-type = "scenario"
-dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
+type = "sector"
+dimension_id = ""  # TODO: The registration process will provide this.
+version = "1.0.0"
 
 [[dimensions]]
 type = "weather_year"
-dimension_id = "" # TODO: The registration process will provide this.
-version = "0.1.0"
-trivial = true
+dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
+version = "1.0.0"
 
-[[metadata]]
-coverage_year = "2018-2050"
-description = "TEMPO BEV results."
-geographic_resolution = "County"
-geographic_scope = "United States"
-notes = "provisional sample data"
-origin_creator = "Brian Bush"
-origin_contributors = ["Brian Bush", "Arthur Yip"]
-origin_organization = "NREL"
-origin_date =  "2021-04-26"
-origin_project = "TEMPO"
-tags = ["TEMPO"]
-data_class = "low"
-source = "https://github.nrel.gov/mmurator/TMM/blob/0d89b8f61c624770643a35de1998efe6def5e59c/TEMPO.jl/src/BEV/BEV.jl"
+# TODO: remove this scenario dimension when we are ready to scrap the dummy dataset
+[[dimensions]]
+type = "scenario"
+dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
+version = "1.0.0"
+
+# TODO: uncomment and add registered scenario dimension for final-dataset
+# [[dimensions]]
+# type = "scenario"
+# dimension_id = ""
+# version = "1.0.0"
+
