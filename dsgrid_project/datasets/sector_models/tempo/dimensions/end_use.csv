@@ -1,0 +1,3 @@
+id,name,unit,fuel_id
+L1andL2,Residential and commercial charging,kWh,electricity
+DCFC,DC fast charging,kWh,electricity

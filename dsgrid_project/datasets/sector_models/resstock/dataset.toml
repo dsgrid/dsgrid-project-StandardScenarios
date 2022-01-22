@@ -1,1 +1,75 @@
+# --------------------------------------
 # ResStock Dataset Configuration File
+# --------------------------------------
+
+dataset_id = "conus_2022_reference_resstock"
+dataset_type = "sector_model"
+data_source = "ResStock"
+
+path = "/Users/lliu2/Downloads/end_use_processed_res" # FIXME
+description = """
+Simulated on 09/15/2021 using: 
+ResStock version: https://github.com/NREL/resstock/releases/tag/eulp_final and
+buildstock version: https://github.com/NREL/buildstockbatch/releases/tag/eulp_res_final |
+Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
+"""
+
+origin_creator = "Lixi Liu"
+origin_organization = "NREL"
+origin_contributors = ["Anthony Fortanini", "Lixi Liu", "Noah Sandoval"]
+origin_project = "End Use Load Profiles"
+origin_date = "2021-09-15"
+origin_version = "0.1.0"
+source = "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012_dsgrid/"
+data_classification = "low"
+tags = [ "residential", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
+data_schema_type = "standard"
+trivial_dimensions = [ "weather_year", "model_year", "scenario", "data_source"]
+
+[data_schema]
+load_data_column_dimension = "metric"
+
+[[dimensions]]
+type = "geography"
+dimension_id = "conus_2022-resstock_us_county_fip__bc1e70c9-7e75-48df-a052-90d25e0127de"
+version = "1.0.0"
+
+[[dimensions]]
+type = "sector"
+dimension_id = "residential-sector__d58ca399-bb2c-49b7-aebf-dae270b9fa67"
+version = "1.0.0"
+
+[[dimensions]]
+type = "subsector"
+dimension_id = "conus_2022-resstock_building_types__767a84dc-30a6-4b31-88e5-1e52fa3d4f41"
+version = "1.0.0"
+
+[[dimensions]]
+type = "metric"
+dimension_id = "conus_2022-resstock_energy_enduses_kwh__e84ff30a-3db3-4369-8108-6b619d12761b"
+version = "1.0.0"
+
+[[dimensions]]
+type = "data_source"
+dimension_id = "resstock-data-source__704d4737-5b87-4201-bffd-10deae4b99c7"
+version = "1.0.0"
+
+[[dimensions]]
+type = "scenario"
+dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
+version = "1.0.0"
+
+[[dimensions]]
+type = "weather_year"
+dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
+version = "1.0.0"
+
+[[dimensions]]
+type = "model_year"
+dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
+version = "1.0.0"
+
+[[dimensions]]
+type = "time"
+dimension_id = "time-2012-utc-8787-hourly-periodending-total-hour6start-localrangestz__fee9ac08-fcd0-4282-a044-45f335afde24"
+version = "1.0.0"

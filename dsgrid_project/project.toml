@@ -1,106 +1,124 @@
-# TODO: This configuration is under active development. Currently it is set up for TEMPO data only but it will later be expanded to include all project configuration details.
+# TODO: This configuration is under active development. Currently it is set up for TEMPO, ComStock, ResStock data only but it will later be expanded to include all project configuration details.
 
-project_id = "dsgrid-standard-scenarios-2021"
-name = "dsgrid Standard Scenarios 2021"
-description = """dsgrid Standard Scenarios project FY21"""
+description = """Dataset created for the FY21 dsgrid Load Profile Tool for Grid Modeling project"""
+name = "dsgrid CONUS 2022"
+project_id = "dsgrid_conus_2022"
+dimension_associations = ["dimension_associations/lookup_data_source_to_metric.csv", "dimension_associations/lookup_data_source_to_sector.csv", "dimension_associations/lookup_data_source_to_subsector.csv", "dimension_associations/lookup_scenario_to_data_source.csv", "dimension_associations/lookup_scenario_to_metric.csv","dimension_associations/lookup_scenario_to_sector.csv", "dimension_associations/lookup_scenario_to_subsector.csv", "dimension_associations/lookup_sector_to_metric.csv", "dimension_associations/lookup_sector_to_subsector.csv", "dimension_associations/lookup_subsector_to_metric.csv"]
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
 # ------------------------------------------------------
-[input_datasets]
-benchmark = [] # ignoring this for now
-historical = [] # ignoring this for now
+# [datasets]
+# benchmark = [] # ignoring this for now
+# historical = [] # ignoring this for now
 
-[[input_datasets.datasets]]
-dataset_id = "comstock-standard-scenarios-2021"
-version = "1.0.0"
+[[datasets]]
+dataset_id = "tempo-conus-2022"
 dataset_type = "sector_model"
-model_sector = "cld"
+model_sector = "tempo"
+version = "1.0.0"
 
-[[input_datasets.datasets]]
-dataset_id = "resstock-standard-scenarios-2021"
-version = "1.0.0"
+[[datasets]]
+dataset_id = "resstock-conus-2022"
 dataset_type = "sector_model"
-model_sector = "rld"
+model_sector = "resstock"
+version = "1.0.0"
 
-[[input_datasets.datasets]]
-dataset_id = "tempo-standard-scenarios-2021"
-version = "1.0.0"
+[[datasets]]
+dataset_id = "comstock-conus-2022"
 dataset_type = "sector_model"
-model_sector = "tld"
+model_sector = "comstock"
+version = "1.0.0"
 
 [dimensions]
 # ------------------------------------------------------
-# Project Dimensions
+# Base Dimensions
 # ------------------------------------------------------
-[[dimensions.project_dimensions]]
+[[dimensions.base_dimensions]]
+dimension_id = "us_counties_2020_l48__3f48928c-e700-4e1d-b7fb-c35a52d076a0"
 type = "geography"
-dimension_id = "county__58f264b4-b83d-4554-96d0-1349852ff03d"
 version = "1.0.0"
 
-[[dimensions.project_dimensions]] # TODO
+[[dimensions.base_dimensions]]
+dimension_id = "standard_scenarios_2021_sectors_-_com-res-tra-only__e1a83d86-2c7c-4cc8-88a3-27681c0b54a5"
 type = "sector"
-dimension_id = ""
-version = ""
+version = "1.0.0"
 
-[[dimensions.project_dimensions]] # TODO
-# required: subsector maps to sector
+[[dimensions.base_dimensions]]
+dimension_id = "conus-2022-detailed-subsectors__d285bf0f-2aa0-4c4a-a7cb-81fc03239516"
 type = "subsector"
-dimension_id = ""
-version = ""
+version = "1.0.0"
 
-[[dimensions.project_dimensions]] # TODO
-# required: end use maps to [sector, subsector, model]
-type = "end_use"
-dimension_id = ""
-version = ""
+# [[dimensions.base_dimensions]] # TODO: this is what we ultimately want to be using for the project
+# dimension_id = "conus-2022-detailed-end-uses__00b6ea6a-b464-4baf-b142-63cab05c2be5"
+# type = "metric"
+# version = "1.0.0"
 
-[[dimensions.project_dimensions]] # TODO
-# required: weather maps to [modelyear, scenario]
-type = "weather"
-dimension_id = ""
-version = ""
+[[dimensions.base_dimensions]] # TODO: this is for the dummy data deliverable; remove when ready and replace with above
+dimension_id = "conus-2022-detailed-end-uses-kwh__8b12e233-b2eb-41c3-b784-373274120d3b"
+type = "metric"
+version = "1.0.0"
 
-[[dimensions.project_dimensions]]
-# required: model year maps to [scenario, weather, sector, model]
+[[dimensions.base_dimensions]]
+dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
+type = "weather_year"
+version = "1.0.0"
+
+[[dimensions.base_dimensions]]
+dimension_id = "model_years_2010_to_2050_with_2_year_intervals__b26a5cd8-816c-44de-8648-a0a8b082b9a0"
 type = "model_year"
-dimension_id = ""
-version = ""
+version = "1.0.0"
 
-[[dimensions.project_dimensions]]
-# required: scenario maps to [model, weather]
+[[dimensions.base_dimensions]]
+dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
 type = "scenario"
-dimension_id = ""
-version = ""
+version = "1.0.0"
 
-[[dimensions.project_dimensions]] # TODO
-# model maps to [model_year, sector, subsector, enduse, scenario]
-type = "model"
-dimension_id = ""
-version = ""
+[[dimensions.base_dimensions]]
+dimension_id = "standard_scenarios_2021_datasources_-_comstock-resstock-tempo-only__bb99920b-1d45-4500-844e-ccf19a0be83b"
+type = "data_source"
+version = "1.0.0"
 
-[[dimensions.project_dimensions]] # TODO
+[[dimensions.base_dimensions]]
+dimension_id = "time-2012-utc-houlry-periodbeginning-nodst-noleapdayadjustment-total__28b148e2-1dd4-461b-abe8-484addd3d553"
 type = "time"
-dimension_id = ""
-version = ""
+version = "1.0.0"
 
 # ------------------------------------------------------
 # Supplemental Dimensions
 # ------------------------------------------------------
-# TODO: Can we have supplemental time dimensions in project config?
-# TODO: Do we really need to supply the supp dims here if they are all dsgrid standard?
-# TODO: these all should REQUIRE mappings to project level dimension of the same type
 [[dimensions.supplemental_dimensions]]
+dimension_id = "us_states__caef7924-b019-4081-a08f-5da8f451ed23"
 type = "geography"
-dimension_id = ""
-version = ""
+version = "1.0.0"
 
 [[dimensions.supplemental_dimensions]]
+dimension_id = "us_census_regions__81589d89-7575-4ac2-8ee3-4a3f24e1595f"
 type = "geography"
-dimension_id = ""
-version = ""
+version = "1.0.0"
 
 [[dimensions.supplemental_dimensions]]
+dimension_id = "us_census_divisions__c98c6bb0-5c5a-4d36-971e-5082cb453cea"
 type = "geography"
-dimension_id = ""
-version = ""
+version = "1.0.0"
+
+# ------------------------------------------------------
+# Dimension Mappings
+# ------------------------------------------------------
+[[dimension_mappings.base_to_supplemental]]
+from_dimension_type = "geography"
+mapping_id = "us_counties_2020_l48__us_census_regions__f1627a71-0d01-4801-a9df-a2a2296480b5"
+to_dimension_type = "geography"
+version = "1.0.0"
+
+[[dimension_mappings.base_to_supplemental]]
+from_dimension_type = "geography"
+mapping_id = "us_counties_2020_l48__us_census_divisions__2391abb7-1b68-42d4-b0b8-aef81cb5ae9e"
+to_dimension_type = "geography"
+version = "1.0.0"
+
+[[dimension_mappings.base_to_supplemental]]
+from_dimension_type = "geography"
+mapping_id = "us_counties_2020_l48__us_states__1fdd6b1a-e61a-46cc-8670-5e6156256457"
+to_dimension_type = "geography"
+version = "1.0.0"

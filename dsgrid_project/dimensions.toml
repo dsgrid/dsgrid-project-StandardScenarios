@@ -1,125 +1,92 @@
 # ------------------------------------------------------
-# Project Dimensions
+# Base Dimensions
 # ------------------------------------------------------
 [[dimensions]]
-type = "geography"
-name = "US-County-Census2010"
-file = "dimensions/counties.csv"
 description = """
-US counties, Census 2010 vintage, no territories
+US counties for L48, Census 2020 vintage, no territories
 """
+file = "dimensions/counties.csv"
+name = "US Counties 2020 L48"
+type = "geography"
+class = "County"
 
 [[dimensions]]
-type = "sector"
-name = "Standard-Scenarios-2021-Sectors--Trans-Only"
-file = "dimensions/sectors.csv"
-module = "dsgrid.dimension.standard"
 class = "Sector"
 description = """
-dsgrid Standard Scenarios 2021 Sectors; Transportation only
+dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Transportation  Only
 """
+file = "dimensions/sectors.csv"
+module = "dsgrid.dimension.standard"
+name = "Standard Scenarios 2021 Sectors - Com-Res-Tra-Only"
+type = "sector"
 
 [[dimensions]]
 type = "subsector"
-name = "Standard-Scenarios-2021-Detailed-Subsectors--Trans-Only"
+name = "CONUS-2022-Detailed-Subsectors"
 file = "dimensions/subsectors.csv"
 module = "dsgrid.dimension.standard"
-class = "SubSector"
-description = """
-dsgrid Standard Scenarios 2021 Subsectors; Transportation sector only
-"""
+class = "Subsector"
+description = "dsgrid CONUS 2022 Subsectors"
+
+# [[dimensions]] # TODO: this is what we ultimately want to be using for the project
+# type = "metric"
+# name = "CONUS-2022-Detailed-End-Uses"
+# file = "dimensions/enduses.csv"
+# module = "dsgrid.dimension.standard"
+# class = "EnergyEndUse"
+# description = "dsgrid CONUS 2022 End Uses"
+
+[[dimensions]] # TODO: this is for the dummy data deliverable
+type = "metric"
+name = "CONUS-2022-Detailed-End-Uses-kWh"
+file = "dimensions/enduses_kwh.csv"
+module = "dsgrid.dimension.standard"
+class = "EnergyEndUse"
+description = "dsgrid CONUS 2022 End Uses w/ all units in kWh"
 
 [[dimensions]]
-type = "end_use"
-name = "Standard-Scenarios-2021-Detailed-End-Uses--Trans-Only"
-file = "dimensions/enduses.csv"
-module = "dsgrid.dimension.standard"
-class = "EndUse"
-description = """
-dsgrid Standard Scenarios 2021 End Uses; Transportation only
-"""
-
-[[dimensions]]
-type = "weather"
-name = "2012-Weather-Year"
-file = "dimensions/weather_years.csv"
-module = "dsgrid.dimension.standard"
-class = "Weather"
-description = """
-Weather year, 2012 only
-"""
-
-[[dimensions]]
-type = "model_year"
-name = "2012-Model-Year"
-file = "dimensions/model_years.csv"
-module = "dsgrid.dimension.standard"
 class = "ModelYear"
 description = """
-Model year, 2012 only
+Model year, 2010-2050, every other year
 """
+file = "dimensions/model_years.csv"
+module = "dsgrid.dimension.standard"
+name = "Model Years 2010 to 2050 with 2 year intervals"
+type = "model_year"
 
 [[dimensions]]
-type = "scenario"
-name = "BaseScenario"
-file = "dimensions/scenarios.csv"
-module = "dsgrid.dimension.standard"
 class = "Scenario"
 description = """
-base scenario only
+Scenarios for the dsgrid CONUS 2022 project, which include a Reference scenario
+and two light-duty vehicle electrification scenarios
 """
-
-[[dimensions]]
-type = "data_source"
-name = "Standard-Scenarios-2021-Models--TEMPO-Only"
-file = "dimensions/models.csv"
+file = "dimensions/scenarios.csv"
 module = "dsgrid.dimension.standard"
-class = "Model"
-description = """
-dsgrid Standard Scenarios 2021 Models; TEMPO only
-"""
+name = "dsgrid CONUS 2022 scenarios"
+type = "scenario"
 
 [[dimensions]]
+class = "DataSource"
+description = """
+dsgrid Standard Scenarios 2021 Data Sources; ComStock, TEMPO, ResStock Only
+"""
+file = "dimensions/sources.csv"
+module = "dsgrid.dimension.standard"
+name = "Standard Scenarios 2021 DataSources - ComStock-ResStock-TEMPO-Only"
+type = "data_source"
+
+[[dimensions]]
+class = "Time"
+frequency = "P0DT1H0M0.000000S"
+name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-total"
+ranges = [{start = "2012-01-01 00:00:00", end = "2013-12-31 23:00:00"}]
 type = "time"
-name = "Time-2012-PST-houlry-periodBeginning-noDST-noLeapDay-mean"
-start = "2012-01-01 01:00:00"
-end = "2012-12-31 23:59:59"
-frequency = "1 hour"
-includes_dst = false
-# leap_day_adjustment = ""
-period = "period_beginning"
+time_type = "datetime"
+leap_day_adjustment = "none"
+description = """
+Time dimension, 2012 hourly UTC, hour-beginning, no DST, no Leap Day Adjustment, total value
+"""
+time_interval_type = "period_beginning"
 str_format = "%Y-%m-%d %H:%M:%S"
-timezone = "PST"
-value_representation = "mean"
-description = """
-Time dimension, 2012 hourly PST, hour-beginning, no DST, no Leap Day, mean value
-"""
-
-# ------------------------------------------------------
-# Supplemental Dimensions
-# ------------------------------------------------------
-[[dimensions]]
-type = "geography"
-name = "US-State"
-file = "dimensions/supplemental/states.csv"
-description = """
-US states
-"""
-
-[[dimensions]]
-type = "geography"
-name = "Census-Division-v2010"
-class = "CensusDivision"
-file = "dimensions/supplemental/census_divisions.csv"
-description = """
-US census divisions
-"""
-
-[[dimensions]]
-type = "geography"
-name = "Census-Region-v2010"
-class = "CensusRegion"
-file = "dimensions/supplemental/census_regions.csv"
-description = """
-US census regions, vintage 2010
-"""
+timezone = "UTC"
+measurement_type = "total"

@@ -1,0 +1,5 @@
+id,name
+No_Drivers,"No drivers"
+Single_Driver,"One person, one driver"
+Some_Drivers_Smaller,"Two persons, one or two drivers"
+Some_Drivers_Larger,"Three or more persons, one or more drivers"

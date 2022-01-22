@@ -2,71 +2,74 @@
 # TEMPO Dataset Configuration File
 # --------------------------------------
 
-# TODO: TEMPO contributors to fill out this config file
-
 dataset_id = "tempo-standard-scenarios-2021"
 dataset_type = "sector_model"
 model_name = "TEMPO"
-path = "s3://"
-description = """"""
+path = "/projects/dsgrid/tempo/data"
+description = """
+CONUS 2022 TEMPO county-level results for PEV charging.""" 
+
+origin_creator = "Arthur Yip"
+origin_organization = "NREL"
+origin_contributors = ["Arthur Yip", "Brian Bush", "Christopher Hoehne", "Paige Jadun", "Catherine Ledna", "Matteo Muratori"]
+origin_project = "dsgrid CONUS 2022"
+origin_date = "Dec 21 2021"
+origin_version = "dsgrid" 
+source = "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c7031c046cfe27907"
+data_classification = "low"
+tags = [ "transportation", "conus-2022", "reference", "tempo"]
+data_schema_type = "standard" 
+trivial_dimensions = [ "sector", "weather_year", "scenario", "data_source"] # TODO: for non-dummy version, we will remove scenario from trivial dimensions
 
 [[dimensions]]
 type = "geography"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "sector"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "subsector"
-dimension_id = ""
+dimension_id = "acs_county_2018__7c9da8d6-0d75-46e3-a399-c7e30207f36a"
 version = "1.0.0"
 
 [[dimensions]]
-type = "end_use"
-dimension_id = ""
-version = ""
+type = "subsector"
+dimension_id = "tempo_bin__a03837f6-e58f-4904-aac3-3d3e1a9366a3"
+version = "1.0.0"
 
 [[dimensions]]
-type = "data_source"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "scenario"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "weather"
-dimension_id = ""
-version = ""
-
-[[dimensions]]
-type = "model_year"
-dimension_id = "2012_model_year__cd4ea2cf-aa79-4260-b143-3b68b59d6667"
+type = "metric"
+dimension_id = "tempo_ldv_pev_usage__83635a2e-d23c-4e46-8e06-ec6fc8a040a5"
 version = "1.0.0"
 
 [[dimensions]]
 type = "time"
-dimension_id = ""
-version = ""
+dimension_id = "time_of_week_by_month__3ea433b1-7df3-4a32-8ea3-e124922b32cb"
+version = "1.0.0"
 
-# [metadata]
-# coverage_year = 2012
-# description = ""
-# geographic_resolution = ""
-# geographic_scope = ""
-# notes = ""
-# origin_creator = ""
-# origin_contributors = [""] # list of other contributors first and last name
-# origin_organization = "NREL"
-# origin_date =  # e.g., "06/17/2018"
-# origin_project = ""
-# tags = [""]
-# data_class = "low"
+[[dimensions]]
+type = "model_year"
+dimension_id = "tempo_model_year__ad1a865a-4517-4a40-be96-f8f904087ea9"
+version = "1.0.0"
 
-# @Brian, please add any other metadata fields (as comments above) that you think would be helpful to have by default.
+[[dimensions]]
+type = "data_source"
+dimension_id = "tempo_model__876c1fbf-04ea-4aa9-bddd-510f150189dc"
+version = "1.0.0"
+
+[[dimensions]]
+type = "sector"
+dimension_id = "transportation_sector__2eaa6396-c666-456d-b8ed-cf3a37c08199"
+version = "1.0.0"
+
+[[dimensions]]
+type = "weather_year"
+dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
+version = "1.0.0"
+
+# TODO: remove this scenario dimension when we are ready to scrap the dummy dataset
+[[dimensions]]
+type = "scenario"
+dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
+version = "1.0.0"
+
+# TODO: uncomment and add registered scenario dimension for final-dataset
+# [[dimensions]]
+# type = "scenario"
+# dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
+# version = "1.0.0"
+
