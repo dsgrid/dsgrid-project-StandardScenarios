@@ -4,7 +4,7 @@
 
 dataset_id = "conus-2022-comstock"
 dataset_type = "sector_model"
-data_source = "ComStock"
+data_source = "comstock"
 
 path = "/Users/lliu2/Downloads/end_use_processed_com" # FIXME
 description = """

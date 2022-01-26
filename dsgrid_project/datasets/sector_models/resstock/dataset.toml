@@ -4,7 +4,7 @@
 
 dataset_id = "conus_2022_reference_resstock"
 dataset_type = "sector_model"
-data_source = "ResStock"
+data_source = "resstock"
 
 path = "/Users/lliu2/Downloads/end_use_processed_res" # FIXME
 description = """
