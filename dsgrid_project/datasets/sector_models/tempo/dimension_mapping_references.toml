@@ -1,0 +1,23 @@
+[[references]]
+from_dimension_type = "county"
+to_dimension_type = "county"
+mapping_id = "acs_county_2018__us_counties_2020_l48__accbd40c-6656-4d66-90ea-e73b0a708a77"
+version = "1.0.0"
+
+[[references]]
+from_dimension_type = "model_year"
+to_dimension_type = "model_year"
+mapping_id = "model_years_2010_to_2050_with_2_year_intervals__tempo_model_year__473ad45e-d3e8-460e-b647-973ebb42e1d7"
+version = "1.0.0"
+
+[[references]]
+from_dimension_type = "metric"
+to_dimension_type = "metric"
+mapping_id = "tempo_ldv_pev_usage__conus-2022-detailed-end-uses-kwh__afe15586-0576-4a39-97e8-77f8d687f158"
+version = "1.0.0"
+
+[[references]]
+from_dimension_type = "subsector"
+to_dimension_type = "subsector"
+mapping_id = "tempo_bin__conus-2022-detailed-subsectors__3aef5d51-f7cc-40b5-a92a-3bd80dc93700"
+version = "1.0.0"
