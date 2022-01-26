@@ -4,6 +4,7 @@
 
 dataset_id = "tempo-standard-scenarios-2021"
 dataset_type = "sector_model"
+data_source = "tempo"
 model_name = "TEMPO"
 path = "/projects/dsgrid/tempo/data"
 description = """
