@@ -50,12 +50,12 @@ type = "subsector"
 version = "1.0.0"
 
 # [[dimensions.base_dimensions]] # TODO: this is what we ultimately want to be using for the project
-# dimension_id = "conus-2022-detailed-end-uses__49496f0b-eaa8-4f53-a325-d28c555178e1"
+# dimension_id = "conus-2022-detailed-end-uses__00b6ea6a-b464-4baf-b142-63cab05c2be5"
 # type = "metric"
 # version = "1.0.0"
 
 [[dimensions.base_dimensions]] # TODO: this is for the dummy data deliverable; remove when ready and replace with above
-dimension_id = "conus-2022-detailed-end-uses-kwh__1b7161ad-0a20-4560-95b2-8da7404967e5"
+dimension_id = "conus-2022-detailed-end-uses-kwh__8b12e233-b2eb-41c3-b784-373274120d3b"
 type = "metric"
 version = "1.0.0"
 

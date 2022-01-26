@@ -67,5 +67,4 @@ res,propane_heating
 res,propane_water_systems
 res,wood_heating
 trans,electricity_ev_dcfc
-trans,electricity_ev_l1
-trans,electricity_ev_l2
+trans,electricity_ev_l1l2
