@@ -6,12 +6,12 @@ dataset_id = "conus_2022_reference_resstock"
 dataset_type = "sector_model"
 data_source = "resstock"
 
-path = "/Users/lliu2/Downloads/end_use_processed_res" # FIXME
+path = "/Users/lliu2/Downloads/end_use_time_wrapped_res"
 description = """
-Simulated on 09/15/2021 using: 
+Time-wrapped, simulated on 09/15/2021 using: 
 ResStock version: https://github.com/NREL/resstock/releases/tag/eulp_final and
-buildstock version: https://github.com/NREL/buildstockbatch/releases/tag/eulp_res_final |
-Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid
+buildstock version: https://github.com/NREL/buildstockbatch/releases/tag/eulp_res_final 
+(Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid)
 """
 
 origin_creator = "Lixi Liu"
@@ -22,16 +22,16 @@ origin_date = "2021-09-15"
 origin_version = "0.1.0"
 source = "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012_dsgrid/"
 data_classification = "low"
-tags = [ "residential", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
+tags = ["residential", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
 data_schema_type = "standard"
-trivial_dimensions = [ "weather_year", "model_year", "scenario", "data_source"]
+trivial_dimensions = ["sector", "weather_year", "model_year", "scenario", "data_source"]
 
 [data_schema]
 load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
-dimension_id = "conus_2022-resstock_us_county_fip__bc1e70c9-7e75-48df-a052-90d25e0127de"
+dimension_id = "conus_2022-resstock_us_county_fip__06491cea-f139-43d5-9761-d89520689a51"
 version = "1.0.0"
 
 [[dimensions]]
@@ -69,7 +69,7 @@ type = "model_year"
 dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
 version = "1.0.0"
 
-[[dimensions]]
+[[dimensions]] # time-wrapped data
 type = "time"
-dimension_id = "time-2012-utc-8787-hourly-periodending-total-hour6start-localrangestz__fee9ac08-fcd0-4282-a044-45f335afde24"
+dimension_id = "time-2012-utc-8784-hourly-periodending-total-hour0start__8ae089c3-733c-4db8-92a0-01f01db49cbd"
 version = "1.0.0"
