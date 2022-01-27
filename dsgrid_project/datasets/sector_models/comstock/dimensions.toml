@@ -45,74 +45,74 @@ CONUS 2022 - ComStock end uses (N=21, 4 fuel types)
 
 # [[dimensions]] # already exists
 # type = "scenario"
-# name = "Conus-2022"
-# file = "dimensions/scenario_conus_2022_reference.csv"
-# module = "dsgrid.dimension.standard"
-# class = "Scenario"
-# description = """
-# Scenario: CONUS (Continental U.S.) 2022 Reference
-# """
+name = "Conus-2022"
+file = "dimensions/scenario_conus_2022_reference.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+description = """
+Scenario: CONUS (Continental U.S.) 2022 Reference
+"""
 
-# [[dimensions]] # already exists
-# type = "data_source"
-# name = "Data-Source-comstock"
-# file = "dimensions/data_source_comstock.csv"
-# module = "dsgrid.dimension.standard"
-# class = "DataSource"
-# description = """
-# Data source: ComStock
-# """
+[[dimensions]] # already exists
+type = "data_source"
+name = "Data-Source-comstock"
+file = "dimensions/data_source_comstock.csv"
+module = "dsgrid.dimension.standard"
+class = "DataSource"
+description = """
+Data source: ComStock
+"""
 
-# [[dimensions]] # already exists
-# type = "weather"
-# name = "AMY-2012"
-# file = "dimensions/weather_year_2012.csv"
-# module = "dsgrid.dimension.standard"
-# class = "Weather"
-# description = """
-# Weather year: AMY 2012
-# """
+[[dimensions]] # already exists
+type = "weather"
+name = "AMY-2012"
+file = "dimensions/weather_year_2012.csv"
+module = "dsgrid.dimension.standard"
+class = "Weather"
+description = """
+Weather year: AMY 2012
+"""
 
-# [[dimensions]] # already exists
-# type = "model_year"
-# name = "Model-Year-2018"
-# file = "dimensions/model_year_2018.csv"
-# module = "dsgrid.dimension.standard"
-# class = "ModelYear"
-# description = """
-# Model year: 2018
-# """
+[[dimensions]] # already exists
+type = "model_year"
+name = "Model-Year-2018"
+file = "dimensions/model_year_2018.csv"
+module = "dsgrid.dimension.standard"
+class = "ModelYear"
+description = """
+Model year: 2018
+"""
 
-# [[dimensions]] # for real dataset
-# name = "Time-2012-UTC-8760-hourly-periodEnding-dropDec31-total-Hour1Start-localRangesTZ"
-# type = "time"
-# module = "dsgrid.dimension.standard"
-# class = "Time"
-# description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 1, 8760 timestamps, drop most Dec31, total value"
-# time_type = "datetime"
-# measurement_type = "total"
-# str_format = "%Y-%m-%d %H:%M:%S"
-# frequency = "P0DT1H0M0.000000S"
-# # leap_day_adjustment = "drop_dec31"
-# time_interval_type = "period_ending"
-# timezone = "UTC"
-# ranges = [{start = "2012-01-01 01:00:00", end = "2012-12-31 00:00:00"}]
-# ranges_timezone = "LOCAL"
+[[dimensions]] # for real dataset
+name = "Time-2012-UTC-8760-hourly-periodEnding-dropDec31-total-Hour1Start-localRangesTZ"
+type = "time"
+module = "dsgrid.dimension.standard"
+class = "Time"
+description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 1, 8760 timestamps, drop most Dec31, total value"
+time_type = "datetime"
+measurement_type = "total"
+str_format = "%Y-%m-%d %H:%M:%S"
+frequency = "P0DT1H0M0.000000S"
+# leap_day_adjustment = "drop_dec31"
+time_interval_type = "period_ending"
+timezone = "UTC"
+ranges = [{start = "2012-01-01 01:00:00", end = "2012-12-31 00:00:00"}]
+ranges_timezone = "LOCAL"
 
 
-# [[dimensions]] # already exists, for time-wrapped dataset
-# name = "Time-2012-UTC-8760-hourly-periodEnding-total-Hour1Start"
-# type = "time"
-# module = "dsgrid.dimension.standard"
-# class = "Time"
-# description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 1, 8760 timestamps, total value"
-# time_type = "datetime"
-# measurement_type = "total"
-# str_format = "%Y-%m-%d %H:%M:%S"
-# frequency = "P0DT1H0M0.000000S"
-# time_interval_type = "period_ending"
-# timezone = "UTC"
-# ranges = [{start = "2012-01-01 00:00:00", end = "2012-12-31 23:00:00"}]
+[[dimensions]] # already exists, for time-wrapped dataset
+name = "Time-2012-UTC-8760-hourly-periodEnding-total-Hour1Start"
+type = "time"
+module = "dsgrid.dimension.standard"
+class = "Time"
+description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 1, 8760 timestamps, total value"
+time_type = "datetime"
+measurement_type = "total"
+str_format = "%Y-%m-%d %H:%M:%S"
+frequency = "P0DT1H0M0.000000S"
+time_interval_type = "period_ending"
+timezone = "UTC"
+ranges = [{start = "2012-01-01 00:00:00", end = "2012-12-31 23:00:00"}]
 
 
 
