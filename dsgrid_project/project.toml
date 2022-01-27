@@ -3,7 +3,7 @@
 description = """Dataset created for the FY21 dsgrid Load Profile Tool for Grid Modeling project"""
 name = "dsgrid CONUS 2022"
 project_id = "dsgrid_conus_2022"
-dimension_associations = ["dimension_associations/lookup_data_source_to_metric.csv", "dimension_associations/lookup_data_source_to_sector.csv", "dimension_associations/lookup_data_source_to_subsector.csv", "dimension_associations/lookup_scenario_to_data_source.csv", "dimension_associations/lookup_scenario_to_metric.csv","dimension_associations/lookup_scenario_to_sector.csv", "dimension_associations/lookup_scenario_to_subsector.csv", "dimension_associations/lookup_sector_to_metric.csv", "dimension_associations/lookup_sector_to_subsector.csv", "dimension_associations/lookup_subsector_to_metric.csv"]
+dimension_associations = ["dimension_associations/data_source_to_metric.csv", "dimension_associations/data_source_to_model_year.csv", "dimension_associations/data_source_to_sector.csv", "dimension_associations/data_source_to_subsector.csv", "dimension_associations/model_year_to_metric.csv", "dimension_associations/model_year_to_subsector.csv", "dimension_associations/scenario_to_data_source.csv", "dimension_associations/scenario_to_metric.csv", "dimension_associations/scenario_to_sector.csv", "dimension_associations/scenario_to_subsector.csv", "dimension_associations/sector_to_metric.csv", "dimension_associations/sector_to_model_year.csv", "dimension_associations/sector_to_subsector.csv", "dimension_associations/subsector_to_metric.csv"]
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
