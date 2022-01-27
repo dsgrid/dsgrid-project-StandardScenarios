@@ -21,3 +21,9 @@ from_dimension_type = "subsector"
 to_dimension_type = "subsector"
 mapping_id = "tempo_bin__conus-2022-detailed-subsectors__3aef5d51-f7cc-40b5-a92a-3bd80dc93700"
 version = "1.0.0"
+
+[[references]]
+from_dimension_type = "scenario"
+to_dimension_type = "scenario"
+mapping_id = "ldv_sales_all-ev_by_2035__dsgrid_conus_2022_scenarios__c014f1f1-9212-4c43-a727-eea1b02d2e25"
+version = "1.0.0"

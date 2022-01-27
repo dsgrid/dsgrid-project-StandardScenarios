@@ -71,3 +71,10 @@ file = "dimensions/year.csv"
 description = """
 TEMPO modeling years for CONUS 2022 project, 2018-2050"""
 
+[[dimensions]]
+class = "Scenario"
+type = "scenario"
+name = "LDV Sales All-EV by 2035" 
+file = "dimensions/scenario.csv"
+description = """
+LDV Sales All-EV by 2035""" 

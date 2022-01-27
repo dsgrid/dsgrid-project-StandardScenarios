@@ -65,7 +65,7 @@ version = "1.0.0"
 # TODO: remove this scenario dimension when we are ready to scrap the dummy dataset
 [[dimensions]]
 type = "scenario"
-dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
+dimension_id = "ldv_sales_all-ev_by_2035__209da3fc-1e60-4783-968d-2e9ad37bc7dc"
 version = "1.0.0"
 
 # TODO: uncomment and add registered scenario dimension for final-dataset

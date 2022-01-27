@@ -45,3 +45,19 @@ version = "1.0.0"
 dimension_id = "conus-2022-detailed-subsectors__d285bf0f-2aa0-4c4a-a7cb-81fc03239516"
 type = "subsector"
 version = "1.0.0"
+
+
+[[mappings]]
+description = "Dummy mapping for LDV Sales All-EV by 2035 to CONUS 2022 scenarios"
+file = "dimension_mappings/scenario_to_scenario.csv"
+[mappings.from_dimension]
+dimension_id = "ldv_sales_all-ev_by_2035__209da3fc-1e60-4783-968d-2e9ad37bc7dc"
+type = "scenario"
+version = "1.0.0"
+[mappings.to_dimension]
+dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
+type = "scenario"
+version = "1.0.0"
+
+
+
