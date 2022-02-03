@@ -44,7 +44,7 @@ CONUS 2022 - ComStock end uses (N=21, 4 fuel types)
 """
 
 # [[dimensions]] # already exists
-# type = "scenario"
+type = "scenario"
 name = "Conus-2022"
 file = "dimensions/scenario_conus_2022_reference.csv"
 module = "dsgrid.dimension.standard"
