@@ -1,4 +1,4 @@
-geography,subsector,time,floor_area,sector
+geography,subsector,year,floor_area,sector
 new_england,single_family,2015,8362,residential
 new_england,single_family,2016,8436,residential
 new_england,single_family,2017,8520,residential

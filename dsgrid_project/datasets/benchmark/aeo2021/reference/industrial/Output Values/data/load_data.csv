@@ -1,4 +1,4 @@
-geography,subsector,time,output_value,sector
+geography,subsector,year,output_value,sector
 northeast,aluminum,2014,5.47,industrial
 northeast,aluminum,2015,4.715,industrial
 northeast,aluminum,2016,4.688,industrial

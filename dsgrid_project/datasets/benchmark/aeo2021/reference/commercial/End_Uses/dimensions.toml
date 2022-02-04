@@ -41,7 +41,7 @@ description = """
 AEO 2021 commercial energy end uses (N=22, from 11 end uses, 3 fuel types)
 """
 
-# [[dimensions]] # see if we need to register new
+# [[dimensions]] # already registered
 # type = "scenario"
 # name = "AEO-Reference-Scenario"
 # file = "dimensions/aeo_reference_scenario.csv"
@@ -82,18 +82,15 @@ Model years, 2013-2050, trivial, single record
 """
 
 [[dimensions]]
-class = "Time"
-description = """
-Annual time 2013-2050
-"""
-frequency = "P365D"
+type = "time"
+class = "AnnualTime"
+time_type = "annual"
+module = "dsgrid.dimension.standard"
+description = "Annual time 2013-2050"
 name = "annual_time-2013_to_2050"
-time_interval_type = "instantaneous"
 ranges = [{start = "2013", end = "2050"}]
 str_format = "%Y"
-timezone = "none"
-type = "time"
-time_type = "datetime"
+include_leap_day = true
 measurement_type = "total"
 
 

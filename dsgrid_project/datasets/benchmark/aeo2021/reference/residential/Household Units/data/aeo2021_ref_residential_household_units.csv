@@ -1,4 +1,4 @@
-geography,subsector,time,household_unit,sector
+geography,subsector,year,household_unit,sector
 new_england,single_family,2015,3496102,residential
 new_england,single_family,2016,3517846,residential
 new_england,single_family,2017,3541512,residential

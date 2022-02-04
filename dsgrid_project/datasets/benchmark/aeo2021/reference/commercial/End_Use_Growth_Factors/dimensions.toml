@@ -41,15 +41,15 @@ description = """
 AEO 2021 commercial energy end uses (unitless) for growth rates (N=19, from 10 end uses, 3 fuel types)
 """
 
-# [[dimensions]] # see if needed
-# type = "scenario"
-# name = "AEO-Reference-Scenario"
-# file = "dimensions/aeo_reference_scenario.csv"
-# module = "dsgrid.dimension.standard"
-# class = "Scenario"
-# description = """
-# EIA AEO Reference Scenario
-# """
+[[dimensions]]
+type = "scenario"
+name = "AEO-Reference-Scenario"
+file = "dimensions/aeo_reference_scenario.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+description = """
+EIA AEO Reference Scenario
+"""
 
 [[dimensions]]
 type = "data_source"
@@ -83,10 +83,8 @@ EIA Annual Energy Outlook (AEO) 2021
 
 [[dimensions]]
 type = "time"
-class = "AnnualTime"
-time_type = "annual"
-description = """Annual time trival"""
+class = "NoOpTime"
+time_type = "noop"
 module = "dsgrid.dimension.standard"
-name = "Annual-Time-Trivial"
-measurement_type = "total"
-include_leap_day = "true"
+description = "No Operation Time"
+name = "noop_time"

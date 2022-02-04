@@ -1,24 +1,30 @@
-data_source = "AEO2021 Reference Case"
+dataset_type = "benchmark"
+data_source = "NEMS Commercial Module"
 dataset_id = "aeo2021_ref_com_energy_end_use_growth_factors"
 data_schema_type = "one_table"
-dataset_type = "benchmark" # <--- ?
-path = "/Users/lliu2/Documents/GitHub/dsgrid-project-StandardScenarios/dsgrid_project/datasets/benchmark/aeo2021/reference/commercial/End Use Growth Factors/data/" # <---
+dataset_qualifier = "growth_rate"
+path = "/Users/lliu2/Documents/GitHub/dsgrid-project-StandardScenarios/dsgrid_project/datasets/benchmark/aeo2021/reference/commercial/End_Use_Growth_Factors/data/"
 description = """
 AEO 2021 Reference Case Commercial Energy End Use Annual Growth Factors. 
-Detailed data provided by EIA, not available in API
+Derived by NREL as simple exponential growth rates from annual end use comsumptions between year 2018 and year 2050. 
+Detailed end use consumption data provided by EIA, not available in API.
 """
-origin_creator = "Lixi Liu"
-origin_organization = "NREL"
-origin_contributors = [ "Lixi Liu", "Meghan Mooney", "Elaine Hale",]
-origin_project = "Energy Benchmarking and Projection" # <---
+origin_creator = "Kevin Jarzomski"
+origin_organization = "EIA"
+origin_contributors = [ "Lixi Liu"]
+origin_project = "Dsgrid 2022 Commercial Buildings Projection"
 origin_date = "2021-10-05"
 origin_version = "0.1.0"
-source = "Data derived from AEO 2021 detailed sector files sent from EIA"
+source = "Data derived from AEO 2021 detailed commercial sector files sent from EIA"
 data_classification = "low"
-tags = [ "commercial", "benchmark", "projection", "aeo", "2021", "dsgrid_v0.2.0",]
+tags = [ "commercial", "benchmark", "projection", "aeo2021", "dsgrid_v0.2.0",]
 trivial_dimensions = [ "sector", "scenario", "data_source", "weather_year", "model_year"]
 
 [data_schema]
+load_data_column_dimension = "metric"
+
+[dataset_qualifier_metadata]
+growth_rate_type = "exponential_annual"
 
 [[dimensions]]
 dimension_id = "us_census_divisions__c98c6bb0-5c5a-4d36-971e-5082cb453cea"
@@ -51,7 +57,7 @@ type = "model_year"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "reference_scenario__5d35997c-d3d6-4f43-afb8-175b365e3345" # <--- ?
+dimension_id = "aeo-reference-scenario__78beddaa-3049-4c6b-8f88-36fb319f846f"
 type = "scenario"
 version = "1.0.0"
 
@@ -61,7 +67,7 @@ type = "data_source"
 version = "1.0.0"
 
 [[dimensions]]
-dimension_id = "annual-time-trivial__5131f919-b525-455c-b798-44e8953fd5ba"
+dimension_id = "noop_time__f200bf99-eb6b-4499-9e08-a9064e2df466"
 type = "time"
 version = "1.0.0"
 
