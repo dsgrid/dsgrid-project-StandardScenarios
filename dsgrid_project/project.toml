@@ -13,19 +13,19 @@ dimension_associations = ["dimension_associations/data_source__metric.csv", "dim
 # historical = [] # ignoring this for now
 
 [[datasets]]
-dataset_id = "tempo-conus-2022"
+dataset_id = "tempo_standard_scenarios_2021"
 dataset_type = "sector_model"
 model_sector = "tempo"
 version = "1.0.0"
 
 [[datasets]]
-dataset_id = "resstock-conus-2022"
+dataset_id = "conus_2022_reference_resstock"
 dataset_type = "sector_model"
 model_sector = "resstock"
 version = "1.0.0"
 
 [[datasets]]
-dataset_id = "comstock-conus-2022"
+dataset_id = "conus_2022_reference_comstock"
 dataset_type = "sector_model"
 model_sector = "comstock"
 version = "1.0.0"

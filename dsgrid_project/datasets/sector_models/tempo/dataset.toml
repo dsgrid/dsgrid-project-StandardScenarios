@@ -2,7 +2,7 @@
 # TEMPO Dataset Configuration File
 # --------------------------------------
 
-dataset_id = "tempo-standard-scenarios-2021"
+dataset_id = "tempo_standard_scenarios_2021"
 dataset_type = "sector_model"
 data_source = "tempo"
 model_name = "TEMPO"
