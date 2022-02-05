@@ -1,6 +1,6 @@
 [[references]]
-from_dimension_type = "county"
-to_dimension_type = "county"
+from_dimension_type = "geography"
+to_dimension_type = "geography"
 mapping_id = "conus_2022-resstock_us_county_fip__us_counties_2020_l48__1015704e-4916-408e-9639-0577cbfef045"
 version = "1.0.0"
 
