@@ -5,7 +5,6 @@
 dataset_id = "tempo_standard_scenarios_2021"
 dataset_type = "sector_model"
 data_source = "tempo"
-model_name = "TEMPO"
 path = "/projects/dsgrid/tempo/data"
 description = """
 CONUS 2022 TEMPO county-level results for PEV charging.""" 
@@ -21,6 +20,9 @@ data_classification = "low"
 tags = [ "transportation", "conus-2022", "reference", "tempo"]
 data_schema_type = "standard" 
 trivial_dimensions = [ "sector", "weather_year", "scenario", "data_source"] # TODO: for non-dummy version, we will remove scenario from trivial dimensions
+
+[data_schema]
+load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
