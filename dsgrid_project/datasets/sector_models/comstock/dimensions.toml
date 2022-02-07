@@ -55,7 +55,7 @@ Scenario: CONUS (Continental U.S.) 2022 Reference
 
 [[dimensions]] # already exists
 type = "data_source"
-name = "Data-Source-comstock"
+name = "Comstock-Data-Source"
 file = "dimensions/data_source_comstock.csv"
 module = "dsgrid.dimension.standard"
 class = "DataSource"
