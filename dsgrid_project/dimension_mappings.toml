@@ -12,7 +12,7 @@ version = "1.0.0"
 
 [[mappings]]
 description = "Maps Comstock US Counties 2020 L48 to CensusDivision"
-file = "dimension_mappings/base-to-supplemental/lookup_l48_county_to_censusdivision.csv"
+file = "dimension_mappings/base_to_supplemental/lookup_l48_county_to_censusdivision.csv"
 [mappings.from_dimension]
 type = "geography"
 dimension_id = "us_counties_2020_l48__3f48928c-e700-4e1d-b7fb-c35a52d076a0"
