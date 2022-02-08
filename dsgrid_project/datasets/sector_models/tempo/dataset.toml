@@ -6,7 +6,7 @@ dataset_id = "tempo-standard-scenarios-2021"
 dataset_type = "sector_model"
 data_source = "tempo"
 model_name = "TEMPO"
-path = "/projects/dsgrid/tempo/data"
+path = "/projects/dsgrid/tempo/data_020822"
 description = """
 CONUS 2022 TEMPO county-level results for PEV charging.""" 
 
