@@ -1,0 +1,17 @@
+[[references]]
+from_dimension_type = "geography"
+to_dimension_type = "geography"
+mapping_id = "conus_2022-comstock_us_county_fip__us_counties_2020_l48__bd86d212-af14-4a6e-9e4c-a842ce0dd687"
+version = "1.0.0"
+
+[[references]]
+from_dimension_type = "model_year"
+to_dimension_type = "model_year"
+mapping_id = "model-year-2018__model_years_2010_to_2050_with_2_year_intervals__5fe188c9-4fe6-4c26-98a1-4e40abd4cb97"
+version = "1.0.0"
+
+[[references]]
+from_dimension_type = "scenario"
+to_dimension_type = "scenario"
+mapping_id = "conus-2022-reference__dsgrid_conus_2022_scenarios__09cc2663-c8e7-4fbf-95c3-ce6233d33a12"
+version = "1.0.0"
