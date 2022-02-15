@@ -1,7 +1,13 @@
+# [[references]]
+# from_dimension_type = "geography"
+# to_dimension_type = "geography"
+# mapping_id = "conus_2022-comstock_us_county_fip__us_counties_2020_l48__bd86d212-af14-4a6e-9e4c-a842ce0dd687"
+# version = "1.0.0"
+
 [[references]]
 from_dimension_type = "geography"
 to_dimension_type = "geography"
-mapping_id = "conus_2022-comstock_us_county_fip__us_counties_2020_l48__bd86d212-af14-4a6e-9e4c-a842ce0dd687"
+mapping_id = "conus_2022-resstock_us_county_fip__us_counties_2020_l48__a91593b8-a25b-41ab-b505-c0f27ce74bd9"
 version = "1.0.0"
 
 [[references]]
