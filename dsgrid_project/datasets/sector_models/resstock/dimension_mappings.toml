@@ -1,6 +1,7 @@
 [[mappings]]
 description = "ResStock CONUS 2022 counties to project counties"
 file = "dimension_mappings/county_to_county.csv"
+mapping_type = "one_to_one"
 [mappings.from_dimension]
 type = "geography"
 dimension_id = "conus_2022-resstock_us_county_fip__bc1e70c9-7e75-48df-a052-90d25e0127de"
@@ -13,6 +14,7 @@ version = "1.0.0"
 [[mappings]]
 description = "Dummy model year mapping that repeats 2018 for all CONUS 2022 model years"
 file = "dimension_mappings/model_year_to_model_year.csv"
+mapping_type = "duplication"
 [mappings.from_dimension]
 type = "model_year"
 dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
@@ -25,6 +27,7 @@ version = "1.0.0"
 [[mappings]]
 description = "ResStock and ComStock scenario dataset-to-project dimension mapping for the CONUS 2022 project"
 file = "dimension_mappings/scenario_to_scenario.csv"
+mapping_type = "duplication"
 [mappings.from_dimension]
 type = "scenario"
 dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
@@ -37,6 +40,7 @@ version = "1.0.0"
 [[mappings]]
 description = "ResStock CONUS 2022 energy end uses mapping to project"
 file = "dimension_mappings/metric_to_metric.csv"
+mapping_type = "one_to_one"
 [mappings.from_dimension]
 type = "metric"
 dimension_id = "conus_2022-resstock_energy_enduses_kwh__e84ff30a-3db3-4369-8108-6b619d12761b"
