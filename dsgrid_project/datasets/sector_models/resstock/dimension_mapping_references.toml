@@ -15,3 +15,9 @@ from_dimension_type = "scenario"
 to_dimension_type = "scenario"
 mapping_id = "conus-2022-reference__dsgrid_conus_2022_scenarios__09cc2663-c8e7-4fbf-95c3-ce6233d33a12"
 version = "1.0.0"
+
+[[references]]
+from_dimension_type = "metric"
+to_dimension_type = "metric"
+mapping_id = "conus_2022-resstock_energy_enduses_kwh__conus-2022-detailed-end-uses-kwh__5abd7f24-3ed9-4457-a609-2b20d1b63e5f"
+version = "1.0.0"
