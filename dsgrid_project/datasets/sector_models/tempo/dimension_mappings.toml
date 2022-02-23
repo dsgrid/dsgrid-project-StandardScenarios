@@ -13,6 +13,7 @@ version = "1.0.0"
 [[mappings]]
 description = "TEMPO CONUS 2022 End Uses to dsgrid CONUS 2022 End Uses w/ all units in kWh"
 file = "dimension_mappings/metric_to_metric.csv"
+mapping_type = "one_to_one"
 [mappings.from_dimension]
 dimension_id = "tempo_ldv_pev_usage__83635a2e-d23c-4e46-8e06-ec6fc8a040a5"
 type = "metric"
@@ -25,6 +26,7 @@ version = "1.0.0"
 [[mappings]]
 description = "2018-2050 to 2010-2050 with 2 year increments"
 file = "dimension_mappings/model_year_to_model_year.csv"
+mapping_type = "one_to_one"
 [mappings.from_dimension]
 dimension_id = "model_years_2010_to_2050_with_2_year_intervals__b26a5cd8-816c-44de-8648-a0a8b082b9a0"
 type = "model_year"
@@ -37,6 +39,7 @@ version = "1.0.0"
 [[mappings]]
 description = "TEMPO demographic/geographic/vehicle bins (CONUS 2022) to dsgrid CONUS 2022 Subsectors"
 file = "dimension_mappings/subsector_to_subsector.csv"
+mapping_type = "many_to_one_aggregation"
 [mappings.from_dimension]
 dimension_id = "tempo_bin__a03837f6-e58f-4904-aac3-3d3e1a9366a3"
 type = "subsector"
@@ -46,10 +49,10 @@ dimension_id = "conus-2022-detailed-subsectors__d285bf0f-2aa0-4c4a-a7cb-81fc0323
 type = "subsector"
 version = "1.0.0"
 
-
 [[mappings]]
 description = "Dummy mapping for LDV Sales All-EV by 2035 to CONUS 2022 scenarios"
 file = "dimension_mappings/scenario_to_scenario.csv"
+mapping_type = "duplication"
 [mappings.from_dimension]
 dimension_id = "ldv_sales_all-ev_by_2035__209da3fc-1e60-4783-968d-2e9ad37bc7dc"
 type = "scenario"
@@ -58,6 +61,3 @@ version = "1.0.0"
 dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
 type = "scenario"
 version = "1.0.0"
-
-
-
