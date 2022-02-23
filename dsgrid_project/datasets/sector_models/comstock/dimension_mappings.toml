@@ -1,0 +1,12 @@
+[[mappings]]
+description = "ComStock CONUS 2022 counties to project counties"
+file = "dimension_mappings/county_to_county.csv"
+mapping_type = "one_to_one"
+[mappings.from_dimension]
+type = "geography"
+dimension_id = "conus_2022-comstock_us_county_fip__1b08dae6-502a-4094-80bf-e5717c92fdeb"
+version = "1.0.0"
+[mappings.to_dimension]
+type = "geography"
+dimension_id = "us_counties_2020_l48__3f48928c-e700-4e1d-b7fb-c35a52d076a0"
+version = "1.0.0"
