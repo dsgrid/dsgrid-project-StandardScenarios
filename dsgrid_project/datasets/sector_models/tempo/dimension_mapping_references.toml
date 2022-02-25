@@ -1,6 +1,6 @@
 [[references]]
-from_dimension_type = "county"
-to_dimension_type = "county"
+from_dimension_type = "geography"
+to_dimension_type = "geography"
 mapping_id = "acs_county_2018__us_counties_2020_l48__accbd40c-6656-4d66-90ea-e73b0a708a77"
 version = "1.0.0"
 
