@@ -7,7 +7,7 @@ version = "1.0.0"
 [[references]]
 from_dimension_type = "model_year"
 to_dimension_type = "model_year"
-mapping_id = "model_years_2010_to_2050_with_2_year_intervals__tempo_model_year__473ad45e-d3e8-460e-b647-973ebb42e1d7"
+mapping_id = "tempo_model_year__model_years_2010_to_2050_with_2_year_intervals__473ad45e-d3e8-460e-b647-973ebb42e1d7"
 version = "1.0.0"
 
 [[references]]
