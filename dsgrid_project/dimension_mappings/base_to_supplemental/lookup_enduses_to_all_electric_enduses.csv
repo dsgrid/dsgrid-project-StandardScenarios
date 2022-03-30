@@ -1,7 +1,7 @@
 from_id,to_id
 district_cooling_cooling,all_electricity
-district_heating_heating,all_electricity
-district_heating_water_systems,all_electricity
+district_heating_heating,
+district_heating_water_systems,
 electricity_cooling,all_electricity
 electricity_exterior_lighting,all_electricity
 electricity_fans,all_electricity
