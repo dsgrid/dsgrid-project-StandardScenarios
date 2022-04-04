@@ -8,9 +8,9 @@ data_source = "comstock"
 
 path = "/Users/lliu2/Downloads/end_use_time_wrapped_com"
 description = """
-Time-shifted and filled for Dec31, simulated on 09/29/2021 using: 
+Time-shifted and filled for Dec31, simulated on 09/29/2021 using:
 Comstock SHA: 00a3f79bab74d7fb8b71e7897486eb54b51277fc and
-buildstock SHA: 9e00b5649c96ad18bc6336ba9b24c81156f8fd2d 
+buildstock SHA: 9e00b5649c96ad18bc6336ba9b24c81156f8fd2d
 (Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid)
 """
 
@@ -31,45 +31,110 @@ load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
-dimension_id = "conus_2022-comstock_us_county_fip__1b08dae6-502a-4094-80bf-e5717c92fdeb"
-version = "1.0.0"
+name = "conus_2022-comstock_US_county_FIP"
+file = "dimensions/conus_2022-comstock_geography_county_fips.csv"
+module = "dsgrid.dimension.standard"
+class = "County"
+description = """
+CONUS 2022 - ComStock US county in (older version) original FIP code (N=3,133),
+includes 23 AK counties, 1 county renamed in 2015 (SD, Shannon County -> SD, Oglala Lakota County),
+1 city (VA, Bedford City) that is now part of a county (VA Bedford County).
+"""
 
 [[dimensions]]
 type = "sector"
-dimension_id = "commercial-sector__e9ccef84-0aed-4b7f-b682-e2604f16b511"
-version = "1.0.0"
+name = "commercial-sector"
+file = "dimensions/sector_commercial.csv"
+module = "dsgrid.dimension.standard"
+class = "Sector"
+description = """
+Commercial sector only
+"""
 
 [[dimensions]]
 type = "subsector"
-dimension_id = "conus_2022-comstock_building_types__9d67aca5-fdbf-4ac8-8086-f1da6547d807"
-version = "1.0.0"
+name = "conus_2022-comstock_building_types"
+file = "dimensions/conus_2022-comstock_subsectors.csv"
+module = "dsgrid.dimension.standard"
+class = "Subsector"
+description = """
+CONUS 2022 - ComStock building types (N=14)
+"""
 
 [[dimensions]]
 type = "metric"
-dimension_id = "conus_2022-comstock_energy_enduses_kwh__f420cf50-6ac1-42c4-8cd4-c73299c25814"
-version = "1.0.0"
-
-[[dimensions]]
-type = "data_source"
-dimension_id = "comstock_data_source__2ecde85e-5896-43b5-95ce-725bdd2f40a0"
-version = "1.0.0"
+name = "conus_2022-comstock_energy_enduses_kwh"
+file = "dimensions/conus_2022-comstock_end_uses.csv"
+module = "dsgrid.dimension.standard"
+class = "EnergyEndUse"
+description = """
+CONUS 2022 - ComStock end uses (N=21, 4 fuel types)
+"""
 
 [[dimensions]]
 type = "scenario"
-dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
-version = "1.0.0"
+name = "Conus-2022"
+file = "../resstock/dimensions/scenario_conus_2022_reference.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+description = """
+Scenario: CONUS (Continental U.S.) 2022 Reference
+"""
 
 [[dimensions]]
+type = "data_source"
+name = "Comstock-Data-Source"
+file = "dimensions/data_source_comstock.csv"
+module = "dsgrid.dimension.standard"
+class = "DataSource"
+description = """
+Data source: ComStock
+"""
+
+[[dimensions]]
+type = "model_year"
+name = "Model-Year-2018"
+file = "../resstock/dimensions/model_year_2018.csv"
+module = "dsgrid.dimension.standard"
+class = "ModelYear"
+description = """
+Model year: 2018
+"""
+
+# [[dimensions]] # for real dataset
+# name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour6Start-localRangesTZ"
+# type = "time"
+# module = "dsgrid.dimension.standard"
+# class = "Time"
+# description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 6, 8784 timestamps, total value, local ranges_timezone"
+# time_type = "datetime"
+# measurement_type = "total"
+# str_format = "%Y-%m-%d %H:%M:%S"
+# frequency = "P0DT1H0M0.000000S"
+# leap_day_adjustment = "none"
+# time_interval_type = "period_ending"
+# timezone = "UTC"
+# ranges = [{start = "2012-01-01 01:00:00", end = "2013-01-01 00:00:00"}]
+# ranges_timezone = "LOCAL"
+
+
+[[dimensions]] # for time-wrapped dataset
+name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour0Start"
+type = "time"
+module = "dsgrid.dimension.standard"
+class = "Time"
+description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 0, 8784 timestamps, total value"
+time_type = "datetime"
+measurement_type = "total"
+str_format = "%Y-%m-%d %H:%M:%S"
+frequency = "P0DT1H0M0.000000S"
+leap_day_adjustment = "none"
+time_interval_type = "period_ending"
+timezone = "UTC"
+ranges = [{start = "2012-01-01 00:00:00", end = "2012-12-31 23:00:00"}]
+
+[[dimension_references]]
 type = "weather_year"
 dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
 version = "1.0.0"
 
-[[dimensions]]
-type = "model_year"
-dimension_id = "model-year-2018__055f9044-b09b-4372-830c-b6f08dd7ecc1"
-version = "1.0.0"
-
-[[dimensions]] # time-wrapped data
-type = "time"
-dimension_id = "time-2012-utc-8784-hourly-periodending-total-hour0start__8ae089c3-733c-4db8-92a0-01f01db49cbd"
-version = "1.0.0"

@@ -1,63 +1,28 @@
 [[mappings]]
 description = "ACS County 2018 to ACS County 2020 L48"
 file = "dimension_mappings/county_to_county.csv"
-[mappings.from_dimension]
-dimension_id = "acs_county_2018__7c9da8d6-0d75-46e3-a399-c7e30207f36a"
-type = "geography"
-version = "1.0.0"
-[mappings.to_dimension]
-dimension_id = "us_counties_2020_l48__3f48928c-e700-4e1d-b7fb-c35a52d076a0"
-type = "geography"
-version = "1.0.0"
+dimension_type = "geography"
 
 [[mappings]]
 description = "TEMPO CONUS 2022 End Uses to dsgrid CONUS 2022 End Uses w/ all units in kWh"
+dimension_type = "metric"
 file = "dimension_mappings/metric_to_metric.csv"
 mapping_type = "one_to_one"
-[mappings.from_dimension]
-dimension_id = "tempo_ldv_pev_usage__83635a2e-d23c-4e46-8e06-ec6fc8a040a5"
-type = "metric"
-version = "1.0.0"
-[mappings.to_dimension]
-dimension_id = "conus-2022-detailed-end-uses-kwh__8b12e233-b2eb-41c3-b784-373274120d3b"
-type = "metric"
-version = "1.0.0"
 
 [[mappings]]
 description = "2018-2050 to 2010-2050 with 2 year increments"
+dimension_type = "model_year"
 file = "dimension_mappings/model_year_to_model_year.csv"
 mapping_type = "one_to_one"
-[mappings.from_dimension]
-dimension_id = "tempo_model_year__ad1a865a-4517-4a40-be96-f8f904087ea9"
-type = "model_year"
-version = "1.0.0"
-[mappings.to_dimension]
-dimension_id = "model_years_2010_to_2050_with_2_year_intervals__b26a5cd8-816c-44de-8648-a0a8b082b9a0"
-type = "model_year"
-version = "1.0.0"
 
 [[mappings]]
 description = "TEMPO demographic/geographic/vehicle bins (CONUS 2022) to dsgrid CONUS 2022 Subsectors"
+dimension_type = "subsector"
 file = "dimension_mappings/subsector_to_subsector.csv"
 mapping_type = "many_to_one_aggregation"
-[mappings.from_dimension]
-dimension_id = "tempo_bin__a03837f6-e58f-4904-aac3-3d3e1a9366a3"
-type = "subsector"
-version = "1.0.0"
-[mappings.to_dimension]
-dimension_id = "conus-2022-detailed-subsectors__d285bf0f-2aa0-4c4a-a7cb-81fc03239516"
-type = "subsector"
-version = "1.0.0"
 
 [[mappings]]
 description = "Dummy mapping for LDV Sales All-EV by 2035 to CONUS 2022 scenarios"
+dimension_type = "scenario"
 file = "dimension_mappings/scenario_to_scenario.csv"
 mapping_type = "duplication"
-[mappings.from_dimension]
-dimension_id = "ldv_sales_all-ev_by_2035__209da3fc-1e60-4783-968d-2e9ad37bc7dc"
-type = "scenario"
-version = "1.0.0"
-[mappings.to_dimension]
-dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
-type = "scenario"
-version = "1.0.0"
