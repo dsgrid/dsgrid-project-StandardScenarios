@@ -106,7 +106,12 @@ LDV Sales All-EV by 2035"""
 # dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
 # version = "1.0.0"
 
-[[dimension_references]]
+[[dimensions]] # shared with project
+class = "WeatherYear"
+description = """
+Weather year, 2012 only
+"""
+file = "../../../dimensions/weather_years.csv"
+module = "dsgrid.dimension.standard"
+name = "2012 Weather Year"
 type = "weather_year"
-dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
-version = "1.0.0"
