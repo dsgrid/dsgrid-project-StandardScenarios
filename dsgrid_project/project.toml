@@ -75,15 +75,14 @@ type = "subsector"
 # type = "metric"
 
 [[dimensions.base_dimensions]] # TODO: this is for the dummy data deliverable
-type = "metric"
+class = "EnergyEndUse"
 description = """
 dsgrid CONUS 2022 End Uses (all fuel types) w/ all units in kWh
 """
 file = "dimensions/enduses_kwh.csv"
 module = "dsgrid.dimension.standard"
 name = "CONUS-2022-Detailed-End-Uses-kWh"
-class = "EnergyEndUse"
-
+type = "metric"
 
 [[dimensions.base_dimensions]]
 class = "ModelYear"
