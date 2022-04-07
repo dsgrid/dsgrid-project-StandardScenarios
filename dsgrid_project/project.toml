@@ -118,7 +118,7 @@ type = "data_source"
 [[dimensions.base_dimensions]]
 class = "Time"
 frequency = "P0DT1H0M0.000000S"
-name = "Time-2012-UTC-houlry-periodBeginning-noDST-noLeapDayAdjustment-total"
+name = "Time-2012-UTC-hourly-periodBeginning-noDST-noLeapDayAdjustment-total"
 ranges = [{start = "2012-01-01 00:00:00", end = "2013-12-31 23:00:00"}]
 time_type = "datetime"
 leap_day_adjustment = "none"
