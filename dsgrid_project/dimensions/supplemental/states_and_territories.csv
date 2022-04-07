@@ -1,4 +1,5 @@
 id,name,is_conus,census_division,census_region
+AK,Alaska,False,pacific,west
 AL,Alabama,True,east_south_central,south
 AR,Arkansas,True,west_south_central,south
 AZ,Arizona,True,mountain,west
@@ -9,6 +10,7 @@ DC,District of Columbia,True,south_atlantic,south
 DE,Delaware,True,south_atlantic,south
 FL,Florida,True,south_atlantic,south
 GA,Georgia,True,south_atlantic,south
+HI,Hawaii,False,pacific,west
 IA,Iowa,True,west_north_central,midwest
 ID,Idaho,True,mountain,west
 IL,Illinois,True,east_north_central,midwest
@@ -48,3 +50,8 @@ WA,Washington,True,pacific,west
 WI,Wisconsin,True,east_north_central,midwest
 WV,West Virginia,True,south_atlantic,south
 WY,Wyoming,True,mountain,west
+AS,American Samoa,False,,
+GU,Guam,False,,
+MP,Northern Mariana Islands,False,,
+PR,Puerto Rico,False,,
+VI,U.S. Virgin Islands,False,,
