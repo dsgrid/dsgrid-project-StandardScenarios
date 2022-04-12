@@ -42,6 +42,7 @@ US counties for L48, Census 2020 vintage, no territories
 file = "dimensions/counties.csv"
 module = "dsgrid.dimension.standard"
 name = "US Counties 2020 L48"
+display_name = "County"
 type = "geography"
 
 [[dimensions.base_dimensions]]
@@ -52,6 +53,7 @@ dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Transportation 
 file = "dimensions/sectors.csv"
 module = "dsgrid.dimension.standard"
 name = "Sectors - Com-Res-Tra-Only"
+display_name = "Sector"
 type = "sector"
 
 [[dimensions.base_dimensions]]
@@ -62,6 +64,7 @@ dsgrid CONUS 2022 Subsectors
 file = "dimensions/subsectors.csv"
 module = "dsgrid.dimension.standard"
 name = "CONUS-2022-Detailed-Subsectors"
+display_name = "Subsector"
 type = "subsector"
 
 # [[dimensions.base_dimensions]] # TODO: this is what we ultimately want to be using for the project
@@ -72,6 +75,7 @@ type = "subsector"
 # file = "dimensions/enduses.csv"
 # module = "dsgrid.dimension.standard"
 # name = "CONUS-2022-Detailed-End-Uses"
+# display_name = "Energy End Use"
 # type = "metric"
 
 [[dimensions.base_dimensions]] # TODO: this is for the dummy data deliverable
@@ -82,6 +86,7 @@ dsgrid CONUS 2022 End Uses (all fuel types) w/ all units in kWh
 file = "dimensions/enduses_kwh.csv"
 module = "dsgrid.dimension.standard"
 name = "CONUS-2022-Detailed-End-Uses-kWh"
+display_name = "Energy End Use"
 type = "metric"
 
 [[dimensions.base_dimensions]]
@@ -92,6 +97,7 @@ Model year, 2010-2050, every other year
 file = "dimensions/model_years.csv"
 module = "dsgrid.dimension.standard"
 name = "Model Years 2010 to 2050 with 2 year intervals"
+display_name = "Model Year"
 type = "model_year"
 
 [[dimensions.base_dimensions]]
@@ -103,6 +109,7 @@ and two light-duty vehicle electrification scenarios
 file = "dimensions/scenarios.csv"
 module = "dsgrid.dimension.standard"
 name = "CONUS-2022-scenarios"
+display_name = "Scenario"
 type = "scenario"
 
 [[dimensions.base_dimensions]]
@@ -113,12 +120,14 @@ dsgrid Standard Scenarios 2021 Data Sources; ComStock, TEMPO, ResStock Only
 file = "dimensions/sources.csv"
 module = "dsgrid.dimension.standard"
 name = "Data-Sources - ComStock-ResStock-TEMPO-Only"
+display_name = "Data Source"
 type = "data_source"
 
 [[dimensions.base_dimensions]]
 class = "Time"
 frequency = "P0DT1H0M0.000000S"
 name = "Time-2012-UTC-hourly-periodBeginning-noDST-noLeapDayAdjustment-total"
+display_name = "Timestamp"
 ranges = [{start = "2012-01-01 00:00:00", end = "2013-12-31 23:00:00"}]
 time_type = "datetime"
 leap_day_adjustment = "none"
@@ -139,6 +148,7 @@ Weather year, 2012 only
 file = "dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
 name = "2012 Weather Year"
+display_name = "Weather Year"
 type = "weather_year"
 
 # ------------------------------------------------------
@@ -152,6 +162,7 @@ US States
 file = "dimensions/supplemental/states.csv"
 module = "dsgrid.dimension.standard"
 name = "US States"
+display_name = "State"
 type = "geography"
 
 [[dimensions.supplemental_dimensions]]
@@ -162,6 +173,7 @@ US Census Regions
 file = "dimensions/supplemental/census_regions.csv"
 module = "dsgrid.dimension.standard"
 name = "US Census Regions"
+display_name = "Census Region"
 type = "geography"
 
 [[dimensions.supplemental_dimensions]]
@@ -172,6 +184,7 @@ US Census Divisions
 file = "dimensions/supplemental/census_divisions.csv"
 module = "dsgrid.dimension.standard"
 name = "US Census Divisions"
+display_name = "Census Division"
 type = "geography"
 
 [[dimensions.supplemental_dimensions]]
@@ -182,6 +195,7 @@ ReEDS Power Control Areas
 file = "dimensions/supplemental/reeds_pca.csv"
 module = "dsgrid.dimension.standard"
 name = "ReEDS PCA"
+display_name = "ReEDS PCA"
 type = "geography"
 
 ### All in one dims
@@ -193,6 +207,7 @@ All Sectors
 file = "dimensions/supplemental/all_sectors.csv"
 module = "dsgrid.dimension.standard"
 name = "all-sectors"
+display_name = "Sector"
 type = "sector"
 
 [[dimensions.supplemental_dimensions]]
@@ -203,6 +218,7 @@ All Subsectors
 file = "dimensions/supplemental/all_subsectors.csv"
 module = "dsgrid.dimension.standard"
 name = "all-subsectors"
+display_name = "Subsector"
 type = "subsector"
 
 [[dimensions.supplemental_dimensions]]
@@ -213,6 +229,7 @@ All Electric End Uses
 file = "dimensions/supplemental/all_electric_enduses.csv"
 module = "dsgrid.dimension.standard"
 name = "all-electric-end-uses"
+display_name = "Electric End Use"
 type = "metric"
 
 [[dimensions.supplemental_dimensions]]
@@ -223,6 +240,7 @@ All Data Sources
 file = "dimensions/supplemental/all_sources.csv"
 module = "dsgrid.dimension.standard"
 name = "all-data-sources"
+display_name = "All Data Source"
 type = "data_source"
 
 # ------------------------------------------------------
