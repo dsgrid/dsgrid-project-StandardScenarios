@@ -2,70 +2,103 @@
 # TEMPO Dataset Configuration File
 # --------------------------------------
 
-dataset_id = "tempo-standard-scenarios-2021"
+dataset_id = "tempo_conus_2022"
 dataset_type = "sector_model"
-model_name = "TEMPO"
-path = "/projects/dsgrid/tempo/data"
+data_source = "tempo"
+
+path = "/projects/dsgrid/tempo/data_02082022"
 description = """
-CONUS 2022 TEMPO county-level results for PEV charging.""" 
+CONUS 2022 TEMPO county-level results for PEV charging."""
 
 origin_creator = "Arthur Yip"
 origin_organization = "NREL"
 origin_contributors = ["Arthur Yip", "Brian Bush", "Christopher Hoehne", "Paige Jadun", "Catherine Ledna", "Matteo Muratori"]
 origin_project = "dsgrid CONUS 2022"
 origin_date = "Dec 21 2021"
-origin_version = "dsgrid" 
+origin_version = "dsgrid"
 source = "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c7031c046cfe27907"
 data_classification = "low"
 tags = [ "transportation", "conus-2022", "reference", "tempo"]
-data_schema_type = "standard" 
+data_schema_type = "standard"
 trivial_dimensions = [ "sector", "weather_year", "scenario", "data_source"] # TODO: for non-dummy version, we will remove scenario from trivial dimensions
 
+[data_schema]
+load_data_column_dimension = "metric"
+
 [[dimensions]]
+class = "County"
 type = "geography"
-dimension_id = "acs_county_2018__7c9da8d6-0d75-46e3-a399-c7e30207f36a"
-version = "1.0.0"
+name = "ACS County 2018"
+file = "dimensions/counties.csv"
+description = """
+American Community Survey US counties, 2018."""
 
 [[dimensions]]
+class = "Subsector"
 type = "subsector"
-dimension_id = "tempo_bin__a03837f6-e58f-4904-aac3-3d3e1a9366a3"
-version = "1.0.0"
+name = "TEMPO Bin"
+file = "dimensions/bin.csv"
+description = """
+TEMPO demographic/geographic/vehicle bins.
+
+This is a cross-join of the following supplemental dimensions:
+* Composition (Single Driver, Some Drivers Smaller, Some Drivers Larger)
+* Income (Low Income, Middle Income, High Income)
+* Urbanity (Rural, Small Town, Suburban, Second City, Urban)
+* Vehicle Size Class (Compact, Midsize, SUV, Pickup)
+* Tech (PHEV25/PHEV50/BEV100/BEV300) """
 
 [[dimensions]]
+class = "EnergyEndUse"
 type = "metric"
-dimension_id = "tempo_ldv_pev_usage__83635a2e-d23c-4e46-8e06-ec6fc8a040a5"
-version = "1.0.0"
+name = "TEMPO LDV PEV Usage"
+file = "dimensions/end_use.csv"
+description = """
+Type of charging (L1 and L2, DCFC) used by TEMPO PEVs."""
 
 [[dimensions]]
+class = "Time"
 type = "time"
-dimension_id = "time_of_week_by_month__3ea433b1-7df3-4a32-8ea3-e124922b32cb"
-version = "1.0.0"
+name = "Time of Week by Month"
+ranges = [{start = 1, end = 12}]
+time_interval_type = "period_ending"
+time_type = "representative_period"
+measurement_type = "total"
+format = "one_week_per_month_by_hour"
+description = """
+TEMPO Time - Month (representing seasons), day of week, and hour of day."""
 
 [[dimensions]]
-type = "model_year"
-dimension_id = "tempo_model_year__ad1a865a-4517-4a40-be96-f8f904087ea9"
-version = "1.0.0"
-
-[[dimensions]]
+class = "DataSource"
 type = "data_source"
-dimension_id = "tempo_model__876c1fbf-04ea-4aa9-bddd-510f150189dc"
-version = "1.0.0"
+name = "TEMPO Model"
+file = "dimensions/data_source.csv"
+description = """
+TEMPO model"""
 
 [[dimensions]]
+class = "ModelYear"
+type = "model_year"
+name = "TEMPO Model Year"
+file = "dimensions/year.csv"
+description = """
+TEMPO modeling years for CONUS 2022 project, 2018-2050"""
+
+[[dimensions]]
+class = "Sector"
 type = "sector"
-dimension_id = "transportation_sector__2eaa6396-c666-456d-b8ed-cf3a37c08199"
-version = "1.0.0"
-
-[[dimensions]]
-type = "weather_year"
-dimension_id = "2012_weather_year__78aeebf8-788c-4ffa-8df2-f581cf0e4d96"
-version = "1.0.0"
+name = "Transportation Sector"
+file = "dimensions/sector.csv"
+description = """Transportation Sector"""
 
 # TODO: remove this scenario dimension when we are ready to scrap the dummy dataset
 [[dimensions]]
+class = "Scenario"
 type = "scenario"
-dimension_id = "conus-2022-reference__a90f3ea4-b0ed-4c08-a15a-242fb802b156"
-version = "1.0.0"
+name = "LDV Sales All-EV by 2035"
+file = "dimensions/scenario.csv"
+description = """
+LDV Sales All-EV by 2035"""
 
 # TODO: uncomment and add registered scenario dimension for final-dataset
 # [[dimensions]]
@@ -73,3 +106,12 @@ version = "1.0.0"
 # dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
 # version = "1.0.0"
 
+[[dimensions]] # shared with project
+class = "WeatherYear"
+description = """
+Weather year, 2012 only
+"""
+file = "../../../dimensions/weather_years.csv"
+module = "dsgrid.dimension.standard"
+name = "2012 Weather Year"
+type = "weather_year"
