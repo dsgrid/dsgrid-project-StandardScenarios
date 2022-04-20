@@ -127,7 +127,7 @@ Time dimension, 2012 hourly EST, hour-beginning, no Leap Day Adjustment, total v
 """
 time_interval_type = "period_beginning"
 str_format = "%Y-%m-%d %H:%M:%S"
-timezone = "EST"
+timezone = "EasternStandard"
 measurement_type = "total"
 type = "time"
 
