@@ -87,11 +87,11 @@ type = "metric"
 [[dimensions.base_dimensions]]
 class = "ModelYear"
 description = """
-Model year, 2010-2050, every other year
+Model year, 2010-2050
 """
 file = "dimensions/model_years.csv"
 module = "dsgrid.dimension.standard"
-name = "Model Years 2010 to 2050 with 2 year intervals"
+name = "Model Years 2010 to 2050"
 type = "model_year"
 
 [[dimensions.base_dimensions]]
