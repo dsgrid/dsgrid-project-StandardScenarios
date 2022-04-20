@@ -1,9 +1,0 @@
-id,name,unit
-vmt_light_duty_veh_light,"Vehicle Miles Travelled for Light-Duty Vehicles less than 8,501 pounds",billion_vehicle_miles_traveled
-vmt_com_light_truck,Vehicle Miles Traveled for Commercial Light Trucks,billion_vehicle_miles_traveled
-vmt_freight_truck_heavy,"Vehicle Miles Traveled for Freight Trucks greater than 10,000 pounds",billion_vehicle_miles_traveled
-pmt_bus_transportation,Passenger Miles Traveled for Bus Transportation,billion_passenger_miles_traveled
-pmt_rail_passenger,Passenger Miles Traveled for Passenger Rail,billion_passenger_miles_traveled
-sma_air,Seat Miles Available for Air,billion_seat_miles_available
-tmt_rail_fright,Ton Miles Traveled for Rail,billion_ton_miles_traveled
-tmt_ship_domestic,Ton Miles Traveled for Domestic Shipping,billion_ton_miles_traveled

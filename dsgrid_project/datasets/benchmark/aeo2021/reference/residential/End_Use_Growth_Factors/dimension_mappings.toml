@@ -1,0 +1,5 @@
+[[mappings]]
+dimension_type = "metric"
+description = "Maps Baseline ResStock end uses to AEO 2021 condensed end uses"
+file = "dimension_mappings/lookup_resstock_to_aeo2021_res_combined_enduses.csv"
+mapping_type = "one_to_many_explicit_multipliers"

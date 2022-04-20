@@ -1,12 +1,12 @@
 # ------------------------------------------------
-# AEO 2021 Reference Case - Commercial End Use Growth Factors
+# AEO 2021 Reference Case - Residential End Use Growth Factors
 # ------------------------------------------------
 
-dataset_id = "aeo2021_ref_com_energy_end_use_growth_factors"
+dataset_id = "aeo2021_ref_res_end_use_growth_factors"
 dataset_type = "benchmark"
-data_source = "NEMS Commercial Module"
+data_source = "NEMS Residential Module"
 description = """
-AEO 2021 Reference Case Commercial Energy End Use Annual Growth Factors. 
+AEO 2021 Reference Case Residential Energy End Use Annual Growth Factors. 
 Derived by NREL as simple exponential growth rates from annual end use comsumptions between year 2018 and year 2050. 
 Detailed end use consumption data provided by EIA, not available in API.
 """
@@ -14,13 +14,13 @@ Detailed end use consumption data provided by EIA, not available in API.
 origin_creator = "Kevin Jarzomski"
 origin_organization = "EIA"
 origin_contributors = [ "Lixi Liu"]
-origin_project = "dsgrid CONUS2022 Commercial Buildings Projection"
+origin_project = "dsgrid CONUS2022 Residential Buildings Projection"
 origin_date = "2021-10-05"
 origin_version = "0.1.0"
-source = "Data derived from AEO 2021 detailed commercial sector files sent from EIA"
+source = "Data derived from AEO 2021 detailed residential sector files sent from EIA"
 data_classification = "low"
-tags = [ "commercial", "benchmark", "projection", "aeo2021", "dsgrid_v0.2.0",]
-trivial_dimensions = [ "sector", "scenario", "data_source", "weather_year", "model_year"]
+tags = [ "residential", "benchmark", "projection", "aeo2021", "dsgrid_v0.2.0",]
+trivial_dimensions = [ "sector", "subsector", "scenario", "geography", "data_source", "weather_year", "model_year"]
 
 data_schema_type = "one_table"
 [data_schema]
@@ -30,47 +30,46 @@ dataset_qualifier = "growth_rate"
 [dataset_qualifier_metadata]
 growth_rate_type = "exponential_annual"
 
-
 ##### Dimensions #####
 
 [[dimensions]]
-class = "CensusDivision"
+class = "GeographyDimensionBaseModel"
 description = """
-US Census Divisions
+All geography
 """
-file = "../../../../../../dimensions/supplemental/census_divisions.csv"
+file = "dimensions/all_geography.csv"
 module = "dsgrid.dimension.standard"
-name = "US Census Divisions"
+name = "all-geography"
 type = "geography"
 
 [[dimensions]]
 class = "Sector"
 description = """
-Commercial sector only
+Residential sector only
 """
-file = "../../../../../sector_models/comstock/dimensions/sector_commercial.csv"
+file = "../../../../../sector_models/resstock/dimensions/sector_residential.csv"
 module = "dsgrid.dimension.standard"
-name = "commercial-sector"
+name = "residential-sector"
 type = "sector"
 
 [[dimensions]]
 class = "Subsector"
 description = """
-AEO 2021 commercial building types (N=11)
+All Subsectors
 """
-file = "dimensions/aeo2021_commercial_building_types.csv"
+file = "../../../../../../dimensions/supplemental/all_subsectors.csv"
 module = "dsgrid.dimension.standard"
-name = "AEO2021-commercial-building-types"
+name = "all-subsectors"
 type = "subsector"
 
 [[dimensions]]
 class = "EnergyEndUse"
 description = """
-AEO 2021 commercial energy end uses (unitless) for growth rates (N=19, from 10 end uses, 3 fuel types)
+AEO 2021 residential energy end uses, condensed to map to ResStock (N=18 from 6 end uses, 5 fuel types)
 """
-file = "dimensions/aeo2021_commercial_energy_enduses.csv"
+file = "dimensions/aeo2021_residential_condensed_energy_enduses.csv"
 module = "dsgrid.dimension.standard"
-name = "AEO2021-commercial-energy-enduses-unitless"
+name = "AEO2021-residential-energy-enduses-unitless_for-growth-rates"
 type = "metric"
 
 [[dimensions]]
@@ -78,7 +77,7 @@ class = "Scenario"
 description = """
 EIA AEO Reference Scenario
 """
-file = "dimensions/aeo_reference_scenario.csv"
+file = "../../commercial/End_Use_Growth_Factors/dimensions/aeo_reference_scenario.csv"
 module = "dsgrid.dimension.standard"
 name = "AEO-Reference-Scenario"
 type = "scenario"
@@ -88,7 +87,7 @@ class = "DataSource"
 description = """
 EIA Annual Energy Outlook (AEO) 2021
 """
-file = "dimensions/aeo2021_data_source.csv"
+file = "../../commercial/End_Use_Growth_Factors/dimensions/aeo2021_data_source.csv"
 module = "dsgrid.dimension.standard"
 name = "Data-Source-AEO-2021"
 type = "data_source"
@@ -98,7 +97,7 @@ class = "WeatherYear"
 description = """
 Weather years, 2013-2050, trivial, single record
 """
-file = "dimensions/years_trivial_2013_to_2050.csv"
+file = "../../commercial/End_Use_Growth_Factors/dimensions/years_trivial_2013_to_2050.csv"
 module = "dsgrid.dimension.standard"
 name = "Weather_Years-trivial-2013_to_2050"
 type = "weather_year"
@@ -108,7 +107,7 @@ class = "ModelYear"
 description = """
 Model years, 2013-2050, trivial, single record
 """
-file = "dimensions/years_trivial_2013_to_2050.csv"
+file = "../../commercial/End_Use_Growth_Factors/dimensions/years_trivial_2013_to_2050.csv"
 module = "dsgrid.dimension.standard"
 name = "Model_Years-trivial-2013_to_2050"
 type = "model_year"

@@ -1,3 +1,0 @@
-id,name,unit
-bldg_units,"Annual growth factor for number of building units, assumed the same as number of households",unitless
-floor_area,Annual growth factor for total floor area,unitless

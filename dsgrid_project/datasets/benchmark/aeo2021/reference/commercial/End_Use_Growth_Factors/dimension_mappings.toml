@@ -1,23 +1,12 @@
 [[mappings]]
+dimension_type = "subsector"
 description = "Maps Baseline ComStock building types to AEO 2021 commercial building types"
 file = "dimension_mappings/lookup_comstock_to_aeo2021_com_bldg_types.csv"
-[mappings.from_dimension]
-dimension_id = "comstock_bldgtypes_xxx" # <---
-type = "metric"
-version = "1.0.0"
-[mappings.to_dimension]
-dimension_id = "aeo2021_com_bldgtypes_xxx" # <---
-type = "metric"
-version = "1.0.0"
+mapping_type = "many_to_many_explicit_multipliers"
+
 
 [[mappings]]
+dimension_type = "metric"
 description = "Maps Baseline ComStock end uses to AEO 2021 commercial end uses"
 file = "dimension_mappings/lookup_comstock_to_aeo2021_com_enduses.csv"
-[mappings.from_dimension]
-dimension_id = "comstock_enduses_xxx" # <---
-type = "metric"
-version = "1.0.0"
-[mappings.to_dimension]
-dimension_id = "aeo2021_com_enduses_xxx" # <---
-type = "metric"
-version = "1.0.0"
+mapping_type = "many_to_many_explicit_multipliers"
