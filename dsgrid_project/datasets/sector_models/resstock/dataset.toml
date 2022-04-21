@@ -135,6 +135,6 @@ Time dimension, 2012 hourly EST, hour-ending, no Leap Day Adjustment, total valu
 """
 time_interval_type = "period_ending"
 str_format = "%Y-%m-%d %H:%M:%S"
-timezone = "EST"
+timezone = "EasternStandard"
 measurement_type = "total"
 type = "time"
