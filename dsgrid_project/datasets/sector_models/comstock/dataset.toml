@@ -43,7 +43,7 @@ includes 23 AK counties, 1 county renamed in 2015 (SD, Shannon County -> SD, Ogl
 [[dimensions]]
 type = "sector"
 name = "commercial-sector"
-display_name = "Sector"
+display_name = "Commercial"
 file = "dimensions/sector_commercial.csv"
 module = "dsgrid.dimension.standard"
 class = "Sector"
@@ -54,7 +54,7 @@ Commercial sector only
 [[dimensions]]
 type = "subsector"
 name = "conus_2022-comstock_building_types"
-display_name = "Subsector"
+display_name = "Commercial Building Type"
 file = "dimensions/conus_2022-comstock_subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
@@ -65,7 +65,7 @@ CONUS 2022 - ComStock building types (N=14)
 [[dimensions]]
 type = "metric"
 name = "conus_2022-comstock_energy_enduses_kwh"
-display_name = "Energy End Use"
+display_name = "Commercial Building End Use"
 file = "dimensions/conus_2022-comstock_end_uses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
@@ -76,7 +76,7 @@ CONUS 2022 - ComStock end uses (N=21, 4 fuel types)
 [[dimensions]]
 type = "scenario"
 name = "Conus-2022"
-display_name = "Scenario"
+display_name = "Reference"
 file = "../resstock/dimensions/scenario_conus_2022_reference.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
@@ -87,7 +87,7 @@ Scenario: CONUS (Continental U.S.) 2022 Reference
 [[dimensions]]
 type = "data_source"
 name = "Comstock-Data-Source"
-display_name = "Data Source"
+display_name = "ComStock"
 file = "dimensions/data_source_comstock.csv"
 module = "dsgrid.dimension.standard"
 class = "DataSource"
@@ -98,7 +98,7 @@ Data source: ComStock
 [[dimensions]]
 type = "model_year"
 name = "Model-Year-2018"
-display_name = "Model Year"
+display_name = "2018"
 file = "../resstock/dimensions/model_year_2018.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
@@ -114,7 +114,7 @@ Weather year, 2012 only
 file = "../../../dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
 name = "2012 Weather Year"
-display_name = "Weather Year"
+display_name = "2012 Weather"
 type = "weather_year"
 
 # [[dimensions]] # for real dataset
@@ -137,7 +137,7 @@ type = "weather_year"
 
 [[dimensions]] # for time-wrapped dataset
 name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour0Start"
-display_name = "Timestamp"
+display_name = "Hourly 2012"
 type = "time"
 module = "dsgrid.dimension.standard"
 class = "Time"

@@ -75,7 +75,7 @@ type = "subsector"
 # file = "dimensions/enduses.csv"
 # module = "dsgrid.dimension.standard"
 # name = "CONUS-2022-Detailed-End-Uses"
-# display_name = "Energy End Use"
+# display_name = "End Use"
 # type = "metric"
 
 [[dimensions.base_dimensions]] # TODO: this is for the dummy data deliverable
@@ -86,7 +86,7 @@ dsgrid CONUS 2022 End Uses (all fuel types) w/ all units in kWh
 file = "dimensions/enduses_kwh.csv"
 module = "dsgrid.dimension.standard"
 name = "CONUS-2022-Detailed-End-Uses-kWh"
-display_name = "Energy End Use"
+display_name = "End Use"
 type = "metric"
 
 [[dimensions.base_dimensions]]
@@ -127,7 +127,7 @@ type = "data_source"
 class = "Time"
 frequency = "P0DT1H0M0.000000S"
 name = "Time-2012-UTC-hourly-periodBeginning-noDST-noLeapDayAdjustment-total"
-display_name = "Timestamp"
+display_name = "Hourly 2012"
 ranges = [{start = "2012-01-01 00:00:00", end = "2013-12-31 23:00:00"}]
 time_type = "datetime"
 leap_day_adjustment = "none"
@@ -148,7 +148,7 @@ Weather year, 2012 only
 file = "dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
 name = "2012 Weather Year"
-display_name = "Weather Year"
+display_name = "2012 Weather"
 type = "weather_year"
 
 # ------------------------------------------------------
@@ -207,7 +207,7 @@ All Sectors
 file = "dimensions/supplemental/all_sectors.csv"
 module = "dsgrid.dimension.standard"
 name = "all-sectors"
-display_name = "Sector"
+display_name = "None"
 type = "sector"
 
 [[dimensions.supplemental_dimensions]]
@@ -218,7 +218,7 @@ All Subsectors
 file = "dimensions/supplemental/all_subsectors.csv"
 module = "dsgrid.dimension.standard"
 name = "all-subsectors"
-display_name = "Subsector"
+display_name = "None"
 type = "subsector"
 
 [[dimensions.supplemental_dimensions]]
@@ -229,7 +229,7 @@ All Electric End Uses
 file = "dimensions/supplemental/all_electric_enduses.csv"
 module = "dsgrid.dimension.standard"
 name = "all-electric-end-uses"
-display_name = "Electric End Use"
+display_name = "Electricity"
 type = "metric"
 
 [[dimensions.supplemental_dimensions]]
@@ -240,7 +240,7 @@ All Data Sources
 file = "dimensions/supplemental/all_sources.csv"
 module = "dsgrid.dimension.standard"
 name = "all-data-sources"
-display_name = "All Data Source"
+display_name = "None"
 type = "data_source"
 
 # ------------------------------------------------------

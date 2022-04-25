@@ -41,7 +41,7 @@ CONUS 2022 - ResStock US county in original FIP code (N=3,108)
 [[dimensions]]
 type = "sector"
 name = "residential-sector"
-display_name = "Sector"
+display_name = "Residential"
 file = "dimensions/sector_residential.csv"
 module = "dsgrid.dimension.standard"
 class = "Sector"
@@ -52,7 +52,7 @@ Residential sector only
 [[dimensions]]
 type = "subsector"
 name = "conus_2022-resstock_building_types"
-display_name = "Subsector"
+display_name = "Residential Building Type"
 file = "dimensions/conus_2022-resstock_subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
@@ -63,7 +63,7 @@ CONUS 2022 - ResStock building types (N=5)
 [[dimensions]]
 type = "metric"
 name = "conus_2022-resstock_energy_enduses_kwh"
-display_name = "Energy End Use"
+display_name = "Residential End Use"
 file = "dimensions/conus_2022-resstock_end_uses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
@@ -74,7 +74,7 @@ CONUS 2022 - ResStock end uses (N=48, 5 fuel types)
 [[dimensions]]
 type = "data_source"
 name = "ResStock-Data-Source"
-display_name = "Data Source"
+display_name = "ResStock"
 file = "dimensions/data_source_resstock.csv"
 module = "dsgrid.dimension.standard"
 class = "DataSource"
@@ -85,7 +85,7 @@ ResStock only data source
 [[dimensions]]
 type = "scenario"
 name = "Conus-2022-reference"
-display_name = "Scenario"
+display_name = "Reference"
 file = "dimensions/scenario_conus_2022_reference.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
@@ -96,7 +96,7 @@ Scenario: CONUS (Continental U.S.) 2022 Reference
 [[dimensions]]
 type = "model_year"
 name = "Model-Year-2018"
-display_name = "Model Year"
+display_name = "2018"
 file = "dimensions/model_year_2018.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
@@ -112,7 +112,7 @@ Weather year, 2012 only
 file = "../../../dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
 name = "2012 Weather Year"
-display_name = "Weather Year"
+display_name = "2012 Weather"
 type = "weather_year"
 
 # [[dimensions]] # for real dataset
@@ -135,7 +135,7 @@ type = "weather_year"
 
 [[dimensions]] # for time-wrapped dataset
 name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour0Start"
-display_name = "Timestamp"
+display_name = "Hourly 2012"
 type = "time"
 module = "dsgrid.dimension.standard"
 class = "Time"
