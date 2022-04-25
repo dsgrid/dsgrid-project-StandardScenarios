@@ -52,7 +52,7 @@ Residential sector only
 [[dimensions]]
 type = "subsector"
 name = "conus_2022-resstock_building_types"
-display_name = "Residential Building Type"
+display_name = "ResStock Building Type"
 file = "dimensions/conus_2022-resstock_subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
@@ -63,7 +63,7 @@ CONUS 2022 - ResStock building types (N=5)
 [[dimensions]]
 type = "metric"
 name = "conus_2022-resstock_energy_enduses_kwh"
-display_name = "Residential End Use"
+display_name = "ResStock End Use"
 file = "dimensions/conus_2022-resstock_end_uses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"

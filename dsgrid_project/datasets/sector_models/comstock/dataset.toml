@@ -54,7 +54,7 @@ Commercial sector only
 [[dimensions]]
 type = "subsector"
 name = "conus_2022-comstock_building_types"
-display_name = "Commercial Building Type"
+display_name = "ComStock Building Type"
 file = "dimensions/conus_2022-comstock_subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
@@ -65,7 +65,7 @@ CONUS 2022 - ComStock building types (N=14)
 [[dimensions]]
 type = "metric"
 name = "conus_2022-comstock_energy_enduses_kwh"
-display_name = "Commercial Building End Use"
+display_name = "ComStock End Use"
 file = "dimensions/conus_2022-comstock_end_uses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
