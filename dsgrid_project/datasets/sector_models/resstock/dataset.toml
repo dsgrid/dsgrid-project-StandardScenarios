@@ -135,7 +135,7 @@ type = "weather_year"
 
 [[dimensions]] # for time-wrapped dataset
 name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour0Start"
-display_name = "Hourly 2012"
+display_name = "2012 Hourly UTC"
 type = "time"
 module = "dsgrid.dimension.standard"
 class = "Time"
