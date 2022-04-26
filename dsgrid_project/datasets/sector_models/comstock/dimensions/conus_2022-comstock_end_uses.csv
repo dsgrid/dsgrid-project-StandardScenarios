@@ -1,7 +1,7 @@
 id,name,fuel_id,unit
-district_cooling_cooling,"District Cooling - Cooling, site level consumption, mostly electric",district_cooling,kWh
-district_heating_heating,"District Heating - Heating, site level consumption, mostly natural gas",district_heating,kWh
-district_heating_water_systems,"District Heating - Water Systems, site level consumption, mostly natural gas",district_heating,kWh
+district_cooling_cooling,"District Cooling - Cooling, site level consumption, mostly electric",electricity,kWh
+district_heating_heating,"District Heating - Heating, site level consumption, mostly natural gas",natural_gas,kWh
+district_heating_water_systems,"District Heating - Water Systems, site level consumption, mostly natural gas",natural_gas,kWh
 electricity_cooling,Electricity - Cooling,electricity,kWh
 electricity_exterior_lighting,Electricity - Exterior Lighting,electricity,kWh
 electricity_fans,Electricity - Fans,electricity,kWh
