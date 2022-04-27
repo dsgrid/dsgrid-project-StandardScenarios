@@ -1,7 +1,7 @@
 id,name,fuel_id,unit
-district_cooling_cooling,District Cooling - Cooling,district_cooling,kWh
-district_heating_heating,District Heating - Heating,district_heating,kWh
-district_heating_water_systems,District Heating - Water Systems,district_heating,kWh
+district_cooling_cooling,District Cooling - Cooling,electricity,kWh
+district_heating_heating,District Heating - Heating,natural_gas,kWh
+district_heating_water_systems,District Heating - Water Systems,natural_gas,kWh
 electricity_cooling,Electricity - Cooling,electricity,kWh
 electricity_exterior_lighting,Electricity - Exterior Lighting,electricity,kWh
 electricity_fans,Electricity - Fans,electricity,kWh
@@ -41,19 +41,19 @@ electricity_range_fan,Electricity - Range Fan,electricity,kWh
 electricity_recirc_pump,Electricity - Recircuation Pump,electricity,kWh
 electricity_refrigerator,Electricity - Refrigerator,electricity,kWh
 electricity_well_pump,Electricity - Well Pump,electricity,kWh
-natural_gas_clothes_dryer,Natural Gas - Clothes Dryer,natural gas,kWh
-natural_gas_cooking_range,Natural Gas - Cooking Range,natural gas,kWh
-natural_gas_fireplace,Natural Gas - Fireplace,natural gas,kWh
-natural_gas_grill,Natural Gas - Grill,natural gas,kWh
-natural_gas_heating,Natural Gas - Heating,natural gas,kWh
-natural_gas_hot_tub_heater,Natural Gas - Hot Tub Heater,natural gas,kWh
-natural_gas_lighting,Natural Gas - Lighting,natural gas,kWh
-natural_gas_pool_heater,Natural Gas - Pool Heater,natural gas,kWh
-natural_gas_water_systems,Natural Gas - Water Systems,natural gas,kWh
+natural_gas_clothes_dryer,Natural Gas - Clothes Dryer,natural_gas,kWh
+natural_gas_cooking_range,Natural Gas - Cooking Range,natural_gas,kWh
+natural_gas_fireplace,Natural Gas - Fireplace,natural_gas,kWh
+natural_gas_grill,Natural Gas - Grill,natural_gas,kWh
+natural_gas_heating,Natural Gas - Heating,natural_gas,kWh
+natural_gas_hot_tub_heater,Natural Gas - Hot Tub Heater,natural_gas,kWh
+natural_gas_lighting,Natural Gas - Lighting,natural_gas,kWh
+natural_gas_pool_heater,Natural Gas - Pool Heater,natural_gas,kWh
+natural_gas_water_systems,Natural Gas - Water Systems,natural_gas,kWh
 propane_clothes_dryer,Propane - Clothes Dryer,propane,kWh
 propane_cooking_range,Propane - Cooking Range,propane,kWh
 propane_heating,Propane - Heating,propane,kWh
 propane_water_systems,Propane - Water Systems,propane,kWh
-wood_heating,Wood - Heating,wood heating,kWh
+wood_heating,Wood - Heating,wood,kWh
 electricity_ev_l1l2,Electricity - EV L1/L2,electricity,kWh
 electricity_ev_dcfc,Electricty - EV DCFC,electricity,kWh

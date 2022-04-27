@@ -132,19 +132,19 @@ type = "weather_year"
 # ranges = [{start = "2012-01-01 01:00:00", end = "2013-01-01 00:00:00"}]
 # ranges_timezone = "LOCAL"
 
-
 [[dimensions]] # for time-wrapped dataset
-name = "Time-2012-UTC-8784-hourly-periodEnding-total-Hour0Start"
-display_name = "2012 Hourly UTC"
-type = "time"
-module = "dsgrid.dimension.standard"
 class = "Time"
-description = "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 0, 8784 timestamps, total value"
-time_type = "datetime"
-measurement_type = "total"
-str_format = "%Y-%m-%d %H:%M:%S"
 frequency = "P0DT1H0M0.000000S"
-leap_day_adjustment = "none"
-time_interval_type = "period_ending"
-timezone = "UTC"
+name = "Time-2012-EST-8784-hourly-periodEnding-noLeapDayAdjustment-total-Hour0Start"
+display_name = "2012 Hourly EST"
 ranges = [{start = "2012-01-01 00:00:00", end = "2012-12-31 23:00:00"}]
+time_type = "datetime"
+leap_day_adjustment = "none"
+description = """
+Time dimension, 2012 hourly EST, hour-ending, no Leap Day Adjustment, total value, starts at Hour 0
+"""
+time_interval_type = "period_ending"
+str_format = "%Y-%m-%d %H:%M:%S"
+timezone = "EasternStandard"
+measurement_type = "total"
+type = "time"
