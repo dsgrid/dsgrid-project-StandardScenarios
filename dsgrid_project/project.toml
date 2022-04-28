@@ -31,6 +31,8 @@ model_sector = "comstock"
 version = "1.0.0"
 
 [dimensions]
+all_in_one_supplemental_dimensions = ["sector", "subsector", "data_source"]
+
 # ------------------------------------------------------
 # Base Dimensions
 # ------------------------------------------------------
@@ -198,29 +200,6 @@ name = "ReEDS PCA"
 display_name = "ReEDS PCA"
 type = "geography"
 
-### All in one dims
-[[dimensions.supplemental_dimensions]]
-class = "Sector"
-description = """
-All Sectors
-"""
-file = "dimensions/supplemental/all_sectors.csv"
-module = "dsgrid.dimension.standard"
-name = "all-sectors"
-display_name = "None"
-type = "sector"
-
-[[dimensions.supplemental_dimensions]]
-class = "Subsector"
-description = """
-All Subsectors
-"""
-file = "dimensions/supplemental/all_subsectors.csv"
-module = "dsgrid.dimension.standard"
-name = "all-subsectors"
-display_name = "None"
-type = "subsector"
-
 [[dimensions.supplemental_dimensions]]
 class = "EnergyEndUse"
 description = """
@@ -231,17 +210,6 @@ module = "dsgrid.dimension.standard"
 name = "all-electric-end-uses"
 display_name = "Electricity"
 type = "metric"
-
-[[dimensions.supplemental_dimensions]]
-class = "DataSource"
-description = """
-All Data Sources
-"""
-file = "dimensions/supplemental/all_sources.csv"
-module = "dsgrid.dimension.standard"
-name = "all-data-sources"
-display_name = "None"
-type = "data_source"
 
 # ------------------------------------------------------
 # Dimension Mappings
@@ -291,38 +259,6 @@ name = "ReEDS PCA"
 type = "geography"
 
 ### all to one ###
-[[dimension_mappings.base_to_supplemental]]
-description = "Aggregation map for Com-Res-Tra sectors"
-file = "dimension_mappings/base_to_supplemental/lookup_sectors_to_all_sectors.csv"
-mapping_type = "many_to_one_aggregation"
-[dimension_mappings.base_to_supplemental.from_dimension]
-name = "Sectors - Com-Res-Tra-Only"
-type = "sector"
-[dimension_mappings.base_to_supplemental.to_dimension]
-name = "all-sectors"
-type = "sector"
-
-[[dimension_mappings.base_to_supplemental]]
-description = "Aggregation map for all dsgrid CONUS 2022 subsectors"
-file = "dimension_mappings/base_to_supplemental/lookup_subsectors_to_all_subsectors.csv"
-mapping_type = "many_to_one_aggregation"
-[dimension_mappings.base_to_supplemental.from_dimension]
-name = "CONUS-2022-Detailed-Subsectors"
-type = "subsector"
-[dimension_mappings.base_to_supplemental.to_dimension]
-name = "all-subsectors"
-type = "subsector"
-
-[[dimension_mappings.base_to_supplemental]]
-description = "Aggregation map for ComStock-ResStock-TEMPO data sources"
-file = "dimension_mappings/base_to_supplemental/lookup_sources_to_all_sources.csv"
-mapping_type = "many_to_one_aggregation"
-[dimension_mappings.base_to_supplemental.from_dimension]
-name = "Data-Sources - ComStock-ResStock-TEMPO-Only"
-type = "data_source"
-[dimension_mappings.base_to_supplemental.to_dimension]
-name = "all-data-sources"
-type = "data_source"
 
 [[dimension_mappings.base_to_supplemental]]
 description = "Aggregation map for all dsgrid CONUS 2022 electric end uses"
