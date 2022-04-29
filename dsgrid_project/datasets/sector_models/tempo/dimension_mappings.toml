@@ -22,7 +22,7 @@ file = "dimension_mappings/subsector_to_subsector.csv"
 mapping_type = "many_to_one_aggregation"
 
 [[mappings]]
-description = "Dummy mapping for LDV Sales All-EV by 2035 to CONUS 2022 scenarios"
+description = "rename TEMPO scenarios to CONUS 2022 scenarios"
 dimension_type = "scenario"
 file = "dimension_mappings/scenario_to_scenario.csv"
-mapping_type = "duplication"
+mapping_type = "one_to_one"
