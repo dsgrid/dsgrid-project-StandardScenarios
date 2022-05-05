@@ -1,28 +1,28 @@
 id,name
-medium_office,Medium Office
-secondary_school,Secondary School
-outpatient,Outpatient
-hospital,Hospital
-quick_service_restaurant,Quick Service Restaurant
-warehouse,Warehouse
-small_office,Small Office
-primary_school,Primary School
-large_hotel,Large Hotel
+bev_compact,Bev Compact
+bev_midsize,Bev Midsize
+bev_pickup,Bev Pickup
+bev_suv,Bev Suv
 full_service_restaurant,Full Service Restaurant
-retail_stripmall,Retail Stripmall
-retail_standalone,Retail Standalone
+hospital,Hospital
+large_hotel,Large Hotel
 large_office,Large Office
-small_hotel,Small Hotel
+medium_office,Medium Office
 mobile_home,Mobile Home
-multifamily_2_to_4_units,Multi-Family with 2 - 4 Units
-multifamily_5_plus_units,Multi-Family with 5+ Units
-single_family_attached,Single-Family Attached
-single_family_detached,Single-Family Detached
-bev_compact,BEV - Compact
-bev_midsize,BEV - Midsize
-bev_suv,BEV - SUV
-bev_pickup,BEV - Pickup
-phev_compact,PHEV - Compact
-phev_midsize,PHEV - Midsize
-phev_suv,PHEV - SUV
-phev_pickup,PHEV - Pickup
+multifamily_2_to_4_units,Multifamily 2 To 4 Units
+multifamily_5_plus_units,Multifamily 5 Plus Units
+outpatient,Outpatient
+phev_compact,Phev Compact
+phev_midsize,Phev Midsize
+phev_pickup,Phev Pickup
+phev_suv,Phev Suv
+primary_school,Primary School
+quick_service_restaurant,Quick Service Restaurant
+retail_standalone,Retail Standalone
+retail_stripmall,Retail Stripmall
+secondary_school,Secondary School
+single_family_attached,Single Family Attached
+single_family_detached,Single Family Detached
+small_hotel,Small Hotel
+small_office,Small Office
+warehouse,Warehouse
