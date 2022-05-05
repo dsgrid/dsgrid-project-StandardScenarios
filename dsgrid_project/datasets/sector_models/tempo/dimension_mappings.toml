@@ -10,7 +10,7 @@ file = "dimension_mappings/metric_to_metric.csv"
 mapping_type = "one_to_one"
 
 [[mappings]]
-description = "2018-2050 from interpolating for every other year"
+description = "2010-2050 from interpolating for every other year and 0 for 2010-2017"
 dimension_type = "model_year"
 file = "dimension_mappings/model_year_to_model_year.csv"
 mapping_type = "many_to_many"
