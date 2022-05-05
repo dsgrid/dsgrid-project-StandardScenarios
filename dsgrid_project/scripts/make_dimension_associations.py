@@ -9,8 +9,9 @@ from itertools import chain
 project_path = str(Path(__file__).parents[1])
 os.chdir(project_path)
 
+
 def make_project_dimension_associations():
-    """ For Standard Scenarios
+    """For Standard Scenarios
 
     relationships are defined by data_source
         dimension_type : dependencies
@@ -24,23 +25,23 @@ def make_project_dimension_associations():
         weather_year : common
         scenario : common
         time : not relevant
-    
+
     """
 
     ### [0] Specify key dimensions and associations
 
     data_sources = ["comstock", "resstock", "tempo"]
     sectors_by_data_source = {
-        "comstock": "com", 
-        "resstock": "res", 
+        "comstock": "com",
+        "resstock": "res",
         "tempo": "trans",
-        }
+    }
     subsectors_by_data_source = {
         "comstock": [
-            "full_service_restaurant", 
-            "hospital", 
-            "large_office", 
-            "primary_school", 
+            "full_service_restaurant",
+            "hospital",
+            "large_office",
+            "primary_school",
             "retail_standalone",
             "retail_stripmall",
             "small_office",
@@ -50,14 +51,14 @@ def make_project_dimension_associations():
             "small_hotel",
             "outpatient",
             "quick_service_restaurant",
-            "medium_office"
+            "medium_office",
         ],
         "resstock": [
             "multifamily_2_to_4_units",
             "single_family_attached",
             "mobile_home",
             "single_family_detached",
-            "multifamily_5_plus_units"
+            "multifamily_5_plus_units",
         ],
         "tempo": [
             "bev_compact",
@@ -67,7 +68,7 @@ def make_project_dimension_associations():
             "phev_compact",
             "phev_midsize",
             "phev_pickup",
-            "phev_suv"
+            "phev_suv",
         ],
     }
     metrics_by_data_source = {
@@ -93,7 +94,7 @@ def make_project_dimension_associations():
             "fuel_oil_water_systems": "fuel_oil",
             "propane_heating": "propane",
             "propane_water_systems": "propane",
-        }, 
+        },
         "resstock": {
             "electricity_bath_fan": "electricity",
             "electricity_ceiling_fan": "electricity",
@@ -143,29 +144,27 @@ def make_project_dimension_associations():
             "propane_heating": "propane",
             "propane_water_systems": "propane",
             "wood_heating": "wood",
-        }, 
+        },
         "tempo": {
             "electricity_ev_l1l2": "electricity",
             "electricity_ev_dcfc": "electricity",
-        }
+        },
     }
-
-
 
     model_years = list(np.arange(2010, 2051))
     weather_years = [2012]
     scenarios = ["reference", "efs_high_ldv", "ldv_sales_evs_2035"]
 
-
     ### [1] DIMENSION ASSOCIATIONS - convert to df and save
     create_df_and_save_association(sectors_by_data_source, ["data_source", "sector"])
-    create_df_and_save_association(subsectors_by_data_source, ["data_source", "subsector"])
+    create_df_and_save_association(
+        subsectors_by_data_source, ["data_source", "subsector"]
+    )
     create_df_and_save_association(metrics_by_data_source, ["data_source", "metric"])
-
 
     ### [2] DIMENSIONS - convert to df and save
     create_df_and_save_dimension(data_sources, "sources")
-    create_df_and_save_dimension(sectors_by_data_source, "sectors") 
+    create_df_and_save_dimension(sectors_by_data_source, "sectors")
     create_df_and_save_dimension(subsectors_by_data_source, "subsectors")
     create_df_and_save_enduse(metrics_by_data_source, "kWh", "enduses_kwh")
     create_df_and_save_dimension(model_years, "model_years")
@@ -185,7 +184,7 @@ def create_df_and_save_association(association_dict: dict, column_names: list):
 
 
 def create_df_and_save_dimension(data, file_name: str):
-    """ create and save df for a dimension.
+    """create and save df for a dimension.
     Input data can be a dimension list or a dimension association where the values are the
     dimension records to be processed.
 
@@ -202,23 +201,25 @@ def create_df_and_save_dimension(data, file_name: str):
 
     file = f"dimensions/{file_name}.csv"
     if isinstance(data, list):
-        df = pd.DataFrame({
-            "id": data, 
-            "name": [str(x).title() for x in data],
-            })
+        df = pd.DataFrame(
+            {
+                "id": data,
+                "name": [str(x).title() for x in data],
+            }
+        )
     elif isinstance(data, dict):
-        df = pd.Series(
-            sorted( set( chain( *data.values() ) ) )
-        ).rename("id").to_frame()
-        df["name"] = df["id"].astype(str).str.title().str.replace("_"," ")
+        df = pd.Series(sorted(set(chain(*data.values())))).rename("id").to_frame()
+        df["name"] = df["id"].astype(str).str.title().str.replace("_", " ")
     else:
-        raise TypeError(f"data has unsupported type={type(data)}. Valid types: [list, dict]")
+        raise TypeError(
+            f"data has unsupported type={type(data)}. Valid types: [list, dict]"
+        )
 
     df.to_csv(file, index=False)
 
 
 def create_df_and_save_enduse(data, units, file_name: str = "metrics"):
-    """ create and save df for end uses.
+    """create and save df for end uses.
     Input data is a dimension association where the values are the dimension
     records to be processed.
 
@@ -234,23 +235,25 @@ def create_df_and_save_enduse(data, units, file_name: str = "metrics"):
     """
 
     file = f"dimensions/{file_name}.csv"
-    fuel_by_enduse = dict( chain( *map( dict.items, data.values() ) ) ) # combine list of dicts
+    fuel_by_enduse = dict(
+        chain(*map(dict.items, data.values()))
+    )  # combine list of dicts
 
-    df = pd.DataFrame(fuel_by_enduse.items(), columns = ["id", "fuel_id"])
-    df["name"] = df["id"].astype(str).str.title().str.replace("_"," ")
+    df = pd.DataFrame(fuel_by_enduse.items(), columns=["id", "fuel_id"])
+    df["name"] = df["id"].astype(str).str.title().str.replace("_", " ")
 
     if isinstance(units, str):
         df["unit"] = units
     elif isinstance(units, dict):
         df["unit"] = df["fuel_id"].map(units)
     else:
-        raise TypeError(f"units has unsupported type={type(units)}. Valid types: [str, dict]")
+        raise TypeError(
+            f"units has unsupported type={type(units)}. Valid types: [str, dict]"
+        )
 
     df.to_csv(file, index=False)
-    
 
-if __name__ == '__main__': 
+
+if __name__ == "__main__":
 
     make_project_dimension_associations()
-
-    
