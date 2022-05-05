@@ -3,7 +3,7 @@
 description = """Dataset created for the FY21 dsgrid Load Profile Tool for Grid Modeling project"""
 name = "dsgrid CONUS 2022"
 project_id = "dsgrid_conus_2022"
-dimension_associations = ["dimension_associations/data_source__metric.csv", "dimension_associations/data_source__model_year.csv", "dimension_associations/data_source__sector.csv", "dimension_associations/data_source__subsector.csv", "dimension_associations/model_year__metric.csv", "dimension_associations/model_year__subsector.csv", "dimension_associations/scenario__data_source.csv", "dimension_associations/scenario__metric.csv", "dimension_associations/scenario__sector.csv", "dimension_associations/scenario__subsector.csv", "dimension_associations/sector__metric.csv", "dimension_associations/sector__model_year.csv", "dimension_associations/sector__subsector.csv", "dimension_associations/subsector__metric.csv"]
+dimension_associations = ["dimension_associations/data_source__metric.csv", "dimension_associations/data_source__sector.csv", "dimension_associations/data_source__subsector.csv", ]
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
