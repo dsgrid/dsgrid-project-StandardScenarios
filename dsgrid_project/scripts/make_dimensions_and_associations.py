@@ -1,10 +1,11 @@
-"""Make project dimension mappings for project to supplement"""
+"""Make project dimensions and association for project"""
 
 import pandas as pd
 import os
 from pathlib import Path
 import numpy as np
 from itertools import chain
+from typing import Dict, List, Union
 
 project_path = str(Path(__file__).parents[1])
 os.chdir(project_path)
@@ -163,13 +164,13 @@ def make_project_dimension_associations():
     create_df_and_save_association(metrics_by_data_source, ["data_source", "metric"])
 
     ### [2] DIMENSIONS - convert to df and save
-    create_df_and_save_dimension(data_sources, "sources")
-    create_df_and_save_dimension(sectors_by_data_source, "sectors")
-    create_df_and_save_dimension(subsectors_by_data_source, "subsectors")
-    create_df_and_save_enduse(metrics_by_data_source, "kWh", "enduses_kwh")
-    create_df_and_save_dimension(model_years, "model_years")
-    create_df_and_save_dimension(weather_years, "weather_years")
-    create_df_and_save_dimension(scenarios, "scenarios")
+    create_df_and_save_dimension_list(data_sources, "sources", sort=True)
+    create_df_and_save_dimension_dict(sectors_by_data_source, "sectors", sort=True)
+    create_df_and_save_dimension_dict(subsectors_by_data_source, "subsectors", sort=True)
+    create_df_and_save_enduse(metrics_by_data_source, "kWh", "enduses_kwh", sort=True)
+    create_df_and_save_dimension_list(model_years, "model_years", sort=True)
+    create_df_and_save_dimension_list(weather_years, "weather_years", sort=True)
+    create_df_and_save_dimension_list(scenarios, "scenarios", sort=True)
 
 
 def create_df_and_save_association(association_dict: dict, column_names: list):
@@ -186,53 +187,72 @@ def create_df_and_save_association(association_dict: dict, column_names: list):
     )
 
 
-def create_df_and_save_dimension(data, file_name: str):
+def create_df_and_save_dimension_list(data: List, file_name: str, sort=False):
     """create and save df for a dimension.
-    Input data can be a dimension list or a dimension association where the values are the
-    dimension records to be processed.
+    Input data is a dimension record list
 
     Args:
     -----
         data : [list, dict]
-            list of dimension records, or
-            dict of dimension associations, where metrics are the dict values
-        units : str or dict
-            single unit in str or dict that maps units by fuel_id
+            list of dimension records
         file_name : str
             name of file to save
+        sort : bool
+            sort by "id"
     """
 
     file = f"dimensions/{file_name}.csv"
-    if isinstance(data, list):
-        df = pd.DataFrame(
-            {
-                "id": data,
-                "name": [str(x).title().replace("_", " ") for x in data],
-            }
-        )
-    elif isinstance(data, dict):
-        vals = set()
-        for val in data.values():
-            if isinstance(val, list):
-                vals.update(set(val))
-            elif isinstance(val, str) or isinstance(val, int):
-                vals.add(val)
-            else:
-                raise TypeError(
-                    f"val has unsupported type={type(val)}. Valid types: [list, str, int]"
-                )
-        df = pd.Series(sorted(vals)).rename("id").to_frame()
-        # df = pd.Series(sorted(set(chain(*data.values())))).rename("id").to_frame()
-        df["name"] = df["id"].astype(str).str.title().str.replace("_", " ")
+    df = pd.DataFrame(
+        {
+            "id": data,
+            "name": [str(x).title().replace("_", " ") for x in data],
+        }
+    )
+    if sort:
+        df.sort_values(by=["id"]).to_csv(file, index=False)
     else:
-        raise TypeError(
-            f"data has unsupported type={type(data)}. Valid types: [list, dict]"
-        )
-
-    df.to_csv(file, index=False)
+        df.to_csv(file, index=False)
 
 
-def create_df_and_save_enduse(data, units, file_name: str = "metrics"):
+def create_df_and_save_dimension_dict(data: Dict, file_name: str, sort=False):
+    """create and save df for a dimension.
+    Input data is a dimension association where the values are the
+    dimension records to be processed.
+
+    Args:
+    -----
+        data : Dict
+            dict of dimension associations, where dimension records are the dict values
+        file_name : str
+            name of file to save
+        sort : bool
+            sort by "id"
+    """
+
+    file = f"dimensions/{file_name}.csv"
+
+    vals = set()
+    for val in data.values():
+        if isinstance(val, list):
+            vals.update(set(val))
+        elif isinstance(val, str) or isinstance(val, int):
+            vals.add(val)
+        else:
+            raise TypeError(
+                f"values of data dict have unsupported type={type(val)}. Valid types: [list, str, int]"
+            )
+    df = pd.Series(list(vals)).rename("id").to_frame()
+    df["name"] = df["id"].astype(str).str.title().str.replace("_", " ")
+
+    if sort:
+        df.sort_values(by=["id"]).to_csv(file, index=False)
+    else:
+        df.to_csv(file, index=False)
+
+
+def create_df_and_save_enduse(
+    data: Dict, units: Union[Dict, str], file_name: str = "metrics", sort=False
+):
     """create and save df for end uses.
     Input data is a dimension association where the values are the dimension
     records to be processed.
@@ -245,7 +265,8 @@ def create_df_and_save_enduse(data, units, file_name: str = "metrics"):
             single unit in str or dict that maps units by fuel_id
         file_name : str
             name of file to save
-
+        sort : bool
+            sort by "id"
     """
 
     file = f"dimensions/{file_name}.csv"
@@ -264,10 +285,16 @@ def create_df_and_save_enduse(data, units, file_name: str = "metrics"):
         raise TypeError(
             f"units has unsupported type={type(units)}. Valid types: [str, dict]"
         )
-
-    df.to_csv(file, index=False)
+    if sort:
+        df.sort_values(by=["id"]).to_csv(file, index=False)
+    else:
+        df.to_csv(file, index=False)
 
 
 if __name__ == "__main__":
 
     make_project_dimension_associations()
+    print(
+        "* project dimensions and dimension_associations created for Standard Scenarios, "
+        "excluding dimensions/counties.csv. *"
+    )
