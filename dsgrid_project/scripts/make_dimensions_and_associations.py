@@ -169,6 +169,7 @@ def make_project_dimension_associations():
     create_df_and_save_enduse(metrics_by_data_source, "kWh", "enduses_kwh")
     create_df_and_save_dimension(model_years, "model_years")
     create_df_and_save_dimension(weather_years, "weather_years")
+    create_df_and_save_dimension(scenarios, "scenarios")
 
 
 def create_df_and_save_association(association_dict: dict, column_names: list):
@@ -180,7 +181,9 @@ def create_df_and_save_association(association_dict: dict, column_names: list):
                 dct.append((key, v))
         else:
             dct.append((key, val))
-    pd.DataFrame(dct, columns=column_names).to_csv(file, index=False)
+    pd.DataFrame(dct, columns=column_names).sort_values(by=column_names).to_csv(
+        file, index=False
+    )
 
 
 def create_df_and_save_dimension(data, file_name: str):
@@ -204,11 +207,22 @@ def create_df_and_save_dimension(data, file_name: str):
         df = pd.DataFrame(
             {
                 "id": data,
-                "name": [str(x).title() for x in data],
+                "name": [str(x).title().replace("_", " ") for x in data],
             }
         )
     elif isinstance(data, dict):
-        df = pd.Series(sorted(set(chain(*data.values())))).rename("id").to_frame()
+        vals = set()
+        for val in data.values():
+            if isinstance(val, list):
+                vals.update(set(val))
+            elif isinstance(val, str) or isinstance(val, int):
+                vals.add(val)
+            else:
+                raise TypeError(
+                    f"val has unsupported type={type(val)}. Valid types: [list, str, int]"
+                )
+        df = pd.Series(sorted(vals)).rename("id").to_frame()
+        # df = pd.Series(sorted(set(chain(*data.values())))).rename("id").to_frame()
         df["name"] = df["id"].astype(str).str.title().str.replace("_", " ")
     else:
         raise TypeError(

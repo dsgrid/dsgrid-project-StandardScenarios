@@ -13,11 +13,11 @@ comstock,electricity_interior_lighting
 comstock,electricity_pumps
 comstock,electricity_refrigeration
 comstock,electricity_water_systems
+comstock,fuel_oil_heating
+comstock,fuel_oil_water_systems
 comstock,natural_gas_heating
 comstock,natural_gas_interior_equipment
 comstock,natural_gas_water_systems
-comstock,fuel_oil_heating
-comstock,fuel_oil_water_systems
 comstock,propane_heating
 comstock,propane_water_systems
 resstock,electricity_bath_fan
@@ -68,5 +68,5 @@ resstock,propane_cooking_range
 resstock,propane_heating
 resstock,propane_water_systems
 resstock,wood_heating
-tempo,electricity_ev_l1l2
 tempo,electricity_ev_dcfc
+tempo,electricity_ev_l1l2
