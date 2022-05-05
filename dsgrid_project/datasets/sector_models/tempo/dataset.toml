@@ -20,7 +20,7 @@ source = "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c70
 data_classification = "low"
 tags = [ "transportation", "conus-2022", "reference", "tempo"]
 data_schema_type = "standard"
-trivial_dimensions = [ "sector", "weather_year", "scenario", "data_source"] # TODO: for non-dummy version, we will remove scenario from trivial dimensions
+trivial_dimensions = [ "sector", "weather_year", "data_source"]
 
 [data_schema]
 load_data_column_dimension = "metric"
@@ -95,9 +95,12 @@ description = """Transportation Sector"""
 [[dimensions]]
 class = "Scenario"
 type = "scenario"
-name = "LDV Sales All-EV by 2035"
+name = "Scenario"
 file = "dimensions/scenario.csv"
 description = """
+EV Scenarios:
+AEO Reference
+EFS High Electrification
 LDV Sales All-EV by 2035"""
 
 # TODO: uncomment and add registered scenario dimension for final-dataset
