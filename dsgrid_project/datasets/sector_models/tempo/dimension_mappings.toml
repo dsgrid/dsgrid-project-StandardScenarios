@@ -10,19 +10,13 @@ file = "dimension_mappings/metric_to_metric.csv"
 mapping_type = "one_to_one"
 
 [[mappings]]
-description = "2018-2050 to 2010-2050 with 2 year increments"
+description = "2010-2050 from interpolating for every other year and 0 for 2010-2017"
 dimension_type = "model_year"
 file = "dimension_mappings/model_year_to_model_year.csv"
-mapping_type = "one_to_one"
+mapping_type = "many_to_many"
 
 [[mappings]]
 description = "TEMPO demographic/geographic/vehicle bins (CONUS 2022) to dsgrid CONUS 2022 Subsectors"
 dimension_type = "subsector"
 file = "dimension_mappings/subsector_to_subsector.csv"
 mapping_type = "many_to_one_aggregation"
-
-[[mappings]]
-description = "rename TEMPO scenarios to CONUS 2022 scenarios"
-dimension_type = "scenario"
-file = "dimension_mappings/scenario_to_scenario.csv"
-mapping_type = "one_to_one"
