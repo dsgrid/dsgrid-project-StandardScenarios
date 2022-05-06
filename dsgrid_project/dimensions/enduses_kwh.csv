@@ -11,7 +11,7 @@ electricity_cooling,electricity,Electricity Cooling,kWh
 electricity_dishwasher,electricity,Electricity Dishwasher,kWh
 electricity_ev_dcfc,electricity,Electricity Ev Dcfc,kWh
 electricity_ev_l1l2,electricity,Electricity Ev L1L2,kWh
-electricity_ext_holiday_light,electricity,Electricity Ext Holiday Light,kWh
+electricity_exterior_holiday_lighting,electricity,Electricity Exterior Holiday Lighting,kWh
 electricity_exterior_lighting,electricity,Electricity Exterior Lighting,kWh
 electricity_extra_refrigerator,electricity,Electricity Extra Refrigerator,kWh
 electricity_fans,electricity,Electricity Fans,kWh
@@ -22,7 +22,7 @@ electricity_garage_lighting,electricity,Electricity Garage Lighting,kWh
 electricity_heat_recovery,electricity,Electricity Heat Recovery,kWh
 electricity_heat_rejection,electricity,Electricity Heat Rejection,kWh
 electricity_heating,electricity,Electricity Heating,kWh
-electricity_heating_supplement,electricity,Electricity Heating Supplement,kWh
+electricity_heating_supplemental,electricity,Electricity Heating Supplemental,kWh
 electricity_hot_tub_heater,electricity,Electricity Hot Tub Heater,kWh
 electricity_hot_tub_pump,electricity,Electricity Hot Tub Pump,kWh
 electricity_house_fan,electricity,Electricity House Fan,kWh
@@ -34,12 +34,10 @@ electricity_pool_pump,electricity,Electricity Pool Pump,kWh
 electricity_pumps,electricity,Electricity Pumps,kWh
 electricity_pumps_cooling,electricity,Electricity Pumps Cooling,kWh
 electricity_pumps_heating,electricity,Electricity Pumps Heating,kWh
-electricity_pv,electricity,Electricity Pv,kWh
 electricity_range_fan,electricity,Electricity Range Fan,kWh
 electricity_recirc_pump,electricity,Electricity Recirc Pump,kWh
 electricity_refrigeration,electricity,Electricity Refrigeration,kWh
 electricity_refrigerator,electricity,Electricity Refrigerator,kWh
-electricity_vehicle,electricity,Electricity Vehicle,kWh
 electricity_water_systems,electricity,Electricity Water Systems,kWh
 electricity_well_pump,electricity,Electricity Well Pump,kWh
 fuel_oil_heating,fuel_oil,Fuel Oil Heating,kWh
