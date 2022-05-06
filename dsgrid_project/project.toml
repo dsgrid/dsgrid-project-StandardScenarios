@@ -3,7 +3,7 @@
 description = """Dataset created for the FY21 dsgrid Load Profile Tool for Grid Modeling project"""
 name = "dsgrid CONUS 2022"
 project_id = "dsgrid_conus_2022"
-dimension_associations = ["dimension_associations/data_source__metric.csv", "dimension_associations/data_source__model_year.csv", "dimension_associations/data_source__sector.csv", "dimension_associations/data_source__subsector.csv", "dimension_associations/model_year__metric.csv", "dimension_associations/model_year__subsector.csv", "dimension_associations/scenario__data_source.csv", "dimension_associations/scenario__metric.csv", "dimension_associations/scenario__sector.csv", "dimension_associations/scenario__subsector.csv", "dimension_associations/sector__metric.csv", "dimension_associations/sector__model_year.csv", "dimension_associations/sector__subsector.csv", "dimension_associations/subsector__metric.csv"]
+dimension_associations = ["dimension_associations/data_source__metric.csv", "dimension_associations/data_source__sector.csv", "dimension_associations/data_source__subsector.csv", ]
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
@@ -31,6 +31,8 @@ model_sector = "comstock"
 version = "1.0.0"
 
 [dimensions]
+all_in_one_supplemental_dimensions = ["sector", "subsector", "data_source"]
+
 # ------------------------------------------------------
 # Base Dimensions
 # ------------------------------------------------------
@@ -42,6 +44,7 @@ US counties for L48, Census 2020 vintage, no territories
 file = "dimensions/counties.csv"
 module = "dsgrid.dimension.standard"
 name = "US Counties 2020 L48"
+display_name = "County"
 type = "geography"
 
 [[dimensions.base_dimensions]]
@@ -52,6 +55,7 @@ dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Transportation 
 file = "dimensions/sectors.csv"
 module = "dsgrid.dimension.standard"
 name = "Sectors - Com-Res-Tra-Only"
+display_name = "Sector"
 type = "sector"
 
 [[dimensions.base_dimensions]]
@@ -62,6 +66,7 @@ dsgrid CONUS 2022 Subsectors
 file = "dimensions/subsectors.csv"
 module = "dsgrid.dimension.standard"
 name = "CONUS-2022-Detailed-Subsectors"
+display_name = "Subsector"
 type = "subsector"
 
 # [[dimensions.base_dimensions]] # TODO: this is what we ultimately want to be using for the project
@@ -72,6 +77,7 @@ type = "subsector"
 # file = "dimensions/enduses.csv"
 # module = "dsgrid.dimension.standard"
 # name = "CONUS-2022-Detailed-End-Uses"
+# display_name = "End Use"
 # type = "metric"
 
 [[dimensions.base_dimensions]] # TODO: this is for the dummy data deliverable
@@ -82,6 +88,7 @@ dsgrid CONUS 2022 End Uses (all fuel types) w/ all units in kWh
 file = "dimensions/enduses_kwh.csv"
 module = "dsgrid.dimension.standard"
 name = "CONUS-2022-Detailed-End-Uses-kWh"
+display_name = "End Use"
 type = "metric"
 
 [[dimensions.base_dimensions]]
@@ -92,6 +99,7 @@ Model year, 2010-2050
 file = "dimensions/model_years.csv"
 module = "dsgrid.dimension.standard"
 name = "Model Years 2010 to 2050"
+display_name = "Model Year"
 type = "model_year"
 
 [[dimensions.base_dimensions]]
@@ -103,6 +111,7 @@ and two light-duty vehicle electrification scenarios
 file = "dimensions/scenarios.csv"
 module = "dsgrid.dimension.standard"
 name = "CONUS-2022-scenarios"
+display_name = "Scenario"
 type = "scenario"
 
 [[dimensions.base_dimensions]]
@@ -113,12 +122,14 @@ dsgrid Standard Scenarios 2021 Data Sources; ComStock, TEMPO, ResStock Only
 file = "dimensions/sources.csv"
 module = "dsgrid.dimension.standard"
 name = "Data-Sources - ComStock-ResStock-TEMPO-Only"
+display_name = "Data Source"
 type = "data_source"
 
 [[dimensions.base_dimensions]]
 class = "Time"
 frequency = "P0DT1H0M0.000000S"
 name = "Time-2012-EST-hourly-periodBeginning-noLeapDayAdjustment-total"
+display_name = "2012 Hourly EST"
 ranges = [{start = "2012-01-01 00:00:00", end = "2012-12-31 23:00:00"}]
 time_type = "datetime"
 leap_day_adjustment = "none"
@@ -139,6 +150,7 @@ Weather year, 2012 only
 file = "dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
 name = "2012 Weather Year"
+display_name = "2012 Weather"
 type = "weather_year"
 
 # ------------------------------------------------------
@@ -152,6 +164,7 @@ US States
 file = "dimensions/supplemental/states.csv"
 module = "dsgrid.dimension.standard"
 name = "US States"
+display_name = "State"
 type = "geography"
 
 [[dimensions.supplemental_dimensions]]
@@ -162,6 +175,7 @@ US Census Regions
 file = "dimensions/supplemental/census_regions.csv"
 module = "dsgrid.dimension.standard"
 name = "US Census Regions"
+display_name = "Census Region"
 type = "geography"
 
 [[dimensions.supplemental_dimensions]]
@@ -172,6 +186,7 @@ US Census Divisions
 file = "dimensions/supplemental/census_divisions.csv"
 module = "dsgrid.dimension.standard"
 name = "US Census Divisions"
+display_name = "Census Division"
 type = "geography"
 
 [[dimensions.supplemental_dimensions]]
@@ -182,28 +197,8 @@ ReEDS Power Control Areas
 file = "dimensions/supplemental/reeds_pca.csv"
 module = "dsgrid.dimension.standard"
 name = "ReEDS PCA"
+display_name = "ReEDS PCA"
 type = "geography"
-
-### All in one dims
-[[dimensions.supplemental_dimensions]]
-class = "Sector"
-description = """
-All Sectors
-"""
-file = "dimensions/supplemental/all_sectors.csv"
-module = "dsgrid.dimension.standard"
-name = "all-sectors"
-type = "sector"
-
-[[dimensions.supplemental_dimensions]]
-class = "Subsector"
-description = """
-All Subsectors
-"""
-file = "dimensions/supplemental/all_subsectors.csv"
-module = "dsgrid.dimension.standard"
-name = "all-subsectors"
-type = "subsector"
 
 [[dimensions.supplemental_dimensions]]
 class = "EnergyEndUse"
@@ -213,17 +208,8 @@ All Electric End Uses
 file = "dimensions/supplemental/all_electric_enduses.csv"
 module = "dsgrid.dimension.standard"
 name = "all-electric-end-uses"
+display_name = "Electricity"
 type = "metric"
-
-[[dimensions.supplemental_dimensions]]
-class = "DataSource"
-description = """
-All Data Sources
-"""
-file = "dimensions/supplemental/all_sources.csv"
-module = "dsgrid.dimension.standard"
-name = "all-data-sources"
-type = "data_source"
 
 # ------------------------------------------------------
 # Dimension Mappings
@@ -273,38 +259,6 @@ name = "ReEDS PCA"
 type = "geography"
 
 ### all to one ###
-[[dimension_mappings.base_to_supplemental]]
-description = "Aggregation map for Com-Res-Tra sectors"
-file = "dimension_mappings/base_to_supplemental/lookup_sectors_to_all_sectors.csv"
-mapping_type = "many_to_one_aggregation"
-[dimension_mappings.base_to_supplemental.from_dimension]
-name = "Sectors - Com-Res-Tra-Only"
-type = "sector"
-[dimension_mappings.base_to_supplemental.to_dimension]
-name = "all-sectors"
-type = "sector"
-
-[[dimension_mappings.base_to_supplemental]]
-description = "Aggregation map for all dsgrid CONUS 2022 subsectors"
-file = "dimension_mappings/base_to_supplemental/lookup_subsectors_to_all_subsectors.csv"
-mapping_type = "many_to_one_aggregation"
-[dimension_mappings.base_to_supplemental.from_dimension]
-name = "CONUS-2022-Detailed-Subsectors"
-type = "subsector"
-[dimension_mappings.base_to_supplemental.to_dimension]
-name = "all-subsectors"
-type = "subsector"
-
-[[dimension_mappings.base_to_supplemental]]
-description = "Aggregation map for ComStock-ResStock-TEMPO data sources"
-file = "dimension_mappings/base_to_supplemental/lookup_sources_to_all_sources.csv"
-mapping_type = "many_to_one_aggregation"
-[dimension_mappings.base_to_supplemental.from_dimension]
-name = "Data-Sources - ComStock-ResStock-TEMPO-Only"
-type = "data_source"
-[dimension_mappings.base_to_supplemental.to_dimension]
-name = "all-data-sources"
-type = "data_source"
 
 [[dimension_mappings.base_to_supplemental]]
 description = "Aggregation map for all dsgrid CONUS 2022 electric end uses"
