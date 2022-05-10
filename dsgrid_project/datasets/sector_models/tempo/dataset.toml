@@ -100,7 +100,7 @@ description = """Transportation Sector"""
 [[dimensions]]
 class = "Scenario"
 type = "scenario"
-name = "Scenario"
+name = "Technology and Policy Scenario"
 display_name = "Scenario"
 file = "dimensions/scenario.csv"
 description = """
