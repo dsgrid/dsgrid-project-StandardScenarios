@@ -3,7 +3,7 @@
 # ------------------------------------------------
 
 dataset_id = "aeo2021_ref_res_end_use_growth_factors"
-dataset_type = "benchmark"
+dataset_type = "sector_model"
 data_source = "NEMS Residential Module"
 description = """
 AEO 2021 Reference Case Residential Energy End Use Annual Growth Factors. 

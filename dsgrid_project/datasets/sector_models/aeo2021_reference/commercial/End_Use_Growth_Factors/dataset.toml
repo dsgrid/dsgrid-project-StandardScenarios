@@ -3,7 +3,7 @@
 # ------------------------------------------------
 
 dataset_id = "aeo2021_ref_com_energy_end_use_growth_factors"
-dataset_type = "benchmark"
+dataset_type = "sector_model"
 data_source = "NEMS Commercial Module"
 description = """
 AEO 2021 Reference Case Commercial Energy End Use Annual Growth Factors. 
