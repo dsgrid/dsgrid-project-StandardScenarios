@@ -2,11 +2,11 @@
 dimension_type = "subsector"
 description = "Maps Baseline ComStock building types to AEO 2021 commercial building types"
 file = "dimension_mappings/lookup_comstock_to_aeo2021_com_bldg_types.csv"
-mapping_type = "many_to_many_explicit_multipliers"
+mapping_type = "many_to_many_assignment"
 
 
 [[mappings]]
 dimension_type = "metric"
 description = "Maps Baseline ComStock end uses to AEO 2021 commercial end uses"
 file = "dimension_mappings/lookup_comstock_to_aeo2021_com_enduses.csv"
-mapping_type = "many_to_many_explicit_multipliers"
+mapping_type = "many_to_many_assignment"
