@@ -1,4 +1,4 @@
-id,name,state,local_time_zone
+id,name,state,time_zone
 1001,Autauga,AL,CentralPrevailing
 1003,Baldwin,AL,CentralPrevailing
 1005,Barbour,AL,CentralPrevailing
