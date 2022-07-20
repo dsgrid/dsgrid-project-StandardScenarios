@@ -1,0 +1,3 @@
+id,name,fuel_id,unit
+chp,Combined Heat and Power,?,MWh
+thermal_dg,Thermal DG,?,MWh
