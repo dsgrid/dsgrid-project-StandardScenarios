@@ -1,0 +1,133 @@
+# translated from dsgrid efs using dan's script
+# data located in: /projects/dsgrid/efs_datasets/loss_model
+
+# In [16]: lookup.head()
+# Out[16]: 
+#   geography  id sector
+# 0        AL   1    All
+# 1        AZ   2    All
+# 2        AR   3    All
+# 3        CA   4    All
+# 4        CO   5    All
+
+# In [17]: data.head()
+# Out[17]: 
+#             timestamp         All  id
+# 0 2012-01-01 06:00:00  469.949097   1
+# 1 2012-01-01 07:00:00  459.798950   1
+# 2 2012-01-01 08:00:00  446.293091   1
+# 3 2012-01-01 09:00:00  437.876099   1
+# 4 2012-01-01 10:00:00  436.073639   1
+
+dataset_id = "dsgrid_efs_2012_losses"
+dataset_type = "sector_model" # @ehale: what is the dataset type here? sector_model, benchmark, historical don't exactly fit
+data_source = "efs" # TODO: What is the datasource? EFS?
+description = "?" # TODO: What description?
+origin_creator = "Elaine Hale"
+origin_organization = "NREL"
+origin_contributors = ["Elaine Hale"]
+origin_project = "2018 Electric Futures Study"
+origin_date = "2018"
+origin_version = "0.2.0"
+source = "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/chp_dg.dsg"
+data_classification = "low"
+tags = ["losses", "efs", "2012", "dsgrid_v0.2.0"]
+data_schema_type = "standard"
+trivial_dimensions = ["weather_year", "model_year", "scenario", "data_source", "subsector"] 
+# TODO: do we apply the same losses for every model year? for every scenario?
+
+[data_schema]
+load_data_column_dimension = "metric" # TODO - is this right for losses?
+
+[[dimensions]] # TODO: need to recreated the data; analysis to make it county level losses
+type = "geography"
+name = "states" # TODO - change to county
+display_name = "States" # TODO - change to county
+file = "dimensions/geography.csv" # TODO - change to county
+module = "dsgrid.dimension.standard"
+class = "State" # TODO - change to county
+description = "?" # TODO - change to county
+
+[[dimensions]]
+type = "sector"
+name = "all-sectors"
+display_name = "All Sectors"
+file = "dimensions/sector.csv"
+module = "dsgrid.dimension.standard"
+class = "Sector"
+description = "All Sectors"
+
+[[dimensions]]
+type = "subsector"
+name = "all-subsectors"
+display_name = "All Subsectors"  # @ehale is this right?
+file = "dimensions/subsectors.csv"
+module = "dsgrid.dimension.standard"
+class = "Subsector"
+description = "All Subsectors"
+
+# @ehale currently data says "All" for all enduses, should we change this to "losses"?
+[[dimensions]]
+type = "metric"
+name = "losses"
+display_name = "Losses"
+file = "dimensions/metric.csv"
+module = "dsgrid.dimension.standard"
+class = "EnergyEndUse" # TODO: which class fits best? Do we need to make a new MetricDimension Type for Losses? https://github.com/dsgrid/dsgrid/blob/main/dsgrid/dimension/standard.py#L83-L114
+description = "Losses"
+
+[[dimensions]]
+type = "data_source"
+name = "efs" # TODO - what should this be?
+display_name = "EFS" # TODO - what should this be?
+file = "dimensions/data_source.csv" # TODO: doesn't exist; What is the data source?
+module = "dsgrid.dimension.standard"
+class = "DataSource"
+description = "?" # TODO - what should this be?
+
+
+[[dimensions]]
+type = "scenario"
+name = "Conus-2022-reference"
+display_name = "Reference"
+file = "dimensions/scenario.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+description = "?" # TODO: what should this be?
+
+# TODO: what is the model year??
+[[dimensions]]
+type = "model_year"
+name = "Model-Year-2018"
+display_name = "2018"
+file = "dimensions/model_year.csv"
+module = "dsgrid.dimension.standard"
+class = "ModelYear"
+description = "?" # TODO
+
+[[dimensions]] # shared with project
+class = "WeatherYear"
+description = "Weather year, 2012 only"
+file = "../../../dimensions/weather_years.csv"
+module = "dsgrid.dimension.standard"
+name = "2012 Weather Year"
+display_name = "2012 Weather"
+type = "weather_year"
+
+
+# Note: this does not match the project time
+[[dimensions]]
+name = "Time-2012-EST-hourly-periodEnding-noDST-noLeapDayAdjustment-total-UTChour1start"
+display_name = "2012 Hourly EST"
+type = "time"
+module = "dsgrid.dimension.standard"
+class = "Time"
+description = "Time dimension, 2012 hourly EST, period-ending, no DST, no Leap Day Adjustment, total value"
+time_type = "datetime"
+measurement_type = "total"
+str_format = "%Y-%m-%d %H:%M:%S"
+frequency = "P0DT1H0M0.000000S"
+leap_day_adjustment = "none"
+time_interval_type = "period_ending"
+timezone = "EasternStandard"
+ranges = [{start = "2012-01-01 01:00:00", end = "2013-01-01 00:00:00"}]
