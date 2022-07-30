@@ -1,291 +1,291 @@
 id,name,state,time_zone
-1001,Autauga,AL,CentralPrevailing
-1003,Baldwin,AL,CentralPrevailing
-1005,Barbour,AL,CentralPrevailing
-1007,Bibb,AL,CentralPrevailing
-1009,Blount,AL,CentralPrevailing
-1011,Bullock,AL,CentralPrevailing
-1013,Butler,AL,CentralPrevailing
-1015,Calhoun,AL,CentralPrevailing
-1017,Chambers,AL,CentralPrevailing
-1019,Cherokee,AL,CentralPrevailing
-1021,Chilton,AL,CentralPrevailing
-1023,Choctaw,AL,CentralPrevailing
-1025,Clarke,AL,CentralPrevailing
-1027,Clay,AL,CentralPrevailing
-1029,Cleburne,AL,CentralPrevailing
-1031,Coffee,AL,CentralPrevailing
-1033,Colbert,AL,CentralPrevailing
-1035,Conecuh,AL,CentralPrevailing
-1037,Coosa,AL,CentralPrevailing
-1039,Covington,AL,CentralPrevailing
-1041,Crenshaw,AL,CentralPrevailing
-1043,Cullman,AL,CentralPrevailing
-1045,Dale,AL,CentralPrevailing
-1047,Dallas,AL,CentralPrevailing
-1049,DeKalb,AL,CentralPrevailing
-1051,Elmore,AL,CentralPrevailing
-1053,Escambia,AL,CentralPrevailing
-1055,Etowah,AL,CentralPrevailing
-1057,Fayette,AL,CentralPrevailing
-1059,Franklin,AL,CentralPrevailing
-1061,Geneva,AL,CentralPrevailing
-1063,Greene,AL,CentralPrevailing
-1065,Hale,AL,CentralPrevailing
-1067,Henry,AL,CentralPrevailing
-1069,Houston,AL,CentralPrevailing
-1071,Jackson,AL,CentralPrevailing
-1073,Jefferson,AL,CentralPrevailing
-1075,Lamar,AL,CentralPrevailing
-1077,Lauderdale,AL,CentralPrevailing
-1079,Lawrence,AL,CentralPrevailing
-1081,Lee,AL,CentralPrevailing
-1083,Limestone,AL,CentralPrevailing
-1085,Lowndes,AL,CentralPrevailing
-1087,Macon,AL,CentralPrevailing
-1089,Madison,AL,CentralPrevailing
-1091,Marengo,AL,CentralPrevailing
-1093,Marion,AL,CentralPrevailing
-1095,Marshall,AL,CentralPrevailing
-1097,Mobile,AL,CentralPrevailing
-1099,Monroe,AL,CentralPrevailing
-1101,Montgomery,AL,CentralPrevailing
-1103,Morgan,AL,CentralPrevailing
-1105,Perry,AL,CentralPrevailing
-1107,Pickens,AL,CentralPrevailing
-1109,Pike,AL,CentralPrevailing
-1111,Randolph,AL,CentralPrevailing
-1113,Russell,AL,CentralPrevailing
-1115,St. Clair,AL,CentralPrevailing
-1117,Shelby,AL,CentralPrevailing
-1119,Sumter,AL,CentralPrevailing
-1121,Talladega,AL,CentralPrevailing
-1123,Tallapoosa,AL,CentralPrevailing
-1125,Tuscaloosa,AL,CentralPrevailing
-1127,Walker,AL,CentralPrevailing
-1129,Washington,AL,CentralPrevailing
-1131,Wilcox,AL,CentralPrevailing
-1133,Winston,AL,CentralPrevailing
-4001,Apache,AZ,MountainStandard
-4003,Cochise,AZ,MountainStandard
-4005,Coconino,AZ,MountainStandard
-4007,Gila,AZ,MountainStandard
-4009,Graham,AZ,MountainStandard
-4011,Greenlee,AZ,MountainStandard
-4012,La Paz,AZ,MountainStandard
-4013,Maricopa,AZ,MountainStandard
-4015,Mohave,AZ,MountainStandard
-4017,Navajo,AZ,MountainPrevailing
-4019,Pima,AZ,MountainStandard
-4021,Pinal,AZ,MountainStandard
-4023,Santa Cruz,AZ,MountainStandard
-4025,Yavapai,AZ,MountainStandard
-4027,Yuma,AZ,MountainStandard
-5001,Arkansas,AR,CentralPrevailing
-5003,Ashley,AR,CentralPrevailing
-5005,Baxter,AR,CentralPrevailing
-5007,Benton,AR,CentralPrevailing
-5009,Boone,AR,CentralPrevailing
-5011,Bradley,AR,CentralPrevailing
-5013,Calhoun,AR,CentralPrevailing
-5015,Carroll,AR,CentralPrevailing
-5017,Chicot,AR,CentralPrevailing
-5019,Clark,AR,CentralPrevailing
-5021,Clay,AR,CentralPrevailing
-5023,Cleburne,AR,CentralPrevailing
-5025,Cleveland,AR,CentralPrevailing
-5027,Columbia,AR,CentralPrevailing
-5029,Conway,AR,CentralPrevailing
-5031,Craighead,AR,CentralPrevailing
-5033,Crawford,AR,CentralPrevailing
-5035,Crittenden,AR,CentralPrevailing
-5037,Cross,AR,CentralPrevailing
-5039,Dallas,AR,CentralPrevailing
-5041,Desha,AR,CentralPrevailing
-5043,Drew,AR,CentralPrevailing
-5045,Faulkner,AR,CentralPrevailing
-5047,Franklin,AR,CentralPrevailing
-5049,Fulton,AR,CentralPrevailing
-5051,Garland,AR,CentralPrevailing
-5053,Grant,AR,CentralPrevailing
-5055,Greene,AR,CentralPrevailing
-5057,Hempstead,AR,CentralPrevailing
-5059,Hot Spring,AR,CentralPrevailing
-5061,Howard,AR,CentralPrevailing
-5063,Independence,AR,CentralPrevailing
-5065,Izard,AR,CentralPrevailing
-5067,Jackson,AR,CentralPrevailing
-5069,Jefferson,AR,CentralPrevailing
-5071,Johnson,AR,CentralPrevailing
-5073,Lafayette,AR,CentralPrevailing
-5075,Lawrence,AR,CentralPrevailing
-5077,Lee,AR,CentralPrevailing
-5079,Lincoln,AR,CentralPrevailing
-5081,Little River,AR,CentralPrevailing
-5083,Logan,AR,CentralPrevailing
-5085,Lonoke,AR,CentralPrevailing
-5087,Madison,AR,CentralPrevailing
-5089,Marion,AR,CentralPrevailing
-5091,Miller,AR,CentralPrevailing
-5093,Mississippi,AR,CentralPrevailing
-5095,Monroe,AR,CentralPrevailing
-5097,Montgomery,AR,CentralPrevailing
-5099,Nevada,AR,CentralPrevailing
-5101,Newton,AR,CentralPrevailing
-5103,Ouachita,AR,CentralPrevailing
-5105,Perry,AR,CentralPrevailing
-5107,Phillips,AR,CentralPrevailing
-5109,Pike,AR,CentralPrevailing
-5111,Poinsett,AR,CentralPrevailing
-5113,Polk,AR,CentralPrevailing
-5115,Pope,AR,CentralPrevailing
-5117,Prairie,AR,CentralPrevailing
-5119,Pulaski,AR,CentralPrevailing
-5121,Randolph,AR,CentralPrevailing
-5123,St. Francis,AR,CentralPrevailing
-5125,Saline,AR,CentralPrevailing
-5127,Scott,AR,CentralPrevailing
-5129,Searcy,AR,CentralPrevailing
-5131,Sebastian,AR,CentralPrevailing
-5133,Sevier,AR,CentralPrevailing
-5135,Sharp,AR,CentralPrevailing
-5137,Stone,AR,CentralPrevailing
-5139,Union,AR,CentralPrevailing
-5141,Van Buren,AR,CentralPrevailing
-5143,Washington,AR,CentralPrevailing
-5145,White,AR,CentralPrevailing
-5147,Woodruff,AR,CentralPrevailing
-5149,Yell,AR,CentralPrevailing
-6001,Alameda,CA,PacificPrevailing
-6003,Alpine,CA,PacificPrevailing
-6005,Amador,CA,PacificPrevailing
-6007,Butte,CA,PacificPrevailing
-6009,Calaveras,CA,PacificPrevailing
-6011,Colusa,CA,PacificPrevailing
-6013,Contra Costa,CA,PacificPrevailing
-6015,Del Norte,CA,PacificPrevailing
-6017,El Dorado,CA,PacificPrevailing
-6019,Fresno,CA,PacificPrevailing
-6021,Glenn,CA,PacificPrevailing
-6023,Humboldt,CA,PacificPrevailing
-6025,Imperial,CA,PacificPrevailing
-6027,Inyo,CA,PacificPrevailing
-6029,Kern,CA,PacificPrevailing
-6031,Kings,CA,PacificPrevailing
-6033,Lake,CA,PacificPrevailing
-6035,Lassen,CA,PacificPrevailing
-6037,Los Angeles,CA,PacificPrevailing
-6039,Madera,CA,PacificPrevailing
-6041,Marin,CA,PacificPrevailing
-6043,Mariposa,CA,PacificPrevailing
-6045,Mendocino,CA,PacificPrevailing
-6047,Merced,CA,PacificPrevailing
-6049,Modoc,CA,PacificPrevailing
-6051,Mono,CA,PacificPrevailing
-6053,Monterey,CA,PacificPrevailing
-6055,Napa,CA,PacificPrevailing
-6057,Nevada,CA,PacificPrevailing
-6059,Orange,CA,PacificPrevailing
-6061,Placer,CA,PacificPrevailing
-6063,Plumas,CA,PacificPrevailing
-6065,Riverside,CA,PacificPrevailing
-6067,Sacramento,CA,PacificPrevailing
-6069,San Benito,CA,PacificPrevailing
-6071,San Bernardino,CA,PacificPrevailing
-6073,San Diego,CA,PacificPrevailing
-6075,San Francisco,CA,PacificPrevailing
-6077,San Joaquin,CA,PacificPrevailing
-6079,San Luis Obispo,CA,PacificPrevailing
-6081,San Mateo,CA,PacificPrevailing
-6083,Santa Barbara,CA,PacificPrevailing
-6085,Santa Clara,CA,PacificPrevailing
-6087,Santa Cruz,CA,PacificPrevailing
-6089,Shasta,CA,PacificPrevailing
-6091,Sierra,CA,PacificPrevailing
-6093,Siskiyou,CA,PacificPrevailing
-6095,Solano,CA,PacificPrevailing
-6097,Sonoma,CA,PacificPrevailing
-6099,Stanislaus,CA,PacificPrevailing
-6101,Sutter,CA,PacificPrevailing
-6103,Tehama,CA,PacificPrevailing
-6105,Trinity,CA,PacificPrevailing
-6107,Tulare,CA,PacificPrevailing
-6109,Tuolumne,CA,PacificPrevailing
-6111,Ventura,CA,PacificPrevailing
-6113,Yolo,CA,PacificPrevailing
-6115,Yuba,CA,PacificPrevailing
-8001,Adams,CO,MountainPrevailing
-8003,Alamosa,CO,MountainPrevailing
-8005,Arapahoe,CO,MountainPrevailing
-8007,Archuleta,CO,MountainPrevailing
-8009,Baca,CO,MountainPrevailing
-8011,Bent,CO,MountainPrevailing
-8013,Boulder,CO,MountainPrevailing
-8014,Broomfield,CO,MountainPrevailing
-8015,Chaffee,CO,MountainPrevailing
-8017,Cheyenne,CO,MountainPrevailing
-8019,Clear Creek,CO,MountainPrevailing
-8021,Conejos,CO,MountainPrevailing
-8023,Costilla,CO,MountainPrevailing
-8025,Crowley,CO,MountainPrevailing
-8027,Custer,CO,MountainPrevailing
-8029,Delta,CO,MountainPrevailing
-8031,Denver,CO,MountainPrevailing
-8033,Dolores,CO,MountainPrevailing
-8035,Douglas,CO,MountainPrevailing
-8037,Eagle,CO,MountainPrevailing
-8039,Elbert,CO,MountainPrevailing
-8041,El Paso,CO,MountainPrevailing
-8043,Fremont,CO,MountainPrevailing
-8045,Garfield,CO,MountainPrevailing
-8047,Gilpin,CO,MountainPrevailing
-8049,Grand,CO,MountainPrevailing
-8051,Gunnison,CO,MountainPrevailing
-8053,Hinsdale,CO,MountainPrevailing
-8055,Huerfano,CO,MountainPrevailing
-8057,Jackson,CO,MountainPrevailing
-8059,Jefferson,CO,MountainPrevailing
-8061,Kiowa,CO,MountainPrevailing
-8063,Kit Carson,CO,MountainPrevailing
-8065,Lake,CO,MountainPrevailing
-8067,La Plata,CO,MountainPrevailing
-8069,Larimer,CO,MountainPrevailing
-8071,Las Animas,CO,MountainPrevailing
-8073,Lincoln,CO,MountainPrevailing
-8075,Logan,CO,MountainPrevailing
-8077,Mesa,CO,MountainPrevailing
-8079,Mineral,CO,MountainPrevailing
-8081,Moffat,CO,MountainPrevailing
-8083,Montezuma,CO,MountainPrevailing
-8085,Montrose,CO,MountainPrevailing
-8087,Morgan,CO,MountainPrevailing
-8089,Otero,CO,MountainPrevailing
-8091,Ouray,CO,MountainPrevailing
-8093,Park,CO,MountainPrevailing
-8095,Phillips,CO,MountainPrevailing
-8097,Pitkin,CO,MountainPrevailing
-8099,Prowers,CO,MountainPrevailing
-8101,Pueblo,CO,MountainPrevailing
-8103,Rio Blanco,CO,MountainPrevailing
-8105,Rio Grande,CO,MountainPrevailing
-8107,Routt,CO,MountainPrevailing
-8109,Saguache,CO,MountainPrevailing
-8111,San Juan,CO,MountainPrevailing
-8113,San Miguel,CO,MountainPrevailing
-8115,Sedgwick,CO,MountainPrevailing
-8117,Summit,CO,MountainPrevailing
-8119,Teller,CO,MountainPrevailing
-8121,Washington,CO,MountainPrevailing
-8123,Weld,CO,MountainPrevailing
-8125,Yuma,CO,MountainPrevailing
-9001,Fairfield,CT,EasternPrevailing
-9003,Hartford,CT,EasternPrevailing
-9005,Litchfield,CT,EasternPrevailing
-9007,Middlesex,CT,EasternPrevailing
-9009,New Haven,CT,EasternPrevailing
-9011,New London,CT,EasternPrevailing
-9013,Tolland,CT,EasternPrevailing
-9015,Windham,CT,EasternPrevailing
+01001,Autauga,AL,CentralPrevailing
+01003,Baldwin,AL,CentralPrevailing
+01005,Barbour,AL,CentralPrevailing
+01007,Bibb,AL,CentralPrevailing
+01009,Blount,AL,CentralPrevailing
+01011,Bullock,AL,CentralPrevailing
+01013,Butler,AL,CentralPrevailing
+01015,Calhoun,AL,CentralPrevailing
+01017,Chambers,AL,CentralPrevailing
+01019,Cherokee,AL,CentralPrevailing
+01021,Chilton,AL,CentralPrevailing
+01023,Choctaw,AL,CentralPrevailing
+01025,Clarke,AL,CentralPrevailing
+01027,Clay,AL,CentralPrevailing
+01029,Cleburne,AL,CentralPrevailing
+01031,Coffee,AL,CentralPrevailing
+01033,Colbert,AL,CentralPrevailing
+01035,Conecuh,AL,CentralPrevailing
+01037,Coosa,AL,CentralPrevailing
+01039,Covington,AL,CentralPrevailing
+01041,Crenshaw,AL,CentralPrevailing
+01043,Cullman,AL,CentralPrevailing
+01045,Dale,AL,CentralPrevailing
+01047,Dallas,AL,CentralPrevailing
+01049,DeKalb,AL,CentralPrevailing
+01051,Elmore,AL,CentralPrevailing
+01053,Escambia,AL,CentralPrevailing
+01055,Etowah,AL,CentralPrevailing
+01057,Fayette,AL,CentralPrevailing
+01059,Franklin,AL,CentralPrevailing
+01061,Geneva,AL,CentralPrevailing
+01063,Greene,AL,CentralPrevailing
+01065,Hale,AL,CentralPrevailing
+01067,Henry,AL,CentralPrevailing
+01069,Houston,AL,CentralPrevailing
+01071,Jackson,AL,CentralPrevailing
+01073,Jefferson,AL,CentralPrevailing
+01075,Lamar,AL,CentralPrevailing
+01077,Lauderdale,AL,CentralPrevailing
+01079,Lawrence,AL,CentralPrevailing
+01081,Lee,AL,CentralPrevailing
+01083,Limestone,AL,CentralPrevailing
+01085,Lowndes,AL,CentralPrevailing
+01087,Macon,AL,CentralPrevailing
+01089,Madison,AL,CentralPrevailing
+01091,Marengo,AL,CentralPrevailing
+01093,Marion,AL,CentralPrevailing
+01095,Marshall,AL,CentralPrevailing
+01097,Mobile,AL,CentralPrevailing
+01099,Monroe,AL,CentralPrevailing
+01101,Montgomery,AL,CentralPrevailing
+01103,Morgan,AL,CentralPrevailing
+01105,Perry,AL,CentralPrevailing
+01107,Pickens,AL,CentralPrevailing
+01109,Pike,AL,CentralPrevailing
+01111,Randolph,AL,CentralPrevailing
+01113,Russell,AL,CentralPrevailing
+01115,St. Clair,AL,CentralPrevailing
+01117,Shelby,AL,CentralPrevailing
+01119,Sumter,AL,CentralPrevailing
+01121,Talladega,AL,CentralPrevailing
+01123,Tallapoosa,AL,CentralPrevailing
+01125,Tuscaloosa,AL,CentralPrevailing
+01127,Walker,AL,CentralPrevailing
+01129,Washington,AL,CentralPrevailing
+01131,Wilcox,AL,CentralPrevailing
+01133,Winston,AL,CentralPrevailing
+04001,Apache,AZ,MountainStandard
+04003,Cochise,AZ,MountainStandard
+04005,Coconino,AZ,MountainStandard
+04007,Gila,AZ,MountainStandard
+04009,Graham,AZ,MountainStandard
+04011,Greenlee,AZ,MountainStandard
+04012,La Paz,AZ,MountainStandard
+04013,Maricopa,AZ,MountainStandard
+04015,Mohave,AZ,MountainStandard
+04017,Navajo,AZ,MountainPrevailing
+04019,Pima,AZ,MountainStandard
+04021,Pinal,AZ,MountainStandard
+04023,Santa Cruz,AZ,MountainStandard
+04025,Yavapai,AZ,MountainStandard
+04027,Yuma,AZ,MountainStandard
+05001,Arkansas,AR,CentralPrevailing
+05003,Ashley,AR,CentralPrevailing
+05005,Baxter,AR,CentralPrevailing
+05007,Benton,AR,CentralPrevailing
+05009,Boone,AR,CentralPrevailing
+05011,Bradley,AR,CentralPrevailing
+05013,Calhoun,AR,CentralPrevailing
+05015,Carroll,AR,CentralPrevailing
+05017,Chicot,AR,CentralPrevailing
+05019,Clark,AR,CentralPrevailing
+05021,Clay,AR,CentralPrevailing
+05023,Cleburne,AR,CentralPrevailing
+05025,Cleveland,AR,CentralPrevailing
+05027,Columbia,AR,CentralPrevailing
+05029,Conway,AR,CentralPrevailing
+05031,Craighead,AR,CentralPrevailing
+05033,Crawford,AR,CentralPrevailing
+05035,Crittenden,AR,CentralPrevailing
+05037,Cross,AR,CentralPrevailing
+05039,Dallas,AR,CentralPrevailing
+05041,Desha,AR,CentralPrevailing
+05043,Drew,AR,CentralPrevailing
+05045,Faulkner,AR,CentralPrevailing
+05047,Franklin,AR,CentralPrevailing
+05049,Fulton,AR,CentralPrevailing
+05051,Garland,AR,CentralPrevailing
+05053,Grant,AR,CentralPrevailing
+05055,Greene,AR,CentralPrevailing
+05057,Hempstead,AR,CentralPrevailing
+05059,Hot Spring,AR,CentralPrevailing
+05061,Howard,AR,CentralPrevailing
+05063,Independence,AR,CentralPrevailing
+05065,Izard,AR,CentralPrevailing
+05067,Jackson,AR,CentralPrevailing
+05069,Jefferson,AR,CentralPrevailing
+05071,Johnson,AR,CentralPrevailing
+05073,Lafayette,AR,CentralPrevailing
+05075,Lawrence,AR,CentralPrevailing
+05077,Lee,AR,CentralPrevailing
+05079,Lincoln,AR,CentralPrevailing
+05081,Little River,AR,CentralPrevailing
+05083,Logan,AR,CentralPrevailing
+05085,Lonoke,AR,CentralPrevailing
+05087,Madison,AR,CentralPrevailing
+05089,Marion,AR,CentralPrevailing
+05091,Miller,AR,CentralPrevailing
+05093,Mississippi,AR,CentralPrevailing
+05095,Monroe,AR,CentralPrevailing
+05097,Montgomery,AR,CentralPrevailing
+05099,Nevada,AR,CentralPrevailing
+05101,Newton,AR,CentralPrevailing
+05103,Ouachita,AR,CentralPrevailing
+05105,Perry,AR,CentralPrevailing
+05107,Phillips,AR,CentralPrevailing
+05109,Pike,AR,CentralPrevailing
+05111,Poinsett,AR,CentralPrevailing
+05113,Polk,AR,CentralPrevailing
+05115,Pope,AR,CentralPrevailing
+05117,Prairie,AR,CentralPrevailing
+05119,Pulaski,AR,CentralPrevailing
+05121,Randolph,AR,CentralPrevailing
+05123,St. Francis,AR,CentralPrevailing
+05125,Saline,AR,CentralPrevailing
+05127,Scott,AR,CentralPrevailing
+05129,Searcy,AR,CentralPrevailing
+05131,Sebastian,AR,CentralPrevailing
+05133,Sevier,AR,CentralPrevailing
+05135,Sharp,AR,CentralPrevailing
+05137,Stone,AR,CentralPrevailing
+05139,Union,AR,CentralPrevailing
+05141,Van Buren,AR,CentralPrevailing
+05143,Washington,AR,CentralPrevailing
+05145,White,AR,CentralPrevailing
+05147,Woodruff,AR,CentralPrevailing
+05149,Yell,AR,CentralPrevailing
+06001,Alameda,CA,PacificPrevailing
+06003,Alpine,CA,PacificPrevailing
+06005,Amador,CA,PacificPrevailing
+06007,Butte,CA,PacificPrevailing
+06009,Calaveras,CA,PacificPrevailing
+06011,Colusa,CA,PacificPrevailing
+06013,Contra Costa,CA,PacificPrevailing
+06015,Del Norte,CA,PacificPrevailing
+06017,El Dorado,CA,PacificPrevailing
+06019,Fresno,CA,PacificPrevailing
+06021,Glenn,CA,PacificPrevailing
+06023,Humboldt,CA,PacificPrevailing
+06025,Imperial,CA,PacificPrevailing
+06027,Inyo,CA,PacificPrevailing
+06029,Kern,CA,PacificPrevailing
+06031,Kings,CA,PacificPrevailing
+06033,Lake,CA,PacificPrevailing
+06035,Lassen,CA,PacificPrevailing
+06037,Los Angeles,CA,PacificPrevailing
+06039,Madera,CA,PacificPrevailing
+06041,Marin,CA,PacificPrevailing
+06043,Mariposa,CA,PacificPrevailing
+06045,Mendocino,CA,PacificPrevailing
+06047,Merced,CA,PacificPrevailing
+06049,Modoc,CA,PacificPrevailing
+06051,Mono,CA,PacificPrevailing
+06053,Monterey,CA,PacificPrevailing
+06055,Napa,CA,PacificPrevailing
+06057,Nevada,CA,PacificPrevailing
+06059,Orange,CA,PacificPrevailing
+06061,Placer,CA,PacificPrevailing
+06063,Plumas,CA,PacificPrevailing
+06065,Riverside,CA,PacificPrevailing
+06067,Sacramento,CA,PacificPrevailing
+06069,San Benito,CA,PacificPrevailing
+06071,San Bernardino,CA,PacificPrevailing
+06073,San Diego,CA,PacificPrevailing
+06075,San Francisco,CA,PacificPrevailing
+06077,San Joaquin,CA,PacificPrevailing
+06079,San Luis Obispo,CA,PacificPrevailing
+06081,San Mateo,CA,PacificPrevailing
+06083,Santa Barbara,CA,PacificPrevailing
+06085,Santa Clara,CA,PacificPrevailing
+06087,Santa Cruz,CA,PacificPrevailing
+06089,Shasta,CA,PacificPrevailing
+06091,Sierra,CA,PacificPrevailing
+06093,Siskiyou,CA,PacificPrevailing
+06095,Solano,CA,PacificPrevailing
+06097,Sonoma,CA,PacificPrevailing
+06099,Stanislaus,CA,PacificPrevailing
+06101,Sutter,CA,PacificPrevailing
+06103,Tehama,CA,PacificPrevailing
+06105,Trinity,CA,PacificPrevailing
+06107,Tulare,CA,PacificPrevailing
+06109,Tuolumne,CA,PacificPrevailing
+06111,Ventura,CA,PacificPrevailing
+06113,Yolo,CA,PacificPrevailing
+06115,Yuba,CA,PacificPrevailing
+08001,Adams,CO,MountainPrevailing
+08003,Alamosa,CO,MountainPrevailing
+08005,Arapahoe,CO,MountainPrevailing
+08007,Archuleta,CO,MountainPrevailing
+08009,Baca,CO,MountainPrevailing
+08011,Bent,CO,MountainPrevailing
+08013,Boulder,CO,MountainPrevailing
+08014,Broomfield,CO,MountainPrevailing
+08015,Chaffee,CO,MountainPrevailing
+08017,Cheyenne,CO,MountainPrevailing
+08019,Clear Creek,CO,MountainPrevailing
+08021,Conejos,CO,MountainPrevailing
+08023,Costilla,CO,MountainPrevailing
+08025,Crowley,CO,MountainPrevailing
+08027,Custer,CO,MountainPrevailing
+08029,Delta,CO,MountainPrevailing
+08031,Denver,CO,MountainPrevailing
+08033,Dolores,CO,MountainPrevailing
+08035,Douglas,CO,MountainPrevailing
+08037,Eagle,CO,MountainPrevailing
+08039,Elbert,CO,MountainPrevailing
+08041,El Paso,CO,MountainPrevailing
+08043,Fremont,CO,MountainPrevailing
+08045,Garfield,CO,MountainPrevailing
+08047,Gilpin,CO,MountainPrevailing
+08049,Grand,CO,MountainPrevailing
+08051,Gunnison,CO,MountainPrevailing
+08053,Hinsdale,CO,MountainPrevailing
+08055,Huerfano,CO,MountainPrevailing
+08057,Jackson,CO,MountainPrevailing
+08059,Jefferson,CO,MountainPrevailing
+08061,Kiowa,CO,MountainPrevailing
+08063,Kit Carson,CO,MountainPrevailing
+08065,Lake,CO,MountainPrevailing
+08067,La Plata,CO,MountainPrevailing
+08069,Larimer,CO,MountainPrevailing
+08071,Las Animas,CO,MountainPrevailing
+08073,Lincoln,CO,MountainPrevailing
+08075,Logan,CO,MountainPrevailing
+08077,Mesa,CO,MountainPrevailing
+08079,Mineral,CO,MountainPrevailing
+08081,Moffat,CO,MountainPrevailing
+08083,Montezuma,CO,MountainPrevailing
+08085,Montrose,CO,MountainPrevailing
+08087,Morgan,CO,MountainPrevailing
+08089,Otero,CO,MountainPrevailing
+08091,Ouray,CO,MountainPrevailing
+08093,Park,CO,MountainPrevailing
+08095,Phillips,CO,MountainPrevailing
+08097,Pitkin,CO,MountainPrevailing
+08099,Prowers,CO,MountainPrevailing
+08101,Pueblo,CO,MountainPrevailing
+08103,Rio Blanco,CO,MountainPrevailing
+08105,Rio Grande,CO,MountainPrevailing
+08107,Routt,CO,MountainPrevailing
+08109,Saguache,CO,MountainPrevailing
+08111,San Juan,CO,MountainPrevailing
+08113,San Miguel,CO,MountainPrevailing
+08115,Sedgwick,CO,MountainPrevailing
+08117,Summit,CO,MountainPrevailing
+08119,Teller,CO,MountainPrevailing
+08121,Washington,CO,MountainPrevailing
+08123,Weld,CO,MountainPrevailing
+08125,Yuma,CO,MountainPrevailing
+09001,Fairfield,CT,EasternPrevailing
+09003,Hartford,CT,EasternPrevailing
+09005,Litchfield,CT,EasternPrevailing
+09007,Middlesex,CT,EasternPrevailing
+09009,New Haven,CT,EasternPrevailing
+09011,New London,CT,EasternPrevailing
+09013,Tolland,CT,EasternPrevailing
+09015,Windham,CT,EasternPrevailing
 10001,Kent,DE,EasternPrevailing
 10003,New Castle,DE,EasternPrevailing
 10005,Sussex,DE,EasternPrevailing
