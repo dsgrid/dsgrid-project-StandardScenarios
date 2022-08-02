@@ -21,12 +21,12 @@
 
 dataset_id = "dsgrid_efs_2012_losses"
 dataset_type = "sector_model" # @ehale: what is the dataset type here? sector_model, benchmark, historical don't exactly fit
-data_source = "efs" # TODO: What is the datasource? EFS?
-description = "?" # TODO: What description?
+data_source = "dsgrid_efs"
+description = "State-level estimates of distribution and transmission losses for historical year 2012 derived from FERC 714 (and similar) historical system-level timeseries profiles of 2012 load and 2012 losses reported on EIA Form 861. Details are in https://www.nrel.gov/docs/fy18osti/71492.pdf, starting on page 61."
 origin_creator = "Elaine Hale"
 origin_organization = "NREL"
 origin_contributors = ["Elaine Hale"]
-origin_project = "2018 Electric Futures Study"
+origin_project = "NREL Electrification Futures Study"
 origin_date = "2018"
 origin_version = "0.2.0"
 source = "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/chp_dg.dsg"
@@ -34,21 +34,22 @@ data_classification = "low"
 tags = ["losses", "efs", "2012", "dsgrid_v0.2.0"]
 data_schema_type = "standard"
 trivial_dimensions = ["weather_year", "model_year", "scenario", "data_source", "subsector"] 
-# TODO: do we apply the same losses for every model year? for every scenario?
+# TODO: do we apply the same losses for every model year? for every scenario? @ehal says: We should apply the same loss rates for every model year and scenario. Basically we should have 2012 sales (EIA 861) + these losses = 2012 annual system load (FERC 714). For other years we would want to hold the ratios between sales and annual system load constant (compared to this data point).
 
 [data_schema]
-load_data_column_dimension = "metric" # TODO - is this right for losses?
+load_data_column_dimension = "metric"
 
-[[dimensions]] # TODO: need to recreated the data; analysis to make it county level losses
+# TODO: need a dimension mapping for states that includes a population-based disaggregation factor
+[[dimensions]] # TODO: can I simply point to supplemental mapping of states?
 type = "geography"
-name = "states" # TODO - change to county
-display_name = "States" # TODO - change to county
-file = "dimensions/geography.csv" # TODO - change to county
+name = "states"
+display_name = "States"
+file = "../../../dimensions/supplemental/states.csv"
 module = "dsgrid.dimension.standard"
-class = "State" # TODO - change to county
-description = "?" # TODO - change to county
+class = "State"
+description = "Lower 48 Contiguous US States"
 
-[[dimensions]]
+[[dimensions]] # TODO - how to map?
 type = "sector"
 name = "all-sectors"
 display_name = "All Sectors"
@@ -57,7 +58,7 @@ module = "dsgrid.dimension.standard"
 class = "Sector"
 description = "All Sectors"
 
-[[dimensions]]
+[[dimensions]] # TODO - how to map?
 type = "subsector"
 name = "all-subsectors"
 display_name = "All Subsectors"  # @ehale is this right?
@@ -78,32 +79,32 @@ description = "Losses"
 
 [[dimensions]]
 type = "data_source"
-name = "efs" # TODO - what should this be?
+name = "dsgrid-efs"
 display_name = "EFS" # TODO - what should this be?
 file = "dimensions/data_source.csv" # TODO: doesn't exist; What is the data source?
 module = "dsgrid.dimension.standard"
 class = "DataSource"
-description = "?" # TODO - what should this be?
+description = "dsgrid data for historical year 2012 created for the NREL Electrification Futures Study" 
 
-
+# use the resstock scenario dimension
 [[dimensions]]
 type = "scenario"
 name = "Conus-2022-reference"
 display_name = "Reference"
-file = "dimensions/scenario.csv"
+file = "../sector_models/resstock/dimensions/scenario_conus_2022_reference.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
-description = "?" # TODO: what should this be?
+description = "CONUS (Continental U.S.) 2022 Reference"
 
-# TODO: what is the model year??
+# TODO: Is there a 2012 model year dimension that currently exists that we can use instead?
 [[dimensions]]
 type = "model_year"
-name = "Model-Year-2018"
-display_name = "2018"
+name = "Model-Year-2012"
+display_name = "2012"
 file = "dimensions/model_year.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
-description = "?" # TODO
+description = "2012 Model Year"
 
 [[dimensions]] # shared with project
 class = "WeatherYear"
@@ -115,7 +116,7 @@ display_name = "2012 Weather"
 type = "weather_year"
 
 
-# Note: this does not match the project time
+# Note: this does not match the project time because of it being period-ending, not period-beginning
 [[dimensions]]
 name = "Time-2012-EST-hourly-periodEnding-noDST-noLeapDayAdjustment-total-UTChour1start"
 display_name = "2012 Hourly EST"
