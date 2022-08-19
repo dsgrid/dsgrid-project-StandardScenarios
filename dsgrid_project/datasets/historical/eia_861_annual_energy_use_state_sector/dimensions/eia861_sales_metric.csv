@@ -1,2 +1,2 @@
-id,name,fuel_id,units
+id,name,fuel_id,unit
 electricity_sales,electricity_sales,electricity,MWh

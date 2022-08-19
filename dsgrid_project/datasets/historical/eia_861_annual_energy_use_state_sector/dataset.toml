@@ -2,11 +2,11 @@ dataset_id = "eia_861_annual_energy_use_state_sector"
 data_source = "EIA 861"
 dataset_type = "historical"
 data_schema_type = "one_table"
-description = "EIA 861 Utility Customer Sales by State by Sector by Year for 2012-2020"
+description = "EIA 861 Utility Customer Sales (MWh) by State by Sector by Year for 2010-2020"
 origin_creator = "Meghan Mooney"
 origin_organization = "EIA"
 origin_contributors = [ "Lixi Liu", "Meghan Mooney", "Elaine Hale",]
-origin_project = "dsgrid Standard Scenarios" # TODO: what is this?
+origin_project = "dsgrid Standard Scenarios 2021" # TODO: what is this?
 origin_date = "2022-08-17"
 origin_version = "0.1.0"
 source = "Data extracted from EIA 861 utility customer sales"
@@ -18,21 +18,20 @@ trivial_dimensions = [ "subsector", "scenario", "data_source", "weather_year", "
 load_data_column_dimension = "metric"
 
 [[dimensions]] # already exists
-# TODO: pull the right states dimension
 type = "geography"
-name = "US_Census_Divisions"
-display_name = "Census Division"
-file = "dimensions/us_census_divisions.csv"
+name = "US States"
+display_name = "State"
+file = "../../../dimensions/supplemental/states.csv"
 module = "dsgrid.dimension.standard"
 class = "CensusDivision"
 description = ""
 
+
 [[dimensions]] # already exists
-# TODO: pull the right sector dimension
 type = "sector"
-name = ""
-display_name = ""
-file = ""
+name = "Sectors - Com-Res-Tra-Only"
+display_name = "Sector"
+file = "../../../dimensions/sectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Sector"
 description = ""
@@ -40,9 +39,9 @@ description = ""
 # TODO - how do we apply all subsectors?
 [[dimensions]]
 type = "subsector"
-name = ""
-display_name = ""
-file = ""
+name = "All Subsectors"
+display_name = "All Subsectors"
+file = "dimensions/subsectors_all.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
 description = ""
@@ -56,45 +55,41 @@ module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
 description = "Utility Customer Electricity Sales (MWh)"
 
-
-# TODO: do we have a scenario for historical data?
-[[dimensions]]
+[[dimensions]] # use the same file as resstock
 type = "scenario"
-name = ""
-display_name = ""
-file = ""
+name = "Conus-2022-reference"
+display_name = "Reference"
+file = "../../sector_models/resstock/dimensions/scenario_conus_2022_reference.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
-description = ""
+description = "Scenario CONUS (Continental U.S.) 2022 Reference"
 
-[[dimensions]] # already registered
+[[dimensions]]
 type = "data_source"
 name = "Data-Source-EIA861"
 display_name = "EIA 861"
-file = "dimensions/aeo2021_data_source.csv"
+file = "dimensions/data_source_eia861.csv"
 module = "dsgrid.dimension.standard"
 class = "DataSource"
 description = "EIA 861"
-# should I add more descriptions like Sales_Utl_Cust_XXXX and Disposition table used?
 
-# @ehale: is this right? how are we handling weather year for historic datasets since it will conflict with the project's?
 [[dimensions]]
 type = "weather_year"
-name = "Weather_Years-trivial-2012_to_2020"
+name = "Weather_Years-2010_to_2020"
 display_name = "None"
-file = "dimensions/weather_years_trivial_2012_to_2020.csv"
+file = "dimensions/weather_years_2010_to_2020.csv"
 module = "dsgrid.dimension.standard"
 class = "WeatherYear"
-description = "Weather years, 2012-2020"
+description = "Weather years, 2010-2020"
 
 [[dimensions]]
 type = "model_year"
-name = "Model_Years-2012_to_2020"
+name = "Model_Years-2010_to_2020"
 display_name = "None"
-file = "dimensions/model_years_2012_to_2020.csv"
+file = "dimensions/model_years_2010_to_2020.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
-description = "Model years, 2012-2020"
+description = "Model years, 2010-2020"
 
 
 # Should this be converted to no-op time?
@@ -103,10 +98,10 @@ type = "time"
 class = "AnnualTime"
 time_type = "annual"
 module = "dsgrid.dimension.standard"
-description = "Annual time 2012-2020"
-name = "annual_time-2012_to_2020"
+description = "Annual time 2010-2020"
+name = "annual_time-2010_to_2020"
 display_name = "Annual"
-ranges = [{start = "2012", end = "2020"}]
+ranges = [{start = "2010", end = "2020"}]
 str_format = "%Y"
 include_leap_day = true
 measurement_type = "total"
