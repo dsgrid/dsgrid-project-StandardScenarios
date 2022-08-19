@@ -12,19 +12,19 @@ origin_version = "0.1.0"
 source = "Data extracted from EIA 861 utility customer sales"
 data_classification = "low"
 tags = ["historical", "eia861", "sales"]
-trivial_dimensions = [ "subsector", "scenario", "data_source", "weather_year", "model_year"]
+trivial_dimensions = [ "subsector", "scenario", "data_source"]
 
 [data_schema]
 load_data_column_dimension = "metric"
 
-[[dimensions]] # already exists
-type = "geography"
+[[dimensions]] # this is different than the project (it includes AK and HI)
+class = "State"
+description = "US States"
+file = "dimensions/states.csv"
+module = "dsgrid.dimension.standard"
 name = "US States"
 display_name = "State"
-file = "../../../dimensions/supplemental/states.csv"
-module = "dsgrid.dimension.standard"
-class = "CensusDivision"
-description = ""
+type = "geography" 
 
 
 [[dimensions]] # already exists

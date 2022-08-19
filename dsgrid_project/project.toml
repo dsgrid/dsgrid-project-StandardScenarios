@@ -50,11 +50,11 @@ type = "geography"
 [[dimensions.base_dimensions]]
 class = "Sector"
 description = """
-dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Transportation  Only
+dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Industrial and Transportation
 """
 file = "dimensions/sectors.csv"
 module = "dsgrid.dimension.standard"
-name = "Sectors - Com-Res-Tra-Only"
+name = "Sectors - Com-Res-Ind-Trans"
 display_name = "Sector"
 type = "sector"
 
@@ -159,11 +159,11 @@ type = "weather_year"
 [[dimensions.supplemental_dimensions]]
 class = "State"
 description = """
-US States
+US States L48
 """
 file = "dimensions/supplemental/states.csv"
 module = "dsgrid.dimension.standard"
-name = "US States"
+name = "US States L48"
 display_name = "State"
 type = "geography"
 

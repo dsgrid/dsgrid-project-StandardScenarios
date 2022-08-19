@@ -137,6 +137,9 @@ def operational_data_read_xlsx(year):
     # treat furnished without charge as commercial sector
     df["sector"] = "com"
     
+    # Note: 2010 operational dataset has a CN state with 0 values for furnished without charge
+    df = df.loc[df.state!="CN"].copy()
+    
     return df
 
 
@@ -153,7 +156,19 @@ def process_eia_861():
         
         # filter for Sales and Customers only (not Revenue from Retail Power Market)
         df = df.loc[df.part!="C"]
-        df = df.loc[(df.state!="TX")&(df.part!="D")] # Texas is weird, need to filter further
+        
+        # @ehale: Why is this needed? There are no other states besides texas with part D. 
+        # I took this filter from the snippets script: https://github.nrel.gov/dsgrid/snippets/blob/master/ntbks/to_dataformat/EIA_data_to_dataformat.ipynb
+        df = df.drop(df.loc[(df.state!="TX")&(df.part=="D")].index)
+        
+        # rename existing columns to fit dsgrid dimension names
+        df["year"] = year # Note: year as col name (which is required by dsgrid Annual Time) is really confusing here because it can be convoluted when paired model_year, weather_year
+        df["geography"] = df["state"]
+        df["electricity_sales"] = df["sales"]
+        
+        # add weather_year, model_year (required by dsgrid for non-trivial dimensions)
+        df["weather_year"] = str(year) # Note: dsgrid requires id from dimension records to be str
+        df["model_year"] = str(year)
         
         dfs.append(df)
         
@@ -161,14 +176,8 @@ def process_eia_861():
     df = pd.concat(dfs)   
 
     # get state-year-sector sums
-    df = df[["data_year", "state", "sector", "sales"]].groupby(["data_year", "state", "sector"]).sum().reset_index()
-
-
-    # more column cleanup 
-    final_col_names = {
-        "data_year": "timestamp", # TODO is this year or timestamp?
-    }
-    df = df.rename(columns=final_col_names)
+    groupby_cols = ["weather_year", "model_year", "year", "geography", "sector"]
+    df = df[groupby_cols + ["electricity_sales"]].groupby(groupby_cols).sum().reset_index()
 
     return df
 
