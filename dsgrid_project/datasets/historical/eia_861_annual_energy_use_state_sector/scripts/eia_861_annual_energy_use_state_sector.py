@@ -162,7 +162,7 @@ def process_eia_861():
         df = df.drop(df.loc[(df.state!="TX")&(df.part=="D")].index)
         
         # rename existing columns to fit dsgrid dimension names
-        df["year"] = year # Note: year as col name (which is required by dsgrid Annual Time) is really confusing here because it can be convoluted when paired model_year, weather_year
+        df["time_year"] = year
         df["geography"] = df["state"]
         df["electricity_sales"] = df["sales"]
         
@@ -176,7 +176,7 @@ def process_eia_861():
     df = pd.concat(dfs)   
 
     # get state-year-sector sums
-    groupby_cols = ["weather_year", "model_year", "year", "geography", "sector"]
+    groupby_cols = ["weather_year", "model_year", "time_year", "geography", "sector"]
     df = df[groupby_cols + ["electricity_sales"]].groupby(groupby_cols).sum().reset_index()
 
     return df
