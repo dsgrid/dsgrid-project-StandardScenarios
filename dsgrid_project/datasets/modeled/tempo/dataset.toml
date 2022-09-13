@@ -3,7 +3,7 @@
 # --------------------------------------
 
 dataset_id = "tempo_conus_2022"
-dataset_type = "sector_model"
+dataset_type = "modeled"
 data_source = "tempo"
 description = """
 CONUS 2022 TEMPO county-level results for PEV charging."""
@@ -108,12 +108,6 @@ EV Scenarios:
 AEO Reference
 EFS High Electrification
 LDV Sales All-EV by 2035"""
-
-# TODO: uncomment and add registered scenario dimension for final-dataset
-# [[dimensions]]
-# type = "scenario"
-# dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
-# version = "1.0.0"
 
 [[dimensions]] # shared with project
 class = "WeatherYear"

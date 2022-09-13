@@ -3,7 +3,7 @@
 # --------------------------------------
 
 dataset_id = "conus_2022_reference_resstock"
-dataset_type = "sector_model"
+dataset_type = "modeled"
 data_source = "resstock"
 description = """
 Time-wrapped, simulated on 09/15/2021 using: 
