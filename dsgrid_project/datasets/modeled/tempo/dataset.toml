@@ -3,8 +3,9 @@
 # --------------------------------------
 
 dataset_id = "tempo_conus_2022"
-dataset_type = "sector_model"
+dataset_type = "modeled"
 data_source = "tempo"
+sector_description = "transportation"
 description = """
 CONUS 2022 TEMPO county-level results for PEV charging."""
 
@@ -83,7 +84,7 @@ TEMPO model"""
 class = "ModelYear"
 type = "model_year"
 name = "TEMPO Model Year"
-display_name = "TEMPO Model Year"
+display_name = "TEMPO Model Years"
 file = "dimensions/year.csv"
 description = """
 TEMPO modeling years for CONUS 2022 project, 2018-2050"""
@@ -109,12 +110,6 @@ AEO Reference
 EFS High Electrification
 LDV Sales All-EV by 2035"""
 
-# TODO: uncomment and add registered scenario dimension for final-dataset
-# [[dimensions]]
-# type = "scenario"
-# dimension_id = "dsgrid_conus_2022_scenarios__fcfa2979-d6c7-4811-9879-4ba09fe86777"
-# version = "1.0.0"
-
 [[dimensions]] # shared with project
 class = "WeatherYear"
 description = """
@@ -123,5 +118,5 @@ Weather year, 2012 only
 file = "../../../dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
 name = "2012 Weather Year"
-display_name = "2012 Weather"
+display_name = "Weather 2012"
 type = "weather_year"

@@ -1,26 +1,27 @@
 # --------------------------------------
-# ComStock Dataset Configuration File
+# ResStock Dataset Configuration File
 # --------------------------------------
 
-dataset_id = "conus_2022_reference_comstock"
-dataset_type = "sector_model"
-data_source = "comstock"
+dataset_id = "conus_2022_reference_resstock"
+dataset_type = "modeled"
+data_source = "resstock"
+sector_description = "residential"
 description = """
-Time-shifted and filled for Dec31, simulated on 09/29/2021 using:
-Comstock SHA: 00a3f79bab74d7fb8b71e7897486eb54b51277fc and
-buildstock SHA: 9e00b5649c96ad18bc6336ba9b24c81156f8fd2d
+Time-wrapped, simulated on 09/15/2021 using: 
+ResStock version: https://github.com/NREL/resstock/releases/tag/eulp_final and
+buildstock version: https://github.com/NREL/buildstockbatch/releases/tag/eulp_res_final 
 (Post-processed using AWS SightGlass and notebooks from https://github.com/NREL/SightGlassDataProcessing/tree/agg_for_dsgrid)
 """
 
 origin_creator = "Lixi Liu"
 origin_organization = "NREL"
-origin_contributors = ["Marlena Praprost", "Lixi Liu", "Andrew Parker"]
+origin_contributors = ["Anthony Fortanini", "Lixi Liu", "Noah Sandoval"]
 origin_project = "End Use Load Profiles"
-origin_date = "2021-09-29"
+origin_date = "2021-09-15"
 origin_version = "0.1.0"
-source = "s3://eulp/simulation_output/regional_runs/comstock/com_dsgrid_full_2/com_dsgrid_full_2/"
+source = "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012_dsgrid/"
 data_classification = "low"
-tags = ["commercial", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
+tags = ["residential", "conus-2022", "reference", "dsgrid_v0.2.0", "standard_scenarios"]
 data_schema_type = "standard"
 trivial_dimensions = ["sector", "weather_year", "model_year", "scenario", "data_source"]
 
@@ -29,55 +30,64 @@ load_data_column_dimension = "metric"
 
 [[dimensions]]
 type = "geography"
-name = "conus_2022-comstock_US_county_FIP"
+name = "conus_2022-resstock_US_county_FIP"
 display_name = "County"
-file = "dimensions/conus_2022-comstock_geography_county_fips.csv"
+file = "dimensions/conus_2022-resstock_geography_county_fips.csv"
 module = "dsgrid.dimension.standard"
 class = "County"
 description = """
-CONUS 2022 - ComStock US county in (older version) original FIP code (N=3,133),
-includes 23 AK counties, 1 county renamed in 2015 (SD, Shannon County -> SD, Oglala Lakota County),
-1 city (VA, Bedford City) that is now part of a county (VA Bedford County).
+CONUS 2022 - ResStock US county in original FIP code (N=3,108)
 """
 
 [[dimensions]]
 type = "sector"
-name = "commercial-sector"
-display_name = "Commercial"
-file = "dimensions/sector_commercial.csv"
+name = "residential-sector"
+display_name = "Residential"
+file = "dimensions/sector_residential.csv"
 module = "dsgrid.dimension.standard"
 class = "Sector"
 description = """
-Commercial sector only
+Residential sector only
 """
 
 [[dimensions]]
 type = "subsector"
-name = "conus_2022-comstock_building_types"
-display_name = "ComStock Building Type"
-file = "dimensions/conus_2022-comstock_subsectors.csv"
+name = "conus_2022-resstock_building_types"
+display_name = "ResStock Building Type"
+file = "dimensions/conus_2022-resstock_subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
 description = """
-CONUS 2022 - ComStock building types (N=14)
+CONUS 2022 - ResStock building types (N=5)
 """
 
 [[dimensions]]
 type = "metric"
-name = "conus_2022-comstock_energy_enduses_kwh"
-display_name = "ComStock End Use"
-file = "dimensions/conus_2022-comstock_end_uses.csv"
+name = "conus_2022-resstock_energy_enduses_kwh"
+display_name = "ResStock End Use"
+file = "dimensions/conus_2022-resstock_end_uses.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse"
 description = """
-CONUS 2022 - ComStock end uses (N=21, 4 fuel types)
+CONUS 2022 - ResStock end uses (N=48, 5 fuel types)
+"""
+
+[[dimensions]]
+type = "data_source"
+name = "ResStock-Data-Source"
+display_name = "ResStock"
+file = "dimensions/data_source_resstock.csv"
+module = "dsgrid.dimension.standard"
+class = "DataSource"
+description = """
+ResStock only data source
 """
 
 [[dimensions]]
 type = "scenario"
-name = "Conus-2022"
+name = "Conus-2022-reference"
 display_name = "Reference"
-file = "../resstock/dimensions/scenario_conus_2022_reference.csv"
+file = "dimensions/scenario_conus_2022_reference.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
 description = """
@@ -85,25 +95,14 @@ Scenario: CONUS (Continental U.S.) 2022 Reference
 """
 
 [[dimensions]]
-type = "data_source"
-name = "Comstock-Data-Source"
-display_name = "ComStock"
-file = "dimensions/data_source_comstock.csv"
-module = "dsgrid.dimension.standard"
-class = "DataSource"
-description = """
-Data source: ComStock
-"""
-
-[[dimensions]]
 type = "model_year"
 name = "Model-Year-2018"
-display_name = "2018"
-file = "../resstock/dimensions/model_year_2018.csv"
+display_name = "Model Year 2018"
+file = "dimensions/model_year_2018.csv"
 module = "dsgrid.dimension.standard"
 class = "ModelYear"
 description = """
-Model year: 2018
+Model year, 2018 only
 """
 
 [[dimensions]] # shared with project
@@ -114,7 +113,7 @@ Weather year, 2012 only
 file = "../../../dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
 name = "2012 Weather Year"
-display_name = "2012 Weather"
+display_name = "Weather 2012"
 type = "weather_year"
 
 # [[dimensions]] # for real dataset
@@ -138,7 +137,7 @@ type = "weather_year"
 class = "Time"
 frequency = "P0DT1H0M0.000000S"
 name = "Time-2012-EST-8784-hourly-periodEnding-noLeapDayAdjustment-total-Hour0Start"
-display_name = "2012 Hourly EST"
+display_name = "Time EST"
 ranges = [{start = "2012-01-01 00:00:00", end = "2012-12-31 23:00:00"}]
 time_type = "datetime"
 leap_day_adjustment = "none"
