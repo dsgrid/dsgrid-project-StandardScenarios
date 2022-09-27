@@ -5,6 +5,7 @@
 dataset_id = "conus_2022_reference_comstock"
 dataset_type = "modeled"
 data_source = "comstock"
+sector_description = "commercial"
 description = """
 Time-shifted and filled for Dec31, simulated on 09/29/2021 using:
 Comstock SHA: 00a3f79bab74d7fb8b71e7897486eb54b51277fc and

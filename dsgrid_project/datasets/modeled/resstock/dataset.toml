@@ -5,6 +5,7 @@
 dataset_id = "conus_2022_reference_resstock"
 dataset_type = "modeled"
 data_source = "resstock"
+sector_description = "residential"
 description = """
 Time-wrapped, simulated on 09/15/2021 using: 
 ResStock version: https://github.com/NREL/resstock/releases/tag/eulp_final and
