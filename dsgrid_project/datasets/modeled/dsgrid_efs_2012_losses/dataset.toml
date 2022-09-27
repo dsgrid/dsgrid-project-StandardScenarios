@@ -20,8 +20,9 @@
 # 4 2012-01-01 10:00:00  436.073639   1
 
 dataset_id = "dsgrid_efs_2012_losses"
-dataset_type = "sector_model"
+dataset_type = "modeled"
 data_source = "dsgrid_efs"
+sector_description = "electricity" # @ehale - is this the right sector description?
 description = "State-level estimates of distribution and transmission losses for historical year 2012 derived from FERC 714 (and similar) historical system-level timeseries profiles of 2012 load and 2012 losses reported on EIA Form 861. Details are in https://www.nrel.gov/docs/fy18osti/71492.pdf, starting on page 61."
 origin_creator = "Elaine Hale"
 origin_organization = "NREL"
@@ -91,7 +92,7 @@ description = "dsgrid data for historical year 2012 created for the NREL Electri
 type = "scenario"
 name = "Conus-2022-reference"
 display_name = "Reference"
-file = "../sector_models/resstock/dimensions/scenario_conus_2022_reference.csv"
+file = "../modeled/resstock/dimensions/scenario_conus_2022_reference.csv"
 module = "dsgrid.dimension.standard"
 class = "Scenario"
 description = "CONUS (Continental U.S.) 2022 Reference"
