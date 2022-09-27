@@ -14,17 +14,22 @@ dimension_associations = ["dimension_associations/data_source__metric.csv", "dim
 
 [[datasets]]
 dataset_id = "tempo_conus_2022"
-dataset_type = "sector_model"
+dataset_type = "modeled"
 version = "1.0.0"
 
 [[datasets]]
 dataset_id = "conus_2022_reference_resstock"
-dataset_type = "sector_model"
+dataset_type = "modeled"
 version = "1.0.0"
 
 [[datasets]]
 dataset_id = "conus_2022_reference_comstock"
-dataset_type = "sector_model"
+dataset_type = "modeled"
+version = "1.0.0"
+
+[[datasets]]
+dataset_id = "dsgrid_efs_2012_losses"
+dataset_type = "modeled"
 version = "1.0.0"
 
 [dimensions]
