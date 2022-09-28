@@ -22,7 +22,7 @@
 dataset_id = "dsgrid_efs_2012_losses"
 dataset_type = "modeled"
 data_source = "dsgrid_efs"
-sector_description = "electricity" # @ehale - is this the right sector description?
+sector_description = "electricity"
 description = "State-level estimates of distribution and transmission losses for historical year 2012 derived from FERC 714 (and similar) historical system-level timeseries profiles of 2012 load and 2012 losses reported on EIA Form 861. Details are in https://www.nrel.gov/docs/fy18osti/71492.pdf, starting on page 61."
 origin_creator = "Elaine Hale"
 origin_organization = "NREL"
@@ -40,7 +40,6 @@ trivial_dimensions = ["weather_year", "model_year", "scenario", "data_source", "
 [data_schema]
 load_data_column_dimension = "metric"
 
-# TODO: need a dimension mapping for states that includes a population-based disaggregation factor
 [[dimensions]] # TODO: can I simply point to supplemental mapping of states?
 type = "geography"
 name = "states"

@@ -1,0 +1,5 @@
+[[mappings]]
+description = "EFS Losses State to County mapping using proportion of state population in 2012"
+dimension_type = "geography"
+file = "dimension_mappings/state_to_county.csv"
+mapping_type = "many_to_one_map_fraction_sum_eq1_from_id"
