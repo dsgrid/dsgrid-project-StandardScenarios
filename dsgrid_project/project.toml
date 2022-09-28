@@ -8,10 +8,11 @@ dimension_associations = ["dimension_associations/data_source__metric.csv", "dim
 # ------------------------------------------------------
 # Input Datasets Dimensions
 # ------------------------------------------------------
-# [datasets]
-# benchmark = [] # ignoring this for now
-# historical = [] # ignoring this for now
+# historical
 
+# benchmark 
+
+# modeled
 [[datasets]]
 dataset_id = "tempo_conus_2022"
 dataset_type = "modeled"
