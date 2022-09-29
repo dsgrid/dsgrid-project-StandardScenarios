@@ -1,18 +1,21 @@
-# TODO: This configuration is under active development. Currently it is set up for TEMPO, ComStock, ResStock data only but it will later be expanded to include all project configuration details.
-
+# TODO: This configuration is under active development. Currently it is set up for TEMPO, ComStock, ResStock, and EIA861 data only but it will later be expanded to include all project configuration details.
+project_id = "dsgrid_conus_2022"
 description = """Dataset created for the FY21 dsgrid Load Profile Tool for Grid Modeling project"""
 name = "dsgrid CONUS 2022"
-project_id = "dsgrid_conus_2022"
-dimension_associations = ["dimension_associations/data_source__metric.csv", "dimension_associations/data_source__sector.csv", "dimension_associations/data_source__subsector.csv", ]
+dimension_associations = ["dimension_associations/data_source__metric.csv", "dimension_associations/data_source__sector.csv", "dimension_associations/data_source__subsector.csv", "dimension_associations/data_source__model_year.csv"]
 
 # ------------------------------------------------------
 # Input Datasets Dimensions
 # ------------------------------------------------------
-# historical
+# ------- historical ------- 
+[[datasets]]
+dataset_id = "eia_861_annual_energy_use_state_sector"
+dataset_type = "historical"
+version = "1.0.0"
 
-# benchmark 
+# ------- benchmark  ------- 
 
-# modeled
+# ------- modeled ------- 
 [[datasets]]
 dataset_id = "tempo_conus_2022"
 dataset_type = "modeled"
@@ -112,14 +115,14 @@ name = "CONUS-2022-scenarios"
 display_name = "Scenario"
 type = "scenario"
 
-[[dimensions.base_dimensions]]
+[[dimensions.base_dimensions]] # TODO: needs to be updated with full list of dsgrid standard scenario data sources
 class = "DataSource"
 description = """
-dsgrid Standard Scenarios 2021 Data Sources; ComStock, TEMPO, ResStock Only
+dsgrid Standard Scenarios 2021 Data Sources; ComStock, TEMPO, ResStock, EIA 861, and others
 """
 file = "dimensions/sources.csv"
 module = "dsgrid.dimension.standard"
-name = "Data-Sources - ComStock-ResStock-TEMPO-Only"
+name = "Data-Sources for dsgrid Standard Scenarios 2021"
 display_name = "Data Source"
 type = "data_source"
 
@@ -242,7 +245,7 @@ mapping_type = "many_to_one_aggregation"
 name = "US Counties 2020 L48"
 type = "geography"
 [dimension_mappings.base_to_supplemental.to_dimension]
-name = "US States"
+name = "US States L48"
 type = "geography"
 
 [[dimension_mappings.base_to_supplemental]]

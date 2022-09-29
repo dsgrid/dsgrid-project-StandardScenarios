@@ -157,10 +157,6 @@ def process_eia_861():
         # filter for Sales and Customers only (not Revenue from Retail Power Market)
         df = df.loc[df.part!="C"]
         
-        # @ehale: Why is this needed? There are no other states besides texas with part D. 
-        # I took this filter from the snippets script: https://github.nrel.gov/dsgrid/snippets/blob/master/ntbks/to_dataformat/EIA_data_to_dataformat.ipynb
-        df = df.drop(df.loc[(df.state!="TX")&(df.part=="D")].index)
-        
         # rename existing columns to fit dsgrid dimension names
         df["time_year"] = year
         df["geography"] = df["state"]
