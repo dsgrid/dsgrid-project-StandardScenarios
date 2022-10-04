@@ -16,8 +16,6 @@ dimension_type = "metric"
 file = "dimension_mappings/metric_to_metric.csv"
 mapping_type = "one_to_one"
 
-# EIA 861 uses a subset of the scenarios in the project. It only uses reference and that gets duplicated/mapped to all the other project scenarios. However, currently there is no project level dimension_association saying that we only expect a subset (i.e., "reference") of the scenario dimension where the data_source == "eia861"
-# TODO: may need to open a dsgrid issue about this to make sure we are using the dimension associations the way we expect to
 [[mappings]] # scenario
 description = "EIA 861 historical data to project scenarios"
 dimension_type = "scenario"

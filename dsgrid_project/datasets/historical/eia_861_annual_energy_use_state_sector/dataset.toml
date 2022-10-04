@@ -1,22 +1,15 @@
-#   weather_year model_year  time_year geography sector  electricity_sales
-# 0         2010       2010       2010        AK    com          2835868.0
-# 1         2010       2010       2010        AK    ind          1324083.0
-# 2         2010       2010       2010        AK    res          2093217.0
-# 3         2010       2010       2010        AK  trans                0.0
-# 4         2010       2010       2010        AL    com         22986470.0
-
 dataset_id = "eia_861_annual_energy_use_state_sector"
 data_source = "EIA 861"
 dataset_type = "historical"
 sector_description = ""
 data_schema_type = "one_table"
-description = "EIA 861 Utility Customer Sales (MWh) by State by Sector by Year for 2010-2020" # TODO: update description to include more processing details and point to the script file
+description = "EIA 861 Utility Customer Sales (MWh) by State by Sector by Year for 2010-2020. This yearly 2010-2020 data was collected from EIA and processed by NREL dsgrid team. The Sales_Ult_Cust_<year> dataset was processed to get total sales (MWh) to customers by sector (com, res, ind, trans). The original data is utility-state, but for this dataset, we took the state sums. Furnished without Charge sales from the Operational_Data_{year} table were added to the commercial sector. Data processing scripts can be found in the dsgrid-Standard-Scenarios project repository under dsgrid-project/historical/eia_861_annual_energy_use_state_sector/scripts."
 origin_creator = "Meghan Mooney"
 origin_organization = "EIA"
-origin_contributors = [ "Lixi Liu", "Meghan Mooney", "Elaine Hale",] # TODO: who should this be if organization = EIA?
+origin_contributors = ["EIA electricity data experts, infoelectric@eia.gov", "Meghan Mooney (NREL)",  "Lixi Liu (NREL)","Elaine Hale (NREL)"]
 origin_project = "EIA 861"
-origin_date = "2022-08-17" # TODO: this date should change to eia 861 publication date
-origin_version = "0.1.0" # TODO: this date should change to eia 861 version
+origin_date = "2021-11-03"
+origin_version = "2010-2020"
 source = "Data extracted from EIA 861 utility customer sales"
 data_classification = "low"
 tags = ["historical", "eia861", "sales"]
@@ -61,7 +54,7 @@ name = "EIA861_customer_sales"
 display_name = "Customer Sales"
 file = "dimensions/eia861_sales_metric.csv"
 module = "dsgrid.dimension.standard"
-class = "EnergyEndUse" # TODO: is this right? Or do we need a new class for this?
+class = "EnergyEndUse"
 description = "Utility Customer Electricity Sales (MWh)"
 
 [[dimensions]] # use the same file as resstock
