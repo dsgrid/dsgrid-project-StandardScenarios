@@ -136,3 +136,6 @@ dmypy.json
 
 # Mac
 **.DS_STORE
+
+# dsgrid log files
+**_missing_dimension_record_combinations.csv

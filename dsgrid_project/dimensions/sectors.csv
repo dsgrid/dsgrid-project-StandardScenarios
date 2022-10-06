@@ -1,4 +1,5 @@
 id,name
-com,Com
-res,Res
-trans,Trans
+com,Commercial
+res,Residential
+trans,Transportation
+ind,Industrial
