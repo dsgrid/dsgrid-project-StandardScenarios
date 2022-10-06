@@ -14,29 +14,36 @@ dsgrid registry --offline datasets register "/Users/mmooney/Documents/github/git
 dsgrid registry --offline projects submit-dataset -d "eia_861_annual_energy_use_state_sector" -p "dsgrid_conus_2022" -m "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dimension_mappings.toml" -l "test"
 """
 
-import os
+import shutil
 from pathlib import Path
 from dsgrid.common import REMOTE_REGISTRY, LOCAL_REGISTRY
 from dsgrid.registry.registry_manager import RegistryManager
 
 
 # start with fresh offline mode registry
-local_test_registry = Path("~/.dsgrid-registry-test")
+local_test_registry = Path.home() / ".dsgrid-registry-test"
 if local_test_registry.exists():
-    local_test_registry.rmdir()
+    shutil.rmtree(local_test_registry)
 
-registry_manager = RegistryManager.load(
-            local_test_registry, REMOTE_REGISTRY, offline_mode=True, no_prompts=True
-        )
 
 submitter = "mmooney"
 
-project_dir = Path("/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project")
+project_dir = Path().absolute() / "dsgrid_project"
 dataset_dir = project_dir / "datasets" / "historical" / "eia_861_annual_energy_use_state_sector"
 project_toml = project_dir / "project.toml"
 dataset_toml = dataset_dir / "dataset.toml"
 dimension_mapping_file = dataset_dir / "dimension_mappings.toml"
-dataset_path = Path("/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/eia861/processed/eia_861_annual_energy_use_state_sector")
+dataset_path = Path("/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/eia861/processed/eia_861_annual_energy_use_state_sector") # located on dsgrid-load teams files
+
+# remove tmp supplemental dir
+tmp_supplemental_dir = project_dir / "__tmp_supplemental__"
+if tmp_supplemental_dir.exists():
+    shutil.rmtree(tmp_supplemental_dir)
+
+
+registry_manager = RegistryManager.load(
+            local_test_registry, REMOTE_REGISTRY, offline_mode=True, no_prompts=True
+        )
 
 manager = registry_manager.project_manager
 
