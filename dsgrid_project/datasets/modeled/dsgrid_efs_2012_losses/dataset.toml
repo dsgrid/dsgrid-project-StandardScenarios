@@ -37,12 +37,12 @@ data_schema_type = "standard"
 trivial_dimensions = ["weather_year", "model_year", "scenario", "data_source", "subsector"] 
 # TODO: do we apply the same losses for every model year? for every scenario? @ehal says: We should apply the same loss rates for every model year and scenario. Basically we should have 2012 sales (EIA 861) + these losses = 2012 annual system load (FERC 714). For other years we would want to hold the ratios between sales and annual system load constant (compared to this data point).
 
-# TODO: not sure if project association for data_source__model_year is correct here for dsgrid_efs_2012_losses. Do we expect only 2012 model year?
+# TODO: not sure if project association for data_source__model_year is correct here for dsgrid_efs_2012_losses. Do we expect only 2012 model year? Answer depends on TODO above.
 
 [data_schema]
 load_data_column_dimension = "metric"
 
-[[dimensions]] # TODO: can I simply point to supplemental mapping of states?
+[[dimensions]]
 type = "geography"
 name = "states"
 display_name = "States"
@@ -51,7 +51,7 @@ module = "dsgrid.dimension.standard"
 class = "State"
 description = "Lower 48 Contiguous US States"
 
-[[dimensions]] # TODO - how to map?
+[[dimensions]]
 type = "sector"
 name = "all-sectors"
 display_name = "All Sectors"
@@ -60,10 +60,10 @@ module = "dsgrid.dimension.standard"
 class = "Sector"
 description = "All Sectors"
 
-[[dimensions]] # TODO - how to map?
+[[dimensions]]
 type = "subsector"
 name = "unspecified-subsectors"
-display_name = "Subsector Unspecified"  # @ehale is this right?
+display_name = "Subsector Unspecified"
 file = "dimensions/subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
@@ -97,7 +97,6 @@ module = "dsgrid.dimension.standard"
 class = "Scenario"
 description = "CONUS (Continental U.S.) 2022 Reference"
 
-# TODO: Is there a 2012 model year dimension that currently exists that we can use instead?
 [[dimensions]]
 type = "model_year"
 name = "Model-Year-2012"
