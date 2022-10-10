@@ -71,12 +71,12 @@ description = "Subsector Unspecified"
 
 [[dimensions]] 
 type = "metric"
-name = "losses" # The metric csv records just say "electricity unspecified". Should this change from losses to something else as a result?
-display_name = "Losses" # same question here
+name = "Unspecified Electricity"
+display_name = "Unspecified Electricity"
 file = "dimensions/metric.csv"
 module = "dsgrid.dimension.standard"
 class = "EnergyEndUse" 
-description = "Losses" # same question here
+description = "Unspecified Electricity"
 
 [[dimensions]]
 type = "data_source"
