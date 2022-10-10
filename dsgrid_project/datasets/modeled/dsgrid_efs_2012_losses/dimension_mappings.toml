@@ -1,5 +1,26 @@
+# geography
 [[mappings]]
-description = "EFS Losses State to County mapping using proportion of state population in 2012"
+description = "EFS Losses State to County mapping using proportion of state population in 2012" # TODO 2012 or 2020? -- is this the same as the data in eia861?
 dimension_type = "geography"
-file = "dimension_mappings/state_to_county.csv"
-mapping_type = "many_to_one_map_fraction_sum_eq1_from_id"
+file = "../../historical/eia_861_annual_energy_use_state_sector/dimension_mappings/state_to_county.csv"
+mapping_type = "many_to_many_disaggregation"
+
+# sector
+[[mappings]]
+description = "All Sectors to Unspecified Sector"
+dimension_type = "sector"
+file = "dimension_mappings/sector_to_sector.csv"
+mapping_type = "one_to_one"
+
+# metric
+[[mappings]]
+description = "All Electricity Metric to Electricity Unspecified Metric"
+dimension_type = "metric"
+file = "dimension_mappings/metric_to_metric.csv"
+mapping_type = "one_to_one"
+
+[[mappings]] # scenario
+description = "EIA 861 historical data to project scenarios"
+dimension_type = "scenario"
+file = "../../historical/eia_861_annual_energy_use_state_sector/dimension_mappings/scenario_to_scenario.csv"
+mapping_type = "duplication"
