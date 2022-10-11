@@ -27,9 +27,9 @@
 # 4 2012-01-01 10:00:00  43.563129         0.0   1
 
 dataset_id = "dsgrid_efs_2012_distributed_generation"
-dataset_type = "historical" # @ehale: what is the dataset type here? sector_model, benchmark, historical don't exactly fit; this is a historical-modeled kind of dataset
-data_source = "dsgrid-efs" # TODO: Do we want to differentiate this data_source from the losses data_source, e.g., dsgrid-efs-losses and dsgrid-efs-chp? Or just have the same datasource for both datasets?
-description = "Combined heat and power (CHP) and behind-the-meter distributed thermal generation estimates derived from DOE Combined Heat and Power (CHP) Installation Databas, EIA Form 860, EIA Form 923, and EPA continuous emission monitoring systems (CEMS) data. Details in https://www.nrel.gov/docs/fy18osti/71492.pdf starting on page 56."
+dataset_type = "historical"
+data_source = "dsgrid-efs-dg" # TODO: Do we want to differentiate this data_source from the losses data_source, e.g., dsgrid-efs-losses and dsgrid-efs-chp? Or just have the same datasource for both datasets?
+description = "Combined heat and power (CHP) and behind-the-meter distributed thermal generation estimates derived from DOE Combined Heat and Power (CHP) Installation Database, EIA Form 860, EIA Form 923, and EPA continuous emission monitoring systems (CEMS) data. Details in https://www.nrel.gov/docs/fy18osti/71492.pdf starting on page 56 and described in more detail in Appendix I"
 origin_creator = "Elaine Hale"
 origin_organization = "NREL"
 origin_contributors = ["Elaine Hale"]
@@ -66,40 +66,30 @@ description = "Commercial, Industrial, and Residential Sectors"
 
 [[dimensions]]
 type = "subsector"
-name = "all-subsectors"
-display_name = "All Subsectors"  # @ehale is this right?
+name = "unspecified-subsectors"
+display_name = "Unspecified Subsectors"
 file = "dimensions/subsectors.csv"
 module = "dsgrid.dimension.standard"
 class = "Subsector"
-description = "All Subsectors"
+description = "Unspecified Subsectors"
 
 [[dimensions]]
-type = "metric" # TODO: units are in MWh. We might need to apply a *1000 factor in the mapping? Or can dsgrid handle these kinds of conversions? Also, does dsgrid detect that there is a unit mismatch?
+type = "metric"
 name = "chp_dg"
 display_name = "CHP and Thermal DG"
 file = "dimensions/metric.csv"
 module = "dsgrid.dimension.standard"
-class = "EnergyEndUse" # TODO: which class fits best? Do we need to make a new MetricDimension Type for DG? https://github.com/dsgrid/dsgrid/blob/main/dsgrid/dimension/standard.py#L83-L114
+class = "EnergyEndUse"
 description = "Combined Heat and Power and Thermal DG from the EFS study"
 
 [[dimensions]]
 type = "data_source"
-name = "dsgrid-efs"
-display_name = "dsgrid EFS"
-file = "../../benchmark/dsgrid_efs_2012_losses/dimensions/data_source.csv"
-module = "dsgrid.dimension.standard"
-class = "DataSource"
-description = "Electric Futures Study (2018)" # TODO - make sure this is the same
-
-# reuse data_source dim records from losses path
-[[dimensions]]
-type = "data_source"
-name = "dsgrid-efs"
-display_name = "EFS"
+name = "dsgrid-efs-dg"
+display_name = "dsgrid EFS DG"
 file = "../..//benchmark/dsgrid_efs_2012_losses/dimensions/data_source.csv"
 module = "dsgrid.dimension.standard"
 class = "DataSource"
-description = "dsgrid data for historical year 2012 created for the NREL Electrification Futures Study" 
+description = "dsgrid distributed generation data for historical year 2012 created for the NREL Electrification Futures Study" 
 
 # use the resstock scenario dimension
 [[dimensions]]
@@ -111,7 +101,7 @@ module = "dsgrid.dimension.standard"
 class = "Scenario"
 description = "CONUS (Continental U.S.) 2022 Reference"
 
-# use the same weather_year as losses
+# TODO: @ehale: What are we doing here for the project out years? Are we assuming some similar CHP_DG rate moving forward? Does that mean we need to make a derived dataset from this?
 [[dimensions]]
 type = "model_year"
 name = "Model-Year-2012"
@@ -129,7 +119,6 @@ module = "dsgrid.dimension.standard"
 name = "2012 Weather Year"
 display_name = "2012 Weather"
 type = "weather_year"
-
 
 # Note: this does not match the project time because of it being period-ending, not period-beginning
 [[dimensions]]
