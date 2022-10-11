@@ -80,12 +80,12 @@ description = "Unspecified Electricity"
 
 [[dimensions]]
 type = "data_source"
-name = "dsgrid-efs"
-display_name = "EFS"
+name = "dsgrid-efs-losses"
+display_name = "dsgrid EFS losses"
 file = "dimensions/data_source.csv"
 module = "dsgrid.dimension.standard"
 class = "DataSource"
-description = "dsgrid data for historical year 2012 created for the NREL Electrification Futures Study" 
+description = "dsgrid loss data for historical year 2012 created for the NREL Electrification Futures Study" 
 
 # use the resstock scenario dimension
 [[dimensions]]
