@@ -20,7 +20,7 @@ file = "dimension_mappings/metric_to_metric.csv"
 mapping_type = "one_to_one"
 
 [[mappings]] # scenario
-description = "EIA 861 historical data to project scenarios"
+description = "EFS historical data to project scenarios"
 dimension_type = "scenario"
 file = "../../historical/eia_861_annual_energy_use_state_sector/dimension_mappings/scenario_to_scenario.csv"
 mapping_type = "duplication"
