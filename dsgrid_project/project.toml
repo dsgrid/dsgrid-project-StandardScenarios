@@ -13,6 +13,11 @@ dataset_id = "eia_861_annual_energy_use_state_sector"
 dataset_type = "historical"
 version = "1.0.0"
 
+[[datasets]]
+dataset_id = "dsgrid_efs_2012_distributed_generation"
+dataset_type = "historical"
+version = "1.0.0"
+
 # ------- benchmark  ------- 
 
 # ------- modeled ------- 
