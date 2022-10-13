@@ -69,5 +69,6 @@ resstock,wood_heating
 tempo,electricity_ev_dcfc
 tempo,electricity_ev_l1l2
 eia861,electricity_unspecified
-dsgrid-efs-dg,electricity_chp
-dsgrid-efs-dg,electricity_thermal_dg
+dsgrid_efs_losses,electricity_unspecified
+dsgrid_efs_dg,electricity_chp
+dsgrid_efs_dg,electricity_thermal_dg

@@ -3,4 +3,5 @@ comstock,Comstock
 resstock,Resstock
 tempo,Tempo
 eia861,EIA 861
-dsgrid-efs-dg,dsgrid EFS Distributed Generation
+dsgrid_efs_losses,dsgrid EFS losses
+dsgrid_efs_dg,dsgrid EFS Distributed Generation

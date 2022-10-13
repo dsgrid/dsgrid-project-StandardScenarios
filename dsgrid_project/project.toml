@@ -36,8 +36,13 @@ dataset_id = "conus_2022_reference_comstock"
 dataset_type = "modeled"
 version = "1.0.0"
 
+[[datasets]]
+dataset_id = "dsgrid_efs_2012_losses"
+dataset_type = "modeled"
+version = "1.0.0"
+
 [dimensions]
-all_in_one_supplemental_dimensions = ["sector", "subsector", "data_source"]
+all_in_one_supplemental_dimensions = ["sector", "subsector", "data_source"] #, "metric"] -- add metric here?
 
 # ------------------------------------------------------
 # Base Dimensions
