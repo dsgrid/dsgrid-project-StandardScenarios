@@ -28,3 +28,4 @@ tempo,phev_pickup
 tempo,phev_suv
 eia861,unspecified
 dsgrid_efs_losses,unspecified
+dsgrid_efs_dg,unspecified

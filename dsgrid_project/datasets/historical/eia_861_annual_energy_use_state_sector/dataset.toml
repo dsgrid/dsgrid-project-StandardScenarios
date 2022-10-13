@@ -33,7 +33,7 @@ class = "Sector"
 description = """
 dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Industrial and Transportation
 """
-file = "../../../dimensions/sectors.csv"
+file = "dimensions/sectors.csv"
 module = "dsgrid.dimension.standard"
 name = "Sectors - Com-Res-Ind-Trans"
 display_name = "Sector"

@@ -7,3 +7,6 @@ eia861,res
 eia861,ind
 eia861,trans
 dsgrid_efs_losses,unspecified
+dsgrid_efs_dg,com
+dsgrid_efs_dg,res
+dsgrid_efs_dg,ind
