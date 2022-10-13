@@ -20,8 +20,8 @@
 # 4 2012-01-01 10:00:00  436.073639   1
 
 dataset_id = "dsgrid_efs_2012_losses"
-dataset_type = "modeled"
-data_source = "dsgrid_efs"
+dataset_type = "historical"
+data_source = "dsgrid_efs_losses"
 sector_description = "electricity"
 description = "State-level estimates of distribution and transmission losses for historical year 2012 derived from FERC 714 (and similar) historical system-level timeseries profiles of 2012 load and 2012 losses reported on EIA Form 861. Details are in https://www.nrel.gov/docs/fy18osti/71492.pdf, starting on page 61."
 origin_creator = "Elaine Hale"

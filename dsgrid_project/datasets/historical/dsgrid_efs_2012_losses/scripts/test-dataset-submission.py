@@ -8,10 +8,10 @@ CLI COMMANDS:
 dsgrid registry --offline projects register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/project.toml" -l "test"
 
 # register the dataset
-dsgrid registry --offline datasets register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/modeled/dsgrid_efs_2012_losses/dataset.toml" "/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/efs_datasets/loss_model" -l "test"
+dsgrid registry --offline datasets register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_losses/dataset.toml" "/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/efs_datasets/loss_model" -l "test"
 
 # submit dataset to project
-dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_2012_losses" -p "dsgrid_conus_2022" -m "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/modeled/dsgrid_efs_2012_losses/dimension_mappings.toml" -l "test"
+dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_2012_losses" -p "dsgrid_conus_2022" -m "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_losses/dimension_mappings.toml" -l "test"
 """
 
 import shutil
@@ -29,7 +29,7 @@ if local_test_registry.exists():
 submitter = "mmooney"
 
 project_dir = Path().absolute() / "dsgrid_project"
-dataset_dir = project_dir / "datasets" / "modeled" / "dsgrid_efs_2012_losses"
+dataset_dir = project_dir / "datasets" / "historical" / "dsgrid_efs_2012_losses"
 project_toml = project_dir / "project.toml"
 dataset_toml = dataset_dir / "dataset.toml"
 dimension_mapping_file = dataset_dir / "dimension_mappings.toml"
