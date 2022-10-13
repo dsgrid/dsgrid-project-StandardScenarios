@@ -1,0 +1,138 @@
+# translated from dsgrid efs using dan's script:  https://github.com/dsgrid/dsgrid-legacy-efs-api/tree/main/bin
+# data located in: /projects/dsgrid/efs_datasets/chp_dg.dsg
+
+# units = MWh
+
+# geography = states
+
+# sector
+# time = standard_2012_hourly
+
+# In [4]: lookup.head()
+# Out[4]: 
+#   geography  id sector
+# 0        AK   1    com
+# 1        AL   2    com
+# 2        AR   3    com
+# 3        AZ   4    com
+# 4        CA   5    com
+
+# In [5]: data.head()
+# Out[5]: 
+#             timestamp        chp  thermal_dg  id
+# 0 2012-01-01 06:00:00  21.133310         0.0   1
+# 1 2012-01-01 07:00:00  21.133310         0.0   1
+# 2 2012-01-01 08:00:00  21.133310         0.0   1
+# 3 2012-01-01 09:00:00  21.133310         0.0   1
+# 4 2012-01-01 10:00:00  43.563129         0.0   1
+
+dataset_id = "dsgrid_efs_2012_distributed_generation"
+dataset_type = "historical"
+data_source = "dsgrid_efs_dg" # TODO: Do we want to differentiate this data_source from the losses data_source, e.g., dsgrid-efs-losses and dsgrid-efs-chp? Or just have the same datasource for both datasets?
+description = "Combined heat and power (CHP) and behind-the-meter distributed thermal generation estimates derived from DOE Combined Heat and Power (CHP) Installation Database, EIA Form 860, EIA Form 923, and EPA continuous emission monitoring systems (CEMS) data. Details in https://www.nrel.gov/docs/fy18osti/71492.pdf starting on page 56 and described in more detail in Appendix I"
+origin_creator = "Elaine Hale"
+origin_organization = "NREL"
+origin_contributors = ["Elaine Hale"]
+origin_project = "2018 Electric Futures Study"
+origin_date = "2018"
+origin_version = "0.2.0"
+source = "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/chp_dg.dsg"
+data_classification = "low"
+tags = ["dg", "efs", "2012", "dsgrid_v0.2.0"]
+data_schema_type = "standard"
+trivial_dimensions = ["weather_year", "model_year", "scenario", "data_source", "subsector"] 
+
+[data_schema]
+load_data_column_dimension = "metric"
+
+# TODO: include disaggregation factor in state-to-county dimension mapping file; base it off of population; this should be the same as the losses dimension mapping
+[[dimensions]]
+type = "geography"
+name = "states"
+display_name = "States"
+file = "dimensions/geography.csv"
+module = "dsgrid.dimension.standard"
+class = "State"
+description = "?"
+
+[[dimensions]]
+type = "sector"
+name = "com-ind-res-sectors"
+display_name = "Commercial Industrial and Residential Sectors"
+file = "dimensions/sector.csv"
+module = "dsgrid.dimension.standard"
+class = "Sector"
+description = "Commercial, Industrial, and Residential Sectors"
+
+[[dimensions]]
+type = "subsector"
+name = "unspecified-subsectors"
+display_name = "Unspecified Subsectors"
+file = "dimensions/subsectors.csv"
+module = "dsgrid.dimension.standard"
+class = "Subsector"
+description = "Unspecified Subsectors"
+
+[[dimensions]]
+type = "metric"
+name = "chp_dg"
+display_name = "CHP and Thermal DG"
+file = "dimensions/metric.csv"
+module = "dsgrid.dimension.standard"
+class = "EnergyEndUse"
+description = "Combined Heat and Power and Thermal DG from the EFS study"
+
+[[dimensions]]
+type = "data_source"
+name = "dsgrid-efs-dg"
+display_name = "dsgrid EFS DG"
+file = "dimensions/data_source.csv"
+module = "dsgrid.dimension.standard"
+class = "DataSource"
+description = "dsgrid distributed generation data for historical year 2012 created for the NREL Electrification Futures Study" 
+
+# use the resstock scenario dimension
+[[dimensions]]
+type = "scenario"
+name = "Conus-2022-reference"
+display_name = "Reference"
+file = "../../modeled/resstock/dimensions/scenario_conus_2022_reference.csv"
+module = "dsgrid.dimension.standard"
+class = "Scenario"
+description = "CONUS (Continental U.S.) 2022 Reference"
+
+# TODO: @ehale: What are we doing here for the project out years? Are we assuming some similar CHP_DG rate moving forward? Does that mean we need to make a derived dataset from this?
+[[dimensions]]
+type = "model_year"
+name = "Model-Year-2012"
+display_name = "2012"
+file = "dimensions/model_year.csv"
+module = "dsgrid.dimension.standard"
+class = "ModelYear"
+description = "2012 Model Year"
+
+[[dimensions]] # shared with project
+class = "WeatherYear"
+description = "Weather year, 2012 only"
+file = "../../../dimensions/weather_years.csv"
+module = "dsgrid.dimension.standard"
+name = "2012 Weather Year"
+display_name = "2012 Weather"
+type = "weather_year"
+
+# Note: this does not match the project time because of it being period-ending, not period-beginning
+[[dimensions]]
+name = "Time-2012-EST-hourly-periodEnding-noDST-noLeapDayAdjustment-total-UTChour1start"
+display_name = "2012 Hourly EST"
+type = "time"
+module = "dsgrid.dimension.standard"
+class = "Time"
+description = "Time dimension, 2012 hourly EST, period-ending, no DST, no Leap Day Adjustment, total value"
+time_type = "datetime"
+measurement_type = "total"
+str_format = "%Y-%m-%d %H:%M:%S"
+frequency = "P0DT1H0M0.000000S"
+leap_day_adjustment = "none"
+time_interval_type = "period_ending"
+timezone = "EasternStandard"
+ranges = [{start = "2012-01-01 01:00:00", end = "2013-01-01 00:00:00"}]

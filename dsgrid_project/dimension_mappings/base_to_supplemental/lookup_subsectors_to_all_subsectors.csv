@@ -26,3 +26,4 @@ phev_compact,all_subsectors
 phev_midsize,all_subsectors
 phev_suv,all_subsectors
 phev_pickup,all_subsectors
+unspecified,all_subsectors

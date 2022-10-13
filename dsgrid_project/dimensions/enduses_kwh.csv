@@ -57,3 +57,6 @@ propane_cooking_range,propane,Propane Cooking Range,kWh
 propane_heating,propane,Propane Heating,kWh
 propane_water_systems,propane,Propane Water Systems,kWh
 wood_heating,wood,Wood Heating,kWh
+electricity_unspecified,electricity,Electricity Unspecified,kWh
+electricity_chp,electricity,Combined Heat and Power,kWh
+electricity_thermal_dg,electricity,Thermal DG,kWh

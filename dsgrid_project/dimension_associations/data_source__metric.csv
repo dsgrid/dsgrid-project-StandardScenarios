@@ -68,3 +68,7 @@ resstock,propane_water_systems
 resstock,wood_heating
 tempo,electricity_ev_dcfc
 tempo,electricity_ev_l1l2
+eia861,electricity_unspecified
+dsgrid_efs_losses,electricity_unspecified
+dsgrid_efs_dg,electricity_chp
+dsgrid_efs_dg,electricity_thermal_dg

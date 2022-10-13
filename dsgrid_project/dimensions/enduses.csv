@@ -57,3 +57,6 @@ propane_water_systems,Propane - Water Systems,propane,MBtu
 wood_heating,Wood - Heating,wood,MBtu
 electricity_ev_l1l2,Electricity - EV L1/L2,electricity,kWh
 electricity_ev_dcfc,Electricty - EV DCFC,electricity,kWh
+electricity_unspecified,Electricity - Unspecified,electricity,kWh
+electricity_chp,electricity,Electricty - Combined Heat and Power,kWh
+electricity_thermal_dg,electricity,Electricty - Thermal DG,kWh
