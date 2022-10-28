@@ -39,7 +39,7 @@ version = "1.0.0"
 base = [ "trans",]
 [datasets.required_dimensions.single_dimensional.subsector]
 [[datasets.required_dimensions.single_dimensional.subsector.supplemental]]
-name = "transportation-subsectors"
+name = "Subsectors by Sector"
 record_ids = [ "transportation_subsectors",]
 
 [datasets.required_dimensions.single_dimensional.metric]
@@ -56,7 +56,7 @@ version = "1.0.0"
 base = [ "res",]
 [datasets.required_dimensions.single_dimensional.subsector]
 [[datasets.required_dimensions.single_dimensional.subsector.supplemental]]
-name = "residential-subsectors"
+name = "Subsectors by Sector"
 record_ids = [ "residential_subsectors",]
 
 [datasets.required_dimensions.single_dimensional.metric]
@@ -73,7 +73,7 @@ version = "1.0.0"
 base = [ "com",]
 [datasets.required_dimensions.single_dimensional.subsector]
 [[datasets.required_dimensions.single_dimensional.subsector.supplemental]]
-name = "commercial-subsectors"
+name = "Subsectors by Sector"
 record_ids = [ "commercial_subsectors",]
 
 [datasets.required_dimensions.single_dimensional.metric]
@@ -269,29 +269,11 @@ type = "metric"
 
 [[dimensions.supplemental_dimensions]]
 class = "SubsectorDimensionBaseModel"
-description = "Commercial Subsectors\n"
-file = "dimensions/supplemental/commercial_subsectors.csv"
+description = "Subsectors by sector\n"
+file = "dimensions/supplemental/subsectors_by_sector.csv"
 module = "dsgrid.dimension.base_models"
-name = "commercial-subsectors"
-display_name = "Commercial Subsectors"
-type = "subsector"
-
-[[dimensions.supplemental_dimensions]]
-class = "SubsectorDimensionBaseModel"
-description = "Residential Subsectors\n"
-file = "dimensions/supplemental/residential_subsectors.csv"
-module = "dsgrid.dimension.base_models"
-name = "residential-subsectors"
-display_name = "Residential Subsectors"
-type = "subsector"
-
-[[dimensions.supplemental_dimensions]]
-class = "SubsectorDimensionBaseModel"
-description = "Transportation Subsectors\n"
-file = "dimensions/supplemental/transportation_subsectors.csv"
-module = "dsgrid.dimension.base_models"
-name = "transportation-subsectors"
-display_name = "Transportation Subsectors"
+name = "Subsectors by Sector"
+display_name = "Subsector by Sector"
 type = "subsector"
 
 # ------------------------------------------------------
@@ -386,36 +368,15 @@ type = "metric"
 [dimension_mappings.base_to_supplemental.to_dimension]
 name = "transportation-end-uses"
 type = "metric"
+
 [[dimension_mappings.base_to_supplemental]]
 description = "Selector for all dsgrid CONUS 2022 commercial subsectors"
-file = "dimension_mappings/base_to_supplemental/lookup_subsectors_to_commercial_subsectors.csv"
+file = "dimension_mappings/base_to_supplemental/lookup_subsectors_by_sector.csv"
 mapping_type = "many_to_one_aggregation"
 
 [dimension_mappings.base_to_supplemental.from_dimension]
 name = "CONUS-2022-Detailed-Subsectors"
 type = "subsector"
 [dimension_mappings.base_to_supplemental.to_dimension]
-name = "commercial-subsectors"
-type = "subsector"
-[[dimension_mappings.base_to_supplemental]]
-description = "Selector for all dsgrid CONUS 2022 residential subsectors"
-file = "dimension_mappings/base_to_supplemental/lookup_subsectors_to_residential_subsectors.csv"
-mapping_type = "many_to_one_aggregation"
-
-[dimension_mappings.base_to_supplemental.from_dimension]
-name = "CONUS-2022-Detailed-Subsectors"
-type = "subsector"
-[dimension_mappings.base_to_supplemental.to_dimension]
-name = "residential-subsectors"
-type = "subsector"
-[[dimension_mappings.base_to_supplemental]]
-description = "Selector for all dsgrid CONUS 2022 transportation subsectors"
-file = "dimension_mappings/base_to_supplemental/lookup_subsectors_to_transportation_subsectors.csv"
-mapping_type = "many_to_one_aggregation"
-
-[dimension_mappings.base_to_supplemental.from_dimension]
-name = "CONUS-2022-Detailed-Subsectors"
-type = "subsector"
-[dimension_mappings.base_to_supplemental.to_dimension]
-name = "transportation-subsectors"
+name = "Subsectors by Sector"
 type = "subsector"
