@@ -65,6 +65,23 @@ name = "residential-end-uses"
 record_ids = [ "residential_end_uses",]
 
 [[datasets]]
+dataset_id = "aeo2021_ref_res_end_use_growth_factors"
+dataset_type = "modeled"
+version = "1.0.0"
+
+[datasets.required_dimensions.single_dimensional.sector]
+base = [ "res",]
+[datasets.required_dimensions.single_dimensional.subsector]
+[[datasets.required_dimensions.single_dimensional.subsector.supplemental]]
+name = "Subsectors by Sector"
+record_ids = [ "residential_subsectors",]
+
+[datasets.required_dimensions.single_dimensional.metric]
+[[datasets.required_dimensions.single_dimensional.metric.supplemental]]
+name = "residential-end-uses"
+record_ids = [ "residential_end_uses",]
+
+[[datasets]]
 dataset_id = "conus_2022_reference_comstock"
 dataset_type = "modeled"
 version = "1.0.0"

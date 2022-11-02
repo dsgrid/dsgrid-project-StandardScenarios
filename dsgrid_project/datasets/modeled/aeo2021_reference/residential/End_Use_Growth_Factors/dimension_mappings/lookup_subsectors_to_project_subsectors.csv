@@ -1,0 +1,7 @@
+from_id,to_id
+residential_subsectors,mobile_home
+residential_subsectors,multifamily_2_to_4_units
+residential_subsectors,multifamily_5_plus_units
+residential_subsectors,single_family_attached
+residential_subsectors,single_family_detached
+

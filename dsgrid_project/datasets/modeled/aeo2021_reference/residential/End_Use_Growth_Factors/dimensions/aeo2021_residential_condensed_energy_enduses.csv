@@ -7,7 +7,6 @@ elec_refrigeration,Annual Growth Factor in Electricity - Refrigeration,electrici
 elec_light,Annual Growth Factor in Electricity - Lighting,electricity,
 ng_major_appnc,Annual Growth Factor in Natural Gas - Major Appliance,natural_gas,
 ng_heat_cool,Annual Growth Factor in Natural Gas - Space Heating And Cooling,natural_gas,
-ng_light,Annual Growth Factor in Natural Gas - Light,natural_gas,
 ng_other,Annual Growth Factor in Natural Gas - Other,natural_gas,
 fuel_oil_heat_cool,Annual Growth Factor in Distillate Fuel Oil - Space Heating And Cooling,fuel_oil,
 fuel_oil_major_appnc,Annual Growth Factor in Distillate Fuel Oil - Major Appliance,fuel_oil,
