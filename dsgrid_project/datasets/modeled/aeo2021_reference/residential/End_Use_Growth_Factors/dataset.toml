@@ -45,17 +45,6 @@ display_name = "Residential Sector"
 type = "sector"
 
 [[dimensions]]
-class = "DimensionRecordBaseModel"
-description = """
-All geographies
-"""
-file = "dimensions/all_geographies.csv"
-module = "dsgrid.dimension.base_models"
-name = "all-geographies"
-display_name = "All Geographies"
-type = "geography"
-
-[[dimensions]]
 class = "Subsector"
 description = """
 Residential subsector only
@@ -129,3 +118,8 @@ module = "dsgrid.dimension.standard"
 name = "noop_time"
 type = "time"
 display_name = "No Op Time"
+
+[[dimension_references]]
+dimension_id = "all-geographies__469cef1d-e4da-4f5c-8363-ea1afc55ba45"
+type = "geography"
+version = "1.0.0"
