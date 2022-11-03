@@ -1,10 +1,4 @@
 [[mappings]]
-dimension_type = "geography"
-description = "Maps AEO 2021 commercial geography to project geography"
-file = "dimension_mappings/lookup_census_division_to_county.csv"
-mapping_type = "duplication"
-
-[[mappings]]
 dimension_type = "subsector"
 description = "Maps Baseline ComStock building types to AEO 2021 commercial building types"
 file = "dimension_mappings/lookup_comstock_to_aeo2021_com_bldg_types.csv"

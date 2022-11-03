@@ -21,9 +21,3 @@ description = "AEO2021-residential subsector dimension mapping for the CONUS 202
 dimension_type = "subsector"
 file = "dimension_mappings/lookup_subsectors_to_project_subsectors.csv"
 mapping_type = "duplication"
-
-[[mappings]]
-description = "AEO2021-residential geography dimension mapping for the CONUS 2022 project"
-dimension_type = "geography"
-file = "dimension_mappings/lookup_geography_to_project_geographies.csv"
-mapping_type = "duplication"
