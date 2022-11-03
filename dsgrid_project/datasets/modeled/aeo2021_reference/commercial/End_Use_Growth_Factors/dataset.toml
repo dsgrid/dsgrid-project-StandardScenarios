@@ -3,7 +3,7 @@
 # ------------------------------------------------
 
 dataset_id = "aeo2021_ref_com_energy_end_use_growth_factors"
-dataset_type = "sector_model"
+dataset_type = "modeled"
 data_source = "NEMS Commercial Module"
 description = """
 AEO 2021 Reference Case Commercial Energy End Use Annual Growth Factors. 
@@ -23,13 +23,13 @@ tags = [ "commercial", "benchmark", "projection", "aeo2021", "dsgrid_v0.2.0",]
 trivial_dimensions = [ "sector", "scenario", "data_source", "weather_year", "model_year"]
 
 data_schema_type = "one_table"
+dataset_qualifier = "growth_rate"
+
 [data_schema]
 load_data_column_dimension = "metric"
 
-dataset_qualifier = "growth_rate"
 [dataset_qualifier_metadata]
 growth_rate_type = "exponential_annual"
-
 
 ##### Dimensions #####
 
@@ -38,20 +38,22 @@ class = "CensusDivision"
 description = """
 US Census Divisions
 """
-file = "../../../../../../dimensions/supplemental/census_divisions.csv"
+file = "../../../../../dimensions/supplemental/census_divisions.csv"
 module = "dsgrid.dimension.standard"
 name = "US Census Divisions"
 type = "geography"
+display_name = "Census Division"
 
 [[dimensions]]
 class = "Sector"
 description = """
 Commercial sector only
 """
-file = "../../../../../sector_models/comstock/dimensions/sector_commercial.csv"
+file = "../../../../modeled/comstock/dimensions/sector_commercial.csv"
 module = "dsgrid.dimension.standard"
 name = "commercial-sector"
 type = "sector"
+display_name = "Commercial"
 
 [[dimensions]]
 class = "Subsector"
@@ -61,6 +63,7 @@ AEO 2021 commercial building types (N=11)
 file = "dimensions/aeo2021_commercial_building_types.csv"
 module = "dsgrid.dimension.standard"
 name = "AEO2021-commercial-building-types"
+display_name = "Commercial Subsector"
 type = "subsector"
 
 [[dimensions]]
@@ -72,6 +75,7 @@ file = "dimensions/aeo2021_commercial_energy_enduses.csv"
 module = "dsgrid.dimension.standard"
 name = "AEO2021-commercial-energy-enduses-unitless"
 type = "metric"
+display_name = "AEO Commercial End Uses"
 
 [[dimensions]]
 class = "Scenario"
@@ -82,25 +86,28 @@ file = "dimensions/aeo_reference_scenario.csv"
 module = "dsgrid.dimension.standard"
 name = "AEO-Reference-Scenario"
 type = "scenario"
+display_name = "AEO Reference Scenario"
 
 [[dimensions]]
 class = "DataSource"
 description = """
 EIA Annual Energy Outlook (AEO) 2021
 """
-file = "dimensions/aeo2021_data_source.csv"
+file = "dimensions/sources.csv"
 module = "dsgrid.dimension.standard"
 name = "Data-Source-AEO-2021"
 type = "data_source"
+display_name = "Data-Source-AEO-2021"
 
 [[dimensions]]
 class = "WeatherYear"
 description = """
-Weather years, 2013-2050, trivial, single record
+Weather year, 2012 only
 """
-file = "dimensions/years_trivial_2013_to_2050.csv"
+file = "../../../../../dimensions/weather_years.csv"
 module = "dsgrid.dimension.standard"
-name = "Weather_Years-trivial-2013_to_2050"
+name = "2012 Weather Year"
+display_name = "Weather 2012"
 type = "weather_year"
 
 [[dimensions]]
@@ -108,10 +115,11 @@ class = "ModelYear"
 description = """
 Model years, 2013-2050, trivial, single record
 """
-file = "dimensions/years_trivial_2013_to_2050.csv"
+file = "dimensions/model_years_trivial_2013_to_2050.csv"
 module = "dsgrid.dimension.standard"
 name = "Model_Years-trivial-2013_to_2050"
 type = "model_year"
+display_name = "AEO Model Years"
 
 [[dimensions]]
 class = "NoOpTime"
@@ -120,3 +128,4 @@ time_type = "noop"
 module = "dsgrid.dimension.standard"
 name = "noop_time"
 type = "time"
+display_name = "No Op Time"

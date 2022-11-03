@@ -99,6 +99,23 @@ name = "commercial-end-uses"
 record_ids = [ "commercial_end_uses",]
 
 [[datasets]]
+dataset_id = "aeo2021_ref_com_energy_end_use_growth_factors"
+dataset_type = "modeled"
+version = "1.0.0"
+
+[datasets.required_dimensions.single_dimensional.sector]
+base = [ "com",]
+[datasets.required_dimensions.single_dimensional.subsector]
+[[datasets.required_dimensions.single_dimensional.subsector.supplemental]]
+name = "Subsectors by Sector"
+record_ids = [ "commercial_subsectors",]
+
+[datasets.required_dimensions.single_dimensional.metric]
+[[datasets.required_dimensions.single_dimensional.metric.supplemental]]
+name = "commercial-end-uses"
+record_ids = [ "commercial_end_uses",]
+
+[[datasets]]
 dataset_id = "dsgrid_efs_2012_losses"
 dataset_type = "modeled"
 version = "1.0.0"

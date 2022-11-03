@@ -9,9 +9,9 @@ office_large,outpatient,0.5
 office_small,outpatient,0.5
 education,primary_school,1
 food_service,quick_service_restaurant,1
-merc_service,retail,1
+merc_service,retail_standalone,1
 education,secondary_school,1
 lodging,small_hotel,1
 office_small,small_office,1
-merc_service,strip_mall,1
+merc_service,retail_stripmall,1
 warehouse,warehouse,1
