@@ -1,0 +1,125 @@
+# ------------------------------------------------
+# AEO 2021 Reference Case - Residential End Use Growth Factors
+# ------------------------------------------------
+
+dataset_id = "aeo2021_ref_res_end_use_growth_factors"
+dataset_type = "modeled"
+data_source = "NEMS Residential Module"
+description = """
+AEO 2021 Reference Case Residential Energy End Use Annual Growth Factors. 
+Derived by NREL as simple exponential growth rates from annual end use comsumptions between year 2018 and year 2050. 
+Detailed end use consumption data provided by EIA, not available in API.
+"""
+
+origin_creator = "Kevin Jarzomski"
+origin_organization = "EIA"
+origin_contributors = [ "Lixi Liu"]
+origin_project = "dsgrid CONUS2022 Residential Buildings Projection"
+origin_date = "2021-10-05"
+origin_version = "0.1.0"
+source = "Data derived from AEO 2021 detailed residential sector files sent from EIA"
+data_classification = "low"
+tags = [ "residential", "benchmark", "projection", "aeo2021", "dsgrid_v0.2.0",]
+trivial_dimensions = [ "sector", "subsector", "scenario", "geography", "data_source", "weather_year", "model_year"]
+
+data_schema_type = "one_table"
+dataset_qualifier = "growth_rate"
+
+[data_schema]
+load_data_column_dimension = "metric"
+
+[dataset_qualifier_metadata]
+growth_rate_type = "exponential_annual"
+
+##### Dimensions #####
+
+[[dimensions]]
+class = "Sector"
+description = """
+Residential sector only
+"""
+file = "../../../resstock/dimensions/sector_residential.csv"
+module = "dsgrid.dimension.standard"
+name = "residential-sector"
+display_name = "Residential Sector"
+type = "sector"
+
+[[dimensions]]
+class = "Subsector"
+description = """
+Residential subsector only
+"""
+file = "dimensions/residential_subsectors.csv"
+module = "dsgrid.dimension.standard"
+name = "residential-subsector"
+display_name = "Residential Subsector"
+type = "subsector"
+
+[[dimensions]]
+class = "EnergyEndUse"
+description = """
+AEO 2021 residential energy end uses, condensed to map to ResStock (N=18 from 6 end uses, 5 fuel types)
+"""
+file = "dimensions/aeo2021_residential_condensed_energy_enduses.csv"
+module = "dsgrid.dimension.standard"
+name = "AEO2021-residential-energy-enduses-unitless_for-growth-rates"
+type = "metric"
+display_name = "AEO Residential End Uses"
+
+[[dimensions]]
+class = "Scenario"
+description = """
+EIA AEO Reference Scenario
+"""
+file = "../../commercial/End_Use_Growth_Factors/dimensions/aeo_reference_scenario.csv"
+module = "dsgrid.dimension.standard"
+name = "AEO-Reference-Scenario"
+type = "scenario"
+display_name = "AEO Reference Scenario"
+
+[[dimensions]]
+class = "DataSource"
+description = """
+EIA Annual Energy Outlook (AEO) 2021
+"""
+file = "dimensions/sources.csv"
+module = "dsgrid.dimension.standard"
+name = "Data-Source-AEO-2021"
+type = "data_source"
+display_name = "Data-Source-AEO-2021"
+
+[[dimensions]]
+class = "WeatherYear"
+description = """
+Weather year, 2012 only
+"""
+file = "../../../../../dimensions/weather_years.csv"
+module = "dsgrid.dimension.standard"
+name = "2012 Weather Year"
+display_name = "Weather 2012"
+type = "weather_year"
+
+[[dimensions]]
+class = "ModelYear"
+description = """
+Model years, 2013-2050, trivial, single record
+"""
+file = "../../commercial/End_Use_Growth_Factors/dimensions/model_years_trivial_2013_to_2050.csv"
+module = "dsgrid.dimension.standard"
+name = "Model_Years-trivial-2013_to_2050"
+type = "model_year"
+display_name = "AEO Model Years"
+
+[[dimensions]]
+class = "NoOpTime"
+description = "No Operation Time"
+time_type = "noop"
+module = "dsgrid.dimension.standard"
+name = "noop_time"
+type = "time"
+display_name = "No Op Time"
+
+[[dimension_references]]
+dimension_id = "all_dsgrid_conus_2022_geographies__b783590c-60eb-493b-9f45-f262efa312f6"
+type = "geography"
+version = "1.0.0"
