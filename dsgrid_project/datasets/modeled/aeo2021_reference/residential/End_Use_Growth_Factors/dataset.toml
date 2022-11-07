@@ -120,6 +120,6 @@ type = "time"
 display_name = "No Op Time"
 
 [[dimension_references]]
-dimension_id = "all-dsgrid_conus_2022-geographies__b783590c-60eb-493b-9f45-f262efa312f6"
+dimension_id = "all_dsgrid_conus_2022_geographies__b783590c-60eb-493b-9f45-f262efa312f6"
 type = "geography"
 version = "1.0.0"
