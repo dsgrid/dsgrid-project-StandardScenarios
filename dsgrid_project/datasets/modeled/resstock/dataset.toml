@@ -2,7 +2,7 @@
 # ResStock Dataset Configuration File
 # --------------------------------------
 
-dataset_id = "conus_2022_reference_resstock"
+dataset_id = "resstock_conus_2022_reference"
 dataset_type = "modeled"
 data_source = "resstock"
 sector_description = "residential"

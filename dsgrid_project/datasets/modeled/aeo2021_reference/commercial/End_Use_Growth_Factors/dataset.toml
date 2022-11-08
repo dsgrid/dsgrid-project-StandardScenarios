@@ -2,7 +2,7 @@
 # AEO 2021 Reference Case - Commercial End Use Growth Factors
 # ------------------------------------------------
 
-dataset_id = "aeo2021_ref_com_energy_end_use_growth_factors"
+dataset_id = "aeo2021_reference_commercial_energy_use_growth_factors"
 dataset_type = "modeled"
 data_source = "NEMS Commercial Module"
 description = """

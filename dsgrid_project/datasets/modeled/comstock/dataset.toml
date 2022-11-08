@@ -2,7 +2,7 @@
 # ComStock Dataset Configuration File
 # --------------------------------------
 
-dataset_id = "conus_2022_reference_comstock"
+dataset_id = "comstock_conus_2022_reference"
 dataset_type = "modeled"
 data_source = "comstock"
 sector_description = "commercial"
