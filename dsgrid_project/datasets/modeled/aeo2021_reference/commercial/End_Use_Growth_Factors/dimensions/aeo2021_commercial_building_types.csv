@@ -1,0 +1,12 @@
+id,name
+assembly,Assembly (Includes Regious Worship)
+education,Education
+food_sales,Food Sales
+food_service,Food Service
+health_care,Health Care (Inpatient)
+lodging,Lodging (Includes Skilled Nursing and Other Residential Care)
+office_large,"Office - Large (Great than 50,000 ft2, includes Outpatient)"
+office_small,"Office - Small (Up to 50,000 ft2, includes Outpatient)"
+merc_service,Mercantile and Service
+warehouse,Warehouse (Includes Refrigerated Warehouse)
+other,"Other (Includes Laboratory, Public Order and Safety, and Vacant)"
