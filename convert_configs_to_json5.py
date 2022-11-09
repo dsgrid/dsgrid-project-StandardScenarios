@@ -62,14 +62,14 @@ def check_toml_comments(toml_file):
 # project toml
 toml_file = project_dir / "project.toml"
 convert_toml_to_json(toml_file, write=True)
-check_toml_comments(toml_file)
+# check_toml_comments(toml_file)
     
 # dataset toml files (*/dataset.toml, */dimension_mappings.toml)
 for dataset_type in ("historical", "modeled"):
     dataset_group_dir = project_dir / "datasets" / dataset_type
     for dataset_dir in dataset_group_dir.iterdir():
         for toml_file in list(dataset_dir.glob('**/*.toml')):
-            convert_toml_to_json(toml_file, write=False)
+            convert_toml_to_json(toml_file, write=True)
 
 
 
