@@ -11,7 +11,7 @@ project_dir = Path().absolute() / "dsgrid_project"
 def convert_toml_to_json(toml_file, write=True):
     json5_file = str(toml_file).replace(".toml", ".json5")
     toml_config = toml.load(toml_file)
-    json5_config = json5.dumps(toml_config, indent=4, cls=ExtendedJSONEncoder)
+    json5_config = json5.dumps(toml_config, indent=2, cls=ExtendedJSONEncoder)
     if write:
         with open(json5_file, 'w') as f:
             f.write(json5_config) 
