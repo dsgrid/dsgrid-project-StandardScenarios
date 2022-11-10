@@ -4,11 +4,11 @@ Script to test dataset submission to project and to use for debugging
 CLI COMMANDS:
 --------------
 # register the project
-dsgrid registry --offline projects register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/project.toml" -l "test"
+dsgrid registry --offline projects register "dsgrid-project-StandardScenarios/dsgrid_project/project.toml" -l "test"
 # register the dataset
-dsgrid registry --offline datasets register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dataset.toml" "/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/efs_datasets/loss_model" -l "test"
+dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dataset.toml" "projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation" -l "test"
 # submit dataset to project
-dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_2012_distributed_generation" -p "dsgrid_conus_2022" -m "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dimension_mappings.toml" -l "test"
+dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_2012_distributed_generation" -p "dsgrid_conus_2022" -m "dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dimension_mappings.toml" -l "test"
 """
 
 import shutil
@@ -30,7 +30,7 @@ dataset_dir = project_dir / "datasets" / "historical" / "dsgrid_efs_2012_distrib
 project_toml = project_dir / "project.toml"
 dataset_toml = dataset_dir / "dataset.toml"
 dimension_mapping_file = dataset_dir / "dimension_mappings.toml"
-dataset_path = Path("/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/efs_datasets/chp_dg") # located on dsgrid-load teams files
+dataset_path = Path("/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation") # located on eagle
 
 # remove tmp supplemental dir
 tmp_supplemental_dir = project_dir / "__tmp_supplemental__"
