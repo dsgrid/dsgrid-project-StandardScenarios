@@ -6,7 +6,7 @@ CLI COMMANDS:
 # register the project
 dsgrid registry --offline projects register "dsgrid-project-StandardScenarios/dsgrid_project/project.toml" -l "test"
 # register the dataset
-dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dataset.toml" "projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation" -l "test"
+dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dataset.toml" "projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation/chp_dg" -l "test"
 # submit dataset to project
 dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_2012_distributed_generation" -p "dsgrid_conus_2022" -m "dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dimension_mappings.toml" -l "test"
 """
@@ -16,6 +16,11 @@ from pathlib import Path
 from dsgrid.common import REMOTE_REGISTRY, LOCAL_REGISTRY
 from dsgrid.registry.registry_manager import RegistryManager
 
+# get host
+if hostname == "el.hpc.nrel.gov":
+    data_path="/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation/chp_dg"
+else:
+    data_path="/projects/dsgrid"
 
 # start with fresh offline mode registry
 local_test_registry = Path.home() / ".dsgrid-registry-test"
@@ -30,7 +35,7 @@ dataset_dir = project_dir / "datasets" / "historical" / "dsgrid_efs_2012_distrib
 project_toml = project_dir / "project.toml"
 dataset_toml = dataset_dir / "dataset.toml"
 dimension_mapping_file = dataset_dir / "dimension_mappings.toml"
-dataset_path = Path("/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation") # located on eagle
+dataset_path = Path("/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation/chp_dg") # located on eagle
 
 # remove tmp supplemental dir
 tmp_supplemental_dir = project_dir / "__tmp_supplemental__"
