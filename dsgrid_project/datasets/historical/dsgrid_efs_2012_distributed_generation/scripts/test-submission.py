@@ -5,15 +5,19 @@ CLI COMMANDS:
 --------------
 # register the project
 dsgrid registry --offline projects register "dsgrid-project-StandardScenarios/dsgrid_project/project.toml" -l "test"
+
 # register the dataset
-dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dataset.toml" "projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation/chp_dg" -l "test"
+dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dataset.toml" "/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation" -l "test"
+
 # submit dataset to project
-dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_2012_distributed_generation" -p "dsgrid_conus_2022" -m "dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dimension_mappings.toml" -l "test"
+dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_2012_distributed_generation" -p "dsgrid_conus_2022" -m "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_distributed_generation/dimension_mappings.toml" -l "test"
 """
 
 import shutil
 from pathlib import Path
-from dsgrid.common import REMOTE_REGISTRY, LOCAL_REGISTRY
+import logging
+import getpass
+from dsgrid.loggers import setup_logging
 from dsgrid.registry.registry_manager import RegistryManager
 
 # get host
@@ -22,20 +26,25 @@ if hostname == "el.hpc.nrel.gov":
 else:
     data_path="/projects/dsgrid"
 
+level = logging.DEBUG
+log_file = Path("dsgrid_registration-dsgrid_efs_2012_distributed_generation.log")
+logger = setup_logging("dsgrid", log_file, console_level=level, file_level=level, mode="a")
+
+
 # start with fresh offline mode registry
 local_test_registry = Path.home() / ".dsgrid-registry-test"
 if local_test_registry.exists():
     shutil.rmtree(local_test_registry)
 
 
-submitter = "mmooney"
+submitter = getpass.getuser()
 
 project_dir = Path().absolute() / "dsgrid_project"
 dataset_dir = project_dir / "datasets" / "historical" / "dsgrid_efs_2012_distributed_generation"
 project_toml = project_dir / "project.toml"
 dataset_toml = dataset_dir / "dataset.toml"
 dimension_mapping_file = dataset_dir / "dimension_mappings.toml"
-dataset_path = Path("/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation/chp_dg") # located on eagle
+dataset_path = Path("/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_distributed_generation") # located on eagle
 
 # remove tmp supplemental dir
 tmp_supplemental_dir = project_dir / "__tmp_supplemental__"

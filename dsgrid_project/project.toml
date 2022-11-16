@@ -26,6 +26,14 @@ dataset_id = "dsgrid_efs_2012_distributed_generation"
 dataset_type = "historical"
 version = "1.0.0"
 
+[datasets.required_dimensions.single_dimensional.metric]
+base = [ "electricity_chp", "electricity_thermal_dg"]
+[datasets.required_dimensions.single_dimensional.model_year]
+base = [ 2012]
+[datasets.required_dimensions.single_dimensional.sector]
+base = [ "com", "res", "ind"]
+[datasets.required_dimensions.single_dimensional.subsector]
+base = [ "unspecified",]
 # ------- benchmark  ------- 
 
 # ------- modeled -------
@@ -48,7 +56,7 @@ name = "transportation-end-uses"
 record_ids = [ "transportation_end_uses",]
 
 [[datasets]]
-dataset_id = "conus_2022_reference_resstock"
+dataset_id = "resstock_conus_2022_reference"
 dataset_type = "modeled"
 version = "1.0.0"
 
@@ -65,7 +73,7 @@ name = "residential-end-uses"
 record_ids = [ "residential_end_uses",]
 
 [[datasets]]
-dataset_id = "aeo2021_ref_res_end_use_growth_factors"
+dataset_id = "aeo2021_reference_residential_energy_use_growth_factors"
 dataset_type = "modeled"
 version = "1.0.0"
 
@@ -82,7 +90,7 @@ name = "residential-end-uses"
 record_ids = [ "residential_end_uses",]
 
 [[datasets]]
-dataset_id = "conus_2022_reference_comstock"
+dataset_id = "comstock_conus_2022_reference"
 dataset_type = "modeled"
 version = "1.0.0"
 
@@ -99,7 +107,7 @@ name = "commercial-end-uses"
 record_ids = [ "commercial_end_uses",]
 
 [[datasets]]
-dataset_id = "aeo2021_ref_com_energy_end_use_growth_factors"
+dataset_id = "aeo2021_reference_commercial_energy_use_growth_factors"
 dataset_type = "modeled"
 version = "1.0.0"
 
@@ -119,6 +127,15 @@ record_ids = [ "commercial_end_uses",]
 dataset_id = "dsgrid_efs_2012_losses"
 dataset_type = "modeled"
 version = "1.0.0"
+
+[datasets.required_dimensions.single_dimensional.metric]
+base = [ "electricity_unspecified"]
+[datasets.required_dimensions.single_dimensional.model_year]
+base = [ 2012]
+[datasets.required_dimensions.single_dimensional.sector]
+base = [ "unspecified"]
+[datasets.required_dimensions.single_dimensional.subsector]
+base = [ "unspecified",]
 
 [dimensions]
 
