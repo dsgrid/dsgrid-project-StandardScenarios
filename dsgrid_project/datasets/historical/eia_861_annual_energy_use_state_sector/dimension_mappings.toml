@@ -8,7 +8,7 @@ mapping_type = "many_to_many_disaggregation"
 description = "historic 2010-2020 weather year mapping to project weather year of 2012"
 dimension_type = "weather_year"
 file = "dimension_mappings/weather_year_to_weather_year.csv"
-mapping_type = "many_to_one_assignment"
+mapping_type = "many_to_one_reassignment"
 
 [[mappings]] # metric
 description = "EIA 861 electricity sales to project's unspecified end use metric"
