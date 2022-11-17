@@ -248,16 +248,16 @@
         display_name: 'End Use',
         type: 'metric',
       },
-      {
-        // TODO: this is what we ultimately want to be using for the project
-        // "class": "EnergyEndUse",
-        // description: "dsgrid CONUS 2022 End Uses (all fuel types)",
-        // file: "dimensions/enduses.csv",
-        // module: "dsgrid.dimension.standard",
-        // name: "CONUS-2022-Detailed-End-Uses",
-        // display_name: "End Use",
-        // type: "metric",
-      },
+      // TODO: this is what we ultimately want to be using for the project
+      // {
+      //   "class": "EnergyEndUse",
+      //   description: "dsgrid CONUS 2022 End Uses (all fuel types)",
+      //   file: "dimensions/enduses.csv",
+      //   module: "dsgrid.dimension.standard",
+      //   name: "CONUS-2022-Detailed-End-Uses",
+      //   display_name: "End Use",
+      //   type: "metric",
+      // },
       {
         class: 'ModelYear',
         description: 'Model year, 2010-2050',
