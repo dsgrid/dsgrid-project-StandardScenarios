@@ -1,0 +1,28 @@
+{
+  mappings: [
+    {
+      description: "ResStock CONUS 2022 counties to project counties",
+      dimension_type: "geography",
+      file: "dimension_mappings/county_to_county.csv",
+      mapping_type: "one_to_one",
+    },
+    {
+      description: "Dummy model year mapping that repeats 2018 for all CONUS 2022 model years",
+      dimension_type: "model_year",
+      file: "dimension_mappings/model_year_to_model_year.csv",
+      mapping_type: "duplication",
+    },
+    {
+      description: "ResStock and ComStock scenario dataset-to-project dimension mapping for the CONUS 2022 project",
+      dimension_type: "scenario",
+      file: "dimension_mappings/scenario_to_scenario.csv",
+      mapping_type: "duplication",
+    },
+    {
+      description: "ResStock CONUS 2022 energy end uses mapping to project",
+      dimension_type: "metric",
+      file: "dimension_mappings/metric_to_metric.csv",
+      mapping_type: "one_to_one",
+    },
+  ],
+}

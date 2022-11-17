@@ -9,7 +9,7 @@ from dsgrid.common import LOCAL_REGISTRY
 
 project_path = str(Path(__file__).parents[1])
 os.chdir(project_path)
-project_config_file = "/project.toml"
+project_config_file = "/project.json5"
 local_registry = LOCAL_REGISTRY
 
 
@@ -61,9 +61,9 @@ if __name__ == '__main__':
 
     maps.extend(make_maps_for_state_county_divisions_and_regions())
 
-    # create a dimension_mappings.toml
+    # create a dimension_mappings.json5
     config = {"mappings": maps}
-    dump_data(config, "dimension_mappings.toml")
+    dump_data(config, "dimension_mappings.json5")
 
 
     
