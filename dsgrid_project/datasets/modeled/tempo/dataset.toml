@@ -20,6 +20,7 @@ data_classification = "low"
 tags = [ "transportation", "conus-2022", "reference", "tempo"]
 data_schema_type = "standard"
 trivial_dimensions = [ "sector", "weather_year", "data_source"]
+use_project_geography_time_zone = true
 
 [data_schema]
 load_data_column_dimension = "metric"
