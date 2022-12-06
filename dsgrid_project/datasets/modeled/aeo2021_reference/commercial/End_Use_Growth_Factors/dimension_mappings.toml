@@ -8,7 +8,7 @@ mapping_type = "many_to_many_assignment"
 dimension_type = "metric"
 description = "Maps Baseline ComStock end uses to AEO 2021 commercial end uses"
 file = "dimension_mappings/lookup_comstock_to_aeo2021_com_enduses.csv"
-mapping_type = "many_to_many_assignment"
+mapping_type = "many_to_many_explicit_multipliers"
 
 [[mappings]]
 description = "AEO2021-residential model year dimension mapping for the CONUS 2022 project"
