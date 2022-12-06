@@ -32,10 +32,12 @@ elec_refrigeration,electricity_freezer,1
 elec_refrigeration,electricity_refrigerator,1
 fuel_oil_heat_cool,fuel_oil_heating,1
 fuel_oil_major_appnc,fuel_oil_water_systems,1
+fuel_oil_other,,0
 lpg_heat_cool,propane_heating,1
 lpg_major_appnc,propane_clothes_dryer,1
 lpg_major_appnc,propane_cooking_range,1
 lpg_major_appnc,propane_water_systems,1
+lpg_other,,0
 ng_heat_cool,natural_gas_heating,1
 ng_major_appnc,natural_gas_clothes_dryer,1
 ng_major_appnc,natural_gas_cooking_range,1
@@ -46,3 +48,4 @@ ng_major_appnc,natural_gas_pool_heater,1
 ng_major_appnc,natural_gas_water_systems,1
 ng_other,natural_gas_lighting,1
 other_heat_cool,wood_heating,1
+other_major_appnc,,0
