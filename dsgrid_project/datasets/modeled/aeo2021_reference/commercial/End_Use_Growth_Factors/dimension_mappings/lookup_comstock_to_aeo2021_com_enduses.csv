@@ -17,11 +17,14 @@ elec_cooling,electricity_pumps,0.5
 elec_heating,electricity_pumps,0.5
 elec_refrigeration,electricity_refrigeration,1
 elec_water_heating,electricity_water_systems,1
+fuel_oil_cooling,,0
 fuel_oil_heating,fuel_oil_heating,1
+fuel_oil_heating,propane_heating,1
+fuel_oil_other,,0
 fuel_oil_water_heating,fuel_oil_water_systems,1
+fuel_oil_water_heating,propane_water_systems,1
 ng_heating,natural_gas_heating,1
 ng_cooking,natural_gas_interior_equipment,0.5
+ng_cooling,,0
 ng_other,natural_gas_interior_equipment,0.5
 ng_water_heating,natural_gas_water_systems,1
-fuel_oil_heating,propane_heating,1
-fuel_oil_water_heating,propane_water_systems,1
