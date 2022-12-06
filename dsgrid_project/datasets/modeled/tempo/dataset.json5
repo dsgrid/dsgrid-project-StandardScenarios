@@ -31,6 +31,7 @@
     "weather_year",
     "data_source",
   ],
+  use_project_geography_time_zone: true,
   data_schema: {
     load_data_column_dimension: "metric",
   },
