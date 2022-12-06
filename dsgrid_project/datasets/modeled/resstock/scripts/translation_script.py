@@ -8,7 +8,7 @@ import pyarrow.parquet as pq
 import sys
 import os
 import shutil
-import toml
+import json5
 
 ## User input and directory creation
 def initialize_timeseries():
@@ -271,29 +271,29 @@ subsectors_df.to_csv('subsectors.csv', index = False)
 # Create subsectors.csv
 weather_years_df.to_csv('weather_years.csv', index = False)
 
-## Create .toml file
+## Create .json5 file
 # Change to sources directory
 os.chdir(cleardir.sources_path)
 
-# Transform .toml file into a dictionary
-dimensions_toml = toml.load("template.toml")
+# Transform .json5 file into a dictionary
+dimensions_json5 = json5.load("template.json5")
 
-# Edit toml dictionary with initialize_model function inputs
-dimensions_toml['dimensions'][1]['description'] = 'dsgrid Standard Scenarios 2021 Sectors;'+ initialize_model.sector_output+' Only'
-dimensions_toml['dimensions'][1]['name'] = 'Standard Scenarios 2021 Sectors-'+initialize_model.sector_output +'-Only'
-dimensions_toml['dimensions'][2]['description'] ='dsgrid Standard Scenarios 2021 Data Sources;'+ initialize_model.model_output +' Only'
-dimensions_toml['dimensions'][2]['name'] = 'Standard Scenarios 2021 DataSourcs -'+initialize_model.model_output +'-Only'
+# Edit json5 dictionary with initialize_model function inputs
+dimensions_json5['dimensions'][1]['description'] = 'dsgrid Standard Scenarios 2021 Sectors;'+ initialize_model.sector_output+' Only'
+dimensions_json5['dimensions'][1]['name'] = 'Standard Scenarios 2021 Sectors-'+initialize_model.sector_output +'-Only'
+dimensions_json5['dimensions'][2]['description'] ='dsgrid Standard Scenarios 2021 Data Sources;'+ initialize_model.model_output +' Only'
+dimensions_json5['dimensions'][2]['name'] = 'Standard Scenarios 2021 DataSourcs -'+initialize_model.model_output +'-Only'
 
 # Change to ouput directory and delete existing file
 os.chdir(cleardir.path)
-dimension_toml = os.path.join(cleardir.path, 'dimensions.toml')
-isfile = os.path.isdir(dimension_toml)
+dimension_json5 = os.path.join(cleardir.path, 'dimensions.json5')
+isfile = os.path.isdir(dimension_json5)
 if isfile == True:
-    os.remove("dimensions.toml")
+    os.remove("dimensions.json5")
 
-# Create .toml file
-with open ('dimensions.toml','w') as f:
-   data = toml.dump(dimensions_toml,f)
+# Create .json5 file
+with open ('dimensions.json5','w') as f:
+   data = json5.dump(dimensions_json5,f)
 
 ## Create dimension mapping .csv files
 # Change to dimension_mappings directory

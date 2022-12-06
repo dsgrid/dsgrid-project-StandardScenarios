@@ -136,3 +136,7 @@ dmypy.json
 
 # Mac
 **.DS_STORE
+
+# Spark Cluster
+matastore_db
+spark-wearehouse

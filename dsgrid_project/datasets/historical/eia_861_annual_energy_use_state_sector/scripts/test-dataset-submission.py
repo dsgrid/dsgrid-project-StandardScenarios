@@ -5,13 +5,13 @@ Script to test dataset submission to project and to use for debugging
 CLI COMMANDS:
 --------------
 # register the project
-dsgrid registry --offline projects register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/project.toml" -l "test"
+dsgrid registry --offline projects register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/project.json5" -l "test"
 
 # register the dataset
-dsgrid registry --offline datasets register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dataset.toml" "/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/eia861/processed/eia_861_annual_energy_use_state_sector" -l "test"
+dsgrid registry --offline datasets register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dataset.json5" "/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/eia861/processed/eia_861_annual_energy_use_state_sector" -l "test"
 
 # submit dataset to project
-dsgrid registry --offline projects submit-dataset -d "eia_861_annual_energy_use_state_sector" -p "dsgrid_conus_2022" -m "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dimension_mappings.toml" -l "test"
+dsgrid registry --offline projects submit-dataset -d "eia_861_annual_energy_use_state_sector" -p "dsgrid_conus_2022" -m "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dimension_mappings.json5" -l "test"
 """
 
 import shutil
@@ -30,9 +30,9 @@ submitter = "mmooney"
 
 project_dir = Path().absolute() / "dsgrid_project"
 dataset_dir = project_dir / "datasets" / "historical" / "eia_861_annual_energy_use_state_sector"
-project_toml = project_dir / "project.toml"
-dataset_toml = dataset_dir / "dataset.toml"
-dimension_mapping_file = dataset_dir / "dimension_mappings.toml"
+project_json5 = project_dir / "project.json5"
+dataset_json5 = dataset_dir / "dataset.json5"
+dimension_mapping_file = dataset_dir / "dimension_mappings.json5"
 dataset_path = Path("/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/eia861/processed/eia_861_annual_energy_use_state_sector") # located on dsgrid-load teams files
 
 # remove tmp supplemental dir
@@ -48,14 +48,14 @@ registry_manager = RegistryManager.load(
 manager = registry_manager.project_manager
 
 # register project
-manager.register(config_file=project_toml, 
+manager.register(config_file=project_json5, 
                  submitter=submitter, 
                  log_message="test", 
                  force=True
                  )
 
 # register dataset
-manager.dataset_manager.register(config_file=dataset_toml, 
+manager.dataset_manager.register(config_file=dataset_json5, 
                                  dataset_path=dataset_path, 
                                  submitter=submitter, 
                                  log_message="test", 
