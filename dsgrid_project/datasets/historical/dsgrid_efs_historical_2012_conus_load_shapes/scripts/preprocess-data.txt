@@ -1,0 +1,5 @@
+The dsgrid parquet files were generated using the convert_dsg.py script in dsgrid-legacy-efs-api.
+This converted the efs historical_hourly.dsg into new dsgrid parquet format
+
+Command used:
+spark-submit --driver-memory 16G "dsgrid-legacy-efs-api/bin/convert_dsg.py" "historical_hourly" -s sector -n 2

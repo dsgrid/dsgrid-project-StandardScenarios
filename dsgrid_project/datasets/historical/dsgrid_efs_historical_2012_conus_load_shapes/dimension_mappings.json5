@@ -1,0 +1,29 @@
+{
+  mappings: [
+    {
+      // use the same as EIA 861, for now
+      description: "EFS Historical Load Shape State to County mapping using proportion of state population in 2012",
+      dimension_type: "geography",
+      file: "../../historical/eia_861_annual_energy_use_state_sector/dimension_mappings/state_to_county.csv",
+      mapping_type: "many_to_many_disaggregation",
+    },
+    {
+      description: "EFS historical data to project scenarios",
+      dimension_type: "scenario",
+      file: "dimension_mappings/scenario_to_scenario.csv",
+      mapping_type: "duplication",
+    },
+    {
+      description: "EFS all electricity metric naming convention to project electricity_unspecified naming convention",
+      dimension_type: "metric",
+      file: "dimension_mappings/metric_to_metric.csv",
+      mapping_type: "one_to_one",
+    },
+    {
+      description: "EFS all sectors metric naming convention to project unspecified naming convention",
+      dimension_type: "sector",
+      file: "dimension_mappings/sector_to_sector.csv",
+      mapping_type: "one_to_one",
+    },
+  ],
+}
