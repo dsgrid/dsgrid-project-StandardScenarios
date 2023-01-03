@@ -60,3 +60,4 @@ wood_heating,wood,Wood Heating,kWh
 electricity_unspecified,electricity,Electricity Unspecified,kWh
 electricity_chp,electricity,Combined Heat and Power,kWh
 electricity_thermal_dg,electricity,Thermal DG,kWh
+electricity_dpv,electricity,Distributed PV,kWh

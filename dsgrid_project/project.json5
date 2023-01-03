@@ -4,6 +4,48 @@
   name: 'dsgrid CONUS 2022',
   datasets: [
     {
+      dataset_id: 'dsgrid_efs_historical_2012_conus_load_shapes',
+      dataset_type: 'historical',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          model_year: {
+            base: [2012],
+          },
+          subsector: {
+            base: ['unspecified'],
+          },
+          metric: {
+            base: ['electricity_unspecified'],
+          },
+          sector: {
+            base: ['unspecified'],
+          },
+        },
+      },
+    },
+    {
+      dataset_id: 'dsgrid_efs_2012_dpv',
+      dataset_type: 'historical',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          model_year: {
+            base: [2012],
+          },
+          subsector: {
+            base: ['unspecified'],
+          },
+          metric: {
+            base: ['electricity_dpv'],
+          },
+          sector: {
+            base: ['com', 'res', 'ind'],
+          },
+        },
+      },
+    },
+    {
       dataset_id: 'eia_861_annual_energy_use_state_sector',
       dataset_type: 'historical',
       version: '1.0.0',
