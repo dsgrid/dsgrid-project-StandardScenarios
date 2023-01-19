@@ -149,6 +149,34 @@
       },
     },
     {
+      dataset_id: 'resstock_projected_conus_2022',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          sector: {
+            base: ['res'],
+          },
+          subsector: {
+            supplemental: [
+              {
+                name: 'Subsectors by Sector',
+                record_ids: ['residential_subsectors'],
+              },
+            ],
+          },
+          metric: {
+            supplemental: [
+              {
+                name: 'residential-end-uses',
+                record_ids: ['residential_end_uses'],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
       dataset_id: 'aeo2021_reference_residential_energy_use_growth_factors',
       dataset_type: 'modeled',
       version: '1.0.0',
@@ -185,6 +213,34 @@
           model_year: {
             base: ['2018'],
           },
+          sector: {
+            base: ['com'],
+          },
+          subsector: {
+            supplemental: [
+              {
+                name: 'Subsectors by Sector',
+                record_ids: ['commercial_subsectors'],
+              },
+            ],
+          },
+          metric: {
+            supplemental: [
+              {
+                name: 'commercial-end-uses',
+                record_ids: ['commercial_end_uses'],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
+      dataset_id: 'comstock_projected_conus_2022',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
           sector: {
             base: ['com'],
           },
