@@ -10,7 +10,7 @@
   origin_contributors: [
     "Elaine Hale",
   ],
-  origin_project: "2018 Electric Futures Study",
+  origin_project: "2018 Electrification Futures Study",
   origin_date: "2018",
   origin_version: "0.2.0",
   source: "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/chp_dg.dsg",

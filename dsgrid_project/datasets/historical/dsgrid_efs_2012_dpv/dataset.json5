@@ -3,13 +3,13 @@
   dataset_id: "dsgrid_efs_2012_dpv",
   dataset_type: "historical",
   data_source: "dsgrid_efs",
-  description:  "2012 historical distributed PV (kWh) for CONUS developed as part of the Electric Futures Study (2018)", // @ehale to review
-  origin_creator: "Elaine Hale",
+  description:  "2012 historical distributed PV (kWh) for CONUS developed as part of the Electrification Futures Study (2018). Data created using code in https://github.nrel.gov/dsgrid/dpv, which uses NSRDB, SAM, and dGen.", 
+  origin_creator: "Gord Stephen",
   origin_organization: "NREL",
   origin_contributors: [
-    "Elaine Hale",
+    "Gord Stephen",
   ],
-  origin_project: "2018 Electric Futures Study",
+  origin_project: "2018 Electrification Futures Study",
   origin_date: "2018",
   origin_version: "0.2.0",
   source: "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/distributedpv_sectoral.dsg",
@@ -39,7 +39,7 @@
       file: "dimensions/geography.csv",
       module: "dsgrid.dimension.standard",
       "class": "County",
-      description: "US counties for L48, Census 2017 vintage, no territories", //@ehale what was the vintage used by EFS data?
+      description: "US counties for L48, Census early-to-mid 2010s vintage, no territories", 
     },
     {
       type: "sector",
