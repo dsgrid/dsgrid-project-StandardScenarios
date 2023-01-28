@@ -1,0 +1,15 @@
+from_id,to_id
+full_service_restaurant,full_service_restaurant
+hospital,hospital
+large_hotel,large_hotel
+large_office,large_office
+medium_office,medium_office
+outpatient,outpatient
+primary_school,primary_school
+quick_service_restaurant,quick_service_restaurant
+retail_standalone,retail_standalone
+retail_stripmall,retail_stripmall
+secondary_school,secondary_school
+small_hotel,small_hotel
+small_office,small_office
+warehouse,warehouse
