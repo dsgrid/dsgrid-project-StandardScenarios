@@ -381,15 +381,6 @@
         type: 'scenario',
       },
       {
-        class: 'DataSource',
-        description: 'dsgrid Standard Scenarios 2021 Data Sources; ComStock, TEMPO, ResStock, EIA 861, and others',
-        file: 'dimensions/sources.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'Data-Sources for dsgrid Standard Scenarios 2021',
-        display_name: 'Data Source',
-        type: 'data_source',
-      },
-      {
         class: 'Time',
         frequency: 'P0DT1H0M0.000000S',
         name: 'Time-2012-EST-hourly-periodBeginning-noLeapDayAdjustment-total',

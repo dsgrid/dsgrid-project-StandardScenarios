@@ -20,7 +20,6 @@
     'weather_year',
     'model_year',
     'scenario',
-    'data_source',
     'subsector',
   ],
   // TODO: do we apply the same losses for every model year? for every scenario? @ehale says: We should apply the same loss rates for every model year and scenario. Basically we should have 2012 sales (EIA 861) + these losses = 2012 annual system load (FERC 714). For other years we would want to hold the ratios between sales and annual system load constant (compared to this data point).
@@ -66,15 +65,6 @@
       module: 'dsgrid.dimension.standard',
       class: 'EnergyEndUse',
       description: 'Unspecified Electricity',
-    },
-    {
-      type: "data_source",
-      name: "dsgrid-efs",
-      display_name: "dsgrid EFS",
-      file: "dimensions/data_source.csv",
-      module: "dsgrid.dimension.standard",
-      "class": "DataSource",
-      description: "dsgrid load data for historical year 2012 created for the NREL Electrification Futures Study",
     },
     {
       type: 'scenario',

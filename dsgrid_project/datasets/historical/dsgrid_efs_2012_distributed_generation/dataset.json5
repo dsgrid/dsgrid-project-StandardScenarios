@@ -26,7 +26,6 @@
     "weather_year",
     "model_year",
     "scenario",
-    "data_source",
     "subsector",
   ],
   data_schema: {
@@ -68,15 +67,6 @@
       module: "dsgrid.dimension.standard",
       "class": "EnergyEndUse",
       description: "Combined Heat and Power and Thermal DG from the EFS study",
-    },
-    {
-      type: "data_source",
-      name: "dsgrid-efs",
-      display_name: "dsgrid EFS",
-      file: "dimensions/data_source.csv",
-      module: "dsgrid.dimension.standard",
-      "class": "DataSource",
-      description: "dsgrid load data for historical year 2012 created for the NREL Electrification Futures Study",
     },
     {
       type: "scenario",

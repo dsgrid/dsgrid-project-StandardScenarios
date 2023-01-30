@@ -29,7 +29,6 @@
     "weather_year",
     "model_year",
     "scenario",
-    "data_source",
   ],
   data_schema: {
     load_data_column_dimension: "metric",
@@ -79,15 +78,6 @@
       module: "dsgrid.dimension.standard",
       "class": "Scenario",
       description: "Scenario: CONUS (Continental U.S.) 2022 Reference",
-    },
-    {
-      type: "data_source",
-      name: "Comstock-Data-Source",
-      display_name: "ComStock",
-      file: "dimensions/data_source_comstock.csv",
-      module: "dsgrid.dimension.standard",
-      "class": "DataSource",
-      description: "Data source: ComStock",
     },
     {
       type: "model_year",
