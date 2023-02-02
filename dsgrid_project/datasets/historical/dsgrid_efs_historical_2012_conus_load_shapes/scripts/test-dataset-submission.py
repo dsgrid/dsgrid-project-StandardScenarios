@@ -8,7 +8,7 @@ CLI COMMANDS:
 dsgrid registry --offline projects register "dsgrid-project-StandardScenarios/dsgrid_project/project.json5" -l "test"
 
 # register the dataset
-dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_historical_2012_conus_load_shapes/dataset.json5" "/projects/dsgrid/data-StandardScenarios/dsgrid_efs_historical_2012_conus_load_shapes" -l "test"
+dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_historical_2012_conus_load_shapes/dataset.json5" "/projects/dsgrid/data-StandardScenarios/historical_hourly_load" -l "test"
 
 # submit dataset to project
 dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_historical_2012_conus_load_shapes" -p "dsgrid_conus_2022" -m "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_historical_2012_conus_load_shapes/dimension_mappings.json5" -l "test"

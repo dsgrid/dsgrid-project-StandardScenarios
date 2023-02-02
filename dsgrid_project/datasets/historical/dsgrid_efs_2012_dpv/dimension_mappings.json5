@@ -10,7 +10,7 @@
       description: "EFS dg metric naming convention to project metric naming convention",
       dimension_type: "metric",
       file: "dimension_mappings/metric_to_metric.csv",
-      mapping_type: "one_to_one",
+      mapping_type: "one_to_one_explicit_multipliers",
     },
   ],
 }
