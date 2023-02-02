@@ -66,14 +66,13 @@
       description: "Unspecified Subsectors",
     },
     {
-      // TODO: currently the DPV data is in MWh, but the project units are kWh. dsgrid needs to handle unit conversions.
-      type: "metric",
-      name: "all_electricity",  // @ehale: is this right?
-      display_name: "All Electricity", // @ehale: is this right?
-      file: "dimensions/metric.csv",
-      module: "dsgrid.dimension.standard",
-      "class": "EnergyEndUse",
-      description: "Historical system-level electricity load",
+      type: 'metric',
+      name: 'Unspecified Electricity',
+      display_name: 'Unspecified Electricity',
+      file: 'dimensions/metric.csv',
+      module: 'dsgrid.dimension.standard',
+      class: 'EnergyEndUse',
+      description: 'Unspecified Electricity',
     },
     {
       type: "data_source",
