@@ -273,7 +273,25 @@
           },
         },
       },
-    }
+    },
+    {
+      dataset_id: 'aeo2021_reference_industrial_energy_use_growth_factors',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          sector: {
+            base: ['ind'],
+          },
+          subsector: {
+            base: ['unspecified'],
+          },
+          metric: {
+            base: ['electricity_unspecified'],
+          },
+        },
+      },
+    },    
   ],
   dimensions: {
     base_dimensions: [
@@ -419,6 +437,15 @@
         type: 'geography',
       },
       {
+        class: 'GeographyDimensionBaseModel',
+        description: 'Contiguous United States',
+        file: 'dimensions/supplemental/conus.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'Contiguous United States',
+        display_name: 'CONUS',
+        type: 'geography',
+      },
+      {
         class: 'EnergyEndUse',
         description: 'All Electric End Uses',
         file: 'dimensions/supplemental/all_electric_enduses.csv',
@@ -519,6 +546,19 @@
           type: 'geography',
         },
       },
+      {
+        description: 'Maps US Counties 2020 L48 to CONUS',
+        file: 'dimension_mappings/base_to_supplemental/lookup_county_to_conus.csv',
+        mapping_type: 'many_to_one_aggregation',
+        from_dimension: {
+          name: 'US Counties 2020 L48',
+          type: 'geography',
+        },
+        to_dimension: {
+          name: 'Contiguous United States',
+          type: 'geography',
+        },
+      },      
       {
         description: 'Aggregation map for all dsgrid CONUS 2022 electric end uses',
         file: 'dimension_mappings/base_to_supplemental/lookup_enduses_to_all_electric_enduses.csv',
