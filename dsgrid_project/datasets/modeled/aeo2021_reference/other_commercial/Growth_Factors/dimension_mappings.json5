@@ -24,5 +24,11 @@
       file: '../../commercial/End_Use_Growth_Factors/dimension_mappings/scenario_to_scenario.csv',
       mapping_type: 'duplication',
     },
+    {
+      dimension_type: 'geography',
+      description: 'Maps census divisions to the comprising counties',
+      file: '../../commercial/End_Use_Growth_Factors/dimension_mappings/lookup_censusdivision_to_county.csv',
+      mapping_type: 'duplication',
+    },
   ],
 }
