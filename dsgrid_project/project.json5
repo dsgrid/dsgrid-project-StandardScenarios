@@ -256,6 +256,24 @@
         },
       },
     },
+    {
+      dataset_id: 'aeo2021_reference_other_commercial_energy_use_growth_factors',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          sector: {
+            base: ['com'],
+          },
+          subsector: {
+            base: ['unspecified'],
+          },
+          metric: {
+            base: ['electricity_unspecified'],
+          },
+        },
+      },
+    }
   ],
   dimensions: {
     base_dimensions: [

@@ -1,0 +1,28 @@
+{
+  mappings: [
+    {
+      dimension_type: 'subsector',
+      description: 'Maps AEO non-building commercial subsector to unspecified subsector',
+      file: 'dimension_mappings/lookup_aeo2021_non_building_to_unspecified_subsector.csv',
+      mapping_type: 'one_to_one',
+    },
+    {
+      dimension_type: 'metric',
+      description: 'Maps Baseline ComStock end uses to AEO 2021 commercial end uses',
+      file: 'dimension_mappings/lookup_aeo2021_unspecified_to_unspecified_enduse.csv',
+      mapping_type: 'one_to_one',
+    },
+    {
+      dimension_type: 'model_year',      
+      description: 'AEO2021-residential model year dimension mapping for the CONUS 2022 project',
+      file: '../../residential/End_Use_Growth_Factors/dimension_mappings/model_year_to_model_year.csv',
+      mapping_type: 'duplication',
+    },
+    {
+      dimension_type: 'scenario',
+      description: 'Maps AEO 2021 scenarios to project scenarios',
+      file: '../../commercial/End_Use_Growth_Factors/dimension_mappings/scenario_to_scenario.csv',
+      mapping_type: 'duplication',
+    },
+  ],
+}
