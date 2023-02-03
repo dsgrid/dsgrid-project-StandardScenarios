@@ -126,6 +126,9 @@
           sector: {
             base: ['res'],
           },
+          model_year: {
+            base: ['2018'],
+          },
           subsector: {
             supplemental: [
               {
@@ -179,6 +182,9 @@
       version: '1.0.0',
       required_dimensions: {
         single_dimensional: {
+          model_year: {
+            base: ['2018'],
+          },
           sector: {
             base: ['com'],
           },
