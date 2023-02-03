@@ -1,2 +1,2 @@
-from_id,to_id
-electricity_sales,electricity_unspecified
+from_id,to_id,from_fraction
+electricity_sales,electricity_unspecified,1000.0

@@ -60,3 +60,4 @@ electricity_ev_dcfc,Electricty - EV DCFC,electricity,kWh
 electricity_unspecified,Electricity - Unspecified,electricity,kWh
 electricity_chp,electricity,Electricty - Combined Heat and Power,kWh
 electricity_thermal_dg,electricity,Electricty - Thermal DG,kWh
+electricity_dpv,electricity,Distributed PV,kWh
