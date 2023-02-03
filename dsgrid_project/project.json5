@@ -307,6 +307,15 @@
       //   type: "metric",
       // },
       {
+        class: "Capacity",
+        description: "dsgrid CONUS 2022 Equipment Capacities",
+        file: "dimensions/capacities.csv",
+        module: "dsgrid.dimension.standard",
+        name: "CONUS-2022-Equip-Capacities",
+        display_name: "Capacity",
+        type: "metric",
+      },
+      {
         class: 'ModelYear',
         description: 'Model year, 2010-2050',
         file: 'dimensions/model_years.csv',
