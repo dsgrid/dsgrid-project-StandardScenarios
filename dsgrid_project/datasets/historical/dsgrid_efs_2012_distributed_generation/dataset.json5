@@ -77,7 +77,7 @@
       module: "dsgrid.dimension.standard",
       "class": "DataSource",
       description: "dsgrid load data for historical year 2012 created for the NREL Electrification Futures Study",
-    }
+    },
     {
       type: "scenario",
       name: "Conus-2022-reference",
