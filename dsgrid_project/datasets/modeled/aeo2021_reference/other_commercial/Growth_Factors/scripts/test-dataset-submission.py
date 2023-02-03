@@ -19,16 +19,19 @@ from pathlib import Path
 from dsgrid.common import REMOTE_REGISTRY, LOCAL_REGISTRY
 from dsgrid.registry.registry_manager import RegistryManager
 
-
 # start with fresh offline mode registry
 local_test_registry = Path.home() / ".dsgrid-registry-test"
 if local_test_registry.exists():
     shutil.rmtree(local_test_registry)
 
-
 submitter = "ehale"
 
-project_dir = Path().absolute() / "dsgrid_project"
+here = Path(__file__).parent
+repo_path = here.parent.parent.parent.parent.parent.parent.parent
+assert repo_path.stem == "dsgrid-project-StandardScenarios", repo_path
+
+project_dir = repo_path / "dsgrid_project"
+assert project_dir.exists(), project_dir
 dataset_dir = project_dir / "datasets" / "modeled" / "aeo2021_reference" / "other_commercial" / "Growth_Factors"
 project_json5 = project_dir / "project.json5"
 dataset_json5 = dataset_dir / "dataset.json5"
