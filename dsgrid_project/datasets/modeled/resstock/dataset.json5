@@ -29,7 +29,6 @@
     "weather_year",
     "model_year",
     "scenario",
-    "data_source",
   ],
   data_schema: {
     load_data_column_dimension: "metric",
@@ -70,15 +69,6 @@
       module: "dsgrid.dimension.standard",
       "class": "EnergyEndUse",
       description: "CONUS 2022 - ResStock end uses (N=48, 5 fuel types)",
-    },
-    {
-      type: "data_source",
-      name: "ResStock-Data-Source",
-      display_name: "ResStock",
-      file: "dimensions/data_source_resstock.csv",
-      module: "dsgrid.dimension.standard",
-      "class": "DataSource",
-      description: "ResStock only data source",
     },
     {
       type: "scenario",

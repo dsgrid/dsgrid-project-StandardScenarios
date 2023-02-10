@@ -1,0 +1,3 @@
+id,name,fuel_id,unit
+electricity_ev_l1l2,Electricity EV L1/L2,electricity,kWh
+electricity_ev_dcfc,Electricty EV DCFC,electricity,kWh

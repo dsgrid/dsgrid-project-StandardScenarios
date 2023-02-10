@@ -29,7 +29,6 @@
   trivial_dimensions: [
     "sector",
     "weather_year",
-    "data_source",
   ],
   use_project_geography_time_zone: true,
   data_schema: {
@@ -76,14 +75,6 @@
       measurement_type: "total",
       format: "one_week_per_month_by_hour",
       description: "TEMPO Time - Month (representing seasons), day of week, and hour of day.",
-    },
-    {
-      "class": "DataSource",
-      type: "data_source",
-      name: "TEMPO Model",
-      display_name: "TEMPO",
-      file: "dimensions/data_source.csv",
-      description: "TEMPO model",
     },
     {
       "class": "ModelYear",
