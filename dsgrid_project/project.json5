@@ -149,7 +149,7 @@
       },
     },
     {
-      dataset_id: 'resstock_projected_conus_2022',
+      dataset_id: 'resstock_conus_2022_projected',
       dataset_type: 'modeled',
       version: '1.0.0',
       required_dimensions: {
@@ -236,7 +236,7 @@
       },
     },
     {
-      dataset_id: 'comstock_projected_conus_2022',
+      dataset_id: 'comstock_conus_2022_projected',
       dataset_type: 'modeled',
       version: '1.0.0',
       required_dimensions: {
