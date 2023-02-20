@@ -3,7 +3,7 @@
   dataset_id: "dsgrid_efs_2012_dpv",
   dataset_type: "historical",
   data_source: "dsgrid_efs",
-  description:  "2012 historical distributed PV (kWh) for CONUS developed as part of the Electrification Futures Study (2018). Data created using code in https://github.nrel.gov/dsgrid/dpv, which uses NSRDB, SAM, and dGen.", 
+  description:  "2012 historical distributed PV (MWh) for CONUS developed as part of the Electrification Futures Study (2018). Data created using code in https://github.nrel.gov/dsgrid/dpv, which uses NSRDB, SAM, and dGen.", 
   origin_creator: "Gord Stephen",
   origin_organization: "NREL",
   origin_contributors: [
@@ -60,14 +60,13 @@
       description: "Unspecified Subsectors",
     },
     {
-      // TODO: currently the DPV data is in MWh, but the project units are kWh. dsgrid needs to handle unit conversions.
       type: "metric",
       name: "dpv",
       display_name: "Distributed PV",
       file: "dimensions/metric.csv",
       module: "dsgrid.dimension.standard",
       "class": "EnergyEndUse",
-      description: "Distributed PV from the EFS study",
+      description: "Distributed PV generation",
     },
     {
       type: "data_source",

@@ -287,7 +287,7 @@
         type: 'subsector',
       },
       {
-        // TODO: this is for the dummy data deliverable
+        // TODO: This is for the dummy data deliverable
         class: 'EnergyEndUse',
         description: 'dsgrid CONUS 2022 End Uses (all fuel types) w/ all units in kWh',
         file: 'dimensions/enduses_kwh.csv',
@@ -296,7 +296,7 @@
         display_name: 'End Use',
         type: 'metric',
       },
-      // TODO: this is what we ultimately want to be using for the project
+      // TODO: This is what we ultimately want to be using for the project
       // {
       //   "class": "EnergyEndUse",
       //   description: "dsgrid CONUS 2022 End Uses (all fuel types)",
@@ -306,15 +306,16 @@
       //   display_name: "End Use",
       //   type: "metric",
       // },
-      {
-        class: "Capacity",
-        description: "dsgrid CONUS 2022 Equipment Capacities",
-        file: "dimensions/capacities.csv",
-        module: "dsgrid.dimension.standard",
-        name: "CONUS-2022-Equip-Capacities",
-        display_name: "Capacity",
-        type: "metric",
-      },
+      // TODO: Enable projects to have multiple metrics (https://github.com/dsgrid/dsgrid/issues/229)
+      // {
+      //   class: "Capacity",
+      //   description: "dsgrid CONUS 2022 Equipment Capacities",
+      //   file: "dimensions/capacities.csv",
+      //   module: "dsgrid.dimension.standard",
+      //   name: "CONUS-2022-Equip-Capacities",
+      //   display_name: "Capacity",
+      //   type: "metric",
+      // },
       {
         class: 'ModelYear',
         description: 'Model year, 2010-2050',

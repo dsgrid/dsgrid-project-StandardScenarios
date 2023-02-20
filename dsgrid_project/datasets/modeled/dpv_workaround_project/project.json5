@@ -1,0 +1,123 @@
+{
+    project_id: "dsgrid_conus_2022_dpv_calcs",
+    description: "Side project to calculate 2010-2050 DPV generation profiles. Temporary workaround ahead of implementing https://github.com/dsgrid/dsgrid/issues/229.",
+    name: "dsgrid CONUS 2022 DPV Calculations",
+    datasets: [
+        {
+            dataset_id: "dsgrid_efs_2012_dpv",
+            dataset_type: "historical",
+            version: "0.2.0",
+            required_dimensions: {
+                model_year: {
+                    base: [2012],
+                },
+            }
+        },
+        {
+            dataset_id: "dsgrid_efs_2012_dpv_capacity",
+            dataset_type: "historical",
+            version: "0.1.0",
+            required_dimensions: {
+                model_year: {
+                    base: [2012],
+                },
+            }
+        },
+        {
+            dataset_id: "dgen_stdscen_2022_dpv_capacity",
+            dataset_type: "modeled",
+            version: "0.1.0",
+            required_dimensions: {
+            }
+        },
+    ],
+    dimensions: {
+        base_dimensions: [
+            {
+                class: 'County',
+                description: 'US counties for L48, Census 2020 vintage, no territories',
+                file: '../../../dimensions/counties.csv',
+                module: 'dsgrid.dimension.standard',
+                name: 'US Counties 2020 L48',
+                display_name: 'County',
+                type: 'geography',
+            },
+            {
+                class: 'Sector',
+                description: 'dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Industrial and Transportation',
+                file: '../../../dimensions/sectors.csv',
+                module: 'dsgrid.dimension.standard',
+                name: 'Sectors - Com-Res-Ind-Trans',
+                display_name: 'Sector',
+                type: 'sector',
+            },
+            {
+                type: "subsector",
+                name: "unspecified-subsectors",
+                display_name: "Unspecified Subsectors",
+                file: "../../historical/dsgrid_efs_2012_dpv/dimensions/subsectors.csv",
+                module: "dsgrid.dimension.standard",
+                "class": "Subsector",
+                description: "Unspecified Subsectors",
+            },
+            {
+                type: "metric",
+                name: "dpv",
+                display_name: "Distributed PV",
+                file: "../../historical/dsgrid_efs_2012_dpv/dimensions/metric.csv",
+                module: "dsgrid.dimension.standard",
+                "class": "EnergyEndUse",
+                description: "Distributed PV generation",
+            },
+            {
+                class: 'ModelYear',
+                description: 'Model year, 2010-2050',
+                file: '../../../dimensions/model_years.csv',
+                module: 'dsgrid.dimension.standard',
+                name: 'Model Years 2010 to 2050',
+                display_name: 'Model Year',
+                type: 'model_year',
+            },
+            {
+                type: "scenario",
+                name: "Conus-2022-reference",
+                display_name: "Reference",
+                file: "../../historical/dsgrid_efs_2012_dpv/dimensions/scenario.csv",
+                module: "dsgrid.dimension.standard",
+                "class": "Scenario",
+                description: "CONUS (Continental U.S.) 2022 Reference",
+            },
+            {
+                class: 'DataSource',
+                description: 'dsgrid EFS and dGen',
+                file: 'dimensions/sources.csv',
+                module: 'dsgrid.dimension.standard',
+                name: 'Data-Sources for dsgrid Standard Scenarios 2022 DPV Calculations',
+                display_name: 'Data Source',
+                type: 'data_source',
+            },
+            {
+                // Note: This matches dsgrid EFS time rather than final project time
+                name: "Time-2012-EST-hourly-periodEnding-noDST-noLeapDayAdjustment-total-UTChour1start",
+                display_name: "2012 Hourly EST",
+                type: "time",
+                module: "dsgrid.dimension.standard",
+                "class": "Time",
+                description: "Time dimension, 2012 hourly EST, period-ending, no DST, no Leap Day Adjustment, total value",
+                time_type: "datetime",
+                measurement_type: "total",
+                str_format: "%Y-%m-%d %H:%M:%S",
+                frequency: "P0DT1H0M0.000000S",
+                leap_day_adjustment: "none",
+                time_interval_type: "period_ending",
+                timezone: "EasternStandard",
+                ranges: [
+                    {
+                    start: "2012-01-01 01:00:00",
+                    end: "2013-01-01 00:00:00",
+                    },
+                ],
+            },
+        ]
+    }
+}
