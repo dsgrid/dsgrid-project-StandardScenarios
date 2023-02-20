@@ -8,9 +8,11 @@
             dataset_type: "historical",
             version: "0.2.0",
             required_dimensions: {
-                model_year: {
-                    base: [2012],
-                },
+                single_dimensional: {
+                    model_year: {
+                        base: ["2012"],
+                    },
+                }
             }
         },
         {
@@ -18,9 +20,11 @@
             dataset_type: "historical",
             version: "0.1.0",
             required_dimensions: {
-                model_year: {
-                    base: [2012],
-                },
+                single_dimensional: {
+                    model_year: {
+                        base: ["2012"],
+                    },
+                }
             }
         },
         {
@@ -28,6 +32,11 @@
             dataset_type: "modeled",
             version: "0.1.0",
             required_dimensions: {
+                single_dimensional: {
+                    model_year: {
+                        base: ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050"],
+                    }
+                }
             }
         },
     ],
@@ -88,15 +97,6 @@
                 description: "CONUS (Continental U.S.) 2022 Reference",
             },
             {
-                class: 'DataSource',
-                description: 'dsgrid EFS and dGen',
-                file: 'dimensions/sources.csv',
-                module: 'dsgrid.dimension.standard',
-                name: 'Data-Sources for dsgrid Standard Scenarios 2022 DPV Calculations',
-                display_name: 'Data Source',
-                type: 'data_source',
-            },
-            {
                 // Note: This matches dsgrid EFS time rather than final project time
                 name: "Time-2012-EST-hourly-periodEnding-noDST-noLeapDayAdjustment-total-UTChour1start",
                 display_name: "2012 Hourly EST",
@@ -117,6 +117,15 @@
                     end: "2013-01-01 00:00:00",
                     },
                 ],
+            },
+            {
+                class: 'WeatherYear',
+                description: 'Weather year, 2012 only',
+                file: '../../../dimensions/weather_years.csv',
+                module: 'dsgrid.dimension.standard',
+                name: '2012 Weather Year',
+                display_name: 'Weather 2012',
+                type: 'weather_year',
             },
         ]
     }
