@@ -22,7 +22,6 @@
     trivial_dimensions: [
         "weather_year",
         "scenario",
-        "data_source",
         "subsector",
     ],
     data_schema: {
@@ -30,13 +29,13 @@
     },
     dimensions: [
       {
-        type: "geography",
-        name: "US Counties 2017 L48",
-        display_name: "County",
-        file: "../../historical/dsgrid_efs_2012_dpv/dimensions/geography.csv",
-        module: "dsgrid.dimension.standard",
-        "class": "County",
-        description: "US counties for L48, Census early-to-mid 2010s vintage, no territories",
+          class: 'County',
+          description: 'US counties for L48, Census 2020 vintage, no territories',
+          file: '../../../dimensions/counties.csv',
+          module: 'dsgrid.dimension.standard',
+          name: 'US Counties 2020 L48',
+          display_name: 'County',
+          type: 'geography',
       },
       {
         type: "sector",
@@ -66,15 +65,6 @@
         description: "Distributed PV nameplate capacity",
       },
       {
-        type: "data_source",
-        name: "dgen",
-        display_name: "dGen",
-        file: "dimensions/data_source.csv",
-        module: "dsgrid.dimension.standard",
-        "class": "DataSource",
-        description: "Distributed Generation Market Demand (dGen) Model",
-      },
-      {
         type: "scenario",
         name: "Conus-2022-reference",
         display_name: "Reference",
@@ -85,12 +75,12 @@
       },
       {
         type: "model_year",
-        name: "Model-Years-2014_to_2050",
+        name: "Model-Years-Even-2014_to_2050",
         display_name: "None",
-        file: "dimensions/model_years_2014_to_2050.csv",
+        file: "dimensions/model_years_even_2014_to_2050.csv",
         module: "dsgrid.dimension.standard",
         "class": "ModelYear",
-        description: "Model Years, 2014-2050",
+        description: "Model Years, even years 2014-2050",
       },
       {
         "class": "WeatherYear",
@@ -109,6 +99,7 @@
         description: 'Annual time 2014-2050',
         name: 'annual_time-2014_to_2050',
         display_name: 'Annual',
+        frequency: 2,
         ranges: [
             {
             start: '2014',

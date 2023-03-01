@@ -1,16 +1,18 @@
 {
   mappings: [
-    {
-      description: "EFS historical data to project scenarios",
-      dimension_type: "scenario",
-      file: "dimension_mappings/scenario_to_scenario.csv",
-      mapping_type: "duplication",
-    },
-    {
-      description: "EFS dg metric naming convention to project metric naming convention",
-      dimension_type: "metric",
-      file: "dimension_mappings/metric_to_metric.csv",
-      mapping_type: "one_to_one_explicit_multipliers",
-    },
+    // Not needed in DPV Calculations Workaround project
+    // {
+    //   description: "EFS historical data to project scenarios",
+    //   dimension_type: "scenario",
+    //   file: "dimension_mappings/scenario_to_scenario.csv",
+    //   mapping_type: "duplication",
+    // },
+    // Not needed in DPV Calculations Workaround project
+    // {
+    //   description: "EFS dg metric naming convention to project metric naming convention",
+    //   dimension_type: "metric",
+    //   file: "dimension_mappings/metric_to_metric.csv",
+    //   mapping_type: "one_to_one_explicit_multipliers",
+    // },
   ],
 }

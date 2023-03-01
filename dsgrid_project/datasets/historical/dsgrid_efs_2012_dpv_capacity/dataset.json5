@@ -25,7 +25,6 @@
         "weather_year",
         "model_year",
         "scenario",
-        "data_source",
         "subsector",
     ],
     data_schema: {
@@ -33,13 +32,13 @@
     },
     dimensions: [
       {
-        type: "geography",
-        name: "US Counties 2017 L48",
-        display_name: "County",
-        file: "../dsgrid_efs_2012_dpv/dimensions/geography.csv",
-        module: "dsgrid.dimension.standard",
-        "class": "County",
-        description: "US counties for L48, Census early-to-mid 2010s vintage, no territories",
+        class: 'County',
+        description: 'US counties for L48, Census 2020 vintage, no territories',
+        file: '../../../dimensions/counties.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'US Counties 2020 L48',
+        display_name: 'County',
+        type: 'geography',
       },
       {
         type: "sector",
@@ -67,15 +66,6 @@
         module: "dsgrid.dimension.standard",
         "class": "Capacity",
         description: "Distributed PV nameplate capacity",
-      },
-      {
-        type: "data_source",
-        name: "dsgrid-efs",
-        display_name: "dsgrid EFS",
-        file: "../dsgrid_efs_2012_dpv/dimensions/data_source.csv",
-        module: "dsgrid.dimension.standard",
-        "class": "DataSource",
-        description: "dsgrid load data for historical year 2012 created for the NREL Electrification Futures Study",
       },
       {
         type: "scenario",

@@ -1,0 +1,10 @@
+{
+  mappings: [
+    {
+      description: "dGen sectors to dsgrid sectors",
+      dimension_type: "sector",
+      file: "dimension_mappings/dgen_nonresidential_to_com_ind_dpv_capacity.csv",
+      mapping_type: "one_to_many_disaggregation",
+    },
+  ],
+}

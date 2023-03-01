@@ -12,6 +12,9 @@
                     model_year: {
                         base: ["2012"],
                     },
+                    sector: {
+                        base: ["res", "com", "ind"]
+                    }
                 }
             }
         },
@@ -24,6 +27,9 @@
                     model_year: {
                         base: ["2012"],
                     },
+                    sector: {
+                        base: ["res", "com", "ind"]
+                    }
                 }
             }
         },
@@ -34,7 +40,10 @@
             required_dimensions: {
                 single_dimensional: {
                     model_year: {
-                        base: ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040", "2041", "2042", "2043", "2044", "2045", "2046", "2047", "2048", "2049", "2050"],
+                        base: ["2014", "2016", "2018", "2020", "2022", "2024", "2026", "2028", "2030", "2032", "2034", "2036", "2038", "2040", "2042", "2044", "2046", "2048", "2050"],
+                    },
+                    sector: {
+                        base: ["res", "com", "ind"]
                     }
                 }
             }
@@ -79,13 +88,13 @@
                 description: "Distributed PV generation",
             },
             {
-                class: 'ModelYear',
-                description: 'Model year, 2010-2050',
-                file: '../../../dimensions/model_years.csv',
-                module: 'dsgrid.dimension.standard',
-                name: 'Model Years 2010 to 2050',
-                display_name: 'Model Year',
-                type: 'model_year',
+                type: "model_year",
+                name: "Model-Years-Even-2012_to_2050",
+                display_name: "None",
+                file: "dimensions/model_years_even_2012_to_2050.csv",
+                module: "dsgrid.dimension.standard",
+                "class": "ModelYear",
+                description: "Model Years, even years 2012-2050",
             },
             {
                 type: "scenario",
