@@ -103,7 +103,7 @@
   ],
   dimension_references: [
     {
-      dimension_id: "all_dsgrid_conus_2022_geographies__b783590c-60eb-493b-9f45-f262efa312f6",
+      name: "all_dsgrid_conus_2022_geographies",
       type: "geography",
       version: "1.0.0",
     },
