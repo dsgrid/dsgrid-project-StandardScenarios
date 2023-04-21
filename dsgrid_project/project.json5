@@ -118,6 +118,34 @@
       },
     },
     {
+      dataset_id: 'tempo_conus_2022_mapped',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          sector: {
+            base: ['trans'],
+          },
+          subsector: {
+            supplemental: [
+              {
+                name: 'Subsectors by Sector Collapsed',
+                record_ids: ['transportation_subsectors'],
+              },
+            ],
+          },
+          metric: {
+            supplemental: [
+              {
+                name: 'transportation-end-uses-collapsed',
+                record_ids: ['transportation_end_uses'],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
       dataset_id: 'resstock_conus_2022_reference',
       dataset_type: 'modeled',
       version: '1.0.0',
