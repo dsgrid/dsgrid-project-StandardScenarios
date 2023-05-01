@@ -17,8 +17,8 @@ The script will generate a large amount of data (currently 8-9 TiB). Run the scr
 The rest of these instructions assume that you are working from an empty directory in
 `/scratch/$USER`.
 
-Edit `${HOME}/.dsgrid.json5` to point to the correct database and ensure that ``offline`` is true.
-If you don't have the file, run this command with correct values:
+If `${HOME}/.dsgrid.json5` exists, edit it to point to the correct database and ensure that
+``offline`` is true. If you don't have the file, run this command with correct values:
 ```
 $ dsgrid config create --database-name TEXT --database-url TEXT --offline
 ```
@@ -26,7 +26,7 @@ $ dsgrid config create --database-name TEXT --database-url TEXT --offline
 ### Required modifications
 You must make several changes to `./project_registration.json5` before running the workflow.
 ```
-$ cp $DSGRID_SS_REPO_BASE_PATH/dsgrid_project//build_registry/project_registration.json5 .
+$ cp $DSGRID_SS_REPO_BASE_PATH/dsgrid_project/build_registry/project_registration.json5 .
 ```
 Open `project_registration.json5` with a text editor and make these changes:
 - Modify the `conn` section to match your database.
