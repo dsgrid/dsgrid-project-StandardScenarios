@@ -4,6 +4,10 @@ StandardScenarios datasets and derived datasets. dsgrid developers need to keep 
 as new derived datasets are added.
 
 ## Dependencies
+You need to have access to a dsgrid registry database. This README will be updated when the dsgrid
+team has a central database. For now, refer to the dsgrid documentation or contact the developers
+if you need help setting up a database.
+
 The scripts rely on Apache Spark cluster creation scripts in
 https://github.com/NREL/HPC/tree/master/applications/spark. You must clone it locally.
 ```
@@ -35,7 +39,7 @@ dsgrid-project-StandardScenarios repository. The path you give must contain the 
 `dsgrid_project`.
 
 Copy and customize the `sbatch` script `batch.sh`. You need to specify correct paths to your local
-repositories.
+repositories as well as the name of your conda environment.
 ```
 $ cp $DSGRID_SS_REPO_BASE_PATH/dsgrid_project/scripts/build_registry/batch.sh .
 ```

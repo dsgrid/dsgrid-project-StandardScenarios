@@ -2,11 +2,16 @@
 
 # Builds a dsgrid StandardScenarios registry with standalone and derived datasets.
 
-DSGRID_REPO=$1
-DSGRID_SS_REPO=$2
-HPC_REPO=$3
+CONDA_ENV=$1
+DSGRID_REPO=$2
+DSGRID_SS_REPO=$3
+HPC_REPO=$4
 
-usage="Usage: bash build_registry.sh DSGRID_REPO_PATH DSGRID_STANDARD_SCENARIOS_REPO_PATH HPC_REPO_PATH"
+usage="Usage: bash $0 CONDA_ENV DSGRID_REPO_PATH DSGRID_STANDARD_SCENARIOS_REPO_PATH HPC_REPO_PATH"
+if [ -z ${CONDA_ENV} ]; then
+    echo "${usage}"
+    exit 1
+fi
 if [ -z ${DSGRID_REPO} ]; then
     echo "${usage}"
     exit 1
@@ -48,7 +53,7 @@ export SPARK_CONF_DIR=$(pwd)/conf
 module unload singularity-container
 
 module load conda
-conda activate dsgrid
+conda activate ${CONDA_ENV}
 DSGRID_CLI=$(which dsgrid-cli.py)
 
 # Create the registry with standalone datasets.
