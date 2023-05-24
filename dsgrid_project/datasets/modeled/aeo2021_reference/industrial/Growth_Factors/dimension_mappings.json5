@@ -1,0 +1,28 @@
+{
+  mappings: [
+    {
+      dimension_type: 'metric',
+      description: 'Maps AEO 2021 industrial purchased electricity to unspecified electricity enduses',
+      file: 'dimension_mappings/lookup_aeo2021_purchased_electricity_to_unspecified_enduse.csv',
+      mapping_type: 'one_to_one',
+    },
+    {
+      dimension_type: 'model_year',      
+      description: 'AEO2021-residential model year dimension mapping for the CONUS 2022 project',
+      file: '../../residential/End_Use_Growth_Factors/dimension_mappings/model_year_to_model_year.csv',
+      mapping_type: 'duplication',
+    },
+    {
+      dimension_type: 'scenario',
+      description: 'Maps AEO 2021 scenarios to project scenarios',
+      file: '../../commercial/End_Use_Growth_Factors/dimension_mappings/scenario_to_scenario.csv',
+      mapping_type: 'duplication',
+    },
+    {
+      dimension_type: 'geography',
+      description: 'Maps census divisions to the comprising counties',
+      file: 'dimension_mappings/lookup_conus_to_county.csv',
+      mapping_type: 'duplication',
+    },
+  ],
+}
