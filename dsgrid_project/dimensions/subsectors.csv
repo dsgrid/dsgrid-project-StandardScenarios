@@ -1,8 +1,8 @@
 id,name
-bev_compact,Bev Compact
-bev_midsize,Bev Midsize
-bev_pickup,Bev Pickup
-bev_suv,Bev Suv
+bev_compact,BEV Compact
+bev_midsize,BEV Midsize
+bev_pickup,BEV Pickup
+bev_suv,BEV SUV
 full_service_restaurant,Full Service Restaurant
 hospital,Hospital
 large_hotel,Large Hotel
@@ -12,10 +12,10 @@ mobile_home,Mobile Home
 multifamily_2_to_4_units,Multifamily 2 To 4 Units
 multifamily_5_plus_units,Multifamily 5 Plus Units
 outpatient,Outpatient
-phev_compact,Phev Compact
-phev_midsize,Phev Midsize
-phev_pickup,Phev Pickup
-phev_suv,Phev Suv
+phev_compact,PHEV Compact
+phev_midsize,PHEV Midsize
+phev_pickup,PHEV Pickup
+phev_suv,PHEV SUV
 primary_school,Primary School
 quick_service_restaurant,Quick Service Restaurant
 retail_standalone,Retail Standalone
