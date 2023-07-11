@@ -533,7 +533,7 @@
         type: 'metric',
       },
       {
-        class: 'MetricDimensionBaseModel',
+        class: 'EnergyEndUse',
         description: 'Residential End Uses Collapsed',
         file: 'dimensions/supplemental/residential_end_uses_collapsed.csv',
         module: 'dsgrid.dimension.base_models',
@@ -542,7 +542,7 @@
         type: 'metric',
       },
       {
-        class: 'MetricDimensionBaseModel',
+        class: 'EnergyEndUse',
         description: 'Transportation End Uses Collapsed',
         file: 'dimensions/supplemental/transportation_end_uses_collapsed.csv',
         module: 'dsgrid.dimension.base_models',
