@@ -7,6 +7,7 @@ electricity_cooking_range,Cooking Range,electricity,MWh
 electricity_cooling,Cooling,electricity,MWh
 electricity_dishwasher,Dishwasher,electricity,MWh
 electricity_exterior_holiday_lighting,Exterior Holiday Lighting,electricity,MWh
+electricity_exterior_lighting,Exterior Lighting,electricity,MWh
 electricity_extra_refrigerator,Extra Refrigerator,electricity,MWh
 electricity_fans,Fans,electricity,MWh
 electricity_fans_cooling,Fans Cooling,electricity,MWh

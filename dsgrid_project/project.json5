@@ -518,16 +518,11 @@
         display_name: 'Electricity Collapsed',
         type: 'metric',
       },
-      // TODO: Define all-end-uses-collapsed-to-fuel-type, or should dsgrid do that?
-      // Does dsgrid define the State and Census Division dimensions based on the 
-      // County records?
       {
-        // TODO: Collapse by fuel type instead of, or in addition to, collapsing 
-        // all end-uses completely?
         class: 'EnergyEndUse',
         description: 'Commercial End Uses Collapsed',
         file: 'dimensions/supplemental/commercial_end_uses_collapsed.csv',
-        module: 'dsgrid.dimension.base_models',
+        module: 'dsgrid.dimension.standard',
         name: 'commercial-end-uses-collapsed',
         display_name: 'Commercial End Uses Collapsed',
         type: 'metric',
@@ -536,7 +531,7 @@
         class: 'EnergyEndUse',
         description: 'Residential End Uses Collapsed',
         file: 'dimensions/supplemental/residential_end_uses_collapsed.csv',
-        module: 'dsgrid.dimension.base_models',
+        module: 'dsgrid.dimension.standard',
         name: 'residential-end-uses-collapsed',
         display_name: 'Residential End Uses Collapsed',
         type: 'metric',
@@ -545,7 +540,7 @@
         class: 'EnergyEndUse',
         description: 'Transportation End Uses Collapsed',
         file: 'dimensions/supplemental/transportation_end_uses_collapsed.csv',
-        module: 'dsgrid.dimension.base_models',
+        module: 'dsgrid.dimension.standard',
         name: 'transportation-end-uses-collapsed',
         display_name: 'Transportation End Uses Collapsed',
         type: 'metric',
