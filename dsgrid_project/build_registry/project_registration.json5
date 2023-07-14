@@ -47,6 +47,26 @@
           "autogen_reverse_supplemental_mappings": ["geography"]
         },
         {
+          "dataset_id": "aeo2021_reference_industrial_energy_use_growth_factors",
+          "dataset_path": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/data",
+          "config_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/dataset.json5",
+          "dimension_mapping_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/dimension_mappings.json5",
+          "register_dataset": true,
+          "submit_to_project": true,
+          "replace_dimension_names_with_ids": false,
+          "replace_dimension_mapping_names_with_ids": false,
+        },
+        {
+          "dataset_id": "aeo2021_reference_other_commercial_energy_use_growth_factors",
+          "dataset_path": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/modeled/aeo2021_reference/other_commercial/Growth_Factors/data",
+          "config_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/modeled/aeo2021_reference/other_commercial/Growth_Factors/dataset.json5",
+          "dimension_mapping_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/modeled/aeo2021_reference/other_commercial/Growth_Factors/dimension_mappings.json5",
+          "register_dataset": true,
+          "submit_to_project": true,
+          "replace_dimension_names_with_ids": false,
+          "replace_dimension_mapping_names_with_ids": false,
+        },
+        {
           "dataset_id": "eia_861_annual_energy_use_state_sector",
           "dataset_path": "/projects/dsgrid/data-StandardScenarios/eia_861_annual_energy_use_state_sector",
           "config_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dataset.json5",
@@ -71,6 +91,16 @@
           "dataset_path": "/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_losses",
           "config_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/historical/dsgrid_efs_2012_losses/dataset.json5",
           "dimension_mapping_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/historical/dsgrid_efs_2012_losses/dimension_mappings.json5",
+          "register_dataset": true,
+          "submit_to_project": true,
+          "replace_dimension_names_with_ids": false,
+          "replace_dimension_mapping_names_with_ids": false
+        },
+        {
+          "dataset_id": "dsgrid_efs_historical_2012_conus_load_shapes",
+          "dataset_path": "/projects/dsgrid/data-StandardScenarios/dsgrid_efs_historical_2012_conus_load_shapes",
+          "config_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/historical/dsgrid_efs_historical_2012_conus_load_shapes/dataset.json5",
+          "dimension_mapping_file": "DSGRID_SS_REPO_BASE_PATH/dsgrid_project/datasets/historical/dsgrid_efs_historical_2012_conus_load_shapes/dimension_mappings.json5",
           "register_dataset": true,
           "submit_to_project": true,
           "replace_dimension_names_with_ids": false,
