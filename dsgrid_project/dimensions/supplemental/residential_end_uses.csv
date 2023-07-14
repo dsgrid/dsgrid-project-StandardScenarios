@@ -1,7 +1,4 @@
 id,name,fuel_id,unit
-district_cooling_cooling,District Cooling Cooling,electricity,MWh
-district_heating_heating,District Heating Heating,natural_gas,MBtu
-district_heating_water_systems,District Heating Water Systems,natural_gas,MBtu
 electricity_bath_fan,Bath Fan,electricity,MWh
 electricity_ceiling_fan,Ceiling Fan,electricity,MWh
 electricity_clothes_dryer,Clothes Dryer,electricity,MWh
@@ -9,34 +6,26 @@ electricity_clothes_washer,Clothes Washer,electricity,MWh
 electricity_cooking_range,Cooking Range,electricity,MWh
 electricity_cooling,Cooling,electricity,MWh
 electricity_dishwasher,Dishwasher,electricity,MWh
-electricity_ev_dcfc,EV DCFC,electricity,MWh
-electricity_ev_l1l2,EV L1/L2,electricity,MWh
 electricity_exterior_holiday_lighting,Exterior Holiday Lighting,electricity,MWh
 electricity_exterior_lighting,Exterior Lighting,electricity,MWh
 electricity_extra_refrigerator,Extra Refrigerator,electricity,MWh
-electricity_fans,Fans,electricity,MWh
 electricity_fans_cooling,Fans Cooling,electricity,MWh
 electricity_fans_heating,Fans Heating,electricity,MWh
 electricity_freezer,Freezer,electricity,MWh
 electricity_garage_lighting,Garage Lighting,electricity,MWh
-electricity_heat_recovery,Heat Recovery,electricity,MWh
-electricity_heat_rejection,Heat Rejection,electricity,MWh
 electricity_heating,Heating,electricity,MWh
 electricity_heating_supplemental,Heating Supplemental,electricity,MWh
 electricity_hot_tub_heater,Hot Tub Heater,electricity,MWh
 electricity_hot_tub_pump,Hot Tub Pump,electricity,MWh
 electricity_house_fan,House Fan,electricity,MWh
-electricity_interior_equipment,Interior Equipment,electricity,MWh
 electricity_interior_lighting,Interior Lighting,electricity,MWh
 electricity_plug_loads,Plug Loads,electricity,MWh
 electricity_pool_heater,Pool Heater,electricity,MWh
 electricity_pool_pump,Pool Pump,electricity,MWh
-electricity_pumps,Pumps,electricity,MWh
 electricity_pumps_cooling,Pumps Cooling,electricity,MWh
 electricity_pumps_heating,Pumps Heating,electricity,MWh
 electricity_range_fan,Range Fan,electricity,MWh
 electricity_recirc_pump,Recircuation Pump,electricity,MWh
-electricity_refrigeration,Refrigeration,electricity,MWh
 electricity_refrigerator,Refrigerator,electricity,MWh
 electricity_water_systems,Water Systems,electricity,MWh
 electricity_well_pump,Well Pump,electricity,MWh
@@ -48,7 +37,6 @@ natural_gas_fireplace,Fireplace,natural_gas,MBtu
 natural_gas_grill,Grill,natural_gas,MBtu
 natural_gas_heating,Heating,natural_gas,MBtu
 natural_gas_hot_tub_heater,Hot Tub Heater,natural_gas,MBtu
-natural_gas_interior_equipment,Interior Equipment,natural_gas,MBtu
 natural_gas_lighting,Lighting,natural_gas,MBtu
 natural_gas_pool_heater,Pool Heater,natural_gas,MBtu
 natural_gas_water_systems,Water Systems,natural_gas,MBtu
@@ -57,7 +45,3 @@ propane_cooking_range,Cooking Range,propane,MBtu
 propane_heating,Heating,propane,MBtu
 propane_water_systems,Water Systems,propane,MBtu
 wood_heating,Heating,wood,MBtu
-electricity_chp,Combined Heat and Power,electricity,MWh
-electricity_thermal_dg,Thermal DG,electricity,MWh
-electricity_dpv,Distributed PV,electricity,MWh
-electricity_unspecified,Unspecified,electricity,MWh

@@ -1,7 +1,5 @@
 id,name,fuel_id,unit
 district_cooling_cooling,District Cooling Cooling,electricity,MWh
-district_heating_heating,District Heating Heating,natural_gas,MBtu
-district_heating_water_systems,District Heating Water Systems,natural_gas,MBtu
 electricity_bath_fan,Bath Fan,electricity,MWh
 electricity_ceiling_fan,Ceiling Fan,electricity,MWh
 electricity_clothes_dryer,Clothes Dryer,electricity,MWh
@@ -40,23 +38,6 @@ electricity_refrigeration,Refrigeration,electricity,MWh
 electricity_refrigerator,Refrigerator,electricity,MWh
 electricity_water_systems,Water Systems,electricity,MWh
 electricity_well_pump,Well Pump,electricity,MWh
-fuel_oil_heating,Heating,fuel_oil,MBtu
-fuel_oil_water_systems,Water Systems,fuel_oil,MBtu
-natural_gas_clothes_dryer,Clothes Dryer,natural_gas,MBtu
-natural_gas_cooking_range,Cooking Range,natural_gas,MBtu
-natural_gas_fireplace,Fireplace,natural_gas,MBtu
-natural_gas_grill,Grill,natural_gas,MBtu
-natural_gas_heating,Heating,natural_gas,MBtu
-natural_gas_hot_tub_heater,Hot Tub Heater,natural_gas,MBtu
-natural_gas_interior_equipment,Interior Equipment,natural_gas,MBtu
-natural_gas_lighting,Lighting,natural_gas,MBtu
-natural_gas_pool_heater,Pool Heater,natural_gas,MBtu
-natural_gas_water_systems,Water Systems,natural_gas,MBtu
-propane_clothes_dryer,Clothes Dryer,propane,MBtu
-propane_cooking_range,Cooking Range,propane,MBtu
-propane_heating,Heating,propane,MBtu
-propane_water_systems,Water Systems,propane,MBtu
-wood_heating,Heating,wood,MBtu
 electricity_chp,Combined Heat and Power,electricity,MWh
 electricity_thermal_dg,Thermal DG,electricity,MWh
 electricity_dpv,Distributed PV,electricity,MWh

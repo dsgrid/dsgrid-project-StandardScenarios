@@ -1,9 +1,9 @@
 id,name
-bev_compact,Bev Compact
-bev_midsize,Bev Midsize
-bev_pickup,Bev Pickup
-bev_suv,Bev Suv
-phev_compact,Phev Compact
-phev_midsize,Phev Midsize
-phev_pickup,Phev Pickup
-phev_suv,Phev Suv
+bev_compact,BEV Compact
+bev_midsize,BEV Midsize
+bev_pickup,BEV Pickup
+bev_suv,BEV SUV
+phev_compact,PHEV Compact
+phev_midsize,PHEV Midsize
+phev_pickup,PHEV Pickup
+phev_suv,PHEV SUV

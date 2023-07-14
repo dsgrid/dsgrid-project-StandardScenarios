@@ -16,7 +16,7 @@
       description: "EIA 861 electricity sales to project's unspecified end use metric",
       dimension_type: "metric",
       file: "dimension_mappings/metric_to_metric.csv",
-      mapping_type: "one_to_one_explicit_multipliers",
+      mapping_type: "one_to_one",
     },
     {
       description: "EIA 861 historical data to project scenarios",

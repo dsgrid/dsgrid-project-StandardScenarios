@@ -1,2 +1,2 @@
-id,name
-commercial_end_uses,Commercial End Uses
+id,name,fuel_id,unit
+commercial_end_uses,Commercial End Uses,all_fuels,MWh

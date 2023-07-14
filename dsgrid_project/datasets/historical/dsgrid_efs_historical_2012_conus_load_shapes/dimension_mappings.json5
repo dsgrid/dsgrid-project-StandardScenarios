@@ -17,7 +17,7 @@
       description: "EFS all electricity metric naming convention to project electricity_unspecified naming convention",
       dimension_type: "metric",
       file: "dimension_mappings/metric_to_metric.csv",
-      mapping_type: "one_to_one_explicit_multipliers",
+      mapping_type: "one_to_one",
     },
     {
       description: "EFS all sectors metric naming convention to project unspecified naming convention",

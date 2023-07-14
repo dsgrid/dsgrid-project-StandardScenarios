@@ -1,2 +1,2 @@
-id,name
-residential_end_uses,Residential End Uses
+id,name,fuel_id,unit
+residential_end_uses,Residential End Uses,all_fuels,MWh
