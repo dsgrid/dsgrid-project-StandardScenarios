@@ -93,7 +93,6 @@
       description: "Transportation Sector",
     },
     {
-      // TODO: remove this scenario dimension when we are ready to scrap the dummy dataset
       "class": "Scenario",
       type: "scenario",
       name: "Technology and Policy Scenario",
