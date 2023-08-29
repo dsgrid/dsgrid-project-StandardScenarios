@@ -551,9 +551,10 @@
       {
         name: 'Subset Sectors',
         display_name: 'subset_sectors',
-        description: 'Provides selection of sectors.',
+        description: 'Provides sector dimensions for derived datasets.',
         type: 'sector',
         filename: 'dimensions/subset/sectors.csv',
+        create_supplemental_dimensions: false,
         selectors: [
           {
             name: 'commercial_sectors',
