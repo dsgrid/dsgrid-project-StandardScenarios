@@ -1,0 +1,31 @@
+{
+  "name": "tempo_conus_2022_mapped",
+  "version": "0.1.0",
+  "project": {
+    "project_id": "dsgrid_conus_2022",
+    "dataset": {
+      "dataset_id": "tempo_conus_2022_mapped",
+      "source_datasets": [
+      {
+        "dataset_id": "tempo_conus_2022",
+        "dataset_type": "standalone",
+      },
+      ],
+    "params": {},
+    },
+    "excluded_dataset_ids": [],
+    "include_dsgrid_dataset_components": false,
+  },
+  "result": {
+    "supplemental_columns": [],
+    "replace_ids_with_names": false,
+    "aggregations": [
+    ],
+    "reports": [],
+    "column_type": "dimension_types",
+    "output_format": "parquet",
+    "sort_columns": [],
+    "dimension_filters": [],
+    "time_zone": null
+  }
+}

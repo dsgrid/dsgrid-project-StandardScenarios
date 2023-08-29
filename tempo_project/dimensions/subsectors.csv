@@ -1,0 +1,9 @@
+id,name
+bev_compact,BEV Compact
+bev_midsize,BEV Midsize
+bev_pickup,BEV Pickup
+bev_suv,BEV SUV
+phev_compact,PHEV Compact
+phev_midsize,PHEV Midsize
+phev_pickup,PHEV Pickup
+phev_suv,PHEV SUV
