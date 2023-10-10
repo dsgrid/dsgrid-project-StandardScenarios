@@ -504,7 +504,7 @@
         description: 'Provides selection of end uses by sector.',
         type: 'metric',
         filename: 'dimensions/subset/end_uses_by_sector.csv',
-        create_supplemental_dimensions: false,
+        create_supplemental_dimension: false,
         selectors: [
           {
             name: 'commercial_end_uses',
@@ -555,7 +555,7 @@
         description: 'Provides sector dimensions for derived datasets.',
         type: 'sector',
         filename: 'dimensions/subset/sectors.csv',
-        create_supplemental_dimensions: false,
+        create_supplemental_dimension: false,
         selectors: [
           {
             name: 'commercial_sectors',
