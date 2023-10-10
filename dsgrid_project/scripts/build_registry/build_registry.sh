@@ -43,14 +43,14 @@ function runx()
     fi
 }
 
-module load singularity-container
+module load apptainer
 runx ${HPC_REPO_SCRIPTS}/create_config.sh -c /projects/dsgrid/containers/spark_py310.sif
 sed -i "s/master_node_memory_overhead_gb = 15/master_node_memory_overhead_gb = 65/" config
 sed -i "s/worker_node_memory_overhead_gb = 10/worker_node_memory_overhead_gb = 60/" config
 runx ${HPC_REPO_SCRIPTS}/configure_spark.sh -D -M 50
 runx ${HPC_REPO_SCRIPTS}/start_spark_cluster.sh
 export SPARK_CONF_DIR=$(pwd)/conf
-module unload singularity-container
+module unload apptainer
 
 module load conda
 conda activate ${CONDA_ENV}

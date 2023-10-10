@@ -99,18 +99,18 @@
             base: ['trans'],
           },
           subsector: {
-            supplemental: [
+            subset: [
               {
-                name: 'Subsectors by Sector Collapsed',
-                record_ids: ['transportation_subsectors'],
+                name: 'Subsectors by Sector',
+                selectors: ['transportation_subsectors'],
               },
             ],
           },
           metric: {
-            supplemental: [
+            subset: [
               {
-                name: 'transportation-end-uses-collapsed',
-                record_ids: ['transportation_end_uses'],
+                name: 'End Uses by Sector',
+                selectors: ['transportation_end_uses'],
               },
             ],
           },
@@ -127,18 +127,18 @@
             base: ['trans'],
           },
           subsector: {
-            supplemental: [
+            subset: [
               {
-                name: 'Subsectors by Sector Collapsed',
-                record_ids: ['transportation_subsectors'],
+                name: 'Subsectors by Sector',
+                selectors: ['transportation_subsectors'],
               },
             ],
           },
           metric: {
-            supplemental: [
+            subset: [
               {
-                name: 'transportation-end-uses-collapsed',
-                record_ids: ['transportation_end_uses'],
+                name: 'End Uses by Sector',
+                selectors: ['transportation_end_uses'],
               },
             ],
           },
@@ -158,18 +158,18 @@
             base: ['2018'],
           },
           subsector: {
-            supplemental: [
+            subset: [
               {
-                name: 'Subsectors by Sector Collapsed',
-                record_ids: ['residential_subsectors'],
+                name: 'Subsectors by Sector',
+                selectors: ['residential_subsectors'],
               },
             ],
           },
           metric: {
-            supplemental: [
+            subset: [
               {
-                name: 'residential-end-uses-collapsed',
-                record_ids: ['residential_end_uses'],
+                name: 'End Uses by Sector',
+                selectors: ['residential_end_uses'],
               },
             ],
           },
@@ -186,18 +186,18 @@
             base: ['res'],
           },
           subsector: {
-            supplemental: [
+            subset: [
               {
-                name: 'Subsectors by Sector Collapsed',
-                record_ids: ['residential_subsectors'],
+                name: 'Subsectors by Sector',
+                selectors: ['residential_subsectors'],
               },
             ],
           },
           metric: {
-            supplemental: [
+            subset: [
               {
-                name: 'residential-end-uses-collapsed',
-                record_ids: ['residential_end_uses'],
+                name: 'End Uses by Sector',
+                selectors: ['residential_end_uses'],
               },
             ],
           },
@@ -214,18 +214,18 @@
             base: ['res'],
           },
           subsector: {
-            supplemental: [
+            subset: [
               {
-                name: 'Subsectors by Sector Collapsed',
-                record_ids: ['residential_subsectors'],
+                name: 'Subsectors by Sector',
+                selectors: ['residential_subsectors'],
               },
             ],
           },
           metric: {
-            supplemental: [
+            subset: [
               {
-                name: 'residential-end-uses-collapsed',
-                record_ids: ['residential_end_uses'],
+                name: 'End Uses by Sector',
+                selectors: ['residential_end_uses'],
               },
             ],
           },
@@ -245,18 +245,18 @@
             base: ['com'],
           },
           subsector: {
-            supplemental: [
+            subset: [
               {
-                name: 'Subsectors by Sector Collapsed',
-                record_ids: ['commercial_subsectors'],
+                name: 'Subsectors by Sector',
+                selectors: ['commercial_subsectors'],
               },
             ],
           },
           metric: {
-            supplemental: [
+            subset: [
               {
-                name: 'commercial-end-uses-collapsed',
-                record_ids: ['commercial_end_uses'],
+                name: 'End Uses by Sector',
+                selectors: ['commercial_end_uses'],
               },
             ],
           },
@@ -273,18 +273,18 @@
             base: ['com'],
           },
           subsector: {
-            supplemental: [
+            subset: [
               {
-                name: 'Subsectors by Sector Collapsed',
-                record_ids: ['commercial_subsectors'],
+                name: 'Subsectors by Sector',
+                selectors: ['commercial_subsectors'],
               },
             ],
           },
           metric: {
-            supplemental: [
+            subset: [
               {
-                name: 'commercial-end-uses-collapsed',
-                record_ids: ['commercial_end_uses'],
+                name: 'End Uses by Sector',
+                selectors: ['commercial_end_uses'],
               },
             ],
           },
@@ -301,18 +301,18 @@
             base: ['com'],
           },
           subsector: {
-            supplemental: [
+            subset: [
               {
-                name: 'Subsectors by Sector Collapsed',
-                record_ids: ['commercial_subsectors'],
+                name: 'Subsectors by Sector',
+                selectors: ['commercial_subsectors'],
               },
             ],
           },
           metric: {
-            supplemental: [
+            subset: [
               {
-                name: 'commercial-end-uses-collapsed',
-                record_ids: ['commercial_end_uses'],
+                name: 'End Uses by Sector',
+                selectors: ['commercial_end_uses'],
               },
             ],
           },
@@ -375,7 +375,7 @@
           },
         },
       },
-    },    
+    },
   ],
   dimensions: {
     base_dimensions: [
@@ -463,6 +463,119 @@
         type: 'weather_year',
       },
     ],
+    subset_dimensions: [
+      {
+        name: 'End Uses by Fuel Type',
+        display_name: 'end_uses_by_fuel_type',
+        description: 'Provides selection of end uses by fuel type.',
+        type: 'metric',
+        filename: 'dimensions/subset/end_uses_by_fuel_type.csv',
+        selectors: [
+          {
+            name: 'electricity_end_uses',
+            description: 'All Electric End Uses',
+            column_values: {'fuel_id': 'electricity', 'unit': 'MWh'},
+          },
+          {
+            name: 'natural_gas_end_uses',
+            description: 'All Natural Gas End Uses',
+            column_values: {'fuel_id': 'natural_gas', 'unit': 'MWh'},
+          },
+          {
+            name: 'propane_end_uses',
+            description: 'All Propane End Uses',
+            column_values: {'fuel_id': 'propane', 'unit': 'MWh'},
+          },
+          {
+            name: 'fuel_oil_end_uses',
+            description: 'All Fuel Oil End Uses',
+            column_values: {'fuel_id': 'fuel_oil', 'unit': 'MWh'},
+          },
+          {
+            name: 'wood_end_uses',
+            description: 'All Wood End Uses',
+            column_values: {'fuel_id': 'wood', 'unit': 'MWh'},
+          },
+        ],
+      },
+      {
+        name: 'End Uses by Sector',
+        display_name: 'end_uses_by_sector',
+        description: 'Provides selection of end uses by sector.',
+        type: 'metric',
+        filename: 'dimensions/subset/end_uses_by_sector.csv',
+        create_supplemental_dimension: false,
+        selectors: [
+          {
+            name: 'commercial_end_uses',
+            description: 'Commercial End Uses',
+            column_values: {'fuel_id': 'all_fuels', 'unit': 'MWh'},
+          },
+          {
+            name: 'industrial_end_uses',
+            description: 'Industrial End Uses',
+            column_values: {'fuel_id': 'all_fuels', 'unit': 'MWh'},
+          },
+          {
+            name: 'residential_end_uses',
+            description: 'Residential End Uses',
+            column_values: {'fuel_id': 'all_fuels', 'unit': 'MWh'},
+          },
+          {
+            name: 'transportation_end_uses',
+            description: 'Transportation End Uses',
+            column_values: {'fuel_id': 'all_fuels', 'unit': 'MWh'},
+          },
+        ],
+      },
+      {
+        name: 'Subsectors by Sector',
+        display_name: 'subsectors_by_sector',
+        description: 'Provides selection of subsectors by sector.',
+        type: 'subsector',
+        filename: 'dimensions/subset/subsectors_by_sector.csv',
+        selectors: [
+          {
+            name: 'commercial_subsectors',
+            description: 'Commercial Subsectors',
+          },
+          {
+            name: 'residential_subsectors',
+            description: 'Residential Subsectors',
+          },
+          {
+            name: 'transportation_subsectors',
+            description: 'Transportation Subsectors',
+          },
+        ],
+      },
+      {
+        name: 'Subset Sectors',
+        display_name: 'subset_sectors',
+        description: 'Provides sector dimensions for derived datasets.',
+        type: 'sector',
+        filename: 'dimensions/subset/sectors.csv',
+        create_supplemental_dimension: false,
+        selectors: [
+          {
+            name: 'commercial_sectors',
+            description: 'Commercial Sectors',
+          },
+          {
+            name: 'industrial_sectors',
+            description: 'Industrial Sectors',
+          },
+          {
+            name: 'residential_sectors',
+            description: 'Residential Sectors',
+          },
+          {
+            name: 'transportation_sectors',
+            description: 'Transportation Sectors',
+          },
+        ],
+      },
+    ],
     supplemental_dimensions: [
       {
         class: 'State',
@@ -508,141 +621,6 @@
         name: 'Contiguous United States',
         display_name: 'CONUS',
         type: 'geography',
-      },
-      {
-        class: 'EnergyEndUse',
-        description: 'All Electric End Uses Collapsed',
-        file: 'dimensions/supplemental/all_electric_enduses_collapsed.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'all-electric-end-uses-collapsed',
-        display_name: 'Electricity Collapsed',
-        type: 'metric',
-      },
-      {
-        class: 'EnergyEndUse',
-        description: 'Commercial End Uses Collapsed',
-        file: 'dimensions/supplemental/commercial_end_uses_collapsed.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'commercial-end-uses-collapsed',
-        display_name: 'Commercial End Uses Collapsed',
-        type: 'metric',
-      },
-      {
-        class: 'EnergyEndUse',
-        description: 'Residential End Uses Collapsed',
-        file: 'dimensions/supplemental/residential_end_uses_collapsed.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'residential-end-uses-collapsed',
-        display_name: 'Residential End Uses Collapsed',
-        type: 'metric',
-      },
-      {
-        class: 'EnergyEndUse',
-        description: 'Transportation End Uses Collapsed',
-        file: 'dimensions/supplemental/transportation_end_uses_collapsed.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'transportation-end-uses-collapsed',
-        display_name: 'Transportation End Uses Collapsed',
-        type: 'metric',
-      },
-      {
-        class: 'EnergyEndUse',
-        description: 'All Electric End Uses',
-        file: 'dimensions/supplemental/electric_end_uses.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'all-electric-end-uses',
-        display_name: 'Electricity',
-        type: 'metric',
-      },
-      {
-        class: 'EnergyEndUse',
-        description: 'Commercial End Uses',
-        file: 'dimensions/supplemental/commercial_end_uses.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'commercial-end-uses',
-        display_name: 'Commercial End Uses',
-        type: 'metric',
-      },
-      {
-        class: 'EnergyEndUse',
-        description: 'Residential End Uses',
-        file: 'dimensions/supplemental/residential_end_uses.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'residential-end-uses',
-        display_name: 'Residential End Uses',
-        type: 'metric',
-      },
-      {
-        class: 'EnergyEndUse',
-        description: 'Transportation End Uses',
-        file: 'dimensions/supplemental/transportation_end_uses.csv',
-        module: 'dsgrid.dimension.standard',
-        name: 'transportation-end-uses',
-        display_name: 'Transportation End Uses',
-        type: 'metric',
-      },
-      {
-        class: 'SectorDimensionBaseModel',
-        description: 'Commercial Sectors',
-        file: 'dimensions/supplemental/commercial_sectors.csv',
-        module: 'dsgrid.dimension.base_models',
-        name: 'Commercial Sectors',
-        display_name: 'Commercial Sectors',
-        type: 'sector',
-      },
-      {
-        class: 'SectorDimensionBaseModel',
-        description: 'Residential Sectors',
-        file: 'dimensions/supplemental/residential_sectors.csv',
-        module: 'dsgrid.dimension.base_models',
-        name: 'Residential Sectors',
-        display_name: 'Residential Sectors',
-        type: 'sector',
-      },
-      {
-        class: 'SectorDimensionBaseModel',
-        description: 'Transportation Sectors',
-        file: 'dimensions/supplemental/transportation_sectors.csv',
-        module: 'dsgrid.dimension.base_models',
-        name: 'Transportation Sectors',
-        display_name: 'Transportation Sectors',
-        type: 'sector',
-      },
-      {
-        class: 'SubsectorDimensionBaseModel',
-        description: 'Subsectors by sector collapsed',
-        file: 'dimensions/supplemental/subsectors_by_sector.csv',
-        module: 'dsgrid.dimension.base_models',
-        name: 'Subsectors by Sector Collapsed',
-        display_name: 'Subsector by Sector Collapsed',
-        type: 'subsector',
-      },
-      {
-        class: 'SubsectorDimensionBaseModel',
-        description: 'Commercial Subsectors',
-        file: 'dimensions/supplemental/commercial_subsectors.csv',
-        module: 'dsgrid.dimension.base_models',
-        name: 'Commercial Subsectors',
-        display_name: 'Commercial Subsectors',
-        type: 'subsector',
-      },
-      {
-        class: 'SubsectorDimensionBaseModel',
-        description: 'Residential Subsectors',
-        file: 'dimensions/supplemental/residential_subsectors.csv',
-        module: 'dsgrid.dimension.base_models',
-        name: 'Residential Subsectors',
-        display_name: 'Residential Subsectors',
-        type: 'subsector',
-      },
-      {
-        class: 'SubsectorDimensionBaseModel',
-        description: 'Transportation Subsectors',
-        file: 'dimensions/supplemental/transportation_subsectors.csv',
-        module: 'dsgrid.dimension.base_models',
-        name: 'Transportation Subsectors',
-        display_name: 'Transportation Subsectors',
-        type: 'subsector',
       },
     ],
   },
@@ -711,201 +689,6 @@
         to_dimension: {
           name: 'Contiguous United States',
           type: 'geography',
-        },
-      },      
-      {
-        description: 'Aggregation map for all dsgrid CONUS 2022 electric end uses',
-        file: 'dimension_mappings/base_to_supplemental/lookup_enduses_to_all_electric_enduses.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-End-Uses',
-          type: 'metric',
-        },
-        to_dimension: {
-          name: 'all-electric-end-uses-collapsed',
-          type: 'metric',
-        },
-      },
-      {
-        description: 'No-op aggregation map for all dsgrid CONUS 2022 electric end uses',
-        file: 'dimension_mappings/base_to_supplemental/electric_end_uses_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-End-Uses',
-          type: 'metric',
-        },
-        to_dimension: {
-          name: 'all-electric-end-uses',
-          type: 'metric',
-        },
-      },
-      {
-        description: 'Selector for aggregating all dsgrid CONUS 2022 commercial end uses',
-        file: 'dimension_mappings/base_to_supplemental/lookup_end_uses_to_commercial_end_uses.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-End-Uses',
-          type: 'metric',
-        },
-        to_dimension: {
-          name: 'commercial-end-uses-collapsed',
-          type: 'metric',
-        },
-      },
-      {
-        description: 'Selector for all dsgrid CONUS 2022 commercial end uses',
-        file: 'dimension_mappings/base_to_supplemental/commercial_end_uses_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-End-Uses',
-          type: 'metric',
-        },
-        to_dimension: {
-          name: 'commercial-end-uses',
-          type: 'metric',
-        },
-      },
-      {
-        description: 'Selector for aggregating all dsgrid CONUS 2022 residential end uses',
-        file: 'dimension_mappings/base_to_supplemental/lookup_end_uses_to_residential_end_uses.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-End-Uses',
-          type: 'metric',
-        },
-        to_dimension: {
-          name: 'residential-end-uses-collapsed',
-          type: 'metric',
-        },
-      },
-      {
-        description: 'Selector for all dsgrid CONUS 2022 residential end uses',
-        file: 'dimension_mappings/base_to_supplemental/residential_end_uses_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-End-Uses',
-          type: 'metric',
-        },
-        to_dimension: {
-          name: 'residential-end-uses',
-          type: 'metric',
-        },
-      },
-      {
-        description: 'Selector for aggregating all dsgrid CONUS 2022 transportation end uses',
-        file: 'dimension_mappings/base_to_supplemental/lookup_end_uses_to_transportation_end_uses.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-End-Uses',
-          type: 'metric',
-        },
-        to_dimension: {
-          name: 'transportation-end-uses-collapsed',
-          type: 'metric',
-        },
-      },
-      {
-        description: 'Selector for all dsgrid CONUS 2022 transportation end uses',
-        file: 'dimension_mappings/base_to_supplemental/transportation_end_uses_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-End-Uses',
-          type: 'metric',
-        },
-        to_dimension: {
-          name: 'transportation-end-uses',
-          type: 'metric',
-        },
-      },
-      {
-        description: 'Selector for all dsgrid CONUS 2022 commercial sectors',
-        file: 'dimension_mappings/base_to_supplemental/commercial_sectors_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'Sectors - Com-Res-Ind-Trans',
-          type: 'sector',
-        },
-        to_dimension: {
-          name: 'Commercial Sectors',
-          type: 'sector',
-        },
-      },
-      {
-        description: 'Selector for individual dsgrid CONUS 2022 residential sectors',
-        file: 'dimension_mappings/base_to_supplemental/residential_sectors_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'Sectors - Com-Res-Ind-Trans',
-          type: 'sector',
-        },
-        to_dimension: {
-          name: 'Residential Sectors',
-          type: 'sector',
-        },
-      },
-      {
-        description: 'Selector for individual dsgrid CONUS 2022 transportation sectors',
-        file: 'dimension_mappings/base_to_supplemental/transportation_sectors_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'Sectors - Com-Res-Ind-Trans',
-          type: 'sector',
-        },
-        to_dimension: {
-          name: 'Transportation Sectors',
-          type: 'sector',
-        },
-      },
-      {
-        description: 'Selector for aggregating all dsgrid CONUS 2022 subsectors',
-        file: 'dimension_mappings/base_to_supplemental/lookup_subsectors_by_sector.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-Subsectors',
-          type: 'subsector',
-        },
-        to_dimension: {
-          name: 'Subsectors by Sector Collapsed',
-          type: 'subsector',
-        },
-      },
-      {
-        description: 'Selector for all dsgrid CONUS 2022 commercial subsectors',
-        file: 'dimension_mappings/base_to_supplemental/commercial_subsectors_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-Subsectors',
-          type: 'subsector',
-        },
-        to_dimension: {
-          name: 'Commercial Subsectors',
-          type: 'subsector',
-        },
-      },
-      {
-        description: 'Selector for individual dsgrid CONUS 2022 residential subsectors',
-        file: 'dimension_mappings/base_to_supplemental/residential_subsectors_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-Subsectors',
-          type: 'subsector',
-        },
-        to_dimension: {
-          name: 'Residential Subsectors',
-          type: 'subsector',
-        },
-      },
-      {
-        description: 'Selector for individual dsgrid CONUS 2022 transportation subsectors',
-        file: 'dimension_mappings/base_to_supplemental/transportation_subsectors_noop.csv',
-        mapping_type: 'one_to_one',
-        from_dimension: {
-          name: 'CONUS-2022-Detailed-Subsectors',
-          type: 'subsector',
-        },
-        to_dimension: {
-          name: 'Transportation Subsectors',
-          type: 'subsector',
         },
       },
     ],

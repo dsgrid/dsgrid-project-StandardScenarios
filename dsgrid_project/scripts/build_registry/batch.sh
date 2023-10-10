@@ -11,4 +11,4 @@ CONDA_ENV=dsgrid
 DSGRID_REPO=${HOME}/repos/dsgrid
 DSGRID_SS_REPO=${HOME}/repos/dsgrid-project-StandardScenarios
 HPC_REPO=${HOME}/repos/HPC
-bash ${DGRID_SS_REPO}/dsgrid_project/scripts/build_registry/build_registry.sh ${CONDA_ENV} ${DGRID_REPO} ${DSGRID_SS_REPO} ${HPC_REPO}
+bash ${DSGRID_SS_REPO}/dsgrid_project/scripts/build_registry/build_registry.sh ${CONDA_ENV} ${DSGRID_REPO} ${DSGRID_SS_REPO} ${HPC_REPO}
