@@ -585,6 +585,11 @@
         name: 'US States L48',
         display_name: 'State',
         type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to State',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_state.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
       },
       {
         class: 'CensusRegion',
@@ -594,6 +599,11 @@
         name: 'US Census Regions',
         display_name: 'Census Region',
         type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to CensusRegion',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_censusregion.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
       },
       {
         class: 'CensusDivision',
@@ -603,6 +613,11 @@
         name: 'US Census Divisions',
         display_name: 'Census Division',
         type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to CensusDivision',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_censusdivision.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
       },
       {
         class: 'GeographyDimensionBaseModel',
@@ -612,6 +627,11 @@
         name: 'ReEDS PCA',
         display_name: 'ReEDS PCA',
         type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to ReEDS Power Control Areas',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_reeds_pca.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
       },
       {
         class: 'GeographyDimensionBaseModel',
@@ -621,74 +641,10 @@
         name: 'Contiguous United States',
         display_name: 'CONUS',
         type: 'geography',
-      },
-    ],
-  },
-  dimension_mappings: {
-    base_to_supplemental: [
-      {
-        description: 'Maps US Counties 2020 L48 to CensusRegion',
-        file: 'dimension_mappings/base_to_supplemental/lookup_county_to_censusregion.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'US Counties 2020 L48',
-          type: 'geography',
-        },
-        to_dimension: {
-          name: 'US Census Regions',
-          type: 'geography',
-        },
-      },
-      {
-        description: 'Maps US Counties 2020 L48 to CensusDivision',
-        file: 'dimension_mappings/base_to_supplemental/lookup_county_to_censusdivision.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          type: 'geography',
-          name: 'US Counties 2020 L48',
-        },
-        to_dimension: {
-          name: 'US Census Divisions',
-          type: 'geography',
-        },
-      },
-      {
-        description: 'Maps US Counties 2020 L48 to State',
-        file: 'dimension_mappings/base_to_supplemental/lookup_county_to_state.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'US Counties 2020 L48',
-          type: 'geography',
-        },
-        to_dimension: {
-          name: 'US States L48',
-          type: 'geography',
-        },
-      },
-      {
-        description: 'Maps US Counties 2020 L48 to ReEDS Power Control Areas',
-        file: 'dimension_mappings/base_to_supplemental/lookup_county_to_reeds_pca.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'US Counties 2020 L48',
-          type: 'geography',
-        },
-        to_dimension: {
-          name: 'ReEDS PCA',
-          type: 'geography',
-        },
-      },
-      {
-        description: 'Maps US Counties 2020 L48 to CONUS',
-        file: 'dimension_mappings/base_to_supplemental/lookup_county_to_conus.csv',
-        mapping_type: 'many_to_one_aggregation',
-        from_dimension: {
-          name: 'US Counties 2020 L48',
-          type: 'geography',
-        },
-        to_dimension: {
-          name: 'Contiguous United States',
-          type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to CONUS',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_conus.csv',
+          mapping_type: 'many_to_one_aggregation',
         },
       },
     ],
