@@ -44,15 +44,11 @@ function runx()
 }
 
 module load apptainer
-runx ${HPC_REPO_SCRIPTS}/create_config.sh -c /projects/dsgrid/containers/spark_py310.sif
-sed -i "s/master_node_memory_overhead_gb = 15/master_node_memory_overhead_gb = 65/" config
-sed -i "s/worker_node_memory_overhead_gb = 10/worker_node_memory_overhead_gb = 60/" config
-runx ${HPC_REPO_SCRIPTS}/configure_spark.sh -D -M 50
-runx ${HPC_REPO_SCRIPTS}/start_spark_cluster.sh
+runx ${HPC_REPO_SCRIPTS}/configure_and_start_spark.sh -D -M 30 -c /projects/dsgrid/containers/spark341_py311.sif
 export SPARK_CONF_DIR=$(pwd)/conf
 module unload apptainer
 
-module load conda
+module load mamba
 conda activate ${CONDA_ENV}
 DSGRID_CLI=$(which dsgrid-cli.py)
 
@@ -71,6 +67,7 @@ runx spark-submit \
     project \
     run \
     ${DD_QUERY_SRC_DIR}/comstock_conus_2022_projected.json5 \
+    --no-persist-intermediate-table \
     -o ${QUERY_OUTPUT}
 
 runx spark-submit \
@@ -81,6 +78,7 @@ runx spark-submit \
     project \
     run \
     ${DD_QUERY_SRC_DIR}/resstock_conus_2022_projected.json5 \
+    --no-persist-intermediate-table \
     -o ${QUERY_OUTPUT}
 
 runx spark-submit \
@@ -91,6 +89,7 @@ runx spark-submit \
     project \
     run \
     ${DD_QUERY_SRC_DIR}/tempo_conus_2022_mapped.json5 \
+    --no-persist-intermediate-table \
     -o ${QUERY_OUTPUT}
 
 # Create derived-dataset config files.
@@ -159,38 +158,29 @@ runx spark-submit \
     -l Register_tempo_conus_2022_mapped
 
 # Submit the derived datasets to the project.
-runx spark-submit \
-    --master ${SPARK_CLUSTER} \
-    --conf spark.sql.shuffle.partitions=${NUM_PARTITIONS} \
-    ${DSGRID_CLI} \
+# Note that this does not use the Spark cluster - it runs in local mode instead on a single node.
+# Results have been mixed. In the ideal case, each of the next three commands should take no more
+# than five minutes. If it looks like it will take hours, something is configured incorrectly.
+dsgrid \
     registry \
     projects \
     submit-dataset \
     -p dsgrid_conus_2022 \
     -d comstock_conus_2022_projected \
-    -r comstock-dd/dimension_mapping_references.json5 \
     -l Submit_comstock_conus_2022_projected
 
-runx spark-submit \
-    --master ${SPARK_CLUSTER} \
-    --conf spark.sql.shuffle.partitions=${NUM_PARTITIONS} \
-    ${DSGRID_CLI} \
+dsgrid \
     registry \
     projects \
     submit-dataset \
     -p dsgrid_conus_2022 \
     -d resstock_conus_2022_projected \
-    -r resstock-dd/dimension_mapping_references.json5 \
     -l Submit_resstock_conus_2022_projected
 
-runx spark-submit \
-    --master ${SPARK_CLUSTER} \
-    --conf spark.sql.shuffle.partitions=${NUM_PARTITIONS} \
-    ${DSGRID_CLI} \
+dsgrid \
     registry \
     projects \
     submit-dataset \
     -p dsgrid_conus_2022 \
     -d tempo_conus_2022_mapped \
-    -r tempo-dd/dimension_mapping_references.json5 \
     -l Submit_tempo_conus_2022_mapped
