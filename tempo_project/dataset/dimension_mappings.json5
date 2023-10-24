@@ -11,11 +11,5 @@
       file: "dimension_mappings/metric_to_metric.csv",
       mapping_type: "one_to_one",
     },
-    {
-      description: "TEMPO demographic/geographic/vehicle bins (CONUS 2022) to dsgrid CONUS 2022 Subsectors",
-      dimension_type: "subsector",
-      file: "dimension_mappings/subsector_to_subsector.csv",
-      mapping_type: "many_to_one_aggregation",
-    },
   ],
 }
