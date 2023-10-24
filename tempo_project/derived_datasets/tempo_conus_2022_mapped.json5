@@ -2,14 +2,14 @@
   "name": "tempo_conus_2022_mapped",
   "version": "0.1.0",
   "project": {
-    "project_id": "dsgrid_conus_2022",
+    "project_id": "tempo_ldv_profiles_2022",
     "dataset": {
       "dataset_id": "tempo_conus_2022_mapped",
       "source_datasets": [
-      {
-        "dataset_id": "tempo_conus_2022",
-        "dataset_type": "standalone",
-      },
+        {
+          "dataset_id": "tempo_conus_2022",
+          "dataset_type": "standalone",
+        },
       ],
     "params": {},
     },
