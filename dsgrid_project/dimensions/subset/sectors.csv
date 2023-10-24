@@ -1,0 +1,5 @@
+id,commercial_sectors,industrial_sectors,residential_sectors,transportation_sectors
+com,x,,,
+ind,,x,,
+res,,,x,
+trans,,,,x

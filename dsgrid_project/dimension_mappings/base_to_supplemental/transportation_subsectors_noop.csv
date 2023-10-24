@@ -1,9 +1,0 @@
-from_id,to_id
-bev_compact,bev_compact
-bev_midsize,bev_midsize
-bev_pickup,bev_pickup
-bev_suv,bev_suv
-phev_compact,phev_compact
-phev_midsize,phev_midsize
-phev_pickup,phev_pickup
-phev_suv,phev_suv
