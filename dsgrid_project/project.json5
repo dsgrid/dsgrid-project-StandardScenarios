@@ -10,7 +10,7 @@
       required_dimensions: {
         single_dimensional: {
           model_year: {
-            base: [2012],
+            base: ["2012"],
           },
           subsector: {
             base: ['unspecified'],
@@ -31,7 +31,7 @@
       required_dimensions: {
         single_dimensional: {
           model_year: {
-            base: [2012],
+            base: ["2012"],
           },
           subsector: {
             base: ['unspecified'],
@@ -53,7 +53,7 @@
         single_dimensional: {
           model_year: {
             base: [
-              2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
+              "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",
             ],
           },
           subsector: {
@@ -78,7 +78,7 @@
             base: ['electricity_chp', 'electricity_thermal_dg'],
           },
           model_year: {
-            base: [2012],
+            base: ["2012"],
           },
           sector: {
             base: ['com', 'res', 'ind'],
@@ -329,7 +329,7 @@
             base: ['electricity_unspecified'],
           },
           model_year: {
-            base: [2012],
+            base: ["2012"],
           },
           sector: {
             base: ['unspecified'],
