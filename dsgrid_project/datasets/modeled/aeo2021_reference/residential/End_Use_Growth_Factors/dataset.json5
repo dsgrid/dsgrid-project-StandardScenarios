@@ -28,13 +28,13 @@
     "weather_year",
     "model_year",
   ],
-  data_schema_type: "one_table",
-  dataset_qualifier: "growth_rate",
   data_schema: {
     load_data_column_dimension: "metric",
+    data_schema_type: "one_table",
   },
   dataset_qualifier_metadata: {
     growth_rate_type: "exponential_annual",
+    dataset_qualifier: "growth_rate",
   },
   dimensions: [
     {
