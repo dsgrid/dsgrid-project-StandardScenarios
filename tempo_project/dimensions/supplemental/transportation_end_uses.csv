@@ -1,3 +1,0 @@
-id,name,fuel_id,unit
-electricity_ev_l1l2,EV L1/L2,electricity,MWh
-electricity_ev_dcfc,EV DCFC,electricity,MWh
