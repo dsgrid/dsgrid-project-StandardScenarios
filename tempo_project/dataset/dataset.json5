@@ -82,7 +82,7 @@
       name: "TEMPO Model Year",
       display_name: "TEMPO Model Years",
       file: "dimensions/year.csv",
-      description: "TEMPO modeling years for CONUS 2022 project, 2018-2050",
+      description: "TEMPO modeling years for CONUS 2022 project, 2024-2050",
     },
     {
       "class": "Sector",
