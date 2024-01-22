@@ -15,7 +15,6 @@
   source: 'https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/chp_dg.dsg',
   data_classification: 'low',
   tags: ['losses', 'efs', '2012', 'dsgrid_v0.2.0'],
-  data_schema_type: 'standard',
   trivial_dimensions: [
     'weather_year',
     'model_year',
@@ -27,7 +26,11 @@
   // TODO: not sure if project association for data_source__model_year is correct here for dsgrid_efs_2012_losses. Do we expect only 2012 model year? Answer depends on TODO above.
 
   data_schema: {
-    load_data_column_dimension: 'metric',
+    table_format: {
+      format_type: "pivoted",
+      pivoted_dimension_type: "metric",
+    },
+    data_schema_type: "standard",
   },
   dimensions: [
     {

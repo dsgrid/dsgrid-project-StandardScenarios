@@ -26,7 +26,6 @@
     "2012",
     "dsgrid_v0.2.0",
   ],
-  data_schema_type: "standard",
   trivial_dimensions: [
     "weather_year",
     "model_year",
@@ -34,7 +33,11 @@
     "subsector",
   ],
   data_schema: {
-    load_data_column_dimension: "metric",
+    table_format: {
+      format_type: "pivoted",
+      pivoted_dimension_type: "metric",
+    },
+    data_schema_type: "standard",
   },
   dimensions: [
     {
