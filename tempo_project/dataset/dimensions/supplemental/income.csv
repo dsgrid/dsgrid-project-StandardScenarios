@@ -1,0 +1,4 @@
+id,name
+Low_Income,"less than 50k USD"
+Middle_Income,"between 50k USD and 125k USD"
+High_Income,"greater than 125k USD"

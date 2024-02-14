@@ -1,0 +1,6 @@
+id,name
+Urban,"Dense neighborhoods that represent the central cities of most major metropolitan areas (above 4,150 persons/square mile)"
+Suburban,"Moderate density neighborhoods that are not surrounded by urban or second city population centers (Estimated to be above 1,000 persons/square mile and not in an urban or 2nd city population center)"
+Second_City,"Moderate density neighborhoods in population centers (above 1,000 and below 4,150 persons/square mile)"
+Small_Town,"Isolated small towns or less developed areas on the exurban frontier"
+Rural,"Small villages and rural hamlets surrounded by productive farmland or wide-open spaces (Estimated to be 210 persons/square mile and below)"

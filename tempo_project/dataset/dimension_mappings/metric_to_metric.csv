@@ -1,0 +1,3 @@
+from_id,to_id
+L1andL2,electricity_ev_l1l2
+DCFC,electricity_ev_dcfc

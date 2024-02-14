@@ -1,0 +1,5 @@
+id,name
+BEV_100,Battery-electric vehicle with 100-mile range
+BEV_300,Battery-electric vehicle with 300-mile range
+PHEV_25,Plug-in electric vehicle with 25 mile range
+PHEV_50,Plug-in electric vehicle with 50 mile range
