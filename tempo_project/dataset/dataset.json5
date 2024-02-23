@@ -25,14 +25,17 @@
     "reference",
     "tempo",
   ],
-  data_schema_type: "standard",
   trivial_dimensions: [
     "sector",
     "weather_year",
   ],
   use_project_geography_time_zone: true,
   data_schema: {
-    load_data_column_dimension: "metric",
+    table_format: {
+      format_type: "pivoted",
+      pivoted_dimension_type: "metric",
+    },
+    data_schema_type: "standard",
   },
   dimensions: [
     {
@@ -103,7 +106,7 @@
     {
       "class": "WeatherYear",
       description: "Weather year, 2012 only",
-      file: "../../../dimensions/weather_years.csv",
+      file: "../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
       name: "2012 Weather Year",
       display_name: "Weather 2012",
