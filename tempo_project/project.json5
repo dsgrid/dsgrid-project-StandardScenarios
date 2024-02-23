@@ -67,7 +67,7 @@
         type: "scenario",
         name: "Technology and Policy Scenario",
         display_name: "Scenario",
-        file: "dimensions/scenario.csv",
+        file: "dataset/dimensions/scenario.csv",
         description: "EV Scenarios: AEO Reference, EFS High Electrification, LDV Sales All-EV by 2035",
       },
       {
@@ -106,7 +106,7 @@
         display_name: 'end_uses_by_fuel_type',
         description: 'Provides selection of end uses by fuel type.',
         type: 'metric',
-        filename: 'dimensions/subset/end_uses_by_fuel_type.csv',
+        filename: 'dimensions/subset/enduses_by_fuel_type.csv',
         selectors: [
           {
             name: 'electricity_end_uses',
@@ -160,7 +160,7 @@
         name: "Vehicle Class",
         display_name: "vehicle_class",
         description: "Light-duty passenger vehicle classes",
-        type: "subset",
+        type: "subsector",
         filename: "dimensions/subset/vehicle_class.csv",
         selectors: [
           {
@@ -185,13 +185,9 @@
         name: "Household Size",
         display_name: "household_size",
         description: "Household size with a focus on number of drivers",
-        type: "subset",
+        type: "subsector",
         filename: "dimensions/subset/household_size.csv",
         selectors: [
-          {
-            name: "No_Drivers",
-            description: "No drivers",
-          },
           {
             name: "Single_Driver",
             description: "One person, one driver",
@@ -210,7 +206,7 @@
         name: "Household Income",
         display_name: "household_income",
         description: "Household income bins",
-        type: "subset",
+        type: "subsector",
         filename: "dimensions/subset/household_income.csv",
         selectors: [
           {
@@ -231,7 +227,7 @@
         name: "Vehicle Technology",
         display_name: "vehicle_technology",
         description: "Electric vehicle technology by type (i.e., battery electric or plug-in hybrid) and range",
-        type: "subset",
+        type: "subsector",
         filename: "dimensions/subset/vehicle_technology.csv",
         selectors: [
           {
@@ -256,7 +252,7 @@
         name: "urbanity",
         display_name: "urbanity",
         description: "Binned description of household locations focusing on population density",
-        type: "subset",
+        type: "subsector",
         filename: "dimensions/subset/urbanity.csv",
         selectors: [
           {
