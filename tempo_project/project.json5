@@ -1,6 +1,6 @@
 {
   project_id: 'tempo_ldv_profiles_2022',
-  description: 'TEMPO light-duty vehicle charging profiles created in 2021/2022 and published in 2023. https://www.nrel.gov/docs/fy23osti/83916.pdf',
+  description: 'TEMPO light-duty vehicle charging profiles created in 2021/2022 and published in 2023/2024. https://www.nrel.gov/docs/fy23osti/83916.pdf',
   name: 'TEMPO LDV Profiles 2022',
   datasets: [
     {
@@ -57,10 +57,10 @@
       {
         class: "ModelYear",
         type: "model_year",
-        name: "TEMPO Model Year",
-        display_name: "TEMPO Model Years",
-        file: "dataset/dimensions/year.csv",
-        description: "TEMPO modeling years for CONUS 2022 project, 2018-2050",
+        name: "TEMPO Project Model Year",
+        display_name: "TEMPO Project Model Years",
+        file: "dimensions/years.csv",
+        description: "TEMPO modeling years for CONUS 2022 project, 2024-2050",
       },
       {
         class: "Scenario",
@@ -103,7 +103,7 @@
     subset_dimensions: [
       {
         name: 'End Uses by Fuel Type',
-        display_name: 'end_uses_by_fuel_type',
+        display_name: 'End Uses by Fuel Type',
         description: 'Provides selection of end uses by fuel type.',
         type: 'metric',
         filename: 'dimensions/subset/enduses_by_fuel_type.csv',
@@ -158,7 +158,7 @@
       },
       {
         name: "Vehicle Class",
-        display_name: "vehicle_class",
+        display_name: "Vehicle Class",
         description: "Light-duty passenger vehicle classes",
         type: "subsector",
         filename: "dimensions/subset/vehicle_class.csv",
@@ -183,7 +183,7 @@
       },
       {
         name: "Household Size",
-        display_name: "household_size",
+        display_name: "Household Size",
         description: "Household size with a focus on number of drivers",
         type: "subsector",
         filename: "dimensions/subset/household_size.csv",
@@ -204,7 +204,7 @@
       },
       {
         name: "Household Income",
-        display_name: "household_income",
+        display_name: "Household Income",
         description: "Household income bins",
         type: "subsector",
         filename: "dimensions/subset/household_income.csv",
@@ -225,7 +225,7 @@
       },
       {
         name: "Vehicle Technology",
-        display_name: "vehicle_technology",
+        display_name: "Vehicle Technology",
         description: "Electric vehicle technology by type (i.e., battery electric or plug-in hybrid) and range",
         type: "subsector",
         filename: "dimensions/subset/vehicle_technology.csv",
@@ -249,8 +249,8 @@
         ],
       },
       {
-        name: "urbanity",
-        display_name: "urbanity",
+        name: "Urbanity",
+        display_name: "Urbanity",
         description: "Binned description of household locations focusing on population density",
         type: "subsector",
         filename: "dimensions/subset/urbanity.csv",
