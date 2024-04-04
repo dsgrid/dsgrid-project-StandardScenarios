@@ -360,7 +360,7 @@
         mapping: {
           description: 'Maps two year interval data 2024-2050 to five year interval data 2025-2050',
           file: 'dimension_mappings/base_to_supplemental/interpolate_to_five_year_intervals.csv',
-          mapping_type: 'many_to_one_aggregation',
+          mapping_type: 'many_to_one_assignment',
         },
       },
     ],
