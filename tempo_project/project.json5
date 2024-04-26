@@ -1,0 +1,368 @@
+{
+  project_id: 'tempo_ldv_profiles_2022',
+  description: 'TEMPO light-duty vehicle charging profiles created in 2021/2022 and published in 2023/2024. https://www.nrel.gov/docs/fy23osti/83916.pdf',
+  name: 'TEMPO LDV Profiles 2022',
+  datasets: [
+    {
+      dataset_id: 'tempo_conus_2022',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+      },
+    },
+    {
+      dataset_id: 'tempo_conus_2022_mapped',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+      },
+    },
+  ],
+  dimensions: {
+    base_dimensions: [
+      {
+        class: 'County',
+        description: 'US counties for L48, Census 2020 vintage, no territories',
+        file: 'dimensions/counties.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'US Counties 2020 L48',
+        display_name: 'County',
+        type: 'geography',
+      },
+      {
+        class: 'Sector',
+        type: 'sector',
+        name: 'Transportation Sector',
+        display_name: 'Transportation',
+        file: 'dataset/dimensions/sector.csv',
+        description: 'Transportation Sector',
+      },
+      {
+        class: 'Subsector',
+        type: 'subsector',
+        name: "TEMPO Bin",
+        display_name: "Household and Vehicle Type",
+        file: "dataset/dimensions/bin.csv",
+        description: "TEMPO demographic/geographic/vehicle bins. This is a cross-join of the following supplemental dimensions: * Composition (Single Driver, Some Drivers Smaller, Some Drivers Larger) * Income (Low Income, Middle Income, High Income) * Urbanity (Rural, Small Town, Suburban, Second City, Urban) * Vehicle Size Class (Compact, Midsize, SUV, Pickup) * Tech (PHEV25/PHEV50/BEV100/BEV300) ",
+      },
+      {
+        class: 'EnergyEndUse',
+        description: 'dsgrid CONUS 2022 End Uses (all fuel types)',
+        file: 'dimensions/enduses.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'CONUS-2022-Detailed-End-Uses',
+        display_name: 'End Use',
+        type: 'metric',
+      },
+      {
+        class: "ModelYear",
+        type: "model_year",
+        name: "TEMPO Project Model Year",
+        display_name: "TEMPO Project Model Years",
+        file: "dimensions/years.csv",
+        description: "TEMPO modeling years for CONUS 2022 project, 2024-2050",
+      },
+      {
+        class: "Scenario",
+        type: "scenario",
+        name: "Technology and Policy Scenario",
+        display_name: "Scenario",
+        file: "dataset/dimensions/scenario.csv",
+        description: "EV Scenarios: AEO Reference, EFS High Electrification, LDV Sales All-EV by 2035",
+      },
+      {
+        class: 'Time',
+        frequency: 'P0DT1H0M0.000000S',
+        name: 'Time-2012-EST-hourly-periodBeginning-noLeapDayAdjustment-total',
+        display_name: 'Time EST',
+        time_type: 'datetime',
+        leap_day_adjustment: 'none',
+        description: 'Time dimension, 2012 hourly EST, hour-beginning, no Leap Day Adjustment, total value',
+        time_interval_type: 'period_beginning',
+        str_format: '%Y-%m-%d %H:%M:%S',
+        timezone: 'EasternStandard',
+        measurement_type: 'total',
+        type: 'time',
+        ranges: [
+          {
+            start: '2012-01-01 00:00:00',
+            end: '2012-12-31 23:00:00',
+          },
+        ],
+      },
+      {
+        class: 'WeatherYear',
+        description: 'Weather year, 2012 only',
+        file: 'dimensions/weather_years.csv',
+        module: 'dsgrid.dimension.standard',
+        name: '2012 Weather Year',
+        display_name: 'Weather 2012',
+        type: 'weather_year',
+      },
+    ],
+    subset_dimensions: [
+      {
+        name: 'End Uses by Fuel Type',
+        display_name: 'End Uses by Fuel Type',
+        description: 'Provides selection of end uses by fuel type.',
+        type: 'metric',
+        filename: 'dimensions/subset/enduses_by_fuel_type.csv',
+        selectors: [
+          {
+            name: 'electricity_end_uses',
+            description: 'All Electric End Uses',
+            column_values: {'fuel_id': 'electricity', 'unit': 'MWh'},
+          },
+        ]
+      },
+      {
+        name: 'dsgrid CONUS 2022 Subsectors',
+        display_name: 'Subsector',
+        description: 'dsgrid CONUS 2022 Subsectors',
+        type: 'subsector',
+        filename: 'dimensions/subset/dsgrid_subsectors.csv',
+        selectors: [
+          {
+            name: 'bev_compact',
+            description: 'Battery electric compact personal vehicle',
+          },
+          {
+            name: 'bev_midsize',
+            description: 'Battery electric midsize personal vehicle',
+          },
+          {
+            name: 'bev_suv',
+            description: 'Battery electric sports utility personal vehicle',
+          },
+          {
+            name: 'bev_pickup',
+            description: 'Battery electric personal pickup truck',
+          },
+          {
+            name: 'phev_compact',
+            description: 'Plug-in hybrid electric compact personal vehicle',
+          },
+          {
+            name: 'phev_midsize',
+            description: 'Plug-in hybrid electric midsize personal vehicle',
+          },
+          {
+            name: 'phev_suv',
+            description: 'Plug-in hybrid electric sports utility personal vehicle',
+          },
+          {
+            name: 'phev_pickup',
+            description: 'Plug-in hybrid electric personal pickup truck',
+          },
+        ]
+      },
+      {
+        name: "Vehicle Class",
+        display_name: "Vehicle Class",
+        description: "Light-duty passenger vehicle classes",
+        type: "subsector",
+        filename: "dimensions/subset/vehicle_class.csv",
+        selectors: [
+          {
+            name: "Compact",
+            description: "Compact or smaller car",
+          },
+          {
+            name: "Midsize",
+            description: "Mid-size or larger car",
+          },
+          {
+            name: "SUV",
+            description: "Sport utility vehicle (crossovers included)",
+          },
+          {
+            name: "Pickup",
+            description: "Light duty pickup truck",
+          },
+        ],
+      },
+      {
+        name: "Household Size",
+        display_name: "Household Size",
+        description: "Household size with a focus on number of drivers",
+        type: "subsector",
+        filename: "dimensions/subset/household_size.csv",
+        selectors: [
+          {
+            name: "Single_Driver",
+            description: "One person, one driver",
+          },
+          {
+            name: "Some_Drivers_Smaller",
+            description: "Two persons, one or two drivers",
+          },
+          {
+            name: "Some_Drivers_Larger",
+            description: "Three or more persons, one or more drivers",
+          },
+        ],
+      },
+      {
+        name: "Household Income",
+        display_name: "Household Income",
+        description: "Household income bins",
+        type: "subsector",
+        filename: "dimensions/subset/household_income.csv",
+        selectors: [
+          {
+            name: "Low_Income",
+            description: "Annual income less than 50k USD",
+          },
+          {
+            name: "Middle_Income",
+            description: "Annual income between 50k USD and 125k USD",
+          },
+          {
+            name: "High_Income",
+            description: "Annual income greater than 125k USD",
+          },
+        ],
+      },
+      {
+        name: "Vehicle Technology",
+        display_name: "Vehicle Technology",
+        description: "Electric vehicle technology by type (i.e., battery electric or plug-in hybrid) and range",
+        type: "subsector",
+        filename: "dimensions/subset/vehicle_technology.csv",
+        selectors: [
+          {
+            name: "BEV_100",
+            description: "Battery-electric vehicle with 100-mile range",
+          },
+          {
+            name: "BEV_300",
+            description: "Battery-electric vehicle with 300-mile range",
+          },
+          {
+            name: "PHEV_25",
+            description: "Plug-in electric vehicle with 25 mile range",
+          },
+          {
+            name: "PHEV_50",
+            description: "Plug-in electric vehicle with 50 mile range",
+          },
+        ],
+      },
+      {
+        name: "Urbanity",
+        display_name: "Urbanity",
+        description: "Binned description of household locations focusing on population density",
+        type: "subsector",
+        filename: "dimensions/subset/urbanity.csv",
+        selectors: [
+          {
+            name: "Urban",
+            description: "Dense neighborhoods that represent the central cities of most major metropolitan areas (above 4,150 persons/square mile)",
+          },
+          {
+            name: "Suburban",
+            description: "Moderate density neighborhoods that are not surrounded by urban or second city population centers (Estimated to be above 1,000 persons/square mile and not in an urban or 2nd city population center)",
+          },
+          {
+            name: "Second_City",
+            description: "Moderate density neighborhoods in population centers (above 1,000 and below 4,150 persons/square mile)",
+          },
+          {
+            name: "Small_Town",
+            description: "Isolated small towns or less developed areas on the exurban frontier",
+          },
+          {
+            name: "Rural",
+            description: "Small villages and rural hamlets surrounded by productive farmland or wide-open spaces (Estimated to be 210 persons/square mile and below)",
+          },
+        ],
+      },
+    ],
+    supplemental_dimensions: [
+      {
+        class: 'State',
+        description: 'US States L48',
+        file: 'dimensions/supplemental/states.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'US States L48',
+        display_name: 'State',
+        type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to State',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_state.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
+      },
+      {
+        class: 'CensusRegion',
+        description: 'US Census Regions',
+        file: 'dimensions/supplemental/census_regions.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'US Census Regions',
+        display_name: 'Census Region',
+        type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to CensusRegion',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_censusregion.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
+      },
+      {
+        class: 'CensusDivision',
+        description: 'US Census Divisions',
+        file: 'dimensions/supplemental/census_divisions.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'US Census Divisions',
+        display_name: 'Census Division',
+        type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to CensusDivision',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_censusdivision.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
+      },
+      {
+        class: 'GeographyDimensionBaseModel',
+        description: 'ReEDS Power Control Areas',
+        file: 'dimensions/supplemental/reeds_pca.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'ReEDS PCA',
+        display_name: 'ReEDS PCA',
+        type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to ReEDS Power Control Areas',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_reeds_pca.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
+      },
+      {
+        class: 'GeographyDimensionBaseModel',
+        description: 'Contiguous United States',
+        file: 'dimensions/supplemental/conus.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'Contiguous United States',
+        display_name: 'CONUS',
+        type: 'geography',
+        mapping: {
+          description: 'Maps US Counties 2020 L48 to CONUS',
+          file: 'dimension_mappings/base_to_supplemental/lookup_county_to_conus.csv',
+          mapping_type: 'many_to_one_aggregation',
+        },
+      },
+      {
+        class: 'ModelYear',
+        description: 'Five year intervals from 2025 to 2050',
+        file: 'dimensions/supplemental/five_year_intervals.csv',
+        module: 'dsgrid.dimension.standard',
+        name: 'Five Year Intervals',
+        display_name: "Five Year Intervals",
+        type: 'model_year',
+        mapping: {
+          description: 'Maps two year interval data 2024-2050 to five year interval data 2025-2050',
+          file: 'dimension_mappings/base_to_supplemental/interpolate_to_five_year_intervals.csv',
+          mapping_type: 'many_to_one_assignment',
+        },
+      },
+    ],
+  },
+}

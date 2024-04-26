@@ -1,0 +1,21 @@
+{
+  mappings: [
+    {
+      description: "ACS County 2018 to ACS County 2020 L48",
+      file: "dimension_mappings/county_to_county.csv",
+      dimension_type: "geography",
+    },
+    {
+      description: "TEMPO CONUS 2022 End Uses to TEMPO LDV Profiles 2022 End Uses",
+      dimension_type: "metric",
+      file: "dimension_mappings/metric_to_metric.csv",
+      mapping_type: "one_to_one",
+    },
+    {
+      description: "Select TEMPO model years starting in 2024",
+      dimension_type: "model_year",
+      file: "dimension_mappings/year_to_year.csv",
+      mapping_type: "one_to_one",
+    },
+  ],
+}
