@@ -326,6 +326,7 @@ Dependencies:
 - python=3.10
 - jupyter
 - pandas
+- pyarrow
 - plotly
 
 Advantages: Very familiar to many Python users and easy to use.
@@ -334,8 +335,44 @@ Limitations: Of the three documented options, pandas is least able to work with 
 
 ##### Getting Started
 
+Pandas easily loads parquet files even when those files are actually directories containing a partitioned dataset. For example, running this code:
+```Python
+import pandas as pd
 
+dataset_name = "state_level_simplified"
 
+# Load data table
+filepath = data_dir / dataset_name / "table.parquet"
+df = pd.read_parquet(filepath)
+df.head(5)
+```
+in the notebook returns:
+![screenshot](ocs/pandas-load-data.png "Notebook output after loading 'state_level_simplified' into pandas")
+
+##### Writing Queries
+
+The pandas.DataFrame interface enables SQL-like functionality, but with a different syntax. For example, to get a summary data frame with three columns: `scenario`, `year`, and `annual_twh`; we can write:
+
+```
+df2 = (df.groupby(["scenario", columns_by_type["model_year"]])[value_column].sum() / 1.0E6).reset_index()
+df2.rename({columns_by_type["model_year"]: "year", value_column: "annual_twh"}, axis=1, inplace=True)
+```
+
+And duplicating the timestamp-related queries documented for DuckDB above looks like:
+1. Shifting the timestamps to match the `time_est` label rather than being in `UTC`:
+
+    ```Python
+    df3 = df2.copy()
+    df3["time_est"] = df3["time_est"] - dt.timedelta(hours=5)
+    df3.head(5)
+    ```
+
+2. Selecting timestamps within a range:
+
+    ```Python
+    inds &= ((df['time_est'] >= start_timestamp) & (df['time_est'] <= end_timestamp))
+    df2 = df[inds].groupby("time_est")[value_column].sum().reset_index().sort_values("time_est")
+    ```
 
 ## Options for Accessing Different Slices of the Data
 
