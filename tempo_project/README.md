@@ -9,7 +9,7 @@ via the [Open Energy Data Initiative (OEDI)](https://data.openei.org/home).
 ## Contents
 
 - [dsgrid Project Definition and Files](#dsgrid-project-definition-and-files) - Describes the metadata, dimension, and mapping information available in [dsgrid-project-StandardScenarios/tempo_project](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project)
-- [Output Data Files Available on OEDI](#output-data-files-available-on-oedi) - Describes what [files are available on OEDI](https://data.openei.org/submissions/180) and documents best practices for using them.
+- [Output Data Files Available on OEDI](#output-data-files-available-on-oedi) - Describes what [files are available on OEDI](https://data.openei.org/submissions/5958) and documents best practices for using them.
 - [Options for Accessing Different Slices of the Data](#options-for-accessing-different-slices-of-the-data) - Outlines options for creating or requesting the publication of different slices of the data than the ones that are already available.
 
 ## dsgrid Project Definition and Files
@@ -48,13 +48,13 @@ When dataset and project dimensions don't match for a given dimension type, the 
 
 And dsgrid translates TEMPO's representative week data into 8784 profiles that account for day of week, each geography's time zone, and daylight savings time.
 
-The project also enables [queries](https://dsgrid.github.io/dsgrid/tutorials/query_project.html), which start by mapping datasets to the project's base dimensions and then perform user-specified mapping, filtering, aggregation, and sorting. Outputs can of course use the project's base dimensions, but they can also make use of *Supplemental Dimensions*. The available supplemental dimensions are outlined in the `subset_dimensions` and `supplemental_dimensions` portions of the `project.json5` file, which refer to .csv files in the [dimensions/subset](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/subset) and [dimensions/supplemental](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/supplemental) folders. Regular *Supplemental Dimensions* and their [associated mapings](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimension_mappings/base_to_supplemental) work analogously to dataset dimensions and their mappings. *Subset Dimensions* are simple alternative groupings of the project's base dimensions. Each subset dimension is defined in one file that maps each base dimension record of the given dimension type to a specific *Subset Dimension Selector* which functions as an element of the overall supplemental dimension and can also be used on its own to specify specific slices of data.
+dsgrid projects also enable [queries](https://dsgrid.github.io/dsgrid/tutorials/query_project.html), which start by mapping datasets to the project's base dimensions and then perform user-specified mapping, filtering, aggregation, and sorting operations. Outputs can of course use the project's base dimensions, but they can also make use of *Supplemental Dimensions*. The available supplemental dimensions are outlined in the `subset_dimensions` and `supplemental_dimensions` portions of the `project.json5` file, which refer to .csv files in the [dimensions/subset](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/subset) and [dimensions/supplemental](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/supplemental) folders. Regular *Supplemental Dimensions* and their [associated mapings](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimension_mappings/base_to_supplemental) work analogously to dataset dimensions and their mappings. *Subset Dimensions* are simple alternative groupings of the project's base dimensions. Each subset dimension is defined in one file that maps each base dimension record of the given dimension type to a specific *Subset Dimension Selector* which functions as an element of the overall supplemental dimension and can also be used on its own to select or refer to specific slices of data.
 
 The data published on OEDI makes use of the following supplemental dimensions:
 - `metric`:
     - Subset dimension `end_uses_by_fuel_type`, which [maps](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dimensions/subset/enduses_by_fuel_type.csv) all energy use into `electricity_end_uses`
 - `subsector`:
-    - Subset dimension `subsector` which [maps](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dimensions/subset/dsgrid_subsectors.csv) TEMPO's 720 household bins and vehicle types into 8 simplified vehicle types (i.e., battery electric vehicle (BEV) or plug-in hybrid electric vehicle (PHEV) and compact, midsize, SUV, or pickup).
+    - Subset dimension `subsector` which [maps](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dimensions/subset/dsgrid_subsectors.csv) TEMPO's 720 household bins and vehicle types into 8 simplified vehicle types (i.e., battery electric vehicle (BEV) or plug-in hybrid electric vehicle (PHEV), and compact, midsize, SUV, or pickup).
 - `geography`:
     - Supplemental dimension `state`; [definition](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dimensions/supplemental/states.csv), [mapping](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dimension_mappings/base_to_supplemental/lookup_county_to_state.csv)
     - Supplemental dimension `census_division`; [definition](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dimensions/supplemental/census_divisions.csv), [mapping](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dimension_mappings/base_to_supplemental/lookup_county_to_censusdivision.csv)
@@ -131,24 +131,74 @@ columns_by_type = {dim_type: metadata["dimensions"][dim_type][0]["column_names"]
 Note that although a column name is provided for each dimension type, trivial dimensions (i.e., those with only one possible value, like `weather_year`) are not included in the data files. Thus, not all column names listed in the metadata will actually be present in loaded data frames.
 
 
-#### examples-spark
+#### examples-spark.ipynb
 
 Dependencies:
+- python=3.10
 - jupyter
 - pyspark
 - pandas
 - plotly
 
-Limitations: Spark can work with all of the datasets, but for the largest datasets generally require setting up a multi-node cluster for complex queries.
+Advantages: The data were originally created with Spark, and Spark can nominally work with all of the datasets.
+
+Limitations: Although set-up is easy for local mode, performing queries on large datasets generally requires a multi-node cluster, which can be challenging to set up and expensive to run.
 
 ##### Getting Started
 
+PySpark easily loads parquet files even when those files are actually directories containing a partitioned dataset. For example, running this code:
+```
+from pyspark.sql import SparkSession
+
+spark = (
+            SparkSession.builder
+            .appName("dsgrid")
+            .config("spark.sql.session.timeZone", "EST")
+            .getOrCreate()
+        )
+
+dataset_name = "state_level_simplified"
+
+# Load data table
+filepath = data_dir / dataset_name / "table.parquet"
+df = spark.read.parquet(str(filepath))
+tablename = "tbl"
+df.createOrReplaceTempView(tablename)
+df.show(n=5)
+```
+in the notebook returns:
+![screenshot](docs/pyspark-load-data.png "Notebook output after loading 'state_level_simplified' into PySpark")
+
 ##### Writing Queries
+
+[PySpark](https://spark.apache.org/docs/latest/api/python/index.html) data frames can be queried using functions like [filter](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.filter.html#pyspark.sql.DataFrame.filter) or by writing straight SQL. In the notebook we use SQL. For example, this query (when the data are small enough to process):
+```Python
+df = spark.sql(f"""SELECT scenario, {columns_by_type["model_year"]} as year, SUM({value_column})/1.0E6 as annual_twh
+                     FROM {tablename} 
+                 GROUP BY scenario, {columns_by_type["model_year"]}
+                 ORDER BY scenario, year""").toPandas()
+```
+returns a `pandas.DataFrame` containing three columns: `scenario`, `year`, and `annual_twh`.
+
+And this is an example of how to select timestamps within a range:
+```Python
+import datetime as dt
+    
+# Select EST timestamps for 2/14/2012
+start_timestamp = dt.datetime(2012, 2, 14, 0)
+stop_timestamp = dt.datetime(2012, 2, 14, 23)
+
+df = spark.sql(f"""SELECT time_est, SUM({value_column}) as {value_column}
+                     FROM {tablename} 
+                    WHERE {where_clause} AND (time_est >= TIMESTAMP '{start_timestamp}') AND (time_est <= TIMESTAMP '{end_timestamp}')
+                GROUP BY time_est 
+                ORDER BY time_est;""").toPandas()
+```
 
 ##### Additional Reading
 
 
-#### examples-duckdb
+#### examples-duckdb.ipynb
 
 Dependencies:
 - python=3.10
@@ -157,7 +207,9 @@ Dependencies:
 - pandas
 - plotly
 
-Limitations: DuckDB makes the most efficient use of available resources and is trivial to set up, but is limited to one node and can run out of resources. What datasets you can analyze and what queries you can perform thus depends on the hardware you use.
+Advantages: DuckDB makes the most efficient use of available resources and is trivial to set up.
+
+Limitations: DuckDB is limited to one node and can run out of resources. What datasets you can analyze and what queries you can perform thus depends on the hardware you use.
 
 ##### Getting Started
 
@@ -268,14 +320,17 @@ The following DuckDB documentaiton links might be helpful:
 - [SQL Syntax Documentation](https://duckdb.org/docs/sql/introduction) - This documentation starts from the basics and is well organized. Because timestamps are always hard for everyone, this page might be of particular interest: [Timestamp Functions](https://duckdb.org/docs/sql/functions/timestamp).
 
 
-#### examples-pandas
+#### examples-pandas.ipynb
 
 Dependencies:
+- python=3.10
 - jupyter
 - pandas
 - plotly
 
-Limitations: pandas is very familiar to many Python users, but is the most limited of these three options. For any of the large (e.g., 1 GB or greater on disk) datasets, most users will quickly run into issues trying to open the whole dataset as a pandas.DataFrame. For that reason, we have partitioned the large datasets into smaller chunks that should be openable in this standard tool.
+Advantages: Very familiar to many Python users and easy to use.
+
+Limitations: Of the three documented options, pandas is least able to work with large datasets. For any of the large (e.g., 1 GB or greater on disk) datasets, most users will quickly run into issues trying to open the whole dataset as a pandas.DataFrame. For that reason, we have partitioned the large datasets into smaller chunks that should be openable (one-by-one) in this standard tool.
 
 ##### Getting Started
 
