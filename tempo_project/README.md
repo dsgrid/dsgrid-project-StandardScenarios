@@ -14,7 +14,7 @@ via the [Open Energy Data Initiative (OEDI)](https://data.openei.org/home).
 
 ## dsgrid Project Definition and Files
 
-[dsgrid](https://github.com/dsgrid/dsgrid) provides a *dsgrid Project* container for aligning *Datasets* via *Base Dimensions*. dsgrid does this by requiring *dataset contributors* and *project coordinators* to very explicitly define resolution across eight [*Dimension Types*](https://dsgrid.github.io/dsgrid/explanations/components/dimensions.html#dimension-types):
+[dsgrid](https://github.com/dsgrid/dsgrid) provides a [*dsgrid Project*](https://dsgrid.github.io/dsgrid/explanations/components/projects.html) for aligning [*Datasets*](https://dsgrid.github.io/dsgrid/explanations/components/datasets.html) via *Base Dimensions*. dsgrid does this by requiring *dataset contributors* and *project coordinators* to very explicitly define resolution across eight [*Dimension Types*](https://dsgrid.github.io/dsgrid/explanations/components/dimensions.html#dimension-types):
 - `scenario`
 - `model_year`
 - `weather_year`
@@ -41,16 +41,16 @@ The project's *Base Dimensions*, which are outlined in the `base_dimensions` por
 
 Analogous to the dataset, the files referenced by the dimension definitions generally live in the [project's dimensions folder](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions).
 
-When dataset and project dimensions don't match for a given dimension type, the *dataset contributor* must provide a mapping file *unless the dimension type in question is a Time type*, in which case dsgrid handles the transformations programmatically. In this project, the dataset provides mapping files ([dimension_mappings.json5](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dataset/dimension_mappings.json5), [dimension_mappings folder](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dataset/dimension_mappings)) for:
+When dataset and project dimensions don't match for a given dimension type, the *dataset contributor* must provide a [*Dimension Mapping*](https://dsgrid.github.io/dsgrid/explanations/components/dimension_mappings.html) file *unless the dimension type in question is a Time type*, in which case dsgrid handles the transformations programmatically. In this project, the dataset provides mapping files ([dimension_mappings.json5](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dataset/dimension_mappings.json5), [dimension_mappings folder](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dataset/dimension_mappings)) for:
 - `model_year`: Drop data for historical years
 - `geography`: Map vintage 2018 counties into vintage 2020 counties
 - `metric`: Map the different labels used to indicate L1&L2 and DCFC together. (For example, the dataset uses the id `L1andL2` while the project uses the id `electricity_ev_l1l2`.)
 
 And dsgrid translates TEMPO's representative week data into 8784 profiles that account for day of week, each geography's time zone, and daylight savings time.
 
-dsgrid projects also enable [queries](https://dsgrid.github.io/dsgrid/tutorials/query_project.html), which start by mapping datasets to the project's base dimensions and then perform user-specified mapping, filtering, aggregation, and sorting operations. Outputs can of course use the project's base dimensions, but they can also make use of *Supplemental Dimensions*. The available supplemental dimensions are outlined in the `subset_dimensions` and `supplemental_dimensions` portions of the `project.json5` file, which refer to .csv files in the [dimensions/subset](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/subset) and [dimensions/supplemental](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/supplemental) folders. Regular *Supplemental Dimensions* and their [associated mapings](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimension_mappings/base_to_supplemental) work analogously to dataset dimensions and their mappings. *Subset Dimensions* are simple alternative groupings of the project's base dimensions. Each subset dimension is defined in one file that maps each base dimension record of the given dimension type to a specific *Subset Dimension Selector* which functions as an element of the overall supplemental dimension and can also be used on its own to select or refer to specific slices of data.
+dsgrid projects also enable [Queries](https://dsgrid.github.io/dsgrid/tutorials/query_project.html), which start by mapping datasets to the project's base dimensions and then perform user-specified mapping, filtering, aggregation, and sorting operations. Outputs can of course use the project's base dimensions, but they can also make use of *Supplemental Dimensions*. The available supplemental dimensions are outlined in the `subset_dimensions` and `supplemental_dimensions` portions of the `project.json5` file, which refer to .csv files in the [dimensions/subset](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/subset) and [dimensions/supplemental](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/supplemental) folders. Regular *Supplemental Dimensions* and their [associated mapings](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimension_mappings/base_to_supplemental) work analogously to dataset dimensions and their mappings. *Subset Dimensions* are simple alternative groupings of the project's base dimensions. Each subset dimension is defined in one file that maps each base dimension record of the given dimension type to a specific *Subset Dimension Selector* which functions as an element of the overall supplemental dimension and can also be used on its own to select or refer to specific slices of data.
 
-The data published on OEDI makes use of the following supplemental dimensions:
+The data published on OEDI make use of the following supplemental dimensions:
 - `metric`:
     - Subset dimension `end_uses_by_fuel_type`, which [maps](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dimensions/subset/enduses_by_fuel_type.csv) all energy use into `electricity_end_uses`
 - `subsector`:
@@ -79,25 +79,25 @@ Additional supplemental dimensions are defined in this dsgrid project, but have 
 
 Output data are available through OEDI. The top-level folders availalbe in the Data Lake are:
 
-| Folder Name              | Folder Contents                                          | Folder Size | Partitioned By                      |
-| ------------------------ | -------------------------------------------------------- | ----------- | ----------------------------------- |
-| query_files              | dsgrid query definitions in .json5 format                      |  32 K |                                     |
-| full_dataset             | Full dataset in project base dimensions                        | 663 G | scenario, model_year, state, county |
-| full_state_level_dataset | Aggregation to state                                           |       |                                     | 
-| state_level_simplified   | Aggregation to state, subsector, and one (electric) end use    | 1.3 G | scenario                            |
-| very_simple              | Aggregation to census division, one subsector, and one end use | 225 M | N/A                                 |
-| annual_summary_conus     | Aggregation to conus, subsector, one end use, and annual time  |       | N/A                                 |
-| annual_summary_state     | Aggregation to state, subsector, one end use, and annual time  | 404 K | N/A                                 |
-| annual_summary_county    | Aggregation to county, subsector, one end use, and annual time |       | N/A                                 |
+| Folder Name              | Folder Contents                                                | Folder Size | Partitioned By              |
+| ------------------------ | -------------------------------------------------------------- | ----------- | --------------------------- |
+| query_files              | dsgrid query definitions in .json5 format                      |        32 K |                             |
+| `full_dataset`           | Full dataset in project base dimensions                        |       793 G | scenario, model_year, state |
+| `full_state_level`       | Aggregation to state                                           |        54 G | state, scenario, model_year | 
+| `state_level_simplified` | Aggregation to state, subsector, and one (electric) end use    |       983 M | scenario                    |
+| `simple_profiles`        | Aggregation to census division, one subsector, and one end use |       110 M | N/A                         |
+| `annual_summary_conus`   | Aggregation to conus, subsector, one end use, and annual time  |        60 K | N/A                         |
+| `annual_summary_state`   | Aggregation to state, subsector, one end use, and annual time  |       1.5 M | N/A                         |
+| `annual_summary_county`  | Aggregation to county, subsector, one end use, and annual time |       3.1 M | N/A                         |
 
 Each dataset folder contains:
 - `query.json`: dsgrid query definition as output by the CLI in the course of running the query.
 - `metadata.json`: File that describes the structure of the output table.
-- `table.parquet`: Folder containing the output table in .parquet format. Some datasets are partitioned on meaningful columns, which makes it so that subfolders of `table.parquet` can be loaded as parquet files on their own to get access to certain slices of the data without loading the entire dataset.
+- `table.parquet`: Folder containing the output table in .parquet format. Some datasets (i.e., `full_dataset`, `full_state_level`, and `state_level_simplified`) are partitioned on meaningful columns, which makes it so that subfolders of `table.parquet` can be loaded as parquet files on their own to get access to certain slices of the data without loading the entire dataset.
 
 ### Working with Datasets
 
-In this repository, under `tempo_project/notebooks`, we provide example notebooks you can run using [pyspark](HERE), [duckdb](HERE), or [pandas](HERE) after you adjust `data_dir` to point to the location where you have downloaded one or more of the folders listed above and `dataset_name` to be the name of the folder containing the dataset you want to access.
+In this repository, under `tempo_project/notebooks`, we provide example notebooks you can run using [duckdb](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-duckdb.ipynb), [pandas](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-pandas.ipynb), or [spark](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-spark.ipynb) after you adjust `data_dir` to point to the location where you have downloaded one or more of the folders listed above and `dataset_name` to be the name of the folder containing the dataset you want to access.
 
 All three notebooks:
 - Load the `metadata.json` files to programmatically access the dataset column names, and use that information to discern, e.g., geographic resolution, whether the data are hourly or annual.
@@ -131,79 +131,12 @@ columns_by_type = {dim_type: metadata["dimensions"][dim_type][0]["column_names"]
 Note that although a column name is provided for each dimension type, trivial dimensions (i.e., those with only one possible value, like `weather_year`) are not included in the data files. Thus, not all column names listed in the metadata will actually be present in loaded data frames.
 
 
-#### examples-spark.ipynb
-
-Dependencies:
-- python=3.10
-- jupyter
-- pyspark
-- pandas
-- plotly
-
-Advantages: The data were originally created with Spark, and Spark can nominally work with all of the datasets.
-
-Limitations: Although set-up is easy for local mode, performing queries on large datasets generally requires a multi-node cluster, which can be challenging to set up and expensive to run.
-
-##### Getting Started
-
-PySpark easily loads parquet files even when those files are actually directories containing a partitioned dataset. For example, running this code:
-```
-from pyspark.sql import SparkSession
-
-spark = (
-            SparkSession.builder
-            .appName("dsgrid")
-            .config("spark.sql.session.timeZone", "EST")
-            .getOrCreate()
-        )
-
-dataset_name = "state_level_simplified"
-
-# Load data table
-filepath = data_dir / dataset_name / "table.parquet"
-df = spark.read.parquet(str(filepath))
-tablename = "tbl"
-df.createOrReplaceTempView(tablename)
-df.show(n=5)
-```
-in the notebook returns:
-![screenshot](docs/pyspark-load-data.png "Notebook output after loading 'state_level_simplified' into PySpark")
-
-##### Writing Queries
-
-[PySpark](https://spark.apache.org/docs/latest/api/python/index.html) data frames can be queried using functions like [filter](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.filter.html#pyspark.sql.DataFrame.filter) or by writing straight SQL. In the notebook we use SQL. For example, this query (when the data are small enough to process):
-```Python
-df = spark.sql(f"""SELECT scenario, {columns_by_type["model_year"]} as year, SUM({value_column})/1.0E6 as annual_twh
-                     FROM {tablename} 
-                 GROUP BY scenario, {columns_by_type["model_year"]}
-                 ORDER BY scenario, year""").toPandas()
-```
-returns a `pandas.DataFrame` containing three columns: `scenario`, `year`, and `annual_twh`.
-
-And this is an example of how to select timestamps within a range:
-```Python
-import datetime as dt
-    
-# Select EST timestamps for 2/14/2012
-start_timestamp = dt.datetime(2012, 2, 14, 0)
-stop_timestamp = dt.datetime(2012, 2, 14, 23)
-
-df = spark.sql(f"""SELECT time_est, SUM({value_column}) as {value_column}
-                     FROM {tablename} 
-                    WHERE {where_clause} AND (time_est >= TIMESTAMP '{start_timestamp}') AND (time_est <= TIMESTAMP '{end_timestamp}')
-                GROUP BY time_est 
-                ORDER BY time_est;""").toPandas()
-```
-
-##### Additional Reading
-
-
 #### examples-duckdb.ipynb
 
 Dependencies:
-- python=3.10
+- python>=3.10
 - jupyter
-- duckdb
+- duckdb>=0.9.2
 - pandas
 - plotly
 
@@ -213,14 +146,14 @@ Limitations: DuckDB is limited to one node and can run out of resources. What da
 
 ##### Getting Started
 
-DuckDB easily loads parquet files, but does not automatically load the information contained in partitioned folders. The `examples-duckdb.ipynb` provides a function, `load_table`, to perform this work so that, e.g., the `scenario` dimension gets loaded if you open the `state_level_simplified/table.parquet`, which contains folders:
-- 'scenario=efs_high_ldv'
-- 'scenario=ldv_sales_evs_2035'
-- 'scenario=reference'
-
-With `load_table` available, a dataset can be loaded and then previewed with the code:
+DuckDB easily loads parquet files, including partitioned files assuming the duckdb version is sufficiently recent. For example, a dataset can be loaded and then previewed with the code:
 ```python
 import duckdb
+
+def load_table(filepath, tablename):
+    duckdb.sql(f"CREATE TABLE {tablename} AS SELECT * FROM read_parquet('{filepath}/**/*.parquet', hive_partitioning=true, hive_types_autocast=false);")
+    description = duckdb.sql(f"DESCRIBE {tablename};")
+    logger.info(f"Loaded {filepath} as {tablename}:\n{description}")
 
 # load data table
 filepath = data_dir / dataset_name / "table.parquet"
@@ -230,49 +163,6 @@ duckdb.sql(f"SELECT * FROM {tablename} LIMIT 5").df()
 ```
 For example, with `dataset_name = "state_level_simplified"` running this code in the notebook returns:
 ![screenshot](docs/duckdb-load-data.png "Notebook output after loading 'state_level_simplified' into DuckDB")
-
-For completenss, here is the code for `load_table` and helper functions `is_partitioned`, `get_partitions`, and `table_exists`:
-```python
-def is_partitioned(filepath):
-    for p in filepath.iterdir():
-        if p.is_dir() and ("=" in p.stem) and (len(p.stem.split("=")) == 2):
-            return True
-    return False
-
-def get_partitions(filepath):
-    assert is_partitioned(filepath), f"{filepath} is not partitioned"
-    
-    partition_name = None
-    for p in filepath.iterdir():
-        if p.is_dir() and ("=" in p.stem):
-            tmp, value = p.stem.split("=")
-            if partition_name:
-                assert (tmp == partition_name), f"Found two different partition names in {filepath}: {partition_name}, {tmp}"
-            partition_name = tmp
-            yield partition_name, value, p
-
-def table_exists(tablename):
-    tables = duckdb.sql("SHOW TABLES")
-    if tables:
-        return (tablename in tables.df()["name"].tolist())
-    return False
-
-def load_table(filepath, tablename, prefix=""):
-    if not prefix:
-        assert not table_exists(tablename), f"{tablename} already exists"
-
-    if is_partitioned(filepath):
-        for partition_name, partition_value, p in get_partitions(filepath):
-            load_table(p, tablename, prefix=f"{prefix}'{partition_value}' AS {partition_name}, ")
-        return
-    
-    # insert data
-    if table_exists(tablename):
-        duckdb.sql(f"INSERT INTO {tablename} SELECT {prefix}* FROM read_parquet('{filepath}/*.parquet');")
-    else:
-        duckdb.sql(f"CREATE TABLE {tablename} AS SELECT {prefix}* FROM read_parquet('{filepath}/*.parquet');")
-    logger.info(f"Loaded {filepath}")
-```
 
 ##### Writing Queries
 
@@ -373,6 +263,74 @@ And duplicating the timestamp-related queries documented for DuckDB above looks 
     inds &= ((df['time_est'] >= start_timestamp) & (df['time_est'] <= end_timestamp))
     df2 = df[inds].groupby("time_est")[value_column].sum().reset_index().sort_values("time_est")
     ```
+
+#### examples-spark.ipynb
+
+Dependencies:
+- python=3.10
+- jupyter
+- pyspark
+- pandas
+- plotly
+
+Advantages: The data were originally created with Spark, and Spark can nominally work with all of the datasets.
+
+Limitations: Although set-up is easy for local mode, performing queries on large datasets generally requires a multi-node cluster, which can be challenging to set up and expensive to run.
+
+##### Getting Started
+
+PySpark easily loads parquet files even when those files are actually directories containing a partitioned dataset. For example, running this code:
+```
+from pyspark.sql import SparkSession
+
+spark = (
+            SparkSession.builder
+            .appName("dsgrid")
+            .config("spark.sql.session.timeZone", "EST")
+            .getOrCreate()
+        )
+
+dataset_name = "state_level_simplified"
+
+# Load data table
+filepath = data_dir / dataset_name / "table.parquet"
+df = spark.read.parquet(str(filepath))
+tablename = "tbl"
+df.createOrReplaceTempView(tablename)
+df.show(n=5)
+```
+in the notebook returns:
+![screenshot](docs/pyspark-load-data.png "Notebook output after loading 'state_level_simplified' into PySpark")
+
+##### Writing Queries
+
+[PySpark](https://spark.apache.org/docs/latest/api/python/index.html) data frames can be queried using functions like [filter](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.filter.html#pyspark.sql.DataFrame.filter) or by writing straight SQL. In the notebook we use SQL. For example, this query (when the data are small enough to process):
+```Python
+df = spark.sql(f"""SELECT scenario, {columns_by_type["model_year"]} as year, SUM({value_column})/1.0E6 as annual_twh
+                     FROM {tablename} 
+                 GROUP BY scenario, {columns_by_type["model_year"]}
+                 ORDER BY scenario, year""").toPandas()
+```
+returns a `pandas.DataFrame` containing three columns: `scenario`, `year`, and `annual_twh`.
+
+And this is an example of how to select timestamps within a range:
+```Python
+import datetime as dt
+    
+# Select EST timestamps for 2/14/2012
+start_timestamp = dt.datetime(2012, 2, 14, 0)
+stop_timestamp = dt.datetime(2012, 2, 14, 23)
+
+df = spark.sql(f"""SELECT time_est, SUM({value_column}) as {value_column}
+                     FROM {tablename} 
+                    WHERE {where_clause} AND (time_est >= TIMESTAMP '{start_timestamp}') AND (time_est <= TIMESTAMP '{end_timestamp}')
+                GROUP BY time_est 
+                ORDER BY time_est;""").toPandas()
+```
+
+##### Additional Reading
+
+
 
 ## Options for Accessing Different Slices of the Data
 
