@@ -231,7 +231,7 @@ duckdb.sql(f"SELECT * FROM {tablename} LIMIT 5").df()
 For example, with `dataset_name = "state_level_simplified"` running this code in the notebook returns:
 ![screenshot](docs/duckdb-load-data.png "Notebook output after loading 'state_level_simplified' into DuckDB")
 
-For completenss, here is the code for `load_table` and helper functions `is_partitioned`, `get_partitions`, and `table_exists`:
+For completeness, here is the code for `load_table` and helper functions `is_partitioned`, `get_partitions`, and `table_exists`:
 ```python
 def is_partitioned(filepath):
     for p in filepath.iterdir():
