@@ -314,7 +314,7 @@ A couple of timestamp-related queries that are demonstrated in the notebook incl
 
 ##### Additional Reading
 
-The following DuckDB documentaiton links might be helpful:
+The following DuckDB documentation links might be helpful:
 - [Parquet import and export](https://duckdb.org/docs/data/parquet/overview) - Our examples use `CREATE TABLE` and `INSERT INTO` to enable multiple queries on the same dataset without reloading the files.
 - [Client APIs](https://duckdb.org/docs/api/overview) - Read up more on the Python API or try out a different API if you prefer to work in a different language.
 - [SQL Syntax Documentation](https://duckdb.org/docs/sql/introduction) - This documentation starts from the basics and is well organized. Because timestamps are always hard for everyone, this page might be of particular interest: [Timestamp Functions](https://duckdb.org/docs/sql/functions/timestamp).
