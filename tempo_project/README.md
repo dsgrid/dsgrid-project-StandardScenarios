@@ -77,7 +77,7 @@ Additional supplemental dimensions are defined in this dsgrid project, but have 
 
 ### Directory Structure and Contents
 
-Output data are available through OEDI. The top-level folders availalbe in the Data Lake are:
+Output data are available through OEDI. The top-level folders available in the Data Lake are:
 
 | Folder Name              | Folder Contents                                                | Folder Size | Partitioned By              |
 | ------------------------ | -------------------------------------------------------------- | ----------- | --------------------------- |
