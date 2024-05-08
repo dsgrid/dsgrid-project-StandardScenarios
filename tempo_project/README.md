@@ -130,6 +130,20 @@ columns_by_type = {dim_type: metadata["dimensions"][dim_type][0]["column_names"]
 
 Note that although a column name is provided for each dimension type, trivial dimensions (i.e., those with only one possible value, like `weather_year`) are not included in the data files. Thus, not all column names listed in the metadata will actually be present in loaded data frames.
 
+#### Data size capabilities of the tools
+
+This table summarizes the data size capabilities of DuckDB, Pandas, and Spark *on NREL HPC (Kestrel) compute nodes,* which have 104 cores, 256 GB of memory, and 1.92 TB of local storage.
+
+| Dataset                  | Tool    | Number of Nodes | Able to Load and Count Data? | Able to Recreate Lefthand Side of Figure ES-1? | Example Partition for Quick Run of Figure ES-1 Code |
+| ------------------------ | ------- | --------------- | ---------------------------- | ---------------------------------------------- | --------------------------------------------------- | 
+| `full_dataset`           | DuckDB  | 1               | No (> 1 hour)                | No                                             |                                                     |
+| `full_dataset`           | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
+| `full_state_level`       | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
+| `state_level_simplified` | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
+| `simple_profiles`        | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
+| `annual_summary_conus`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
+| `annual_summary_state`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
+| `annual_summary_county`  | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
 
 #### examples-duckdb.ipynb
 
@@ -267,9 +281,9 @@ And duplicating the timestamp-related queries documented for DuckDB above looks 
 #### examples-spark.ipynb
 
 Dependencies:
-- python=3.10
+- python>=3.12
 - jupyter
-- pyspark
+- pyspark==3.5.0 (exact version required for NREL HPC)
 - pandas
 - plotly
 
@@ -279,13 +293,20 @@ Limitations: Although set-up is easy for local mode, performing queries on large
 
 ##### Getting Started
 
-PySpark easily loads parquet files even when those files are actually directories containing a partitioned dataset. For example, running this code:
+Large datasets require running Spark in cluster mode rather than local mode. To run the example notebook in cluster mode on NREL HPC resources, follow these two sets of instructions:
+- https://dsgrid.github.io/dsgrid/how_tos/spark_cluster_on_kestrel.html
+- https://dsgrid.github.io/dsgrid/spark_overview.html#jupyter
+
+Running the code that follows without performing these steps (or the equivalent) first will run PySpark in local mode, which syntatically works the same, but computationally is less performant than DuckDB.
+
+PySpark easily loads parquet tables no matter over how many files and directories the table is stored. For example, running this code:
 ```
 from pyspark.sql import SparkSession
 
 spark = (
             SparkSession.builder
             .appName("dsgrid")
+            .config("spark.sql.sources.partitionColumnTypeInference.enabled", "false")
             .config("spark.sql.session.timeZone", "EST")
             .getOrCreate()
         )
@@ -297,6 +318,7 @@ filepath = data_dir / dataset_name / "table.parquet"
 df = spark.read.parquet(str(filepath))
 tablename = "tbl"
 df.createOrReplaceTempView(tablename)
+logger.info(f"Loaded {filepath} as {tablename}:\n{df.printSchema()}")
 df.show(n=5)
 ```
 in the notebook returns:
@@ -330,7 +352,8 @@ df = spark.sql(f"""SELECT time_est, SUM({value_column}) as {value_column}
 
 ##### Additional Reading
 
-
+- [dsgrid Spark documentation](https://dsgrid.github.io/dsgrid/spark_overview.html) - Currently focuses on using Spark, especially dsgrid use cases, on NREL HPC. If you have NREL HPC access and would like more information, please reach out to the dsgrid team. Also see [NREL HPC Spark documentation](https://github.com/NREL/HPC/tree/master/applications/spark).
+- [Spark on AWS](https://aws.amazon.com/emr/features/spark/) - Other cloud providers will have similar documentation
 
 ## Options for Accessing Different Slices of the Data
 
@@ -340,7 +363,7 @@ There are essentially two reasons (alone or in combination) why working directly
 1. Data size - The full dataset expands to over 1 TB in memory. Although some tools (like DuckDB) can nominally process very large datasets on a typical laptop by actively managing memory and CPU resources, in practice that can either take a very long time or fail if the query is very complex and/or not well aligned with how the data are laid out across files. Other tools present different challenges. For example, pandas can only work with datasets that fit in memory, and Spark can work with very large datasets but only if it can spread the work out over multiple compute nodes (in cluster, rather than local, mode).
 2. Output dimensions - One or more dimension types might not be described at the level of resolution you want. Depending on the type of mapping desired, it may or may not be straightforward to perform your own join operations outside of dsgrid.
 
-If you hit one of these issues, you have at least three options.
+If you hit one of these issues, you have at least two options, see below. Super-power users might also be interested in directly using dsgrid software, which is nominally possible, but not recommended due to complex software dependencies (i.e., ArangoDB and Apache Spark), computational requirements (i.e., HPC or Cloud), and large data sizes. That said, if you really think you want to go down this route, please reach out to us at **FILL IN** to learn more.
 
 ### Option 1: Write your own processing code to work through the data sequentially
 
@@ -350,7 +373,3 @@ Although you would not want to download the full dataset to most machines, you c
 
 If you're looking for a query that is easy to run and/or expected to be of broad interest, please email us at **FILL IN**. We will let you know if we are able to fulfill 
 the request.
-
-### Option 3: Use the dsgrid software yourself
-
-*This is only possible if we publish the dataset data files as well ...? And users would have to go through the time mapping explosion? Unless we publish a serialized registry....*
