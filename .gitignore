@@ -139,5 +139,5 @@ dmypy.json
 
 # Spark Cluster
 matastore_db
-spark-wearehouse
+spark-warehouse
 .tmp
