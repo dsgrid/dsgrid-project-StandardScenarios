@@ -9,7 +9,12 @@ via the [Open Energy Data Initiative (OEDI)](https://data.openei.org/home).
 ## Contents
 
 - [dsgrid Project Definition and Files](#dsgrid-project-definition-and-files) - Describes the metadata, dimension, and mapping information available in [dsgrid-project-StandardScenarios/tempo_project](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project)
-- [Output Data Files Available on OEDI](#output-data-files-available-on-oedi) - Describes what [files are available on OEDI](https://data.openei.org/submissions/5958) and documents best practices for using them.
+- [Output Data Files Available on OEDI](#output-data-files-available-on-oedi) - Describes what [files are available on OEDI](https://data.openei.org/submissions/5958) and documents how to work with them using DuckDB, pandas, or PySpark.
+    - [Directory Structure and Contents](#directory-structure-and-contents)
+    - [Working with Datasets](#working-with-datasets)
+        - [DuckDB](#examples-duckdbipynb)
+        - [Pandas](#examples-pandasipynb)
+        - [PySpark](#examples-sparkipynb)
 - [Options for Accessing Different Slices of the Data](#options-for-accessing-different-slices-of-the-data) - Outlines options for creating or requesting the publication of different slices of the data than the ones that are already available.
 
 ## dsgrid Project Definition and Files
@@ -139,6 +144,11 @@ This table summarizes the data size capabilities of DuckDB, Pandas, and Spark *o
 | ------------------------ | ------- | --------------- | ---------------------------- | ---------------------------------------------- | --------------------------------------------------- | 
 | `full_dataset`           | DuckDB  | 1               | No (> 1 hour)                | No                                             |                                                     |
 | `full_state_level`       | DuckDB  | 1               |                              |                                                |                                                     | 
+| `state_level_simplified` | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
+| `simple_profiles`        | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
+| `annual_summary_conus`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
+| `annual_summary_state`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
+| `annual_summary_county`  | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
 | `full_dataset`           | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
 | `full_state_level`       | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
 | `state_level_simplified` | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
@@ -167,7 +177,8 @@ DuckDB easily loads parquet files, including partitioned files assuming the duck
 import duckdb
 
 def load_table(filepath, tablename):
-    duckdb.sql(f"CREATE TABLE {tablename} AS SELECT * FROM read_parquet('{filepath}/**/*.parquet', hive_partitioning=true, hive_types_autocast=false);")
+    duckdb.sql(f"""CREATE TABLE {tablename} AS SELECT * 
+                     FROM read_parquet('{filepath}/**/*.parquet', hive_partitioning=true, hive_types_autocast=false);""")
     description = duckdb.sql(f"DESCRIBE {tablename};")
     logger.info(f"Loaded {filepath} as {tablename}:\n{description}")
 
@@ -184,7 +195,8 @@ For example, with `dataset_name = "state_level_simplified"` running this code in
 
 [DuckDB](https://duckdb.org/docs/) provides a variety of interfaces. The example notebook uses the Python package to read .parquet files using the SQL interface. In this case, and assuming the data have been loaded as described above, one example query is:
 ```
-df = duckdb.sql(f"""SELECT scenario, {columns_by_type["model_year"]} as year, SUM({value_column})/1.0E6 as annual_twh
+df = duckdb.sql(f"""SELECT scenario, {columns_by_type["model_year"]} as year, 
+                           SUM({value_column})/1.0E6 as annual_twh
                       FROM {tablename} 
                   GROUP BY scenario, {columns_by_type["model_year"]}
                   ORDER BY scenario, year""").df()
@@ -195,9 +207,16 @@ A couple of timestamp-related queries that are demonstrated in the notebook incl
 1. Shifting the timestamps to match the `time_est` label rather than being in `UTC` (example shown is for `dataset_name = "state_level_simplified"`):
 
       ```SQL
-        SELECT scenario, state, tempo_project_model_years, subsector, time_est - INTERVAL 5 HOUR as time_est, weather_2012, value 
+        SELECT scenario, 
+               state, 
+               tempo_project_model_years, 
+               subsector, time_est - INTERVAL 5 HOUR as time_est, 
+               weather_2012, 
+               value 
           FROM tbl 
-         WHERE (scenario = 'reference') AND (tempo_project_model_years = 2050) AND (subsector = 'bev_compact')
+         WHERE (scenario = 'reference') AND 
+               (tempo_project_model_years = 2050) AND 
+               (subsector = 'bev_compact')
       ORDER BY time_est 
          LIMIT 5;
     ```
@@ -211,9 +230,12 @@ A couple of timestamp-related queries that are demonstrated in the notebook incl
     start_timestamp = dt.datetime(2012, 2, 14, 5)
     stop_timestamp = dt.datetime(2012, 2, 15, 4)
 
-    duckdb.sql(f"""SELECT time_est, SUM({value_column}) as {value_column}
+    duckdb.sql(f"""SELECT time_est, 
+                          SUM({value_column}) as {value_column}
                      FROM {tablename} 
-                    WHERE {where_clause} AND (time_est >= TIMESTAMP '{start_timestamp}') AND (time_est <= TIMESTAMP '{end_timestamp}')
+                    WHERE {where_clause} AND 
+                          (time_est >= TIMESTAMP '{start_timestamp}') AND 
+                          (time_est <= TIMESTAMP '{end_timestamp}')
                  GROUP BY time_est 
                  ORDER BY time_est;""")
     ```
