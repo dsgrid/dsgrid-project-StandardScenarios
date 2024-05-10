@@ -122,13 +122,14 @@ def get_metadata(dataset_path):
     return result
 
 # load metadata and get column names by type
-metadata = get_metadata(data_dir / dataset_name) # data_dir is a pathlib.Path
+metadata = get_metadata(data_dir / dataset_name)
 assert metadata["table_format"]["format_type"] == "unpivoted", metadata["table_format"]
 value_column = metadata["table_format"]["value_column"]
-columns_by_type = {dim_type: metadata["dimensions"][dim_type][0]["column_names"][0] for dim_type in metadata["dimensions"]}
+columns_by_type = {dim_type: metadata["dimensions"][dim_type][0]["column_names"][0] 
+                   for dim_type in metadata["dimensions"] if metadata["dimensions"][dim_type]}
 ```
 
-Note that although a column name is provided for each dimension type, trivial dimensions (i.e., those with only one possible value, like `weather_year`) are not included in the data files. Thus, not all column names listed in the metadata will actually be present in loaded data frames.
+Note that trivial dimensions, i.e., those with only one possible value, like `weather_year`, have column names listed in the metadata but are not included in the data files. Thus, not all column names listed in the metadata and loaded into `columns_by_type` will actually be present in loaded data frames.
 
 #### Data size capabilities of the tools
 
@@ -137,6 +138,7 @@ This table summarizes the data size capabilities of DuckDB, Pandas, and Spark *o
 | Dataset                  | Tool    | Number of Nodes | Able to Load and Count Data? | Able to Recreate Lefthand Side of Figure ES-1? | Example Partition for Quick Run of Figure ES-1 Code |
 | ------------------------ | ------- | --------------- | ---------------------------- | ---------------------------------------------- | --------------------------------------------------- | 
 | `full_dataset`           | DuckDB  | 1               | No (> 1 hour)                | No                                             |                                                     |
+| `full_state_level`       | DuckDB  | 1               |                              |                                                |                                                     | 
 | `full_dataset`           | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
 | `full_state_level`       | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
 | `state_level_simplified` | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
@@ -328,7 +330,9 @@ in the notebook returns:
 
 [PySpark](https://spark.apache.org/docs/latest/api/python/index.html) data frames can be queried using functions like [filter](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.filter.html#pyspark.sql.DataFrame.filter) or by writing straight SQL. In the notebook we use SQL. For example, this query (when the data are small enough to process):
 ```Python
-df = spark.sql(f"""SELECT scenario, {columns_by_type["model_year"]} as year, SUM({value_column})/1.0E6 as annual_twh
+df = spark.sql(f"""SELECT scenario, 
+                          {columns_by_type["model_year"]} as year, 
+                          SUM({value_column})/1.0E6 as annual_twh
                      FROM {tablename} 
                  GROUP BY scenario, {columns_by_type["model_year"]}
                  ORDER BY scenario, year""").toPandas()
@@ -343,9 +347,12 @@ import datetime as dt
 start_timestamp = dt.datetime(2012, 2, 14, 0)
 stop_timestamp = dt.datetime(2012, 2, 14, 23)
 
-df = spark.sql(f"""SELECT time_est, SUM({value_column}) as {value_column}
+df = spark.sql(f"""SELECT time_est, 
+                          SUM({value_column}) as {value_column}
                      FROM {tablename} 
-                    WHERE {where_clause} AND (time_est >= TIMESTAMP '{start_timestamp}') AND (time_est <= TIMESTAMP '{end_timestamp}')
+                    WHERE {where_clause} AND 
+                          (time_est >= TIMESTAMP '{start_timestamp}') AND 
+                          (time_est <= TIMESTAMP '{end_timestamp}')
                 GROUP BY time_est 
                 ORDER BY time_est;""").toPandas()
 ```
