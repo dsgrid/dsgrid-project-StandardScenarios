@@ -6,6 +6,19 @@ Yip, Arthur, Christopher Hoehne, Paige Jadun, Catherine Ledna, Elaine Hale, and 
 
 via the [Open Energy Data Initiative (OEDI)](https://data.openei.org/home).
 
+The data are hourly annual for 2024-2050 based on 2012 actual meteorological year (AMY) weather; are available for three scenarios of light-duty passenger electric vehicle adoption, 3,108 counties in the contiguous United States (CONUS), 720 household and vehicle types, and two charging types (L1/L2 and DCFC); and were produced by running the [TEMPO](https://www.nrel.gov/transportation/tempo-model.html) model at the county-level. The three adoption scenarios are:
+
+- *AEO Reference Case*, which is aligned with the [U.S. EIA Annual Energy Outlook 2018](https://www.eia.gov/outlooks/archive/aeo18/)
+- *EFS High Electrification*, which is aligned with the High Electrification scenario of the [Electrification Futures Study](https://www.nrel.gov/docs/fy18osti/71500.pdf)
+- *All EV Sales by 2035*, which assumes that average passenger light-duty EV sales reach 50\% in 2030 and 100\% in 2035
+
+The charging shapes are derived from two key assumptions of which data users should be aware:
+
+- *Ubiquitous charger access* - Drivers of vehicles are assumed to have access to a charger whenever a trip is not in progress.
+- *Immediate charging* - Immediately after trip completion, vehicles are plugged in and charge until they are either fully recharged or taken on another trip.
+
+These assumptions result in a bounding case in which vehicles' state of charge is maximized at all times. This bounding case would minimize range anxiety, but is unrealistic from the point of view of both electric vehicle service equipment (EVSE) (i.e., charger) access, and plug-in behavior as it can result in dozens of charging sessions per week for battery electric vehicles (BEVs) that in reality are often only plugged in a few times per week. The next generation of data, which we expect to release sometime in 2025, are expected to use [EVI-Pro's](https://www.nrel.gov/transportation/evi-pro.html) more realistic EVSE access and charging behavior assumptions.
+
 ## Contents
 
 - [dsgrid Project Definition and Files](#dsgrid-project-definition-and-files) - Describes the metadata, dimension, and mapping information available in [dsgrid-project-StandardScenarios/tempo_project](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project)
@@ -99,6 +112,7 @@ Each dataset folder contains:
 - `query.json`: dsgrid query definition as output by the CLI in the course of running the query.
 - `metadata.json`: File that describes the structure of the output table.
 - `table.parquet`: Folder containing the output table in .parquet format. Some datasets (i.e., `full_dataset`, `full_state_level`, and `state_level_simplified`) are partitioned on meaningful columns, which makes it so that subfolders of `table.parquet` can be loaded as parquet files on their own to get access to certain slices of the data without loading the entire dataset.
+- `table.csv`: ONLY PRESENT FOR SMALL DATASETS. The same data as table.parquet but in comma separated value (CSV, .csv) format.
 
 ### Working with Datasets
 
@@ -140,22 +154,29 @@ Note that trivial dimensions, i.e., those with only one possible value, like `we
 
 This table summarizes the data size capabilities of DuckDB, Pandas, and Spark *on NREL HPC (Kestrel) compute nodes,* which have 104 cores, 256 GB of memory, and 1.92 TB of local storage.
 
-| Dataset                  | Tool    | Number of Nodes | Able to Load and Count Data? | Able to Recreate Lefthand Side of Figure ES-1? | Example Partition for Quick Run of Figure ES-1 Code |
-| ------------------------ | ------- | --------------- | ---------------------------- | ---------------------------------------------- | --------------------------------------------------- | 
-| `full_dataset`           | DuckDB  | 1               | No (> 1 hour)                | No                                             |                                                     |
-| `full_state_level`       | DuckDB  | 1               |                              |                                                |                                                     | 
-| `state_level_simplified` | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
-| `simple_profiles`        | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
-| `annual_summary_conus`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
-| `annual_summary_state`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
-| `annual_summary_county`  | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
-| `full_dataset`           | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
-| `full_state_level`       | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
-| `state_level_simplified` | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                                       |
-| `simple_profiles`        | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
-| `annual_summary_conus`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
-| `annual_summary_state`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
-| `annual_summary_county`  | PySpark | 1               | Yes                          | Yes                                            | N/A                                                 |
+| Dataset                  | Tool    | Number of Nodes | Able to Load and Count Data? | Able to Recreate Lefthand Side of Figure ES-1? | Example Partition that Can Be Loaded |
+| ------------------------ | ------- | --------------- | ---------------------------- | ---------------------------------------------- | ------------------------------------ | 
+| `full_dataset`           | DuckDB  | 1               | No (> 1 hour)                | No                                             | scenario=efs_high_ldv, tempo_project_model_years=2050, state=CA |
+| `full_state_level`       | DuckDB  | 1               | No (> 1 hour)                | No                                             | state=CA                             | 
+| `state_level_simplified` | DuckDB  | 1               | Yes                          | Yes                                            | Not Necessary                        |
+| `simple_profiles`        | DuckDB  | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_conus`   | DuckDB  | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_state`   | DuckDB  | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_county`  | DuckDB  | 1               | Yes                          | Yes                                            | N/A                                  |
+| `full_dataset`           | pandas  | 1               | No                           | No                                             | scenario=efs_high_ldv, tempo_project_model_years=2050, state=CA |
+| `full_state_level`       | pandas  | 1               | No                           | No                                             | state=CA                             | 
+| `state_level_simplified` | pandas  | 1               | Yes                          | Yes                                            | Not Necessary                        |
+| `simple_profiles`        | pandas  | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_conus`   | pandas  | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_state`   | pandas  | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_county`  | pandas  | 1               | Yes                          | Yes                                            | N/A                                  |
+| `full_dataset`           | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                        |
+| `full_state_level`       | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                        |
+| `state_level_simplified` | PySpark | 1               | Yes                          | Yes                                            | Not Necessary                        |
+| `simple_profiles`        | PySpark | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_conus`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_state`   | PySpark | 1               | Yes                          | Yes                                            | N/A                                  |
+| `annual_summary_county`  | PySpark | 1               | Yes                          | Yes                                            | N/A                                  |
 
 #### examples-duckdb.ipynb
 
@@ -251,7 +272,7 @@ The following DuckDB documentation links might be helpful:
 #### examples-pandas.ipynb
 
 Dependencies:
-- python=3.10
+- python>=3.10
 - jupyter
 - pandas
 - pyarrow
@@ -272,10 +293,34 @@ dataset_name = "state_level_simplified"
 # Load data table
 filepath = data_dir / dataset_name / "table.parquet"
 df = pd.read_parquet(filepath)
+logger.info(df.dtypes)
 df.head(5)
 ```
 in the notebook returns:
-![screenshot](ocs/pandas-load-data.png "Notebook output after loading 'state_level_simplified' into pandas")
+![screenshot](docs/pandas-load-data.png "Notebook output after loading 'state_level_simplified' into pandas")
+
+When loading .csv files, Pandas does not have explicit information on data types and therefore does its best to guess the type of data in each column (e.g., str, int, float). Therefore, the example notebook contains the following extended data loading code to ensure that columns come in with the same data type no matter if they are loaded from .csv or .parquet:
+
+```
+# Load data table
+filepath = data_dir / dataset_name / "table.csv"
+if not filepath.exists():
+    filepath = data_dir / dataset_name / "table.parquet"
+
+if filepath.suffix == ".csv":
+    kwargs = { 
+        "dtype": { columns_by_type['model_year']: str }
+    }
+    if columns_by_type['time'] == "time_est": 
+        kwargs["parse_dates"] = ["time_est"]
+        
+    df = pd.read_csv(filepath, **kwargs) 
+else:  
+    df = pd.read_parquet(filepath)
+    
+logger.info(df.dtypes)
+df.head(5)
+```
 
 ##### Writing Queries
 
