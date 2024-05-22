@@ -1,12 +1,12 @@
-# TEMPO County-level Light-duty Electric Vehicle Charging Profiles v2022
+# TEMPO County-level Light-duty Passenger Electric Vehicle Charging Profiles v2022
 
 This dsgrid project has been used to publish the hourly data documented in:
 
-Yip, Arthur, Christopher Hoehne, Paige Jadun, Catherine Ledna, Elaine Hale, and Matteo Muratori. 2023. “Highly Resolved Projections of Passenger Electric Vehicle Charging Loads for the Contiguous United States.” Technical Report. Golden, CO (United States): National Renewable Energy Laboratory. https://www.nrel.gov/docs/fy23osti/83916.pdf.
+> Yip, Arthur, Christopher Hoehne, Paige Jadun, Catherine Ledna, Elaine Hale, and Matteo Muratori. 2023. “Highly Resolved Projections of Passenger Electric Vehicle Charging Loads for the Contiguous United States.” Technical Report. Golden, CO (United States): National Renewable Energy Laboratory. https://www.nrel.gov/docs/fy23osti/83916.pdf.
 
 via the [Open Energy Data Initiative (OEDI)](https://data.openei.org/home).
 
-The data are hourly annual for 2024-2050 based on 2012 actual meteorological year (AMY) weather; are available for three scenarios of light-duty passenger electric vehicle adoption, 3,108 counties in the contiguous United States (CONUS), 720 household and vehicle types, and two charging types (L1/L2 and DCFC); and were produced by running the [TEMPO](https://www.nrel.gov/transportation/tempo-model.html) model at the county-level. The three adoption scenarios are:
+The data are hourly annual for 2024-2050 based on 2012 actual meteorological year (AMY) weather; are available for three scenarios of light-duty passenger electric vehicle adoption, 3,108 counties in the contiguous United States (CONUS), 720 household and vehicle types, and two charging types (L1&L2 and DCFC); and were produced by running the [TEMPO](https://www.nrel.gov/transportation/tempo-model.html) model at the county-level. The three adoption scenarios are:
 
 - *AEO Reference Case*, which is aligned with the [U.S. EIA Annual Energy Outlook 2018](https://www.eia.gov/outlooks/archive/aeo18/)
 - *EFS High Electrification*, which is aligned with the High Electrification scenario of the [Electrification Futures Study](https://www.nrel.gov/docs/fy18osti/71500.pdf)
@@ -14,10 +14,10 @@ The data are hourly annual for 2024-2050 based on 2012 actual meteorological yea
 
 The charging shapes are derived from two key assumptions of which data users should be aware:
 
-- *Ubiquitous charger access* - Drivers of vehicles are assumed to have access to a charger whenever a trip is not in progress.
-- *Immediate charging* - Immediately after trip completion, vehicles are plugged in and charge until they are either fully recharged or taken on another trip.
+1. *Ubiquitous charger access:* Drivers of vehicles are assumed to have access to a charger whenever a trip is not in progress.
+2. *Immediate charging:* Immediately after trip completion, vehicles are plugged in and charge until they are either fully recharged or taken on another trip.
 
-These assumptions result in a bounding case in which vehicles' state of charge is maximized at all times. This bounding case would minimize range anxiety, but is unrealistic from the point of view of both electric vehicle service equipment (EVSE) (i.e., charger) access, and plug-in behavior as it can result in dozens of charging sessions per week for battery electric vehicles (BEVs) that in reality are often only plugged in a few times per week. The next generation of data, which we expect to release sometime in 2025, are expected to use [EVI-Pro's](https://www.nrel.gov/transportation/evi-pro.html) more realistic EVSE access and charging behavior assumptions.
+These assumptions result in a bounding case in which vehicle state of charge is maximized at all times. This bounding case would minimize range anxiety, but is based on unrealistically high electric vehicle service equipment (EVSE) (i.e., charger) access, and unrealistic plug-in behavior. (Regarding the latter point, battery electric vehicles [BEVs] are often only plugged in a few times per week, but ubiquitous-immediate charging can result in dozens of charging sessions per week.)
 
 ## Contents
 
@@ -26,13 +26,13 @@ These assumptions result in a bounding case in which vehicles' state of charge i
     - [Directory Structure and Contents](#directory-structure-and-contents)
     - [Working with Datasets](#working-with-datasets)
         - [DuckDB](#examples-duckdbipynb)
-        - [Pandas](#examples-pandasipynb)
+        - [pandas](#examples-pandasipynb)
         - [PySpark](#examples-sparkipynb)
 - [Options for Accessing Different Slices of the Data](#options-for-accessing-different-slices-of-the-data) - Outlines options for creating or requesting the publication of different slices of the data than the ones that are already available.
 
 ## dsgrid Project Definition and Files
 
-[dsgrid](https://github.com/dsgrid/dsgrid) provides a [*dsgrid Project*](https://dsgrid.github.io/dsgrid/explanations/components/projects.html) for aligning [*Datasets*](https://dsgrid.github.io/dsgrid/explanations/components/datasets.html) via *Base Dimensions*. dsgrid does this by requiring *dataset contributors* and *project coordinators* to very explicitly define resolution across eight [*Dimension Types*](https://dsgrid.github.io/dsgrid/explanations/components/dimensions.html#dimension-types):
+The [dsgrid](https://github.com/dsgrid/dsgrid) software provides the construct of a [*dsgrid Project*](https://dsgrid.github.io/dsgrid/explanations/components/projects.html) for aligning [*Datasets*](https://dsgrid.github.io/dsgrid/explanations/components/datasets.html) via *Base Dimensions*. dsgrid does this by requiring [*dataset contributors*](https://dsgrid.github.io/dsgrid/#dataset-contributors) and [*project coordinators*](https://dsgrid.github.io/dsgrid/#project-coordinators) to very explicitly define resolution across eight [*Dimension Types*](https://dsgrid.github.io/dsgrid/explanations/components/dimensions.html#dimension-types):
 - `scenario`
 - `model_year`
 - `weather_year`
@@ -42,7 +42,7 @@ These assumptions result in a bounding case in which vehicles' state of charge i
 - `subsector`
 - `metric`
 
-In this project, whose purpose is to publish the TEMPO data documented in https://www.nrel.gov/docs/fy23osti/83916.pdf, the starting point is the [dataset](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dataset), whose *Dimensions* are defined in the `dimensions` portion of the `dataset.json5` config file, and in the `.csv` files referenced therein, which are available in the [dataset's dimensions folder](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dataset/dimensions). In brief, the dataset dimensions are:
+In this project, whose purpose is to publish the TEMPO data documented in https://www.nrel.gov/docs/fy23osti/83916.pdf, the starting point is the [dataset](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dataset), whose *Dimensions* are defined in the `dimensions` portion of the [`dataset.json5`](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/dataset/dataset.json5) config file, and in the `.csv` files referenced therein, which are available in the [dataset's dimensions folder](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dataset/dimensions). In brief, the dataset dimensions are:
 - `scenario`: Projections are provided for three scenarios: 'Reference' ('reference'), 'EFS High LDVs' ('efs_high_ldv'), 'LDV Sales All-EV by 2035' ('ldv_sales_evs_2035'); `display name: 'scenario'`
 - `model_year`: Projection years from 2018 to 2050 in two year intervals
 - `weather_year`: Trivial dimension (only one element) indicating that these data follow the 2012 Actual Meteorological Year; `display name: 'weather_2012'`
@@ -50,12 +50,13 @@ In this project, whose purpose is to publish the TEMPO data documented in https:
 - `time`: Representative week charging profiles, hourly for each month
 - `sector`: Trivial dimension (only one element) equal to id: 'trans', name: 'Transportation'; `display name: 'transportation'`
 - `subsector`: TEMPO household bins and vehicle types (60 household bins x 12 vehicle types=720 combinations); `display name: 'household_and_vehicle_type'`
-- `metric`: Energy use split into L1&L2, DCFC; `display name: 'end_use'`
+- `metric`: Energy use split into L1&L2, DCFC, recorded in kWh
 
 The project's *Base Dimensions*, which are outlined in the `base_dimensions` portion of the `project.json5` that lives in [the project folder](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project), mostly reuses the dataset's dimensions, with the following exceptions:
 - `model_year`: Projection years from 2024 to 2050 in two year intervals; `display name: 'tempo_project_model_year'`
 - `geography`: Contiguous U.S. counties (U.S. Census Bureau 2020); `display name: 'county'`
 - `time`: Hourly, period beginning timestamps for 2012 (to match this project's weather year) as experienced in Eastern Standard Time (EST). Leap day is retained, and data are available for all 8784 EST hours.; `display name: 'time_est'`
+- `metric`: Energy use split into L1&L2, DCFC, recorded in MWh; `display name: 'end_use'`
 
 Analogous to the dataset, the files referenced by the dimension definitions generally live in the [project's dimensions folder](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions).
 
@@ -64,9 +65,9 @@ When dataset and project dimensions don't match for a given dimension type, the 
 - `geography`: Map vintage 2018 counties into vintage 2020 counties
 - `metric`: Map the different labels used to indicate L1&L2 and DCFC together. (For example, the dataset uses the id `L1andL2` while the project uses the id `electricity_ev_l1l2`.)
 
-And dsgrid translates TEMPO's representative week data into 8784 profiles that account for day of week, each geography's time zone, and daylight savings time.
+dsgrid translates TEMPO's representative week data into 8784 profiles that account for day of week, each geography's time zone, and daylight savings time. dsgrid also converts the energy use (metric) data from kWh to MWh automatically. **All energy use reported in the OEDI data is in MWh.**
 
-dsgrid projects also enable [Queries](https://dsgrid.github.io/dsgrid/tutorials/query_project.html), which start by mapping datasets to the project's base dimensions and then perform user-specified mapping, filtering, aggregation, and sorting operations. Outputs can of course use the project's base dimensions, but they can also make use of *Supplemental Dimensions*. The available supplemental dimensions are outlined in the `subset_dimensions` and `supplemental_dimensions` portions of the `project.json5` file, which refer to .csv files in the [dimensions/subset](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/subset) and [dimensions/supplemental](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/supplemental) folders. Regular *Supplemental Dimensions* and their [associated mapings](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimension_mappings/base_to_supplemental) work analogously to dataset dimensions and their mappings. *Subset Dimensions* are simple alternative groupings of the project's base dimensions. Each subset dimension is defined in one file that maps each base dimension record of the given dimension type to a specific *Subset Dimension Selector* which functions as an element of the overall supplemental dimension and can also be used on its own to select or refer to specific slices of data.
+dsgrid projects also enable [*Queries*](https://dsgrid.github.io/dsgrid/tutorials/query_project.html), which start by mapping datasets to the project's base dimensions and then perform user-specified mapping, filtering, aggregation, and sorting operations. Outputs can of course use the project's base dimensions, but they can also make use of *Supplemental Dimensions*. The available supplemental dimensions are outlined in the `subset_dimensions` and `supplemental_dimensions` portions of the [`project.json5`](https://github.com/dsgrid/dsgrid-project-StandardScenarios/blob/main/tempo_project/project.json5) file, which refer to .csv files in the [dimensions/subset](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/subset) and [dimensions/supplemental](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimensions/supplemental) folders. Regular *Supplemental Dimensions* and their [associated mapings](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/dimension_mappings/base_to_supplemental) work analogously to dataset dimensions and their mappings. *Subset Dimensions* are simple alternative groupings of the project's base dimensions. Each subset dimension is defined in one file that maps each base dimension record of the given dimension type to a specific *Subset Dimension Selector* which functions as an element of the overall supplemental dimension created by the subset dimension and can also be used on its own to select or refer to specific slices of data.
 
 The data published on OEDI make use of the following supplemental dimensions:
 - `metric`:
@@ -95,18 +96,18 @@ Additional supplemental dimensions are defined in this dsgrid project, but have 
 
 ### Directory Structure and Contents
 
-Output data are available through OEDI. The top-level folders available in the Data Lake are:
+Output data are available through OEDI. All numerical data are energy use projections as would be measured at electrical meters in units of MWh. The top-level folders available in the Data Lake are:
 
 | Folder Name              | Folder Contents                                                | Folder Size | Partitioned By              |
 | ------------------------ | -------------------------------------------------------------- | ----------- | --------------------------- |
-| query_files              | dsgrid query definitions in .json5 format                      |        32 K |                             |
-| `full_dataset`           | Full dataset in project base dimensions                        |       793 G | scenario, model_year, state |
-| `full_state_level`       | Aggregation to state                                           |        54 G | state, scenario, model_year | 
-| `state_level_simplified` | Aggregation to state, subsector, and one (electric) end use    |       983 M | scenario                    |
-| `simple_profiles`        | Aggregation to census division, one subsector, and one end use |       110 M | N/A                         |
-| `annual_summary_conus`   | Aggregation to conus, subsector, one end use, and annual time  |        60 K | N/A                         |
-| `annual_summary_state`   | Aggregation to state, subsector, one end use, and annual time  |       1.5 M | N/A                         |
-| `annual_summary_county`  | Aggregation to county, subsector, one end use, and annual time |       3.1 M | N/A                         |
+| `query_files`            | dsgrid query definitions in .json5 format                      |        32 K | N/A (not a dataset)         |
+| `full_dataset`           | Full dataset in project base dimensions                        |       742 G | scenario, model_year, state |
+| `full_state_level`       | Aggregation to state                                           |        63 G | state, scenario, model_year | 
+| `state_level_simplified` | Aggregation to state, subsector, and one (electric) end use    |       964 M | scenario                    |
+| `simple_profiles`        | Aggregation to census division, one subsector, and one end use |       112 M | N/A                         |
+| `annual_summary_conus`   | Aggregation to conus, subsector, one end use, and annual time  |        52 K | N/A                         |
+| `annual_summary_state`   | Aggregation to state, subsector, one end use, and annual time  |       1.1 M | N/A                         |
+| `annual_summary_county`  | Aggregation to county, subsector, one end use, and annual time |       3.2 M | N/A                         |
 
 Each dataset folder contains:
 - `query.json`: dsgrid query definition as output by the CLI in the course of running the query.
@@ -152,7 +153,7 @@ Note that trivial dimensions, i.e., those with only one possible value, like `we
 
 #### Data size capabilities of the tools
 
-This table summarizes the data size capabilities of DuckDB, Pandas, and Spark *on NREL HPC (Kestrel) compute nodes,* which have 104 cores, 256 GB of memory, and 1.92 TB of local storage.
+This table summarizes the data size capabilities of DuckDB, pandas, and Spark *on NREL HPC (Kestrel) compute nodes,* which have 104 cores, 256 GB of memory, and 1.92 TB of local storage.
 
 | Dataset                  | Tool    | Number of Nodes | Able to Load and Count Data? | Able to Recreate Lefthand Side of Figure ES-1? | Example Partition that Can Be Loaded |
 | ------------------------ | ------- | --------------- | ---------------------------- | ---------------------------------------------- | ------------------------------------ | 
@@ -187,7 +188,7 @@ Dependencies:
 - pandas
 - plotly
 
-Advantages: DuckDB makes the most efficient use of available resources and is trivial to set up.
+Advantages: DuckDB makes the most efficient use of available resources and is easy to set up.
 
 Limitations: DuckDB is limited to one node and can run out of resources. What datasets you can analyze and what queries you can perform thus depends on the hardware you use.
 
@@ -264,7 +265,7 @@ A couple of timestamp-related queries that are demonstrated in the notebook incl
 ##### Additional Reading
 
 The following DuckDB documentation links might be helpful:
-- [Parquet import and export](https://duckdb.org/docs/data/parquet/overview) - Our examples use `CREATE TABLE` and `INSERT INTO` to enable multiple queries on the same dataset without reloading the files.
+- [Parquet import and export](https://duckdb.org/docs/data/parquet/overview) - Our examples use `CREATE TABLE` to enable multiple queries on the same dataset without reloading the files.
 - [Client APIs](https://duckdb.org/docs/api/overview) - Read up more on the Python API or try out a different API if you prefer to work in a different language.
 - [SQL Syntax Documentation](https://duckdb.org/docs/sql/introduction) - This documentation starts from the basics and is well organized. Because timestamps are always hard for everyone, this page might be of particular interest: [Timestamp Functions](https://duckdb.org/docs/sql/functions/timestamp).
 
@@ -284,7 +285,7 @@ Limitations: Of the three documented options, pandas is least able to work with 
 
 ##### Getting Started
 
-Pandas easily loads parquet files even when those files are actually directories containing a partitioned dataset. For example, running this code:
+pandas easily loads parquet files even when those files are actually directories containing a partitioned dataset. For example, running this code:
 ```Python
 import pandas as pd
 
@@ -293,13 +294,13 @@ dataset_name = "state_level_simplified"
 # Load data table
 filepath = data_dir / dataset_name / "table.parquet"
 df = pd.read_parquet(filepath)
-logger.info(df.dtypes)
+logger.info(f"df.dtypes = \n{df.dtypes}")
 df.head(5)
 ```
 in the notebook returns:
 ![screenshot](docs/pandas-load-data.png "Notebook output after loading 'state_level_simplified' into pandas")
 
-When loading .csv files, Pandas does not have explicit information on data types and therefore does its best to guess the type of data in each column (e.g., str, int, float). Therefore, the example notebook contains the following extended data loading code to ensure that columns come in with the same data type no matter if they are loaded from .csv or .parquet:
+When loading .csv files, pandas does not have explicit information on data types and therefore does its best to guess the type of data in each column (e.g., str, int, float). Therefore, the example notebook contains the following extended data loading code to ensure that columns come in with the same data type no matter if they are loaded from .csv or .parquet:
 
 ```
 # Load data table
@@ -356,9 +357,9 @@ Dependencies:
 - pandas
 - plotly
 
-Advantages: The data were originally created with Spark, and Spark can nominally work with all of the datasets.
+Advantages: The data were originally created with Spark, and Spark nominally works with all of the datasets (assuming sufficient computational hardware is available).
 
-Limitations: Although set-up is easy for local mode, performing queries on large datasets generally requires a multi-node cluster, which can be challenging to set up and expensive to run.
+Limitations: Although set-up is easy for local mode, Spark only offers advantages over DuckDB and pandas when run in cluster mode, which can be challenging to set up and expensive to run.
 
 ##### Getting Started
 
@@ -427,23 +428,23 @@ df = spark.sql(f"""SELECT time_est,
 ##### Additional Reading
 
 - [dsgrid Spark documentation](https://dsgrid.github.io/dsgrid/spark_overview.html) - Currently focuses on using Spark, especially dsgrid use cases, on NREL HPC. If you have NREL HPC access and would like more information, please reach out to the dsgrid team. Also see [NREL HPC Spark documentation](https://github.com/NREL/HPC/tree/master/applications/spark).
-- [Spark on AWS](https://aws.amazon.com/emr/features/spark/) - Other cloud providers will have similar documentation
+- [Spark on AWS](https://aws.amazon.com/emr/features/spark/) - Other cloud providers will have similar documentation.
 
 ## Options for Accessing Different Slices of the Data
 
-The datasets published on OEDI are meant to enable broad access for common use cases while balancing different users' ability to work with large datasets. However, we might not have covered your use case, and there are many other aggregations that are possible with the current set of supplemental dimensions and even more that could be created if additional supplemental dimensions were added to the dsgrid project.
+The datasets published on OEDI are meant to enable broad access for common use cases while balancing different users' ability to work with large datasets. However, we might not have covered your use case, and there are many other aggregations that are possible with the current set of supplemental dimensions. Even more types of aggregations could be created if additional supplemental dimensions were added to the dsgrid project.
 
 There are essentially two reasons (alone or in combination) why working directly with the published data using your data analysis package of choice might not meet your needs:
 1. Data size - The full dataset expands to over 1 TB in memory. Although some tools (like DuckDB) can nominally process very large datasets on a typical laptop by actively managing memory and CPU resources, in practice that can either take a very long time or fail if the query is very complex and/or not well aligned with how the data are laid out across files. Other tools present different challenges. For example, pandas can only work with datasets that fit in memory, and Spark can work with very large datasets but only if it can spread the work out over multiple compute nodes (in cluster, rather than local, mode).
 2. Output dimensions - One or more dimension types might not be described at the level of resolution you want. Depending on the type of mapping desired, it may or may not be straightforward to perform your own join operations outside of dsgrid.
 
-If you hit one of these issues, you have at least two options, see below. Super-power users might also be interested in directly using dsgrid software, which is nominally possible, but not recommended due to complex software dependencies (i.e., ArangoDB and Apache Spark), computational requirements (i.e., HPC or Cloud), and large data sizes. That said, if you really think you want to go down this route, please reach out to us at **FILL IN** to learn more.
+If you hit one of these issues, you have at least two options, see below. Super-power users might also be interested in directly using dsgrid software, which is nominally possible, but not recommended due to complex software dependencies (i.e., ArangoDB and Apache Spark), computational requirements (i.e., HPC or Cloud), and large data sizes. That said, if you really think you want to go down this route, please reach out to the dsgrid team to learn more.
 
 ### Option 1: Write your own processing code to work through the data sequentially
 
-Although you would not want to download the full dataset to most machines, you could process it sequentially using a combination of `awscli` and your data analysis package of choice. **Warning:** Not for the faint of heart, and you will want to double- and triple-check the result.
+Although you would not want to download the full dataset to most machines, you could process it sequentially using a combination of [`awscli`](https://aws.amazon.com/cli/) and your data analysis package of choice. **Warning:** Not for the faint of heart, and you will want to double- and triple-check the result.
 
 ### Option 2: Reach out to the dsgrid team
 
-If you're looking for a query that is easy to run and/or expected to be of broad interest, please email us at **FILL IN**. We will let you know if we are able to fulfill 
+If you're looking for a query that is easy to run and/or expected to be of broad interest, please reach out to us and we will let you know if we are able to fulfill 
 the request.
