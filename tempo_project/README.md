@@ -98,16 +98,16 @@ Additional supplemental dimensions are defined in this dsgrid project, but have 
 
 Output data are available through OEDI. All numerical data are energy use projections as would be measured at electrical meters in units of MWh. The top-level folders available in the Data Lake are:
 
-| Folder Name              | Folder Contents                                                | Folder Size | Partitioned By              |
-| ------------------------ | -------------------------------------------------------------- | ----------- | --------------------------- |
-| `query_files`            | dsgrid query definitions in .json5 format                      |        32 K | N/A (not a dataset)         |
-| `full_dataset`           | Full dataset in project base dimensions                        |       742 G | scenario, model_year, state |
-| `full_state_level`       | Aggregation to state                                           |        63 G | state, scenario, model_year | 
-| `state_level_simplified` | Aggregation to state, subsector, and one (electric) end use    |       964 M | scenario                    |
-| `simple_profiles`        | Aggregation to census division, one subsector, and one end use |       112 M | N/A                         |
-| `annual_summary_conus`   | Aggregation to conus, subsector, one end use, and annual time  |        52 K | N/A                         |
-| `annual_summary_state`   | Aggregation to state, subsector, one end use, and annual time  |       1.1 M | N/A                         |
-| `annual_summary_county`  | Aggregation to county, subsector, one end use, and annual time |       3.2 M | N/A                         |
+| Folder Name              | Folder Contents                                                    | Folder Size | Partitioned By              |
+| ------------------------ | ------------------------------------------------------------------ | ----------- | --------------------------- |
+| `query_files`            | dsgrid query definitions in .json5 format                          |        32 K | N/A (not a dataset)         |
+| `full_dataset`           | Full dataset in project base dimensions                            |       742 G | scenario, model_year, state |
+| `full_state_level`       | Aggregation to `state`                                             |        63 G | state, scenario, model_year | 
+| `state_level_simplified` | Aggregation to `state`, `subsector`, and one (electric) end use    |       964 M | scenario                    |
+| `simple_profiles`        | Aggregation to `census_division`, one subsector, and one end use   |       112 M | N/A                         |
+| `annual_summary_conus`   | Aggregation to `conus`, `subsector`, one end use, and annual time  |        52 K | N/A                         |
+| `annual_summary_state`   | Aggregation to `state`, `subsector`, one end use, and annual time  |       1.1 M | N/A                         |
+| `annual_summary_county`  | Aggregation to `county`, `subsector`, one end use, and annual time |       3.2 M | N/A                         |
 
 Each dataset folder contains:
 - `query.json`: dsgrid query definition as output by the CLI in the course of running the query.
@@ -200,8 +200,8 @@ import duckdb
 
 def load_table(filepath, tablename):
     duckdb.sql(f"""CREATE TABLE {tablename} AS SELECT * 
-                     FROM read_parquet('{filepath}/**/*.parquet', hive_partitioning=true, hive_types_autocast=false);""")
-    description = duckdb.sql(f"DESCRIBE {tablename};")
+                     FROM read_parquet('{filepath}/**/*.parquet', hive_partitioning=true, hive_types_autocast=false)""")
+    description = duckdb.sql(f"DESCRIBE {tablename}")
     logger.info(f"Loaded {filepath} as {tablename}:\n{description}")
 
 # load data table
@@ -240,7 +240,7 @@ A couple of timestamp-related queries that are demonstrated in the notebook incl
                (tempo_project_model_years = 2050) AND 
                (subsector = 'bev_compact')
       ORDER BY time_est 
-         LIMIT 5;
+         LIMIT 5
     ```
 
 2. Selecting timstamps within a range:
@@ -259,7 +259,7 @@ A couple of timestamp-related queries that are demonstrated in the notebook incl
                           (time_est >= TIMESTAMP '{start_timestamp}') AND 
                           (time_est <= TIMESTAMP '{end_timestamp}')
                  GROUP BY time_est 
-                 ORDER BY time_est;""")
+                 ORDER BY time_est""")
     ```
 
 ##### Additional Reading
@@ -370,7 +370,7 @@ Large datasets require running Spark in cluster mode rather than local mode. To 
 Running the code that follows without performing these steps (or the equivalent) first will run PySpark in local mode, which syntatically works the same, but computationally is less performant than DuckDB.
 
 PySpark easily loads parquet tables no matter over how many files and directories the table is stored. For example, running this code:
-```
+```Python
 from pyspark.sql import SparkSession
 
 spark = (
@@ -422,7 +422,7 @@ df = spark.sql(f"""SELECT time_est,
                           (time_est >= TIMESTAMP '{start_timestamp}') AND 
                           (time_est <= TIMESTAMP '{end_timestamp}')
                 GROUP BY time_est 
-                ORDER BY time_est;""").toPandas()
+                ORDER BY time_est""").toPandas()
 ```
 
 ##### Additional Reading
