@@ -438,7 +438,7 @@ There are essentially two reasons (alone or in combination) why working directly
 1. Data size - The full dataset expands to over 1 TB in memory. Although some tools (like DuckDB) can nominally process very large datasets on a typical laptop by actively managing memory and CPU resources, in practice that can either take a very long time or fail if the query is very complex and/or not well aligned with how the data are laid out across files. Other tools present different challenges. For example, pandas can only work with datasets that fit in memory, and Spark can work with very large datasets but only if it can spread the work out over multiple compute nodes (in cluster, rather than local, mode).
 2. Output dimensions - One or more dimension types might not be described at the level of resolution you want. Depending on the type of mapping desired, it may or may not be straightforward to perform your own join operations outside of dsgrid.
 
-If you hit one of these issues, you have at least two options, see below. Super-power users might also be interested in directly using dsgrid software, which is nominally possible, but not recommended due to complex software dependencies (i.e., ArangoDB and Apache Spark), computational requirements (i.e., HPC or Cloud), and large data sizes. That said, if you really think you want to go down this route, please reach out to the dsgrid team to learn more.
+If you hit one of these issues, you have at least two options, see below. Super-power users might also be interested in directly using dsgrid software, which is nominally possible, but not recommended due to complex software dependencies (i.e., ArangoDB and Apache Spark), computational requirements (i.e., HPC or Cloud), and large data sizes. That said, if you really think you want to go down this route, please reach out to the dsgrid team at [dsgrid.info@nrel.gov](mailto:dsgrid.info@nrel.gov) to learn more.
 
 ### Option 1: Write your own processing code to work through the data sequentially
 
@@ -446,5 +446,5 @@ Although you would not want to download the full dataset to most machines, you c
 
 ### Option 2: Reach out to the dsgrid team
 
-If you're looking for a query that is easy to run and/or expected to be of broad interest, please reach out to us and we will let you know if we are able to fulfill 
+If you're looking for a query that is easy to run and/or expected to be of broad interest, please reach out to us at [dsgrid.info@nrel.gov](mailto:dsgrid.info@nrel.gov) and we will let you know if we are able to fulfill 
 the request.
