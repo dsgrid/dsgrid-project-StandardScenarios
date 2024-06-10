@@ -102,7 +102,7 @@ Output data are available through OEDI. All numerical data are energy use projec
 | ------------------------ | ------------------------------------------------------------------ | ----------- | --------------------------- |
 | `query_files`            | dsgrid query definitions in .json5 format                          |        32 K | N/A (not a dataset)         |
 | `full_dataset`           | Full dataset in project base dimensions                            |       742 G | scenario, model_year, state |
-| `full_state_level`       | Aggregation to `state`                                             |        63 G | state, scenario, model_year | 
+| `full_state_level`       | Aggregation to `state`                                             |       119 G | state, scenario, model_year | 
 | `state_level_simplified` | Aggregation to `state`, `subsector`, and one (electric) end use    |       964 M | scenario                    |
 | `simple_profiles`        | Aggregation to `census_division`, one subsector, and one end use   |       112 M | N/A                         |
 | `annual_summary_conus`   | Aggregation to `conus`, `subsector`, one end use, and annual time  |        52 K | N/A                         |
