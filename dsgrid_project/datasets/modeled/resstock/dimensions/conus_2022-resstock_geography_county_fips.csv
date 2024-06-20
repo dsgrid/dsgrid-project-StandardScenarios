@@ -66,21 +66,21 @@ G0101270,Walker County,AL,CentralPrevailing
 G0101290,Washington County,AL,CentralPrevailing
 G0101310,Wilcox County,AL,CentralPrevailing
 G0101330,Winston County,AL,CentralPrevailing
-G0400010,Apache County,AZ,MountainStandard
-G0400030,Cochise County,AZ,MountainStandard
-G0400050,Coconino County,AZ,MountainStandard
-G0400070,Gila County,AZ,MountainStandard
-G0400090,Graham County,AZ,MountainStandard
-G0400110,Greenlee County,AZ,MountainStandard
-G0400120,La Paz County,AZ,MountainStandard
-G0400130,Maricopa County,AZ,MountainStandard
-G0400150,Mohave County,AZ,MountainStandard
+G0400010,Apache County,AZ,USArizona
+G0400030,Cochise County,AZ,USArizona
+G0400050,Coconino County,AZ,USArizona
+G0400070,Gila County,AZ,USArizona
+G0400090,Graham County,AZ,USArizona
+G0400110,Greenlee County,AZ,USArizona
+G0400120,La Paz County,AZ,USArizona
+G0400130,Maricopa County,AZ,USArizona
+G0400150,Mohave County,AZ,USArizona
 G0400170,Navajo County,AZ,MountainPrevailing
-G0400190,Pima County,AZ,MountainStandard
-G0400210,Pinal County,AZ,MountainStandard
-G0400230,Santa Cruz County,AZ,MountainStandard
-G0400250,Yavapai County,AZ,MountainStandard
-G0400270,Yuma County,AZ,MountainStandard
+G0400190,Pima County,AZ,USArizona
+G0400210,Pinal County,AZ,USArizona
+G0400230,Santa Cruz County,AZ,USArizona
+G0400250,Yavapai County,AZ,USArizona
+G0400270,Yuma County,AZ,USArizona
 G0500010,Arkansas County,AR,CentralPrevailing
 G0500030,Ashley County,AR,CentralPrevailing
 G0500050,Baxter County,AR,CentralPrevailing
@@ -1981,7 +1981,7 @@ G3800450,LaMoure County,ND,CentralPrevailing
 G3800470,Logan County,ND,CentralPrevailing
 G3800490,McHenry County,ND,CentralPrevailing
 G3800510,McIntosh County,ND,CentralPrevailing
-G3800530,McKenzie County,ND,CentralPrevailing
+G3800530,McKenzie County,ND,MountainPrevailing
 G3800550,McLean County,ND,CentralPrevailing
 G3800570,Mercer County,ND,CentralPrevailing
 G3800590,Morton County,ND,CentralPrevailing
@@ -2329,62 +2329,62 @@ G4500890,Williamsburg County,SC,EasternPrevailing
 G4500910,York County,SC,EasternPrevailing
 G4600030,Aurora County,SD,CentralPrevailing
 G4600050,Beadle County,SD,CentralPrevailing
-G4600070,Bennett County,SD,EasternPrevailing
+G4600070,Bennett County,SD,MountainPrevailing
 G4600090,Bon Homme County,SD,CentralPrevailing
 G4600110,Brookings County,SD,CentralPrevailing
 G4600130,Brown County,SD,CentralPrevailing
 G4600150,Brule County,SD,CentralPrevailing
 G4600170,Buffalo County,SD,CentralPrevailing
-G4600190,Butte County,SD,EasternPrevailing
+G4600190,Butte County,SD,MountainPrevailing
 G4600210,Campbell County,SD,CentralPrevailing
 G4600230,Charles Mix County,SD,CentralPrevailing
 G4600250,Clark County,SD,CentralPrevailing
 G4600270,Clay County,SD,CentralPrevailing
 G4600290,Codington County,SD,CentralPrevailing
-G4600310,Corson County,SD,EasternPrevailing
-G4600330,Custer County,SD,EasternPrevailing
+G4600310,Corson County,SD,MountainPrevailing
+G4600330,Custer County,SD,MountainPrevailing
 G4600350,Davison County,SD,CentralPrevailing
 G4600370,Day County,SD,CentralPrevailing
 G4600390,Deuel County,SD,CentralPrevailing
-G4600410,Dewey County,SD,EasternPrevailing
+G4600410,Dewey County,SD,MountainPrevailing
 G4600430,Douglas County,SD,CentralPrevailing
 G4600450,Edmunds County,SD,CentralPrevailing
-G4600470,Fall River County,SD,EasternPrevailing
+G4600470,Fall River County,SD,MountainPrevailing
 G4600490,Faulk County,SD,CentralPrevailing
 G4600510,Grant County,SD,CentralPrevailing
 G4600530,Gregory County,SD,CentralPrevailing
-G4600550,Haakon County,SD,EasternPrevailing
+G4600550,Haakon County,SD,MountainPrevailing
 G4600570,Hamlin County,SD,CentralPrevailing
 G4600590,Hand County,SD,CentralPrevailing
 G4600610,Hanson County,SD,CentralPrevailing
-G4600630,Harding County,SD,EasternPrevailing
+G4600630,Harding County,SD,MountainPrevailing
 G4600650,Hughes County,SD,CentralPrevailing
 G4600670,Hutchinson County,SD,CentralPrevailing
 G4600690,Hyde County,SD,CentralPrevailing
-G4600710,Jackson County,SD,EasternPrevailing
+G4600710,Jackson County,SD,MountainPrevailing
 G4600730,Jerauld County,SD,CentralPrevailing
 G4600750,Jones County,SD,CentralPrevailing
 G4600770,Kingsbury County,SD,CentralPrevailing
 G4600790,Lake County,SD,CentralPrevailing
-G4600810,Lawrence County,SD,EasternPrevailing
+G4600810,Lawrence County,SD,MountainPrevailing
 G4600830,Lincoln County,SD,CentralPrevailing
 G4600850,Lyman County,SD,CentralPrevailing
 G4600870,McCook County,SD,CentralPrevailing
 G4600890,McPherson County,SD,CentralPrevailing
 G4600910,Marshall County,SD,CentralPrevailing
-G4600930,Meade County,SD,EasternPrevailing
+G4600930,Meade County,SD,MountainPrevailing
 G4600950,Mellette County,SD,CentralPrevailing
 G4600970,Miner County,SD,CentralPrevailing
 G4600990,Minnehaha County,SD,CentralPrevailing
 G4601010,Moody County,SD,CentralPrevailing
-G4601020,Oglala Lakota County,SD,CentralPrevailing
-G4601030,Pennington County,SD,EasternPrevailing
-G4601050,Perkins County,SD,EasternPrevailing
+G4601020,Oglala Lakota County,SD,MountainPrevailing
+G4601030,Pennington County,SD,MountainPrevailing
+G4601050,Perkins County,SD,MountainPrevailing
 G4601070,Potter County,SD,CentralPrevailing
 G4601090,Roberts County,SD,CentralPrevailing
 G4601110,Sanborn County,SD,CentralPrevailing
 G4601150,Spink County,SD,CentralPrevailing
-G4601170,Stanley County,SD,CentralPrevailing
+G4601170,Stanley County,SD,MountainPrevailing
 G4601190,Sully County,SD,CentralPrevailing
 G4601210,Todd County,SD,CentralPrevailing
 G4601230,Tripp County,SD,CentralPrevailing

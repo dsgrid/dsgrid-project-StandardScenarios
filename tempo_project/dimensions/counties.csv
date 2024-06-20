@@ -66,21 +66,21 @@ id,name,state,time_zone
 01129,Washington,AL,CentralPrevailing
 01131,Wilcox,AL,CentralPrevailing
 01133,Winston,AL,CentralPrevailing
-04001,Apache,AZ,MountainStandard
-04003,Cochise,AZ,MountainStandard
-04005,Coconino,AZ,MountainStandard
-04007,Gila,AZ,MountainStandard
-04009,Graham,AZ,MountainStandard
-04011,Greenlee,AZ,MountainStandard
-04012,La Paz,AZ,MountainStandard
-04013,Maricopa,AZ,MountainStandard
-04015,Mohave,AZ,MountainStandard
+04001,Apache,AZ,USArizona
+04003,Cochise,AZ,USArizona
+04005,Coconino,AZ,USArizona
+04007,Gila,AZ,USArizona
+04009,Graham,AZ,USArizona
+04011,Greenlee,AZ,USArizona
+04012,La Paz,AZ,USArizona
+04013,Maricopa,AZ,USArizona
+04015,Mohave,AZ,USArizona
 04017,Navajo,AZ,MountainPrevailing
-04019,Pima,AZ,MountainStandard
-04021,Pinal,AZ,MountainStandard
-04023,Santa Cruz,AZ,MountainStandard
-04025,Yavapai,AZ,MountainStandard
-04027,Yuma,AZ,MountainStandard
+04019,Pima,AZ,USArizona
+04021,Pinal,AZ,USArizona
+04023,Santa Cruz,AZ,USArizona
+04025,Yavapai,AZ,USArizona
+04027,Yuma,AZ,USArizona
 05001,Arkansas,AR,CentralPrevailing
 05003,Ashley,AR,CentralPrevailing
 05005,Baxter,AR,CentralPrevailing
@@ -1767,7 +1767,7 @@ id,name,state,time_zone
 35007,Colfax,NM,MountainPrevailing
 35009,Curry,NM,MountainPrevailing
 35011,De Baca,NM,MountainPrevailing
-35013,Do?a Ana,NM,MountainPrevailing
+35013,Dona Ana,NM,MountainPrevailing
 35015,Eddy,NM,MountainPrevailing
 35017,Grant,NM,MountainPrevailing
 35019,Guadalupe,NM,MountainPrevailing
@@ -1981,7 +1981,7 @@ id,name,state,time_zone
 38047,Logan,ND,CentralPrevailing
 38049,McHenry,ND,CentralPrevailing
 38051,McIntosh,ND,CentralPrevailing
-38053,McKenzie,ND,CentralPrevailing
+38053,McKenzie,ND,MountainPrevailing
 38055,McLean,ND,CentralPrevailing
 38057,Mercer,ND,CentralPrevailing
 38059,Morton,ND,CentralPrevailing
@@ -2329,62 +2329,62 @@ id,name,state,time_zone
 45091,York,SC,EasternPrevailing
 46003,Aurora,SD,CentralPrevailing
 46005,Beadle,SD,CentralPrevailing
-46007,Bennett,SD,EasternPrevailing
+46007,Bennett,SD,MountainPrevailing
 46009,Bon Homme,SD,CentralPrevailing
 46011,Brookings,SD,CentralPrevailing
 46013,Brown,SD,CentralPrevailing
 46015,Brule,SD,CentralPrevailing
 46017,Buffalo,SD,CentralPrevailing
-46019,Butte,SD,EasternPrevailing
+46019,Butte,SD,MountainPrevailing
 46021,Campbell,SD,CentralPrevailing
 46023,Charles Mix,SD,CentralPrevailing
 46025,Clark,SD,CentralPrevailing
 46027,Clay,SD,CentralPrevailing
 46029,Codington,SD,CentralPrevailing
-46031,Corson,SD,EasternPrevailing
-46033,Custer,SD,EasternPrevailing
+46031,Corson,SD,MountainPrevailing
+46033,Custer,SD,MountainPrevailing
 46035,Davison,SD,CentralPrevailing
 46037,Day,SD,CentralPrevailing
 46039,Deuel,SD,CentralPrevailing
-46041,Dewey,SD,EasternPrevailing
+46041,Dewey,SD,MountainPrevailing
 46043,Douglas,SD,CentralPrevailing
 46045,Edmunds,SD,CentralPrevailing
-46047,Fall River,SD,EasternPrevailing
+46047,Fall River,SD,MountainPrevailing
 46049,Faulk,SD,CentralPrevailing
 46051,Grant,SD,CentralPrevailing
 46053,Gregory,SD,CentralPrevailing
-46055,Haakon,SD,EasternPrevailing
+46055,Haakon,SD,MountainPrevailing
 46057,Hamlin,SD,CentralPrevailing
 46059,Hand,SD,CentralPrevailing
 46061,Hanson,SD,CentralPrevailing
-46063,Harding,SD,EasternPrevailing
+46063,Harding,SD,MountainPrevailing
 46065,Hughes,SD,CentralPrevailing
 46067,Hutchinson,SD,CentralPrevailing
 46069,Hyde,SD,CentralPrevailing
-46071,Jackson,SD,EasternPrevailing
+46071,Jackson,SD,MountainPrevailing
 46073,Jerauld,SD,CentralPrevailing
 46075,Jones,SD,CentralPrevailing
 46077,Kingsbury,SD,CentralPrevailing
 46079,Lake,SD,CentralPrevailing
-46081,Lawrence,SD,EasternPrevailing
+46081,Lawrence,SD,MountainPrevailing
 46083,Lincoln,SD,CentralPrevailing
 46085,Lyman,SD,CentralPrevailing
 46087,McCook,SD,CentralPrevailing
 46089,McPherson,SD,CentralPrevailing
 46091,Marshall,SD,CentralPrevailing
-46093,Meade,SD,EasternPrevailing
+46093,Meade,SD,MountainPrevailing
 46095,Mellette,SD,CentralPrevailing
 46097,Miner,SD,CentralPrevailing
 46099,Minnehaha,SD,CentralPrevailing
 46101,Moody,SD,CentralPrevailing
-46102,Oglala Lakota,SD,CentralPrevailing
-46103,Pennington,SD,EasternPrevailing
-46105,Perkins,SD,EasternPrevailing
+46102,Oglala Lakota,SD,MountainPrevailing
+46103,Pennington,SD,MountainPrevailing
+46105,Perkins,SD,MountainPrevailing
 46107,Potter,SD,CentralPrevailing
 46109,Roberts,SD,CentralPrevailing
 46111,Sanborn,SD,CentralPrevailing
 46115,Spink,SD,CentralPrevailing
-46117,Stanley,SD,CentralPrevailing
+46117,Stanley,SD,MountainPrevailing
 46119,Sully,SD,CentralPrevailing
 46121,Todd,SD,CentralPrevailing
 46123,Tripp,SD,CentralPrevailing
