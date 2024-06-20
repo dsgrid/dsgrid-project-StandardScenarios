@@ -128,15 +128,11 @@ def main(county_file: str, lookup_file: str, pre2015_counties=False):
 
     # Check mapping
     not_mapped = df.loc[df["time_zone"].isna()]
-    # assert len(not_mapped) == 0, f"counties not mapped:\n{not_mapped}"
     avail_mapping = lkup.loc[~lkup["Option Name"].isin(df["map_key"])]
-    if len(not_mapped) > 0:
-        print(f"Counties not mapped:\n{not_mapped}")
-        print(f"Available mapping:\n{avail_mapping}")
-        breakpoint()
     if len(avail_mapping) > 0:
         print("\nWarning: the following counties from options_lookup are unmapped:")
         print(avail_mapping)
+    assert len(not_mapped) == 0, f"counties not mapped:\n{not_mapped}"
 
     # Check old and new time_zone
     if has_old_time_zone:
@@ -149,10 +145,7 @@ def main(county_file: str, lookup_file: str, pre2015_counties=False):
     if df["id"].dtype == float or df["id"].dtype == int:
         df["id"] = df["id"].astype(int).astype(str).str.zfill(5)
     df = df.drop(columns=["old_time_zone", "map_key"])
-    # assert len(df) == n_df, "county df does not have the same number of rows as before."
-    if len(df) != n_df:
-        print("county df does not have the same number of rows as before.")
-        breakpoint()
+    assert len(df) == n_df, "county df does not have the same number of rows as before."
 
     df.to_csv(county_file, index=False)
     print(f"\nUpdated time_zone column in county file: {county_file}")
