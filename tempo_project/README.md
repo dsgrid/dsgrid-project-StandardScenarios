@@ -96,7 +96,7 @@ Additional supplemental dimensions are defined in this dsgrid project, but have 
 
 ### Directory Structure and Contents
 
-Output data are available through OEDI. All numerical data are energy use projections as would be measured at electrical meters in units of MWh. The top-level folders available in the Data Lake are:
+Output data are available on Kestrel (Internal to NREL) and through OEDI (public s3 bucket). All numerical data are energy use projections as would be measured at electrical meters in units of MWh. The top-level folders available in the Data Lake are:
 
 | Folder Name              | Folder Contents                                                    | Folder Size | Partitioned By              |
 | ------------------------ | ------------------------------------------------------------------ | ----------- | --------------------------- |
@@ -116,6 +116,41 @@ Each dataset folder contains:
 - `table.csv`: ONLY PRESENT FOR SMALL DATASETS. The same data as table.parquet but in comma separated value (CSV, .csv) format.
 
 ### Working with Datasets
+
+Data can be reached at:
+    - /datasets/dsgrid/tempo-v2022 on kestrel
+    - s3://nrel-pds-dsgrid/tempo/tempo-2022/v1.0.0 on [OEDI](https://data.openei.org/s3_viewer?bucket=nrel-pds-dsgrid&prefix=tempo%2Ftempo-2022%2Fv1.0.0%2F)
+
+There are many ways to read the files in this dataset, all datasets provide [parquet files](https://parquet.apache.org/) and some smaller datasets like `annual_summary_state` provide csv's in addition. 
+
+#### Loading with duckdb
+
+Duckdb can be [installed](https://duckdb.org/docs/installation/) on Mac, Windows, or Linux to provide an interface on terminal/command prompt. The duckdb interface uses SQL language to read from parquet files. 
+
+Example loading state level data from Colorado for efs_high_ldv scenario with a duckdb query from s3:
+```SQL
+INSTALL httpfs;
+LOAD httpfs;
+
+CREATE TABLE tbl AS
+    SELECT *
+    FROM read_parquet("s3://nrel-pds-dsgrid/tempo/tempo-2022/v1.0.0/state_level_simplified/**/*.parquet")
+    WHERE state = 'CO' AND scenario = 'efs_high_ldv';
+```
+
+Information about the table `tbl` can be shown with:
+```SQL
+SHOW tbl;
+SELECT * FROM tbl LIMIT 5;
+```
+
+Write table to csv
+```SQL
+COPY tbl TO '~/data/output.csv' (HEADER, DELIMITER, ",");
+```
+
+
+#### Loading with python
 
 In this repository, under `tempo_project/notebooks`, we provide example notebooks you can run using [duckdb](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-duckdb.ipynb), [pandas](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-pandas.ipynb), or [spark](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-spark.ipynb) after you adjust `data_dir` to point to the location where you have downloaded one or more of the folders listed above and `dataset_name` to be the name of the folder containing the dataset you want to access.
 
