@@ -1,0 +1,4 @@
+id,name,unit
+vehicles,Vehicles,count
+households,Households,count
+floor_area,Floor Area,ft^2

@@ -118,6 +118,34 @@
       },
     },
     {
+      dataset_id: 'tempo_conus_2022_vehicle_counts',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          sector: {
+            base: ['trans'],
+          },
+          subsector: {
+            subset: [
+              {
+                name: 'Subsectors by Sector',
+                selectors: ['transportation_subsectors'],
+              },
+            ],
+          },
+          metric: {
+            subset: [
+              {
+                name: 'Counts by Sector',
+                selectors: ['transportation_counts'],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
       dataset_id: 'tempo_conus_2022_mapped',
       dataset_type: 'modeled',
       version: '1.0.0',
@@ -170,6 +198,37 @@
               {
                 name: 'End Uses by Sector',
                 selectors: ['residential_end_uses'],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
+      dataset_id: 'resstock_conus_2022_counts',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          sector: {
+            base: ['res'],
+          },
+          model_year: {
+            base: ['2018'],
+          },
+          subsector: {
+            subset: [
+              {
+                name: 'Subsectors by Sector',
+                selectors: ['residential_subsectors'],
+              },
+            ],
+          },
+          metric: {
+            subset: [
+              {
+                name: 'Counts by Sector',
+                selectors: ['residential_counts'],
               },
             ],
           },
@@ -257,6 +316,37 @@
               {
                 name: 'End Uses by Sector',
                 selectors: ['commercial_end_uses'],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
+      dataset_id: 'comstock_conus_2022_counts',
+      dataset_type: 'modeled',
+      version: '1.0.0',
+      required_dimensions: {
+        single_dimensional: {
+          model_year: {
+            base: ['2018'],
+          },
+          sector: {
+            base: ['com'],
+          },
+          subsector: {
+            subset: [
+              {
+                name: 'Subsectors by Sector',
+                selectors: ['commercial_subsectors'],
+              },
+            ],
+          },
+          metric: {
+            subset: [
+              {
+                name: 'Counts by Sector',
+                selectors: ['commercial_counts'],
               },
             ],
           },
@@ -416,6 +506,15 @@
         type: "metric",
       },
       {
+        "class": "Population",
+        description: "Transportation and building stock size",
+        file: "dimensions/counts.csv",
+        module: "dsgrid.dimension.standard",
+        name: "CONUS-2022-Vehicle-Building-Stock",
+        display_name: "Counts",
+        type: "metric",
+      },
+      {
         class: 'ModelYear',
         description: 'Model year, 2010-2050',
         file: 'dimensions/model_years.csv',
@@ -528,6 +627,33 @@
           },
         ],
       },
+      {
+        name: 'Counts by Sector',
+        display_name: 'counts_by_sector',
+        description: 'Provides selection of count metrics by sector.',
+        type: 'metric',
+        filename: 'dimensions/subset/counts_by_sector.csv',
+        create_supplemental_dimension: false,
+        selectors: [
+          {
+            name: 'commercial_counts',
+            description: 'Commercial Floor Area',
+            column_values: {'unit': 'ft^2'},
+          },
+          {
+            name: 'residential_counts',
+            description: 'Residential Housing Units',
+            // Should this also support floor area???
+            column_values: {'unit': 'count'}, 
+          },
+          {
+            name: 'transportation_counts',
+            description: 'Transportation Vehicle Counts',
+            column_values: {'unit': 'count'},
+          },
+        ],
+      },
+
       {
         name: 'Subsectors by Sector',
         display_name: 'subsectors_by_sector',

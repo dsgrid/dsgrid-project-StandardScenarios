@@ -1,0 +1,4 @@
+id,commercial_counts,residential_counts,transportation_counts
+vehicles,,,x
+households,,x,
+floor_area,x,x,
