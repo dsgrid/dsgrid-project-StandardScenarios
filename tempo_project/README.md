@@ -118,7 +118,7 @@ Each dataset folder contains:
 ### Working with Datasets
 
 Data can be reached at:
-    - /datasets/dsgrid/tempo-v2022 on kestrel
+    - /datasets/dsgrid/dsgrid-tempo-v2022 on kestrel
     - s3://nrel-pds-dsgrid/tempo/tempo-2022/v1.0.0 on [OEDI](https://data.openei.org/s3_viewer?bucket=nrel-pds-dsgrid&prefix=tempo%2Ftempo-2022%2Fv1.0.0%2F)
 
 There are many ways to read the files in this dataset, all datasets provide [parquet files](https://parquet.apache.org/) and some smaller datasets like `annual_summary_state` provide csv's in addition. 
@@ -127,9 +127,16 @@ There are many ways to read the files in this dataset, all datasets provide [par
 
 Duckdb can be [installed](https://duckdb.org/docs/installation/) on Mac, Windows, or Linux to provide an interface on terminal/command prompt. The duckdb interface uses SQL language to read from parquet files. 
 
+From the terminal or command prompt, enter `duckdb` to enter s duckdb session to begin querying from this dataset.
+
 Example loading state level data from Colorado for efs_high_ldv scenario with a duckdb query from s3:
+
+The first time using s3 data on duckdb you will need to install httpfs:
 ```SQL
 INSTALL httpfs;
+```
+
+```SQL
 LOAD httpfs;
 
 CREATE TABLE tbl AS
@@ -144,13 +151,21 @@ SHOW tbl;
 SELECT * FROM tbl LIMIT 5;
 ```
 
-Write table to csv
+Write table to csv (replace `~/data/output.csv` to create a new csv file)
 ```SQL
 COPY tbl TO '~/data/output.csv' (HEADER, DELIMITER, ",");
 ```
 
 
 #### Loading with python
+
+The same query in the section above (Loading with duckdb) can be run in python to create a pandas dataframe.
+```python
+import duckdb
+
+path = "s3://nrel-pds-dsgrid/tempo/tempo-2022/v1.0.0/state_level_simplified/**/*.parquet"
+dataframe = duckdb.sql(f"""SELECT * FROM read_parquet('{path}') WHERE state='CO' AND scenario='efs_high_ldv'""").to_df()
+```
 
 In this repository, under `tempo_project/notebooks`, we provide example notebooks you can run using [duckdb](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-duckdb.ipynb), [pandas](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-pandas.ipynb), or [spark](https://github.com/dsgrid/dsgrid-project-StandardScenarios/tree/main/tempo_project/notebooks/examples-spark.ipynb) after you adjust `data_dir` to point to the location where you have downloaded one or more of the folders listed above and `dataset_name` to be the name of the folder containing the dataset you want to access.
 
