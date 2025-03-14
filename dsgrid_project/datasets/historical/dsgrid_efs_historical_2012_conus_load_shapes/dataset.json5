@@ -42,8 +42,7 @@
   dimensions: [
     {
       type: "geography",
-      name: "states",
-      display_name: "State",
+      name: "State",
       file: "dimensions/geography.csv",
       module: "dsgrid.dimension.standard",
       "class": "State",
@@ -51,8 +50,7 @@
     },
     {
       type: "sector",
-      name: "all-sectors",
-      display_name: "All Sectors",
+      name: "All Sectors",
       file: "dimensions/sector.csv",
       module: "dsgrid.dimension.standard",
       "class": "Sector",
@@ -60,8 +58,7 @@
     },
     {
       type: "subsector",
-      name: "unspecified-subsectors",
-      display_name: "Unspecified Subsectors",
+      name: "Unspecified Subsectors",
       file: "dimensions/subsectors.csv",
       module: "dsgrid.dimension.standard",
       "class": "Subsector",
@@ -70,7 +67,6 @@
     {
       type: 'metric',
       name: 'Unspecified Electricity',
-      display_name: 'Unspecified Electricity',
       file: 'dimensions/metric.csv',
       module: 'dsgrid.dimension.standard',
       class: 'EnergyEndUse',
@@ -78,8 +74,7 @@
     },
     {
       type: "scenario",
-      name: "Conus-2022-reference",
-      display_name: "Reference",
+      name: "Reference",
       file: "dimensions/scenario.csv",
       module: "dsgrid.dimension.standard",
       "class": "Scenario",
@@ -87,8 +82,7 @@
     },
     {
       type: "model_year",
-      name: "Model-Year-2012",
-      display_name: "2012",
+      name: "2012",
       file: "dimensions/model_year.csv",
       module: "dsgrid.dimension.standard",
       "class": "ModelYear",
@@ -99,14 +93,12 @@
       description: "Weather year, 2012 only",
       file: "dimensions/weather_year.csv",
       module: "dsgrid.dimension.standard",
-      name: "2012 Weather Year",
-      display_name: "2012 Weather",
+      name: "2012 Weather",
       type: "weather_year",
     },
     {
       // Note: this does not match the project time because of it being period-ending, not period-beginning
-      name: "Time-2012-EST-hourly-periodEnding-noDST-noLeapDayAdjustment-total-UTChour1start",
-      display_name: "2012 Hourly EST",
+      name: "2012 Hourly EST",
       type: "time",
       module: "dsgrid.dimension.standard",
       "class": "Time",

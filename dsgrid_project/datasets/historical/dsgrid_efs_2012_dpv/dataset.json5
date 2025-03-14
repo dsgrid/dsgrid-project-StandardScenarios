@@ -3,7 +3,7 @@
   dataset_id: "dsgrid_efs_2012_dpv",
   dataset_type: "historical",
   data_source: "dsgrid_efs",
-  description:  "2012 historical distributed PV (kWh) for CONUS developed as part of the Electrification Futures Study (2018). Data created using code in https://github.nrel.gov/dsgrid/dpv, which uses NSRDB, SAM, and dGen.", 
+  description:  "2012 historical distributed PV (kWh) for CONUS developed as part of the Electrification Futures Study (2018). Data created using code in https://github.nrel.gov/dsgrid/dpv, which uses NSRDB, SAM, and dGen.",
   origin_creator: "Gord Stephen",
   origin_organization: "NREL",
   origin_contributors: [
@@ -37,17 +37,15 @@
   dimensions: [
     {
       type: "geography",
-      name: "US Counties 2017 L48",
-      display_name: "County",
+      name: "County",
       file: "dimensions/geography.csv",
       module: "dsgrid.dimension.standard",
       "class": "County",
-      description: "US counties for L48, Census early-to-mid 2010s vintage, no territories", 
+      description: "US counties for L48, Census early-to-mid 2010s vintage, no territories",
     },
     {
       type: "sector",
-      name: "com-ind-res-sectors",
-      display_name: "Commercial Industrial Residential Sectors",
+      name: "Commercial Industrial Residential Sectors",
       file: "dimensions/sector.csv",
       module: "dsgrid.dimension.standard",
       "class": "Sector",
@@ -55,8 +53,7 @@
     },
     {
       type: "subsector",
-      name: "unspecified-subsectors",
-      display_name: "Unspecified Subsectors",
+      name: "Unspecified Subsectors",
       file: "dimensions/subsectors.csv",
       module: "dsgrid.dimension.standard",
       "class": "Subsector",
@@ -65,8 +62,7 @@
     {
       // TODO: currently the DPV data is in MWh, but the project units are kWh. dsgrid needs to handle unit conversions.
       type: "metric",
-      name: "dpv",
-      display_name: "Distributed PV",
+      name: "Distributed PV",
       file: "dimensions/metric.csv",
       module: "dsgrid.dimension.standard",
       "class": "EnergyEndUse",
@@ -74,8 +70,7 @@
     },
     {
       type: "data_source",
-      name: "dsgrid-efs",
-      display_name: "dsgrid EFS",
+      name: "dsgrid EFS",
       file: "dimensions/data_source.csv",
       module: "dsgrid.dimension.standard",
       "class": "DataSource",
@@ -83,8 +78,7 @@
     },
     {
       type: "scenario",
-      name: "Conus-2022-reference",
-      display_name: "Reference",
+      name: "Reference",
       file: "dimensions/scenario.csv",
       module: "dsgrid.dimension.standard",
       "class": "Scenario",
@@ -92,8 +86,7 @@
     },
     {
       type: "model_year",
-      name: "Model-Year-2012",
-      display_name: "2012",
+      name: "Model Year 2012",
       file: "dimensions/model_year.csv",
       module: "dsgrid.dimension.standard",
       "class": "ModelYear",
@@ -104,14 +97,12 @@
       description: "Weather year, 2012 only",
       file: "../../../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
-      name: "2012 Weather Year",
-      display_name: "2012 Weather",
+      name: "2012 Weather",
       type: "weather_year",
     },
     {
       // Note: this does not match the project time because of it being period-ending, not period-beginning
-      name: "Time-2012-EST-hourly-periodEnding-noDST-noLeapDayAdjustment-total-UTChour1start",
-      display_name: "2012 Hourly EST",
+      name: "2012 Hourly EST",
       type: "time",
       module: "dsgrid.dimension.standard",
       "class": "Time",
