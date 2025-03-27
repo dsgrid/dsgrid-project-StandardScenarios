@@ -33,7 +33,7 @@
       description: 'US States',
       file: 'dimensions/states.csv',
       module: 'dsgrid.dimension.standard',
-      name: 'State',
+      name: 'state',
       type: 'geography',
     },
     {
@@ -41,12 +41,12 @@
       description: 'dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Industrial and Transportation',
       file: 'dimensions/sectors.csv',
       module: 'dsgrid.dimension.standard',
-      name: 'Sector',
+      name: 'sector',
       type: 'sector',
     },
     {
       type: 'subsector',
-      name: 'Unspecified Subsectors',
+      name: 'unspecified_subsector',
       file: 'dimensions/subsectors_unspecified.csv',
       module: 'dsgrid.dimension.standard',
       class: 'Subsector',
@@ -54,7 +54,7 @@
     },
     {
       type: 'metric',
-      name: 'Customer Sales',
+      name: 'customer_sales',
       file: 'dimensions/eia861_sales_metric.csv',
       module: 'dsgrid.dimension.standard',
       class: 'EnergyEndUse',
@@ -62,7 +62,7 @@
     },
     {
       type: 'scenario',
-      name: 'Reference',
+      name: 'reference_scenario',
       file: '../../modeled/resstock/dimensions/scenario_conus_2022_reference.csv',
       module: 'dsgrid.dimension.standard',
       class: 'Scenario',
@@ -70,7 +70,7 @@
     },
     {
       type: 'weather_year',
-      name: 'None',
+      name: 'historical_weather_years',
       file: 'dimensions/weather_years_2010_to_2020.csv',
       module: 'dsgrid.dimension.standard',
       class: 'WeatherYear',
@@ -78,7 +78,7 @@
     },
     {
       type: 'model_year',
-      name: 'None',
+      name: 'historical_years',
       file: 'dimensions/model_years_2010_to_2020.csv',
       module: 'dsgrid.dimension.standard',
       class: 'ModelYear',
@@ -90,7 +90,7 @@
       time_type: 'annual',
       module: 'dsgrid.dimension.standard',
       description: 'Annual time 2010-2020',
-      name: 'Annual',
+      name: 'annual_time',
       ranges: [
         {
           start: '2010',

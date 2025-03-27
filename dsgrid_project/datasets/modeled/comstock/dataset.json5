@@ -39,7 +39,7 @@
   dimensions: [
     {
       type: "geography",
-      name: "County",
+      name: "county",
       file: "dimensions/conus_2022-comstock_geography_county_fips.csv",
       module: "dsgrid.dimension.standard",
       "class": "County",
@@ -47,7 +47,7 @@
     },
     {
       type: "sector",
-      name: "Commercial",
+      name: "sector",
       file: "dimensions/sector_commercial.csv",
       module: "dsgrid.dimension.standard",
       "class": "Sector",
@@ -55,7 +55,7 @@
     },
     {
       type: "subsector",
-      name: "ComStock Building Type",
+      name: "comstock_building_type",
       file: "dimensions/conus_2022-comstock_subsectors.csv",
       module: "dsgrid.dimension.standard",
       "class": "Subsector",
@@ -63,7 +63,7 @@
     },
     {
       type: "metric",
-      name: "ComStock End Use",
+      name: "comstock_end_use",
       file: "dimensions/conus_2022-comstock_end_uses.csv",
       module: "dsgrid.dimension.standard",
       "class": "EnergyEndUse",
@@ -71,7 +71,7 @@
     },
     {
       type: "scenario",
-      name: "Reference",
+      name: "reference_scenario",
       file: "../resstock/dimensions/scenario_conus_2022_reference.csv",
       module: "dsgrid.dimension.standard",
       "class": "Scenario",
@@ -79,7 +79,7 @@
     },
     {
       type: "model_year",
-      name: "Model Year 2018",
+      name: "model_year_2018",
       file: "../resstock/dimensions/model_year_2018.csv",
       module: "dsgrid.dimension.standard",
       "class": "ModelYear",
@@ -90,14 +90,14 @@
       description: "Weather year, 2012 only",
       file: "../../../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
-      name: "Weather 2012",
+      name: "weather_year_2012",
       type: "weather_year",
     },
     {
       //  for time-wrapped dataset
       "class": "Time",
       frequency: "P0DT1H0M0.000000S",
-      name: "Time EST",
+      name: "time_est",
       ranges: [
         {
           start: "2012-01-01 00:00:00",
@@ -117,7 +117,7 @@
     // {
     //   "class": "Time",
     //   frequency: "P0DT1H0M0.000000S",
-    //   name: "Timestamp",
+    //   name: "time_est",
     //   ranges: [
     //     {
     //       start: "2012-01-01 01:00:00",

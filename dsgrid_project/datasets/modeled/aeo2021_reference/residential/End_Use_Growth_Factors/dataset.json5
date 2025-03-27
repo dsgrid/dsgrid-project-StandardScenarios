@@ -45,7 +45,7 @@
       description: "Residential sector only",
       file: "../../../resstock/dimensions/sector_residential.csv",
       module: "dsgrid.dimension.standard",
-      name: "Residential Sector",
+      name: "sector",
       type: "sector",
     },
     {
@@ -53,7 +53,7 @@
       description: "Residential subsector only",
       file: "dimensions/residential_subsectors.csv",
       module: "dsgrid.dimension.standard",
-      name: "Residential Subsector",
+      name: "subsector",
       type: "subsector",
     },
     {
@@ -62,7 +62,7 @@
       file: "dimensions/aeo2021_residential_condensed_energy_enduses.csv",
       module: "dsgrid.dimension.standard",
       type: "metric",
-      name: "AEO Residential End Uses",
+      name: "aeo_residential_end_use",
     },
     {
       "class": "Scenario",
@@ -70,14 +70,14 @@
       file: "../../commercial/End_Use_Growth_Factors/dimensions/aeo_reference_scenario.csv",
       module: "dsgrid.dimension.standard",
       type: "scenario",
-      name: "AEO Reference Scenario",
+      name: "reference_scenario",
     },
     {
       "class": "WeatherYear",
       description: "Weather year, 2012 only",
       file: "../../../../../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
-      name: "Weather 2012",
+      name: "weather_year_2012",
       type: "weather_year",
     },
     {
@@ -86,7 +86,7 @@
       file: "../../commercial/End_Use_Growth_Factors/dimensions/model_years_trivial_2013_to_2050.csv",
       module: "dsgrid.dimension.standard",
       type: "model_year",
-      name: "AEO Model Years",
+      name: "model_year",
     },
     {
       "class": "NoOpTime",
@@ -94,7 +94,7 @@
       time_type: "noop",
       module: "dsgrid.dimension.standard",
       type: "time",
-      name: "No Op Time",
+      name: "no_op_time",
     },
   ],
   dimension_references: [

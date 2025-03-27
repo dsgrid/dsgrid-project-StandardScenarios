@@ -46,7 +46,7 @@
             file: "../../../../../dimensions/supplemental/conus.csv",
             module: "dsgrid.dimension.standard",
             type: "geography",
-            name: "CONUS",
+            name: "conus",
         },
         {
             "class": "Sector",
@@ -54,11 +54,11 @@
             file: "dimensions/sector_industrial.csv",
             module: "dsgrid.dimension.standard",
             type: "sector",
-            name: "Industrial",
+            name: "sector",
         },
         {
             type: 'subsector',
-            name: 'Subsector Unspecified',
+            name: 'unspecified_subsector',
             file: '../../../../historical/dsgrid_efs_2012_losses/dimensions/subsectors.csv',
             module: 'dsgrid.dimension.standard',
             class: 'Subsector',
@@ -70,7 +70,7 @@
             file: "dimensions/metric.csv",
             module: "dsgrid.dimension.standard",
             type: "metric",
-            name: "AEO Industrial Purchased Electricity",
+            name: "aeo_industrial_purchased_electricity",
         },
         {
             "class": "Scenario",
@@ -78,14 +78,14 @@
             file: "../../commercial/End_Use_Growth_Factors/dimensions/aeo_reference_scenario.csv",
             module: "dsgrid.dimension.standard",
             type: "scenario",
-            name: "AEO Reference Scenario",
+            name: "reference_scenario",
         },
         {
             "class": "WeatherYear",
             description: "Weather year, 2012 only",
             file: "../../../../../dimensions/weather_years.csv",
             module: "dsgrid.dimension.standard",
-            name: "Weather 2012",
+            name: "weather_year_2012",
             type: "weather_year",
         },
         {
@@ -94,7 +94,7 @@
             file: "../../commercial/End_Use_Growth_Factors/dimensions/model_years_trivial_2013_to_2050.csv",
             module: "dsgrid.dimension.standard",
             type: "model_year",
-            name: "AEO Model Years",
+            name: "model_year",
         },
         {
             "class": "NoOpTime",
@@ -102,7 +102,7 @@
             time_type: "noop",
             module: "dsgrid.dimension.standard",
             type: "time",
-            name: "No Op Time",
+            name: "no_op_time",
         },
     ]
 }

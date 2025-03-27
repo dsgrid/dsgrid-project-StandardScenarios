@@ -42,7 +42,7 @@
   dimensions: [
     {
       type: "geography",
-      name: "State",
+      name: "state",
       file: "dimensions/geography.csv",
       module: "dsgrid.dimension.standard",
       "class": "State",
@@ -50,7 +50,7 @@
     },
     {
       type: "sector",
-      name: "All Sectors",
+      name: "all_sectors",
       file: "dimensions/sector.csv",
       module: "dsgrid.dimension.standard",
       "class": "Sector",
@@ -58,7 +58,7 @@
     },
     {
       type: "subsector",
-      name: "Unspecified Subsectors",
+      name: "unspecified_subsector",
       file: "dimensions/subsectors.csv",
       module: "dsgrid.dimension.standard",
       "class": "Subsector",
@@ -66,7 +66,7 @@
     },
     {
       type: 'metric',
-      name: 'Unspecified Electricity',
+      name: 'unspecified_electricity',
       file: 'dimensions/metric.csv',
       module: 'dsgrid.dimension.standard',
       class: 'EnergyEndUse',
@@ -74,7 +74,7 @@
     },
     {
       type: "scenario",
-      name: "Reference",
+      name: "reference_scenario",
       file: "dimensions/scenario.csv",
       module: "dsgrid.dimension.standard",
       "class": "Scenario",
@@ -82,7 +82,7 @@
     },
     {
       type: "model_year",
-      name: "2012",
+      name: "model_year_2012",
       file: "dimensions/model_year.csv",
       module: "dsgrid.dimension.standard",
       "class": "ModelYear",
@@ -93,12 +93,12 @@
       description: "Weather year, 2012 only",
       file: "dimensions/weather_year.csv",
       module: "dsgrid.dimension.standard",
-      name: "2012 Weather",
+      name: "weather_year_2012",
       type: "weather_year",
     },
     {
       // Note: this does not match the project time because of it being period-ending, not period-beginning
-      name: "2012 Hourly EST",
+      name: "EST_hourly_2012",
       type: "time",
       module: "dsgrid.dimension.standard",
       "class": "Time",

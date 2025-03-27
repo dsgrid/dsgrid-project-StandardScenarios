@@ -37,7 +37,7 @@
   dimensions: [
     {
       type: "geography",
-      name: "County",
+      name: "county",
       file: "dimensions/geography.csv",
       module: "dsgrid.dimension.standard",
       "class": "County",
@@ -45,7 +45,7 @@
     },
     {
       type: "sector",
-      name: "Commercial Industrial Residential Sectors",
+      name: "sector",
       file: "dimensions/sector.csv",
       module: "dsgrid.dimension.standard",
       "class": "Sector",
@@ -53,7 +53,7 @@
     },
     {
       type: "subsector",
-      name: "Unspecified Subsectors",
+      name: "unspecified_subsector",
       file: "dimensions/subsectors.csv",
       module: "dsgrid.dimension.standard",
       "class": "Subsector",
@@ -62,23 +62,15 @@
     {
       // TODO: currently the DPV data is in MWh, but the project units are kWh. dsgrid needs to handle unit conversions.
       type: "metric",
-      name: "Distributed PV",
+      name: "distributed_pv",
       file: "dimensions/metric.csv",
       module: "dsgrid.dimension.standard",
       "class": "EnergyEndUse",
       description: "Distributed PV from the EFS study",
     },
     {
-      type: "data_source",
-      name: "dsgrid EFS",
-      file: "dimensions/data_source.csv",
-      module: "dsgrid.dimension.standard",
-      "class": "DataSource",
-      description: "dsgrid load data for historical year 2012 created for the NREL Electrification Futures Study",
-    },
-    {
       type: "scenario",
-      name: "Reference",
+      name: "reference_scenario",
       file: "dimensions/scenario.csv",
       module: "dsgrid.dimension.standard",
       "class": "Scenario",
@@ -86,7 +78,7 @@
     },
     {
       type: "model_year",
-      name: "Model Year 2012",
+      name: "model_year_2012",
       file: "dimensions/model_year.csv",
       module: "dsgrid.dimension.standard",
       "class": "ModelYear",
@@ -97,12 +89,12 @@
       description: "Weather year, 2012 only",
       file: "../../../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
-      name: "2012 Weather",
+      name: "weather_year_2012",
       type: "weather_year",
     },
     {
       // Note: this does not match the project time because of it being period-ending, not period-beginning
-      name: "2012 Hourly EST",
+      name: "EST_hourly_2012",
       type: "time",
       module: "dsgrid.dimension.standard",
       "class": "Time",

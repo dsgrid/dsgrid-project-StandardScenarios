@@ -44,7 +44,7 @@
       file: "../../../../../dimensions/supplemental/census_divisions.csv",
       module: "dsgrid.dimension.standard",
       type: "geography",
-      name: "Census Division",
+      name: "census_division",
     },
     {
       "class": "Sector",
@@ -52,14 +52,14 @@
       file: "../../../../modeled/comstock/dimensions/sector_commercial.csv",
       module: "dsgrid.dimension.standard",
       type: "sector",
-      name: "Commercial",
+      name: "sector",
     },
     {
       "class": "Subsector",
       description: "AEO 2021 commercial building types (N=11)",
       file: "dimensions/aeo2021_commercial_building_types.csv",
       module: "dsgrid.dimension.standard",
-      name: "Commercial Subsector",
+      name: "subsector",
       type: "subsector",
     },
     {
@@ -67,8 +67,7 @@
       description: "AEO 2021 commercial energy end uses (unitless) for growth rates (N=19, from 10 end uses, 3 fuel types)",
       file: "dimensions/aeo2021_commercial_energy_enduses.csv",
       module: "dsgrid.dimension.standard",
-      name: "AEO2021-commercial-energy-enduses-unitless",
-      name: "AEO Commercial End Uses",
+      name: "aeo_commercial_end_use",
     },
     {
       "class": "Scenario",
@@ -76,14 +75,14 @@
       file: "dimensions/aeo_reference_scenario.csv",
       module: "dsgrid.dimension.standard",
       type: "scenario",
-      name: "AEO Reference Scenario",
+      name: "reference_scenario",
     },
     {
       "class": "WeatherYear",
       description: "Weather year, 2012 only",
       file: "../../../../../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
-      name: "Weather 2012",
+      name: "weather_year_2012",
       type: "weather_year",
     },
     {
@@ -92,7 +91,7 @@
       file: "dimensions/model_years_trivial_2013_to_2050.csv",
       module: "dsgrid.dimension.standard",
       type: "model_year",
-      name: "AEO Model Years",
+      name: "model_year",
     },
     {
       "class": "NoOpTime",
@@ -100,7 +99,7 @@
       time_type: "noop",
       module: "dsgrid.dimension.standard",
       type: "time",
-      name: "No Op Time",
+      name: "no_op_time",
     },
   ],
 }

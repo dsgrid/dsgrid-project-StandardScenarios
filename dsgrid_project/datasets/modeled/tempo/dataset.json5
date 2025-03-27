@@ -41,28 +41,28 @@
     {
       "class": "County",
       type: "geography",
-      name: "County",
+      name: "county",
       file: "dimensions/counties.csv",
       description: "American Community Survey US counties, 2018.",
     },
     {
       "class": "Subsector",
       type: "subsector",
-      name: "Household and Vehicle Type",
+      name: "household_and_vehicle_type",
       file: "dimensions/bin.csv",
       description: "TEMPO demographic/geographic/vehicle bins. This is a cross-join of the following supplemental dimensions: * Composition (Single Driver, Some Drivers Smaller, Some Drivers Larger) * Income (Low Income, Middle Income, High Income) * Urbanity (Rural, Small Town, Suburban, Second City, Urban) * Vehicle Size Class (Compact, Midsize, SUV, Pickup) * Tech (PHEV25/PHEV50/BEV100/BEV300) ",
     },
     {
       "class": "EnergyEndUse",
       type: "metric",
-      name: "Electric Vehicle Charging",
+      name: "electric_vehicle_charging",
       file: "dimensions/end_use.csv",
       description: "Type of charging (L1 and L2, DCFC) used by TEMPO PEVs.",
     },
     {
       "class": "Time",
       type: "time",
-      name: "Hourly for Representative Weeks",
+      name: "hourly_for_representative_weeks",
       ranges: [
         {
           start: 1,
@@ -78,14 +78,14 @@
     {
       "class": "ModelYear",
       type: "model_year",
-      name: "TEMPO Model Years",
+      name: "model_year",
       file: "dimensions/year.csv",
       description: "TEMPO modeling years for CONUS 2022 project, 2018-2050",
     },
     {
       "class": "Sector",
       type: "sector",
-      name: "Transportation",
+      name: "sector",
       file: "dimensions/sector.csv",
       description: "Transportation Sector",
     },
@@ -102,7 +102,7 @@
       description: "Weather year, 2012 only",
       file: "../../../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
-      name: "Weather 2012",
+      name: "weather_year_2012",
       type: "weather_year",
     },
   ],
