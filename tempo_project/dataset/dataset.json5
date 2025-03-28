@@ -55,7 +55,7 @@
     {
       "class": "EnergyEndUse",
       type: "metric",
-      name: "electric_vehicle_charging",
+      name: "ev_charging_type",
       file: "dimensions/end_use.csv",
       description: "Type of charging (L1 and L2, DCFC) used by TEMPO PEVs.",
     },
@@ -101,7 +101,7 @@
       description: "Weather year, 2012 only",
       file: "../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
-      name: "weather_year_2012",
+      name: "weather_2012",
       type: "weather_year",
     },
   ],

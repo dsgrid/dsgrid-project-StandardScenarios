@@ -107,7 +107,7 @@
         ]
       },
       {
-        name: 'Subsector',
+        name: 'subsector',
         description: 'dsgrid CONUS 2022 Subsectors',
         type: 'subsector',
         filename: 'dimensions/subset/dsgrid_subsectors.csv',
@@ -147,7 +147,7 @@
         ]
       },
       {
-        name: "Vehicle Class",
+        name: "vehicle_class",
         description: "Light-duty passenger vehicle classes",
         type: "subsector",
         filename: "dimensions/subset/vehicle_class.csv",
@@ -171,7 +171,7 @@
         ],
       },
       {
-        name: "Household Size",
+        name: "household_size",
         description: "Household size with a focus on number of drivers",
         type: "subsector",
         filename: "dimensions/subset/household_size.csv",
@@ -191,7 +191,7 @@
         ],
       },
       {
-        name: "Household Income",
+        name: "household_income",
         description: "Household income bins",
         type: "subsector",
         filename: "dimensions/subset/household_income.csv",
@@ -211,7 +211,7 @@
         ],
       },
       {
-        name: "Vehicle Technology",
+        name: "vehicle_technology",
         description: "Electric vehicle technology by type (i.e., battery electric or plug-in hybrid) and range",
         type: "subsector",
         filename: "dimensions/subset/vehicle_technology.csv",
@@ -235,7 +235,7 @@
         ],
       },
       {
-        name: "Urbanity",
+        name: "urbanity",
         description: "Binned description of household locations focusing on population density",
         type: "subsector",
         filename: "dimensions/subset/urbanity.csv",
@@ -269,7 +269,7 @@
         description: 'US States L48',
         file: 'dimensions/supplemental/states.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'State',
+        name: 'state',
         type: 'geography',
         mapping: {
           description: 'Maps US Counties 2020 L48 to State',

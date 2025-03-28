@@ -70,7 +70,7 @@
     },
     {
       type: 'weather_year',
-      name: 'historical_weather_years',
+      name: 'historical_weather_year',
       file: 'dimensions/weather_years_2010_to_2020.csv',
       module: 'dsgrid.dimension.standard',
       class: 'WeatherYear',
@@ -78,7 +78,7 @@
     },
     {
       type: 'model_year',
-      name: 'historical_years',
+      name: 'historical_year',
       file: 'dimensions/model_years_2010_to_2020.csv',
       module: 'dsgrid.dimension.standard',
       class: 'ModelYear',

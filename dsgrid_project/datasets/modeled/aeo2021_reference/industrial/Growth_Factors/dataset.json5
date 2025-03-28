@@ -85,7 +85,7 @@
             description: "Weather year, 2012 only",
             file: "../../../../../dimensions/weather_years.csv",
             module: "dsgrid.dimension.standard",
-            name: "weather_year_2012",
+            name: "weather_2012",
             type: "weather_year",
         },
         {
