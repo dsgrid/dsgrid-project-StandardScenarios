@@ -39,8 +39,7 @@
   dimensions: [
     {
       type: "geography",
-      name: "conus_2022-resstock_US_county_FIP",
-      display_name: "County",
+      name: "county",
       file: "dimensions/conus_2022-resstock_geography_county_fips.csv",
       module: "dsgrid.dimension.standard",
       "class": "County",
@@ -48,8 +47,7 @@
     },
     {
       type: "sector",
-      name: "residential-sector",
-      display_name: "Residential",
+      name: "sector",
       file: "dimensions/sector_residential.csv",
       module: "dsgrid.dimension.standard",
       "class": "Sector",
@@ -57,8 +55,7 @@
     },
     {
       type: "subsector",
-      name: "conus_2022-resstock_building_types",
-      display_name: "ResStock Building Type",
+      name: "resstock_building_type",
       file: "dimensions/conus_2022-resstock_subsectors.csv",
       module: "dsgrid.dimension.standard",
       "class": "Subsector",
@@ -66,8 +63,7 @@
     },
     {
       type: "metric",
-      name: "conus_2022-resstock_energy_enduses_kwh",
-      display_name: "ResStock End Use",
+      name: "resstock_end_use",
       file: "dimensions/conus_2022-resstock_end_uses.csv",
       module: "dsgrid.dimension.standard",
       "class": "EnergyEndUse",
@@ -75,8 +71,7 @@
     },
     {
       type: "scenario",
-      name: "Conus-2022-reference",
-      display_name: "Reference",
+      name: "reference_scenario",
       file: "dimensions/scenario_conus_2022_reference.csv",
       module: "dsgrid.dimension.standard",
       "class": "Scenario",
@@ -84,8 +79,7 @@
     },
     {
       type: "model_year",
-      name: "Model-Year-2018",
-      display_name: "Model Year 2018",
+      name: "model_year_2018",
       file: "dimensions/model_year_2018.csv",
       module: "dsgrid.dimension.standard",
       "class": "ModelYear",
@@ -96,15 +90,13 @@
       description: "Weather year, 2012 only",
       file: "../../../dimensions/weather_years.csv",
       module: "dsgrid.dimension.standard",
-      name: "2012 Weather Year",
-      display_name: "Weather 2012",
+      name: "weather_2012",
       type: "weather_year",
     },
     { // for time wrapped dataset
       "class": "Time",
       frequency: "P0DT1H0M0.000000S",
-      name: "Time-2012-EST-8784-hourly-periodEnding-noLeapDayAdjustment-total-Hour0Start",
-      display_name: "Time EST",
+      name: "time_est",
       ranges: [
         {
           start: "2012-01-01 00:00:00",
@@ -123,8 +115,7 @@
     // { // for real dataset
     //   "class": "Time",
     //   frequency: "P0DT1H0M0.000000S",
-    //   name: "Time-2012-UTC-8784-hourly-periodEnding-total-Hour6Start-localRangesTZ",
-    //   display_name: "Timestamp",
+    //   name: "Timestamp",
     //   ranges: [
     //     {
     //       start: "2012-01-01 01:00:00",

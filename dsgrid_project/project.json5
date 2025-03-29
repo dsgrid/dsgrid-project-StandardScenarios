@@ -101,7 +101,7 @@
           subsector: {
             subset: [
               {
-                name: 'Subsectors by Sector',
+                name: 'subsectors_by_sector',
                 selectors: ['transportation_subsectors'],
               },
             ],
@@ -109,7 +109,7 @@
           metric: {
             subset: [
               {
-                name: 'End Uses by Sector',
+                name: 'end_uses_by_sector',
                 selectors: ['transportation_end_uses'],
               },
             ],
@@ -129,7 +129,7 @@
           subsector: {
             subset: [
               {
-                name: 'Subsectors by Sector',
+                name: 'subsectors_by_sector',
                 selectors: ['transportation_subsectors'],
               },
             ],
@@ -137,7 +137,7 @@
           metric: {
             subset: [
               {
-                name: 'End Uses by Sector',
+                name: 'end_uses_by_sector',
                 selectors: ['transportation_end_uses'],
               },
             ],
@@ -160,7 +160,7 @@
           subsector: {
             subset: [
               {
-                name: 'Subsectors by Sector',
+                name: 'subsectors_by_sector',
                 selectors: ['residential_subsectors'],
               },
             ],
@@ -168,7 +168,7 @@
           metric: {
             subset: [
               {
-                name: 'End Uses by Sector',
+                name: 'end_uses_by_sector',
                 selectors: ['residential_end_uses'],
               },
             ],
@@ -188,7 +188,7 @@
           subsector: {
             subset: [
               {
-                name: 'Subsectors by Sector',
+                name: 'subsectors_by_sector',
                 selectors: ['residential_subsectors'],
               },
             ],
@@ -196,7 +196,7 @@
           metric: {
             subset: [
               {
-                name: 'End Uses by Sector',
+                name: 'end_uses_by_sector',
                 selectors: ['residential_end_uses'],
               },
             ],
@@ -216,7 +216,7 @@
           subsector: {
             subset: [
               {
-                name: 'Subsectors by Sector',
+                name: 'subsectors_by_sector',
                 selectors: ['residential_subsectors'],
               },
             ],
@@ -224,7 +224,7 @@
           metric: {
             subset: [
               {
-                name: 'End Uses by Sector',
+                name: 'end_uses_by_sector',
                 selectors: ['residential_end_uses'],
               },
             ],
@@ -247,7 +247,7 @@
           subsector: {
             subset: [
               {
-                name: 'Subsectors by Sector',
+                name: 'subsectors_by_sector',
                 selectors: ['commercial_subsectors'],
               },
             ],
@@ -255,7 +255,7 @@
           metric: {
             subset: [
               {
-                name: 'End Uses by Sector',
+                name: 'end_uses_by_sector',
                 selectors: ['commercial_end_uses'],
               },
             ],
@@ -275,7 +275,7 @@
           subsector: {
             subset: [
               {
-                name: 'Subsectors by Sector',
+                name: 'subsectors_by_sector',
                 selectors: ['commercial_subsectors'],
               },
             ],
@@ -283,7 +283,7 @@
           metric: {
             subset: [
               {
-                name: 'End Uses by Sector',
+                name: 'end_uses_by_sector',
                 selectors: ['commercial_end_uses'],
               },
             ],
@@ -303,7 +303,7 @@
           subsector: {
             subset: [
               {
-                name: 'Subsectors by Sector',
+                name: 'subsectors_by_sector',
                 selectors: ['commercial_subsectors'],
               },
             ],
@@ -311,7 +311,7 @@
           metric: {
             subset: [
               {
-                name: 'End Uses by Sector',
+                name: 'end_uses_by_sector',
                 selectors: ['commercial_end_uses'],
               },
             ],
@@ -384,8 +384,7 @@
         description: 'US counties for L48, Census 2020 vintage, no territories',
         file: 'dimensions/counties.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'US Counties 2020 L48',
-        display_name: 'County',
+        name: 'county',
         type: 'geography',
       },
       {
@@ -393,8 +392,7 @@
         description: 'dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Industrial and Transportation',
         file: 'dimensions/sectors.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'Sectors - Com-Res-Ind-Trans',
-        display_name: 'Sector',
+        name: 'sector',
         type: 'sector',
       },
       {
@@ -402,8 +400,7 @@
         description: 'dsgrid CONUS 2022 Subsectors',
         file: 'dimensions/subsectors.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'CONUS-2022-Detailed-Subsectors',
-        display_name: 'Subsector',
+        name: 'subsector',
         type: 'subsector',
       },
       {
@@ -411,8 +408,7 @@
         description: "dsgrid CONUS 2022 End Uses (all fuel types)",
         file: "dimensions/enduses.csv",
         module: "dsgrid.dimension.standard",
-        name: "CONUS-2022-Detailed-End-Uses",
-        display_name: "End Use",
+        name: "end_use",
         type: "metric",
       },
       {
@@ -420,8 +416,7 @@
         description: 'Model year, 2010-2050',
         file: 'dimensions/model_years.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'Model Years 2010 to 2050',
-        display_name: 'Model Year',
+        name: 'model_year',
         type: 'model_year',
       },
       {
@@ -429,15 +424,13 @@
         description: 'Scenarios for the dsgrid CONUS 2022 project, which include a Reference scenario and two light-duty vehicle electrification scenarios',
         file: 'dimensions/scenarios.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'CONUS-2022-scenarios',
-        display_name: 'Scenario',
+        name: 'scenario',
         type: 'scenario',
       },
       {
         class: 'Time',
         frequency: 'P0DT1H0M0.000000S',
-        name: 'Time-2012-EST-hourly-periodBeginning-noLeapDayAdjustment-total',
-        display_name: 'Time EST',
+        name: 'time_est',
         time_type: 'datetime',
         leap_day_adjustment: 'none',
         description: 'Time dimension, 2012 hourly EST, hour-beginning, no Leap Day Adjustment, total value',
@@ -458,15 +451,13 @@
         description: 'Weather year, 2012 only',
         file: 'dimensions/weather_years.csv',
         module: 'dsgrid.dimension.standard',
-        name: '2012 Weather Year',
-        display_name: 'Weather 2012',
+        name: 'weather_2012',
         type: 'weather_year',
       },
     ],
     subset_dimensions: [
       {
-        name: 'End Uses by Fuel Type',
-        display_name: 'end_uses_by_fuel_type',
+        name: 'end_uses_by_fuel_type',
         description: 'Provides selection of end uses by fuel type.',
         type: 'metric',
         filename: 'dimensions/subset/end_uses_by_fuel_type.csv',
@@ -499,8 +490,7 @@
         ],
       },
       {
-        name: 'End Uses by Sector',
-        display_name: 'end_uses_by_sector',
+        name: 'end_uses_by_sector',
         description: 'Provides selection of end uses by sector.',
         type: 'metric',
         filename: 'dimensions/subset/end_uses_by_sector.csv',
@@ -529,8 +519,7 @@
         ],
       },
       {
-        name: 'Subsectors by Sector',
-        display_name: 'subsectors_by_sector',
+        name: 'subsectors_by_sector',
         description: 'Provides selection of subsectors by sector.',
         type: 'subsector',
         filename: 'dimensions/subset/subsectors_by_sector.csv',
@@ -550,8 +539,7 @@
         ],
       },
       {
-        name: 'Subset Sectors',
-        display_name: 'subset_sectors',
+        name: 'subset_sectors',
         description: 'Provides sector dimensions for derived datasets.',
         type: 'sector',
         filename: 'dimensions/subset/sectors.csv',
@@ -582,8 +570,7 @@
         description: 'US States L48',
         file: 'dimensions/supplemental/states.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'US States L48',
-        display_name: 'State',
+        name: 'state',
         type: 'geography',
         mapping: {
           description: 'Maps US Counties 2020 L48 to State',
@@ -596,8 +583,7 @@
         description: 'US Census Regions',
         file: 'dimensions/supplemental/census_regions.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'US Census Regions',
-        display_name: 'Census Region',
+        name: 'census_region',
         type: 'geography',
         mapping: {
           description: 'Maps US Counties 2020 L48 to CensusRegion',
@@ -610,8 +596,7 @@
         description: 'US Census Divisions',
         file: 'dimensions/supplemental/census_divisions.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'US Census Divisions',
-        display_name: 'Census Division',
+        name: 'census_division',
         type: 'geography',
         mapping: {
           description: 'Maps US Counties 2020 L48 to CensusDivision',
@@ -624,8 +609,7 @@
         description: 'ReEDS Power Control Areas',
         file: 'dimensions/supplemental/reeds_pca.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'ReEDS PCA',
-        display_name: 'ReEDS PCA',
+        name: 'reeds_pca',
         type: 'geography',
         mapping: {
           description: 'Maps US Counties 2020 L48 to ReEDS Power Control Areas',
@@ -638,8 +622,7 @@
         description: 'Contiguous United States',
         file: 'dimensions/supplemental/conus.csv',
         module: 'dsgrid.dimension.standard',
-        name: 'Contiguous United States',
-        display_name: 'CONUS',
+        name: 'conus',
         type: 'geography',
         mapping: {
           description: 'Maps US Counties 2020 L48 to CONUS',

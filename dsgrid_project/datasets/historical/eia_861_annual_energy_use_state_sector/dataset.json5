@@ -33,8 +33,7 @@
       description: 'US States',
       file: 'dimensions/states.csv',
       module: 'dsgrid.dimension.standard',
-      name: 'US States',
-      display_name: 'State',
+      name: 'state',
       type: 'geography',
     },
     {
@@ -42,14 +41,12 @@
       description: 'dsgrid Standard Scenarios 2021 Sectors; Commercial, Residential, Industrial and Transportation',
       file: 'dimensions/sectors.csv',
       module: 'dsgrid.dimension.standard',
-      name: 'Sectors - Com-Res-Ind-Trans',
-      display_name: 'Sector',
+      name: 'sector',
       type: 'sector',
     },
     {
       type: 'subsector',
-      name: 'Unspecified Subsectors',
-      display_name: 'Unspecified Subsectors',
+      name: 'unspecified_subsector',
       file: 'dimensions/subsectors_unspecified.csv',
       module: 'dsgrid.dimension.standard',
       class: 'Subsector',
@@ -57,8 +54,7 @@
     },
     {
       type: 'metric',
-      name: 'EIA861_customer_sales',
-      display_name: 'Customer Sales',
+      name: 'customer_sales',
       file: 'dimensions/eia861_sales_metric.csv',
       module: 'dsgrid.dimension.standard',
       class: 'EnergyEndUse',
@@ -66,8 +62,7 @@
     },
     {
       type: 'scenario',
-      name: 'Conus-2022-reference',
-      display_name: 'Reference',
+      name: 'reference_scenario',
       file: '../../modeled/resstock/dimensions/scenario_conus_2022_reference.csv',
       module: 'dsgrid.dimension.standard',
       class: 'Scenario',
@@ -75,8 +70,7 @@
     },
     {
       type: 'weather_year',
-      name: 'Weather_Years-2010_to_2020',
-      display_name: 'None',
+      name: 'historical_weather_year',
       file: 'dimensions/weather_years_2010_to_2020.csv',
       module: 'dsgrid.dimension.standard',
       class: 'WeatherYear',
@@ -84,8 +78,7 @@
     },
     {
       type: 'model_year',
-      name: 'Model_Years-2010_to_2020',
-      display_name: 'None',
+      name: 'historical_year',
       file: 'dimensions/model_years_2010_to_2020.csv',
       module: 'dsgrid.dimension.standard',
       class: 'ModelYear',
@@ -97,8 +90,7 @@
       time_type: 'annual',
       module: 'dsgrid.dimension.standard',
       description: 'Annual time 2010-2020',
-      name: 'annual_time-2010_to_2020',
-      display_name: 'Annual',
+      name: 'annual_time',
       ranges: [
         {
           start: '2010',

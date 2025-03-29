@@ -35,8 +35,7 @@
   dimensions: [
     {
       type: 'geography',
-      name: 'states',
-      display_name: 'States',
+      name: 'state',
       file: '../../../dimensions/supplemental/states.csv',
       module: 'dsgrid.dimension.standard',
       class: 'State',
@@ -44,8 +43,7 @@
     },
     {
       type: 'sector',
-      name: 'all-sectors',
-      display_name: 'All Sectors',
+      name: 'all_sectors',
       file: 'dimensions/sector.csv',
       module: 'dsgrid.dimension.standard',
       class: 'Sector',
@@ -53,8 +51,7 @@
     },
     {
       type: 'subsector',
-      name: 'unspecified-subsectors',
-      display_name: 'Subsector Unspecified',
+      name: 'unspecified_subsector',
       file: 'dimensions/subsectors.csv',
       module: 'dsgrid.dimension.standard',
       class: 'Subsector',
@@ -62,8 +59,7 @@
     },
     {
       type: 'metric',
-      name: 'Unspecified Electricity',
-      display_name: 'Unspecified Electricity',
+      name: 'unspecified_electricity',
       file: 'dimensions/metric.csv',
       module: 'dsgrid.dimension.standard',
       class: 'EnergyEndUse',
@@ -71,8 +67,7 @@
     },
     {
       type: 'scenario',
-      name: 'Conus-2022-reference',
-      display_name: 'Reference',
+      name: 'reference_scenario',
       file: '../../modeled/resstock/dimensions/scenario_conus_2022_reference.csv',
       module: 'dsgrid.dimension.standard',
       class: 'Scenario',
@@ -80,8 +75,7 @@
     },
     {
       type: 'model_year',
-      name: 'Model-Year-2012',
-      display_name: '2012',
+      name: 'model_year_2012',
       file: 'dimensions/model_year.csv',
       module: 'dsgrid.dimension.standard',
       class: 'ModelYear',
@@ -92,14 +86,12 @@
       description: 'Weather year, 2012 only',
       file: '../../../dimensions/weather_years.csv',
       module: 'dsgrid.dimension.standard',
-      name: '2012 Weather Year',
-      display_name: '2012 Weather',
+      name: 'weather_2012',
       type: 'weather_year',
     },
     {
       // Note: this does not match the project time because of it being period-ending, not period-beginning
-      name: 'Time-2012-EST-hourly-periodEnding-noDST-noLeapDayAdjustment-total-UTChour1start',
-      display_name: '2012 Hourly EST',
+      name: 'EST_hourly_2012',
       type: 'time',
       module: 'dsgrid.dimension.standard',
       class: 'Time',
