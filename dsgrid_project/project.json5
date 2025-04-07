@@ -657,7 +657,7 @@
         type: 'metric',
         mapping: {
             description: 'Maps from all end uses to heating and cooling end uses',
-            file: 'dimension_mapings/base_to_supplemental/lookup_end_use_to_heating_cooling.csv',
+            file: 'dimension_mapings/base_to_supplemental/lookup_end_use_to_simplified_end_use.csv',
             mapping_type: 'many_to_one_aggregation',
         }
       },
