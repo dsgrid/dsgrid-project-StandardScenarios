@@ -1,5 +1,16 @@
-id,name
-heating,heating
-cooling,cooling
-water_heating,water_heating
-other,other
+id,name,fuel_id,unit
+electricity_cooling,Electricity for Space Cooling,electricity,MWh
+electricity_ev,Electricity for Electric Vehicle Charging,electricity,MWh
+electricity_heating,Electricity for Space Heating,electricity,MWh
+electricity_industrial,Electricity for Industrial Processes,electricity,MWh
+electricity_other,Electricity for Other Purposes,electricity,MWh
+electricity_water_heating,Electricity for Water Heating,electricity,MWh
+fuel_oil_heating,Fuel Oil for Space Heating,fuel_oil,MBtu
+fuel_oil_water_heating,Fuel Oil for Water Heating,fuel_oil,MBtu
+natural_gas_heating,Natural Gas for Space Heating,natural_gas,MBtu
+natural_gas_other,Natural Gas for Other Purposes,natural_gas,MBtu
+natural_gas_water_heating,Natural Gas for Water Heating,natural_gas,MBtu
+propane_heating,Propane for Space Heating,propane,MBtu
+propane_other,Propane for Other Purposes,propane,MBtu
+propane_water_heating,Propane for Water Heating,propane,MBtu
+wood_heating,Wood for Space Heating,wood,MBtu
