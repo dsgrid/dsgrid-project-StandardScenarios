@@ -10,9 +10,9 @@
   origin_organization: 'NREL',
   origin_contributors: ['Elaine Hale'],
   origin_project: 'NREL Electrification Futures Study',
-  origin_date: '2018',
-  origin_version: '0.2.0',
-  source: 'https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/chp_dg.dsg',
+  data_source_date: '2018',
+  data_source_version: '0.2.0',
+  data_source_doi_url: 'https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/chp_dg.dsg',
   data_classification: 'low',
   tags: ['losses', 'efs', '2012', 'dsgrid_v0.2.0'],
   trivial_dimensions: [
@@ -25,12 +25,20 @@
 
   // TODO: not sure if project association for data_source__model_year is correct here for dsgrid_efs_2012_losses. Do we expect only 2012 model year? Answer depends on TODO above.
 
-  data_schema: {
-    table_format: {
-      format_type: "pivoted",
-      pivoted_dimension_type: "metric",
+  table_schema: {
+    data_file: {
+      path: "./load_data.parquet",
     },
-    data_schema_type: "standard",
+    lookup_data_file: {
+      path: "./load_data_lookup.parquet",
+    },
+    data_schema: {
+      table_format: {
+        format_type: "pivoted",
+        pivoted_dimension_type: "metric",
+      },
+      data_schema_type: "standard",
+    },
   },
   dimensions: [
     {

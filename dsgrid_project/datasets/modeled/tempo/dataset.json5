@@ -15,9 +15,9 @@
     "Matteo Muratori",
   ],
   origin_project: "dsgrid CONUS 2022",
-  origin_date: "Dec 21 2021",
-  origin_version: "dsgrid",
-  source: "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c7031c046cfe27907",
+  data_source_date: "Dec 21 2021",
+  data_source_version: "dsgrid",
+  data_source_doi_url: "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c7031c046cfe27907",
   data_classification: "low",
   tags: [
     "transportation",
@@ -30,12 +30,20 @@
     "weather_year",
   ],
   use_project_geography_time_zone: true,
-  data_schema: {
-    table_format: {
-      format_type: "pivoted",
-      pivoted_dimension_type: "metric",
+  table_schema: {
+    data_file: {
+      path: "./load_data.parquet",
     },
-    data_schema_type: "standard",
+    lookup_data_file: {
+      path: "./load_data_lookup.parquet",
+    },
+    data_schema: {
+      table_format: {
+        format_type: "pivoted",
+        pivoted_dimension_type: "metric",
+      },
+      data_schema_type: "standard",
+    },
   },
   dimensions: [
     {

@@ -33,7 +33,6 @@ dataset_dir = project_dir / "datasets" / "historical" / "dsgrid_efs_historical_2
 project_json5 = project_dir / "project.json5"
 dataset_json5 = dataset_dir / "dataset.json5"
 dimension_mapping_file = dataset_dir / "dimension_mappings.json5"
-dataset_path = Path("/projects/dsgrid/data-StandardScenarios/dsgrid_efs_historical_2012_conus_load_shapes")
 
 # remove tmp supplemental dir
 tmp_supplemental_dir = project_dir / "__tmp_supplemental__"
@@ -55,7 +54,6 @@ manager.register(config_file=project_json5,
 
 # register dataset
 manager.dataset_manager.register(config_file=dataset_json5,
-                                 dataset_path=dataset_path,
                                  submitter=submitter,
                                  log_message="test")
 

@@ -33,7 +33,6 @@ dataset_dir = project_dir / "datasets" / "historical" / "eia_861_annual_energy_u
 project_json5 = project_dir / "project.json5"
 dataset_json5 = dataset_dir / "dataset.json5"
 dimension_mapping_file = dataset_dir / "dimension_mappings.json5"
-dataset_path = Path("/Users/mmooney/OneDrive - NREL/Documents - dsgrid-load/dsgrid-v2.0/Data Coordination/eia861/processed/eia_861_annual_energy_use_state_sector") # located on dsgrid-load teams files
 
 # remove tmp supplemental dir
 tmp_supplemental_dir = project_dir / "__tmp_supplemental__"
@@ -55,11 +54,9 @@ manager.register(config_file=project_json5,
                  )
 
 # register dataset
-manager.dataset_manager.register(config_file=dataset_json5, 
-                                 dataset_path=dataset_path, 
-                                 submitter=submitter, 
-                                 log_message="test", 
-                                 force=True)
+manager.dataset_manager.register(config_file=dataset_json5,
+                                 submitter=submitter,
+                                 log_message="test")
 
 # submit dataset to project
 manager.submit_dataset(

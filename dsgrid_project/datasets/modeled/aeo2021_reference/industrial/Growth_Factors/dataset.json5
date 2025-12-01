@@ -9,9 +9,9 @@
         "Elaine Hale",
     ],
     origin_project: "dsgrid CONUS 2022",
-    origin_date: "2023-02-03",
-    origin_version: "0.1.0",
-    source: "Data derived from AEO 2021 Industrial Sector Key Indicators and Consumption Table 6, EIA API category_id 4047917",
+    data_source_date: "2023-02-03",
+    data_source_version: "0.1.0",
+    data_source_doi_url: "Data derived from AEO 2021 Industrial Sector Key Indicators and Consumption Table 6, EIA API category_id 4047917",
     data_classification: "low",
     tags: [
         "industrial",
@@ -28,6 +28,10 @@
         "weather_year",
         "model_year",
     ],
+  table_schema: {
+    data_file: {
+      path: "./load_data.parquet",
+    },
     data_schema: {
       table_format: {
         format_type: "pivoted",
@@ -35,6 +39,7 @@
       },
       data_schema_type: "one_table",
     },
+  },
     dataset_qualifier_metadata: {
         growth_rate_type: "exponential_annual",
         dataset_qualifier_type: "growth_rate",
