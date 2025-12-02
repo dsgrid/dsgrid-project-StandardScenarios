@@ -29,10 +29,10 @@
   ],
   table_schema: {
     data_file: {
-      path: "./load_data.parquet",
+      path: "load_data.parquet",
     },
     lookup_data_file: {
-      path: "./load_data_lookup.parquet",
+      path: "load_data_lookup.parquet",
     },
     data_schema: {
       table_format: {
