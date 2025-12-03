@@ -21,10 +21,10 @@ The script will generate a large amount of data (currently 8-9 TiB). Run the scr
 The rest of these instructions assume that you are working from an empty directory in
 `/scratch/$USER`.
 
-If `${HOME}/.dsgrid.json5` exists, edit it to point to the correct database and ensure that
-``offline`` is true. If you don't have the file, run this command with correct values:
+If `${HOME}/.dsgrid.json5` exists, edit it to point to the correct database
+If you don't have the file, run this command with correct values:
 ```
-$ dsgrid config create --database-name TEXT --database-url TEXT --offline
+$ dsgrid config create --database-name TEXT --database-url TEXT
 ```
 
 ### Required modifications

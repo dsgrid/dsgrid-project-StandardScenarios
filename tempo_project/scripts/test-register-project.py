@@ -6,7 +6,7 @@ CLI COMMANDS:
 --------------
 
 # configure dsgrid (feel free to use a different registry and/or database name)
-dsgrid config create -u http://localhost:8529 -N test-tempo --offline
+dsgrid config create -u http://localhost:8529 -N test-tempo
 
 # register the project
 dsgrid registry projects register "dsgrid-project-StandardScenarios/tempo_project/project.json5" --log-message "test"

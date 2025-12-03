@@ -1,5 +1,3 @@
-// translated from dsgrid efs using dan's script:  https://github.com/dsgrid/dsgrid-legacy-efs-api/tree/main/bin
-// data located in: /projects/dsgrid/efs_datasets/chp_dg.dsg
 {
   dataset_id: "dsgrid_efs_2012_distributed_generation",
   dataset_type: "historical",
@@ -27,21 +25,6 @@
     "scenario",
     "subsector",
   ],
-  table_schema: {
-    data_file: {
-      path: "load_data.parquet",
-    },
-    lookup_data_file: {
-      path: "load_data_lookup.parquet",
-    },
-    data_schema: {
-      table_format: {
-        format_type: "pivoted",
-        pivoted_dimension_type: "metric",
-      },
-      data_schema_type: "standard",
-    },
-  },
   dimensions: [
     {
       type: "geography",
@@ -100,7 +83,6 @@
       type: "weather_year",
     },
     {
-      // Note: this does not match the project time because of it being period-ending, not period-beginning
       name: "EST_hourly_2012",
       type: "time",
       module: "dsgrid.dimension.standard",
@@ -121,4 +103,15 @@
       ],
     },
   ],
+  data_layout: {
+    table_format: "two_table",
+    value_format: "pivoted",
+    pivoted_dimension_type: "metric",
+    data_file: {
+      path: "load_data.parquet",
+    },
+    lookup_data_file: {
+      path: "load_data_lookup.parquet",
+    },
+  },
 }

@@ -5,13 +5,13 @@ Script to test dataset submission to project and to use for debugging
 CLI COMMANDS:
 --------------
 # register the project
-dsgrid registry --offline projects register "dsgrid-project-StandardScenarios/dsgrid_project/project.json5" -l "test"
+dsgrid registry projects register "dsgrid-project-StandardScenarios/dsgrid_project/project.json5" -l "test"
 
 # register the dataset
-dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_dpv/dataset.json5" "/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_dpv" -l "test"
+dsgrid registry datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_dpv/dataset.json5" "/projects/dsgrid/data-StandardScenarios/dsgrid_efs_2012_dpv" -l "test"
 
 # submit dataset to project
-dsgrid registry --offline projects submit-dataset -d "dsgrid_efs_2012_dpv" -p "dsgrid_conus_2022" -m "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_dpv/dimension_mappings.json5" -l "test"
+dsgrid registry projects submit-dataset -d "dsgrid_efs_2012_dpv" -p "dsgrid_conus_2022" -m "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/dsgrid_efs_2012_dpv/dimension_mappings.json5" -l "test"
 """
 
 import shutil

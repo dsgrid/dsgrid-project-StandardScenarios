@@ -30,21 +30,6 @@
     "weather_year",
   ],
   use_project_geography_time_zone: true,
-  table_schema: {
-    data_file: {
-      path: "load_data.parquet",
-    },
-    lookup_data_file: {
-      path: "load_data_lookup.parquet",
-    },
-    data_schema: {
-      table_format: {
-        format_type: "pivoted",
-        pivoted_dimension_type: "metric",
-      },
-      data_schema_type: "standard",
-    },
-  },
   dimensions: [
     {
       "class": "County",
@@ -98,7 +83,6 @@
       description: "Transportation Sector",
     },
     {
-      // TODO: remove this scenario dimension when we are ready to scrap the dummy dataset
       "class": "Scenario",
       type: "scenario",
       name: "Scenario",
@@ -114,4 +98,15 @@
       type: "weather_year",
     },
   ],
+  data_layout: {
+    table_format: "two_table",
+    value_format: "pivoted",
+    pivoted_dimension_type: "metric",
+    data_file: {
+      path: "load_data.parquet",
+    },
+    lookup_data_file: {
+      path: "load_data_lookup.parquet",
+    },
+  },
 }

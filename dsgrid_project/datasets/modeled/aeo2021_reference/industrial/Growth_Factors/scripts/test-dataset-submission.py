@@ -5,13 +5,13 @@ Script to test dataset submission to project and to use for debugging
 CLI COMMANDS:
 --------------
 # register the project
-dsgrid registry --offline projects register "dsgrid-project-StandardScenarios/dsgrid_project/project.json5" -l "test"
+dsgrid registry projects register "dsgrid-project-StandardScenarios/dsgrid_project/project.json5" -l "test"
 
 # register the dataset
-dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/dataset.json5" "dsgrid-project-StandardScenarios/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/data" -l "test"
+dsgrid registry datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/dataset.json5" "dsgrid-project-StandardScenarios/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/data" -l "test"
 
 # submit dataset to project
-dsgrid registry --offline projects submit-dataset -d "aeo2021_reference_industrial_energy_use_growth_factors" -p "dsgrid_conus_2022" -m "dsgrid-project-StandardScenarios/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/dimension_mappings.json5" -l "test"
+dsgrid registry projects submit-dataset -d "aeo2021_reference_industrial_energy_use_growth_factors" -p "dsgrid_conus_2022" -m "dsgrid-project-StandardScenarios/dsgrid_project/datasets/modeled/aeo2021_reference/industrial/Growth_Factors/dimension_mappings.json5" -l "test"
 """
 
 import shutil

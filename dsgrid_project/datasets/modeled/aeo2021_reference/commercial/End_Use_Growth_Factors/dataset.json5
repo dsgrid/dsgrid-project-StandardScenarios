@@ -26,18 +26,6 @@
     "weather_year",
     "model_year",
   ],
-  table_schema: {
-    data_file: {
-      path: "load_data.parquet",
-    },
-    data_schema: {
-      table_format: {
-        format_type: "pivoted",
-        pivoted_dimension_type: "metric",
-      },
-      data_schema_type: "one_table",
-    },
-  },
   dataset_qualifier_metadata: {
     growth_rate_type: "exponential_annual",
     dataset_qualifier_type: "growth_rate",
@@ -107,4 +95,12 @@
       name: "no_op_time",
     },
   ],
+  data_layout: {
+    table_format: "one_table",
+    value_format: "pivoted",
+    pivoted_dimension_type: "metric",
+    data_file: {
+      path: "load_data.parquet",
+    },
+  },
 }

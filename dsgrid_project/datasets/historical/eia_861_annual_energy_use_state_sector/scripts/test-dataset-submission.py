@@ -5,13 +5,13 @@ Script to test dataset submission to project and to use for debugging
 CLI COMMANDS:
 --------------
 # register the project
-dsgrid registry --offline projects register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/project.json5" -l "test"
+dsgrid registry projects register "/Users/mmooney/Documents/github/github.com/dsgrid/dsgrid-project-StandardScenarios/dsgrid_project/project.json5" -l "test"
 
 # register the dataset
-dsgrid registry --offline datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dataset.json5" "/projects/dsgrid/data-StandardScenarios/eia_861_annual_energy_use_state_sector" -l "test"
+dsgrid registry datasets register "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dataset.json5" "/projects/dsgrid/data-StandardScenarios/eia_861_annual_energy_use_state_sector" -l "test"
 
 # submit dataset to project
-dsgrid registry --offline projects submit-dataset -d "eia_861_annual_energy_use_state_sector" -p "dsgrid_conus_2022" -m "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dimension_mappings.json5" -l "test"
+dsgrid registry projects submit-dataset -d "eia_861_annual_energy_use_state_sector" -p "dsgrid_conus_2022" -m "dsgrid-project-StandardScenarios/dsgrid_project/datasets/historical/eia_861_annual_energy_use_state_sector/dimension_mappings.json5" -l "test"
 """
 
 import shutil

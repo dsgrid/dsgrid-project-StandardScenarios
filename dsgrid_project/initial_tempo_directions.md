@@ -68,12 +68,6 @@ Options:
   --remote-path TEXT  path to dsgrid remote registry  [default: s3://nrel-
                       dsgrid-registry]
 
-  -o, --offline       run in registry commands in offline mode. WARNING: any
-                      commands you perform in offline mode run the risk of
-                      being out-of-sync with the latest dsgrid registry, and
-                      any write commands will not be officially synced with
-                      the remote registry
-
   -d, --dry-run       run registry commands in dry-run mode without writing to
                       the local or remote registry
 
@@ -110,7 +104,7 @@ Get the dimension ID and version information and update the dataset.json5 for ea
 ## Step 3: Register dataset
 
 ```
-dsgrid registry --offline datasets register {path-to-dataset.json5} -l "{log message}”
+dsgrid registry datasets register {path-to-dataset.json5} -l "{log message}”
 ```
 
 
