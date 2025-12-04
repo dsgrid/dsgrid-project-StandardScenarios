@@ -1,18 +1,17 @@
-// translated from dsgrid efs using dan's script:  https://github.com/dsgrid/dsgrid-legacy-efs-api/tree/main/bin
 {
   dataset_id: "dsgrid_efs_2012_dpv",
   dataset_type: "historical",
   data_source: "dsgrid_efs",
-  description:  "2012 historical distributed PV (kWh) for CONUS developed as part of the Electrification Futures Study (2018). Data created using code in https://github.nrel.gov/dsgrid/dpv, which uses NSRDB, SAM, and dGen.",
+  description: "2012 historical distributed PV (kWh) for CONUS developed as part of the Electrification Futures Study (2018). Data created using code in https://github.nrel.gov/dsgrid/dpv, which uses NSRDB, SAM, and dGen.",
   origin_creator: "Gord Stephen",
   origin_organization: "NREL",
   origin_contributors: [
     "Gord Stephen",
   ],
   origin_project: "2018 Electrification Futures Study",
-  origin_date: "2018",
-  origin_version: "0.2.0",
-  source: "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/distributedpv_sectoral.dsg",
+  data_source_date: "2018",
+  data_source_version: "0.2.0",
+  data_source_doi_url: "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/distributedpv_sectoral.dsg",
   data_classification: "low",
   tags: [
     "dpv",
@@ -27,13 +26,6 @@
     "data_source",
     "subsector",
   ],
-  data_schema: {
-    table_format: {
-      format_type: "pivoted",
-      pivoted_dimension_type: "metric",
-    },
-    data_schema_type: "standard",
-  },
   dimensions: [
     {
       type: "geography",
@@ -60,7 +52,6 @@
       description: "Unspecified Subsectors",
     },
     {
-      // TODO: currently the DPV data is in MWh, but the project units are kWh. dsgrid needs to handle unit conversions.
       type: "metric",
       name: "distributed_pv",
       file: "dimensions/metric.csv",
@@ -93,7 +84,6 @@
       type: "weather_year",
     },
     {
-      // Note: this does not match the project time because of it being period-ending, not period-beginning
       name: "EST_hourly_2012",
       type: "time",
       module: "dsgrid.dimension.standard",
@@ -114,4 +104,15 @@
       ],
     },
   ],
+  data_layout: {
+    table_format: "two_table",
+    value_format: "pivoted",
+    pivoted_dimension_type: "metric",
+    data_file: {
+      path: "load_data.parquet",
+    },
+    lookup_data_file: {
+      path: "load_data_lookup.parquet",
+    },
+  },
 }

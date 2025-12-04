@@ -12,9 +12,9 @@
     "Noah Sandoval",
   ],
   origin_project: "End Use Load Profiles",
-  origin_date: "2021-09-15",
-  origin_version: "0.1.0",
-  source: "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012_dsgrid/",
+  data_source_date: "2021-09-15",
+  data_source_version: "0.1.0",
+  data_source_doi_url: "s3://eulp/simulation_output/national_runs/resstock/eulp_res_final_2012_dsgrid/",
   data_classification: "low",
   tags: [
     "residential",
@@ -29,13 +29,6 @@
     "model_year",
     "scenario",
   ],
-  data_schema: {
-    table_format: {
-      format_type: "pivoted",
-      pivoted_dimension_type: "metric",
-    },
-    data_schema_type: "standard",
-  },
   dimensions: [
     {
       type: "geography",
@@ -93,7 +86,7 @@
       name: "weather_2012",
       type: "weather_year",
     },
-    { // for time wrapped dataset
+    {
       "class": "Time",
       frequency: "P0DT1H0M0.000000S",
       name: "time_est",
@@ -112,25 +105,16 @@
       measurement_type: "total",
       type: "time",
     },
-    // { // for real dataset
-    //   "class": "Time",
-    //   frequency: "P0DT1H0M0.000000S",
-    //   name: "Timestamp",
-    //   ranges: [
-    //     {
-    //       start: "2012-01-01 01:00:00",
-    //       end: "2013-01-01 00:00:00",
-    //     },
-    //   ],
-    //   ranges_timezone: "LOCAL",
-    //   time_type: "datetime",
-    //   leap_day_adjustment: "none",
-    //   description: "Time dimension, 2012 hourly UTC, period-ending, starts at Hour 6, 8784 timestamps, total value, local ranges_timezone",
-    //   time_interval_type: "period_ending",
-    //   str_format: "%Y-%m-%d %H:%M:%S",
-    //   timezone: "UTC",
-    //   measurement_type: "total",
-    //   type: "time",
-    // },
   ],
+  data_layout: {
+    table_format: "two_table",
+    value_format: "pivoted",
+    pivoted_dimension_type: "metric",
+    data_file: {
+      path: "load_data.parquet",
+    },
+    lookup_data_file: {
+      path: "load_data_lookup.parquet",
+    },
+  },
 }

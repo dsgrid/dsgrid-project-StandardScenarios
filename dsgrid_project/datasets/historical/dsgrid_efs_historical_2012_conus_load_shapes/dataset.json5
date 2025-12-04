@@ -1,4 +1,3 @@
-// translated from dsgrid efs using dan's script:  https://github.com/dsgrid/dsgrid-legacy-efs-api/tree/main/bin
 {
   dataset_id: "dsgrid_efs_historical_2012_conus_load_shapes",
   dataset_type: "historical",
@@ -14,9 +13,9 @@
     "Elaine Hale",
   ],
   origin_project: "2018 Electrification Futures Study",
-  origin_date: "2018",
-  origin_version: "0.2.0",
-  source: "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/distributedpv_sectoral.dsg",
+  data_source_date: "2018",
+  data_source_version: "0.2.0",
+  data_source_doi_url: "https://oedi-data-lake.s3.amazonaws.com/dsgrid-2018-efs/raw_complete/distributedpv_sectoral.dsg",
   data_classification: "low",
   tags: [
     "historical_hourly",
@@ -32,13 +31,6 @@
     "scenario",
     "subsector",
   ],
-  data_schema: {
-    table_format: {
-      format_type: "pivoted",
-      pivoted_dimension_type: "metric",
-    },
-    data_schema_type: "standard",
-  },
   dimensions: [
     {
       type: "geography",
@@ -65,12 +57,12 @@
       description: "Unspecified Subsectors",
     },
     {
-      type: 'metric',
-      name: 'unspecified_electricity',
-      file: 'dimensions/metric.csv',
-      module: 'dsgrid.dimension.standard',
-      class: 'EnergyEndUse',
-      description: 'Unspecified Electricity',
+      type: "metric",
+      name: "unspecified_electricity",
+      file: "dimensions/metric.csv",
+      module: "dsgrid.dimension.standard",
+      "class": "EnergyEndUse",
+      description: "Unspecified Electricity",
     },
     {
       type: "scenario",
@@ -97,7 +89,6 @@
       type: "weather_year",
     },
     {
-      // Note: this does not match the project time because of it being period-ending, not period-beginning
       name: "EST_hourly_2012",
       type: "time",
       module: "dsgrid.dimension.standard",
@@ -118,4 +109,15 @@
       ],
     },
   ],
+  data_layout: {
+    table_format: "two_table",
+    value_format: "pivoted",
+    pivoted_dimension_type: "metric",
+    data_file: {
+      path: "load_data.parquet",
+    },
+    lookup_data_file: {
+      path: "load_data_lookup.parquet",
+    },
+  },
 }

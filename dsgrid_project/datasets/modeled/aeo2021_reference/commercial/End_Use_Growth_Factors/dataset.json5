@@ -9,9 +9,9 @@
     "Lixi Liu",
   ],
   origin_project: "dsgrid CONUS2022 Commercial Buildings Projection",
-  origin_date: "2021-10-05",
-  origin_version: "0.1.0",
-  source: "Data derived from AEO 2021 detailed commercial sector files sent from EIA",
+  data_source_date: "2021-10-05",
+  data_source_version: "0.1.0",
+  data_source_doi_url: "Data derived from AEO 2021 detailed commercial sector files sent from EIA",
   data_classification: "low",
   tags: [
     "commercial",
@@ -26,13 +26,6 @@
     "weather_year",
     "model_year",
   ],
-    data_schema: {
-      table_format: {
-        format_type: "pivoted",
-        pivoted_dimension_type: "metric",
-      },
-      data_schema_type: "one_table",
-    },
   dataset_qualifier_metadata: {
     growth_rate_type: "exponential_annual",
     dataset_qualifier_type: "growth_rate",
@@ -102,4 +95,12 @@
       name: "no_op_time",
     },
   ],
+  data_layout: {
+    table_format: "one_table",
+    value_format: "pivoted",
+    pivoted_dimension_type: "metric",
+    data_file: {
+      path: "load_data.parquet",
+    },
+  },
 }

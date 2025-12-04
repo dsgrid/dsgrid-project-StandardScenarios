@@ -15,9 +15,9 @@
     "Matteo Muratori",
   ],
   origin_project: "dsgrid CONUS 2022",
-  origin_date: "Dec 21 2021",
-  origin_version: "dsgrid",
-  source: "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c7031c046cfe27907",
+  data_source_date: "Dec 21 2021",
+  data_source_version: "dsgrid",
+  data_source_doi_url: "https://github.nrel.gov/mmurator/TMM/commit/54f715e0fe015a578dd0594c7031c046cfe27907",
   data_classification: "low",
   tags: [
     "transportation",
@@ -30,13 +30,6 @@
     "weather_year",
   ],
   use_project_geography_time_zone: true,
-  data_schema: {
-    table_format: {
-      format_type: "pivoted",
-      pivoted_dimension_type: "metric",
-    },
-    data_schema_type: "standard",
-  },
   dimensions: [
     {
       "class": "County",
@@ -53,31 +46,29 @@
       description: "TEMPO demographic/geographic/vehicle bins. This is a cross-join of the following supplemental dimensions: * Composition (Single Driver, Some Drivers Smaller, Some Drivers Larger) * Income (Low Income, Middle Income, High Income) * Urbanity (Rural, Small Town, Suburban, Second City, Urban) * Vehicle Size Class (Compact, Midsize, SUV, Pickup) * Tech (PHEV25/PHEV50/BEV100/BEV300) ",
     },
     {
-        // Would be slimmed down to just vehicle counts
-        "class": "Population",
-        description: "Transportation and building stock size",
-        file: "dimensions/counts.csv",
-        module: "dsgrid.dimension.standard",
-        name: "count",
-        type: "metric",
+      "class": "Population",
+      description: "Transportation and building stock size",
+      file: "dimensions/counts.csv",
+      module: "dsgrid.dimension.standard",
+      name: "count",
+      type: "metric",
     },
     {
-      // Years would match model years?
-      type: 'time',
-      class: 'AnnualTime',
-      time_type: 'annual',
-      module: 'dsgrid.dimension.standard',
-      description: 'Annual time 2010-2020',
-      name: 'annual_time',
+      type: "time",
+      "class": "AnnualTime",
+      time_type: "annual",
+      module: "dsgrid.dimension.standard",
+      description: "Annual time 2010-2020",
+      name: "annual_time",
       ranges: [
         {
-          start: '2010',
-          end: '2020',
+          start: "2010",
+          end: "2020",
         },
       ],
-      str_format: '%Y',
+      str_format: "%Y",
       include_leap_day: true,
-      measurement_type: 'total',
+      measurement_type: "total",
     },
     {
       "class": "ModelYear",
@@ -94,7 +85,6 @@
       description: "Transportation Sector",
     },
     {
-      // TODO: remove this scenario dimension when we are ready to scrap the dummy dataset
       "class": "Scenario",
       type: "scenario",
       name: "scenario",
@@ -110,4 +100,15 @@
       type: "weather_year",
     },
   ],
+  data_layout: {
+    table_format: "two_table",
+    value_format: "pivoted",
+    pivoted_dimension_type: "metric",
+    data_file: {
+      path: "load_data.parquet",
+    },
+    lookup_data_file: {
+      path: "load_data_lookup.parquet",
+    },
+  },
 }
