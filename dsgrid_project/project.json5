@@ -633,14 +633,13 @@
       {
         "class": "EnergyEndUse",
         description: "dsgrid CONUS 2022 Heating and Cooling End Uses (all fuel types)",
-        file: "dimensions/simplified_end_uses.csv",
+        file: "dimensions/supplemental/simplified_end_uses.csv",
         module: "dsgrid.dimension.standard",
         name: "CONUS-2022-Heating-Cooling-End-Uses",
-        display_name: "Heating and Cooling End Uses",
         type: 'metric',
         mapping: {
             description: 'Maps from all end uses to heating and cooling end uses',
-            file: 'dimension_mapings/base_to_supplemental/lookup_end_use_to_simplified_end_use.csv',
+            file: 'dimension_mappings/base_to_supplemental/lookup_end_use_to_simplified_end_use.csv',
             mapping_type: 'many_to_one_aggregation',
         }
       },
