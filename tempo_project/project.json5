@@ -73,7 +73,7 @@
         description: 'Time dimension, 2012 hourly EST, hour-beginning, no Leap Day Adjustment, total value',
         time_interval_type: 'period_beginning',
         str_format: '%Y-%m-%d %H:%M:%S',
-        timezone: 'EasternStandard',
+        timezone: 'Etc/GMT+5',
         measurement_type: 'total',
         type: 'time',
         ranges: [
