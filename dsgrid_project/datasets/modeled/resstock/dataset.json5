@@ -101,7 +101,7 @@
       description: "Time dimension, 2012 hourly EST, hour-ending, no Leap Day Adjustment, total value, starts at Hour 0",
       time_interval_type: "period_ending",
       str_format: "%Y-%m-%d %H:%M:%S",
-      timezone: "EasternStandard",
+      timezone: "Etc/GMT+5",
       measurement_type: "total",
       type: "time",
     },

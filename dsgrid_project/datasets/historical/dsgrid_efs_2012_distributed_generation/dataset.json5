@@ -94,7 +94,7 @@
       frequency: "P0DT1H0M0.000000S",
       leap_day_adjustment: "none",
       time_interval_type: "period_ending",
-      timezone: "EasternStandard",
+      timezone: "Etc/GMT+5",
       ranges: [
         {
           start: "2012-01-01 01:00:00",

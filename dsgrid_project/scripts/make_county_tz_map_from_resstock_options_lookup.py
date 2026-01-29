@@ -52,12 +52,12 @@ def main(county_file: str, lookup_file: str, pre2015_counties=False):
         .str.removeprefix("site_time_zone_utc_offset=")
         .map(
             {
-                "-5": "EasternPrevailing",
-                "-6": "CentralPrevailing",
-                "-7": "MountainPrevailing",
-                "-8": "PacificPrevailing",
-                "-9": "AlaskaPrevailing",
-                "-10": "HawaiiAleutianStandard",
+                "-5": "America/New_York",
+                "-6": "America/Chicago",
+                "-7": "America/Denver",
+                "-8": "America/Los_Angeles",
+                "-9": "America/Anchorage",
+                "-10": "Etc/GMT+10",
             }
         )
     )
